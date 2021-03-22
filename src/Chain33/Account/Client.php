@@ -86,7 +86,7 @@ class Client extends BaseClient
         }
 
         $ripem160    = hash('ripemd160', hex2bin(hash('sha256', hex2bin($pubKey))));
-        $with_prefix = $this->config['version'] . $ripem160;
+        $with_prefix = '00' . $ripem160;
         $checksum    = hash('sha256', hex2bin(hash('sha256', hex2bin($with_prefix))));
         $address     = $with_prefix . substr($checksum, 0, 8);
 
