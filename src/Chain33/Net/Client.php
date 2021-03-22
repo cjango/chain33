@@ -19,6 +19,10 @@ class Client extends BaseClient
      */
     public function peer(): array
     {
+        if ($this->isParaChain()) {
+            return [];
+        }
+
         return $this->client->GetPeerInfo()['peers'];
     }
 
@@ -30,6 +34,10 @@ class Client extends BaseClient
      */
     public function info(): array
     {
+        if ($this->isParaChain()) {
+            return [];
+        }
+        
         return $this->client->GetNetInfo();
     }
 

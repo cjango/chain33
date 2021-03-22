@@ -2,7 +2,11 @@
 
 namespace Jason\Chain33\Account;
 
+use Jason\Chain33\Exceptions\ChainException;
 use Jason\Chain33\Kernel\BaseClient;
+use Jason\Chain33\Kernel\Utils\AddressCode;
+use Jason\Chain33\Kernel\Utils\AddressValidation;
+use Jason\Chain33\Kernel\Utils\PrivateKey;
 use StephenHill\Base58;
 
 /**
@@ -11,6 +15,37 @@ use StephenHill\Base58;
  */
 class Client extends BaseClient
 {
+
+    public function getPublicKey($privateKey)
+    {
+        $privateKey = new PrivateKey($privateKey);
+
+        $point = $privateKey->getPubKeyPoints();
+
+        $compressedPublicKey = AddressCode::Compress($point);
+
+        $hash = AddressCode::Hash($compressedPublicKey);
+
+        $address = AddressCode::Encode($hash);
+
+        if (AddressValidation::validateAddress($address)) {
+            return $address;
+        } else {
+            throw new ChainException('the address is not valid.');
+        }
+    }
+
+    /**
+     * Notes   : 验证地址是否合法
+     * @Date   : 2021/3/22 5:35 下午
+     * @Author : < Jason.C >
+     * @param $address
+     * @return bool
+     */
+    public function validation($address)
+    {
+        return AddressValidation::validateAddress($address);
+    }
 
     /**
      * Notes: 本地生成私钥-钱包地址
@@ -62,7 +97,7 @@ class Client extends BaseClient
      * Notes: 创建一个账户
      * @Author: <C.Jason>
      * @Date  : 2020/3/18 21:34
-     * @param string $label 账户标签
+     * @param  string  $label  账户标签
      * @return string 账户地址
      */
     public function create(string $label): string
@@ -78,7 +113,7 @@ class Client extends BaseClient
      * Notes: 获取账户列表
      * @Author: <C.Jason>
      * @Date  : 2020/3/18 21:34
-     * @param bool $withoutBalance 返回 label 和 addr 信息
+     * @param  bool  $withoutBalance  返回 label 和 addr 信息
      * @return array
      */
     public function get(bool $withoutBalance = false): array
@@ -92,7 +127,7 @@ class Client extends BaseClient
      * Notes: 合并账户余额
      * @Author: <C.Jason>
      * @Date  : 2020/3/18 21:35
-     * @param string $to 合并钱包上的所有余额到一个账户地址
+     * @param  string  $to  合并钱包上的所有余额到一个账户地址
      * @return array|null
      */
     public function merge(string $to): ?array
@@ -108,8 +143,8 @@ class Client extends BaseClient
      * Notes: 导入私钥
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 17:21
-     * @param string $lable   账户标签
-     * @param string $privkey 账户私钥
+     * @param  string  $lable    账户标签
+     * @param  string  $privkey  账户私钥
      * @return string
      */
     public function import(string $lable, string $privkey): string
@@ -126,7 +161,7 @@ class Client extends BaseClient
      * Notes: 导出私钥
      * @Author: <C.Jason>
      * @Date  : 2020/3/18 21:36
-     * @param string $addr 待导出私钥的账户地址
+     * @param  string  $addr  待导出私钥的账户地址
      * @return string
      */
     public function dump(string $addr): string

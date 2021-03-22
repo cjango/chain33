@@ -35,6 +35,16 @@ class BaseClient
     }
 
     /**
+     * Notes   : 是否是平行链
+     * @Date   : 2021/3/22 4:18 下午
+     * @Author : < Jason.C >
+     */
+    protected function isParaChain(): bool
+    {
+        return $this->config['para_name'] && preg_match('/user\.p\.[a-zA-Z0-9]*\./', $this->config['para_name']);
+    }
+
+    /**
      * Notes   : 解析平行链的执行器地址
      * @Date   : 2021/3/22 2:48 下午
      * @Author : < Jason.C >

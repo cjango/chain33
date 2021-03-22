@@ -90,7 +90,7 @@ class Client extends BaseClient
     //EncryptNotaryAdd(6);
 
     /**
-     * Notes: 发送存证数据
+     * Notes: 发送存证数据，如果是平行链，返回的交易hash是代扣交易的hash，需要调用结果tx的next来查询
      * @Author: <C.Jason>
      * @Date  : 2020/5/19 3:44 下午
      * @param  \Jason\Chain33\Kernel\Protobuf\StorageAction  $storage
@@ -133,8 +133,10 @@ class Client extends BaseClient
                 'txHash' => $hash,
             ],
         ]);
+
         if (array_key_exists('contentStorage', $content)) {
             return [
+                'type'    => 'content',
                 'content' => $this->hexToStr($content['contentStorage']['content']),
                 'key'     => $content['contentStorage']['value'],
                 'op'      => $content['contentStorage']['op'],
@@ -143,6 +145,7 @@ class Client extends BaseClient
         }
         if (array_key_exists('hashStorage', $content)) {
             return [
+                'type'  => 'hash',
                 'hash'  => $this->hexToStr($content['hashStorage']['hash']),
                 'key'   => $content['hashStorage']['key'],
                 'value' => $content['hashStorage']['value'],
@@ -150,6 +153,7 @@ class Client extends BaseClient
         }
         if (array_key_exists('linkStorage', $content)) {
             return [
+                'type'  => 'link',
                 'link'  => $this->hexToStr($content['linkStorage']['link']),
                 'hash'  => $this->hexToStr($content['linkStorage']['hash']),
                 'key'   => $content['linkStorage']['key'],
