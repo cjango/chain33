@@ -13,9 +13,9 @@ use Pimple\Container;
  * @method static Evm\Client Evm
  * @method static Mempool\Client Mempool
  * @method static Miner\Client Miner
- * @method static Net\Client Net
  * @method static Oracle\Client Oracle
  * @method static Storage\Client Storage
+ * @method static System\Client System
  * @method static Token\Client Token
  * @method static Transaction\Client Transaction
  * @method static Wallet\Client Wallet
@@ -38,9 +38,9 @@ class Application extends Container
         Manage\ServiceProvider::class,
         Mempool\ServiceProvider::class,
         Miner\ServiceProvider::class,
-        Net\ServiceProvider::class,
         Oracle\ServiceProvider::class,
         Storage\ServiceProvider::class,
+        System\ServiceProvider::class,
         Token\ServiceProvider::class,
         Transaction\ServiceProvider::class,
         Wallet\ServiceProvider::class,

@@ -1,6 +1,6 @@
 <?php
 
-namespace Jason\Chain33\Net;
+namespace Jason\Chain33\System;
 
 use Jason\Chain33\Kernel\BaseClient;
 
