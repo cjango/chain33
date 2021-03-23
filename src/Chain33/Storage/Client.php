@@ -111,11 +111,10 @@ class Client extends BaseClient
 
         $this->unlock();
         if ($this->isParaChain()) {
-            // 平行链必须要代扣
             $hexString = $this->app->transaction->paraTransaction($hexString);
         }
 
-        $data = $this->app->transaction->sign($privateKey, $hexString);
+        $data = $this->app->transaction->sign($privateKey, $hexString, '300s', 0, 2);
 
         return $this->app->transaction->send($data);
     }

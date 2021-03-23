@@ -70,7 +70,7 @@ class Client extends BaseClient
      * @Date  : 2020/5/2 20:37
      * @param  string  $to           发送到地址
      * @param  int     $amount       发送金额，注意基础货币单位为10^8
-     * @param  int     $fee          手续费，注意基础货币单位为10^8
+     * @param  int     $fee          手续费，注意基础货币单位为10^8 (这个手续费，操作的只是主链，无法操作平行链)
      * @param  string  $tokenSymbol  token 的 symbol （非token转账这个不用填）
      * @param  bool    $isToken      是否是token类型的转账 （非token转账这个不用填 包括平行链的基础代币转账也不用填）
      * @param  bool    $isWithdraw   是否为取款交易
