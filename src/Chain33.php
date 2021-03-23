@@ -15,14 +15,12 @@ use Illuminate\Support\Facades\Facade;
  * @method static Chain33\Mempool\Client Mempool
  * @method static Chain33\Miner\Client Miner
  * @method static Chain33\Oracle\Client Oracle
+ * @method static Chain33\ParaCross\Client ParaCross
  * @method static Chain33\Storage\Client Storage
  * @method static Chain33\System\Client Net
  * @method static Chain33\Token\Client Token
  * @method static Chain33\Transaction\Client Transaction
  * @method static Chain33\Wallet\Client Wallet
- * 组合的请求方式
- * @method static isSync()
- * @method static newAccountLocal()
  */
 class Chain33 extends Facade
 {

@@ -14,6 +14,7 @@ use Pimple\Container;
  * @method static Mempool\Client Mempool
  * @method static Miner\Client Miner
  * @method static Oracle\Client Oracle
+ * @method static ParaCross\Client ParaCross
  * @method static Storage\Client Storage
  * @method static System\Client System
  * @method static Token\Client Token
@@ -39,6 +40,7 @@ class Application extends Container
         Mempool\ServiceProvider::class,
         Miner\ServiceProvider::class,
         Oracle\ServiceProvider::class,
+        ParaCross\ServiceProvider::class,
         Storage\ServiceProvider::class,
         System\ServiceProvider::class,
         Token\ServiceProvider::class,
