@@ -16,6 +16,14 @@ use StephenHill\Base58;
 class Client extends BaseClient
 {
 
+    /**
+     * Notes   : 通过私钥，获取地址
+     * @Date   : 2021/3/23 2:14 下午
+     * @Author : < Jason.C >
+     * @param $privateKey
+     * @return String
+     * @throws \Jason\Chain33\Exceptions\ChainException
+     */
     public function getPublicKey($privateKey)
     {
         $privateKey = new PrivateKey($privateKey);

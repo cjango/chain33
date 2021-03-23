@@ -13,6 +13,7 @@ class AddressValidation
     public static function validateAddress($address)
     {
         $address = hex2bin(Base58::Decode($address));
+
         if (strlen($address) != 25) {
             return false;
         }

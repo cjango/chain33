@@ -109,8 +109,11 @@ class Client extends BaseClient
 
         $hexString = bin2hex($Trans->serializeToString());
 
-        // 平行链必须要代扣
-        $hexString = $this->app->transaction->paraTransaction($hexString);
+        $this->unlock();
+        if ($this->isParaChain()) {
+            // 平行链必须要代扣
+            $hexString = $this->app->transaction->paraTransaction($hexString);
+        }
 
         $data = $this->app->transaction->sign($privateKey, $hexString);
 

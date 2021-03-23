@@ -18,6 +18,7 @@ class Client extends BaseClient
      * @param  string  $to          发送到地址
      * @param  int     $amount      转账金额
      * @param  string  $privateKey  私钥
+     * @param  int     $fee         手续费
      * @param  string  $symbol      代币
      * @param  string  $note        备注
      * @return string
@@ -26,12 +27,21 @@ class Client extends BaseClient
         string $to,
         int $amount,
         string $privateKey,
-        string $symbol = '',
+        int $fee = 0,
         string $note = ''
     ): string {
-        $isToken = !empty($symbol);
 
-        $txHex = $this->createRaw($to, $amount, 0, $symbol, $isToken, false, '', $note);
+        $this->unlock(false);
+
+        $txHex = $this->client->CreateRawTransaction([
+            'to'         => $to,
+            'amount'     => $amount,
+            'fee'        => $fee,
+            'note'       => '我要注释的' . $note,
+            'isWithdraw' => false,
+            'execName'   => '',
+            'execer'     => $this->parseExecer('coins'),
+        ]);
 
         $txHex = $this->paraTransaction($txHex);
 
@@ -104,12 +114,14 @@ class Client extends BaseClient
      */
     public function paraTransaction(string $txHex)
     {
-        $this->unlock(false);
-
-        return $this->client->CreateNoBalanceTransaction([
-            'txHex'   => $txHex,
-            'payAddr' => $this->config['para_pay_addr'],
-        ]);
+        if ($this->config['para_pay_addr']) {
+            return $this->client->CreateNoBalanceTransaction([
+                'txHex'   => $txHex,
+                'payAddr' => $this->config['para_pay_addr'],
+            ]);
+        } else {
+            return $txHex;
+        }
     }
 
     /**
@@ -122,10 +134,14 @@ class Client extends BaseClient
      */
     public function paraTransactions(array $txHexs, string $payAddr)
     {
-        return $this->client->CreateNoBlanaceTxs([
-            'txHexs'  => $txHexs,
-            'payAddr' => $payAddr,
-        ]);
+        if ($this->config['para_pay_addr']) {
+            return $this->client->CreateNoBlanaceTxs([
+                'txHexs'  => $txHexs,
+                'payAddr' => $payAddr,
+            ]);
+        } else {
+            return $txHex;
+        }
     }
 
     /**
