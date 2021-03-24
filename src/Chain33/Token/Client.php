@@ -16,19 +16,27 @@ class Client extends BaseClient
      * Notes: 发行TOKEN
      * @Author: <C.Jason>
      * @Date  : 2020/5/25 3:59 下午
-     * @param string $name         token 名称
-     * @param string $symbol       token标记符，最大长度是16个字符，且必须为大写字符和数字
-     * @param string $introduction token 简介
-     * @param int    $total        发行总量
-     * @param string $owner        token拥有者地址
-     * @param int    $category     token属性类别， 0 为普通token， 1 可增发和燃烧
-     * @return mixed
+     * @param  string  $name          token 名称
+     * @param  string  $symbol        token标记符，最大长度是16个字符，且必须为大写字符和数字
+     * @param  string  $introduction  token 简介
+     * @param  int     $total         发行总量
+     * @param  string  $owner         token拥有者地址
+     * @param  int     $category      token属性类别， 0 为普通token， 1 可增发和燃烧
+     * @return string
      */
-    public function publish(string $name, string $symbol, string $introduction, int $total, string $owner, int $category = Consts::TOKEN_MINT_BURN)
-    {
+    public function publish(
+        string $name,
+        string $symbol,
+        string $introduction,
+        int $total,
+        string $owner,
+        int $category = 0
+    ): string {
+        $this->walletUnlock();
+
         $txHex = $this->client->CreateRawTokenPreCreateTx([
             'name'         => $name,
-            'symbol'       => $symbol,
+            'symbol'       => strtoupper($symbol),
             'introduction' => $introduction,
             'total'        => $total,
             'price'        => 0,
@@ -36,7 +44,9 @@ class Client extends BaseClient
             'owner'        => $owner,
         ], 'token');
 
-        $data = $this->app->transaction->sign($this->config['superManager']['privateKey'], $txHex);
+        $txHex = $this->app->transaction->paraTransaction($txHex);
+
+        $data = $this->app->transaction->sign($txHex, $this->config['superManager']['privateKey']);
 
         return $this->app->transaction->send($data);
     }
@@ -45,18 +55,22 @@ class Client extends BaseClient
      * Notes: 完成发行TOKEN
      * @Author: <C.Jason>
      * @Date  : 2020/5/14 6:17 下午
-     * @param string $symbol token标记符，最大长度是16个字符，且必须为大写字符和数字
-     * @param string $owner  token拥有者地址
-     * @return mixed
+     * @param  string  $symbol  token标记符，最大长度是16个字符，且必须为大写字符和数字
+     * @param  string  $owner   token拥有者地址
+     * @return string
      */
-    public function finish(string $symbol, string $owner)
+    public function finish(string $symbol, string $owner): string
     {
+        $this->walletUnlock();
+
         $txHex = $this->client->CreateRawTokenFinishTx([
             'symbol' => strtoupper($symbol),
             'owner'  => $owner,
         ], 'token');
 
-        $data = $this->app->transaction->sign($this->config['superManager']['privateKey'], $txHex);
+        $txHex = $this->app->transaction->paraTransaction($txHex);
+
+        $data = $this->app->transaction->sign($txHex, $this->config['superManager']['privateKey']);
 
         return $this->app->transaction->send($data);
     }
@@ -65,10 +79,10 @@ class Client extends BaseClient
      * Notes: 查询所有预创建的token | 查询所有创建成功的token
      * @Author: <C.Jason>
      * @Date  : 2020/5/14 6:18 下午
-     * @param int $status 0预创建 1创建成功
-     * @return mixed
+     * @param  int  $status  0预创建 1创建成功
+     * @return array
      */
-    public function get($status = Consts::TOKEN_PREPARED)
+    public function get($status = 0): array
     {
         return $this->client->Query([
             'execer'   => 'token',
@@ -85,10 +99,10 @@ class Client extends BaseClient
      * Notes: 查询指定创建成功的token
      * @Author: <C.Jason>
      * @Date  : 2020/5/14 6:19 下午
-     * @param string $symbol token的Symbol
-     * @return mixed
+     * @param  string  $symbol  token的Symbol
+     * @return array
      */
-    public function info($symbol)
+    public function info($symbol): array
     {
         return $this->client->Query([
             'execer'   => 'token',
@@ -103,18 +117,20 @@ class Client extends BaseClient
      * Notes: 生成撤销创建token的交易，只能撤销未完成的（un finish）
      * @Author: <C.Jason>
      * @Date  : 2020/5/20 3:24 下午
-     * @param string $symbol token的Symbol
-     * @param string $owner  拥有者地址
-     * @return mixed
+     * @param  string  $symbol  token的Symbol
+     * @param  string  $owner   拥有者地址
+     * @return string
      */
-    public function revoke(string $symbol, string $owner)
+    public function revoke(string $symbol, string $owner): string
     {
         $txHex = $this->client->CreateRawTokenRevokeTx([
             'symbol' => $symbol,
             'owner'  => $owner,
         ], 'token');
 
-        $data = $this->app->transaction->sign($this->config['superManager']['privateKey'], $txHex);
+        $txHex = $this->app->transaction->paraTransaction($txHex);
+
+        $data = $this->app->transaction->sign($txHex, $this->config['superManager']['privateKey']);
 
         return $this->app->transaction->send($data);
     }
@@ -123,8 +139,8 @@ class Client extends BaseClient
      * Notes: 查询地址下的token合约下的token资产
      * @Author: <C.Jason>
      * @Date  : 2020/5/20 3:34 下午
-     * @param string $address 要查询的地址
-     * @return mixed
+     * @param  string  $address  要查询的地址
+     * @return array
      */
     public function assets($address): array
     {
@@ -142,19 +158,26 @@ class Client extends BaseClient
      * Notes: 查询token相关的交易
      * @Author: <C.Jason>
      * @Date  : 2020/5/25 11:07 上午
-     * @param string $symbol    token标记符
-     * @param string $addr      地址
-     * @param int    $count     count: 交易的数量
-     * @param int    $flag      分页相关参数
-     * @param int    $direction 分页相关参数
-     * @param int    $height    分页相关参数
-     * @param int    $index     分页相关参数
-     * @return mixed
+     * @param  string  $symbol     token标记符
+     * @param  string  $addr       地址
+     * @param  int     $count      count: 交易的数量
+     * @param  int     $flag       分页相关参数
+     * @param  int     $direction  分页相关参数
+     * @param  int     $height     分页相关参数
+     * @param  int     $index      分页相关参数
+     * @return array
      */
-    public function tx(string $symbol, string $addr, int $count, int $flag = 0, int $direction = 0, int $height = -1, int $index = 0)
-    {
+    public function tx(
+        string $symbol,
+        string $addr = '',
+        int $count = 100,
+        int $flag = 0,
+        int $direction = 0,
+        int $height = -1,
+        int $index = 0
+    ): array {
         return $this->client->Query([
-            'execer'   => 'token',
+            'execer'   => $this->parseExecer('token'),
             'funcName' => 'GetTxByToken',
             'payload'  => [
                 'symbol'    => $symbol,
@@ -172,19 +195,21 @@ class Client extends BaseClient
      * Notes: token的增发
      * @Author: <C.Jason>
      * @Date  : 2020/5/20 3:44 下午
-     * @param string $symbol     token的标记符
-     * @param int    $amount     增发token的数量
-     * @param string $privateKey 拥有者的私钥
-     * @return mixed
+     * @param  string  $symbol      token的标记符
+     * @param  int     $amount      增发token的数量
+     * @param  string  $privateKey  拥有者的私钥
+     * @return string
      */
-    public function mint(string $symbol, int $amount, string $privateKey)
+    public function mint(string $symbol, int $amount, string $privateKey): string
     {
         $txHex = $this->client->CreateRawTokenMintTx([
             'symbol' => $symbol,
             'amount' => $amount,
         ], 'token');
 
-        $data = $this->app->transaction->sign($privateKey, $txHex);
+        $txHex = $this->app->transaction->paraTransaction($txHex);
+
+        $data = $this->app->transaction->sign($txHex, $this->config['superManager']['privateKey']);
 
         return $this->app->transaction->send($data);
     }
@@ -193,19 +218,21 @@ class Client extends BaseClient
      * Notes: token的燃烧
      * @Author: <C.Jason>
      * @Date  : 2020/5/20 3:44 下午
-     * @param string $symbol     token的标记符
-     * @param int    $amount     燃烧token的数量
-     * @param string $privateKey 拥有者的私钥
-     * @return mixed
+     * @param  string  $symbol      token的标记符
+     * @param  int     $amount      燃烧token的数量
+     * @param  string  $privateKey  拥有者的私钥
+     * @return string
      */
-    public function burn(string $symbol, int $amount, string $privateKey)
+    public function burn(string $symbol, int $amount, string $privateKey): string
     {
         $txHex = $this->client->CreateRawTokenBurnTx([
             'symbol' => $symbol,
             'amount' => $amount,
         ], 'token');
 
-        $data = $this->app->transaction->sign($privateKey, $txHex);
+        $txHex = $this->app->transaction->paraTransaction($txHex);
+
+        $data = $this->app->transaction->sign($txHex, $this->config['superManager']['privateKey']);
 
         return $this->app->transaction->send($data);
     }
@@ -214,18 +241,51 @@ class Client extends BaseClient
      * Notes: 查询token的变化记录
      * @Author: <C.Jason>
      * @Date  : 2020/5/20 3:47 下午
-     * @param string $symbol token标记符
-     * @return mixed actionType: 8 是token创建， 12 是增发， 13 是燃烧
+     * @param  string  $symbol  token标记符
+     * @return array actionType: 8 是token创建， 12 是增发， 13 是燃烧
      */
-    public function history(string $symbol)
+    public function history(string $symbol): array
     {
         return $this->client->Query([
-            'execer'   => 'token',
+            'execer'   => $this->parseExecer('token'),
             'funcName' => 'GetTokenHistory',
             'payload'  => [
                 'data' => $symbol,
             ],
+        ])['logs'];
+    }
+
+    /**
+     * Notes: 发送交易
+     * @Author: <C.Jason>
+     * @Date  : 2020/4/30 17:41
+     * @param  string  $from    来源地址
+     * @param  string  $to      发送到地址
+     * @param  string  $symbol  toekn的symbol
+     * @param  int     $amount  发送金额
+     * @param  string  $note    备注
+     * @return string
+     */
+    public function transfer(string $to, string $symbol, int $amount, string $privateKey, string $note = ''): string
+    {
+        $this->walletUnlock();
+
+        $txHex = $this->client->CreateRawTransaction([
+            'to'          => $to,
+            'amount'      => $amount,
+            'fee'         => 0,
+            'note'        => $note,
+            'isWithdraw'  => false,
+            'isToken'     => true,
+            'tokenSymbol' => $symbol,
+            'execer'      => $this->parseExecer('token'),
         ]);
+
+        $txHex = $this->app->transaction->paraTransaction($txHex);
+
+        $data = $this->app->transaction->sign($txHex, $privateKey);
+
+        return $this->app->transaction->send($data);
     }
 
 }

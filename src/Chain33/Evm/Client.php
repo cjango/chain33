@@ -31,7 +31,10 @@ class Client extends BaseClient
         string $note = '',
         int $fee = 3000000
     ): string {
-        $hex = $this->client->CreateTransaction([
+
+        $this->walletUnlock();
+
+        $txHex = $this->client->CreateTransaction([
             'execer'     => 'evm',
             'actionName' => 'CreateCall',
             'payload'    => [
@@ -44,9 +47,11 @@ class Client extends BaseClient
             ],
         ]);
 
-        $data = $this->app->transaction()->sign($privateKey, $hex, '300s', $fee);
+        $txHex = $this->app->transaction->paraTransaction($txHex);
 
-        return $this->app->transaction()->send($data);
+        $data = $this->app->transaction->sign($txHex, $privateKey);
+
+        return $this->app->transaction->send($data);
     }
 
     /**
@@ -69,7 +74,10 @@ class Client extends BaseClient
         string $note = '',
         int $fee = 3000000
     ): string {
-        $hex = $this->client->CreateTransaction([
+
+        $this->walletUnlock();
+
+        $txHex = $this->client->CreateTransaction([
             'execer'     => $name,
             // 这里调用合约的时候，execer必须使用合约名称，否则会失败？
             'actionName' => 'CreateCall',
@@ -83,9 +91,11 @@ class Client extends BaseClient
             ],
         ]);
 
-        $data = $this->app->transaction()->sign($privateKey, $hex, '300s', $fee);
+        $txHex = $this->app->transaction->paraTransaction($txHex);
 
-        return $this->app->transaction()->send($data);
+        $data = $this->app->transaction->sign($txHex, $privateKey);
+
+        return $this->app->transaction->send($data);
     }
 
     /**
@@ -101,6 +111,8 @@ class Client extends BaseClient
      */
     public function transfer(string $addr, string $name, int $amount, string $privkey, string $tokenSymbol = ''): string
     {
+        $this->walletUnlock();
+
         $isToken = !empty($tokenSymbol);
 
         $txHex = $this->client->CreateRawTransaction([
@@ -115,9 +127,11 @@ class Client extends BaseClient
             'execer'      => $this->parseParaName($name),
         ]);
 
-        $data = $this->app->transaction()->sign($privkey, $txHex);
+        $txHex = $this->app->transaction->paraTransaction($txHex);
 
-        return $this->app->transaction()->send($data);
+        $data = $this->app->transaction->sign($txHex, $privateKey);
+
+        return $this->app->transaction->send($data);
     }
 
     /**
@@ -133,6 +147,9 @@ class Client extends BaseClient
      */
     public function withdraw(string $addr, string $name, int $amount, string $privkey, string $tokenSymbol = ''): string
     {
+
+        $this->walletUnlock();
+
         $isToken = !empty($tokenSymbol);
 
         $txHex = $this->client->CreateRawTransaction([
@@ -147,9 +164,11 @@ class Client extends BaseClient
             'execer'      => $this->parseParaName($name),
         ]);
 
-        $data = $this->app->transaction()->sign($privkey, $txHex);
+        $txHex = $this->app->transaction->paraTransaction($txHex);
 
-        return $this->app->transaction()->send($data);
+        $data = $this->app->transaction->sign($txHex, $privateKey);
+
+        return $this->app->transaction->send($data);
     }
 
     /**

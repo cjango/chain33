@@ -18,7 +18,7 @@ return [
     'password'      => env('BLOCK_CHAIN_PASSWORD', ''),
 
     /**
-     * 平行链名称 user.p.XXX.
+     * 平行链名称 user.p.XXX.  主链置空
      */
     'para_name'     => env('BLOCK_CHAIN_PARA_NAME', ''),
 

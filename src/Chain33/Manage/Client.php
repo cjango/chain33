@@ -3,7 +3,6 @@
 namespace Jason\Chain33\Manage;
 
 use Jason\Chain33\Kernel\BaseClient;
-use Jason\Chain33\Kernel\Consts;
 
 /**
  * Class Client
@@ -12,29 +11,65 @@ use Jason\Chain33\Kernel\Consts;
 class Client extends BaseClient
 {
 
+    const OP_ADD    = 'add';
+    const OP_DELETE = 'delete';
+
     /**
-     * Notes: 添加/删除一个token-finisher
-     * @Author: <C.Jason>
-     * @Date  : 2020/5/2 21:41
-     * @param  string  $value  对应地址
-     * @param  string  $op     操作方法，add 添加，delete 删除
-     * @param  string  $type   token-finisher , token-blacklist
+     * Notes   : 添加/删除一个token-finisher
+     * @Date   : 2021/3/24 2:02 下午
+     * @Author : < Jason.C >
+     * @param  string  $addr
+     * @param  string  $op  add / delete
      * @return string
+     * @throws \Jason\Chain33\Exceptions\ConfigException
      */
-    public function finisher(string $value, string $op = Consts::OP_ADD, string $type = Consts::TOKEN_FINISHER): string
+    public function finisher(string $addr, string $op = self::OP_ADD): string
     {
+        $this->walletUnlock();
+
         $txHex = $this->client->CreateTransaction([
             'execer'     => 'manage',
             'actionName' => 'Modify',
             'payload'    => [
-                'key'   => $type,
-                'value' => $value,
+                'key'   => 'token-finisher',
+                'value' => $addr,
                 'op'    => $op,
-                'addr'  => '',
             ],
         ]);
 
-        $data = $this->app->transaction->sign($this->config['superManager']['privateKey'], $txHex);
+        $txHex = $this->app->transaction->paraTransaction($txHex);
+
+        $data = $this->app->transaction->sign($txHex, $this->config['superManager']['privateKey']);
+
+        return $this->app->transaction->send($data);
+    }
+
+    /**
+     * Notes   : TOKEN 黑名单管理
+     * @Date   : 2021/3/24 2:02 下午
+     * @Author : < Jason.C >
+     * @param  string  $addr
+     * @param  string  $op
+     * @return string
+     * @throws \Jason\Chain33\Exceptions\ConfigException
+     */
+    public function blacklist(string $symbol, string $op = self::OP_ADD): string
+    {
+        $this->walletUnlock();
+
+        $txHex = $this->client->CreateTransaction([
+            'execer'     => 'manage',
+            'actionName' => 'Modify',
+            'payload'    => [
+                'key'   => 'token-blacklist',
+                'value' => $symbol,
+                'op'    => $op,
+            ],
+        ]);
+
+        $txHex = $this->app->transaction->paraTransaction($txHex);
+
+        $data = $this->app->transaction->sign($txHex, $this->config['superManager']['privateKey']);
 
         return $this->app->transaction->send($data);
     }
@@ -44,17 +79,25 @@ class Client extends BaseClient
      * @Author: <C.Jason>
      * @Date  : 2020/5/2 21:43
      * @param  string  $type  操作标识符
-     * @return mixed
+     * @return array
      */
-    public function get($type = Consts::TOKEN_FINISHER)
+    public function get($type = 'finisher'): array
     {
-        return $this->client->Query([
+        $value = $this->client->Query([
             'execer'   => 'manage',
             'funcName' => 'GetConfigItem',
             'payload'  => [
-                'data' => $type,
+                'data' => 'token-' . $type,
             ],
-        ]);
+        ])['value'];
+
+        $value = str_replace(['[', ']'], '', $value);
+
+        if (empty($value)) {
+            return [];
+        } else {
+            return explode(' ', $value);
+        }
     }
 
 }

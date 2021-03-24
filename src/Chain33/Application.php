@@ -11,10 +11,12 @@ use Pimple\Container;
  * @method static Balance\Client Balance
  * @method static Chain\Client Chain
  * @method static Evm\Client Evm
+ * @method static Freeze\Client Freeze
  * @method static Mempool\Client Mempool
  * @method static Miner\Client Miner
  * @method static Oracle\Client Oracle
  * @method static ParaCross\Client ParaCross
+ * @method static Retrieve\Client Retrieve
  * @method static Storage\Client Storage
  * @method static System\Client System
  * @method static Token\Client Token
@@ -35,12 +37,14 @@ class Application extends Container
         Balance\ServiceProvider::class,
         Chain\ServiceProvider::class,
         Evm\ServiceProvider::class,
+        Freeze\ServiceProvider::class,
         Kernel\ServiceProvider::class,
         Manage\ServiceProvider::class,
         Mempool\ServiceProvider::class,
         Miner\ServiceProvider::class,
         Oracle\ServiceProvider::class,
         ParaCross\ServiceProvider::class,
+        Retrieve\ServiceProvider::class,
         Storage\ServiceProvider::class,
         System\ServiceProvider::class,
         Token\ServiceProvider::class,

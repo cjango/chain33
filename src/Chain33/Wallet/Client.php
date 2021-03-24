@@ -2,6 +2,7 @@
 
 namespace Jason\Chain33\Wallet;
 
+use FurqanSiddiqui\BIP39\BIP39;
 use Jason\Chain33\Kernel\BaseClient;
 
 /**
@@ -10,6 +11,22 @@ use Jason\Chain33\Kernel\BaseClient;
  */
 class Client extends BaseClient
 {
+
+    /**
+     * Notes   : 本地生成一个 bip39 标准的 seed
+     * @Date   : 2021/3/24 10:08 上午
+     * @Author : < Jason.C >
+     * @param  int  $len
+     * @return string
+     * @throws \FurqanSiddiqui\BIP39\Exception\MnemonicException
+     * @throws \FurqanSiddiqui\BIP39\Exception\WordListException
+     */
+    public function localSeed(int $len = 15): string
+    {
+        $mnemonic = BIP39::Generate($len);
+
+        return implode(' ', $mnemonic->words);
+    }
 
     /**
      * Notes   : 生成SEED
@@ -50,7 +67,7 @@ class Client extends BaseClient
      */
     public function getSeed(): string
     {
-        $this->unlock(false);
+        $this->walletUnlock();
 
         return $this->client->GetSeed([
             'passwd' => $this->config['password'],
@@ -93,38 +110,11 @@ class Client extends BaseClient
      */
     public function setFee(int $amount): bool
     {
-        $this->unlock(false);
+        $this->walletUnlock();
 
         return $this->client->SetTxFee([
             'amount' => $amount,
         ])['isOK'];
-    }
-
-    /**
-     * Notes: 发送交易
-     * @Author: <C.Jason>
-     * @Date  : 2020/4/30 17:41
-     * @param  string  $from    来源地址
-     * @param  string  $to      发送到地址
-     * @param  int     $amount  发送金额
-     * @param  string  $note    备注
-     * @param  string  $symbol  toekn的symbol（非token转账这个不用填）
-     * @return string
-     */
-    public function send(string $from, string $to, int $amount, string $note = '', string $symbol = ''): string
-    {
-        $this->unlock(false);
-
-        $isToken = empty($symbol) ? false : true;
-
-        return $this->client->SendToAddress([
-            'from'        => $from,
-            'to'          => $to,
-            'amount'      => $amount,
-            'note'        => $note,
-            'isToken'     => $isToken,
-            'tokenSymbol' => $symbol,
-        ])['hash'];
     }
 
     /**

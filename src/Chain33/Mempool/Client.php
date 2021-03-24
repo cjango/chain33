@@ -20,6 +20,10 @@ class Client extends BaseClient
      */
     public function get($isAll = false): array
     {
+        if ($this->isParaChain()) {
+            return [];
+        }
+
         return $this->client->GetMempool([
             'isAll' => $isAll,
         ])['txs'];

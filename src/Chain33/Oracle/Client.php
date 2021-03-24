@@ -43,7 +43,9 @@ class Client extends BaseClient
             ],
         ]);
 
-        $data = $this->app->transcation->sign($privkey, $txHex);
+        $txHex = $this->app->transaction->paraTransaction($txHex);
+
+        $data = $this->app->transcation->sign($txHex, $privkey);
 
         return $this->app->transcation->send($data);
     }
@@ -66,7 +68,9 @@ class Client extends BaseClient
             ],
         ]);
 
-        $data = $this->app->transcation->sign($privkey, $txHex);
+        $txHex = $this->app->transaction->paraTransaction($txHex);
+
+        $data = $this->app->transcation->sign($txHex, $privkey);
 
         return $this->app->transcation->send($data);
     }

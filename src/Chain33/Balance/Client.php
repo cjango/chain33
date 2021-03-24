@@ -25,16 +25,14 @@ class Client extends BaseClient
     public function get(
         string $address,
         string $execer = 'coins',
-        string $asset_exec = 'paracross',
-        string $asset_symbol = '',
-        string $stateHash = ''
+        string $asset_exec = 'coins',
+        string $asset_symbol = ''
     ): array {
         return $this->client->GetBalance([
             'execer'       => $execer,
             'addresses'    => [$address],
             'asset_exec'   => $asset_exec,
             'asset_symbol' => $asset_symbol,
-            'stateHash'    => $stateHash,
         ])[0];
     }
 
@@ -52,7 +50,7 @@ class Client extends BaseClient
     public function gets(
         array $addresses,
         string $execer = 'coins',
-        string $asset_exec = 'paracross',
+        string $asset_exec = 'coins',
         string $asset_symbol = '',
         string $stateHash = ''
     ): array {

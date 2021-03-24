@@ -110,7 +110,7 @@ class Client extends BaseClient
      */
     public function create(string $label): string
     {
-        $this->unlock(false);
+        $this->walletUnlock();
 
         return $this->client->NewAccount([
             'label' => $label,
@@ -140,7 +140,7 @@ class Client extends BaseClient
      */
     public function merge(string $to): ?array
     {
-        $this->unlock(false);
+        $this->walletUnlock();
 
         return $this->client->MergeBalance([
             'to' => $to,
@@ -157,7 +157,7 @@ class Client extends BaseClient
      */
     public function import(string $lable, string $privkey): string
     {
-        $this->unlock(false);
+        $this->walletUnlock();
 
         return $this->client->ImportPrivkey([
             'privkey' => $privkey,
@@ -174,7 +174,7 @@ class Client extends BaseClient
      */
     public function dump(string $addr): string
     {
-        $this->unlock(false);
+        $this->walletUnlock();
 
         return $this->client->DumpPrivkey([
             'data' => $addr,

@@ -18,19 +18,22 @@ class Client extends BaseClient
 {
 
     /**
-     * Notes: 明文存证9
+     * Notes: 明文存证
      * @Author: <C.Jason>
      * @Date  : 2020/5/19 3:43 下午
      * @param  string  $content
      * @param  string  $to
+     * @param  string  $key  修改原有的明文存在的时候  要设置这个值
+     * @param  string  $to   0 新增  1追加
      * @param  string  $privateKey
      * @return mixed
      */
-    public function content(string $content, string $privateKey)
+    public function content(string $content, string $privateKey, string $key = '', int $op = 0)
     {
         $con = new ContentOnlyNotaryStorage();
         $con->setContent($content);
-        $con->setOp(0);
+        $con->setOp($op);
+        $con->setKey($key);
 
         $storage = new StorageAction();
         $storage->setContentStorage($con);
@@ -107,14 +110,13 @@ class Client extends BaseClient
         $Trans->setNonce(mt_rand() * rand(10000, 99999));
         $Trans->setPayload($storage->serializeToString());
 
-        $hexString = bin2hex($Trans->serializeToString());
+        $txHex = bin2hex($Trans->serializeToString());
 
-        $this->unlock();
-        if ($this->isParaChain()) {
-            $hexString = $this->app->transaction->paraTransaction($hexString);
-        }
+        $this->walletUnlock();
 
-        $data = $this->app->transaction->sign($privateKey, $hexString, '300s', 0, 2);
+        $txHex = $this->app->transaction->paraTransaction($txHex);
+
+        $data = $this->app->transaction->sign($txHex, $privateKey);
 
         return $this->app->transaction->send($data);
     }

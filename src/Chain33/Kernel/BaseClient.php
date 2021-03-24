@@ -3,6 +3,7 @@
 namespace Jason\Chain33\Kernel;
 
 use Jason\Chain33\Exceptions\ChainException;
+use Jason\Chain33\Exceptions\ConfigException;
 
 class BaseClient
 {
@@ -21,15 +22,39 @@ class BaseClient
     }
 
     /**
-     * 解锁钱包
-     * @param  bool  $ticket  只解锁ticket
+     * Notes   : 解锁钱包
+     * @Date   : 2021/3/24 9:28 上午
+     * @Author : < Jason.C >
      * @return void
      */
-    protected function unlock(bool $ticket = true): void
+    protected function walletUnlock(): void
     {
+        if (!$this->config['password']) {
+            throw new ConfigException('need wallet passwod');
+        }
+
         $res = $this->client->UnLock([
             'passwd'         => $this->config['password'],
-            'walletOrTicket' => $ticket,
+            'walletOrTicket' => false,
+            'timeout'        => 0,
+        ]);
+    }
+
+    /**
+     * Notes   : 解锁买票功能
+     * @Date   : 2021/3/24 9:30 上午
+     * @Author : < Jason.C > 只解锁买票功能
+     * @param  bool  $ticket
+     */
+    protected function ticketUnlock(): void
+    {
+        if (!$this->config['password']) {
+            throw new ConfigException('need wallet passwod');
+        }
+
+        $res = $this->client->UnLock([
+            'passwd'         => $this->config['password'],
+            'walletOrTicket' => true,
             'timeout'        => 0,
         ]);
     }
