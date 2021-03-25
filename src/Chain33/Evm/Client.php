@@ -22,6 +22,7 @@ class Client extends BaseClient
      * @param  string  $note        本次交易的备注信息
      * @param  int     $fee         交易手续费，这里不能设置为0，要大于合约的gas消耗
      * @return string
+     * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     public function deploy(
         string $code,
@@ -65,6 +66,7 @@ class Client extends BaseClient
      * @param  string  $note        本次交易的备注信息
      * @param  int     $fee         交易手续费，这里不能设置为0，要大于合约的gas消耗
      * @return string
+     * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     public function invoking(
         string $name,
@@ -105,12 +107,19 @@ class Client extends BaseClient
      * @param  string  $addr         合约地址
      * @param  string  $name         合约名称
      * @param  int     $amount       转账金额
-     * @param  string  $privkey      私钥
+     * @param  string  $privateKey   私钥
      * @param  string  $tokenSymbol  代币种类
      * @return string
+     * @throws \Jason\Chain33\Exceptions\ConfigException
      */
-    public function transfer(string $addr, string $name, int $amount, string $privkey, string $tokenSymbol = ''): string
-    {
+    public function transfer(
+        string $addr,
+        string $name,
+        int $amount,
+        string $privateKey,
+        string $tokenSymbol = ''
+    ): string {
+
         $this->walletUnlock();
 
         $isToken = !empty($tokenSymbol);
@@ -141,12 +150,18 @@ class Client extends BaseClient
      * @param  string  $addr         合约地址
      * @param  string  $name         合约名称
      * @param  int     $amount       转账金额
-     * @param  string  $privkey      私钥
+     * @param  string  $privateKey   私钥
      * @param  string  $tokenSymbol  代币种类
      * @return string
+     * @throws \Jason\Chain33\Exceptions\ConfigException
      */
-    public function withdraw(string $addr, string $name, int $amount, string $privkey, string $tokenSymbol = ''): string
-    {
+    public function withdraw(
+        string $addr,
+        string $name,
+        int $amount,
+        string $privateKey,
+        string $tokenSymbol = ''
+    ): string {
 
         $this->walletUnlock();
 
@@ -262,10 +277,9 @@ class Client extends BaseClient
      * @Date   : 2021/1/27 1:53 下午
      * @Author : < Jason.C >
      * @param  string  $code  需要部署或调用的合约代码，如果是部署合约，本字段必填
-     * @param  string  $abi   需要部署或调用的合约ABI代码
-     * @return int              本次交易需要消耗的gas值
+     * @return int            本次交易需要消耗的gas值
      */
-    public function estimateGas(string $code, string $abi): int
+    public function estimateGas(string $code): int
     {
         return $this->client->Query([
             'execer'   => 'evm',

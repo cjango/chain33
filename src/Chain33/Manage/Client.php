@@ -48,7 +48,7 @@ class Client extends BaseClient
      * Notes   : TOKEN 黑名单管理
      * @Date   : 2021/3/24 2:02 下午
      * @Author : < Jason.C >
-     * @param  string  $addr
+     * @param  string  $symbol
      * @param  string  $op
      * @return string
      * @throws \Jason\Chain33\Exceptions\ConfigException

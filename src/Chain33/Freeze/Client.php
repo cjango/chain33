@@ -13,8 +13,11 @@ class Client extends BaseClient
 
     /**
      * Notes: 创建定期解冻合约
+     * @param  string  $privateKey
+     * @return string
+     * @throws \Jason\Chain33\Exceptions\ConfigException
      */
-    public function CreateRawUnfreezeCreate($privateKey): string
+    public function CreateRawUnfreezeCreate(string $privateKey): string
     {
         $this->walletUnlock();
 
@@ -33,7 +36,7 @@ class Client extends BaseClient
 
         $txHex = $this->app->transaction->paraTransaction($txHex);
 
-        $data = $this->app->transaction->sign($privateKey, $txHex, '300s', 0, 2);
+        $data = $this->app->transaction->sign($txHex, $privateKey);
 
         return $this->app->transaction->send($data);
     }

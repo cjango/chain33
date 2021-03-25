@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static Chain33\ParaCross\Client ParaCross
  * @method static Chain33\Retrieve\Client Retrieve
  * @method static Chain33\Storage\Client Storage
- * @method static Chain33\System\Client Net
+ * @method static Chain33\System\Client System
  * @method static Chain33\Token\Client Token
  * @method static Chain33\Transaction\Client Transaction
  * @method static Chain33\Wallet\Client Wallet

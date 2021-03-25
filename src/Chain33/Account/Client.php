@@ -24,7 +24,7 @@ class Client extends BaseClient
      * @return String
      * @throws \Jason\Chain33\Exceptions\ChainException
      */
-    public function getPublicKey($privateKey)
+    public function getPublicKey($privateKey): string
     {
         $privateKey = new PrivateKey($privateKey);
 
@@ -50,7 +50,7 @@ class Client extends BaseClient
      * @param $address
      * @return bool
      */
-    public function validation($address)
+    public function validation($address): bool
     {
         return AddressValidation::validateAddress($address);
     }
@@ -107,6 +107,7 @@ class Client extends BaseClient
      * @Date  : 2020/3/18 21:34
      * @param  string  $label  账户标签
      * @return string 账户地址
+     * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     public function create(string $label): string
     {
@@ -137,6 +138,7 @@ class Client extends BaseClient
      * @Date  : 2020/3/18 21:35
      * @param  string  $to  合并钱包上的所有余额到一个账户地址
      * @return array|null
+     * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     public function merge(string $to): ?array
     {
@@ -151,16 +153,17 @@ class Client extends BaseClient
      * Notes: 导入私钥
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 17:21
-     * @param  string  $lable    账户标签
-     * @param  string  $privkey  账户私钥
+     * @param  string  $lable       账户标签
+     * @param  string  $privateKey  账户私钥
      * @return string
+     * @throws \Jason\Chain33\Exceptions\ConfigException
      */
-    public function import(string $lable, string $privkey): string
+    public function import(string $lable, string $privateKey): string
     {
         $this->walletUnlock();
 
         return $this->client->ImportPrivkey([
-            'privkey' => $privkey,
+            'privkey' => $privateKey,
             'label'   => $lable,
         ])['acc']['addr'];
     }
@@ -171,6 +174,7 @@ class Client extends BaseClient
      * @Date  : 2020/3/18 21:36
      * @param  string  $addr  待导出私钥的账户地址
      * @return string
+     * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     public function dump(string $addr): string
     {

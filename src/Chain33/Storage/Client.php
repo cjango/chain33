@@ -22,11 +22,12 @@ class Client extends BaseClient
      * @Author: <C.Jason>
      * @Date  : 2020/5/19 3:43 下午
      * @param  string  $content
-     * @param  string  $to
-     * @param  string  $key  修改原有的明文存在的时候  要设置这个值
-     * @param  string  $to   0 新增  1追加
      * @param  string  $privateKey
+     * @param  string  $key  修改原有的明文存在的时候  要设置这个值
+     * @param  int     $op
      * @return mixed
+     * @throws \Jason\Chain33\Exceptions\ChainException
+     * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     public function content(string $content, string $privateKey, string $key = '', int $op = 0)
     {
@@ -47,9 +48,10 @@ class Client extends BaseClient
      * @Author: <C.Jason>
      * @Date  : 2020/5/19 3:43 下午
      * @param  string  $hash
-     * @param  string  $to
      * @param  string  $privateKey
      * @return mixed
+     * @throws \Jason\Chain33\Exceptions\ChainException
+     * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     public function hash(string $hash, string $privateKey)
     {
@@ -70,9 +72,10 @@ class Client extends BaseClient
      * @Date  : 2020/5/19 3:43 下午
      * @param  string  $link
      * @param  string  $content
-     * @param  string  $to
      * @param  string  $privateKey
      * @return mixed
+     * @throws \Jason\Chain33\Exceptions\ChainException
+     * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     public function link(string $link, string $content, string $privateKey)
     {
@@ -97,9 +100,10 @@ class Client extends BaseClient
      * @Author: <C.Jason>
      * @Date  : 2020/5/19 3:44 下午
      * @param  \Jason\Chain33\Kernel\Protobuf\StorageAction  $storage
-     * @param  string                                        $to
      * @param  string                                        $privateKey
      * @return mixed
+     * @throws \Jason\Chain33\Exceptions\ChainException
+     * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     private function sendTransaction(StorageAction $storage, string $privateKey)
     {

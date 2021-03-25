@@ -19,7 +19,6 @@ class Client extends BaseClient
      * @param  string  $execer        执行器名称，coins查询可用的主代币，ticket查询正在挖矿的主代币
      * @param  string  $asset_exec    资产原始合约名称，如bty在coins合约中产生，各种token在token合约中产生，跨链的资产在paracross合约中
      * @param  string  $asset_symbol  资产名称，如 bty,token的各种 symbol，跨链的bty名称为 coins.bty, 跨链的token为token.symbol
-     * @param  string  $stateHash     状态Hash
      * @return array
      */
     public function get(
@@ -70,6 +69,7 @@ class Client extends BaseClient
      * @param  string  $address  要查询的地址
      * @param  string  $symbol   token符号名称
      * @return array
+     * @throws \Jason\Chain33\Exceptions\ChainException
      */
     public function token(string $address, string $symbol): array
     {
@@ -87,6 +87,7 @@ class Client extends BaseClient
      * @param  array   $addresses  要查询的地址列表
      * @param  string  $symbol     token符号名称
      * @return array
+     * @throws \Jason\Chain33\Exceptions\ChainException
      */
     public function tokens(array $addresses, string $symbol): array
     {
@@ -102,7 +103,6 @@ class Client extends BaseClient
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 22:53
      * @param  string  $addr    要查询的地址
-     * @param  string  $symbol  代币名称
      * @return array|null
      */
     public function all(string $addr): ?array

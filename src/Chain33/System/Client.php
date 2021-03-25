@@ -12,6 +12,17 @@ class Client extends BaseClient
 {
 
     /**
+     * Notes   : 节点类型
+     * @Date   : 2021/3/25 11:53 上午
+     * @Author : < Jason.C >
+     * @return string
+     */
+    public function type(): string
+    {
+        return $this->isParaChain() ? '平行链' : '主链';
+    }
+
+    /**
      * Notes: 获取远程节点列表
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 16:05
@@ -37,7 +48,7 @@ class Client extends BaseClient
         if ($this->isParaChain()) {
             return [];
         }
-        
+
         return $this->client->GetNetInfo();
     }
 

@@ -111,7 +111,7 @@ class Client extends BaseClient
      * @param  int     $height
      * @return array
      */
-    public function titleHeight(string $paraName = '', int $height): array
+    public function titleHeight(int $height, string $paraName = ''): array
     {
         return $this->client->Query([
             'execer'   => 'paracross',
@@ -127,6 +127,7 @@ class Client extends BaseClient
      * Notes   : 查询平行链高度和共识高度
      * @Date   : 2021/3/23 3:38 下午
      * @Author : < Jason.C >
+     * @param  string  $paraName
      * @return array
      */
     public function height(string $paraName = ''): array

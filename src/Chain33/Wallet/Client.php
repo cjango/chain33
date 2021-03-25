@@ -64,6 +64,7 @@ class Client extends BaseClient
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 17:34
      * @return string
+     * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     public function getSeed(): string
     {
@@ -107,6 +108,7 @@ class Client extends BaseClient
      * @Date  : 2020/3/18 21:38
      * @param  int  $amount
      * @return bool
+     * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     public function setFee(int $amount): bool
     {

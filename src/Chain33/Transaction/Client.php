@@ -24,8 +24,11 @@ class Client extends BaseClient
      * @param  int     $amount      转账金额
      * @param  string  $privateKey  转出账户的私钥
      * @param  string  $note        转账备注
+     * @return string
+     * @throws \Jason\Chain33\Exceptions\ChainException
+     * @throws \Jason\Chain33\Exceptions\ConfigException
      */
-    public function coins(string $to, int $amount, string $privateKey, string $note = '')
+    public function coins(string $to, int $amount, string $privateKey, string $note = ''): string
     {
         $this->walletUnlock();
 
@@ -55,6 +58,8 @@ class Client extends BaseClient
      * @param  int     $fee         手续费
      * @param  string  $note        备注
      * @return string
+     * @throws \Jason\Chain33\Exceptions\ChainException
+     * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     public function token(
         string $to,
@@ -94,6 +99,8 @@ class Client extends BaseClient
      * @param  string  $execName    TransferToExec（转到合约） 或 Withdraw（从合约中提款），如果要构造平行链上的转账或普通转账，此参数置空
      * @param  string  $note        备注
      * @return string 交易对象的十六进制字符串编码
+     * @throws \Jason\Chain33\Exceptions\ChainException
+     * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     public function create(
         string $to,
@@ -115,7 +122,7 @@ class Client extends BaseClient
             'note'        => $note,
             'isToken'     => $isToken,
             'isWithdraw'  => $isWithdraw,
-            'tokenSymbol' => $tokenSymbol,
+            'tokenSymbol' => $symbol,
             'execName'    => $execName,
             'execer'      => $this->parseExecer('coins'),
         ]);
@@ -130,7 +137,7 @@ class Client extends BaseClient
      * @param  string  $txHex  未签名的原始交易数据
      * @return string          未签名的原始交易数据
      */
-    public function paraTransaction(string $txHex)
+    public function paraTransaction(string $txHex): string
     {
         if ($this->isParaChain() && $this->config['para_pay_addr']) {
             $this->signIndex = 2;
@@ -148,11 +155,10 @@ class Client extends BaseClient
      * Notes   : 构造多笔并发送不收手续费交易（平行链）【有问题，在沟通】
      * @Date   : 2021/1/26 4:32 下午
      * @Author : < Jason.C >
-     * @param  array   $txHexs   未签名的原始交易数据
-     * @param  string  $payAddr  用于付费的地址，这个地址要在主链上存在，并且里面有比特元用于支付手续费，使用payAddr则依赖钱包中存储的私钥签名
+     * @param  array  $txHexs  未签名的原始交易数据
      * @return string            未签名的原始交易数据
      */
-    public function paraTransactions(array $txHexs)
+    public function paraTransactions(array $txHexs): string
     {
         if ($this->isParaChain() && $this->config['para_pay_addr']) {
             $this->signIndex = 0;
@@ -161,9 +167,9 @@ class Client extends BaseClient
                 'txHexs'  => $txHexs,
                 'payAddr' => $this->config['para_pay_addr'],
             ]);
-        } else {
-            return $txHex;
         }
+
+        return '';
     }
 
     /**

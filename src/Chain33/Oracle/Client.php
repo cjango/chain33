@@ -20,7 +20,7 @@ class Client extends BaseClient
      * @param  int     $time          事件结果预计公布时间，UTC时间（时间戳）
      * @param  string  $content       事件内容，例如可以用json格式表示
      * @param  string  $introduction  事件介绍
-     * @param  string  $privkey       私钥
+     * @param  string  $privateKey    私钥
      * @return string                 交易结果HASH（事件ID）
      */
     public function publish(
@@ -28,7 +28,7 @@ class Client extends BaseClient
         string $subType,
         int $time,
         string $content,
-        string $privkey,
+        string $privateKey,
         string $introduction = ''
     ): string {
         $txHex = $this->client->CreateTransaction([
@@ -45,7 +45,7 @@ class Client extends BaseClient
 
         $txHex = $this->app->transaction->paraTransaction($txHex);
 
-        $data = $this->app->transcation->sign($txHex, $privkey);
+        $data = $this->app->transcation->sign($txHex, $privateKey);
 
         return $this->app->transcation->send($data);
     }
@@ -55,10 +55,10 @@ class Client extends BaseClient
      * @Date   : 2021/1/27 10:53 下午
      * @Author : < Jason.C >
      * @param  string  $eventID  发布事件的事件ID
-     * @param  string  $privkey  私钥
+     * @param  string  $privateKey
      * @return string            交易结果HASH
      */
-    public function abort(string $eventID, string $privkey)
+    public function abort(string $eventID, string $privateKey): string
     {
         $txHex = $this->client->CreateTransaction([
             'execer'     => 'oracle',
@@ -70,7 +70,7 @@ class Client extends BaseClient
 
         $txHex = $this->app->transaction->paraTransaction($txHex);
 
-        $data = $this->app->transcation->sign($txHex, $privkey);
+        $data = $this->app->transcation->sign($txHex, $privateKey);
 
         return $this->app->transcation->send($data);
     }

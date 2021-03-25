@@ -3,7 +3,6 @@
 namespace Jason\Chain33\Token;
 
 use Jason\Chain33\Kernel\BaseClient;
-use Jason\Chain33\Kernel\Consts;
 
 /**
  * Class Client
@@ -22,7 +21,9 @@ class Client extends BaseClient
      * @param  int     $total         发行总量
      * @param  string  $owner         token拥有者地址
      * @param  int     $category      token属性类别， 0 为普通token， 1 可增发和燃烧
+     * @param  int     $price         发行该token愿意承担的费用
      * @return string
+     * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     public function publish(
         string $name,
@@ -30,7 +31,8 @@ class Client extends BaseClient
         string $introduction,
         int $total,
         string $owner,
-        int $category = 0
+        int $category = 0,
+        int $price = 0
     ): string {
         $this->walletUnlock();
 
@@ -39,7 +41,7 @@ class Client extends BaseClient
             'symbol'       => strtoupper($symbol),
             'introduction' => $introduction,
             'total'        => $total,
-            'price'        => 0,
+            'price'        => $price,
             'category'     => $category,
             'owner'        => $owner,
         ], 'token');
@@ -58,6 +60,7 @@ class Client extends BaseClient
      * @param  string  $symbol  token标记符，最大长度是16个字符，且必须为大写字符和数字
      * @param  string  $owner   token拥有者地址
      * @return string
+     * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     public function finish(string $symbol, string $owner): string
     {
@@ -102,7 +105,7 @@ class Client extends BaseClient
      * @param  string  $symbol  token的Symbol
      * @return array
      */
-    public function info($symbol): array
+    public function info(string $symbol): array
     {
         return $this->client->Query([
             'execer'   => 'token',
@@ -142,7 +145,7 @@ class Client extends BaseClient
      * @param  string  $address  要查询的地址
      * @return array
      */
-    public function assets($address): array
+    public function assets(string $address): array
     {
         return $this->client->Query([
             'execer'   => 'token',
@@ -166,6 +169,7 @@ class Client extends BaseClient
      * @param  int     $height     分页相关参数
      * @param  int     $index      分页相关参数
      * @return array
+     * @throws \Jason\Chain33\Exceptions\ChainException
      */
     public function tx(
         string $symbol,
@@ -197,7 +201,7 @@ class Client extends BaseClient
      * @Date  : 2020/5/20 3:44 下午
      * @param  string  $symbol      token的标记符
      * @param  int     $amount      增发token的数量
-     * @param  string  $privateKey  拥有者的私钥
+     * @param  string  $privateKey  token 拥有者的私钥
      * @return string
      */
     public function mint(string $symbol, int $amount, string $privateKey): string
@@ -209,7 +213,7 @@ class Client extends BaseClient
 
         $txHex = $this->app->transaction->paraTransaction($txHex);
 
-        $data = $this->app->transaction->sign($txHex, $this->config['superManager']['privateKey']);
+        $data = $this->app->transaction->sign($txHex, $privateKey);
 
         return $this->app->transaction->send($data);
     }
@@ -220,7 +224,7 @@ class Client extends BaseClient
      * @Date  : 2020/5/20 3:44 下午
      * @param  string  $symbol      token的标记符
      * @param  int     $amount      燃烧token的数量
-     * @param  string  $privateKey  拥有者的私钥
+     * @param  string  $privateKey  token 拥有者的私钥
      * @return string
      */
     public function burn(string $symbol, int $amount, string $privateKey): string
@@ -232,7 +236,7 @@ class Client extends BaseClient
 
         $txHex = $this->app->transaction->paraTransaction($txHex);
 
-        $data = $this->app->transaction->sign($txHex, $this->config['superManager']['privateKey']);
+        $data = $this->app->transaction->sign($txHex, $privateKey);
 
         return $this->app->transaction->send($data);
     }
@@ -243,6 +247,7 @@ class Client extends BaseClient
      * @Date  : 2020/5/20 3:47 下午
      * @param  string  $symbol  token标记符
      * @return array actionType: 8 是token创建， 12 是增发， 13 是燃烧
+     * @throws \Jason\Chain33\Exceptions\ChainException
      */
     public function history(string $symbol): array
     {
@@ -259,12 +264,14 @@ class Client extends BaseClient
      * Notes: 发送交易
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 17:41
-     * @param  string  $from    来源地址
      * @param  string  $to      发送到地址
-     * @param  string  $symbol  toekn的symbol
+     * @param  string  $symbol  token的symbol
      * @param  int     $amount  发送金额
+     * @param  string  $privateKey
      * @param  string  $note    备注
      * @return string
+     * @throws \Jason\Chain33\Exceptions\ChainException
+     * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     public function transfer(string $to, string $symbol, int $amount, string $privateKey, string $note = ''): string
     {
