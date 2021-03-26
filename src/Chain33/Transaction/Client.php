@@ -41,8 +41,6 @@ class Client extends BaseClient
             'execer'     => $this->parseExecer('coins'),
         ]);
 
-        $txHex = $this->paraTransaction($txHex);
-
         $data = $this->sign($txHex, $privateKey);
 
         return $this->send($data);
@@ -77,10 +75,8 @@ class Client extends BaseClient
             'note'       => $note,
             'isWithdraw' => false,
             'execName'   => '',
-            'execer'     => $this->parseExecer('coins'),
+            'execer'     => $this->parseExecer('token'),
         ]);
-
-        $txHex = $this->paraTransaction($txHex);
 
         $data = $this->sign($txHex, $privateKey);
 
@@ -96,7 +92,10 @@ class Client extends BaseClient
      * @param  int     $fee         手续费，注意基础货币单位为10^8 (这个手续费，操作的只是主链，无法操作平行链)
      * @param  string  $symbol      token 的 symbol （非token转账这个不用填）
      * @param  bool    $isWithdraw  是否为取款交易
-     * @param  string  $execName    TransferToExec（转到合约） 或 Withdraw（从合约中提款），如果要构造平行链上的转账或普通转账，此参数置空
+     * @param  string  $execName    TransferToExec（转到合约） 或 Withdraw（从合约中提款），
+     *                              如果要构造平行链上的转账或普通转账，此参数置空,
+     *                              这里好多时候，直接写的是合约名称 -- by Jason
+     * @param  string  $execer
      * @param  string  $note        备注
      * @return string 交易对象的十六进制字符串编码
      * @throws \Jason\Chain33\Exceptions\ChainException
@@ -109,22 +108,23 @@ class Client extends BaseClient
         string $symbol = '',
         bool $isWithdraw = false,
         string $execName = '',
+        string $execer = 'coins',
         string $note = ''
     ): string {
+
         $this->walletUnlock();
 
         $isToken = !empty($symbol);
 
         return $this->client->CreateRawTransaction([
-            'to'          => $to,
-            'amount'      => $amount,
-            'fee'         => $fee,
-            'note'        => $note,
-            'isToken'     => $isToken,
-            'isWithdraw'  => $isWithdraw,
-            'tokenSymbol' => $symbol,
-            'execName'    => $execName,
-            'execer'      => $this->parseExecer('coins'),
+            'to'         => $to,
+            'amount'     => $amount,
+            'fee'        => $fee,
+            'note'       => $note,
+            'isToken'    => $isToken,
+            'isWithdraw' => $isWithdraw,
+            'execName'   => $this->parseExecer($execName),
+            'execer'     => $this->parseExecer($execer),
         ]);
     }
 
@@ -176,15 +176,17 @@ class Client extends BaseClient
      * Notes  : 交易签名 【重构的，通过】
      * @Author: <C.Jason>
      * @Date  : 2020/5/2 21:28
-     * @param  string  $txHex    原始交易数据
-     * @param  string  $privkey  签名私钥
-     * @param  int     $fee      费用
+     * @param  string  $txHex  原始交易数据
+     * @param  string  $privateKey
+     * @param  int     $fee    费用
      * @return string 交易签名后的十六进制字符串
      */
-    public function sign(string $txHex, string $privkey, int $fee = 0): string
+    public function sign(string $txHex, string $privateKey, int $fee = 0): string
     {
+        $txHex = $this->paraTransaction($txHex);
+
         return $this->client->SignRawTx([
-            'privkey' => $privkey,
+            'privkey' => $privateKey,
             'txHex'   => $txHex,
             'expire'  => '1h',
             'index'   => $this->signIndex,

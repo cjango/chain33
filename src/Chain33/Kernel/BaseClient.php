@@ -2,6 +2,7 @@
 
 namespace Jason\Chain33\Kernel;
 
+use Illuminate\Support\Str;
 use Jason\Chain33\Exceptions\ChainException;
 use Jason\Chain33\Exceptions\ConfigException;
 
@@ -26,6 +27,7 @@ class BaseClient
      * @Date   : 2021/3/24 9:28 上午
      * @Author : < Jason.C >
      * @return void
+     * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     protected function walletUnlock(): void
     {
@@ -44,7 +46,7 @@ class BaseClient
      * Notes   : 解锁买票功能
      * @Date   : 2021/3/24 9:30 上午
      * @Author : < Jason.C > 只解锁买票功能
-     * @param  bool  $ticket
+     * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     protected function ticketUnlock(): void
     {
@@ -77,7 +79,7 @@ class BaseClient
      * @return string
      * @throws \Jason\Chain33\Exceptions\ChainException
      */
-    protected function parseExecer($execer)
+    protected function parseExecer($execer): string
     {
         if ($this->config['para_name']) {
             if (!preg_match('/user\.p\.[a-zA-Z0-9]*\./', $this->config['para_name'])) {
@@ -88,6 +90,22 @@ class BaseClient
         } else {
             return $execer;
         }
+    }
+
+    /**
+     * Notes   : 格式化16进制字符串
+     * @Date   : 2021/3/26 11:05 上午
+     * @Author : < Jason.C >
+     * @param $hex
+     * @return string
+     */
+    protected function parseHexString($hex): string
+    {
+        if (Str::startsWith($hex, '0x')) {
+            $hex = Str::substr($hex, 2);
+        }
+
+        return $hex;
     }
 
 }

@@ -118,8 +118,6 @@ class Client extends BaseClient
 
         $this->walletUnlock();
 
-        $txHex = $this->app->transaction->paraTransaction($txHex);
-
         $data = $this->app->transaction->sign($txHex, $privateKey);
 
         return $this->app->transaction->send($data);

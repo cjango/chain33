@@ -8,9 +8,9 @@ use Pimple\ServiceProviderInterface;
 class ServiceProvider implements ServiceProviderInterface
 {
 
-    public function register(Container $app): void
+    public function register(Container $pimple): void
     {
-        $app['paracross'] = static function ($app) {
+        $pimple['paracross'] = static function ($app) {
             return new Client($app);
         };
     }

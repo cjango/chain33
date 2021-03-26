@@ -43,8 +43,6 @@ class Client extends BaseClient
             ],
         ]);
 
-        $txHex = $this->app->transaction->paraTransaction($txHex);
-
         $data = $this->app->transcation->sign($txHex, $privateKey);
 
         return $this->app->transcation->send($data);
@@ -67,8 +65,6 @@ class Client extends BaseClient
                 'eventID' => $eventID,
             ],
         ]);
-
-        $txHex = $this->app->transaction->paraTransaction($txHex);
 
         $data = $this->app->transcation->sign($txHex, $privateKey);
 

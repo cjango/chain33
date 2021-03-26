@@ -46,8 +46,6 @@ class Client extends BaseClient
             'owner'        => $owner,
         ], 'token');
 
-        $txHex = $this->app->transaction->paraTransaction($txHex);
-
         $data = $this->app->transaction->sign($txHex, $this->config['superManager']['privateKey']);
 
         return $this->app->transaction->send($data);
@@ -70,8 +68,6 @@ class Client extends BaseClient
             'symbol' => strtoupper($symbol),
             'owner'  => $owner,
         ], 'token');
-
-        $txHex = $this->app->transaction->paraTransaction($txHex);
 
         $data = $this->app->transaction->sign($txHex, $this->config['superManager']['privateKey']);
 
@@ -130,8 +126,6 @@ class Client extends BaseClient
             'symbol' => $symbol,
             'owner'  => $owner,
         ], 'token');
-
-        $txHex = $this->app->transaction->paraTransaction($txHex);
 
         $data = $this->app->transaction->sign($txHex, $this->config['superManager']['privateKey']);
 
@@ -211,8 +205,6 @@ class Client extends BaseClient
             'amount' => $amount,
         ], 'token');
 
-        $txHex = $this->app->transaction->paraTransaction($txHex);
-
         $data = $this->app->transaction->sign($txHex, $privateKey);
 
         return $this->app->transaction->send($data);
@@ -233,8 +225,6 @@ class Client extends BaseClient
             'symbol' => $symbol,
             'amount' => $amount,
         ], 'token');
-
-        $txHex = $this->app->transaction->paraTransaction($txHex);
 
         $data = $this->app->transaction->sign($txHex, $privateKey);
 
@@ -287,8 +277,6 @@ class Client extends BaseClient
             'tokenSymbol' => $symbol,
             'execer'      => $this->parseExecer('token'),
         ]);
-
-        $txHex = $this->app->transaction->paraTransaction($txHex);
 
         $data = $this->app->transaction->sign($txHex, $privateKey);
 

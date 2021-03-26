@@ -48,7 +48,7 @@ class Client
         return $this->post($rpcRequest);
     }
 
-    public function post(RpcRequest $body)
+    protected function post(RpcRequest $body)
     {
         try {
             $response = $this->client->post('', ['body' => (string) $body]);

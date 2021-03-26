@@ -11,7 +11,6 @@ use Pimple\Container;
  * @method static Balance\Client Balance
  * @method static Chain\Client Chain
  * @method static Evm\Client Evm
- * @method static Freeze\Client Freeze
  * @method static Mempool\Client Mempool
  * @method static Miner\Client Miner
  * @method static Oracle\Client Oracle
@@ -21,6 +20,7 @@ use Pimple\Container;
  * @method static System\Client System
  * @method static Token\Client Token
  * @method static Transaction\Client Transaction
+ * @method static Unfreeze\Client Unfreeze
  * @method static Wallet\Client Wallet
  * 组合的请求方式
  * @method static newAccountLocal()
@@ -37,7 +37,6 @@ class Application extends Container
         Balance\ServiceProvider::class,
         Chain\ServiceProvider::class,
         Evm\ServiceProvider::class,
-        Freeze\ServiceProvider::class,
         Kernel\ServiceProvider::class,
         Manage\ServiceProvider::class,
         Mempool\ServiceProvider::class,
@@ -49,6 +48,7 @@ class Application extends Container
         System\ServiceProvider::class,
         Token\ServiceProvider::class,
         Transaction\ServiceProvider::class,
+        Unfreeze\ServiceProvider::class,
         Wallet\ServiceProvider::class,
     ];
 
