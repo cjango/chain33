@@ -133,38 +133,37 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes: 合并账户余额
+     * Notes: 修改账户标签
      * @Author: <C.Jason>
      * @Date  : 2020/3/18 21:35
-     * @param  string  $to  合并钱包上的所有余额到一个账户地址
-     * @return array|null
-     * @throws \Jason\Chain33\Exceptions\ConfigException
+     * @param  string  $address  要修改的地址
+     * @param  string  $label    新的标签
+     * @return mixed
      */
-    public function merge(string $to): ?array
+    public function setLabel(string $address, string $label)
     {
-        $this->walletUnlock();
-
-        return $this->client->MergeBalance([
-            'to' => $to,
-        ])['hashes'];
+        return $this->client->SetLabl([
+            'addr'  => $address,
+            'label' => $label,
+        ]);
     }
 
     /**
      * Notes: 导入私钥
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 17:21
-     * @param  string  $lable       账户标签
+     * @param  string  $label       账户标签
      * @param  string  $privateKey  账户私钥
      * @return string
      * @throws \Jason\Chain33\Exceptions\ConfigException
      */
-    public function import(string $lable, string $privateKey): string
+    public function import(string $label, string $privateKey): string
     {
         $this->walletUnlock();
 
         return $this->client->ImportPrivkey([
             'privkey' => $privateKey,
-            'label'   => $lable,
+            'label'   => $label,
         ])['acc']['addr'];
     }
 

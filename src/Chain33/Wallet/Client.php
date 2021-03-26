@@ -146,12 +146,15 @@ class Client extends BaseClient
      * @Date  : 2020/5/14 1:31 下午
      * @param  string  $to  合并钱包上的所有余额到一个账户地址
      * @return mixed
+     * @throws \Jason\Chain33\Exceptions\ConfigException
      */
-    public function merge(string $to)
+    public function merge(string $to): ?array
     {
+        $this->walletUnlock();
+
         return $this->client->MergeBalance([
             'to' => $to,
-        ]);
+        ])['hashes'];
     }
 
 }
