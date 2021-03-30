@@ -113,14 +113,15 @@ class Client extends BaseClient
         $isToken = !empty($symbol);
 
         return $this->client->CreateRawTransaction([
-            'to'         => $to,
-            'amount'     => $amount,
-            'fee'        => $fee,
-            'note'       => $note,
-            'isToken'    => $isToken,
-            'isWithdraw' => $isWithdraw,
-            'execName'   => $this->parseExecer($execName),
-            'execer'     => $this->parseExecer($execer),
+            'to'          => $to,
+            'amount'      => $amount,
+            'fee'         => $fee,
+            'note'        => $note,
+            'isToken'     => $isToken,
+            'isWithdraw'  => $isWithdraw,
+            'tokenSymbol' => $symbol,
+            'execName'    => $this->parseExecer($execName),
+            'execer'      => $this->parseExecer($execer),
         ]);
     }
 
