@@ -102,7 +102,7 @@ class Client extends BaseClient
      * Notes: 查询地址所有合约地址余额
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 22:53
-     * @param  string  $addr    要查询的地址
+     * @param  string  $addr  要查询的地址
      * @return array|null
      */
     public function all(string $addr): ?array
@@ -110,6 +110,24 @@ class Client extends BaseClient
         return $this->client->GetAllExecBalance([
             'addr' => $addr,
         ])['execAccount'];
+    }
+
+    /**
+     * Notes   : 查询合约地址余额，待完善
+     * @Date   : 2021/3/30 11:01 上午
+     * @Author : < Jason.C >
+     * @param  string  $execer
+     * @return array
+     */
+    public function exec(string $execer): array
+    {
+        return $this->client->GetExecBalance([
+            'symbol'    => '',
+            'stateHash' => '',
+            'addr'      => '',
+            'execer'    => $execer,
+            'count'     => 100,
+        ]);
     }
 
 }

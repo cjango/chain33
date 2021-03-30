@@ -156,32 +156,31 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes: 增加区块序列号变更回调
+     * Notes: 增加区块序列号变更回调 【系统接口有调整，未测试】
      * @Author: <C.Jason>
      * @Date: 2020/4/30 16:51
      * @param string $name 回调名称，长度不能超过128,
      * @param string $URL 序列号变化通知的URL，长度不能超过1024；当name相同，URL为空时取消通知
      * @return array
      */
-    public function addCallBack(string $name, string $URL): array
+    public function addPush(string $name, string $URL): array
     {
-        return $this->client->AddSeqCallBack([
+        return $this->client->AddPushSubscribe([
             'name'     => $name,
             'URL'      => $URL,
             'encode'   => 'json',
-            'isHeader' => false,
         ]);
     }
 
     /**
-     * Notes: 列举区块序列号回调
+     * Notes: 列举推送服务
      * @Author: <C.Jason>
      * @Date: 2020/4/30 16:52
      * @return array
      */
-    public function listCallBack(): array
+    public function listPushes(): array
     {
-        return $this->client->ListSeqCallBack()['items'];
+        return $this->client->ListPushes()['items'];
     }
 
     /**
@@ -191,9 +190,9 @@ class Client extends BaseClient
      * @param string $name 回调名
      * @return int
      */
-    public function lastCallBack(string $name): int
+    public function lastPush(string $name): int
     {
-        return $this->client->GetSeqCallBackLastNum([
+        return $this->client->GetPushSeqLastNum([
             'data' => $name,
         ])['data'];
     }

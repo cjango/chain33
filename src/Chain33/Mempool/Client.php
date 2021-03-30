@@ -29,4 +29,19 @@ class Client extends BaseClient
         ])['txs'];
     }
 
+    /**
+     * Notes   : 获取最后的交易
+     * @Date   : 2021/3/30 9:28 上午
+     * @Author : < Jason.C >
+     * @return array|mixed
+     */
+    public function last()
+    {
+        if ($this->isParaChain()) {
+            return [];
+        }
+
+        return $this->client->GetLastMemPool()['txs'];
+    }
+
 }

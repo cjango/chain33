@@ -78,11 +78,47 @@ class Client extends BaseClient
      * Notes   : 获取主代币信息
      * @Date   : 2021/1/27 10:35 下午
      * @Author : < Jason.C >
-     * @return mixed
+     * @return string
      */
     public function coin(): string
     {
         return $this->client->GetCoinSymbol()['data'];
+    }
+
+    /**
+     * Notes   : 时钟同步状态
+     * @Date   : 2021/3/30 9:57 上午
+     * @Author : < Jason.C >
+     * @return bool
+     */
+    public function clockSync(): bool
+    {
+        return $this->client->IsNtpClockSync();
+    }
+
+    /**
+     * Notes   : 可能是获取失败的数量
+     * @Date   : 2021/3/30 11:19 上午
+     * @Author : < Jason.C >
+     * @return int
+     */
+    public function failure(): int
+    {
+        return $this->client->GetFatalFailure();
+    }
+
+    /**
+     * Notes   : 交易解析
+     * @Date   : 2021/3/30 11:20 上午
+     * @Author : < Jason.C >
+     * @param  string  $txHex
+     * @return mixed
+     */
+    public function decode(string $txHex)
+    {
+        return $this->client->DecodeRawTransaction([
+            'txHex' => $txHex,
+        ]);
     }
 
 }
