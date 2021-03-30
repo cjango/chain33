@@ -144,14 +144,15 @@ class Client extends BaseClient
      * Notes   : 查询手续费，以及交易数量
      * @Date   : 2021/3/29 5:36 下午
      * @Author : < Jason.C >
-     * @param  string  $lastBlockHash  查询截止的区块哈希，一般以最后一个区块哈希查询
      * @return array
      */
-    public function totalFee(string $lastBlockHash): array
+    public function totalFee(): array
     {
+        $lastHash = $this->app->chain->lastHeader()['hash'];
+
         return $this->client->QueryTotalFee([
             'keys' => [
-                base64_encode('TotalFeeKey:' . hex2bin($lastBlockHash)),
+                base64_encode('TotalFeeKey:' . hex2bin($this->parseHexString($lastHash))),
             ],
         ]);
     }
