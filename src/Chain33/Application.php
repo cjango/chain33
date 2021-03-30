@@ -13,12 +13,14 @@ use Pimple\Container;
  * @method static Evm\Client Evm
  * @method static Mempool\Client Mempool
  * @method static Miner\Client Miner
+ * @method static Multisig\Client Multisig
  * @method static Oracle\Client Oracle
  * @method static ParaCross\Client ParaCross
  * @method static Retrieve\Client Retrieve
  * @method static Storage\Client Storage
  * @method static System\Client System
  * @method static Token\Client Token
+ * @method static Trade\Client Trade
  * @method static Transaction\Client Transaction
  * @method static Unfreeze\Client Unfreeze
  * @method static Wallet\Client Wallet
@@ -41,12 +43,14 @@ class Application extends Container
         Manage\ServiceProvider::class,
         Mempool\ServiceProvider::class,
         Miner\ServiceProvider::class,
+        Multisig\ServiceProvider::class,
         Oracle\ServiceProvider::class,
         ParaCross\ServiceProvider::class,
         Retrieve\ServiceProvider::class,
         Storage\ServiceProvider::class,
         System\ServiceProvider::class,
         Token\ServiceProvider::class,
+        Trade\ServiceProvider::class,
         Transaction\ServiceProvider::class,
         Unfreeze\ServiceProvider::class,
         Wallet\ServiceProvider::class,

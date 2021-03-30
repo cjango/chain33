@@ -41,9 +41,7 @@ class Client extends BaseClient
             'execer'     => $this->parseExecer('coins'),
         ]);
 
-        $data = $this->sign($txHex, $privateKey);
-
-        return $this->send($data);
+        return $this->finalSend($txHex, $privateKey);
     }
 
     /**
@@ -78,9 +76,7 @@ class Client extends BaseClient
             'execer'     => $this->parseExecer('token'),
         ]);
 
-        $data = $this->sign($txHex, $privateKey);
-
-        return $this->send($data);
+        return $this->finalSend($txHex, $privateKey);
     }
 
     /**
@@ -206,6 +202,22 @@ class Client extends BaseClient
         return $this->client->SendTransaction([
             'data' => $data,
         ]);
+    }
+
+    /**
+     * Notes   : 签名并发送交易
+     * @Date   : 2021/3/30 1:50 下午
+     * @Author : < Jason.C >
+     * @param  string  $txHex
+     * @param  string  $privateKey
+     * @param  int     $fee
+     * @return string
+     */
+    public function finalSend(string $txHex, string $privateKey, int $fee = 0): string
+    {
+        $data = $this->sign($txHex, $privateKey, $fee);
+
+        return $this->send($data);
     }
 
     /**

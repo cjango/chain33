@@ -46,9 +46,7 @@ class Client extends BaseClient
             'owner'        => $owner,
         ], 'token');
 
-        $data = $this->app->transaction->sign($txHex, $this->config['superManager']['privateKey']);
-
-        return $this->app->transaction->send($data);
+        return $this->app->transaction->finalSend($txHex, $this->config['superManager']['privateKey']);
     }
 
     /**
@@ -69,9 +67,7 @@ class Client extends BaseClient
             'owner'  => $owner,
         ], 'token');
 
-        $data = $this->app->transaction->sign($txHex, $this->config['superManager']['privateKey']);
-
-        return $this->app->transaction->send($data);
+        return $this->app->transaction->finalSend($txHex, $this->config['superManager']['privateKey']);
     }
 
     /**
@@ -127,9 +123,7 @@ class Client extends BaseClient
             'owner'  => $owner,
         ], 'token');
 
-        $data = $this->app->transaction->sign($txHex, $this->config['superManager']['privateKey']);
-
-        return $this->app->transaction->send($data);
+        return $this->app->transaction->finalSend($txHex, $this->config['superManager']['privateKey']);
     }
 
     /**
@@ -205,9 +199,7 @@ class Client extends BaseClient
             'amount' => $amount,
         ], 'token');
 
-        $data = $this->app->transaction->sign($txHex, $privateKey);
-
-        return $this->app->transaction->send($data);
+        return $this->app->transaction->finalSend($txHex, $privateKey);
     }
 
     /**
@@ -226,9 +218,7 @@ class Client extends BaseClient
             'amount' => $amount,
         ], 'token');
 
-        $data = $this->app->transaction->sign($txHex, $privateKey);
-
-        return $this->app->transaction->send($data);
+        return $this->app->transaction->finalSend($txHex, $privateKey);
     }
 
     /**
@@ -278,9 +268,7 @@ class Client extends BaseClient
             'execer'      => $this->parseExecer('token'),
         ]);
 
-        $data = $this->app->transaction->sign($txHex, $privateKey);
-
-        return $this->app->transaction->send($data);
+        return $this->app->transaction->finalSend($txHex, $privateKey);
     }
 
 }

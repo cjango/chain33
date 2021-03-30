@@ -48,9 +48,7 @@ class Client extends BaseClient
             ],
         ]);
 
-        $data = $this->app->transaction->sign($txHex, $privateKey);
-
-        return $this->app->transaction->send($data);
+        return $this->app->transaction->finalSend($txHex, $privateKey);
     }
 
     /**
@@ -91,9 +89,7 @@ class Client extends BaseClient
             ],
         ]);
 
-        $data = $this->app->transaction->sign($txHex, $privateKey);
-
-        return $this->app->transaction->send($data);
+        return $this->app->transaction->finalSend($txHex, $privateKey);
     }
 
     /**
@@ -132,9 +128,7 @@ class Client extends BaseClient
             'execer'      => $this->parseParaName($name),
         ]);
 
-        $data = $this->app->transaction->sign($txHex, $privateKey);
-
-        return $this->app->transaction->send($data);
+        return $this->app->transaction->finalSend($txHex, $privateKey);
     }
 
     /**
@@ -173,9 +167,7 @@ class Client extends BaseClient
             'execer'      => $this->parseParaName($name),
         ]);
 
-        $data = $this->app->transaction->sign($txHex, $privateKey);
-
-        return $this->app->transaction->send($data);
+        return $this->app->transaction->finalSend($txHex, $privateKey);
     }
 
     /**

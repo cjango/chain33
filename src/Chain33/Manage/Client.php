@@ -37,9 +37,7 @@ class Client extends BaseClient
             ],
         ]);
 
-        $data = $this->app->transaction->sign($txHex, $this->config['superManager']['privateKey']);
-
-        return $this->app->transaction->send($data);
+        return $this->app->transaction->finalSend($txHex, $this->config['superManager']['privateKey']);
     }
 
     /**
@@ -65,9 +63,7 @@ class Client extends BaseClient
             ],
         ]);
 
-        $data = $this->app->transaction->sign($txHex, $this->config['superManager']['privateKey']);
-
-        return $this->app->transaction->send($data);
+        return $this->app->transaction->finalSend($txHex, $this->config['superManager']['privateKey']);
     }
 
     /**

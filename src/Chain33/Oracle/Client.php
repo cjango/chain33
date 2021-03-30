@@ -43,9 +43,7 @@ class Client extends BaseClient
             ],
         ]);
 
-        $data = $this->app->transcation->sign($txHex, $privateKey);
-
-        return $this->app->transcation->send($data);
+        return $this->app->transaction->finalSend($txHex, $privateKey);
     }
 
     /**
@@ -66,9 +64,7 @@ class Client extends BaseClient
             ],
         ]);
 
-        $data = $this->app->transcation->sign($txHex, $privateKey);
-
-        return $this->app->transcation->send($data);
+        return $this->app->transaction->finalSend($txHex, $privateKey);
     }
 
 }

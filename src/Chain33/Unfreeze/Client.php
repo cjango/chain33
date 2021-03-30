@@ -57,9 +57,7 @@ class Client extends BaseClient
 
         $txHex = $this->client->CreateRawUnfreezeCreate($params, 'unfreeze');
 
-        $data = $this->app->transaction->sign($txHex, $privateKey);
-
-        return $this->app->transaction->send($data);
+        return $this->app->transaction->finalSend($txHex, $privateKey);
     }
 
     /**
@@ -156,9 +154,7 @@ class Client extends BaseClient
             'unfreezeID' => $this->parseHexString($unfreezeID),
         ], 'unfreeze');
 
-        $data = $this->app->transaction->sign($txHex, $privateKey);
-
-        return $this->app->transaction->send($data);
+        return $this->app->transaction->finalSend($txHex, $privateKey);
     }
 
     /**
@@ -175,9 +171,7 @@ class Client extends BaseClient
             'unfreezeID' => $this->parseHexString($unfreezeID),
         ], 'unfreeze');
 
-        $data = $this->app->transaction->sign($txHex, $privateKey);
-
-        return $this->app->transaction->send($data);
+        return $this->app->transaction->finalSend($txHex, $privateKey);
     }
 
     /**
