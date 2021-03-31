@@ -71,23 +71,27 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes: 查询所有预创建的token | 查询所有创建成功的token
-     * @Author: <C.Jason>
-     * @Date  : 2020/5/14 6:18 下午
-     * @param  int  $status  0预创建 1创建成功
+     * Notes   :  查询所有预创建的token | 查询所有创建成功的token
+     * @Date   : 2021/3/31 12:03 下午
+     * @Author : < Jason.C >
+     * @param  int  $status
      * @return array
      */
     public function get($status = 0): array
     {
-        return $this->client->Query([
-            'execer'   => 'token',
-            'funcName' => 'GetTokens',
-            'payload'  => [
-                'status'     => $status,
-                'queryAll'   => true,
-                'symbolOnly' => false,
-            ],
-        ])['tokens'];
+        try {
+            return $this->client->Query([
+                'execer'   => 'token',
+                'funcName' => 'GetTokens',
+                'payload'  => [
+                    'status'     => $status,
+                    'queryAll'   => true,
+                    'symbolOnly' => false,
+                ],
+            ])['tokens'];
+        } catch (\Exception $exception) {
+            return [];
+        }
     }
 
     /**

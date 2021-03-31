@@ -6,10 +6,21 @@ use Jason\Chain33\Kernel\BaseClient;
 
 /**
  * Class Client
+ * 交易所的接口
  * @package Jason\Chain33\Trade
  */
 class Client extends BaseClient
 {
+
+    const STATUS_LIST = [
+        'TradeOrderStatusOnSale'     => '在售',
+        'TradeOrderStatusSoldOut'    => '售完',
+        'TradeOrderStatusRevoked'    => '卖单被撤回',
+        'TradeOrderStatusExpired'    => '订单超时(目前不支持订单超时)',
+        'TradeOrderStatusOnBuy'      => '求购',
+        'TradeOrderStatusBoughtOut'  => '购买完成',
+        'TradeOrderStatusBuyRevoked' => '买单被撤回',
+    ];
 
     /**
      * Notes   : 查询地址对应的买单
@@ -19,7 +30,7 @@ class Client extends BaseClient
      * @param  array   $token
      * @return mixed
      */
-    public function GetOnesBuyOrder(string $addr, array $token = [])
+    public function addrOrder(string $addr, array $token = [])
     {
         return $this->client->Query([
             'execer'   => 'trade',
@@ -115,50 +126,66 @@ class Client extends BaseClient
 
     /**
      * Notes   : 指定TOKEN的所有买单
-     * @Date   : 2021/3/30 5:34 下午
+     * @Date   : 2021/3/31 11:28 上午
      * @Author : < Jason.C >
      * @param  string  $symbol
      * @param  int     $status
-     * @return mixed
-     * @throws \Jason\Chain33\Exceptions\ChainException
+     * @return array
+     * @throws \Exception
      */
-    public function buyOrders(string $symbol, int $status = 1)
+    public function buyOrders(string $symbol, int $status = 1): array
     {
-        return $this->client->Query([
-            'execer'   => $this->parseExecer('trade'),
-            'funcName' => 'GetTokenBuyOrderByStatus',
-            'payload'  => [
-                'tokenSymbol' => $symbol,
-                'status'      => $status,
-                'count'       => 100,
-                'direction'   => 0,
-                'fromKey'     => '',
-            ],
-        ]);
+        try {
+            return $this->client->Query([
+                'execer'   => $this->parseExecer('trade'),
+                'funcName' => 'GetTokenBuyOrderByStatus',
+                'payload'  => [
+                    'tokenSymbol' => $symbol,
+                    'status'      => $status,
+                    'count'       => 100,
+                    'direction'   => 0,
+                    'fromKey'     => '',
+                ],
+            ]);
+        } catch (\Exception $exception) {
+            if ($exception->getMessage() === 'ErrNotFound') {
+                return [];
+            } else {
+                throw new \Exception($exception->getMessage());
+            }
+        }
     }
 
     /**
      * Notes   : 指定TOKEN的所有卖单
-     * @Date   : 2021/3/30 5:34 下午
+     * @Date   : 2021/3/31 11:28 上午
      * @Author : < Jason.C >
      * @param  string  $symbol
      * @param  int     $status
-     * @return mixed
-     * @throws \Jason\Chain33\Exceptions\ChainException
+     * @return array
+     * @throws \Exception
      */
-    public function sellOrders(string $symbol, int $status = 1)
+    public function sellOrders(string $symbol, int $status = 1): array
     {
-        return $this->client->Query([
-            'execer'   => $this->parseExecer('trade'),
-            'funcName' => 'GetTokenSellOrderByStatus',
-            'payload'  => [
-                'tokenSymbol' => $symbol,
-                'status'      => $status,
-                'count'       => 100,
-                'direction'   => 0,
-                'fromKey'     => '',
-            ],
-        ]);
+        try {
+            return $this->client->Query([
+                'execer'   => $this->parseExecer('trade'),
+                'funcName' => 'GetTokenSellOrderByStatus',
+                'payload'  => [
+                    'tokenSymbol' => $symbol,
+                    'status'      => $status,
+                    'count'       => 100,
+                    'direction'   => 0,
+                    'fromKey'     => '',
+                ],
+            ]);
+        } catch (\Exception $exception) {
+            if ($exception->getMessage() === 'ErrNotFound') {
+                return [];
+            } else {
+                throw new \Exception($exception->getMessage());
+            }
+        }
     }
 
 }
