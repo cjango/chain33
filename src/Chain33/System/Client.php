@@ -121,4 +121,9 @@ class Client extends BaseClient
         ]);
     }
 
+    public function isParaChain(): bool
+    {
+        return parent::isParaChain();
+    }
+
 }

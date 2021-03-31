@@ -30,7 +30,7 @@ class Client extends BaseClient
         string $alias,
         string $privateKey,
         string $note = '',
-        int $fee = 3000000
+        int $fee = 300000
     ): string {
 
         $this->walletUnlock();
@@ -70,7 +70,7 @@ class Client extends BaseClient
         string $privateKey,
         int $amount = 0,
         string $note = '',
-        int $fee = 3000000
+        int $fee = 300000
     ): string {
 
         $this->walletUnlock();
@@ -125,7 +125,7 @@ class Client extends BaseClient
             'isWithdraw'  => false,
             'tokenSymbol' => $tokenSymbol,
             'execName'    => $name,
-            'execer'      => $this->parseParaName($name),
+            'execer'      => $this->parseExecer($name),
         ]);
 
         return $this->app->transaction->finalSend($txHex, $privateKey);
@@ -164,28 +164,10 @@ class Client extends BaseClient
             'isWithdraw'  => true,
             'tokenSymbol' => $tokenSymbol,
             'execName'    => $name,
-            'execer'      => $this->parseParaName($name),
+            'execer'      => $this->parseExecer($name),
         ]);
 
         return $this->app->transaction->finalSend($txHex, $privateKey);
-    }
-
-    /**
-     * Notes   : 解析平行链的执行器名称
-     * @Date   : 2021/2/3 11:24 上午
-     * @Author : < Jason.C >
-     * @param  string  $name
-     * @return string
-     */
-    private function parseParaName(string $name): string
-    {
-        if (count(explode('.', $name)) > 5) {
-            $execer = implode('.', array_slice(explode('.', $name), 0, 3)) . '.coins';
-        } else {
-            $execer = 'coins';
-        }
-
-        return $execer;
     }
 
     /**
@@ -310,7 +292,7 @@ class Client extends BaseClient
     public function queryABI(string $address): array
     {
         return $this->client->Query([
-            'execer'   => 'evm',
+            'execer'   => $this->parseExecer('evm'),
             'funcName' => 'QueryABI',
             'payload'  => [
                 'address' => $address,
