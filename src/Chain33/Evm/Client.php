@@ -30,13 +30,13 @@ class Client extends BaseClient
         string $alias,
         string $privateKey,
         string $note = '',
-        int $fee = 300000
+        int $fee = 0
     ): string {
 
         $this->walletUnlock();
 
         $txHex = $this->client->CreateTransaction([
-            'execer'     => 'evm',
+            'execer'     => $this->parseExecer('evm'),
             'actionName' => 'CreateCall',
             'payload'    => [
                 'isCreate' => true,
@@ -55,7 +55,7 @@ class Client extends BaseClient
      * Notes   : 调用合约
      * @Date   : 2021/1/27 2:17 下午
      * @Author : < Jason.C >
-     * @param  string  $name        调用的合约名称
+     * @param  string  $addr        调用的合约地址
      * @param  string  $abi         合约的ABI代码
      * @param  string  $privateKey  调用合约的签名
      * @param  int     $amount      合约调用时，如果需要传递金额，通过这个参数
@@ -65,23 +65,22 @@ class Client extends BaseClient
      * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     public function invoking(
-        string $name,
+        string $addr,
         string $abi,
         string $privateKey,
         int $amount = 0,
         string $note = '',
-        int $fee = 300000
+        int $fee = 0
     ): string {
 
         $this->walletUnlock();
 
         $txHex = $this->client->CreateTransaction([
-            'execer'     => $name,
-            // 这里调用合约的时候，execer必须使用合约名称，否则会失败？
+            'execer'     => $this->checkAddr($addr),
             'actionName' => 'CreateCall',
             'payload'    => [
                 'isCreate' => false,
-                'name'     => $name,
+                'name'     => $this->checkAddr($addr),
                 'abi'      => $abi,
                 'amount'   => $amount,
                 'note'     => $note,
@@ -199,9 +198,8 @@ class Client extends BaseClient
         int $gasLimit
     ): string {
         return $this->client->CreateTransaction([
-            'execer'     => 'evm',
-            'actionName' => 'CreateCall',
-            'payload'    => [
+            'execer'  => $this->parseExecer('evm'),
+            'payload' => [
                 'isCreate' => $isCreate,
                 'name'     => $name,
                 'code'     => $code,
@@ -223,12 +221,12 @@ class Client extends BaseClient
      * @param  string  $address  合约地址
      * @param  string  $input    abi方法及参数
      * @param  string  $caller   本次调用的发起者，如果不填写则认为EVM合约自身发起的调用
-     * @return string
+     * @return array
      */
-    public function readonly(string $address, string $input, string $caller = ''): string
+    public function readonly(string $address, string $input, string $caller = ''): array
     {
-        return $this->client->Query([
-            'execer'   => 'evm',
+        $jsonData = $this->client->Query([
+            'execer'   => $this->parseExecer('evm'),
             'funcName' => 'Query',
             'payload'  => [
                 'address' => $address,
@@ -236,6 +234,8 @@ class Client extends BaseClient
                 'caller'  => $caller,
             ],
         ]);
+
+        return json_decode($jsonData);
     }
 
     /**
@@ -243,15 +243,17 @@ class Client extends BaseClient
      * @Date   : 2021/1/27 1:53 下午
      * @Author : < Jason.C >
      * @param  string  $code  需要部署或调用的合约代码，如果是部署合约，本字段必填
+     * @param  string  $abi   需要部署或调用的合约ABI代码
      * @return int            本次交易需要消耗的gas值
      */
-    public function estimateGas(string $code): int
+    public function estimateGas(string $code, string $abi = '', int $amount = 0): int
     {
         return $this->client->Query([
-            'execer'   => 'evm',
+            'execer'   => $this->parseExecer('evm'),
             'funcName' => 'EstimateGas',
             'payload'  => [
-                'code' => $code,
+                'code' => '0x' . $code,
+                'abi'  => preg_replace('/\s?/', '', $abi),
             ],
         ])['gas'];
     }
@@ -263,21 +265,23 @@ class Client extends BaseClient
      * @Date   : 2021/1/27 1:57 下午
      * @Author : < Jason.C >
      * @param  string  $addr  合约地址或合约名称，填写任何一个，则返回另外一个
-     * @return array
-     *                        "contract":bool,  本地址下是否存在EVM合约
-     *                        "contractAddr":"string", 本合约地址
-     *                        "contractName":"string", 本合约名称
-     *                        "aliasName":"string" 本合约别名
+     * @return string
      */
-    public function checkAddr(string $addr): array
+    public function checkAddr(string $addr): string
     {
-        return $this->client->Query([
-            'execer'   => 'evm',
+        $result = $this->client->Query([
+            'execer'   => $this->parseExecer('evm'),
             'funcName' => 'CheckAddrExists',
             'payload'  => [
                 'addr' => $addr,
             ],
         ]);
+
+        if ($result['contract']) {
+            return $result['contractName'];
+        } else {
+            return '';
+        }
     }
 
     /**
@@ -310,7 +314,7 @@ class Client extends BaseClient
     public function evmDebug(int $optype): bool
     {
         return $this->client->Query([
-            'execer'   => 'evm',
+            'execer'   => $this->parseExecer('evm'),
             'funcName' => 'EvmDebug',
             'payload'  => [
                 'optype' => $optype,
