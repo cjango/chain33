@@ -76,11 +76,11 @@ class Client extends BaseClient
         $this->walletUnlock();
 
         $txHex = $this->client->CreateTransaction([
-            'execer'     => $this->checkAddr($addr),
+            'execer'     => $this->addrToName($addr),
             'actionName' => 'CreateCall',
             'payload'    => [
                 'isCreate' => false,
-                'name'     => $this->checkAddr($addr),
+                'name'     => $this->addrToName($addr),
                 'abi'      => $abi,
                 'amount'   => $amount,
                 'note'     => $note,
@@ -267,7 +267,7 @@ class Client extends BaseClient
      * @param  string  $addr  合约地址或合约名称，填写任何一个，则返回另外一个
      * @return string
      */
-    public function checkAddr(string $addr): string
+    public function checkAddr(string $addr): array
     {
         $result = $this->client->Query([
             'execer'   => $this->parseExecer('evm'),
@@ -278,10 +278,34 @@ class Client extends BaseClient
         ]);
 
         if ($result['contract']) {
-            return $result['contractName'];
+            return $result;
         } else {
-            return '';
+            return [];
         }
+    }
+
+    /**
+     * Notes   : 将合约名称转化为地址
+     * @Date   : 2021/4/1 10:02 上午
+     * @Author : < Jason.C >
+     * @param  string  $name
+     * @return string
+     */
+    public function nameToAddr(string $name): string
+    {
+        return $this->checkAddr($name)['contractAddr'];
+    }
+
+    /**
+     * Notes   : 将地址转化成名称
+     * @Date   : 2021/4/1 10:00 上午
+     * @Author : < Jason.C >
+     * @param  string  $addr
+     * @return mixed|string
+     */
+    public function addrToName(string $addr): string
+    {
+        return $this->checkAddr($addr)['contractName'];
     }
 
     /**
