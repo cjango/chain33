@@ -15,87 +15,54 @@ class Client extends BaseClient
      * Notes: 查询地址余额
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 22:48
-     * @param  string  $address       要查询的地址
-     * @param  string  $execer        执行器名称，coins查询可用的主代币，ticket查询正在挖矿的主代币
-     * @param  string  $asset_exec    资产原始合约名称，如bty在coins合约中产生，各种token在token合约中产生，跨链的资产在paracross合约中
-     * @param  string  $asset_symbol  资产名称，如 bty,token的各种 symbol，跨链的bty名称为 coins.bty, 跨链的token为token.symbol
+     * @param  string|array  $address       要查询的地址，或地址组
+     * @param  string        $execer        执行器名称，coins查询可用的主代币，ticket查询正在挖矿的主代币
+     * @param  string        $asset_exec    资产原始合约名称，如bty在coins合约中产生，各种token在token合约中产生，跨链的资产在paracross合约中
+     * @param  string        $asset_symbol  资产名称，如 bty,token的各种 symbol，跨链的bty名称为 coins.bty, 跨链的token为token.symbol
      * @return array
      */
     public function get(
-        string $address,
+        $address,
         string $execer = 'coins',
         string $asset_exec = 'coins',
         string $asset_symbol = ''
     ): array {
-        return $this->client->GetBalance([
-            'execer'       => $execer,
-            'addresses'    => [$address],
-            'asset_exec'   => $asset_exec,
-            'asset_symbol' => $asset_symbol,
-        ])[0];
-    }
+        $flat = is_string($address);
 
-    /**
-     * Notes: 查询地址余额
-     * @Author: <C.Jason>
-     * @Date  : 2020/4/30 22:48
-     * @param  array   $addresses     要查询的地址列表
-     * @param  string  $execer        执行器名称，coins查询可用的主代币，ticket查询正在挖矿的主代币
-     * @param  string  $asset_exec    资产原始合约名称，如bty在coins合约中产生，各种token在token合约中产生，跨链的资产在paracross合约中
-     * @param  string  $asset_symbol  资产名称，如 bty,token的各种 symbol，跨链的bty名称为 coins.bty, 跨链的token为token.symbol
-     * @param  string  $stateHash     状态Hash
-     * @return array
-     */
-    public function gets(
-        array $addresses,
-        string $execer = 'coins',
-        string $asset_exec = 'coins',
-        string $asset_symbol = '',
-        string $stateHash = ''
-    ): array {
-        return $this->client->GetBalance([
+        $addresses = $flat ? [$address] : $address;
+
+        $result = $this->client->GetBalance([
             'execer'       => $execer,
             'addresses'    => $addresses,
             'asset_exec'   => $asset_exec,
             'asset_symbol' => $asset_symbol,
-            'stateHash'    => $stateHash,
         ]);
+
+        return $flat ? $result[0] : $result;
     }
 
     /**
      * Notes: 查询地址token余额
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 22:50
-     * @param  string  $address  要查询的地址
-     * @param  string  $symbol   token符号名称
+     * @param  string|array  $address  要查询的地址，或地址组
+     * @param  string        $symbol   token符号名称
      * @return array
      * @throws \Jason\Chain33\Exceptions\ChainException
      */
     public function token(string $address, string $symbol): array
     {
-        return $this->client->GetTokenBalance([
+        $flat = is_string($address);
+
+        $addresses = $flat ? [$address] : $address;
+
+        $result = $this->client->GetTokenBalance([
             'execer'      => $this->parseExecer('token'),
             'tokenSymbol' => $symbol,
             'addresses'   => [$address],
-        ], 'token')[0];
-    }
-
-    /**
-     * Notes: 查询地址token余额
-     * @Author: <C.Jason>
-     * @Date  : 2020/4/30 22:50
-     * @param  array   $addresses  要查询的地址列表
-     * @param  string  $symbol     token符号名称
-     * @return array
-     * @throws \Jason\Chain33\Exceptions\ChainException
-     */
-    public function tokens(array $addresses, string $symbol): array
-    {
-        return $this->client->GetTokenBalance([
-            'execer'      => $this->parseExecer('token'),
-            'tokenSymbol' => $symbol,
-            'addresses'   => $addresses,
         ], 'token');
+
+        return $flat ? $result[0] : $result;
     }
 
     /**
