@@ -21,7 +21,7 @@ class Client extends BaseClient
      * @param  string              $exec         要冻结的资产执行器
      * @param  int                 $total        冻结的资产数量
      * @param  \DateTimeInterface  $startTime    开始解冻时间
-     * @param  string              $algo         解冻算法，支持 'fix' 固定金额, 'ratio' 剩余比例
+     * @param  string              $algo         解冻算法，支持 'fix' 固定金额, 'LeftProportion' 剩余比例
      * @param  int                 $period       解冻周期，单位 秒
      * @param  int                 $parameter    解冻数值
      * @param  string              $privateKey   发起人签名私钥
@@ -42,7 +42,7 @@ class Client extends BaseClient
     ): string {
         $this->walletUnlock();
 
-        if (!in_array($algo, ['fix', 'ratio'])) {
+        if (!in_array($algo, ['FixAmount', 'LeftProportion'])) {
             throw new ChainException('不支持的解冻算法');
         }
 
@@ -52,6 +52,7 @@ class Client extends BaseClient
             'totalCount'  => $total,
             'beneficiary' => $beneficiary,
             'startTime'   => $startTime->getTimestamp(),
+            'means'       => $algo,
         ];
         $params = array_merge($params, $this->parseMeans($algo, $period, $parameter));
 
@@ -73,18 +74,16 @@ class Client extends BaseClient
     {
         $params = [];
         switch ($means) {
-            case 'fix':
+            case 'FixAmount':
                 $params = [
-                    'means'     => 'FixAmount',
                     'FixAmount' => [
                         'period' => $period,
                         'amount' => $parameter,
                     ],
                 ];
                 break;
-            case 'ratio':
+            case 'LeftProportion':
                 $params = [
-                    'means'          => 'LeftProportion',
                     'LeftProportion' => [
                         'period'        => $period,
                         'tenThousandth' => $parameter,
