@@ -60,7 +60,7 @@ class Client
             }
 
             if ($resJson['error']) {
-                throw new ChainException($resJson['error'] . $body->toJson());
+                throw new ChainException($resJson['error']);
             }
 
             return $resJson['result'];

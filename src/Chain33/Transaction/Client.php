@@ -84,6 +84,78 @@ class Client extends BaseClient
     }
 
     /**
+     * Notes   : 转账到合约
+     * @Date   : 2021/4/22 10:26 上午
+     * @Author : < Jason.C >
+     * @param  string  $symbol      要转账的TOKEN
+     * @param  int     $amount      转账金额
+     * @param  string  $execName    转到的合约名称
+     * @param  string  $privateKey  转账者私钥
+     * @return string
+     * @throws \Jason\Chain33\Exceptions\ChainException
+     */
+    public function toExec(string $symbol, int $amount, string $execName, string $privateKey): string
+    {
+        $execName = $this->parseExecer($execName);
+        $toAddr   = $this->convertExectoAddr($execName);
+
+        if ($symbol !== $this->app->system->coin()) {
+            $execer = 'token';
+        } else {
+            $execer = 'coins';
+        }
+
+        $txHex = $this->client->CreateTransaction([
+            'execer'     => $this->parseExecer($execer),
+            'actionName' => 'TransferToExec',
+            'payload'    => [
+                'cointoken' => $symbol,
+                'amount'    => $amount,
+                'to'        => $toAddr,
+                'execName'  => $execName,
+            ],
+        ]);
+
+        return $this->finalSend($txHex, $privateKey);
+    }
+
+    /**
+     * Notes   : 从合约中提款
+     * @Date   : 2021/4/22 1:38 下午
+     * @Author : < Jason.C >
+     * @param  string  $symbol
+     * @param  int     $amount
+     * @param  string  $execName
+     * @param  string  $privateKey
+     * @return string
+     * @throws \Jason\Chain33\Exceptions\ChainException
+     */
+    public function fromExec(string $symbol, int $amount, string $execName, string $privateKey): string
+    {
+        $execName = $this->parseExecer($execName);
+        $toAddr   = $this->convertExectoAddr($execName);
+
+        if ($symbol !== $this->app->system->coin()) {
+            $execer = 'token';
+        } else {
+            $execer = 'coins';
+        }
+
+        $txHex = $this->client->CreateTransaction([
+            'execer'     => $this->parseExecer($execer),
+            'actionName' => 'Withdraw',
+            'payload'    => [
+                'cointoken' => $symbol,
+                'amount'    => $amount,
+                'to'        => $toAddr,
+                'execName'  => $execName,
+            ],
+        ]);
+
+        return $this->finalSend($txHex, $privateKey);
+    }
+
+    /**
      * Notes: 构造交易 【基本可用】
      * @Author: <C.Jason>
      * @Date  : 2020/5/2 20:37

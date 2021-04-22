@@ -137,14 +137,14 @@ class Client extends BaseClient
      * @param  string  $address  要查询的地址
      * @return array
      */
-    public function assets(string $address): array
+    public function assets(string $address, string $execer = 'token'): array
     {
         return $this->client->Query([
             'execer'   => 'token',
             'funcName' => 'GetAccountTokenAssets',
             'payload'  => [
                 'address' => $address,
-                'execer'  => 'token',
+                'execer'  => $this->parseExecer($execer),
             ],
         ])['tokenAssets'];
     }

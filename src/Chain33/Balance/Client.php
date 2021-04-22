@@ -32,7 +32,7 @@ class Client extends BaseClient
         $addresses = $flat ? [$address] : $address;
 
         $result = $this->client->GetBalance([
-            'execer'       => $execer,
+            'execer'       => $this->parseExecer($execer),
             'addresses'    => $addresses,
             'asset_exec'   => $asset_exec,
             'asset_symbol' => $asset_symbol,
@@ -50,14 +50,14 @@ class Client extends BaseClient
      * @return array
      * @throws \Jason\Chain33\Exceptions\ChainException
      */
-    public function token(string $address, string $symbol): array
+    public function token(string $address, string $symbol, string $execer = 'token'): array
     {
         $flat = is_string($address);
 
         $addresses = $flat ? [$address] : $address;
 
         $result = $this->client->GetTokenBalance([
-            'execer'      => $this->parseExecer('token'),
+            'execer'      => $this->parseExecer($execer),
             'tokenSymbol' => $symbol,
             'addresses'   => [$address],
         ], 'token');
@@ -86,7 +86,7 @@ class Client extends BaseClient
      * @param  string  $execer
      * @return array
      */
-    public function exec(string $execer): array
+    public function exec(string $execer)
     {
         return $this->client->GetExecBalance([
             'symbol'    => '',
