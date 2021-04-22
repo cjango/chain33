@@ -45,10 +45,11 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes: 转账, token 【待整理】
+     * Notes: 转账, token
      * @Author: <C.Jason>
      * @Date  : 2020/5/2 21:34
      * @param  string  $to          发送到地址
+     * @param  string  $symbol      token名称
      * @param  int     $amount      转账金额
      * @param  string  $privateKey  私钥
      * @param  int     $fee         手续费
@@ -59,6 +60,7 @@ class Client extends BaseClient
      */
     public function token(
         string $to,
+        string $symbol,
         int $amount,
         string $privateKey,
         int $fee = 0,
@@ -67,13 +69,15 @@ class Client extends BaseClient
         $this->walletUnlock();
 
         $txHex = $this->client->CreateRawTransaction([
-            'to'         => $to,
-            'amount'     => $amount,
-            'fee'        => $fee,
-            'note'       => $note,
-            'isWithdraw' => false,
-            'execName'   => '',
-            'execer'     => $this->parseExecer('token'),
+            'to'          => $to,
+            'amount'      => $amount,
+            'fee'         => $fee,
+            'note'        => $note,
+            'isToken'     => true,
+            'isWithdraw'  => false,
+            'tokenSymbol' => $symbol,
+            'execName'    => '',
+            'execer'      => $this->parseExecer('token'),
         ]);
 
         return $this->finalSend($txHex, $privateKey);
