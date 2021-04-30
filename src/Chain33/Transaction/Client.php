@@ -94,26 +94,26 @@ class Client extends BaseClient
      * @return string
      * @throws \Jason\Chain33\Exceptions\ChainException
      */
-    public function toExec(string $symbol, int $amount, string $execName, string $privateKey): string
+    public function toExec(string $symbol, int $amount, string $execName, string $privateKey, string $note = ''): string
     {
         $execName = $this->parseExecer($execName);
         $toAddr   = $this->convertExectoAddr($execName);
 
-        if ($symbol !== $this->app->system->coin()) {
-            $execer = 'token';
+        if ($symbol === $this->app->system->coin()) {
+            $isToken = false;
         } else {
-            $execer = 'coins';
+            $isToken = true;
         }
 
-        $txHex = $this->client->CreateTransaction([
-            'execer'     => $this->parseExecer($execer),
-            'actionName' => 'TransferToExec',
-            'payload'    => [
-                'cointoken' => $symbol,
-                'amount'    => $amount,
-                'to'        => $toAddr,
-                'execName'  => $execName,
-            ],
+        $txHex = $this->client->CreateRawTransaction([
+            'to'          => $toAddr,
+            'amount'      => $amount,
+            'fee'         => 0,
+            'note'        => $note,
+            'isToken'     => $isToken,
+            'isWithdraw'  => false,
+            'tokenSymbol' => $symbol,
+            'execName'    => $execName,
         ]);
 
         return $this->finalSend($txHex, $privateKey);
@@ -130,26 +130,31 @@ class Client extends BaseClient
      * @return string
      * @throws \Jason\Chain33\Exceptions\ChainException
      */
-    public function fromExec(string $symbol, int $amount, string $execName, string $privateKey): string
-    {
+    public function fromExec(
+        string $symbol,
+        int $amount,
+        string $execName,
+        string $privateKey,
+        string $note = ''
+    ): string {
         $execName = $this->parseExecer($execName);
         $toAddr   = $this->convertExectoAddr($execName);
 
-        if ($symbol !== $this->app->system->coin()) {
-            $execer = 'token';
+        if ($symbol === $this->app->system->coin()) {
+            $isToken = false;
         } else {
-            $execer = 'coins';
+            $isToken = true;
         }
 
-        $txHex = $this->client->CreateTransaction([
-            'execer'     => $this->parseExecer($execer),
-            'actionName' => 'Withdraw',
-            'payload'    => [
-                'cointoken' => $symbol,
-                'amount'    => $amount,
-                'to'        => $toAddr,
-                'execName'  => $execName,
-            ],
+        $txHex = $this->client->CreateRawTransaction([
+            'to'          => $toAddr,
+            'amount'      => $amount,
+            'fee'         => 0,
+            'note'        => $note,
+            'isToken'     => $isToken,
+            'isWithdraw'  => true,
+            'tokenSymbol' => $symbol,
+            'execName'    => $execName,
         ]);
 
         return $this->finalSend($txHex, $privateKey);
