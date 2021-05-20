@@ -80,7 +80,7 @@ class Client extends BaseClient
      * Notes: 获取钱包地址
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 15:00
-     * @param $detail
+     * @param  array  $detail
      * @return string
      */
     protected function getAddress(array $detail): string

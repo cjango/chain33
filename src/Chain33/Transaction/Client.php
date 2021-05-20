@@ -23,25 +23,26 @@ class Client extends BaseClient
      * @param  string  $to          转账地址
      * @param  int     $amount      转账金额
      * @param  string  $privateKey  转出账户的私钥
+     * @param  int     $fee         转账手续费
      * @param  string  $note        转账备注
      * @return string
      * @throws \Jason\Chain33\Exceptions\ChainException
      * @throws \Jason\Chain33\Exceptions\ConfigException
      */
-    public function coins(string $to, int $amount, string $privateKey, string $note = ''): string
+    public function coins(string $to, int $amount, string $privateKey, int $fee = 0, string $note = ''): string
     {
         $this->walletUnlock();
 
         $txHex = $this->client->CreateRawTransaction([
             'to'         => $to,
             'amount'     => $amount,
-            'fee'        => 0,
+            'fee'        => $fee,
             'note'       => $note,
             'isWithdraw' => false,
             'execer'     => $this->parseExecer('coins'),
         ]);
 
-        return $this->finalSend($txHex, $privateKey);
+        return $this->finalSend($txHex, $privateKey, $fee);
     }
 
     /**
@@ -80,7 +81,7 @@ class Client extends BaseClient
             'execer'      => $this->parseExecer('token'),
         ]);
 
-        return $this->finalSend($txHex, $privateKey);
+        return $this->finalSend($txHex, $privateKey, $fee);
     }
 
     /**
@@ -91,6 +92,7 @@ class Client extends BaseClient
      * @param  int     $amount      转账金额
      * @param  string  $execName    转到的合约名称
      * @param  string  $privateKey  转账者私钥
+     * @param  string  $note
      * @return string
      * @throws \Jason\Chain33\Exceptions\ChainException
      */
@@ -290,9 +292,9 @@ class Client extends BaseClient
      * Notes   : 签名并发送交易
      * @Date   : 2021/3/30 1:50 下午
      * @Author : < Jason.C >
-     * @param  string  $txHex
-     * @param  string  $privateKey
-     * @param  int     $fee
+     * @param  string  $txHex       交易数据
+     * @param  string  $privateKey  签名私钥
+     * @param  int     $fee         手续费
      * @return string
      */
     public function finalSend(string $txHex, string $privateKey, int $fee = 0): string
@@ -303,7 +305,7 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes: 根据哈希查询交易信息【通过】
+     * Notes: 根据哈希查询交易信息
      * @Author: <C.Jason>
      * @Date  : 2020/5/2 21:34
      * @param  string  $hash  交易哈希
