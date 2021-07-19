@@ -3,6 +3,7 @@
 namespace Jason\Chain33\Wallet;
 
 use Jason\Bip39\Bip39;
+use Jason\Bip39\Mnemonic;
 use Jason\Chain33\Kernel\BaseClient;
 
 /**
@@ -13,20 +14,18 @@ class Client extends BaseClient
 {
 
     /**
-     * Notes   : 本地生成一个 bip39 标准的 seed
-     * @Date   : 2021/3/24 10:08 上午
+     * Notes   : 本地生成一个 bip39 标准的助记词
+     * @Date   : 2021/7/19 3:28 下午
      * @Author : < Jason.C >
-     * @param  int     $len
-     * @param  string  $language
-     * @return string
-     * @throws \FurqanSiddiqui\BIP39\Exception\MnemonicException
-     * @throws \FurqanSiddiqui\BIP39\Exception\WordListException
+     * @param  int     $len       助记词位数
+     * @param  string  $language  助记词语言
+     * @return \Jason\Bip39\Mnemonic
+     * @throws \Jason\Bip39\Exception\MnemonicException
+     * @throws \Jason\Bip39\Exception\WordListException
      */
-    public function localSeed(int $len = 15, string $language = 'english'): string
+    public function localSeed(int $len = 15, string $language = 'english'): Mnemonic
     {
-        $mnemonic = Bip39::Generate($len, $language);
-
-        return implode(' ', $mnemonic->words);
+        return Bip39::Generate($len, $language);
     }
 
     /**
