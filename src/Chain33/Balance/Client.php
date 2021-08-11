@@ -80,21 +80,34 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes   : 查询合约地址余额，待完善
-     * @Date   : 2021/3/30 11:01 上午
+     * Notes   :  查询合约地址余额，待完善
+     * @Date   : 2021/8/11 10:39 上午
      * @Author : < Jason.C >
-     * @param  string  $execer
+     * @param  string        $execer        合约地址
+     * @param  array|string  $address       账户地址
+     * @param  string        $asset_exec    执行器名称
+     * @param  string        $asset_symbol  代币
      * @return array
+     * @throws \Jason\Chain33\Exceptions\ChainException
      */
-    public function exec(string $execer)
-    {
-        return $this->client->GetExecBalance([
-            'symbol'    => '',
-            'stateHash' => '',
-            'addr'      => '',
-            'execer'    => $execer,
-            'count'     => 100,
+    public function exec(
+        string $execer,
+        $address,
+        string $asset_exec = 'coins',
+        string $asset_symbol = ''
+    ): array {
+        $flat = is_string($address);
+
+        $addresses = $flat ? [$address] : $address;
+
+        $result = $this->client->GetBalance([
+            'execer'       => $this->parseExecer($execer),
+            'addresses'    => $addresses,
+            'asset_exec'   => $asset_exec,
+            'asset_symbol' => $asset_symbol,
         ]);
+
+        return $flat ? $result[0] : $result;
     }
 
 }

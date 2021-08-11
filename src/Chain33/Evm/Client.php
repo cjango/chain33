@@ -22,7 +22,7 @@ class Client extends BaseClient
      * @param  string  $note        本次交易的备注信息
      * @param  int     $fee         交易手续费，这里不能设置为0，要大于合约的gas消耗
      * @return string
-     * @throws \Jason\Chain33\Exceptions\ConfigException
+     * @throws \Jason\Chain33\Exceptions\ConfigException|\Jason\Chain33\Exceptions\ChainException
      */
     public function deploy(
         string $code,
@@ -92,39 +92,78 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes   : 转账到合约
-     * @Date   : 2021/2/3 11:15 上午
+     * Notes   : 账户在合约中的余额
+     * @Date   : 2021/8/11 10:47 上午
      * @Author : < Jason.C >
-     * @param  string  $addr         合约地址
-     * @param  string  $name         合约名称
-     * @param  int     $amount       转账金额
-     * @param  string  $privateKey   私钥
-     * @param  string  $tokenSymbol  代币种类
+     * @param  string        $contractAddr  合约地址
+     * @param  string|array  $address       账户地址
+     * @param  string|null   $assetExec     执行器名称
+     * @param  string|null   $symbol        代币名称
+     * @return array
+     * @throws \Jason\Chain33\Exceptions\ChainException
+     */
+    public function balance(
+        string $contractAddr,
+        $address,
+        ?string $assetExec = null,
+        ?string $symbol = null
+    ): array {
+        $flat      = is_string($address);
+        $addresses = $flat ? [$address] : $address;
+        $contract  = $this->checkAddr($contractAddr);
+        $symbol    = $symbol ?: $this->app->system->coin();
+        $assetExec = $assetExec ?: 'coins';
+
+        $result = $this->client->GetBalance([
+            'execer'       => $contract['contractName'],
+            'addresses'    => $addresses,
+            'asset_exec'   => $assetExec,
+            'asset_symbol' => $symbol,
+        ]);
+
+        return $flat ? $result[0] : $result;
+    }
+
+    /**
+     * Notes   : 转账到合约
+     * @Date   : 2021/4/22 10:26 上午
+     * @Author : < Jason.C >
+     * @param  string  $symbol      要转账的TOKEN
+     * @param  int     $amount      转账金额
+     * @param  string  $execName    转到的合约名称，平行链不需要前缀
+     * @param  string  $privateKey  转账者私钥
+     * @param  string  $note
      * @return string
-     * @throws \Jason\Chain33\Exceptions\ConfigException
+     * @throws \Jason\Chain33\Exceptions\ChainException|\Jason\Chain33\Exceptions\ConfigException
      */
     public function transfer(
-        string $addr,
-        string $name,
+        string $symbol,
         int $amount,
+        string $execName,
         string $privateKey,
-        string $tokenSymbol = ''
+        string $note = ''
     ): string {
 
         $this->walletUnlock();
 
-        $isToken = !empty($tokenSymbol);
+        $execName = $this->parseExecer($execName);
+        $toAddr   = $this->app->transaction->convertExectoAddr($execName);
+
+        if ($symbol === $this->app->system->coin()) {
+            $isToken = false;
+        } else {
+            $isToken = true;
+        }
 
         $txHex = $this->client->CreateRawTransaction([
-            'to'          => $addr,
+            'to'          => $toAddr,
             'amount'      => $amount,
             'fee'         => 0,
-            'note'        => '',
+            'note'        => $note,
             'isToken'     => $isToken,
             'isWithdraw'  => false,
-            'tokenSymbol' => $tokenSymbol,
-            'execName'    => $name,
-            'execer'      => $this->parseExecer($name),
+            'tokenSymbol' => $symbol,
+            'execName'    => $execName,
         ]);
 
         return $this->app->transaction->finalSend($txHex, $privateKey);
@@ -132,38 +171,45 @@ class Client extends BaseClient
 
     /**
      * Notes   : 从合约中提款
-     * @Date   : 2021/2/3 11:15 上午
+     * @Date   : 2021/4/22 1:38 下午
      * @Author : < Jason.C >
-     * @param  string  $addr         合约地址
-     * @param  string  $name         合约名称
-     * @param  int     $amount       转账金额
-     * @param  string  $privateKey   私钥
-     * @param  string  $tokenSymbol  代币种类
+     * @param  string  $symbol      提款的标识
+     * @param  int     $amount      提款金额
+     * @param  string  $execName    合约名称，平行链不需要填前缀
+     * @param  string  $privateKey  提币私钥
+     * @param  string  $note
      * @return string
+     * @throws \Jason\Chain33\Exceptions\ChainException
      * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     public function withdraw(
-        string $addr,
-        string $name,
+        string $symbol,
         int $amount,
+        string $execName,
         string $privateKey,
-        string $tokenSymbol = ''
+        string $note = ''
     ): string {
 
         $this->walletUnlock();
 
-        $isToken = !empty($tokenSymbol);
+        $execName = $this->parseExecer($execName);
+        $toAddr   = $this->app->transaction->convertExectoAddr($execName);
+
+        if ($symbol === $this->app->system->coin()) {
+            $isToken = false;
+        } else {
+            $isToken = true;
+        }
 
         $txHex = $this->client->CreateRawTransaction([
-            'to'          => $addr,
+            'to'          => $toAddr,
             'amount'      => $amount,
             'fee'         => 0,
-            'note'        => '',
+            'note'        => $note,
             'isToken'     => $isToken,
             'isWithdraw'  => true,
-            'tokenSymbol' => $tokenSymbol,
-            'execName'    => $name,
-            'execer'      => $this->parseExecer($name),
+            'tokenSymbol' => $symbol,
+            'execName'    => $execName,
         ]);
 
         return $this->app->transaction->finalSend($txHex, $privateKey);
@@ -184,6 +230,7 @@ class Client extends BaseClient
      * @param  int     $gasPrice  单位gas定价，默认为1
      * @param  int     $gasLimit  本次交易允许消耗的最大gas量，默认值和fee相等
      * @return string             交易内容十六进制字符串
+     * @throws \Jason\Chain33\Exceptions\ChainException
      */
     public function createTransaction(
         bool $isCreate,
@@ -222,6 +269,7 @@ class Client extends BaseClient
      * @param  string  $input    abi方法及参数
      * @param  string  $caller   本次调用的发起者，如果不填写则认为EVM合约自身发起的调用
      * @return array
+     * @throws \Jason\Chain33\Exceptions\ChainException
      */
     public function readonly(string $address, string $input, string $caller = ''): array
     {
@@ -244,7 +292,9 @@ class Client extends BaseClient
      * @Author : < Jason.C >
      * @param  string  $code  需要部署或调用的合约代码，如果是部署合约，本字段必填
      * @param  string  $abi   需要部署或调用的合约ABI代码
+     * @param  int     $amount
      * @return int            本次交易需要消耗的gas值
+     * @throws \Jason\Chain33\Exceptions\ChainException
      */
     public function estimateGas(string $code, string $abi = '', int $amount = 0): int
     {
@@ -265,7 +315,8 @@ class Client extends BaseClient
      * @Date   : 2021/1/27 1:57 下午
      * @Author : < Jason.C >
      * @param  string  $addr  合约地址或合约名称，填写任何一个，则返回另外一个
-     * @return string
+     * @return array
+     * @throws \Jason\Chain33\Exceptions\ChainException
      */
     public function checkAddr(string $addr): array
     {
@@ -290,6 +341,7 @@ class Client extends BaseClient
      * @Author : < Jason.C >
      * @param  string  $name
      * @return string
+     * @throws \Jason\Chain33\Exceptions\ChainException
      */
     public function nameToAddr(string $name): string
     {
@@ -302,6 +354,7 @@ class Client extends BaseClient
      * @Author : < Jason.C >
      * @param  string  $addr
      * @return mixed|string
+     * @throws \Jason\Chain33\Exceptions\ChainException
      */
     public function addrToName(string $addr): string
     {
@@ -316,6 +369,7 @@ class Client extends BaseClient
      * @return array
      *                           "address":"string", 本合约地址
      *                           "abi":"string" 本合约绑定的ABI
+     * @throws \Jason\Chain33\Exceptions\ChainException
      */
     public function queryABI(string $address): array
     {
@@ -332,16 +386,17 @@ class Client extends BaseClient
      * Notes   : EVM调试设置
      * @Date   : 2021/1/27 2:08 下午
      * @Author : < Jason.C >
-     * @param  int  $optype  操作类型，0：查询调试状态， 1：打开， -1：关闭
+     * @param  int  $opType  操作类型，0：查询调试状态， 1：打开， -1：关闭
      * @return bool          当前调试开关状态
+     * @throws \Jason\Chain33\Exceptions\ChainException
      */
-    public function evmDebug(int $optype): bool
+    public function evmDebug(int $opType): bool
     {
         return $this->client->Query([
             'execer'   => $this->parseExecer('evm'),
             'funcName' => 'EvmDebug',
             'payload'  => [
-                'optype' => $optype,
+                'optype' => $opType,
             ],
         ])['debugStatus'];
     }

@@ -90,7 +90,7 @@ class Client extends BaseClient
      * @Author : < Jason.C >
      * @param  string  $symbol      要转账的TOKEN
      * @param  int     $amount      转账金额
-     * @param  string  $execName    转到的合约名称
+     * @param  string  $execName    转到的合约名称，平行链不需要前缀
      * @param  string  $privateKey  转账者私钥
      * @param  string  $note
      * @return string
@@ -98,6 +98,8 @@ class Client extends BaseClient
      */
     public function toExec(string $symbol, int $amount, string $execName, string $privateKey, string $note = ''): string
     {
+        $this->walletUnlock();
+
         $execName = $this->parseExecer($execName);
         $toAddr   = $this->convertExectoAddr($execName);
 
@@ -125,10 +127,10 @@ class Client extends BaseClient
      * Notes   : 从合约中提款
      * @Date   : 2021/4/22 1:38 下午
      * @Author : < Jason.C >
-     * @param  string  $symbol
-     * @param  int     $amount
-     * @param  string  $execName
-     * @param  string  $privateKey
+     * @param  string  $symbol      提款的标识
+     * @param  int     $amount      提款金额
+     * @param  string  $execName    合约名称，平行链不需要填前缀
+     * @param  string  $privateKey  提币私钥
      * @return string
      * @throws \Jason\Chain33\Exceptions\ChainException
      */
@@ -139,6 +141,8 @@ class Client extends BaseClient
         string $privateKey,
         string $note = ''
     ): string {
+        $this->walletUnlock();
+
         $execName = $this->parseExecer($execName);
         $toAddr   = $this->convertExectoAddr($execName);
 
