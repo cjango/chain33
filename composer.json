@@ -15,7 +15,6 @@
         "google/protobuf": "^3.11",
         "jasonc/bip39": "^2.1",
         "pimple/pimple": "^3.0",
-        "stephenhill/base58": "^1.1",
         "ext-openssl": "*"
     },
     "autoload": {

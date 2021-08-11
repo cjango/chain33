@@ -6,8 +6,8 @@ use Jason\Chain33\Exceptions\ChainException;
 use Jason\Chain33\Kernel\BaseClient;
 use Jason\Chain33\Kernel\Utils\AddressCode;
 use Jason\Chain33\Kernel\Utils\AddressValidation;
+use Jason\Chain33\Kernel\Utils\Base58;
 use Jason\Chain33\Kernel\Utils\PrivateKey;
-use StephenHill\Base58;
 
 /**
  * Class Client
@@ -98,7 +98,7 @@ class Client extends BaseClient
         $checksum    = hash('sha256', hex2bin(hash('sha256', hex2bin($with_prefix))));
         $address     = $with_prefix . substr($checksum, 0, 8);
 
-        return (new Base58())->encode(hex2bin($address));
+        return Base58::Encode($address);
     }
 
     /**
