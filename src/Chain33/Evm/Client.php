@@ -128,20 +128,20 @@ class Client extends BaseClient
      * Notes   : 转账到合约
      * @Date   : 2021/4/22 10:26 上午
      * @Author : < Jason.C >
-     * @param  string  $symbol      要转账的TOKEN
      * @param  int     $amount      转账金额
      * @param  string  $execName    转到的合约名称，平行链不需要前缀
      * @param  string  $privateKey  转账者私钥
      * @param  string  $note
+     * @param  string  $symbol      要转账的TOKEN标识
      * @return string
      * @throws \Jason\Chain33\Exceptions\ChainException|\Jason\Chain33\Exceptions\ConfigException
      */
     public function transfer(
-        string $symbol,
         int $amount,
         string $execName,
         string $privateKey,
-        string $note = ''
+        string $note = '',
+        ?string $symbol = null
     ): string {
 
         $this->walletUnlock();
@@ -149,7 +149,10 @@ class Client extends BaseClient
         $execName = $this->parseExecer($execName);
         $toAddr   = $this->app->transaction->convertExectoAddr($execName);
 
-        if ($symbol === $this->app->system->coin()) {
+        if (!$symbol) {
+            $symbol  = $this->app->system->coin();
+            $isToken = false;
+        } elseif ($symbol === $this->app->system->coin()) {
             $isToken = false;
         } else {
             $isToken = true;
@@ -173,21 +176,21 @@ class Client extends BaseClient
      * Notes   : 从合约中提款
      * @Date   : 2021/4/22 1:38 下午
      * @Author : < Jason.C >
-     * @param  string  $symbol      提款的标识
      * @param  int     $amount      提款金额
      * @param  string  $execName    合约名称，平行链不需要填前缀
      * @param  string  $privateKey  提币私钥
      * @param  string  $note
+     * @param  string  $symbol      提款的标识
      * @return string
      * @throws \Jason\Chain33\Exceptions\ChainException
      * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     public function withdraw(
-        string $symbol,
         int $amount,
         string $execName,
         string $privateKey,
-        string $note = ''
+        string $note = '',
+        ?string $symbol = null
     ): string {
 
         $this->walletUnlock();
@@ -195,7 +198,10 @@ class Client extends BaseClient
         $execName = $this->parseExecer($execName);
         $toAddr   = $this->app->transaction->convertExectoAddr($execName);
 
-        if ($symbol === $this->app->system->coin()) {
+        if (!$symbol) {
+            $symbol  = $this->app->system->coin();
+            $isToken = false;
+        } elseif ($symbol === $this->app->system->coin()) {
             $isToken = false;
         } else {
             $isToken = true;
