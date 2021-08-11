@@ -2,7 +2,9 @@
 
 namespace Jason\Chain33\Exceptions;
 
-class ConfigException extends \Exception
+use Exception;
+
+class ConfigException extends Exception
 {
 
 }

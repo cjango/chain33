@@ -14,7 +14,7 @@ class Client extends BaseClient
     /**
      * Notes   : 部署合约
      * @Date   : 2021/1/27 2:12 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $code        部署合约的合约代码
      * @param  string  $abi         部署合约的ABI代码
      * @param  string  $alias       部署新合约时的合约别名，方便识别不同合约
@@ -54,7 +54,7 @@ class Client extends BaseClient
     /**
      * Notes   : 调用合约
      * @Date   : 2021/1/27 2:17 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $addr        调用的合约地址
      * @param  string  $abi         合约的ABI代码
      * @param  string  $privateKey  调用合约的签名
@@ -62,7 +62,7 @@ class Client extends BaseClient
      * @param  string  $note        本次交易的备注信息
      * @param  int     $fee         交易手续费，这里不能设置为0，要大于合约的gas消耗
      * @return string
-     * @throws \Jason\Chain33\Exceptions\ConfigException
+     * @throws \Jason\Chain33\Exceptions\ConfigException|\Jason\Chain33\Exceptions\ChainException
      */
     public function invoking(
         string $addr,
@@ -94,7 +94,7 @@ class Client extends BaseClient
     /**
      * Notes   : 账户在合约中的余额
      * @Date   : 2021/8/11 10:47 上午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string        $contractAddr  合约地址
      * @param  string|array  $address       账户地址
      * @param  string|null   $assetExec     执行器名称
@@ -127,7 +127,7 @@ class Client extends BaseClient
     /**
      * Notes   : 转账到合约
      * @Date   : 2021/4/22 10:26 上午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  int     $amount      转账金额
      * @param  string  $execName    转到的合约名称，平行链不需要前缀
      * @param  string  $privateKey  转账者私钥
@@ -175,12 +175,12 @@ class Client extends BaseClient
     /**
      * Notes   : 从合约中提款
      * @Date   : 2021/4/22 1:38 下午
-     * @Author : < Jason.C >
-     * @param  int     $amount      提款金额
-     * @param  string  $execName    合约名称，平行链不需要填前缀
-     * @param  string  $privateKey  提币私钥
-     * @param  string  $note
-     * @param  string  $symbol      提款的标识
+     * @Author : <Jason.C>
+     * @param  int          $amount      提款金额
+     * @param  string       $execName    合约名称，平行链不需要填前缀
+     * @param  string       $privateKey  提币私钥
+     * @param  string       $note
+     * @param  string|null  $symbol      提款的标识
      * @return string
      * @throws \Jason\Chain33\Exceptions\ChainException
      * @throws \Jason\Chain33\Exceptions\ConfigException
@@ -224,7 +224,7 @@ class Client extends BaseClient
     /**
      * Notes   : 创建EVM合约交易
      * @Date   : 2021/1/27 1:44 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  bool    $isCreate  是否为创建合约动作，创建合约为true，调用合约为false
      * @param  string  $name      调用的合约名称，当isCreate为false时有效且必填
      * @param  string  $code      需要部署或者调用合约合约代码
@@ -270,7 +270,7 @@ class Client extends BaseClient
     /**
      * Notes   : EVM合约只读调用（通过ABI）
      * @Date   : 2021/1/27 2:04 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $address  合约地址
      * @param  string  $input    abi方法及参数
      * @param  string  $caller   本次调用的发起者，如果不填写则认为EVM合约自身发起的调用
@@ -295,14 +295,13 @@ class Client extends BaseClient
     /**
      * Notes   : 估算合约调用Gas消耗
      * @Date   : 2021/1/27 1:53 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $code  需要部署或调用的合约代码，如果是部署合约，本字段必填
      * @param  string  $abi   需要部署或调用的合约ABI代码
-     * @param  int     $amount
      * @return int            本次交易需要消耗的gas值
      * @throws \Jason\Chain33\Exceptions\ChainException
      */
-    public function estimateGas(string $code, string $abi = '', int $amount = 0): int
+    public function estimateGas(string $code, string $abi = '',): int
     {
         return $this->client->Query([
             'execer'   => $this->parseExecer('evm'),
@@ -319,7 +318,7 @@ class Client extends BaseClient
      * EVM合约有两个标识，一个是合约地址，一个是合约名称，两者为一对一的唯一对应关系，
      * 因为系统设计原因，在涉及到转账操作时必需使用合约名称进行操作，所以本接口提供了两者的互查能力；
      * @Date   : 2021/1/27 1:57 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $addr  合约地址或合约名称，填写任何一个，则返回另外一个
      * @return array
      * @throws \Jason\Chain33\Exceptions\ChainException
@@ -344,7 +343,7 @@ class Client extends BaseClient
     /**
      * Notes   : 将合约名称转化为地址
      * @Date   : 2021/4/1 10:02 上午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $name
      * @return string
      * @throws \Jason\Chain33\Exceptions\ChainException
@@ -357,7 +356,7 @@ class Client extends BaseClient
     /**
      * Notes   : 将地址转化成名称
      * @Date   : 2021/4/1 10:00 上午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $addr
      * @return mixed|string
      * @throws \Jason\Chain33\Exceptions\ChainException
@@ -370,7 +369,7 @@ class Client extends BaseClient
     /**
      * Notes   : 查询合约ABI
      * @Date   : 2021/1/27 2:01 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $address  EVM合约地址
      * @return array
      *                           "address":"string", 本合约地址
@@ -391,7 +390,7 @@ class Client extends BaseClient
     /**
      * Notes   : EVM调试设置
      * @Date   : 2021/1/27 2:08 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  int  $opType  操作类型，0：查询调试状态， 1：打开， -1：关闭
      * @return bool          当前调试开关状态
      * @throws \Jason\Chain33\Exceptions\ChainException

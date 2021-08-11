@@ -14,12 +14,12 @@ class Client extends BaseClient
     /**
      * @var int 若是签名交易组，则为要签名的交易序号，从1开始，小于等于0则为签名组内全部交易
      */
-    protected $signIndex = 0;
+    protected int $signIndex = 0;
 
     /**
      * Notes   : 转账，coins ，单笔交易【整理完毕，测试通过】
      * @Date   : 2021/3/24 10:19 上午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $to          转账地址
      * @param  int     $amount      转账金额
      * @param  string  $privateKey  转出账户的私钥
@@ -87,14 +87,14 @@ class Client extends BaseClient
     /**
      * Notes   : 转账到合约
      * @Date   : 2021/4/22 10:26 上午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $symbol      要转账的TOKEN
      * @param  int     $amount      转账金额
      * @param  string  $execName    转到的合约名称，平行链不需要前缀
      * @param  string  $privateKey  转账者私钥
      * @param  string  $note
      * @return string
-     * @throws \Jason\Chain33\Exceptions\ChainException
+     * @throws \Jason\Chain33\Exceptions\ChainException|\Jason\Chain33\Exceptions\ConfigException
      */
     public function toExec(string $symbol, int $amount, string $execName, string $privateKey, string $note = ''): string
     {
@@ -126,13 +126,15 @@ class Client extends BaseClient
     /**
      * Notes   : 从合约中提款
      * @Date   : 2021/4/22 1:38 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $symbol      提款的标识
      * @param  int     $amount      提款金额
      * @param  string  $execName    合约名称，平行链不需要填前缀
      * @param  string  $privateKey  提币私钥
+     * @param  string  $note
      * @return string
      * @throws \Jason\Chain33\Exceptions\ChainException
+     * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     public function fromExec(
         string $symbol,
@@ -217,7 +219,7 @@ class Client extends BaseClient
      *           构造交易 -> 平行链交易包装 -> 交易签名 -> 发送交易
      *           后面的交易签名步骤里需要注意一点，参数index需填2
      * @Date   : 2021/1/26 4:22 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $txHex  未签名的原始交易数据
      * @return string          未签名的原始交易数据
      */
@@ -238,7 +240,7 @@ class Client extends BaseClient
     /**
      * Notes   : 构造多笔并发送不收手续费交易（平行链）【有问题，在沟通】
      * @Date   : 2021/1/26 4:32 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  array  $txHexs  未签名的原始交易数据
      * @return string            未签名的原始交易数据
      */
@@ -295,7 +297,7 @@ class Client extends BaseClient
     /**
      * Notes   : 签名并发送交易
      * @Date   : 2021/3/30 1:50 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $txHex       交易数据
      * @param  string  $privateKey  签名私钥
      * @param  int     $fee         手续费
@@ -325,7 +327,7 @@ class Client extends BaseClient
     /**
      * Notes   : 重写交易，这个好像没啥用，不写了
      * @Date   : 2021/1/26 4:38 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      */
     public function rewrite()
     {
@@ -378,7 +380,7 @@ class Client extends BaseClient
     /**
      * Notes   : 根据哈希数组批量获取交易信息
      * @Date   : 2021/1/26 4:48 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  array  $hashes         交易组
      * @param  bool   $disableDetail  是否隐藏交易详情
      * @return array                  交易详情信息
@@ -394,7 +396,7 @@ class Client extends BaseClient
     /**
      * Notes   : 根据哈希获取交易的字符串
      * @Date   : 2021/1/26 4:51 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $hash  交易哈希
      * @return string         交易对象的十六进制编码数据
      */
@@ -408,7 +410,7 @@ class Client extends BaseClient
     /**
      * Notes   : 将合约名转成实际地址
      * @Date   : 2021/1/26 4:54 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $execname  执行器名称，如果需要往执行器中转币这样的操作，需要调用些接口将执行器名转成实际地址
      * @return string             转换生成的地址字符串
      */
@@ -422,7 +424,7 @@ class Client extends BaseClient
     /**
      * Notes   : 构造交易组
      * @Date   : 2021/1/26 4:58 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  array  $txs  十六进制格式交易数组
      * @return string       交易组对象的十六进制字符串
      */
@@ -436,7 +438,7 @@ class Client extends BaseClient
     /**
      * Notes   : 设置合适单元交易费率
      * @Date   : 2021/1/26 5:07 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  int  $txCount  预发送的交易个数,单个交易发送默认空即可
      * @param  int  $txSize   预发送交易的大小, 单位Byte, 字节
      * @return int            单元交易费, 单位1/108的BTY

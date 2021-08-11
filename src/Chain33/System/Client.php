@@ -14,7 +14,7 @@ class Client extends BaseClient
     /**
      * Notes   : 节点类型
      * @Date   : 2021/3/25 11:53 上午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @return string
      */
     public function type(): string
@@ -77,7 +77,7 @@ class Client extends BaseClient
     /**
      * Notes   : 获取主代币信息
      * @Date   : 2021/1/27 10:35 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @return string
      */
     public function coin(): string
@@ -88,7 +88,7 @@ class Client extends BaseClient
     /**
      * Notes   : 时钟同步状态
      * @Date   : 2021/3/30 9:57 上午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @return bool
      */
     public function clockSync(): bool
@@ -99,7 +99,7 @@ class Client extends BaseClient
     /**
      * Notes   : 可能是获取失败的数量
      * @Date   : 2021/3/30 11:19 上午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @return int
      */
     public function failure(): int
@@ -110,7 +110,7 @@ class Client extends BaseClient
     /**
      * Notes   : 交易解析
      * @Date   : 2021/3/30 11:20 上午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $txHex
      * @return mixed
      */

@@ -2,6 +2,7 @@
 
 namespace Jason\Chain33\Oracle;
 
+use DateTimeInterface;
 use Jason\Chain33\Kernel\BaseClient;
 
 /**
@@ -14,7 +15,7 @@ class Client extends BaseClient
     /**
      * Notes   : 生成发布事件
      * @Date   : 2021/1/27 10:45 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string             $type          事件类型
      * @param  string             $subType       事件子类型
      * @param  DateTimeInterface  $time          事件结果预计公布时间，UTC时间（时间戳）
@@ -26,7 +27,7 @@ class Client extends BaseClient
     public function create(
         string $type,
         string $subType,
-        \DateTimeInterface $time,
+        DateTimeInterface $time,
         string $content,
         string $privateKey,
         string $introduction = ''
@@ -49,7 +50,7 @@ class Client extends BaseClient
     /**
      * Notes   : 取消发布事件
      * @Date   : 2021/1/27 10:53 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $eventID  发布事件的事件ID
      * @param  string  $privateKey
      * @return string            交易结果HASH
@@ -70,7 +71,7 @@ class Client extends BaseClient
     /**
      * Notes   : 生成预发布事件结果交易
      * @Date   : 2021/3/30 3:27 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $eventID     发布事件的事件ID
      * @param  string  $source      发布结果的源，比如XX体育
      * @param  string  $result      发布的事件结果，比如比赛比分
@@ -95,7 +96,7 @@ class Client extends BaseClient
     /**
      * Notes   : 生成取消预发布结果的交易
      * @Date   : 2021/3/30 3:29 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $eventID
      * @param  string  $privateKey
      * @return string
@@ -116,7 +117,7 @@ class Client extends BaseClient
     /**
      * Notes   : 生成正式发布事件结果交易
      * @Date   : 2021/3/30 3:30 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $eventID
      * @param  string  $source
      * @param  string  $result
@@ -141,7 +142,7 @@ class Client extends BaseClient
     /**
      * Notes   : 根据发布事件的事件ID查询当前状态
      * @Date   : 2021/3/30 3:31 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $eventID
      * @return mixed
      */

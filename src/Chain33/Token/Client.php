@@ -2,6 +2,7 @@
 
 namespace Jason\Chain33\Token;
 
+use Exception;
 use Jason\Chain33\Kernel\BaseClient;
 
 /**
@@ -73,11 +74,11 @@ class Client extends BaseClient
     /**
      * Notes   :  查询所有预创建的token | 查询所有创建成功的token
      * @Date   : 2021/3/31 12:03 下午
-     * @Author : < Jason.C >
+     * @Author : <C.Jason>
      * @param  int  $status
      * @return array
      */
-    public function get($status = 0): array
+    public function get(int $status = 0): array
     {
         try {
             return $this->client->Query([
@@ -89,7 +90,7 @@ class Client extends BaseClient
                     'symbolOnly' => false,
                 ],
             ])['tokens'];
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [];
         }
     }
@@ -137,14 +138,14 @@ class Client extends BaseClient
      * @param  string  $address  要查询的地址
      * @return array
      */
-    public function assets(string $address, string $execer = 'token'): array
+    public function assets(string $address): array
     {
         return $this->client->Query([
             'execer'   => 'token',
             'funcName' => 'GetAccountTokenAssets',
             'payload'  => [
                 'address' => $address,
-                'execer'  => $this->parseExecer($execer),
+                'execer'  => 'token',
             ],
         ])['tokenAssets'];
     }

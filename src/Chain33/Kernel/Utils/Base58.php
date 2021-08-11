@@ -11,7 +11,7 @@ class Base58
      * @param  bool  $reverse
      * @return null
      */
-    private static function permutation_lookup($char, $reverse = false)
+    private static function permutation_lookup($char, bool $reverse = false): ?string
     {
         $table = [
             '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D',
@@ -33,11 +33,7 @@ class Base58
             }
         }
 
-        if (isset($table[$char])) {
-            return $table[$char];
-        } else {
-            return null;
-        }
+        return $table[$char] ?? null;
     }
 
     /***
@@ -47,7 +43,7 @@ class Base58
      * @return String Base58
      * @throws \Exception
      */
-    public static function Encode($data, $littleEndian = true)
+    public static function Encode($data, bool $littleEndian = true): string
     {
         $res        = '';
         $dataIntVal = gmp_init($data, 16);
@@ -84,7 +80,7 @@ class Base58
      * @param  bool  $littleEndian
      * @return String Hex
      */
-    public static function Decode($encodedData, $littleEndian = true)
+    public static function Decode($encodedData, bool $littleEndian = true): string
     {
         $res    = gmp_init(0, 10);
         $length = strlen($encodedData);

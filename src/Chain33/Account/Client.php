@@ -19,7 +19,7 @@ class Client extends BaseClient
     /**
      * Notes   : 通过私钥，获取地址
      * @Date   : 2021/3/23 2:14 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param $privateKey
      * @return String
      * @throws \Jason\Chain33\Exceptions\ChainException
@@ -46,7 +46,7 @@ class Client extends BaseClient
     /**
      * Notes   : 验证地址是否合法
      * @Date   : 2021/3/22 5:35 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param $address
      * @return bool
      */
@@ -60,6 +60,7 @@ class Client extends BaseClient
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 15:01
      * @return array
+     * @throws \Exception
      */
     public function local(): array
     {
@@ -77,11 +78,12 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes: 获取钱包地址
-     * @Author: <C.Jason>
-     * @Date  : 2020/4/30 15:00
+     * Notes   : 获取钱包地址
+     * @Author : <C.Jason>
+     * @Date   : 2020/4/30 15:00
      * @param  array  $detail
      * @return string
+     * @throws \Exception
      */
     protected function getAddress(array $detail): string
     {

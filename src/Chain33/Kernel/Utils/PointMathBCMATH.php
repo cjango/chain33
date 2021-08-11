@@ -7,13 +7,12 @@ class PointMathBCMATH
 
     /***
      * Computes the result of a point addition and returns the resulting point as an Array.
-     * @param  Array  $pt
+     * @param  array  $pt
      * @param         $a
      * @param         $p
-     * @return Array Point
-     * @throws \Exception
+     * @return array Point
      */
-    public static function doublePoint(array $pt, $a, $p)
+    public static function doublePoint(array $pt, $a, $p): array
     {
         $nPt = [];
 
@@ -44,14 +43,14 @@ class PointMathBCMATH
 
     /***
      * Computes the result of a point addition and returns the resulting point as an Array.
-     * @param  Array  $pt1
-     * @param  Array  $pt2
+     * @param  array  $pt1
+     * @param  array  $pt2
      * @param         $a
      * @param         $p
-     * @return Array Point
+     * @return array Point
      * @throws \Exception
      */
-    public static function addPoints(array $pt1, array $pt2, $a, $p)
+    public static function addPoints(array $pt1, array $pt2, $a, $p): array
     {
 
         $nPt = [];
@@ -135,10 +134,10 @@ class PointMathBCMATH
      * Compares Points if Identical.
      * @param $pt1 Array(BC, BC)
      * @param $pt2 Array(BC, BC)
-     * @return Array(BC, BC)
+     * @return int(BC, BC)
      */
 
-    private static function comparePoint($pt1, $pt2)
+    private static function comparePoint($pt1, $pt2): int
     {
         if (bccomp($pt1['x'], $pt2['x']) == 0 && bccomp($pt1['y'], $pt2['y']) == 0) {
             return 0;

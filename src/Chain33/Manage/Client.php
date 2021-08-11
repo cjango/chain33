@@ -17,7 +17,7 @@ class Client extends BaseClient
     /**
      * Notes   : 添加/删除一个token-finisher
      * @Date   : 2021/3/24 2:02 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $addr
      * @param  string  $op  add / delete
      * @return string
@@ -43,7 +43,7 @@ class Client extends BaseClient
     /**
      * Notes   : TOKEN 黑名单管理
      * @Date   : 2021/3/24 2:02 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $symbol
      * @param  string  $op
      * @return string
@@ -69,7 +69,7 @@ class Client extends BaseClient
     /**
      * Notes   : 共识节点的管理者
      * @Date   : 2021/4/2 11:01 上午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $addr
      * @param  string  $op
      * @return string
@@ -95,7 +95,7 @@ class Client extends BaseClient
     /**
      * Notes   : 通知全网，加入新的共识节点
      * @Date   : 2021/4/2 11:11 上午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $pubkey  新节点的公钥
      * @param  int     $power   投票权，范围从【1~~全网总power/3】，如果设置为 0 则代表剔除节点
      * @return string
@@ -121,7 +121,7 @@ class Client extends BaseClient
      * @param  string  $type  操作标识符
      * @return array
      */
-    public function get($type = 'finisher'): array
+    public function get(string $type = 'finisher'): array
     {
         $value = $this->client->Query([
             'execer'   => 'manage',

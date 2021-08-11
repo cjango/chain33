@@ -2,7 +2,9 @@
 
 namespace Jason\Chain33\Exceptions;
 
-class ChainException extends \Exception
+use Exception;
+
+class ChainException extends Exception
 {
 
 }

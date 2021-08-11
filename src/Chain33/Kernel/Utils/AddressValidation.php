@@ -10,7 +10,7 @@ class AddressValidation
      * @param  String Base58 $address
      * @return bool
      */
-    public static function validateAddress($address)
+    public static function validateAddress($address): bool
     {
         $address = hex2bin(Base58::Decode($address));
 
@@ -34,7 +34,7 @@ class AddressValidation
      * @param  String Base58 $wif
      * @return bool
      */
-    public static function validateWifKey($wif)
+    public static function validateWifKey($wif): bool
     {
         $key          = Base58::Decode($wif, false);
         $length       = strlen($key);

@@ -16,7 +16,7 @@ class Client extends BaseClient
     /**
      * Notes   : 本地生成一个 bip39 标准的助记词
      * @Date   : 2021/7/19 3:28 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  int     $len       助记词位数
      * @param  string  $language  助记词语言
      * @return \Jason\Bip39\Mnemonic
@@ -31,7 +31,7 @@ class Client extends BaseClient
     /**
      * Notes   : 生成SEED
      * @Date   : 2021/3/21 12:10 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  int  $lang  0 english 1 中文
      * @return string
      */
@@ -143,7 +143,7 @@ class Client extends BaseClient
     /**
      * Notes   : 查询手续费，以及交易数量
      * @Date   : 2021/3/29 5:36 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @return array
      */
     public function totalFee(): array

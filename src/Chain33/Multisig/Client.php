@@ -14,7 +14,7 @@ class Client extends BaseClient
     /**
      * Notes   : 创建多重签名账户 【这里只用作存根了，具体使用 Chain33::Client()->MultiSigAccCreateTx() 来实现吧】
      * @Date   : 2021/3/30 2:12 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @return string
      */
     public function create(): string
@@ -44,10 +44,10 @@ class Client extends BaseClient
     /**
      * Notes   : 多重签名账户修改RequiredWeight值
      * @Date   : 2021/3/30 2:09 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $multiSigAccAddr
      * @param  int     $newWeight
-     * @param  string  $multiSigAccAddr
+     * @param  string  $privateKey
      * @return string
      */
     public function operateRequiredWeight(string $multiSigAccAddr, int $newWeight, string $privateKey): string
@@ -64,7 +64,7 @@ class Client extends BaseClient
     /**
      * Notes   : 多重签名账户修改DailyLimit每日限额
      * @Date   : 2021/3/30 2:12 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $multiSigAccAddr
      * @param  array   $dailyLimit
      * @param  string  $privateKey
@@ -88,7 +88,7 @@ class Client extends BaseClient
     /**
      * Notes   : 获取已经创建的多重签名账户个数
      * @Date   : 2021/3/30 1:25 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @return int
      */
     public function count(): int
@@ -102,7 +102,7 @@ class Client extends BaseClient
     /**
      * Notes   : 获取多重签名地址
      * @Date   : 2021/3/30 2:05 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  int  $start  多重签名账户index索引，从0开始
      * @param  int  $end    多重签名账户index索引，end>=start && end< MultiSigAccCount获取的值
      * @return array
@@ -122,7 +122,7 @@ class Client extends BaseClient
     /**
      * Notes   : 获取多重签名账户信息
      * @Date   : 2021/3/30 1:27 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $multiSigAccAddr
      * @return array
      */
@@ -140,7 +140,7 @@ class Client extends BaseClient
     /**
      * Notes   : 查询多重签名账户指定资产当日免密余额
      * @Date   : 2021/3/30 2:03 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $multiSigAddr  多重签名账户地址
      * @param  bool    $isAll         是否所有资产
      * @param  string  $execer        资产信息
@@ -170,7 +170,7 @@ class Client extends BaseClient
     /**
      * Notes   : 查询多重签名账户指定资产信息
      * @Date   : 2021/3/30 1:30 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @return mixed
      */
     public function assets()
@@ -192,7 +192,7 @@ class Client extends BaseClient
     /**
      * Notes   : 查询指定地址创建的多重签名账户列表
      * @Date   : 2021/3/30 2:16 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $creator
      * @return array
      */
@@ -210,7 +210,7 @@ class Client extends BaseClient
     /**
      * Notes   : 查询owner地址拥有的多重签名账户列表
      * @Date   : 2021/3/30 2:16 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $owner
      * @return array
      */
@@ -224,7 +224,7 @@ class Client extends BaseClient
     /**
      * Notes   : 多重签名账户增加owner
      * @Date   : 2021/3/30 2:16 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $multiSigAccAddr
      * @param  string  $newOwner
      * @param  int     $newWeight
@@ -246,7 +246,7 @@ class Client extends BaseClient
     /**
      * Notes   : 多重签名账户删除owner
      * @Date   : 2021/3/30 2:20 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $multiSigAccAddr
      * @param  string  $oldOwner
      * @param  string  $privateKey
@@ -266,7 +266,7 @@ class Client extends BaseClient
     /**
      * Notes   : 多重签名账户owner权重修改
      * @Date   : 2021/3/30 2:21 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $multiSigAccAddr
      * @param  string  $oldOwner
      * @param  int     $newWeight
@@ -288,7 +288,7 @@ class Client extends BaseClient
     /**
      * Notes   : 多重签名账户owner替换
      * @Date   : 2021/3/30 2:22 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $multiSigAccAddr
      * @param  string  $oldOwner
      * @param  string  $newOwner
@@ -314,7 +314,7 @@ class Client extends BaseClient
     /**
      * Notes   : 多重签名账户资产转入
      * @Date   : 2021/3/30 2:23 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $symbol    资产标识
      * @param  string  $execname  资产执行器名
      * @param  string  $note      转账说明
@@ -338,7 +338,7 @@ class Client extends BaseClient
     /**
      * Notes   : 多重签名账户资产转出
      * @Date   : 2021/3/30 2:24 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $symbol    资产标识
      * @param  string  $execname  资产执行器名
      * @param  string  $note      转账说明
@@ -370,7 +370,7 @@ class Client extends BaseClient
     /**
      * Notes   : 多重签名账户交易确认
      * @Date   : 2021/3/30 2:27 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $multiSigAccAddr  多重签名地址
      * @param  int     $txId             需要确认或者撤销的交易index，从0开始
      * @param  bool    $confirm          确认/撤销交易。true：确认交易
@@ -390,7 +390,7 @@ class Client extends BaseClient
     /**
      * Notes   : 获取多重签名账户交易数
      * @Date   : 2021/3/30 1:40 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $multiSigAccAddr  多重签名账户地址
      * @return int
      */
@@ -408,7 +408,7 @@ class Client extends BaseClient
     /**
      * Notes   : 获取指定区间的指定状态的多重签名交索引易
      * @Date   : 2021/3/30 2:31 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $multiSigAddr  多重签名账户地址
      * @param  int     $fromTxId      多重签名账户交易索引值，fromTxId>=0
      * @param  int     $toTxId        多重签名账户交易索引,toTxId< MultiSigAccTxCount 获取的交易数
@@ -434,7 +434,7 @@ class Client extends BaseClient
     /**
      * Notes   : 获取多重签名交易信息
      * @Date   : 2021/3/30 2:34 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $multiSigAddr  多重签名账户地址
      * @param  int     $txId          多重签名账户交易索引值，fromTxId>=0
      * @return mixed
@@ -454,7 +454,7 @@ class Client extends BaseClient
     /**
      * Notes   : 获取指定交易被确认的权重信息
      * @Date   : 2021/3/30 2:35 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.C>
      * @param  string  $multiSigAddr  多重签名账户地址
      * @param  int     $txId          多重签名账户交易索引值，0 <= fromTxId < MultiSigAccTxCount 获取的交易数
      * @return int

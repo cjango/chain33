@@ -5,15 +5,15 @@ namespace Jason\Chain33\Kernel\Support;
 class RpcRequest
 {
 
-    protected $jsonrpc = '2.0';
+    protected string $jsonrpc = '2.0';
 
-    protected $id;
+    protected int $id;
 
-    protected $method;
+    protected ?string $method;
 
-    protected $params = [];
+    protected array $params = [];
 
-    protected $prefix = 'Chain33';
+    protected string $prefix = 'Chain33';
 
     public function __construct(int $id = null, string $method = null, array $params = [])
     {
@@ -22,7 +22,7 @@ class RpcRequest
         $this->params = $params;
     }
 
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -32,21 +32,21 @@ class RpcRequest
         $this->prefix = $prefix;
     }
 
-    public function setMethod(string $method)
+    public function setMethod(string $method): RpcRequest
     {
         $this->method = $this->prefix . '.' . $method;
 
         return $this;
     }
 
-    public function setParams($params = [])
+    public function setParams($params = []): RpcRequest
     {
         array_push($this->params, $params);
 
         return $this;
     }
 
-    public function toJson()
+    public function toJson(): string
     {
         return $this->__toString();
     }
