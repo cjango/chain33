@@ -68,13 +68,31 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes: 查询地址所有合约地址余额
+     * Notes   : 查询地址所有合约地址余额
+     * @Date   : 2021/8/12 8:52 上午
+     * @Author : <Jason.C>
+     * @param  string  $address
+     * @return mixed
+     */
+    public function all(string $address)
+    {
+        return $this->client->GetAllExecBalance([
+            'addr'         => $address,
+            'execer'       => '',
+            'stateHash'    => '',
+            'asset_exec'   => 'token',
+            'asset_symbol' => '',
+        ])['execAccount'];
+    }
+
+    /**
+     * Notes: 查询地址所有TOKEN余额
      * @Author : <C.Jason>
      * @Date   : 2020/4/30 22:53
      * @param  string  $address  要查询的地址
      * @return array|null
      */
-    public function all(string $address): ?array
+    public function assets(string $address): ?array
     {
         return $this->client->Query([
             'execer'   => 'token',

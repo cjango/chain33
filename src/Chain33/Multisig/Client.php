@@ -15,9 +15,10 @@ class Client extends BaseClient
      * Notes   : 创建多重签名账户 【这里只用作存根了，具体使用 Chain33::Client()->MultiSigAccCreateTx() 来实现吧】
      * @Date   : 2021/3/30 2:12 下午
      * @Author : <Jason.C>
+     * @param  string  $privateKey
      * @return string
      */
-    public function create(): string
+    public function create(string $privateKey): string
     {
         $txHex = $this->client->MultiSigAccCreateTx([
             'owners'         => [
@@ -173,7 +174,7 @@ class Client extends BaseClient
      * @Author : <Jason.C>
      * @return mixed
      */
-    public function assets()
+    public function assets(string $multiSigAddr)
     {
         return $this->client->Query([
             'execer'   => 'multisig',
@@ -320,10 +321,17 @@ class Client extends BaseClient
      * @param  string  $note      转账说明
      * @param  string  $to        收账地址，必须是多重签名地址
      * @param  int     $amount    转入的资产额度
+     * @param  string  $privateKey
      * @return string
      */
-    public function rechage(string $symbol, string $execname, string $note, string $to, int $amount): string
-    {
+    public function rechage(
+        string $symbol,
+        string $execname,
+        string $note,
+        string $to,
+        int $amount,
+        string $privateKey
+    ): string {
         $txHex = $this->client->MultiSigAccTransferInTx([
             'symbol'   => $symbol,
             'execname' => $execname,
@@ -345,6 +353,7 @@ class Client extends BaseClient
      * @param  string  $to        收账地址，必须是非多重签名地址
      * @param  string  $from      出账地址，必须是多重签名地址
      * @param  int     $amount    转入的资产额度
+     * @param  string  $privateKey
      * @return string
      */
     public function withdraw(
@@ -353,7 +362,8 @@ class Client extends BaseClient
         string $note,
         string $to,
         string $from,
-        int $amount
+        int $amount,
+        string $privateKey
     ): string {
         $txHex = $this->client->MultiSigAccTransferOutTx([
             'symbol'   => $symbol,
@@ -374,9 +384,10 @@ class Client extends BaseClient
      * @param  string  $multiSigAccAddr  多重签名地址
      * @param  int     $txId             需要确认或者撤销的交易index，从0开始
      * @param  bool    $confirm          确认/撤销交易。true：确认交易
+     * @param  string  $privateKey
      * @return string
      */
-    public function confirm(string $multiSigAccAddr, int $txId, bool $confirm = true): string
+    public function confirm(string $multiSigAccAddr, int $txId, string $privateKey, bool $confirm = true): string
     {
         $txHex = $this->client->MultiSigConfirmTx([
             'multiSigAccAddr' => $multiSigAccAddr,

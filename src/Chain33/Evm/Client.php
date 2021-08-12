@@ -301,7 +301,7 @@ class Client extends BaseClient
      * @return int            本次交易需要消耗的gas值
      * @throws \Jason\Chain33\Exceptions\ChainException
      */
-    public function estimateGas(string $code, string $abi = '',): int
+    public function estimateGas(string $code, string $abi = ''): int
     {
         return $this->client->Query([
             'execer'   => $this->parseExecer('evm'),
