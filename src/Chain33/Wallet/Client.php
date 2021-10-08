@@ -14,7 +14,7 @@ class Client extends BaseClient
 {
 
     /**
-     * Notes   : 本地生成一个 bip39 标准的助记词
+     * Notes   : 本地生成 bip39 标准的助记词
      * @Date   : 2021/7/19 3:28 下午
      * @Author : <Jason.C>
      * @param  int     $len       助记词位数
@@ -29,7 +29,7 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes   : 生成SEED
+     * Notes   : 通过chain33生成助记词
      * @Date   : 2021/3/21 12:10 下午
      * @Author : <Jason.C>
      * @param  int  $lang  0 english 1 中文
@@ -43,7 +43,7 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes: 创建一个钱包
+     * Notes: 创建钱包
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 17:33
      * @param  string  $password  钱包密码

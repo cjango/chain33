@@ -43,7 +43,7 @@ class Base58
      * @return String Base58
      * @throws \Exception
      */
-    public static function Encode($data, bool $littleEndian = true): string
+    public static function encode($data, bool $littleEndian = true): string
     {
         $res        = '';
         $dataIntVal = gmp_init($data, 16);
@@ -80,7 +80,7 @@ class Base58
      * @param  bool  $littleEndian
      * @return String Hex
      */
-    public static function Decode($encodedData, bool $littleEndian = true): string
+    public static function decode($encodedData, bool $littleEndian = true): string
     {
         $res    = gmp_init(0, 10);
         $length = strlen($encodedData);

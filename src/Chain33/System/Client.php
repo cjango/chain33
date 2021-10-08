@@ -86,6 +86,17 @@ class Client extends BaseClient
     }
 
     /**
+     * Notes   : 获取系统支持签名类型
+     * @Date   : 2021/10/8 5:01 下午
+     * @Author : <Jason.C>
+     * @return mixed
+     */
+    public function cryptos()
+    {
+        return $this->client->GetCryptoList()['cryptos'];
+    }
+
+    /**
      * Notes   : 时钟同步状态
      * @Date   : 2021/3/30 9:57 上午
      * @Author : <Jason.C>

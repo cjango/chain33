@@ -11,6 +11,19 @@ use Jason\Chain33\Kernel\BaseClient;
 class Client extends BaseClient
 {
 
+    // txExistErr	transaction exists	该交易已存在mempool中
+    // lowFeeErr	low transaction fee	交易费过低
+    // manyTxErr	you have too many transactions	同一账户在mempool中有超过10笔交易
+    // signErr	wrong signature	签名错误
+    // lowBalanceErr	low balance	余额不足
+    // bigMsgErr	message too big	消息过大
+    // expireErr	message expired	消息过期
+    // loadAccountsErr	loadacconts error	匹配账户错误
+    // emptyTxErr	empty transaction	交易为空
+    // dupTxErr	duplicated transaction	重复交易
+    // memNotReadyErr	mempool not ready	mempool未启动
+    // memFullErr	mempool is full	mempool已满
+
     /**
      * @var int 若是签名交易组，则为要签名的交易序号，从1开始，小于等于0则为签名组内全部交易
      */

@@ -12,7 +12,7 @@ class AddressValidation
      */
     public static function validateAddress($address): bool
     {
-        $address = hex2bin(Base58::Decode($address));
+        $address = hex2bin(Base58::decode($address));
 
         if (strlen($address) != 25) {
             return false;
@@ -36,7 +36,7 @@ class AddressValidation
      */
     public static function validateWifKey($wif): bool
     {
-        $key          = Base58::Decode($wif, false);
+        $key          = Base58::decode($wif, false);
         $length       = strlen($key);
         $firstSha256  = hash('sha256', hex2bin(substr($key, 0, $length - 8)));
         $secondSha256 = hash('sha256', hex2bin($firstSha256));

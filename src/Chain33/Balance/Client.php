@@ -48,18 +48,17 @@ class Client extends BaseClient
      * @Date  : 2020/4/30 22:50
      * @param  string|array  $address  要查询的地址，或地址组
      * @param  string        $symbol   token符号名称
-     * @param  string        $execer
      * @return array
      * @throws \Jason\Chain33\Exceptions\ChainException
      */
-    public function token(string $address, string $symbol, string $execer = 'token'): array
+    public function token(string $address, string $symbol): array
     {
         $flat = is_string($address);
 
         $addresses = $flat ? [$address] : $address;
 
         $result = $this->client->GetTokenBalance([
-            'execer'      => $this->parseExecer($execer),
+            'execer'      => $this->parseExecer('token'),
             'tokenSymbol' => $symbol,
             'addresses'   => $addresses,
         ], 'token');
@@ -71,18 +70,20 @@ class Client extends BaseClient
      * Notes   : 查询地址所有合约地址余额
      * @Date   : 2021/8/12 8:52 上午
      * @Author : <Jason.C>
-     * @param  string  $address
+     * @param  string  $address  要查询的地址
+     * @param  string  $symbol   资产名称，如 bty， token的各种 symbol ， 跨链的bty 名称为 coins.bty, 跨链的token 为 token.symbol
+     * @param  string  $exec     资产原始合约名称，如bty 在 coins 合约中产生，各种token 在 token 合约中产生， 跨链的资产在 paracross 合约中
+     * @param  string  $execer   执行器名称，coins 查询可用的主代币 ，ticket 查询正在挖矿的主代币
      * @return mixed
      */
-    public function all(string $address)
+    public function all(string $address, string $symbol = '', string $exec = 'coins', string $execer = 'coins')
     {
         return $this->client->GetAllExecBalance([
             'addr'         => $address,
-            'execer'       => '',
-            'stateHash'    => '',
-            'asset_exec'   => 'token',
+            'execer'       => $execer,
+            'asset_exec'   => $exec,
             'asset_symbol' => '',
-        ])['execAccount'];
+        ])['ExecAccount'];
     }
 
     /**

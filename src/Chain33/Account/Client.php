@@ -100,7 +100,7 @@ class Client extends BaseClient
         $checksum    = hash('sha256', hex2bin(hash('sha256', hex2bin($with_prefix))));
         $address     = $with_prefix . substr($checksum, 0, 8);
 
-        return Base58::Encode($address);
+        return Base58::encode($address);
     }
 
     /**

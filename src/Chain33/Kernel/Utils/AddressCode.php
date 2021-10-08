@@ -114,12 +114,12 @@ class AddressCode
         // Encode
         $address = $hex_with_prefix . substr($checksum, 0, 8);
 
-        return Base58::Encode($address);
+        return Base58::encode($address);
     }
 
     public static function Decode($address)
     {
-        $hex_with_prefix_and_check = Base58::Decode($address);
+        $hex_with_prefix_and_check = Base58::decode($address);
         $prefix                    = substr($hex_with_prefix_and_check, 0, 2);
         $checksum                  = substr($hex_with_prefix_and_check, -8);
 
