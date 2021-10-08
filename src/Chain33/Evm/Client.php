@@ -3,6 +3,7 @@
 namespace Jason\Chain33\Evm;
 
 use Jason\Chain33\Kernel\BaseClient;
+use Jason\Chain33\Kernel\Utils\Base58;
 
 /**
  * Class Client
@@ -128,13 +129,14 @@ class Client extends BaseClient
      * Notes   : 转账到合约
      * @Date   : 2021/4/22 10:26 上午
      * @Author : <Jason.C>
-     * @param  int     $amount      转账金额
-     * @param  string  $execName    转到的合约名称，平行链不需要前缀
-     * @param  string  $privateKey  转账者私钥
-     * @param  string  $note
-     * @param  string  $symbol      要转账的TOKEN标识
+     * @param  int          $amount      转账金额
+     * @param  string       $execName    转到的合约名称，平行链不需要前缀
+     * @param  string       $privateKey  转账者私钥
+     * @param  string       $note
+     * @param  string|null  $symbol      要转账的TOKEN标识
      * @return string
-     * @throws \Jason\Chain33\Exceptions\ChainException|\Jason\Chain33\Exceptions\ConfigException
+     * @throws \Jason\Chain33\Exceptions\ChainException
+     * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     public function transfer(
         int $amount,
@@ -404,6 +406,43 @@ class Client extends BaseClient
                 'optype' => $opType,
             ],
         ])['debugStatus'];
+    }
+
+    /**
+     * Notes   : evm的地址转换为chain33地址
+     * @Date   : 2021/10/8 4:21 下午
+     * @Author : <Jason.C>
+     * @param  string  $evmAddr
+     * @return string
+     * @throws \Exception
+     */
+    public function convertToChain(string $evmAddr): string
+    {
+        $transAddr = '';
+        if (substr($evmAddr, 0, 2) === '0x') {
+            $transAddr = substr($evmAddr, 24);
+        } else {
+            foreach (explode(',', $evmAddr) as $s) {
+                $transAddr .= chr($s);
+            }
+            $transAddr = '00' . bin2hex($transAddr);
+        }
+
+        $checksum = hash('sha256', hex2bin(hash('sha256', hex2bin($transAddr))));
+
+        return Base58::Encode($transAddr . substr($checksum, 0, 8));
+    }
+
+    /**
+     * Notes   : chain33的地址转换为evm地址
+     * @Date   : 2021/10/8 4:21 下午
+     * @Author : <Jason.C>
+     * @param  string  $chainAddr
+     * @return string
+     */
+    public function convertToEvm(string $chainAddr): string
+    {
+        return substr((Base58::Decode($chainAddr)), 0, 42);
     }
 
 }
