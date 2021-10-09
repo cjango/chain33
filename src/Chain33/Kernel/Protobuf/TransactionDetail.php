@@ -187,7 +187,7 @@ class TransactionDetail extends Message
      */
     public function setProofs($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
+        $arr          = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
         $this->proofs = $arr;
 
         return $this;
@@ -355,7 +355,7 @@ class TransactionDetail extends Message
      */
     public function setAssets($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr          = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             Asset::class);
         $this->assets = $arr;
 
@@ -380,7 +380,7 @@ class TransactionDetail extends Message
      */
     public function setTxProofs($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr            = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             TxProof::class);
         $this->txProofs = $arr;
 

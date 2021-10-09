@@ -145,36 +145,36 @@ class Client extends BaseClient
     public function query(string $hash)
     {
         $content = $this->client->Query([
-            'execer' => 'storage',
+            'execer'   => 'storage',
             'funcName' => 'QueryStorage',
-            'payload' => [
+            'payload'  => [
                 'txHash' => $hash,
             ],
         ]);
 
         if (array_key_exists('contentStorage', $content)) {
             return [
-                'type' => 'content',
+                'type'    => 'content',
                 'content' => $this->hexToStr($content['contentStorage']['content']),
-                'key' => $content['contentStorage']['value'],
-                'op' => $content['contentStorage']['op'],
-                'value' => $content['contentStorage']['value'],
+                'key'     => $content['contentStorage']['value'],
+                'op'      => $content['contentStorage']['op'],
+                'value'   => $content['contentStorage']['value'],
             ];
         }
         if (array_key_exists('hashStorage', $content)) {
             return [
-                'type' => 'hash',
-                'hash' => $this->hexToStr($content['hashStorage']['hash']),
-                'key' => $content['hashStorage']['key'],
+                'type'  => 'hash',
+                'hash'  => $this->hexToStr($content['hashStorage']['hash']),
+                'key'   => $content['hashStorage']['key'],
                 'value' => $content['hashStorage']['value'],
             ];
         }
         if (array_key_exists('linkStorage', $content)) {
             return [
-                'type' => 'link',
-                'link' => $this->hexToStr($content['linkStorage']['link']),
-                'hash' => $this->hexToStr($content['linkStorage']['hash']),
-                'key' => $content['linkStorage']['key'],
+                'type'  => 'link',
+                'link'  => $this->hexToStr($content['linkStorage']['link']),
+                'hash'  => $this->hexToStr($content['linkStorage']['hash']),
+                'key'   => $content['linkStorage']['key'],
                 'value' => $content['linkStorage']['value'],
             ];
         }

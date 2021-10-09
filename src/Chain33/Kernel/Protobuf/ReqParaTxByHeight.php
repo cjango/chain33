@@ -61,7 +61,7 @@ class ReqParaTxByHeight extends Message
      */
     public function setItems($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::INT64);
+        $arr         = GPBUtil::checkRepeatedField($var, GPBType::INT64);
         $this->items = $arr;
 
         return $this;

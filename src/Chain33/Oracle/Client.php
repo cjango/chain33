@@ -33,13 +33,13 @@ class Client extends BaseClient
         string $introduction = ''
     ): string {
         $txHex = $this->client->CreateTransaction([
-            'execer' => 'oracle',
+            'execer'     => 'oracle',
             'actionName' => 'EventPublish',
-            'payload' => [
-                'type' => $type,
-                'subType' => $subType,
-                'time' => $time->getTimestamp(),
-                'content' => $content,
+            'payload'    => [
+                'type'         => $type,
+                'subType'      => $subType,
+                'time'         => $time->getTimestamp(),
+                'content'      => $content,
                 'introduction' => $introduction,
             ],
         ]);
@@ -60,9 +60,9 @@ class Client extends BaseClient
     public function abort(string $eventID, string $privateKey): string
     {
         $txHex = $this->client->CreateTransaction([
-            'execer' => 'oracle',
+            'execer'     => 'oracle',
             'actionName' => 'EventAbort',
-            'payload' => [
+            'payload'    => [
                 'eventID' => $eventID,
             ],
         ]);
@@ -85,12 +85,12 @@ class Client extends BaseClient
     public function preview(string $eventID, string $source, string $result, string $privateKey): string
     {
         $txHex = $this->client->CreateTransaction([
-            'execer' => 'oracle',
+            'execer'     => 'oracle',
             'actionName' => 'ResultPrePublish',
-            'payload' => [
+            'payload'    => [
                 'eventID' => $eventID,
-                'source' => $source,
-                'result' => $result,
+                'source'  => $source,
+                'result'  => $result,
             ],
         ]);
 
@@ -110,9 +110,9 @@ class Client extends BaseClient
     public function previewAbort(string $eventID, string $privateKey): string
     {
         $txHex = $this->client->CreateTransaction([
-            'execer' => 'oracle',
+            'execer'     => 'oracle',
             'actionName' => 'EventAbort',
-            'payload' => [
+            'payload'    => [
                 'eventID' => $eventID,
             ],
         ]);
@@ -135,12 +135,12 @@ class Client extends BaseClient
     public function publish(string $eventID, string $source, string $result, string $privateKey): string
     {
         $txHex = $this->client->CreateTransaction([
-            'execer' => 'oracle',
+            'execer'     => 'oracle',
             'actionName' => 'ResultPublish',
-            'payload' => [
+            'payload'    => [
                 'eventID' => $eventID,
-                'source' => $source,
-                'result' => $result,
+                'source'  => $source,
+                'result'  => $result,
             ],
         ]);
 
@@ -159,9 +159,9 @@ class Client extends BaseClient
     public function query(string $eventID)
     {
         return $this->client->Query([
-            'execer' => 'oracle',
+            'execer'   => 'oracle',
             'funcName' => 'QueryOraclesByIDs',
-            'payload' => [
+            'payload'  => [
                 'eventID' => $eventID,
             ],
         ])['status'];

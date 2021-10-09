@@ -40,9 +40,9 @@ class Client extends BaseClient
     public function bind(string $bindAddr, string $originAddr, int $amount = 0, bool $checkBalance = true): string
     {
         return $this->client->CreateBindMiner([
-            'bindAddr' => $bindAddr,
-            'originAddr' => $originAddr,
-            'amount' => $amount,
+            'bindAddr'     => $bindAddr,
+            'originAddr'   => $originAddr,
+            'amount'       => $amount,
             'checkBalance' => $checkBalance,
         ], 'ticket')['txhex'];
     }
@@ -89,9 +89,9 @@ class Client extends BaseClient
     public function addr(string $execer, string $addr): int
     {
         return $this->client->Query([
-            'execer' => $execer,
+            'execer'   => $execer,
             'funcName' => 'MinerAddress',
-            'payload' => [
+            'payload'  => [
                 'data' => $addr,
             ],
         ])['data'];
@@ -110,9 +110,9 @@ class Client extends BaseClient
     public function source(string $execer, string $addr): array
     {
         return $this->client->Query([
-            'execer' => $execer,
+            'execer'   => $execer,
             'funcName' => 'MinerSourceList',
-            'payload' => [
+            'payload'  => [
                 'data' => $addr,
             ],
         ])['datas'];
@@ -156,14 +156,14 @@ class Client extends BaseClient
         array $pubHashes
     ): string {
         return $this->client->CreateTransaction([
-            'execer' => 'ticket',
+            'execer'     => 'ticket',
             'actionName' => 'Topen',
-            'payload' => [
-                'minerAddress' => $minerAddress,
+            'payload'    => [
+                'minerAddress'  => $minerAddress,
                 'returnAddress' => $returnAddress,
-                'count' => $count,
-                'randSeed' => $randSeed,
-                'pubHashes' => $pubHashes,
+                'count'         => $count,
+                'randSeed'      => $randSeed,
+                'pubHashes'     => $pubHashes,
             ],
         ]);
     }

@@ -65,7 +65,7 @@ class TxHashList extends Message
      */
     public function setHashes($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
+        $arr          = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
         $this->hashes = $arr;
 
         return $this;
@@ -113,7 +113,7 @@ class TxHashList extends Message
      */
     public function setExpire($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::INT64);
+        $arr          = GPBUtil::checkRepeatedField($var, GPBType::INT64);
         $this->expire = $arr;
 
         return $this;

@@ -35,9 +35,9 @@ class Client extends BaseClient
         $addresses = $flat ? [$address] : $address;
 
         $result = $this->client->GetBalance([
-            'execer' => $this->parseExecer($execer),
-            'addresses' => $addresses,
-            'asset_exec' => $asset_exec,
+            'execer'       => $this->parseExecer($execer),
+            'addresses'    => $addresses,
+            'asset_exec'   => $asset_exec,
             'asset_symbol' => $asset_symbol,
         ]);
 
@@ -63,9 +63,9 @@ class Client extends BaseClient
         $addresses = $flat ? [$address] : $address;
 
         $result = $this->client->GetTokenBalance([
-            'execer' => $this->parseExecer('token'),
+            'execer'      => $this->parseExecer('token'),
             'tokenSymbol' => $symbol,
-            'addresses' => $addresses,
+            'addresses'   => $addresses,
         ], 'token');
 
         return $flat ? $result[0] : $result;
@@ -86,9 +86,9 @@ class Client extends BaseClient
     public function all(string $address, string $symbol = '', string $exec = 'coins', string $execer = 'coins')
     {
         return $this->client->GetAllExecBalance([
-            'addr' => $address,
-            'execer' => $execer,
-            'asset_exec' => $exec,
+            'addr'         => $address,
+            'execer'       => $execer,
+            'asset_exec'   => $exec,
             'asset_symbol' => '',
         ])['ExecAccount'];
     }
@@ -105,11 +105,11 @@ class Client extends BaseClient
     public function assets(string $address): ?array
     {
         return $this->client->Query([
-            'execer' => 'token',
+            'execer'   => 'token',
             'funcName' => 'GetAccountTokenAssets',
-            'payload' => [
+            'payload'  => [
                 'address' => $address,
-                'execer' => 'token',
+                'execer'  => 'token',
             ],
         ])['tokenAssets'];
     }
@@ -139,9 +139,9 @@ class Client extends BaseClient
         $addresses = $flat ? [$address] : $address;
 
         $result = $this->client->GetBalance([
-            'execer' => $this->parseExecer($execer),
-            'addresses' => $addresses,
-            'asset_exec' => $asset_exec,
+            'execer'       => $this->parseExecer($execer),
+            'addresses'    => $addresses,
+            'asset_exec'   => $asset_exec,
             'asset_symbol' => $asset_symbol,
         ]);
 

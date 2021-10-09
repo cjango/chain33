@@ -54,7 +54,7 @@ class WalletTxDetails extends Message
      */
     public function setTxDetails($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr             = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             WalletTxDetail::class);
         $this->txDetails = $arr;
 

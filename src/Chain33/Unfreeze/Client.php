@@ -43,17 +43,17 @@ class Client extends BaseClient
     ): string {
         $this->walletUnlock();
 
-        if (! in_array($algo, ['FixAmount', 'LeftProportion'])) {
+        if (!in_array($algo, ['FixAmount', 'LeftProportion'])) {
             throw new ChainException('不支持的解冻算法');
         }
 
         $params = [
             'assetSymbol' => $symbol,
-            'assetExec' => $exec,
-            'totalCount' => $total,
+            'assetExec'   => $exec,
+            'totalCount'  => $total,
             'beneficiary' => $beneficiary,
-            'startTime' => $startTime->getTimestamp(),
-            'means' => $algo,
+            'startTime'   => $startTime->getTimestamp(),
+            'means'       => $algo,
         ];
         $params = array_merge($params, $this->parseMeans($algo, $period, $parameter));
 
@@ -88,7 +88,7 @@ class Client extends BaseClient
             case 'LeftProportion':
                 $params = [
                     'LeftProportion' => [
-                        'period' => $period,
+                        'period'        => $period,
                         'tenThousandth' => $parameter,
                     ],
                 ];
@@ -113,8 +113,8 @@ class Client extends BaseClient
     {
         return $this->client->Query([
             'funcName' => 'GetUnfreeze',
-            'execer' => $this->parseExecer('unfreeze'),
-            'payload' => [
+            'execer'   => $this->parseExecer('unfreeze'),
+            'payload'  => [
                 'data' => $this->parseHexString($unfreezeID),
             ],
         ]);
@@ -135,8 +135,8 @@ class Client extends BaseClient
     {
         $balance = $this->client->Query([
             'funcName' => 'GetUnfreezeWithdraw',
-            'execer' => $this->parseExecer('unfreeze'),
-            'payload' => [
+            'execer'   => $this->parseExecer('unfreeze'),
+            'payload'  => [
                 'data' => $this->parseHexString($unfreezeID),
             ],
         ]);
@@ -204,12 +204,12 @@ class Client extends BaseClient
     {
         return $this->client->Query([
             'funcName' => 'ListUnfreezeByCreator',
-            'execer' => $this->parseExecer('unfreeze'),
-            'payload' => [
-                'initiator' => $creator,
-                'direction' => $direction,
-                'count' => $count,
-                'fromKey' => '',
+            'execer'   => $this->parseExecer('unfreeze'),
+            'payload'  => [
+                'initiator'   => $creator,
+                'direction'   => $direction,
+                'count'       => $count,
+                'fromKey'     => '',
                 'beneficiary' => $beneficiary,
             ],
         ])['unfreeze'];
@@ -237,12 +237,12 @@ class Client extends BaseClient
     ): array {
         return $this->client->Query([
             'funcName' => 'ListUnfreezeByBeneficiary',
-            'execer' => $this->parseExecer('unfreeze'),
-            'payload' => [
-                'initiator' => $creator,
-                'direction' => $direction,
-                'count' => $count,
-                'fromKey' => '',
+            'execer'   => $this->parseExecer('unfreeze'),
+            'payload'  => [
+                'initiator'   => $creator,
+                'direction'   => $direction,
+                'count'       => $count,
+                'fromKey'     => '',
                 'beneficiary' => $beneficiary,
             ],
         ])['unfreeze'];

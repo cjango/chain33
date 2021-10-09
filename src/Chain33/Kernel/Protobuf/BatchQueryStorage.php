@@ -54,7 +54,7 @@ class BatchQueryStorage extends Message
      */
     public function setTxHashs($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::STRING);
+        $arr           = GPBUtil::checkRepeatedField($var, GPBType::STRING);
         $this->txHashs = $arr;
 
         return $this;

@@ -46,7 +46,7 @@ class Client extends BaseClient
         $seed = $this->genSeed();
 
         return $this->client->SaveSeed([
-            'seed' => $seed,
+            'seed'   => $seed,
             'passwd' => $password,
         ])['isOK'];
     }
@@ -153,10 +153,10 @@ class Client extends BaseClient
     public function txList(string $fromTx, int $count, int $mode, int $direction = 0): array
     {
         return $this->client->WalletTxList([
-            'fromTx' => $fromTx,
-            'count' => $count,
+            'fromTx'    => $fromTx,
+            'count'     => $count,
             'direction' => $direction,
-            'mode' => $mode,
+            'mode'      => $mode,
         ])['txDetails'];
     }
 

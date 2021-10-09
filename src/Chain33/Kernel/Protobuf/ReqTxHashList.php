@@ -60,7 +60,7 @@ class ReqTxHashList extends Message
      */
     public function setHashes($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::STRING);
+        $arr          = GPBUtil::checkRepeatedField($var, GPBType::STRING);
         $this->hashes = $arr;
 
         return $this;

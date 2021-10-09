@@ -92,7 +92,7 @@ class Receipt extends Message
      */
     public function setKV($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr      = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             KeyValue::class);
         $this->KV = $arr;
 
@@ -117,7 +117,7 @@ class Receipt extends Message
      */
     public function setLogs($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr        = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             ReceiptLog::class);
         $this->logs = $arr;
 

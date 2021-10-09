@@ -53,7 +53,7 @@ class ReplyTxInfos extends Message
      */
     public function setTxInfos($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr           = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             ReplyTxInfo::class);
         $this->txInfos = $arr;
 

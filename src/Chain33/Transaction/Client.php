@@ -50,12 +50,12 @@ class Client extends BaseClient
         $this->walletUnlock();
 
         $txHex = $this->client->CreateRawTransaction([
-            'to' => $to,
-            'amount' => $amount,
-            'fee' => $fee,
-            'note' => $note,
+            'to'         => $to,
+            'amount'     => $amount,
+            'fee'        => $fee,
+            'note'       => $note,
             'isWithdraw' => false,
-            'execer' => $this->parseExecer('coins'),
+            'execer'     => $this->parseExecer('coins'),
         ]);
 
         return $this->finalSend($txHex, $privateKey, $fee);
@@ -96,10 +96,10 @@ class Client extends BaseClient
 
         return $this->client->SignRawTx([
             'privkey' => $privateKey,
-            'txHex' => $txHex,
-            'expire' => '1h',
-            'index' => $this->signIndex,
-            'fee' => $fee,
+            'txHex'   => $txHex,
+            'expire'  => '1h',
+            'index'   => $this->signIndex,
+            'fee'     => $fee,
         ]);
     }
 
@@ -120,7 +120,7 @@ class Client extends BaseClient
             $this->signIndex = 2;
 
             return $this->client->CreateNoBalanceTransaction([
-                'txHex' => $txHex,
+                'txHex'   => $txHex,
                 'payAddr' => $this->config['para_pay_addr'],
             ]);
         } else {
@@ -172,15 +172,15 @@ class Client extends BaseClient
         $this->walletUnlock();
 
         $txHex = $this->client->CreateRawTransaction([
-            'to' => $to,
-            'amount' => $amount,
-            'fee' => $fee,
-            'note' => $note,
-            'isToken' => true,
-            'isWithdraw' => false,
+            'to'          => $to,
+            'amount'      => $amount,
+            'fee'         => $fee,
+            'note'        => $note,
+            'isToken'     => true,
+            'isWithdraw'  => false,
             'tokenSymbol' => $symbol,
-            'execName' => '',
-            'execer' => $this->parseExecer('token'),
+            'execName'    => '',
+            'execer'      => $this->parseExecer('token'),
         ]);
 
         return $this->finalSend($txHex, $privateKey, $fee);
@@ -206,7 +206,7 @@ class Client extends BaseClient
         $this->walletUnlock();
 
         $execName = $this->parseExecer($execName);
-        $toAddr = $this->convertExectoAddr($execName);
+        $toAddr   = $this->convertExectoAddr($execName);
 
         if ($symbol === $this->app->system->coin()) {
             $isToken = false;
@@ -215,14 +215,14 @@ class Client extends BaseClient
         }
 
         $txHex = $this->client->CreateRawTransaction([
-            'to' => $toAddr,
-            'amount' => $amount,
-            'fee' => 0,
-            'note' => $note,
-            'isToken' => $isToken,
-            'isWithdraw' => false,
+            'to'          => $toAddr,
+            'amount'      => $amount,
+            'fee'         => 0,
+            'note'        => $note,
+            'isToken'     => $isToken,
+            'isWithdraw'  => false,
             'tokenSymbol' => $symbol,
-            'execName' => $execName,
+            'execName'    => $execName,
         ]);
 
         return $this->finalSend($txHex, $privateKey);
@@ -270,7 +270,7 @@ class Client extends BaseClient
         $this->walletUnlock();
 
         $execName = $this->parseExecer($execName);
-        $toAddr = $this->convertExectoAddr($execName);
+        $toAddr   = $this->convertExectoAddr($execName);
 
         if ($symbol === $this->app->system->coin()) {
             $isToken = false;
@@ -279,14 +279,14 @@ class Client extends BaseClient
         }
 
         $txHex = $this->client->CreateRawTransaction([
-            'to' => $toAddr,
-            'amount' => $amount,
-            'fee' => 0,
-            'note' => $note,
-            'isToken' => $isToken,
-            'isWithdraw' => true,
+            'to'          => $toAddr,
+            'amount'      => $amount,
+            'fee'         => 0,
+            'note'        => $note,
+            'isToken'     => $isToken,
+            'isWithdraw'  => true,
             'tokenSymbol' => $symbol,
-            'execName' => $execName,
+            'execName'    => $execName,
         ]);
 
         return $this->finalSend($txHex, $privateKey);
@@ -325,18 +325,18 @@ class Client extends BaseClient
     ): string {
         $this->walletUnlock();
 
-        $isToken = ! empty($symbol);
+        $isToken = !empty($symbol);
 
         return $this->client->CreateRawTransaction([
-            'to' => $to,
-            'amount' => $amount,
-            'fee' => $fee,
-            'note' => $note,
-            'isToken' => $isToken,
-            'isWithdraw' => $isWithdraw,
+            'to'          => $to,
+            'amount'      => $amount,
+            'fee'         => $fee,
+            'note'        => $note,
+            'isToken'     => $isToken,
+            'isWithdraw'  => $isWithdraw,
             'tokenSymbol' => $symbol,
-            'execName' => $this->parseExecer($execName),
-            'execer' => $this->parseExecer($execer),
+            'execName'    => $this->parseExecer($execName),
+            'execer'      => $this->parseExecer($execer),
         ]);
     }
 
@@ -355,7 +355,7 @@ class Client extends BaseClient
             $this->signIndex = 0;
 
             return $this->client->CreateNoBlanaceTxs([
-                'txHexs' => $txHexs,
+                'txHexs'  => $txHexs,
                 'payAddr' => $this->config['para_pay_addr'],
             ]);
         }
@@ -412,12 +412,12 @@ class Client extends BaseClient
         int $index = 0
     ): array {
         return $this->client->GetTxByAddr([
-            'addr' => $addr,
-            'flag' => $flag,
-            'count' => $count,
+            'addr'      => $addr,
+            'flag'      => $flag,
+            'count'     => $count,
             'direction' => $direction,
-            'height' => $height,
-            'index' => $index,
+            'height'    => $height,
+            'index'     => $index,
         ])['txInfos'];
     }
 
@@ -450,7 +450,7 @@ class Client extends BaseClient
     public function getTxByHashes(array $hashes, bool $disableDetail = false): array
     {
         return $this->client->GetTxByHashes([
-            'hashes' => $hashes,
+            'hashes'        => $hashes,
             'disableDetail' => $disableDetail,
         ])['txs'];
     }
@@ -501,7 +501,7 @@ class Client extends BaseClient
     {
         return $this->client->CreateRawTxGroup([
             'txCount' => $txCount,
-            'txSize' => $txSize,
+            'txSize'  => $txSize,
         ])['properFee'];
     }
 }

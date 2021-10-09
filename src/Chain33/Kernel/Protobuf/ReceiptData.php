@@ -83,7 +83,7 @@ class ReceiptData extends Message
      */
     public function setLogs($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr        = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             ReceiptLog::class);
         $this->logs = $arr;
 

@@ -53,7 +53,7 @@ class CreateTransactionGroup extends Message
      */
     public function setTxs($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::STRING);
+        $arr       = GPBUtil::checkRepeatedField($var, GPBType::STRING);
         $this->txs = $arr;
 
         return $this;

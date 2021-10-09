@@ -294,7 +294,7 @@ class ExecTxList extends Message
      */
     public function setTxs($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr       = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             Transaction::class);
         $this->txs = $arr;
 

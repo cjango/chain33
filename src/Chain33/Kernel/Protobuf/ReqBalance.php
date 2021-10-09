@@ -84,7 +84,7 @@ class ReqBalance extends Message
      */
     public function setAddresses($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::STRING);
+        $arr             = GPBUtil::checkRepeatedField($var, GPBType::STRING);
         $this->addresses = $arr;
 
         return $this;

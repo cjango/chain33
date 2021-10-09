@@ -78,7 +78,7 @@ class HistoryCertStore extends Message
      */
     public function setRootcerts($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
+        $arr             = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
         $this->rootcerts = $arr;
 
         return $this;
@@ -102,7 +102,7 @@ class HistoryCertStore extends Message
      */
     public function setIntermediateCerts($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
+        $arr                     = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
         $this->intermediateCerts = $arr;
 
         return $this;
@@ -126,7 +126,7 @@ class HistoryCertStore extends Message
      */
     public function setRevocationList($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
+        $arr                  = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
         $this->revocationList = $arr;
 
         return $this;

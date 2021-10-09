@@ -36,8 +36,8 @@ class Client extends BaseClient
     public function blocks(int $start, int $end, bool $isDetail = false): array
     {
         return $this->client->GetBlocks([
-            'start' => $start,
-            'end' => $end,
+            'start'    => $start,
+            'end'      => $end,
             'isDetail' => $isDetail,
         ])['items'];
     }
@@ -69,8 +69,8 @@ class Client extends BaseClient
     public function headers(int $start, int $end, bool $isDetail = true): array
     {
         return $this->client->GetHeaders([
-            'start' => $start,
-            'end' => $end,
+            'start'    => $start,
+            'end'      => $end,
             'isDetail' => $isDetail,
         ])['items'];
     }
@@ -135,7 +135,7 @@ class Client extends BaseClient
     public function hashes(array $hashs, bool $disableDetail = false): array
     {
         return $this->client->GetBlockByHashes([
-            'hashes' => $hashs,
+            'hashes'        => $hashs,
             'disableDetail' => $disableDetail,
         ])['items'];
     }
@@ -154,8 +154,8 @@ class Client extends BaseClient
     public function sequences(int $start, int $end, bool $isDetail = false): array
     {
         return $this->client->GetBlockSequences([
-            'start' => $start,
-            'end' => $end,
+            'start'    => $start,
+            'end'      => $end,
             'isDetail' => $isDetail,
         ])['blkseqInfos'];
     }
@@ -186,8 +186,8 @@ class Client extends BaseClient
     public function addPush(string $name, string $URL): array
     {
         return $this->client->AddPushSubscribe([
-            'name' => $name,
-            'URL' => $URL,
+            'name'   => $name,
+            'URL'    => $URL,
             'encode' => 'json',
         ]);
     }

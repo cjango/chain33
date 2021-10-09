@@ -54,7 +54,7 @@ class RingSignature extends Message
      */
     public function setItems($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr         = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             RingSignatureItem::class);
         $this->items = $arr;
 

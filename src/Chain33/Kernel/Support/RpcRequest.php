@@ -16,7 +16,7 @@ class RpcRequest
 
     public function __construct(int $id = null, string $method = null, array $params = [])
     {
-        $this->id = $id ?: time();
+        $this->id     = $id ?: time();
         $this->method = $method;
         $this->params = $params;
     }
@@ -54,9 +54,9 @@ class RpcRequest
     {
         $data = [
             'jsonrpc' => $this->jsonrpc,
-            'id' => $this->id,
-            'method' => $this->method,
-            'params' => $this->params,
+            'id'      => $this->id,
+            'method'  => $this->method,
+            'params'  => $this->params,
         ];
 
         return json_encode($data);

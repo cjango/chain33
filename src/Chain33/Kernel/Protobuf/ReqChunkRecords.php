@@ -149,7 +149,7 @@ class ReqChunkRecords extends Message
      */
     public function setPid($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::STRING);
+        $arr       = GPBUtil::checkRepeatedField($var, GPBType::STRING);
         $this->pid = $arr;
 
         return $this;

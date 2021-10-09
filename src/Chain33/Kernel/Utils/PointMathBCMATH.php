@@ -53,7 +53,7 @@ class PointMathBCMATH
     private static function bcgcd($value1, $value2)
     {
         if ($value1 < $value2) { // Swap $value1 and $value2
-            $temp = $value1;
+            $temp   = $value1;
             $value1 = $value2;
             $value2 = $temp;
         }
@@ -62,7 +62,7 @@ class PointMathBCMATH
         // for finding the Greatest Common Denominator (GCD)
         $mod = 1;
         while ($mod != 0) {
-            $mod = bcmod($value1, $value2);
+            $mod    = bcmod($value1, $value2);
             $value1 = $value2;
             $value2 = $mod;
         }
@@ -124,23 +124,23 @@ class PointMathBCMATH
         while (bccomp($m, $a) == -1) {
             $a = bcmod($a, $m);
         }
-        $c = $a;
-        $d = $m;
+        $c  = $a;
+        $d  = $m;
         $uc = 1;
         $vc = 0;
         $ud = 0;
         $vd = 1;
         while (bccomp($c, 0) != 0) {
             $temp1 = $c;
-            $q = bcdiv($d, $c, 0);
-            $c = bcmod($d, $c);
-            $d = $temp1;
+            $q     = bcdiv($d, $c, 0);
+            $c     = bcmod($d, $c);
+            $d     = $temp1;
             $temp2 = $uc;
             $temp3 = $vc;
-            $uc = bcsub($ud, bcmul($q, $uc));
-            $vc = bcsub($vd, bcmul($q, $vc));
-            $ud = $temp2;
-            $vd = $temp3;
+            $uc    = bcsub($ud, bcmul($q, $uc));
+            $vc    = bcsub($vd, bcmul($q, $vc));
+            $ud    = $temp2;
+            $vd    = $temp3;
         }
         $result = '';
         if (bccomp($d, 1) == 0) {

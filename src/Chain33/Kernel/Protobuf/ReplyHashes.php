@@ -54,7 +54,7 @@ class ReplyHashes extends Message
      */
     public function setHashes($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
+        $arr          = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
         $this->hashes = $arr;
 
         return $this;

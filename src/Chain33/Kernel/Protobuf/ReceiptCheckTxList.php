@@ -54,7 +54,7 @@ class ReceiptCheckTxList extends Message
      */
     public function setErrs($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::STRING);
+        $arr        = GPBUtil::checkRepeatedField($var, GPBType::STRING);
         $this->errs = $arr;
 
         return $this;

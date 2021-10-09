@@ -54,7 +54,7 @@ class ReqCheckTxsExist extends Message
      */
     public function setTxHashes($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
+        $arr            = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
         $this->txHashes = $arr;
 
         return $this;

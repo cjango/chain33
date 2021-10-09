@@ -30,12 +30,12 @@ class Client extends BaseClient
         $this->walletUnlock();
 
         $txHex = $this->client->CreateTransaction([
-            'execer' => 'manage',
+            'execer'     => 'manage',
             'actionName' => 'Modify',
-            'payload' => [
-                'key' => 'token-finisher',
+            'payload'    => [
+                'key'   => 'token-finisher',
                 'value' => $addr,
-                'op' => $op,
+                'op'    => $op,
             ],
         ]);
 
@@ -59,12 +59,12 @@ class Client extends BaseClient
         $this->walletUnlock();
 
         $txHex = $this->client->CreateTransaction([
-            'execer' => 'manage',
+            'execer'     => 'manage',
             'actionName' => 'Modify',
-            'payload' => [
-                'key' => 'token-blacklist',
+            'payload'    => [
+                'key'   => 'token-blacklist',
                 'value' => $symbol,
-                'op' => $op,
+                'op'    => $op,
             ],
         ]);
 
@@ -88,12 +88,12 @@ class Client extends BaseClient
         $this->walletUnlock();
 
         $txHex = $this->client->CreateTransaction([
-            'execer' => 'manage',
+            'execer'     => 'manage',
             'actionName' => 'Modify',
-            'payload' => [
-                'key' => 'tendermint-manager',
+            'payload'    => [
+                'key'   => 'tendermint-manager',
                 'value' => $addr,
-                'op' => $op,
+                'op'    => $op,
             ],
         ]);
 
@@ -113,11 +113,11 @@ class Client extends BaseClient
     public function addConsensusNode(string $pubkey, int $power = 10): string
     {
         $txHex = $this->client->CreateTransaction([
-            'execer' => 'valnode',
+            'execer'     => 'valnode',
             'actionName' => 'NodeUpdate',
-            'payload' => [
+            'payload'    => [
                 'pubKey' => $pubkey,
-                'power' => $power,
+                'power'  => $power,
             ],
         ]);
 
@@ -136,9 +136,9 @@ class Client extends BaseClient
     public function get(string $type = 'finisher'): array
     {
         $value = $this->client->Query([
-            'execer' => 'manage',
+            'execer'   => 'manage',
             'funcName' => 'GetConfigItem',
-            'payload' => [
+            'payload'  => [
                 'data' => 'token-'.$type,
             ],
         ])['value'];

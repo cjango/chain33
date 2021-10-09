@@ -143,7 +143,7 @@ class ReplyTxInfo extends Message
      */
     public function setAssets($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr          = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             Asset::class);
         $this->assets = $arr;
 

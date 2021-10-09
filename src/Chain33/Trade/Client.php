@@ -13,12 +13,12 @@ use Jason\Chain33\Kernel\BaseClient;
 class Client extends BaseClient
 {
     const STATUS_LIST = [
-        'TradeOrderStatusOnSale' => '在售',
-        'TradeOrderStatusSoldOut' => '售完',
-        'TradeOrderStatusRevoked' => '卖单被撤回',
-        'TradeOrderStatusExpired' => '订单超时(目前不支持订单超时)',
-        'TradeOrderStatusOnBuy' => '求购',
-        'TradeOrderStatusBoughtOut' => '购买完成',
+        'TradeOrderStatusOnSale'     => '在售',
+        'TradeOrderStatusSoldOut'    => '售完',
+        'TradeOrderStatusRevoked'    => '卖单被撤回',
+        'TradeOrderStatusExpired'    => '订单超时(目前不支持订单超时)',
+        'TradeOrderStatusOnBuy'      => '求购',
+        'TradeOrderStatusBoughtOut'  => '购买完成',
         'TradeOrderStatusBuyRevoked' => '买单被撤回',
     ];
 
@@ -53,15 +53,15 @@ class Client extends BaseClient
         int $fee = 0
     ): string {
         $txHex = $this->client->CreateRawTradeSellTx([
-            'tokenSymbol' => $tokenSymbol,
-            'assetExec' => $assetExec,
+            'tokenSymbol'       => $tokenSymbol,
+            'assetExec'         => $assetExec,
             'amountPerBoardlot' => $amountPerBoardlot,
-            'minBoardlot' => $minBoardlot,
-            'pricePerBoardlot' => $pricePerBoardlot,
-            'totalBoardlot' => $totalBoardlot,
-            'priceExec' => $priceExec,
-            'priceSymbol' => $priceSymbol,
-            'fee' => $fee,
+            'minBoardlot'       => $minBoardlot,
+            'pricePerBoardlot'  => $pricePerBoardlot,
+            'totalBoardlot'     => $totalBoardlot,
+            'priceExec'         => $priceExec,
+            'priceSymbol'       => $priceSymbol,
+            'fee'               => $fee,
         ], 'trade');
 
         return $this->app->transaction->finalSend($txHex, $privateKey);
@@ -82,9 +82,9 @@ class Client extends BaseClient
     public function sellBuy(string $buyID, int $boardlotCnt, string $privateKey, int $fee = 0): string
     {
         $txHex = $this->client->CreateRawTradeSellMarketTx([
-            'buyID' => $buyID,
+            'buyID'       => $buyID,
             'boardlotCnt' => $boardlotCnt,
-            'fee' => $fee,
+            'fee'         => $fee,
         ], 'trade');
 
         return $this->app->transaction->finalSend($txHex, $privateKey);
@@ -105,7 +105,7 @@ class Client extends BaseClient
     {
         $txHex = $this->client->CreateRawTradeRevokeTx([
             'sellID' => $sellID,
-            'fee' => $fee,
+            'fee'    => $fee,
         ], 'trade');
 
         return $this->app->transaction->finalSend($txHex, $privateKey);
@@ -134,14 +134,14 @@ class Client extends BaseClient
         string $fromKey = ''
     ): array {
         return $this->client->Query([
-            'execer' => $this->parseExecer('trade'),
+            'execer'   => $this->parseExecer('trade'),
             'funcName' => 'GetTokenSellOrderByStatus',
-            'payload' => [
+            'payload'  => [
                 'tokenSymbol' => $symbol,
-                'status' => $status,
-                'count' => $count,
-                'direction' => $direction,
-                'fromKey' => $fromKey,
+                'status'      => $status,
+                'count'       => $count,
+                'direction'   => $direction,
+                'fromKey'     => $fromKey,
             ],
         ])['orders'];
     }
@@ -169,14 +169,14 @@ class Client extends BaseClient
         string $fromKey = ''
     ): array {
         return $this->client->Query([
-            'execer' => $this->parseExecer('trade'),
+            'execer'   => $this->parseExecer('trade'),
             'funcName' => 'GetOnesSellOrder',
-            'payload' => [
-                'addr' => $addr,
-                'token' => $tokens,
-                'count' => $count,
+            'payload'  => [
+                'addr'      => $addr,
+                'token'     => $tokens,
+                'count'     => $count,
                 'direction' => $direction,
-                'fromKey' => $fromKey,
+                'fromKey'   => $fromKey,
             ],
         ])['orders'];
     }
@@ -204,14 +204,14 @@ class Client extends BaseClient
         string $fromKey = ''
     ): array {
         return $this->client->Query([
-            'execer' => $this->parseExecer('trade'),
+            'execer'   => $this->parseExecer('trade'),
             'funcName' => 'GetOnesSellOrderWithStatus',
-            'payload' => [
-                'addr' => $addr,
-                'status' => $status,
-                'count' => $count,
+            'payload'  => [
+                'addr'      => $addr,
+                'status'    => $status,
+                'count'     => $count,
                 'direction' => $direction,
-                'fromKey' => $fromKey,
+                'fromKey'   => $fromKey,
             ],
         ])['orders'];
     }
@@ -247,15 +247,15 @@ class Client extends BaseClient
         int $fee = 0
     ): string {
         $txHex = $this->client->CreateRawTradeBuyLimitTx([
-            'tokenSymbol' => $tokenSymbol,
-            'assetExec' => $assetExec,
+            'tokenSymbol'       => $tokenSymbol,
+            'assetExec'         => $assetExec,
             'amountPerBoardlot' => $amountPerBoardlot,
-            'minBoardlot' => $minBoardlot,
-            'pricePerBoardlot' => $pricePerBoardlot,
-            'totalBoardlot' => $totalBoardlot,
-            'priceExec' => $priceExec,
-            'priceSymbol' => $priceSymbol,
-            'fee' => $fee,
+            'minBoardlot'       => $minBoardlot,
+            'pricePerBoardlot'  => $pricePerBoardlot,
+            'totalBoardlot'     => $totalBoardlot,
+            'priceExec'         => $priceExec,
+            'priceSymbol'       => $priceSymbol,
+            'fee'               => $fee,
         ], 'trade');
 
         return $this->app->transaction->finalSend($txHex, $privateKey);
@@ -276,7 +276,7 @@ class Client extends BaseClient
     {
         $txHex = $this->client->CreateRawTradeRevokeBuyTx([
             'buyID' => $buyID,
-            'fee' => $fee,
+            'fee'   => $fee,
         ], 'trade');
 
         return $this->app->transaction->finalSend($txHex, $privateKey);
@@ -297,9 +297,9 @@ class Client extends BaseClient
     public function buySell(string $sellID, int $boardlotCnt, string $privateKey, int $fee = 0): string
     {
         $txHex = $this->client->CreateRawTradeBuyTx([
-            'sellID' => $sellID,
+            'sellID'      => $sellID,
             'boardlotCnt' => $boardlotCnt,
-            'fee' => $fee,
+            'fee'         => $fee,
         ], 'trade');
 
         return $this->app->transaction->finalSend($txHex, $privateKey);
@@ -328,14 +328,14 @@ class Client extends BaseClient
         string $fromKey = ''
     ): array {
         return $this->client->Query([
-            'execer' => $this->parseExecer('trade'),
+            'execer'   => $this->parseExecer('trade'),
             'funcName' => 'GetTokenBuyOrderByStatus',
-            'payload' => [
+            'payload'  => [
                 'tokenSymbol' => $symbol,
-                'status' => $status,
-                'count' => $count,
-                'direction' => $direction,
-                'fromKey' => $fromKey,
+                'status'      => $status,
+                'count'       => $count,
+                'direction'   => $direction,
+                'fromKey'     => $fromKey,
             ],
         ])['orders'];
     }
@@ -363,14 +363,14 @@ class Client extends BaseClient
         string $fromKey = ''
     ): array {
         return $this->client->Query([
-            'execer' => $this->parseExecer('trade'),
+            'execer'   => $this->parseExecer('trade'),
             'funcName' => 'GetOnesBuyOrder',
-            'payload' => [
-                'addr' => $addr,
-                'token' => $token,
-                'count' => $count,
+            'payload'  => [
+                'addr'      => $addr,
+                'token'     => $token,
+                'count'     => $count,
                 'direction' => $direction,
-                'fromKey' => $fromKey,
+                'fromKey'   => $fromKey,
             ],
         ])['orders'];
     }
@@ -398,14 +398,14 @@ class Client extends BaseClient
         string $fromKey = ''
     ): array {
         return $this->client->Query([
-            'execer' => $this->parseExecer('trade'),
+            'execer'   => $this->parseExecer('trade'),
             'funcName' => 'GetOnesBuyOrderWithStatus',
-            'payload' => [
-                'addr' => $addr,
-                'status' => $status,
-                'count' => $count,
+            'payload'  => [
+                'addr'      => $addr,
+                'status'    => $status,
+                'count'     => $count,
                 'direction' => $direction,
-                'fromKey' => $fromKey,
+                'fromKey'   => $fromKey,
             ],
         ])['orders'];
     }
@@ -434,15 +434,15 @@ class Client extends BaseClient
         string $fromKey = ''
     ) {
         return $this->client->Query([
-            'execer' => $this->parseExecer('trade'),
+            'execer'   => $this->parseExecer('trade'),
             'funcName' => 'GetOnesOrderWithStatus',
-            'payload' => [
-                'addr' => $addr,
-                'token' => $tokens,
-                'status' => $status,
-                'count' => $count,
+            'payload'  => [
+                'addr'      => $addr,
+                'token'     => $tokens,
+                'status'    => $status,
+                'count'     => $count,
                 'direction' => $direction,
-                'fromKey' => $fromKey,
+                'fromKey'   => $fromKey,
             ],
         ])['orders'];
     }

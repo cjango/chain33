@@ -17,7 +17,7 @@ class Client
 
     public function __construct($app)
     {
-        $this->app = $app;
+        $this->app    = $app;
         $this->config = $app->config;
 
         $this->client = new Guzzle([
@@ -40,7 +40,7 @@ class Client
 
         $rpcRequest->setMethod($method);
 
-        if (! empty($params)) {
+        if (!empty($params)) {
             $rpcRequest->setParams($params);
         }
 

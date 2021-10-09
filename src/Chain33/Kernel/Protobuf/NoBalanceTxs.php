@@ -72,7 +72,7 @@ class NoBalanceTxs extends Message
      */
     public function setTxHexs($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::STRING);
+        $arr          = GPBUtil::checkRepeatedField($var, GPBType::STRING);
         $this->txHexs = $arr;
 
         return $this;

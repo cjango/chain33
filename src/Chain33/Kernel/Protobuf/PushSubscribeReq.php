@@ -272,7 +272,7 @@ class PushSubscribeReq extends Message
      */
     public function setContract($var)
     {
-        $arr = GPBUtil::checkMapField($var, GPBType::STRING,
+        $arr            = GPBUtil::checkMapField($var, GPBType::STRING,
             GPBType::BOOL);
         $this->contract = $arr;
 

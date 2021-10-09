@@ -54,7 +54,7 @@ class PushSubscribes extends Message
      */
     public function setPushes($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr          = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             PushSubscribeReq::class);
         $this->pushes = $arr;
 

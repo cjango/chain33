@@ -55,7 +55,7 @@ class Headers extends Message
      */
     public function setItems($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr         = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             Header::class);
         $this->items = $arr;
 

@@ -70,7 +70,7 @@ class BlockReceipt extends Message
      */
     public function setReceipts($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr            = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             ReceiptData::class);
         $this->receipts = $arr;
 

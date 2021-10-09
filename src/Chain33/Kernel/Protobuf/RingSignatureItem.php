@@ -60,7 +60,7 @@ class RingSignatureItem extends Message
      */
     public function setPubkey($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
+        $arr          = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
         $this->pubkey = $arr;
 
         return $this;
@@ -84,7 +84,7 @@ class RingSignatureItem extends Message
      */
     public function setSignature($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
+        $arr             = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
         $this->signature = $arr;
 
         return $this;

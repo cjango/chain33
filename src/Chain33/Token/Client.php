@@ -41,13 +41,13 @@ class Client extends BaseClient
         $this->walletUnlock();
 
         $txHex = $this->client->CreateRawTokenPreCreateTx([
-            'name' => $name,
-            'symbol' => strtoupper($symbol),
+            'name'         => $name,
+            'symbol'       => strtoupper($symbol),
             'introduction' => $introduction,
-            'total' => $total,
-            'price' => $price,
-            'category' => $category,
-            'owner' => $owner,
+            'total'        => $total,
+            'price'        => $price,
+            'category'     => $category,
+            'owner'        => $owner,
         ], 'token');
 
         return $this->app->transaction->finalSend($txHex, $this->config['superManager']['privateKey']);
@@ -71,7 +71,7 @@ class Client extends BaseClient
 
         $txHex = $this->client->CreateRawTokenFinishTx([
             'symbol' => strtoupper($symbol),
-            'owner' => $owner,
+            'owner'  => $owner,
         ], 'token');
 
         return $this->app->transaction->finalSend($txHex, $this->config['superManager']['privateKey']);
@@ -90,11 +90,11 @@ class Client extends BaseClient
     {
         try {
             return $this->client->Query([
-                'execer' => 'token',
+                'execer'   => 'token',
                 'funcName' => 'GetTokens',
-                'payload' => [
-                    'status' => $status,
-                    'queryAll' => true,
+                'payload'  => [
+                    'status'     => $status,
+                    'queryAll'   => true,
                     'symbolOnly' => false,
                 ],
             ])['tokens'];
@@ -115,9 +115,9 @@ class Client extends BaseClient
     public function info(string $symbol): array
     {
         return $this->client->Query([
-            'execer' => 'token',
+            'execer'   => 'token',
             'funcName' => 'GetTokenInfo',
-            'payload' => [
+            'payload'  => [
                 'data' => $symbol,
             ],
         ]);
@@ -137,7 +137,7 @@ class Client extends BaseClient
     {
         $txHex = $this->client->CreateRawTokenRevokeTx([
             'symbol' => $symbol,
-            'owner' => $owner,
+            'owner'  => $owner,
         ], 'token');
 
         return $this->app->transaction->finalSend($txHex, $this->config['superManager']['privateKey']);
@@ -155,11 +155,11 @@ class Client extends BaseClient
     public function assets(string $address): array
     {
         return $this->client->Query([
-            'execer' => 'token',
+            'execer'   => 'token',
             'funcName' => 'GetAccountTokenAssets',
-            'payload' => [
+            'payload'  => [
                 'address' => $address,
-                'execer' => 'token',
+                'execer'  => 'token',
             ],
         ])['tokenAssets'];
     }
@@ -191,15 +191,15 @@ class Client extends BaseClient
         int $index = 0
     ): array {
         return $this->client->Query([
-            'execer' => $this->parseExecer('token'),
+            'execer'   => $this->parseExecer('token'),
             'funcName' => 'GetTxByToken',
-            'payload' => [
-                'symbol' => $symbol,
-                'addr' => $addr,
-                'count' => $count,
-                'flag' => $flag,
-                'height' => $height,
-                'index' => $index,
+            'payload'  => [
+                'symbol'    => $symbol,
+                'addr'      => $addr,
+                'count'     => $count,
+                'flag'      => $flag,
+                'height'    => $height,
+                'index'     => $index,
                 'direction' => $direction,
             ],
         ])['txInfos'];
@@ -261,9 +261,9 @@ class Client extends BaseClient
     public function history(string $symbol): array
     {
         return $this->client->Query([
-            'execer' => $this->parseExecer('token'),
+            'execer'   => $this->parseExecer('token'),
             'funcName' => 'GetTokenHistory',
-            'payload' => [
+            'payload'  => [
                 'data' => $symbol,
             ],
         ])['logs'];
@@ -290,14 +290,14 @@ class Client extends BaseClient
         $this->walletUnlock();
 
         $txHex = $this->client->CreateRawTransaction([
-            'to' => $to,
-            'amount' => $amount,
-            'fee' => 0,
-            'note' => $note,
-            'isWithdraw' => false,
-            'isToken' => true,
+            'to'          => $to,
+            'amount'      => $amount,
+            'fee'         => 0,
+            'note'        => $note,
+            'isWithdraw'  => false,
+            'isToken'     => true,
             'tokenSymbol' => $symbol,
-            'execer' => $this->parseExecer('token'),
+            'execer'      => $this->parseExecer('token'),
         ]);
 
         return $this->app->transaction->finalSend($txHex, $privateKey);

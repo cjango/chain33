@@ -54,7 +54,7 @@ class ReplyStrings extends Message
      */
     public function setDatas($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::STRING);
+        $arr         = GPBUtil::checkRepeatedField($var, GPBType::STRING);
         $this->datas = $arr;
 
         return $this;

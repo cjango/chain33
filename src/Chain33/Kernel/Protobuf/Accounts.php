@@ -54,7 +54,7 @@ class Accounts extends Message
      */
     public function setAcc($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr       = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             Account::class);
         $this->acc = $arr;
 

@@ -169,7 +169,7 @@ class TxDetail extends Message
      */
     public function setProofs($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
+        $arr          = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
         $this->proofs = $arr;
 
         return $this;

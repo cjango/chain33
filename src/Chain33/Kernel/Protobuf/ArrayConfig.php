@@ -55,7 +55,7 @@ class ArrayConfig extends Message
      */
     public function setValue($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::STRING);
+        $arr         = GPBUtil::checkRepeatedField($var, GPBType::STRING);
         $this->value = $arr;
 
         return $this;

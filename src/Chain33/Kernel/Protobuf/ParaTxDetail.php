@@ -148,7 +148,7 @@ class ParaTxDetail extends Message
      */
     public function setTxDetails($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr             = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             TxDetail::class);
         $this->txDetails = $arr;
 
@@ -221,7 +221,7 @@ class ParaTxDetail extends Message
      */
     public function setProofs($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
+        $arr          = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
         $this->proofs = $arr;
 
         return $this;

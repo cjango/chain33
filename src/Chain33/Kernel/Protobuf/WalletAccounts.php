@@ -54,7 +54,7 @@ class WalletAccounts extends Message
      */
     public function setWallets($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr           = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             WalletAccount::class);
         $this->wallets = $arr;
 

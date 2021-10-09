@@ -55,7 +55,7 @@ class HeaderSeqs extends Message
      */
     public function setSeqs($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr        = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             HeaderSeq::class);
         $this->seqs = $arr;
 

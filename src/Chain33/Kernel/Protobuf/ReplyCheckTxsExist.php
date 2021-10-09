@@ -65,7 +65,7 @@ class ReplyCheckTxsExist extends Message
      */
     public function setExistFlags($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::BOOL);
+        $arr              = GPBUtil::checkRepeatedField($var, GPBType::BOOL);
         $this->existFlags = $arr;
 
         return $this;

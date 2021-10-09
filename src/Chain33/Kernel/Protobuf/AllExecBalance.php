@@ -83,7 +83,7 @@ class AllExecBalance extends Message
      */
     public function setExecAccount($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr               = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             ExecAccount::class);
         $this->ExecAccount = $arr;
 

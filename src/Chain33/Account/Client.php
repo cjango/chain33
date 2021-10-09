@@ -74,14 +74,14 @@ class Client extends BaseClient
     {
         $config = [
             'private_key_type' => OPENSSL_KEYTYPE_EC,
-            'curve_name' => 'secp256k1',
+            'curve_name'       => 'secp256k1',
         ];
-        $pkey = openssl_pkey_new($config);
+        $pkey   = openssl_pkey_new($config);
         $detail = openssl_pkey_get_details($pkey);
 
         return [
             'privateKey' => '0x'.bin2hex($detail['ec']['d']),
-            'address' => $this->getAddress($detail),
+            'address'    => $this->getAddress($detail),
         ];
     }
 
@@ -106,10 +106,10 @@ class Client extends BaseClient
             $pubKey = '03'.$x;
         }
 
-        $ripem160 = hash('ripemd160', hex2bin(hash('sha256', hex2bin($pubKey))));
+        $ripem160    = hash('ripemd160', hex2bin(hash('sha256', hex2bin($pubKey))));
         $with_prefix = '00'.$ripem160;
-        $checksum = hash('sha256', hex2bin(hash('sha256', hex2bin($with_prefix))));
-        $address = $with_prefix.substr($checksum, 0, 8);
+        $checksum    = hash('sha256', hex2bin(hash('sha256', hex2bin($with_prefix))));
+        $address     = $with_prefix.substr($checksum, 0, 8);
 
         return Base58::encode($address);
     }
@@ -163,7 +163,7 @@ class Client extends BaseClient
     public function setLabel(string $address, string $label)
     {
         return $this->client->SetLabl([
-            'addr' => $address,
+            'addr'  => $address,
             'label' => $label,
         ]);
     }
@@ -186,7 +186,7 @@ class Client extends BaseClient
 
         return $this->client->ImportPrivkey([
             'privkey' => $privateKey,
-            'label' => $label,
+            'label'   => $label,
         ])['acc']['addr'];
     }
 

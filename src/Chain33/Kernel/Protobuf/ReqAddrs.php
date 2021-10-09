@@ -53,7 +53,7 @@ class ReqAddrs extends Message
      */
     public function setAddrs($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::STRING);
+        $arr         = GPBUtil::checkRepeatedField($var, GPBType::STRING);
         $this->addrs = $arr;
 
         return $this;

@@ -21,20 +21,20 @@ class Client extends BaseClient
     public function create(string $privateKey): string
     {
         $txHex = $this->client->MultiSigAccCreateTx([
-            'owners' => [
+            'owners'         => [
                 [
                     'ownerAddr' => '',
-                    'weight' => '',
+                    'weight'    => '',
                 ],
                 [
                     'ownerAddr' => '',
-                    'weight' => '',
+                    'weight'    => '',
                 ],
             ],
             'requiredWeight' => '',
-            'dailyLimit' => [
-                'symbol' => '',
-                'execer' => '',
+            'dailyLimit'     => [
+                'symbol'     => '',
+                'execer'     => '',
                 'dailyLimit' => '',
             ],
         ], 'multisig');
@@ -56,9 +56,9 @@ class Client extends BaseClient
     public function operateRequiredWeight(string $multiSigAccAddr, int $newWeight, string $privateKey): string
     {
         $txHex = $this->client->MultiSigAccOperateTx([
-            'multiSigAccAddr' => $multiSigAccAddr,
+            'multiSigAccAddr'   => $multiSigAccAddr,
             'newRequiredWeight' => $newWeight,
-            'operateFlag' => true,
+            'operateFlag'       => true,
         ], 'multisig');
 
         return $this->app->transaction->finalSend($txHex, $privateKey);
@@ -79,10 +79,10 @@ class Client extends BaseClient
     {
         $txHex = $this->client->MultiSigAccOperateTx([
             'multiSigAccAddr' => $multiSigAccAddr,
-            'operateFlag' => false,
-            'dailyLimit' => [
-                'symbol' => '',
-                'execer' => '',
+            'operateFlag'     => false,
+            'dailyLimit'      => [
+                'symbol'     => '',
+                'execer'     => '',
                 'dailyLimit' => '',
             ],
         ], 'multisig');
@@ -101,7 +101,7 @@ class Client extends BaseClient
     public function count(): int
     {
         return $this->client->Query([
-            'execer' => 'multisig',
+            'execer'   => 'multisig',
             'funcName' => 'MultiSigAccCount',
         ])['data'];
     }
@@ -119,11 +119,11 @@ class Client extends BaseClient
     public function accounts(int $start, int $end): array
     {
         return $this->client->Query([
-            'execer' => 'multisig',
+            'execer'   => 'multisig',
             'funcName' => 'MultiSigAccounts',
-            'payload' => [
+            'payload'  => [
                 'start' => $start,
-                'end' => $end,
+                'end'   => $end,
             ],
         ])['address'];
     }
@@ -140,9 +140,9 @@ class Client extends BaseClient
     public function info(string $multiSigAccAddr): array
     {
         return $this->client->Query([
-            'execer' => 'multisig',
+            'execer'   => 'multisig',
             'funcName' => 'MultiSigAccountInfo',
-            'payload' => [
+            'payload'  => [
                 'multiSigAccAddr' => $multiSigAccAddr,
             ],
         ]);
@@ -167,15 +167,15 @@ class Client extends BaseClient
         string $symbol = ''
     ): array {
         return $this->client->Query([
-            'execer' => 'multisig',
+            'execer'   => 'multisig',
             'funcName' => 'MultiSigAccUnSpentToday',
-            'payload' => [
+            'payload'  => [
                 'multiSigAddr' => $multiSigAddr,
-                'assets' => [
+                'assets'       => [
                     'execer' => $execer,
                     'symbol' => $symbol,
                 ],
-                'isAll' => $isAll,
+                'isAll'        => $isAll,
             ],
         ]);
     }
@@ -191,15 +191,15 @@ class Client extends BaseClient
     public function assets(string $multiSigAddr)
     {
         return $this->client->Query([
-            'execer' => 'multisig',
+            'execer'   => 'multisig',
             'funcName' => 'MultiSigAccAssets',
-            'payload' => [
+            'payload'  => [
                 'multiSigAddr' => $multiSigAddr,
-                'assets' => [
+                'assets'       => [
                     'execer' => '',
                     'symbol' => '',
                 ],
-                'isAll' => '',
+                'isAll'        => '',
             ],
         ]);
     }
@@ -216,9 +216,9 @@ class Client extends BaseClient
     public function address(string $creator): array
     {
         return $this->client->Query([
-            'execer' => 'multisig',
+            'execer'   => 'multisig',
             'funcName' => 'MultiSigAccAllAddress',
-            'payload' => [
+            'payload'  => [
                 'multiSigAccAddr' => $creator,
             ],
         ])['address'];
@@ -256,9 +256,9 @@ class Client extends BaseClient
     {
         $txHex = $this->client->MultiSigOwnerOperateTx([
             'multiSigAccAddr' => $multiSigAccAddr,
-            'newOwner' => $newOwner,
-            'newWeight' => $newWeight,
-            'operateFlag' => 1,
+            'newOwner'        => $newOwner,
+            'newWeight'       => $newWeight,
+            'operateFlag'     => 1,
         ], 'multisig');
 
         return $this->app->transaction->finalSend($txHex, $privateKey);
@@ -279,8 +279,8 @@ class Client extends BaseClient
     {
         $txHex = $this->client->MultiSigOwnerOperateTx([
             'multiSigAccAddr' => $multiSigAccAddr,
-            'oldOwner' => $oldOwner,
-            'operateFlag' => 1,
+            'oldOwner'        => $oldOwner,
+            'operateFlag'     => 1,
         ], 'multisig');
 
         return $this->app->transaction->finalSend($txHex, $privateKey);
@@ -302,9 +302,9 @@ class Client extends BaseClient
     {
         $txHex = $this->client->MultiSigOwnerOperateTx([
             'multiSigAccAddr' => $multiSigAccAddr,
-            'oldOwner' => $oldOwner,
-            'newWeight' => $newWeight,
-            'operateFlag' => 3,
+            'oldOwner'        => $oldOwner,
+            'newWeight'       => $newWeight,
+            'operateFlag'     => 3,
         ], 'multisig');
 
         return $this->app->transaction->finalSend($txHex, $privateKey);
@@ -330,9 +330,9 @@ class Client extends BaseClient
     ): string {
         $txHex = $this->client->MultiSigOwnerOperateTx([
             'multiSigAccAddr' => $multiSigAccAddr,
-            'oldOwner' => $oldOwner,
-            'newOwner' => $newOwner,
-            'operateFlag' => 4,
+            'oldOwner'        => $oldOwner,
+            'newOwner'        => $newOwner,
+            'operateFlag'     => 4,
         ], 'multisig');
 
         return $this->app->transaction->finalSend($txHex, $privateKey);
@@ -361,11 +361,11 @@ class Client extends BaseClient
         string $privateKey
     ): string {
         $txHex = $this->client->MultiSigAccTransferInTx([
-            'symbol' => $symbol,
+            'symbol'   => $symbol,
             'execname' => $execname,
-            'note' => $note,
-            'to' => $to,
-            'amount' => $amount,
+            'note'     => $note,
+            'to'       => $to,
+            'amount'   => $amount,
         ], 'multisig');
 
         return $this->app->transaction->finalSend($txHex, $privateKey);
@@ -396,12 +396,12 @@ class Client extends BaseClient
         string $privateKey
     ): string {
         $txHex = $this->client->MultiSigAccTransferOutTx([
-            'symbol' => $symbol,
+            'symbol'   => $symbol,
             'execname' => $execname,
-            'note' => $note,
-            'to' => $to,
-            'from' => $from,
-            'amount' => $amount,
+            'note'     => $note,
+            'to'       => $to,
+            'from'     => $from,
+            'amount'   => $amount,
         ], 'multisig');
 
         return $this->app->transaction->finalSend($txHex, $privateKey);
@@ -423,7 +423,7 @@ class Client extends BaseClient
     {
         $txHex = $this->client->MultiSigConfirmTx([
             'multiSigAccAddr' => $multiSigAccAddr,
-            'txId' => $txId,
+            'txId'            => $txId,
             'confirmOrRevoke' => $confirm,
         ], 'multisig');
 
@@ -442,9 +442,9 @@ class Client extends BaseClient
     public function txCount(string $multiSigAccAddr): int
     {
         return $this->client->Query([
-            'execer' => 'multisig',
+            'execer'   => 'multisig',
             'funcName' => 'MultiSigAccTxCount',
-            'payload' => [
+            'payload'  => [
                 'multiSigAccAddr' => $multiSigAccAddr,
             ],
         ])['data'];
@@ -466,14 +466,14 @@ class Client extends BaseClient
     public function txIds(string $multiSigAddr, int $fromTxId, int $toTxId, bool $pending, bool $executed): array
     {
         return $this->client->Query([
-            'execer' => 'multisig',
+            'execer'   => 'multisig',
             'funcName' => 'MultiSigTxids',
-            'payload' => [
+            'payload'  => [
                 'multiSigAddr' => $multiSigAddr,
-                'fromTxId' => $fromTxId,
-                'toTxId' => $toTxId,
-                'pending' => $pending,
-                'executed' => $executed,
+                'fromTxId'     => $fromTxId,
+                'toTxId'       => $toTxId,
+                'pending'      => $pending,
+                'executed'     => $executed,
             ],
         ])['txids'];
     }
@@ -491,11 +491,11 @@ class Client extends BaseClient
     public function txInfo(string $multiSigAddr, int $txId)
     {
         return $this->client->Query([
-            'execer' => 'multisig',
+            'execer'   => 'multisig',
             'funcName' => 'MultiSigTxInfo',
-            'payload' => [
+            'payload'  => [
                 'multiSigAddr' => $multiSigAddr,
-                'txId' => $txId,
+                'txId'         => $txId,
             ],
         ]);
     }
@@ -513,11 +513,11 @@ class Client extends BaseClient
     public function txWeight(string $multiSigAddr, int $txId): int
     {
         return $this->client->Query([
-            'execer' => 'multisig',
+            'execer'   => 'multisig',
             'funcName' => 'MultiSigTxConfirmedWeight',
-            'payload' => [
+            'payload'  => [
                 'multiSigAddr' => $multiSigAddr,
-                'txId' => $txId,
+                'txId'         => $txId,
             ],
         ]);
     }

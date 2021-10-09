@@ -53,7 +53,7 @@ class BatchReplyStorage extends Message
      */
     public function setStorages($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr            = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             Storage::class);
         $this->storages = $arr;
 

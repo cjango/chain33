@@ -54,7 +54,7 @@ class HeightParas extends Message
      */
     public function setItems($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr         = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             HeightPara::class);
         $this->items = $arr;
 

@@ -55,7 +55,7 @@ class ChunkRecords extends Message
      */
     public function setInfos($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr         = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             ChunkInfo::class);
         $this->infos = $arr;
 

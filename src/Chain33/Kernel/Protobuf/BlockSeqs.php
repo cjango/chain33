@@ -54,7 +54,7 @@ class BlockSeqs extends Message
      */
     public function setSeqs($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr        = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             BlockSeq::class);
         $this->seqs = $arr;
 

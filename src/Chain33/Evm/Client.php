@@ -27,10 +27,10 @@ class Client extends BaseClient
     public function estimateGas(string $tx, string $from): int
     {
         return $this->client->Query([
-            'execer' => $this->parseExecer('evm'),
+            'execer'   => $this->parseExecer('evm'),
             'funcName' => 'EstimateGas',
-            'payload' => [
-                'tx' => $tx,
+            'payload'  => [
+                'tx'   => $tx,
                 'from' => $from,
             ],
         ])['gas'];
@@ -65,13 +65,13 @@ class Client extends BaseClient
         string $note = ''
     ): string {
         $txHex = $this->client->CreateDeployTx([
-            'code' => $code,
-            'abi' => $abi,
-            'fee' => $fee,
-            'note' => $note,
-            'alias' => $alias,
+            'code'      => $code,
+            'abi'       => $abi,
+            'fee'       => $fee,
+            'note'      => $note,
+            'alias'     => $alias,
             'parameter' => $parameter,
-            'paraName' => $this->parseExecer(''),
+            'paraName'  => $this->parseExecer(''),
         ], 'evm');
 
         return $this->app->transaction->finalSend($txHex, $privateKey);
@@ -102,12 +102,12 @@ class Client extends BaseClient
         string $note = ''
     ): string {
         $txHex = $this->client->CreateCallTx([
-            'abi' => $abi,
-            'fee' => $fee,
-            'note' => $note,
-            'parameter' => $parameter,
+            'abi'          => $abi,
+            'fee'          => $fee,
+            'note'         => $note,
+            'parameter'    => $parameter,
             'contractAddr' => $contractAddr,
-            'paraName' => $this->parseExecer(''),
+            'paraName'     => $this->parseExecer(''),
         ], 'evm');
 
         return $this->app->transaction->finalSend($txHex, $privateKey);
@@ -144,9 +144,9 @@ class Client extends BaseClient
     public function checkAddr(string $addr): array
     {
         $result = $this->client->Query([
-            'execer' => $this->parseExecer('evm'),
+            'execer'   => $this->parseExecer('evm'),
             'funcName' => 'CheckAddrExists',
-            'payload' => [
+            'payload'  => [
                 'addr' => $addr,
             ],
         ]);
