@@ -6,16 +6,19 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Blockchain;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.PushWithStatus</code>.
  */
-class PushWithStatus extends \Google\Protobuf\Internal\Message
+class PushWithStatus extends Message
 {
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.PushSubscribeReq push = 1;</code>.
      */
     protected $push = null;
+
     /**
      * Generated from protobuf field <code>int32 status = 2;</code>.
      */
@@ -24,16 +27,15 @@ class PushWithStatus extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var \Jason\Chain33\Kernel\Protobuf\PushSubscribeReq $push
-     *     @var int $status
-     * }
+     * @param  array                                        $data  {
+     *                                                             Optional. Data for populating the Message object.
+     * @var \Jason\Chain33\Kernel\Protobuf\PushSubscribeReq $push
+     * @var int                                             $status
+     *                                                             }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Blockchain::initOnce();
+        Blockchain::initOnce();
         parent::__construct($data);
     }
 
@@ -47,6 +49,20 @@ class PushWithStatus extends \Google\Protobuf\Internal\Message
         return isset($this->push) ? $this->push : null;
     }
 
+    /**
+     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.PushSubscribeReq push = 1;</code>.
+     *
+     * @param  \Jason\Chain33\Kernel\Protobuf\PushSubscribeReq  $var
+     * @return $this
+     */
+    public function setPush($var)
+    {
+        GPBUtil::checkMessage($var, PushSubscribeReq::class);
+        $this->push = $var;
+
+        return $this;
+    }
+
     public function hasPush()
     {
         return isset($this->push);
@@ -55,20 +71,6 @@ class PushWithStatus extends \Google\Protobuf\Internal\Message
     public function clearPush()
     {
         unset($this->push);
-    }
-
-    /**
-     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.PushSubscribeReq push = 1;</code>.
-     *
-     * @param  \Jason\Chain33\Kernel\Protobuf\PushSubscribeReq $var
-     * @return $this
-     */
-    public function setPush($var)
-    {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\PushSubscribeReq::class);
-        $this->push = $var;
-
-        return $this;
     }
 
     /**
@@ -84,7 +86,7 @@ class PushWithStatus extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 status = 2;</code>.
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setStatus($var)

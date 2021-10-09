@@ -6,18 +6,20 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Blockchain;
 
 /**
  * title平行链交易所在主链区块的信息.
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.BlockInfo</code>
  */
-class BlockInfo extends \Google\Protobuf\Internal\Message
+class BlockInfo extends Message
 {
     /**
      * Generated from protobuf field <code>int64 height = 1;</code>.
      */
     protected $height = 0;
+
     /**
      * Generated from protobuf field <code>bytes hash = 2;</code>.
      */
@@ -26,16 +28,15 @@ class BlockInfo extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var int|string $height
-     *     @var string $hash
-     * }
+     * @param  array   $data  {
+     *                        Optional. Data for populating the Message object.
+     * @var int|string $height
+     * @var string     $hash
+     *                        }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Blockchain::initOnce();
+        Blockchain::initOnce();
         parent::__construct($data);
     }
 
@@ -52,7 +53,7 @@ class BlockInfo extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 height = 1;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setHeight($var)
@@ -76,7 +77,7 @@ class BlockInfo extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes hash = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setHash($var)

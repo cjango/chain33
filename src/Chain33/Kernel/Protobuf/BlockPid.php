@@ -6,18 +6,20 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Blockchain;
 
 /**
  *节点ID以及对应的Block.
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.BlockPid</code>
  */
-class BlockPid extends \Google\Protobuf\Internal\Message
+class BlockPid extends Message
 {
     /**
      * Generated from protobuf field <code>string pid = 1;</code>.
      */
     protected $pid = '';
+
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Block block = 2;</code>.
      */
@@ -26,16 +28,15 @@ class BlockPid extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $pid
-     *     @var \Jason\Chain33\Kernel\Protobuf\Block $block
-     * }
+     * @param  array                             $data  {
+     *                                                  Optional. Data for populating the Message object.
+     * @var string                               $pid
+     * @var \Jason\Chain33\Kernel\Protobuf\Block $block
+     *                                                  }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Blockchain::initOnce();
+        Blockchain::initOnce();
         parent::__construct($data);
     }
 
@@ -52,7 +53,7 @@ class BlockPid extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string pid = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setPid($var)
@@ -73,6 +74,20 @@ class BlockPid extends \Google\Protobuf\Internal\Message
         return isset($this->block) ? $this->block : null;
     }
 
+    /**
+     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Block block = 2;</code>.
+     *
+     * @param  \Jason\Chain33\Kernel\Protobuf\Block  $var
+     * @return $this
+     */
+    public function setBlock($var)
+    {
+        GPBUtil::checkMessage($var, Block::class);
+        $this->block = $var;
+
+        return $this;
+    }
+
     public function hasBlock()
     {
         return isset($this->block);
@@ -81,19 +96,5 @@ class BlockPid extends \Google\Protobuf\Internal\Message
     public function clearBlock()
     {
         unset($this->block);
-    }
-
-    /**
-     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Block block = 2;</code>.
-     *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Block $var
-     * @return $this
-     */
-    public function setBlock($var)
-    {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\Block::class);
-        $this->block = $var;
-
-        return $this;
     }
 }

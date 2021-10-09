@@ -6,11 +6,12 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.UnsignTx</code>.
  */
-class UnsignTx extends \Google\Protobuf\Internal\Message
+class UnsignTx extends Message
 {
     /**
      * Generated from protobuf field <code>bytes data = 1;</code>.
@@ -20,11 +21,10 @@ class UnsignTx extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $data
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var string    $data
+     *                       }
      */
     public function __construct($data = null)
     {
@@ -45,7 +45,7 @@ class UnsignTx extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes data = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setData($var)

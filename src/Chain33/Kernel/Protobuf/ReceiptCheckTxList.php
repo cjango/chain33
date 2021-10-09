@@ -5,12 +5,15 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Blockchain;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReceiptCheckTxList</code>.
  */
-class ReceiptCheckTxList extends \Google\Protobuf\Internal\Message
+class ReceiptCheckTxList extends Message
 {
     /**
      * Generated from protobuf field <code>repeated string errs = 1;</code>.
@@ -20,15 +23,14 @@ class ReceiptCheckTxList extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string[]|\Google\Protobuf\Internal\RepeatedField $errs
-     * }
+     * @param  array                                         $data  {
+     *                                                              Optional. Data for populating the Message object.
+     * @var string[]|\Google\Protobuf\Internal\RepeatedField $errs
+     *                                                              }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Blockchain::initOnce();
+        Blockchain::initOnce();
         parent::__construct($data);
     }
 
@@ -45,12 +47,12 @@ class ReceiptCheckTxList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated string errs = 1;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
      * @return $this
      */
     public function setErrs($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $arr        = GPBUtil::checkRepeatedField($var, GPBType::STRING);
         $this->errs = $arr;
 
         return $this;

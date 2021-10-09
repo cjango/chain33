@@ -6,6 +6,8 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Blockchain;
 
 /**
  *记录平行链第一笔交易的index,以及平行链的roothash
@@ -13,23 +15,25 @@ use Google\Protobuf\Internal\GPBUtil;
  * startIndex:子链第一笔交易的索引
  * childHash:子链的根hash
  * txCount:子链交易的数量.
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ChildChain</code>
  */
-class ChildChain extends \Google\Protobuf\Internal\Message
+class ChildChain extends Message
 {
     /**
      * Generated from protobuf field <code>string title = 1;</code>.
      */
     protected $title = '';
+
     /**
      * Generated from protobuf field <code>int32 startIndex = 2;</code>.
      */
     protected $startIndex = 0;
+
     /**
      * Generated from protobuf field <code>bytes childHash = 3;</code>.
      */
     protected $childHash = '';
+
     /**
      * Generated from protobuf field <code>int32 txCount = 4;</code>.
      */
@@ -38,18 +42,17 @@ class ChildChain extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $title
-     *     @var int $startIndex
-     *     @var string $childHash
-     *     @var int $txCount
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var string    $title
+     * @var int       $startIndex
+     * @var string    $childHash
+     * @var int       $txCount
+     *                       }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Blockchain::initOnce();
+        Blockchain::initOnce();
         parent::__construct($data);
     }
 
@@ -66,7 +69,7 @@ class ChildChain extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string title = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setTitle($var)
@@ -90,7 +93,7 @@ class ChildChain extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 startIndex = 2;</code>.
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setStartIndex($var)
@@ -114,7 +117,7 @@ class ChildChain extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes childHash = 3;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setChildHash($var)
@@ -138,7 +141,7 @@ class ChildChain extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 txCount = 4;</code>.
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setTxCount($var)

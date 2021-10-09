@@ -6,31 +6,36 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Blockchain;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ChainExecutor</code>.
  */
-class ChainExecutor extends \Google\Protobuf\Internal\Message
+class ChainExecutor extends Message
 {
     /**
      * Generated from protobuf field <code>string driver = 1;</code>.
      */
     protected $driver = '';
+
     /**
      * Generated from protobuf field <code>string funcName = 2;</code>.
      */
     protected $funcName = '';
+
     /**
      * Generated from protobuf field <code>bytes stateHash = 3;</code>.
      */
     protected $stateHash = '';
+
     /**
      * Generated from protobuf field <code>bytes param = 4;</code>.
      */
     protected $param = '';
+
     /**
      *扩展字段，用于额外的用途.
-     *
      * Generated from protobuf field <code>bytes extra = 5;</code>
      */
     protected $extra = '';
@@ -38,20 +43,19 @@ class ChainExecutor extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $driver
-     *     @var string $funcName
-     *     @var string $stateHash
-     *     @var string $param
-     *     @var string $extra
-     *          扩展字段，用于额外的用途
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var string    $driver
+     * @var string    $funcName
+     * @var string    $stateHash
+     * @var string    $param
+     * @var string    $extra
+     *                       扩展字段，用于额外的用途
+     *                       }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Blockchain::initOnce();
+        Blockchain::initOnce();
         parent::__construct($data);
     }
 
@@ -68,7 +72,7 @@ class ChainExecutor extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string driver = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setDriver($var)
@@ -92,7 +96,7 @@ class ChainExecutor extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string funcName = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setFuncName($var)
@@ -116,7 +120,7 @@ class ChainExecutor extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes stateHash = 3;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setStateHash($var)
@@ -140,7 +144,7 @@ class ChainExecutor extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes param = 4;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setParam($var)
@@ -153,7 +157,6 @@ class ChainExecutor extends \Google\Protobuf\Internal\Message
 
     /**
      *扩展字段，用于额外的用途.
-     *
      * Generated from protobuf field <code>bytes extra = 5;</code>
      *
      * @return string
@@ -165,10 +168,9 @@ class ChainExecutor extends \Google\Protobuf\Internal\Message
 
     /**
      *扩展字段，用于额外的用途.
-     *
      * Generated from protobuf field <code>bytes extra = 5;</code>
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setExtra($var)

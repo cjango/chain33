@@ -5,25 +5,30 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReplyTxInfo</code>.
  */
-class ReplyTxInfo extends \Google\Protobuf\Internal\Message
+class ReplyTxInfo extends Message
 {
     /**
      * Generated from protobuf field <code>bytes hash = 1;</code>.
      */
     protected $hash = '';
+
     /**
      * Generated from protobuf field <code>int64 height = 2;</code>.
      */
     protected $height = 0;
+
     /**
      * Generated from protobuf field <code>int64 index = 3;</code>.
      */
     protected $index = 0;
+
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Asset assets = 4;</code>.
      */
@@ -32,14 +37,13 @@ class ReplyTxInfo extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $hash
-     *     @var int|string $height
-     *     @var int|string $index
-     *     @var \Jason\Chain33\Kernel\Protobuf\Asset[]|\Google\Protobuf\Internal\RepeatedField $assets
-     * }
+     * @param  array                                                                       $data  {
+     *                                                                                            Optional. Data for populating the Message object.
+     * @var string                                                                         $hash
+     * @var int|string                                                                     $height
+     * @var int|string                                                                     $index
+     * @var \Jason\Chain33\Kernel\Protobuf\Asset[]|\Google\Protobuf\Internal\RepeatedField $assets
+     *                                                                                            }
      */
     public function __construct($data = null)
     {
@@ -60,7 +64,7 @@ class ReplyTxInfo extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes hash = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setHash($var)
@@ -84,7 +88,7 @@ class ReplyTxInfo extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 height = 2;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setHeight($var)
@@ -108,7 +112,7 @@ class ReplyTxInfo extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 index = 3;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setIndex($var)
@@ -132,12 +136,13 @@ class ReplyTxInfo extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Asset assets = 4;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Asset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\Asset[]|\Google\Protobuf\Internal\RepeatedField  $var
      * @return $this
      */
     public function setAssets($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Jason\Chain33\Kernel\Protobuf\Asset::class);
+        $arr          = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+            Asset::class);
         $this->assets = $arr;
 
         return $this;

@@ -5,14 +5,15 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
 
 /**
  *批量查询有可能导致数据库崩溃.
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.BatchQueryStorage</code>
  */
-class BatchQueryStorage extends \Google\Protobuf\Internal\Message
+class BatchQueryStorage extends Message
 {
     /**
      * Generated from protobuf field <code>repeated string txHashs = 1;</code>.
@@ -22,11 +23,10 @@ class BatchQueryStorage extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string[]|\Google\Protobuf\Internal\RepeatedField $txHashs
-     * }
+     * @param  array                                         $data  {
+     *                                                              Optional. Data for populating the Message object.
+     * @var string[]|\Google\Protobuf\Internal\RepeatedField $txHashs
+     *                                                              }
      */
     public function __construct($data = null)
     {
@@ -47,12 +47,12 @@ class BatchQueryStorage extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated string txHashs = 1;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
      * @return $this
      */
     public function setTxHashs($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $arr           = GPBUtil::checkRepeatedField($var, GPBType::STRING);
         $this->txHashs = $arr;
 
         return $this;

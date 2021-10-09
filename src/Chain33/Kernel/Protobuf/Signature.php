@@ -6,6 +6,7 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
 
 /**
  *对于一个交易组中的交易，要么全部成功，要么全部失败
@@ -18,22 +19,22 @@ use Google\Protobuf\Internal\GPBUtil;
  * ty = 3 -> sm2
  * ty = 4 -> OnetimeED25519
  * ty = 5 -> RingBaseonED25519.
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.Signature</code>
  */
-class Signature extends \Google\Protobuf\Internal\Message
+class Signature extends Message
 {
     /**
      * Generated from protobuf field <code>int32 ty = 1;</code>.
      */
     protected $ty = 0;
+
     /**
      * Generated from protobuf field <code>bytes pubkey = 2;</code>.
      */
     protected $pubkey = '';
+
     /**
      *当ty为5时，格式应该用RingSignature去解析.
-     *
      * Generated from protobuf field <code>bytes signature = 3;</code>
      */
     protected $signature = '';
@@ -41,14 +42,13 @@ class Signature extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var int $ty
-     *     @var string $pubkey
-     *     @var string $signature
-     *          当ty为5时，格式应该用RingSignature去解析
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var int       $ty
+     * @var string    $pubkey
+     * @var string    $signature
+     *                       当ty为5时，格式应该用RingSignature去解析
+     *                       }
      */
     public function __construct($data = null)
     {
@@ -69,7 +69,7 @@ class Signature extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 ty = 1;</code>.
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setTy($var)
@@ -93,7 +93,7 @@ class Signature extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes pubkey = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setPubkey($var)
@@ -106,7 +106,6 @@ class Signature extends \Google\Protobuf\Internal\Message
 
     /**
      *当ty为5时，格式应该用RingSignature去解析.
-     *
      * Generated from protobuf field <code>bytes signature = 3;</code>
      *
      * @return string
@@ -118,10 +117,9 @@ class Signature extends \Google\Protobuf\Internal\Message
 
     /**
      *当ty为5时，格式应该用RingSignature去解析.
-     *
      * Generated from protobuf field <code>bytes signature = 3;</code>
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setSignature($var)

@@ -6,20 +6,23 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.Asset</code>.
  */
-class Asset extends \Google\Protobuf\Internal\Message
+class Asset extends Message
 {
     /**
      * Generated from protobuf field <code>string exec = 1;</code>.
      */
     protected $exec = '';
+
     /**
      * Generated from protobuf field <code>string symbol = 2;</code>.
      */
     protected $symbol = '';
+
     /**
      * Generated from protobuf field <code>int64 amount = 3;</code>.
      */
@@ -28,13 +31,12 @@ class Asset extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $exec
-     *     @var string $symbol
-     *     @var int|string $amount
-     * }
+     * @param  array   $data  {
+     *                        Optional. Data for populating the Message object.
+     * @var string     $exec
+     * @var string     $symbol
+     * @var int|string $amount
+     *                        }
      */
     public function __construct($data = null)
     {
@@ -55,7 +57,7 @@ class Asset extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string exec = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setExec($var)
@@ -79,7 +81,7 @@ class Asset extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string symbol = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setSymbol($var)
@@ -103,7 +105,7 @@ class Asset extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 amount = 3;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setAmount($var)

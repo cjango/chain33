@@ -16,8 +16,8 @@ class Client extends BaseClient
      *
      * @Date   : 2021/7/19 3:28 下午
      * @Author : <Jason.C>
-     * @param  int    $len      助记词位数
-     * @param  string $language 助记词语言
+     * @param  int     $len       助记词位数
+     * @param  string  $language  助记词语言
      * @return \Jason\Bip39\Mnemonic
      * @throws \Jason\Bip39\Exception\MnemonicException
      * @throws \Jason\Bip39\Exception\WordListException
@@ -28,26 +28,11 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes   : 通过chain33生成助记词.
-     *
-     * @Date   : 2021/3/21 12:10 下午
-     * @Author : <Jason.C>
-     * @param  int $lang 0 english 1 中文
-     * @return string
-     */
-    public function genSeed(int $lang = 0): string
-    {
-        return $this->client->GenSeed([
-            'lang' => $lang,
-        ])['seed'];
-    }
-
-    /**
      * Notes: 创建钱包.
      *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 17:33
-     * @param  string $password 钱包密码
+     * @param  string  $password  钱包密码
      * @return bool
      */
     public function create(string $password): bool
@@ -58,6 +43,21 @@ class Client extends BaseClient
             'seed'   => $seed,
             'passwd' => $password,
         ])['isOK'];
+    }
+
+    /**
+     * Notes   : 通过chain33生成助记词.
+     *
+     * @Date   : 2021/3/21 12:10 下午
+     * @Author : <Jason.C>
+     * @param  int  $lang  0 english 1 中文
+     * @return string
+     */
+    public function genSeed(int $lang = 0): string
+    {
+        return $this->client->GenSeed([
+            'lang' => $lang,
+        ])['seed'];
     }
 
     /**
@@ -82,8 +82,8 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 17:36
-     * @param  string $old 旧密码
-     * @param  string $new 新密码
+     * @param  string  $old  旧密码
+     * @param  string  $new  新密码
      * @return bool
      */
     public function password(string $old, string $new): bool
@@ -111,7 +111,7 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/3/18 21:38
-     * @param  int $amount
+     * @param  int  $amount
      * @return bool
      * @throws \Jason\Chain33\Exceptions\ConfigException
      */
@@ -129,11 +129,11 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 17:44
-     * @param  string $fromTx    Sprintf(“%018d”, height*100000 + index)，表示从高度 height 中的 index
-     *                           开始获取交易列表；第一次传参为空，获取最新的交易
-     * @param  int    $count     获取交易列表的个数
-     * @param  int    $mode      获取交易列表的个数
-     * @param  int    $direction 查找方式；0，获取最新的交易数据，倒叙排序，在交易列表中时间高度是递减的；1，正序排序，按照时间，区块高度增加的方向获取交易列表
+     * @param  string  $fromTx     Sprintf(“%018d”, height*100000 + index)，表示从高度 height 中的 index
+     *                             开始获取交易列表；第一次传参为空，获取最新的交易
+     * @param  int     $count      获取交易列表的个数
+     * @param  int     $mode       获取交易列表的个数
+     * @param  int     $direction  查找方式；0，获取最新的交易数据，倒叙排序，在交易列表中时间高度是递减的；1，正序排序，按照时间，区块高度增加的方向获取交易列表
      * @return array
      */
     public function txList(string $fromTx, int $count, int $mode, int $direction = 0): array
@@ -169,7 +169,7 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/5/14 1:31 下午
-     * @param  string $to 合并钱包上的所有余额到一个账户地址
+     * @param  string  $to  合并钱包上的所有余额到一个账户地址
      * @return mixed
      * @throws \Jason\Chain33\Exceptions\ConfigException
      */

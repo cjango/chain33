@@ -6,11 +6,12 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.HexTx</code>.
  */
-class HexTx extends \Google\Protobuf\Internal\Message
+class HexTx extends Message
 {
     /**
      * Generated from protobuf field <code>string tx = 1;</code>.
@@ -20,11 +21,10 @@ class HexTx extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $tx
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var string    $tx
+     *                       }
      */
     public function __construct($data = null)
     {
@@ -45,7 +45,7 @@ class HexTx extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string tx = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setTx($var)

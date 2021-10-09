@@ -6,30 +6,34 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReWriteRawTx</code>.
  */
-class ReWriteRawTx extends \Google\Protobuf\Internal\Message
+class ReWriteRawTx extends Message
 {
     /**
      * Generated from protobuf field <code>string tx = 1;</code>.
      */
     protected $tx = '';
+
     /**
      * bytes  execer = 2;.
-     *
      * Generated from protobuf field <code>string to = 3;</code>
      */
     protected $to = '';
+
     /**
      * Generated from protobuf field <code>string expire = 4;</code>.
      */
     protected $expire = '';
+
     /**
      * Generated from protobuf field <code>int64 fee = 5;</code>.
      */
     protected $fee = 0;
+
     /**
      * Generated from protobuf field <code>int32 index = 6;</code>.
      */
@@ -38,16 +42,15 @@ class ReWriteRawTx extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $tx
-     *     @var string $to
-     *           bytes  execer = 2;
-     *     @var string $expire
-     *     @var int|string $fee
-     *     @var int $index
-     * }
+     * @param  array   $data  {
+     *                        Optional. Data for populating the Message object.
+     * @var string     $tx
+     * @var string     $to
+     *                        bytes  execer = 2;
+     * @var string     $expire
+     * @var int|string $fee
+     * @var int        $index
+     *                        }
      */
     public function __construct($data = null)
     {
@@ -68,7 +71,7 @@ class ReWriteRawTx extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string tx = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setTx($var)
@@ -81,7 +84,6 @@ class ReWriteRawTx extends \Google\Protobuf\Internal\Message
 
     /**
      * bytes  execer = 2;.
-     *
      * Generated from protobuf field <code>string to = 3;</code>
      *
      * @return string
@@ -93,10 +95,9 @@ class ReWriteRawTx extends \Google\Protobuf\Internal\Message
 
     /**
      * bytes  execer = 2;.
-     *
      * Generated from protobuf field <code>string to = 3;</code>
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setTo($var)
@@ -120,7 +121,7 @@ class ReWriteRawTx extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string expire = 4;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setExpire($var)
@@ -144,7 +145,7 @@ class ReWriteRawTx extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 fee = 5;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setFee($var)
@@ -168,7 +169,7 @@ class ReWriteRawTx extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 index = 6;</code>.
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setIndex($var)

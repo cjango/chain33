@@ -5,12 +5,14 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReplyTxList</code>.
  */
-class ReplyTxList extends \Google\Protobuf\Internal\Message
+class ReplyTxList extends Message
 {
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Transaction txs = 1;</code>.
@@ -20,11 +22,10 @@ class ReplyTxList extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var \Jason\Chain33\Kernel\Protobuf\Transaction[]|\Google\Protobuf\Internal\RepeatedField $txs
-     * }
+     * @param  array                                                                             $data  {
+     *                                                                                                  Optional. Data for populating the Message object.
+     * @var \Jason\Chain33\Kernel\Protobuf\Transaction[]|\Google\Protobuf\Internal\RepeatedField $txs
+     *                                                                                                  }
      */
     public function __construct($data = null)
     {
@@ -45,12 +46,13 @@ class ReplyTxList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Transaction txs = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Transaction[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\Transaction[]|\Google\Protobuf\Internal\RepeatedField  $var
      * @return $this
      */
     public function setTxs($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Jason\Chain33\Kernel\Protobuf\Transaction::class);
+        $arr       = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+            Transaction::class);
         $this->txs = $arr;
 
         return $this;

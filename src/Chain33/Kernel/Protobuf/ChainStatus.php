@@ -6,25 +6,28 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Blockchain;
 
 /**
  *区块链状态
- * 	 currentHeight : 区块最新高度
- *	 mempoolSize :内存池大小
- * 	 msgQueueSize : 消息队列大小.
- *
+ *     currentHeight : 区块最新高度
+ *     mempoolSize :内存池大小
+ *     msgQueueSize : 消息队列大小.
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ChainStatus</code>
  */
-class ChainStatus extends \Google\Protobuf\Internal\Message
+class ChainStatus extends Message
 {
     /**
      * Generated from protobuf field <code>int64 currentHeight = 1;</code>.
      */
     protected $currentHeight = 0;
+
     /**
      * Generated from protobuf field <code>int64 mempoolSize = 2;</code>.
      */
     protected $mempoolSize = 0;
+
     /**
      * Generated from protobuf field <code>int64 msgQueueSize = 3;</code>.
      */
@@ -33,17 +36,16 @@ class ChainStatus extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var int|string $currentHeight
-     *     @var int|string $mempoolSize
-     *     @var int|string $msgQueueSize
-     * }
+     * @param  array   $data  {
+     *                        Optional. Data for populating the Message object.
+     * @var int|string $currentHeight
+     * @var int|string $mempoolSize
+     * @var int|string $msgQueueSize
+     *                        }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Blockchain::initOnce();
+        Blockchain::initOnce();
         parent::__construct($data);
     }
 
@@ -60,7 +62,7 @@ class ChainStatus extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 currentHeight = 1;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setCurrentHeight($var)
@@ -84,7 +86,7 @@ class ChainStatus extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 mempoolSize = 2;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setMempoolSize($var)
@@ -108,7 +110,7 @@ class ChainStatus extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 msgQueueSize = 3;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setMsgQueueSize($var)

@@ -5,38 +5,40 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
 
 /**
  *使用多层merkle树之后的proof证明结构体.
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.TxProof</code>
  */
-class TxProof extends \Google\Protobuf\Internal\Message
+class TxProof extends Message
 {
-    /**
-     * Generated from protobuf field <code>repeated bytes proofs = 1;</code>.
-     */
-    private $proofs;
     /**
      * Generated from protobuf field <code>uint32 index = 2;</code>.
      */
     protected $index = 0;
+
     /**
      * Generated from protobuf field <code>bytes rootHash = 3;</code>.
      */
     protected $rootHash = '';
 
     /**
+     * Generated from protobuf field <code>repeated bytes proofs = 1;</code>.
+     */
+    private $proofs;
+
+    /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string[]|\Google\Protobuf\Internal\RepeatedField $proofs
-     *     @var int $index
-     *     @var string $rootHash
-     * }
+     * @param  array                                         $data  {
+     *                                                              Optional. Data for populating the Message object.
+     * @var string[]|\Google\Protobuf\Internal\RepeatedField $proofs
+     * @var int                                              $index
+     * @var string                                           $rootHash
+     *                                                              }
      */
     public function __construct($data = null)
     {
@@ -57,12 +59,12 @@ class TxProof extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated bytes proofs = 1;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
      * @return $this
      */
     public function setProofs($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::BYTES);
+        $arr          = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
         $this->proofs = $arr;
 
         return $this;
@@ -81,7 +83,7 @@ class TxProof extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>uint32 index = 2;</code>.
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setIndex($var)
@@ -105,7 +107,7 @@ class TxProof extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes rootHash = 3;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setRootHash($var)

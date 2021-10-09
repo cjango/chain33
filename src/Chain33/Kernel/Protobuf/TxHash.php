@@ -6,11 +6,13 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Common;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.TxHash</code>.
  */
-class TxHash extends \Google\Protobuf\Internal\Message
+class TxHash extends Message
 {
     /**
      * Generated from protobuf field <code>string hash = 1;</code>.
@@ -20,15 +22,14 @@ class TxHash extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $hash
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var string    $hash
+     *                       }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Common::initOnce();
+        Common::initOnce();
         parent::__construct($data);
     }
 
@@ -45,7 +46,7 @@ class TxHash extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string hash = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setHash($var)

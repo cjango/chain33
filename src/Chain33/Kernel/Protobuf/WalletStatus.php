@@ -6,6 +6,8 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Wallet;
 
 /**
  *钱包当前的状态
@@ -13,23 +15,25 @@ use Google\Protobuf\Internal\GPBUtil;
  *   isAutoMining :钱包是否开启挖矿功能，true开启挖矿，false关闭挖矿
  *   isHasSeed : 钱包是否有种子，true已有，false没有
  *   isTicketLock :钱包挖矿买票锁状态，true锁定，false解锁，只能用于挖矿转账.
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.WalletStatus</code>
  */
-class WalletStatus extends \Google\Protobuf\Internal\Message
+class WalletStatus extends Message
 {
     /**
      * Generated from protobuf field <code>bool isWalletLock = 1;</code>.
      */
     protected $isWalletLock = false;
+
     /**
      * Generated from protobuf field <code>bool isAutoMining = 2;</code>.
      */
     protected $isAutoMining = false;
+
     /**
      * Generated from protobuf field <code>bool isHasSeed = 3;</code>.
      */
     protected $isHasSeed = false;
+
     /**
      * Generated from protobuf field <code>bool isTicketLock = 4;</code>.
      */
@@ -38,18 +42,17 @@ class WalletStatus extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var bool $isWalletLock
-     *     @var bool $isAutoMining
-     *     @var bool $isHasSeed
-     *     @var bool $isTicketLock
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var bool      $isWalletLock
+     * @var bool      $isAutoMining
+     * @var bool      $isHasSeed
+     * @var bool      $isTicketLock
+     *                       }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Wallet::initOnce();
+        Wallet::initOnce();
         parent::__construct($data);
     }
 

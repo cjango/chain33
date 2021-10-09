@@ -6,41 +6,40 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
 
 /**
  * 隐私存证模型，如果一个文件需要存证，且不公开内容，可以选择将源文件通过对称加密算法加密后上链.
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.EncryptNotaryStorage</code>
  */
-class EncryptNotaryStorage extends \Google\Protobuf\Internal\Message
+class EncryptNotaryStorage extends Message
 {
     /**
      *存证明文内容的hash值，推荐使用sha256哈希，限制256位得摘要值
-     *
      * Generated from protobuf field <code>bytes contentHash = 1;</code>
      */
     protected $contentHash = '';
+
     /**
      *源文件得密文，由加密key及nonce对明文加密得到该值。
-     *
      * Generated from protobuf field <code>bytes encryptContent = 2;</code>
      */
     protected $encryptContent = '';
+
     /**
      *加密iv，通过AES进行加密时制定随机生成的iv,解密时需要使用该值
-     *
      * Generated from protobuf field <code>bytes nonce = 3;</code>
      */
     protected $nonce = '';
+
     /**
      *自定义的主键，可以为空，如果没传，则用txhash为key.
-     *
      * Generated from protobuf field <code>string key = 4;</code>
      */
     protected $key = '';
+
     /**
      *字符串值
-     *
      * Generated from protobuf field <code>string value = 5;</code>
      */
     protected $value = '';
@@ -48,20 +47,19 @@ class EncryptNotaryStorage extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $contentHash
-     *          存证明文内容的hash值，推荐使用sha256哈希，限制256位得摘要值
-     *     @var string $encryptContent
-     *          源文件得密文，由加密key及nonce对明文加密得到该值。
-     *     @var string $nonce
-     *          加密iv，通过AES进行加密时制定随机生成的iv,解密时需要使用该值
-     *     @var string $key
-     *          自定义的主键，可以为空，如果没传，则用txhash为key
-     *     @var string $value
-     *          字符串值
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var string    $contentHash
+     *                       存证明文内容的hash值，推荐使用sha256哈希，限制256位得摘要值
+     * @var string    $encryptContent
+     *                       源文件得密文，由加密key及nonce对明文加密得到该值。
+     * @var string    $nonce
+     *                       加密iv，通过AES进行加密时制定随机生成的iv,解密时需要使用该值
+     * @var string    $key
+     *                       自定义的主键，可以为空，如果没传，则用txhash为key
+     * @var string    $value
+     *                       字符串值
+     *                       }
      */
     public function __construct($data = null)
     {
@@ -71,7 +69,6 @@ class EncryptNotaryStorage extends \Google\Protobuf\Internal\Message
 
     /**
      *存证明文内容的hash值，推荐使用sha256哈希，限制256位得摘要值
-     *
      * Generated from protobuf field <code>bytes contentHash = 1;</code>
      *
      * @return string
@@ -83,10 +80,9 @@ class EncryptNotaryStorage extends \Google\Protobuf\Internal\Message
 
     /**
      *存证明文内容的hash值，推荐使用sha256哈希，限制256位得摘要值
-     *
      * Generated from protobuf field <code>bytes contentHash = 1;</code>
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setContentHash($var)
@@ -99,7 +95,6 @@ class EncryptNotaryStorage extends \Google\Protobuf\Internal\Message
 
     /**
      *源文件得密文，由加密key及nonce对明文加密得到该值。
-     *
      * Generated from protobuf field <code>bytes encryptContent = 2;</code>
      *
      * @return string
@@ -111,10 +106,9 @@ class EncryptNotaryStorage extends \Google\Protobuf\Internal\Message
 
     /**
      *源文件得密文，由加密key及nonce对明文加密得到该值。
-     *
      * Generated from protobuf field <code>bytes encryptContent = 2;</code>
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setEncryptContent($var)
@@ -127,7 +121,6 @@ class EncryptNotaryStorage extends \Google\Protobuf\Internal\Message
 
     /**
      *加密iv，通过AES进行加密时制定随机生成的iv,解密时需要使用该值
-     *
      * Generated from protobuf field <code>bytes nonce = 3;</code>
      *
      * @return string
@@ -139,10 +132,9 @@ class EncryptNotaryStorage extends \Google\Protobuf\Internal\Message
 
     /**
      *加密iv，通过AES进行加密时制定随机生成的iv,解密时需要使用该值
-     *
      * Generated from protobuf field <code>bytes nonce = 3;</code>
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setNonce($var)
@@ -155,7 +147,6 @@ class EncryptNotaryStorage extends \Google\Protobuf\Internal\Message
 
     /**
      *自定义的主键，可以为空，如果没传，则用txhash为key.
-     *
      * Generated from protobuf field <code>string key = 4;</code>
      *
      * @return string
@@ -167,10 +158,9 @@ class EncryptNotaryStorage extends \Google\Protobuf\Internal\Message
 
     /**
      *自定义的主键，可以为空，如果没传，则用txhash为key.
-     *
      * Generated from protobuf field <code>string key = 4;</code>
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setKey($var)
@@ -183,7 +173,6 @@ class EncryptNotaryStorage extends \Google\Protobuf\Internal\Message
 
     /**
      *字符串值
-     *
      * Generated from protobuf field <code>string value = 5;</code>
      *
      * @return string
@@ -195,10 +184,9 @@ class EncryptNotaryStorage extends \Google\Protobuf\Internal\Message
 
     /**
      *字符串值
-     *
      * Generated from protobuf field <code>string value = 5;</code>
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setValue($var)

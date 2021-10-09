@@ -6,35 +6,34 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
 
 /**
  * 内容存证模型.
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ContentOnlyNotaryStorage</code>
  */
-class ContentOnlyNotaryStorage extends \Google\Protobuf\Internal\Message
+class ContentOnlyNotaryStorage extends Message
 {
     /**
      *长度需要小于512k.
-     *
      * Generated from protobuf field <code>bytes content = 1;</code>
      */
     protected $content = '';
+
     /**
      *自定义的主键，可以为空，如果没传，则用txhash为key.
-     *
      * Generated from protobuf field <code>string key = 2;</code>
      */
     protected $key = '';
+
     /**
      * Op 0表示创建 1表示追加add.
-     *
      * Generated from protobuf field <code>int32 op = 3;</code>
      */
     protected $op = 0;
+
     /**
      *字符串值
-     *
      * Generated from protobuf field <code>string value = 4;</code>
      */
     protected $value = '';
@@ -42,18 +41,17 @@ class ContentOnlyNotaryStorage extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $content
-     *          长度需要小于512k
-     *     @var string $key
-     *          自定义的主键，可以为空，如果没传，则用txhash为key
-     *     @var int $op
-     *           Op 0表示创建 1表示追加add
-     *     @var string $value
-     *          字符串值
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var string    $content
+     *                       长度需要小于512k
+     * @var string    $key
+     *                       自定义的主键，可以为空，如果没传，则用txhash为key
+     * @var int       $op
+     *                       Op 0表示创建 1表示追加add
+     * @var string    $value
+     *                       字符串值
+     *                       }
      */
     public function __construct($data = null)
     {
@@ -63,7 +61,6 @@ class ContentOnlyNotaryStorage extends \Google\Protobuf\Internal\Message
 
     /**
      *长度需要小于512k.
-     *
      * Generated from protobuf field <code>bytes content = 1;</code>
      *
      * @return string
@@ -75,10 +72,9 @@ class ContentOnlyNotaryStorage extends \Google\Protobuf\Internal\Message
 
     /**
      *长度需要小于512k.
-     *
      * Generated from protobuf field <code>bytes content = 1;</code>
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setContent($var)
@@ -91,7 +87,6 @@ class ContentOnlyNotaryStorage extends \Google\Protobuf\Internal\Message
 
     /**
      *自定义的主键，可以为空，如果没传，则用txhash为key.
-     *
      * Generated from protobuf field <code>string key = 2;</code>
      *
      * @return string
@@ -103,10 +98,9 @@ class ContentOnlyNotaryStorage extends \Google\Protobuf\Internal\Message
 
     /**
      *自定义的主键，可以为空，如果没传，则用txhash为key.
-     *
      * Generated from protobuf field <code>string key = 2;</code>
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setKey($var)
@@ -119,7 +113,6 @@ class ContentOnlyNotaryStorage extends \Google\Protobuf\Internal\Message
 
     /**
      * Op 0表示创建 1表示追加add.
-     *
      * Generated from protobuf field <code>int32 op = 3;</code>
      *
      * @return int
@@ -131,10 +124,9 @@ class ContentOnlyNotaryStorage extends \Google\Protobuf\Internal\Message
 
     /**
      * Op 0表示创建 1表示追加add.
-     *
      * Generated from protobuf field <code>int32 op = 3;</code>
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setOp($var)
@@ -147,7 +139,6 @@ class ContentOnlyNotaryStorage extends \Google\Protobuf\Internal\Message
 
     /**
      *字符串值
-     *
      * Generated from protobuf field <code>string value = 4;</code>
      *
      * @return string
@@ -159,10 +150,9 @@ class ContentOnlyNotaryStorage extends \Google\Protobuf\Internal\Message
 
     /**
      *字符串值
-     *
      * Generated from protobuf field <code>string value = 4;</code>
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setValue($var)

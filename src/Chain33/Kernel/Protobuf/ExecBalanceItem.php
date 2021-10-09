@@ -6,20 +6,24 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Statistic;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ExecBalanceItem</code>.
  */
-class ExecBalanceItem extends \Google\Protobuf\Internal\Message
+class ExecBalanceItem extends Message
 {
     /**
      * Generated from protobuf field <code>bytes execAddr = 1;</code>.
      */
     protected $execAddr = '';
+
     /**
      * Generated from protobuf field <code>int64 frozen = 2;</code>.
      */
     protected $frozen = 0;
+
     /**
      * Generated from protobuf field <code>int64 active = 3;</code>.
      */
@@ -28,17 +32,16 @@ class ExecBalanceItem extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $execAddr
-     *     @var int|string $frozen
-     *     @var int|string $active
-     * }
+     * @param  array   $data  {
+     *                        Optional. Data for populating the Message object.
+     * @var string     $execAddr
+     * @var int|string $frozen
+     * @var int|string $active
+     *                        }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Statistic::initOnce();
+        Statistic::initOnce();
         parent::__construct($data);
     }
 
@@ -55,7 +58,7 @@ class ExecBalanceItem extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes execAddr = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setExecAddr($var)
@@ -79,7 +82,7 @@ class ExecBalanceItem extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 frozen = 2;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setFrozen($var)
@@ -103,7 +106,7 @@ class ExecBalanceItem extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 active = 3;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setActive($var)

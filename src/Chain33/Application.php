@@ -83,7 +83,7 @@ class Application extends Container
      *
      * @Author: <C.Jason>
      * @Date  : 2020/3/17 20:44 下午
-     * @param  string $name 服务名称
+     * @param  string  $name  服务名称
      * @return mixed
      */
     public function __get(string $name)
@@ -96,8 +96,8 @@ class Application extends Container
      *
      * @Author: <C.Jason>
      * @Date  : 2020/3/17 20:44 下午
-     * @param  string $name 服务名称
-     * @param         $arguments
+     * @param  string  $name  服务名称
+     * @param          $arguments
      * @return mixed
      */
     public function __call(string $name, $arguments)

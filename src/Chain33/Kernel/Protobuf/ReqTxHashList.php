@@ -5,33 +5,34 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
 
 /**
  *通过交易hash获取交易列表，需要区分是短hash还是全hash值
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqTxHashList</code>
  */
-class ReqTxHashList extends \Google\Protobuf\Internal\Message
+class ReqTxHashList extends Message
 {
-    /**
-     * Generated from protobuf field <code>repeated string hashes = 1;</code>.
-     */
-    private $hashes;
     /**
      * Generated from protobuf field <code>bool isShortHash = 2;</code>.
      */
     protected $isShortHash = false;
 
     /**
+     * Generated from protobuf field <code>repeated string hashes = 1;</code>.
+     */
+    private $hashes;
+
+    /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string[]|\Google\Protobuf\Internal\RepeatedField $hashes
-     *     @var bool $isShortHash
-     * }
+     * @param  array                                         $data  {
+     *                                                              Optional. Data for populating the Message object.
+     * @var string[]|\Google\Protobuf\Internal\RepeatedField $hashes
+     * @var bool                                             $isShortHash
+     *                                                              }
      */
     public function __construct($data = null)
     {
@@ -52,12 +53,12 @@ class ReqTxHashList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated string hashes = 1;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
      * @return $this
      */
     public function setHashes($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $arr          = GPBUtil::checkRepeatedField($var, GPBType::STRING);
         $this->hashes = $arr;
 
         return $this;

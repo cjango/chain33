@@ -6,16 +6,19 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Executor;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReceiptConfig</code>.
  */
-class ReceiptConfig extends \Google\Protobuf\Internal\Message
+class ReceiptConfig extends Message
 {
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ConfigItem prev = 1;</code>.
      */
     protected $prev = null;
+
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ConfigItem current = 2;</code>.
      */
@@ -24,16 +27,15 @@ class ReceiptConfig extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var \Jason\Chain33\Kernel\Protobuf\ConfigItem $prev
-     *     @var \Jason\Chain33\Kernel\Protobuf\ConfigItem $current
-     * }
+     * @param  array                                  $data  {
+     *                                                       Optional. Data for populating the Message object.
+     * @var \Jason\Chain33\Kernel\Protobuf\ConfigItem $prev
+     * @var \Jason\Chain33\Kernel\Protobuf\ConfigItem $current
+     *                                                       }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Executor::initOnce();
+        Executor::initOnce();
         parent::__construct($data);
     }
 
@@ -47,6 +49,20 @@ class ReceiptConfig extends \Google\Protobuf\Internal\Message
         return isset($this->prev) ? $this->prev : null;
     }
 
+    /**
+     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ConfigItem prev = 1;</code>.
+     *
+     * @param  \Jason\Chain33\Kernel\Protobuf\ConfigItem  $var
+     * @return $this
+     */
+    public function setPrev($var)
+    {
+        GPBUtil::checkMessage($var, ConfigItem::class);
+        $this->prev = $var;
+
+        return $this;
+    }
+
     public function hasPrev()
     {
         return isset($this->prev);
@@ -55,20 +71,6 @@ class ReceiptConfig extends \Google\Protobuf\Internal\Message
     public function clearPrev()
     {
         unset($this->prev);
-    }
-
-    /**
-     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ConfigItem prev = 1;</code>.
-     *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ConfigItem $var
-     * @return $this
-     */
-    public function setPrev($var)
-    {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\ConfigItem::class);
-        $this->prev = $var;
-
-        return $this;
     }
 
     /**
@@ -81,6 +83,20 @@ class ReceiptConfig extends \Google\Protobuf\Internal\Message
         return isset($this->current) ? $this->current : null;
     }
 
+    /**
+     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ConfigItem current = 2;</code>.
+     *
+     * @param  \Jason\Chain33\Kernel\Protobuf\ConfigItem  $var
+     * @return $this
+     */
+    public function setCurrent($var)
+    {
+        GPBUtil::checkMessage($var, ConfigItem::class);
+        $this->current = $var;
+
+        return $this;
+    }
+
     public function hasCurrent()
     {
         return isset($this->current);
@@ -89,19 +105,5 @@ class ReceiptConfig extends \Google\Protobuf\Internal\Message
     public function clearCurrent()
     {
         unset($this->current);
-    }
-
-    /**
-     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ConfigItem current = 2;</code>.
-     *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ConfigItem $var
-     * @return $this
-     */
-    public function setCurrent($var)
-    {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\ConfigItem::class);
-        $this->current = $var;
-
-        return $this;
     }
 }

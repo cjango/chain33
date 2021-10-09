@@ -5,14 +5,16 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Blockchain;
 
 /**
  * ChunkRecords.
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ChunkRecords</code>
  */
-class ChunkRecords extends \Google\Protobuf\Internal\Message
+class ChunkRecords extends Message
 {
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ChunkInfo infos = 1;</code>.
@@ -22,15 +24,14 @@ class ChunkRecords extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var \Jason\Chain33\Kernel\Protobuf\ChunkInfo[]|\Google\Protobuf\Internal\RepeatedField $infos
-     * }
+     * @param  array                                                                           $data  {
+     *                                                                                                Optional. Data for populating the Message object.
+     * @var \Jason\Chain33\Kernel\Protobuf\ChunkInfo[]|\Google\Protobuf\Internal\RepeatedField $infos
+     *                                                                                                }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Blockchain::initOnce();
+        Blockchain::initOnce();
         parent::__construct($data);
     }
 
@@ -47,12 +48,13 @@ class ChunkRecords extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ChunkInfo infos = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ChunkInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\ChunkInfo[]|\Google\Protobuf\Internal\RepeatedField  $var
      * @return $this
      */
     public function setInfos($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Jason\Chain33\Kernel\Protobuf\ChunkInfo::class);
+        $arr         = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+            ChunkInfo::class);
         $this->infos = $arr;
 
         return $this;

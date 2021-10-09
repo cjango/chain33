@@ -6,6 +6,8 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Wallet;
 
 /**
  *钱包模块存贮的tx交易详细信息
@@ -19,47 +21,55 @@ use Google\Protobuf\Internal\GPBUtil;
  *   txhash : 交易对应的哈希值
  *   actionName  :交易对应的函数调用
  *   payload: 保存额外的一些信息，主要是给插件使用.
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.WalletTxDetail</code>
  */
-class WalletTxDetail extends \Google\Protobuf\Internal\Message
+class WalletTxDetail extends Message
 {
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Transaction tx = 1;</code>.
      */
     protected $tx = null;
+
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ReceiptData receipt = 2;</code>.
      */
     protected $receipt = null;
+
     /**
      * Generated from protobuf field <code>int64 height = 3;</code>.
      */
     protected $height = 0;
+
     /**
      * Generated from protobuf field <code>int64 index = 4;</code>.
      */
     protected $index = 0;
+
     /**
      * Generated from protobuf field <code>int64 blocktime = 5;</code>.
      */
     protected $blocktime = 0;
+
     /**
      * Generated from protobuf field <code>int64 amount = 6;</code>.
      */
     protected $amount = 0;
+
     /**
      * Generated from protobuf field <code>string fromaddr = 7;</code>.
      */
     protected $fromaddr = '';
+
     /**
      * Generated from protobuf field <code>bytes txhash = 8;</code>.
      */
     protected $txhash = '';
+
     /**
      * Generated from protobuf field <code>string actionName = 9;</code>.
      */
     protected $actionName = '';
+
     /**
      * Generated from protobuf field <code>bytes payload = 10;</code>.
      */
@@ -68,24 +78,23 @@ class WalletTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var \Jason\Chain33\Kernel\Protobuf\Transaction $tx
-     *     @var \Jason\Chain33\Kernel\Protobuf\ReceiptData $receipt
-     *     @var int|string $height
-     *     @var int|string $index
-     *     @var int|string $blocktime
-     *     @var int|string $amount
-     *     @var string $fromaddr
-     *     @var string $txhash
-     *     @var string $actionName
-     *     @var string $payload
-     * }
+     * @param  array                                   $data  {
+     *                                                        Optional. Data for populating the Message object.
+     * @var \Jason\Chain33\Kernel\Protobuf\Transaction $tx
+     * @var \Jason\Chain33\Kernel\Protobuf\ReceiptData $receipt
+     * @var int|string                                 $height
+     * @var int|string                                 $index
+     * @var int|string                                 $blocktime
+     * @var int|string                                 $amount
+     * @var string                                     $fromaddr
+     * @var string                                     $txhash
+     * @var string                                     $actionName
+     * @var string                                     $payload
+     *                                                        }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Wallet::initOnce();
+        Wallet::initOnce();
         parent::__construct($data);
     }
 
@@ -99,6 +108,20 @@ class WalletTxDetail extends \Google\Protobuf\Internal\Message
         return isset($this->tx) ? $this->tx : null;
     }
 
+    /**
+     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Transaction tx = 1;</code>.
+     *
+     * @param  \Jason\Chain33\Kernel\Protobuf\Transaction  $var
+     * @return $this
+     */
+    public function setTx($var)
+    {
+        GPBUtil::checkMessage($var, Transaction::class);
+        $this->tx = $var;
+
+        return $this;
+    }
+
     public function hasTx()
     {
         return isset($this->tx);
@@ -107,20 +130,6 @@ class WalletTxDetail extends \Google\Protobuf\Internal\Message
     public function clearTx()
     {
         unset($this->tx);
-    }
-
-    /**
-     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Transaction tx = 1;</code>.
-     *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Transaction $var
-     * @return $this
-     */
-    public function setTx($var)
-    {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\Transaction::class);
-        $this->tx = $var;
-
-        return $this;
     }
 
     /**
@@ -133,6 +142,20 @@ class WalletTxDetail extends \Google\Protobuf\Internal\Message
         return isset($this->receipt) ? $this->receipt : null;
     }
 
+    /**
+     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ReceiptData receipt = 2;</code>.
+     *
+     * @param  \Jason\Chain33\Kernel\Protobuf\ReceiptData  $var
+     * @return $this
+     */
+    public function setReceipt($var)
+    {
+        GPBUtil::checkMessage($var, ReceiptData::class);
+        $this->receipt = $var;
+
+        return $this;
+    }
+
     public function hasReceipt()
     {
         return isset($this->receipt);
@@ -141,20 +164,6 @@ class WalletTxDetail extends \Google\Protobuf\Internal\Message
     public function clearReceipt()
     {
         unset($this->receipt);
-    }
-
-    /**
-     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ReceiptData receipt = 2;</code>.
-     *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ReceiptData $var
-     * @return $this
-     */
-    public function setReceipt($var)
-    {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\ReceiptData::class);
-        $this->receipt = $var;
-
-        return $this;
     }
 
     /**
@@ -170,7 +179,7 @@ class WalletTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 height = 3;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setHeight($var)
@@ -194,7 +203,7 @@ class WalletTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 index = 4;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setIndex($var)
@@ -218,7 +227,7 @@ class WalletTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 blocktime = 5;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setBlocktime($var)
@@ -242,7 +251,7 @@ class WalletTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 amount = 6;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setAmount($var)
@@ -266,7 +275,7 @@ class WalletTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string fromaddr = 7;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setFromaddr($var)
@@ -290,7 +299,7 @@ class WalletTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes txhash = 8;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setTxhash($var)
@@ -314,7 +323,7 @@ class WalletTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string actionName = 9;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setActionName($var)
@@ -338,7 +347,7 @@ class WalletTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes payload = 10;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setPayload($var)

@@ -6,18 +6,20 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Wallet;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqWalletImportPrivkey</code>.
  */
-class ReqWalletImportPrivkey extends \Google\Protobuf\Internal\Message
+class ReqWalletImportPrivkey extends Message
 {
     /**
      * bitcoin 的私钥格式.
-     *
      * Generated from protobuf field <code>string privkey = 1;</code>
      */
     protected $privkey = '';
+
     /**
      * Generated from protobuf field <code>string label = 2;</code>.
      */
@@ -26,23 +28,21 @@ class ReqWalletImportPrivkey extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $privkey
-     *           bitcoin 的私钥格式
-     *     @var string $label
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var string    $privkey
+     *                       bitcoin 的私钥格式
+     * @var string    $label
+     *                       }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Wallet::initOnce();
+        Wallet::initOnce();
         parent::__construct($data);
     }
 
     /**
      * bitcoin 的私钥格式.
-     *
      * Generated from protobuf field <code>string privkey = 1;</code>
      *
      * @return string
@@ -54,10 +54,9 @@ class ReqWalletImportPrivkey extends \Google\Protobuf\Internal\Message
 
     /**
      * bitcoin 的私钥格式.
-     *
      * Generated from protobuf field <code>string privkey = 1;</code>
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setPrivkey($var)
@@ -81,7 +80,7 @@ class ReqWalletImportPrivkey extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string label = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setLabel($var)

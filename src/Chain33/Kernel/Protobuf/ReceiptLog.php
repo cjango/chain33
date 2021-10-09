@@ -6,16 +6,18 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReceiptLog</code>.
  */
-class ReceiptLog extends \Google\Protobuf\Internal\Message
+class ReceiptLog extends Message
 {
     /**
      * Generated from protobuf field <code>int32 ty = 1;</code>.
      */
     protected $ty = 0;
+
     /**
      * Generated from protobuf field <code>bytes log = 2;</code>.
      */
@@ -24,12 +26,11 @@ class ReceiptLog extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var int $ty
-     *     @var string $log
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var int       $ty
+     * @var string    $log
+     *                       }
      */
     public function __construct($data = null)
     {
@@ -50,7 +51,7 @@ class ReceiptLog extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 ty = 1;</code>.
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setTy($var)
@@ -74,7 +75,7 @@ class ReceiptLog extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes log = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setLog($var)

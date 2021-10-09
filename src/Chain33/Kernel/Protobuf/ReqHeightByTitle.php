@@ -6,26 +6,30 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Blockchain;
 
 /**
  *通过指定title以及height翻页获取拥有此title交易的区块高度列表.
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqHeightByTitle</code>
  */
-class ReqHeightByTitle extends \Google\Protobuf\Internal\Message
+class ReqHeightByTitle extends Message
 {
     /**
      * Generated from protobuf field <code>int64 height = 1;</code>.
      */
     protected $height = 0;
+
     /**
      * Generated from protobuf field <code>string title = 2;</code>.
      */
     protected $title = '';
+
     /**
      * Generated from protobuf field <code>int32 count = 3;</code>.
      */
     protected $count = 0;
+
     /**
      * Generated from protobuf field <code>int32 direction = 4;</code>.
      */
@@ -34,18 +38,17 @@ class ReqHeightByTitle extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var int|string $height
-     *     @var string $title
-     *     @var int $count
-     *     @var int $direction
-     * }
+     * @param  array   $data  {
+     *                        Optional. Data for populating the Message object.
+     * @var int|string $height
+     * @var string     $title
+     * @var int        $count
+     * @var int        $direction
+     *                        }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Blockchain::initOnce();
+        Blockchain::initOnce();
         parent::__construct($data);
     }
 
@@ -62,7 +65,7 @@ class ReqHeightByTitle extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 height = 1;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setHeight($var)
@@ -86,7 +89,7 @@ class ReqHeightByTitle extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string title = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setTitle($var)
@@ -110,7 +113,7 @@ class ReqHeightByTitle extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 count = 3;</code>.
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setCount($var)
@@ -134,7 +137,7 @@ class ReqHeightByTitle extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 direction = 4;</code>.
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setDirection($var)

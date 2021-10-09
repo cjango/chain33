@@ -5,21 +5,25 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.TxHashList</code>.
  */
-class TxHashList extends \Google\Protobuf\Internal\Message
+class TxHashList extends Message
 {
-    /**
-     * Generated from protobuf field <code>repeated bytes hashes = 1;</code>.
-     */
-    private $hashes;
     /**
      * Generated from protobuf field <code>int64 count = 2;</code>.
      */
     protected $count = 0;
+
+    /**
+     * Generated from protobuf field <code>repeated bytes hashes = 1;</code>.
+     */
+    private $hashes;
+
     /**
      * Generated from protobuf field <code>repeated int64 expire = 3;</code>.
      */
@@ -28,13 +32,12 @@ class TxHashList extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string[]|\Google\Protobuf\Internal\RepeatedField $hashes
-     *     @var int|string $count
-     *     @var int[]|string[]|\Google\Protobuf\Internal\RepeatedField $expire
-     * }
+     * @param  array                                               $data  {
+     *                                                                    Optional. Data for populating the Message object.
+     * @var string[]|\Google\Protobuf\Internal\RepeatedField       $hashes
+     * @var int|string                                             $count
+     * @var int[]|string[]|\Google\Protobuf\Internal\RepeatedField $expire
+     *                                                                    }
      */
     public function __construct($data = null)
     {
@@ -55,12 +58,12 @@ class TxHashList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated bytes hashes = 1;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
      * @return $this
      */
     public function setHashes($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::BYTES);
+        $arr          = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
         $this->hashes = $arr;
 
         return $this;
@@ -79,7 +82,7 @@ class TxHashList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 count = 2;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setCount($var)
@@ -103,12 +106,12 @@ class TxHashList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated int64 expire = 3;</code>.
      *
-     * @param  int[]|string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param  int[]|string[]|\Google\Protobuf\Internal\RepeatedField  $var
      * @return $this
      */
     public function setExpire($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::INT64);
+        $arr          = GPBUtil::checkRepeatedField($var, GPBType::INT64);
         $this->expire = $arr;
 
         return $this;

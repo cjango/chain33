@@ -6,26 +6,30 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Blockchain;
 
 /**
  *导出block文件头信息.
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.FileHeader</code>
  */
-class FileHeader extends \Google\Protobuf\Internal\Message
+class FileHeader extends Message
 {
     /**
      * Generated from protobuf field <code>int64 startHeight = 1;</code>.
      */
     protected $startHeight = 0;
+
     /**
      * Generated from protobuf field <code>string driver = 2;</code>.
      */
     protected $driver = '';
+
     /**
      * Generated from protobuf field <code>string title = 3;</code>.
      */
     protected $title = '';
+
     /**
      * Generated from protobuf field <code>bool testNet = 4;</code>.
      */
@@ -34,18 +38,17 @@ class FileHeader extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var int|string $startHeight
-     *     @var string $driver
-     *     @var string $title
-     *     @var bool $testNet
-     * }
+     * @param  array   $data  {
+     *                        Optional. Data for populating the Message object.
+     * @var int|string $startHeight
+     * @var string     $driver
+     * @var string     $title
+     * @var bool       $testNet
+     *                        }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Blockchain::initOnce();
+        Blockchain::initOnce();
         parent::__construct($data);
     }
 
@@ -62,7 +65,7 @@ class FileHeader extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 startHeight = 1;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setStartHeight($var)
@@ -86,7 +89,7 @@ class FileHeader extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string driver = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setDriver($var)
@@ -110,7 +113,7 @@ class FileHeader extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string title = 3;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setTitle($var)

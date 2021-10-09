@@ -6,6 +6,8 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Wallet;
 
 /**
  *钱包模块存贮的账户信息
@@ -13,23 +15,25 @@ use Google\Protobuf\Internal\GPBUtil;
  *   label :账户地址对应的标签
  *   addr :账户地址
  *   timeStamp :创建账户时的时标.
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.WalletAccountStore</code>
  */
-class WalletAccountStore extends \Google\Protobuf\Internal\Message
+class WalletAccountStore extends Message
 {
     /**
      * Generated from protobuf field <code>string privkey = 1;</code>.
      */
     protected $privkey = '';
+
     /**
      * Generated from protobuf field <code>string label = 2;</code>.
      */
     protected $label = '';
+
     /**
      * Generated from protobuf field <code>string addr = 3;</code>.
      */
     protected $addr = '';
+
     /**
      * Generated from protobuf field <code>string timeStamp = 4;</code>.
      */
@@ -38,18 +42,17 @@ class WalletAccountStore extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $privkey
-     *     @var string $label
-     *     @var string $addr
-     *     @var string $timeStamp
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var string    $privkey
+     * @var string    $label
+     * @var string    $addr
+     * @var string    $timeStamp
+     *                       }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Wallet::initOnce();
+        Wallet::initOnce();
         parent::__construct($data);
     }
 
@@ -66,7 +69,7 @@ class WalletAccountStore extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string privkey = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setPrivkey($var)
@@ -90,7 +93,7 @@ class WalletAccountStore extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string label = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setLabel($var)
@@ -114,7 +117,7 @@ class WalletAccountStore extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string addr = 3;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setAddr($var)
@@ -138,7 +141,7 @@ class WalletAccountStore extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string timeStamp = 4;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setTimeStamp($var)

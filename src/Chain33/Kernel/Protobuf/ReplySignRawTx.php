@@ -6,11 +6,13 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Wallet;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReplySignRawTx</code>.
  */
-class ReplySignRawTx extends \Google\Protobuf\Internal\Message
+class ReplySignRawTx extends Message
 {
     /**
      * Generated from protobuf field <code>string txHex = 1;</code>.
@@ -20,15 +22,14 @@ class ReplySignRawTx extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $txHex
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var string    $txHex
+     *                       }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Wallet::initOnce();
+        Wallet::initOnce();
         parent::__construct($data);
     }
 
@@ -45,7 +46,7 @@ class ReplySignRawTx extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string txHex = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setTxHex($var)

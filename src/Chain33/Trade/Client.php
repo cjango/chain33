@@ -25,17 +25,16 @@ class Client extends BaseClient
      *
      * @Date   : 2021/3/30 4:50 下午
      * @Author : <Jason.C>
-     *
-     * @param  string $tokenSymbol       资产标识符
-     * @param  string $assetExec         资产来源的执行器名称
-     * @param  int    $amountPerBoardlot 每一手成交的数量
-     * @param  int    $minBoardlot       一次购买最少成交的数量
-     * @param  int    $pricePerBoardlot  一手成交的价格
-     * @param  int    $totalBoardlot     总共的出售的手数
-     * @param  string $priceExec         标价资产的合约
-     * @param  string $priceSymbol       标价资产的名字
-     * @param  string $privateKey        发布者私钥
-     * @param  int    $fee               手续费
+     * @param  string  $tokenSymbol        资产标识符
+     * @param  string  $assetExec          资产来源的执行器名称
+     * @param  int     $amountPerBoardlot  每一手成交的数量
+     * @param  int     $minBoardlot        一次购买最少成交的数量
+     * @param  int     $pricePerBoardlot   一手成交的价格
+     * @param  int     $totalBoardlot      总共的出售的手数
+     * @param  string  $priceExec          标价资产的合约
+     * @param  string  $priceSymbol        标价资产的名字
+     * @param  string  $privateKey         发布者私钥
+     * @param  int     $fee                手续费
      * @return string
      */
     public function sell(
@@ -70,11 +69,10 @@ class Client extends BaseClient
      *
      * @Date   : 2021/4/22 11:14 上午
      * @Author : <Jason.C>
-     *
-     * @param  string $buyID       买单id
-     * @param  int    $boardlotCnt 卖出数量，单位手
-     * @param  string $privateKey  卖家私钥
-     * @param  int    $fee         交易的手续费
+     * @param  string  $buyID        买单id
+     * @param  int     $boardlotCnt  卖出数量，单位手
+     * @param  string  $privateKey   卖家私钥
+     * @param  int     $fee          交易的手续费
      * @return string
      */
     public function sellBuy(string $buyID, int $boardlotCnt, string $privateKey, int $fee = 0): string
@@ -93,10 +91,9 @@ class Client extends BaseClient
      *
      * @Date   : 2021/4/22 10:51 上午
      * @Author : <Jason.C>
-     *
-     * @param  string $sellID     卖单ID
-     * @param  string $privateKey 私钥
-     * @param  int    $fee        手续费
+     * @param  string  $sellID      卖单ID
+     * @param  string  $privateKey  私钥
+     * @param  int     $fee         手续费
      * @return string
      */
     public function sellRevoke(string $sellID, string $privateKey, int $fee = 0): string
@@ -114,14 +111,12 @@ class Client extends BaseClient
      *
      * @Date   : 2021/4/22 10:39 上午
      * @Author : <Jason.C>
-     *
-     * @param  string $symbol    token标识符
-     * @param  int    $status    1,表示在售状态; 2,表示售罄状态；3,表示卖单被撤销状态
-     * @param  int    $count     最多取的数量
-     * @param  int    $direction 查询的方向
-     * @param  string $fromKey   开始查询的主键
+     * @param  string  $symbol     token标识符
+     * @param  int     $status     1,表示在售状态; 2,表示售罄状态；3,表示卖单被撤销状态
+     * @param  int     $count      最多取的数量
+     * @param  int     $direction  查询的方向
+     * @param  string  $fromKey    开始查询的主键
      * @return array
-     *
      * @throws \Exception
      */
     public function sellOrders(
@@ -149,14 +144,12 @@ class Client extends BaseClient
      *
      * @Date   : 2021/4/22 10:45 上午
      * @Author : <Jason.C>
-     *
-     * @param  string $addr      卖单地址
-     * @param  array  $tokens    具体的token的标识符，可以是多个
-     * @param  int    $count     最多取的数量
-     * @param  int    $direction 查询的方向
-     * @param  string $fromKey   开始查询的主键
+     * @param  string  $addr       卖单地址
+     * @param  array   $tokens     具体的token的标识符，可以是多个
+     * @param  int     $count      最多取的数量
+     * @param  int     $direction  查询的方向
+     * @param  string  $fromKey    开始查询的主键
      * @return array
-     *
      * @throws \Jason\Chain33\Exceptions\ChainException
      */
     public function addrSellOrders(
@@ -184,14 +177,12 @@ class Client extends BaseClient
      *
      * @Date   : 2021/4/22 10:55 上午
      * @Author : <Jason.C>
-     *
-     * @param  string $addr      卖单地址
-     * @param  int    $status    1表示在售状态; 2，表示售罄状态；3，表示卖单被撤销状态
-     * @param  int    $count     最多取的数量
-     * @param  int    $direction 查询的方向
-     * @param  string $fromKey   开始查询的主键
+     * @param  string  $addr       卖单地址
+     * @param  int     $status     1表示在售状态; 2，表示售罄状态；3，表示卖单被撤销状态
+     * @param  int     $count      最多取的数量
+     * @param  int     $direction  查询的方向
+     * @param  string  $fromKey    开始查询的主键
      * @return array
-     *
      * @throws \Jason\Chain33\Exceptions\ChainException
      */
     public function addrSellOrdersByStatus(
@@ -219,17 +210,16 @@ class Client extends BaseClient
      *
      * @Date   : 2021/3/30 4:50 下午
      * @Author : <Jason.C>
-     *
-     * @param  string $tokenSymbol       资产标识符
-     * @param  string $assetExec         资产来源的执行器名称
-     * @param  int    $amountPerBoardlot 每一手成交的数量
-     * @param  int    $minBoardlot       一次购买最少成交的数量
-     * @param  int    $pricePerBoardlot  一手成交的价格
-     * @param  int    $totalBoardlot     总共的出售的手数
-     * @param  string $priceExec         标价资产的合约
-     * @param  string $priceSymbol       标价资产的名字
-     * @param  string $privateKey        发布者私钥
-     * @param  int    $fee
+     * @param  string  $tokenSymbol        资产标识符
+     * @param  string  $assetExec          资产来源的执行器名称
+     * @param  int     $amountPerBoardlot  每一手成交的数量
+     * @param  int     $minBoardlot        一次购买最少成交的数量
+     * @param  int     $pricePerBoardlot   一手成交的价格
+     * @param  int     $totalBoardlot      总共的出售的手数
+     * @param  string  $priceExec          标价资产的合约
+     * @param  string  $priceSymbol        标价资产的名字
+     * @param  string  $privateKey         发布者私钥
+     * @param  int     $fee
      * @return string
      */
     public function buy(
@@ -264,10 +254,9 @@ class Client extends BaseClient
      *
      * @Date   : 2021/4/22 10:51 上午
      * @Author : <Jason.C>
-     *
-     * @param  string $buyID      买单ID
-     * @param  string $privateKey 私钥
-     * @param  int    $fee        手续费
+     * @param  string  $buyID       买单ID
+     * @param  string  $privateKey  私钥
+     * @param  int     $fee         手续费
      * @return string
      */
     public function buyRevoke(string $buyID, string $privateKey, int $fee = 0): string
@@ -285,11 +274,10 @@ class Client extends BaseClient
      *
      * @Date   : 2021/4/22 11:14 上午
      * @Author : <Jason.C>
-     *
-     * @param  string $sellID      买单id
-     * @param  int    $boardlotCnt 买入数量，单位手
-     * @param  string $privateKey  卖家私钥
-     * @param  int    $fee         交易的手续费
+     * @param  string  $sellID       买单id
+     * @param  int     $boardlotCnt  买入数量，单位手
+     * @param  string  $privateKey   卖家私钥
+     * @param  int     $fee          交易的手续费
      * @return string
      */
     public function buySell(string $sellID, int $boardlotCnt, string $privateKey, int $fee = 0): string
@@ -308,14 +296,12 @@ class Client extends BaseClient
      *
      * @Date   : 2021/3/31 11:28 上午
      * @Author : <Jason.C>
-     *
-     * @param  string $symbol    TOKEN 标识
-     * @param  int    $status    状态
-     * @param  int    $count     最多取的数量
-     * @param  int    $direction 查询的方向
-     * @param  string $fromKey   开始查询的主键
+     * @param  string  $symbol     TOKEN 标识
+     * @param  int     $status     状态
+     * @param  int     $count      最多取的数量
+     * @param  int     $direction  查询的方向
+     * @param  string  $fromKey    开始查询的主键
      * @return array
-     *
      * @throws \Exception
      */
     public function buyOrders(
@@ -343,14 +329,12 @@ class Client extends BaseClient
      *
      * @Date   : 2021/3/30 11:45 上午
      * @Author : <Jason.C>
-     *
-     * @param  string $addr      地址
-     * @param  array  $token     TOKEN的 SYMBOL
-     * @param  int    $count     最多取的数量
-     * @param  int    $direction 查询的方向
-     * @param  string $fromKey   开始查询的主键
+     * @param  string  $addr       地址
+     * @param  array   $token      TOKEN的 SYMBOL
+     * @param  int     $count      最多取的数量
+     * @param  int     $direction  查询的方向
+     * @param  string  $fromKey    开始查询的主键
      * @return mixed
-     *
      * @throws \Jason\Chain33\Exceptions\ChainException
      */
     public function addrBuyOrder(
@@ -378,14 +362,12 @@ class Client extends BaseClient
      *
      * @Date   : 2021/4/22 1:24 下午
      * @Author : <Jason.C>
-     *
-     * @param  string $addr      地址
-     * @param  int    $status    状态 1: 未完成交易， 2： 完成的交易， 3： 撤销的交易
-     * @param  int    $count     最多取的数量
-     * @param  int    $direction 查询的方向
-     * @param  string $fromKey   开始查询的主键
+     * @param  string  $addr       地址
+     * @param  int     $status     状态 1: 未完成交易， 2： 完成的交易， 3： 撤销的交易
+     * @param  int     $count      最多取的数量
+     * @param  int     $direction  查询的方向
+     * @param  string  $fromKey    开始查询的主键
      * @return array
-     *
      * @throws \Jason\Chain33\Exceptions\ChainException
      */
     public function addrBuyOrdersByStatus(
@@ -413,14 +395,12 @@ class Client extends BaseClient
      *
      * @Date   : 2021/4/22 1:30 下午
      * @Author : <Jason.C>
-     *
-     * @param  string $addr      指定地址
-     * @param  int    $status    1: 未完成交易， 2： 完成的交易， 3： 撤销的交易
-     * @param  int    $count     最多取的数量
-     * @param  int    $direction 查询的方向
-     * @param  string $fromKey   开始查询的主键
+     * @param  string  $addr       指定地址
+     * @param  int     $status     1: 未完成交易， 2： 完成的交易， 3： 撤销的交易
+     * @param  int     $count      最多取的数量
+     * @param  int     $direction  查询的方向
+     * @param  string  $fromKey    开始查询的主键
      * @return mixed
-     *
      * @throws \Jason\Chain33\Exceptions\ChainException
      */
     public function orders(

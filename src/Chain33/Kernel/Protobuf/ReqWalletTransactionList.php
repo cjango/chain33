@@ -6,6 +6,8 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Wallet;
 
 /**
  *获取钱包交易的详细信息
@@ -14,19 +16,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *              第一次传参为空，获取最新的交易。)
  *   count :获取交易列表的个数。
  *   direction :查找方式；0，上一页；1，下一页。
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqWalletTransactionList</code>
  */
-class ReqWalletTransactionList extends \Google\Protobuf\Internal\Message
+class ReqWalletTransactionList extends Message
 {
     /**
      * Generated from protobuf field <code>bytes fromTx = 1;</code>.
      */
     protected $fromTx = '';
+
     /**
      * Generated from protobuf field <code>int32 count = 2;</code>.
      */
     protected $count = 0;
+
     /**
      * Generated from protobuf field <code>int32 direction = 3;</code>.
      */
@@ -35,17 +38,16 @@ class ReqWalletTransactionList extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $fromTx
-     *     @var int $count
-     *     @var int $direction
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var string    $fromTx
+     * @var int       $count
+     * @var int       $direction
+     *                       }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Wallet::initOnce();
+        Wallet::initOnce();
         parent::__construct($data);
     }
 
@@ -62,7 +64,7 @@ class ReqWalletTransactionList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes fromTx = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setFromTx($var)
@@ -86,7 +88,7 @@ class ReqWalletTransactionList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 count = 2;</code>.
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setCount($var)
@@ -110,7 +112,7 @@ class ReqWalletTransactionList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 direction = 3;</code>.
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setDirection($var)

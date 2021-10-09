@@ -6,6 +6,8 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Blockchain;
 
 /**
  *记录本平行链所在区块的信息以及子根hash值
@@ -13,35 +15,40 @@ use Google\Protobuf\Internal\GPBUtil;
  * startIndex:此平行链的第一笔交易的index索引值
  * childHashIndex:此平行链子roothash在本区块中的索引值
  * txCount:此平行链交易的个数.
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.HeightPara</code>
  */
-class HeightPara extends \Google\Protobuf\Internal\Message
+class HeightPara extends Message
 {
     /**
      * Generated from protobuf field <code>int64 height = 1;</code>.
      */
     protected $height = 0;
+
     /**
      * Generated from protobuf field <code>string title = 2;</code>.
      */
     protected $title = '';
+
     /**
      * Generated from protobuf field <code>bytes hash = 3;</code>.
      */
     protected $hash = '';
+
     /**
      * Generated from protobuf field <code>bytes childHash = 4;</code>.
      */
     protected $childHash = '';
+
     /**
      * Generated from protobuf field <code>int32 startIndex = 5;</code>.
      */
     protected $startIndex = 0;
+
     /**
      * Generated from protobuf field <code>uint32 childHashIndex = 6;</code>.
      */
     protected $childHashIndex = 0;
+
     /**
      * Generated from protobuf field <code>int32 txCount = 7;</code>.
      */
@@ -50,21 +57,20 @@ class HeightPara extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var int|string $height
-     *     @var string $title
-     *     @var string $hash
-     *     @var string $childHash
-     *     @var int $startIndex
-     *     @var int $childHashIndex
-     *     @var int $txCount
-     * }
+     * @param  array   $data  {
+     *                        Optional. Data for populating the Message object.
+     * @var int|string $height
+     * @var string     $title
+     * @var string     $hash
+     * @var string     $childHash
+     * @var int        $startIndex
+     * @var int        $childHashIndex
+     * @var int        $txCount
+     *                        }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Blockchain::initOnce();
+        Blockchain::initOnce();
         parent::__construct($data);
     }
 
@@ -81,7 +87,7 @@ class HeightPara extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 height = 1;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setHeight($var)
@@ -105,7 +111,7 @@ class HeightPara extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string title = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setTitle($var)
@@ -129,7 +135,7 @@ class HeightPara extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes hash = 3;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setHash($var)
@@ -153,7 +159,7 @@ class HeightPara extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes childHash = 4;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setChildHash($var)
@@ -177,7 +183,7 @@ class HeightPara extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 startIndex = 5;</code>.
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setStartIndex($var)
@@ -201,7 +207,7 @@ class HeightPara extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>uint32 childHashIndex = 6;</code>.
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setChildHashIndex($var)
@@ -225,7 +231,7 @@ class HeightPara extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 txCount = 7;</code>.
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setTxCount($var)

@@ -5,22 +5,24 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Common;
+
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqNil</code>.
  */
-class ReqNil extends \Google\Protobuf\Internal\Message
+class ReqNil extends Message
 {
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     *                       }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Common::initOnce();
+        Common::initOnce();
         parent::__construct($data);
     }
 }

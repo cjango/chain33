@@ -6,16 +6,19 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Wallet;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqWalletSetPasswd</code>.
  */
-class ReqWalletSetPasswd extends \Google\Protobuf\Internal\Message
+class ReqWalletSetPasswd extends Message
 {
     /**
      * Generated from protobuf field <code>string oldPass = 1;</code>.
      */
     protected $oldPass = '';
+
     /**
      * Generated from protobuf field <code>string newPass = 2;</code>.
      */
@@ -24,16 +27,15 @@ class ReqWalletSetPasswd extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $oldPass
-     *     @var string $newPass
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var string    $oldPass
+     * @var string    $newPass
+     *                       }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Wallet::initOnce();
+        Wallet::initOnce();
         parent::__construct($data);
     }
 
@@ -50,7 +52,7 @@ class ReqWalletSetPasswd extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string oldPass = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setOldPass($var)
@@ -74,7 +76,7 @@ class ReqWalletSetPasswd extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string newPass = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setNewPass($var)

@@ -6,16 +6,18 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqProperFee</code>.
  */
-class ReqProperFee extends \Google\Protobuf\Internal\Message
+class ReqProperFee extends Message
 {
     /**
      * Generated from protobuf field <code>int32 txCount = 1;</code>.
      */
     protected $txCount = 0;
+
     /**
      * Generated from protobuf field <code>int32 txSize = 2;</code>.
      */
@@ -24,12 +26,11 @@ class ReqProperFee extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var int $txCount
-     *     @var int $txSize
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var int       $txCount
+     * @var int       $txSize
+     *                       }
      */
     public function __construct($data = null)
     {
@@ -50,7 +51,7 @@ class ReqProperFee extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 txCount = 1;</code>.
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setTxCount($var)
@@ -74,7 +75,7 @@ class ReqProperFee extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 txSize = 2;</code>.
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setTxSize($var)

@@ -6,25 +6,28 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Blockchain;
 
 /**
  *平行链区块详细信息
- * 	 blockdetail : 区块详细信息
- *	 sequence :区块序列号
+ *     blockdetail : 区块详细信息
+ *     sequence :区块序列号
  *   isSync:写数据库时是否需要刷盘.
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ParaChainBlockDetail</code>
  */
-class ParaChainBlockDetail extends \Google\Protobuf\Internal\Message
+class ParaChainBlockDetail extends Message
 {
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.BlockDetail blockdetail = 1;</code>.
      */
     protected $blockdetail = null;
+
     /**
      * Generated from protobuf field <code>int64 sequence = 2;</code>.
      */
     protected $sequence = 0;
+
     /**
      * Generated from protobuf field <code>bool isSync = 3;</code>.
      */
@@ -33,17 +36,16 @@ class ParaChainBlockDetail extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var \Jason\Chain33\Kernel\Protobuf\BlockDetail $blockdetail
-     *     @var int|string $sequence
-     *     @var bool $isSync
-     * }
+     * @param  array                                   $data  {
+     *                                                        Optional. Data for populating the Message object.
+     * @var \Jason\Chain33\Kernel\Protobuf\BlockDetail $blockdetail
+     * @var int|string                                 $sequence
+     * @var bool                                       $isSync
+     *                                                        }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Blockchain::initOnce();
+        Blockchain::initOnce();
         parent::__construct($data);
     }
 
@@ -57,6 +59,20 @@ class ParaChainBlockDetail extends \Google\Protobuf\Internal\Message
         return isset($this->blockdetail) ? $this->blockdetail : null;
     }
 
+    /**
+     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.BlockDetail blockdetail = 1;</code>.
+     *
+     * @param  \Jason\Chain33\Kernel\Protobuf\BlockDetail  $var
+     * @return $this
+     */
+    public function setBlockdetail($var)
+    {
+        GPBUtil::checkMessage($var, BlockDetail::class);
+        $this->blockdetail = $var;
+
+        return $this;
+    }
+
     public function hasBlockdetail()
     {
         return isset($this->blockdetail);
@@ -65,20 +81,6 @@ class ParaChainBlockDetail extends \Google\Protobuf\Internal\Message
     public function clearBlockdetail()
     {
         unset($this->blockdetail);
-    }
-
-    /**
-     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.BlockDetail blockdetail = 1;</code>.
-     *
-     * @param  \Jason\Chain33\Kernel\Protobuf\BlockDetail $var
-     * @return $this
-     */
-    public function setBlockdetail($var)
-    {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\BlockDetail::class);
-        $this->blockdetail = $var;
-
-        return $this;
     }
 
     /**
@@ -94,7 +96,7 @@ class ParaChainBlockDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 sequence = 2;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setSequence($var)

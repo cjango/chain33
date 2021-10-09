@@ -6,16 +6,18 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.UserWrite</code>.
  */
-class UserWrite extends \Google\Protobuf\Internal\Message
+class UserWrite extends Message
 {
     /**
      * Generated from protobuf field <code>string topic = 1;</code>.
      */
     protected $topic = '';
+
     /**
      * Generated from protobuf field <code>string content = 2;</code>.
      */
@@ -24,12 +26,11 @@ class UserWrite extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $topic
-     *     @var string $content
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var string    $topic
+     * @var string    $content
+     *                       }
      */
     public function __construct($data = null)
     {
@@ -50,7 +51,7 @@ class UserWrite extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string topic = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setTopic($var)
@@ -74,7 +75,7 @@ class UserWrite extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string content = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setContent($var)

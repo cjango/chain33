@@ -6,11 +6,13 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Common;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqInt</code>.
  */
-class ReqInt extends \Google\Protobuf\Internal\Message
+class ReqInt extends Message
 {
     /**
      * Generated from protobuf field <code>int64 height = 1;</code>.
@@ -20,15 +22,14 @@ class ReqInt extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var int|string $height
-     * }
+     * @param  array   $data  {
+     *                        Optional. Data for populating the Message object.
+     * @var int|string $height
+     *                        }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Common::initOnce();
+        Common::initOnce();
         parent::__construct($data);
     }
 
@@ -45,7 +46,7 @@ class ReqInt extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 height = 1;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setHeight($var)

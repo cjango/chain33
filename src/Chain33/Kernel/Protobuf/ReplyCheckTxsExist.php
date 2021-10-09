@@ -5,37 +5,37 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReplyCheckTxsExist</code>.
  */
-class ReplyCheckTxsExist extends \Google\Protobuf\Internal\Message
+class ReplyCheckTxsExist extends Message
 {
     /**
-     *对应请求序列存在标识数组，存在则true，否则false.
-     *
-     * Generated from protobuf field <code>repeated bool existFlags = 1;</code>
-     */
-    private $existFlags;
-    /**
      *存在情况的总个数.
-     *
      * Generated from protobuf field <code>uint32 existCount = 2;</code>
      */
     protected $existCount = 0;
 
     /**
+     *对应请求序列存在标识数组，存在则true，否则false.
+     * Generated from protobuf field <code>repeated bool existFlags = 1;</code>
+     */
+    private $existFlags;
+
+    /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var bool[]|\Google\Protobuf\Internal\RepeatedField $existFlags
-     *          对应请求序列存在标识数组，存在则true，否则false
-     *     @var int $existCount
-     *          存在情况的总个数
-     * }
+     * @param  array                                       $data  {
+     *                                                            Optional. Data for populating the Message object.
+     * @var bool[]|\Google\Protobuf\Internal\RepeatedField $existFlags
+     *                                                            对应请求序列存在标识数组，存在则true，否则false
+     * @var int                                            $existCount
+     *                                                            存在情况的总个数
+     *                                                            }
      */
     public function __construct($data = null)
     {
@@ -45,7 +45,6 @@ class ReplyCheckTxsExist extends \Google\Protobuf\Internal\Message
 
     /**
      *对应请求序列存在标识数组，存在则true，否则false.
-     *
      * Generated from protobuf field <code>repeated bool existFlags = 1;</code>
      *
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -57,15 +56,14 @@ class ReplyCheckTxsExist extends \Google\Protobuf\Internal\Message
 
     /**
      *对应请求序列存在标识数组，存在则true，否则false.
-     *
      * Generated from protobuf field <code>repeated bool existFlags = 1;</code>
      *
-     * @param  bool[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param  bool[]|\Google\Protobuf\Internal\RepeatedField  $var
      * @return $this
      */
     public function setExistFlags($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::BOOL);
+        $arr              = GPBUtil::checkRepeatedField($var, GPBType::BOOL);
         $this->existFlags = $arr;
 
         return $this;
@@ -73,7 +71,6 @@ class ReplyCheckTxsExist extends \Google\Protobuf\Internal\Message
 
     /**
      *存在情况的总个数.
-     *
      * Generated from protobuf field <code>uint32 existCount = 2;</code>
      *
      * @return int
@@ -85,10 +82,9 @@ class ReplyCheckTxsExist extends \Google\Protobuf\Internal\Message
 
     /**
      *存在情况的总个数.
-     *
      * Generated from protobuf field <code>uint32 existCount = 2;</code>
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setExistCount($var)

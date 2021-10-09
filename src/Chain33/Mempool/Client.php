@@ -14,8 +14,7 @@ class Client extends BaseClient
      *
      * @Date   : 2021/1/27 11:00 下午
      * @Author : <Jason.C>
-     *
-     * @param  false $isAll 是否获取全部交易信息
+     * @param  false  $isAll  是否获取全部交易信息
      * @return array
      */
     public function get(bool $isAll = false): array
@@ -34,7 +33,6 @@ class Client extends BaseClient
      *
      * @Date   : 2021/3/30 9:28 上午
      * @Author : <Jason.C>
-     *
      * @return array|mixed
      */
     public function last()

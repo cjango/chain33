@@ -5,17 +5,20 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReceiptData</code>.
  */
-class ReceiptData extends \Google\Protobuf\Internal\Message
+class ReceiptData extends Message
 {
     /**
      * Generated from protobuf field <code>int32 ty = 1;</code>.
      */
     protected $ty = 0;
+
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ReceiptLog logs = 3;</code>.
      */
@@ -24,12 +27,11 @@ class ReceiptData extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var int $ty
-     *     @var \Jason\Chain33\Kernel\Protobuf\ReceiptLog[]|\Google\Protobuf\Internal\RepeatedField $logs
-     * }
+     * @param  array                                                                            $data  {
+     *                                                                                                 Optional. Data for populating the Message object.
+     * @var int                                                                                 $ty
+     * @var \Jason\Chain33\Kernel\Protobuf\ReceiptLog[]|\Google\Protobuf\Internal\RepeatedField $logs
+     *                                                                                                 }
      */
     public function __construct($data = null)
     {
@@ -50,7 +52,7 @@ class ReceiptData extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 ty = 1;</code>.
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setTy($var)
@@ -74,12 +76,13 @@ class ReceiptData extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ReceiptLog logs = 3;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ReceiptLog[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\ReceiptLog[]|\Google\Protobuf\Internal\RepeatedField  $var
      * @return $this
      */
     public function setLogs($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Jason\Chain33\Kernel\Protobuf\ReceiptLog::class);
+        $arr        = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+            ReceiptLog::class);
         $this->logs = $arr;
 
         return $this;

@@ -6,26 +6,30 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Blockchain;
 
 /**
  *通过seq区间和title请求平行链的交易.
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqParaTxByTitle</code>
  */
-class ReqParaTxByTitle extends \Google\Protobuf\Internal\Message
+class ReqParaTxByTitle extends Message
 {
     /**
      * Generated from protobuf field <code>int64 start = 1;</code>.
      */
     protected $start = 0;
+
     /**
      * Generated from protobuf field <code>int64 end = 2;</code>.
      */
     protected $end = 0;
+
     /**
      * Generated from protobuf field <code>string title = 3;</code>.
      */
     protected $title = '';
+
     /**
      * Generated from protobuf field <code>bool isSeq = 4;</code>.
      */
@@ -34,18 +38,17 @@ class ReqParaTxByTitle extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var int|string $start
-     *     @var int|string $end
-     *     @var string $title
-     *     @var bool $isSeq
-     * }
+     * @param  array   $data  {
+     *                        Optional. Data for populating the Message object.
+     * @var int|string $start
+     * @var int|string $end
+     * @var string     $title
+     * @var bool       $isSeq
+     *                        }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Blockchain::initOnce();
+        Blockchain::initOnce();
         parent::__construct($data);
     }
 
@@ -62,7 +65,7 @@ class ReqParaTxByTitle extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 start = 1;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setStart($var)
@@ -86,7 +89,7 @@ class ReqParaTxByTitle extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 end = 2;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setEnd($var)
@@ -110,7 +113,7 @@ class ReqParaTxByTitle extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string title = 3;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setTitle($var)

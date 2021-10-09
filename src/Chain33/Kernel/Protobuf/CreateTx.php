@@ -6,44 +6,53 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.CreateTx</code>.
  */
-class CreateTx extends \Google\Protobuf\Internal\Message
+class CreateTx extends Message
 {
     /**
      * Generated from protobuf field <code>string to = 1;</code>.
      */
     protected $to = '';
+
     /**
      * Generated from protobuf field <code>int64 amount = 2;</code>.
      */
     protected $amount = 0;
+
     /**
      * Generated from protobuf field <code>int64 fee = 3;</code>.
      */
     protected $fee = 0;
+
     /**
      * Generated from protobuf field <code>bytes note = 4;</code>.
      */
     protected $note = '';
+
     /**
      * Generated from protobuf field <code>bool isWithdraw = 5;</code>.
      */
     protected $isWithdraw = false;
+
     /**
      * Generated from protobuf field <code>bool isToken = 6;</code>.
      */
     protected $isToken = false;
+
     /**
      * Generated from protobuf field <code>string tokenSymbol = 7;</code>.
      */
     protected $tokenSymbol = '';
+
     /**
      * Generated from protobuf field <code>string execName = 8;</code>.
      */
     protected $execName = '';
+
     /**
      * Generated from protobuf field <code>string execer = 9;</code>.
      */
@@ -52,19 +61,18 @@ class CreateTx extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $to
-     *     @var int|string $amount
-     *     @var int|string $fee
-     *     @var string $note
-     *     @var bool $isWithdraw
-     *     @var bool $isToken
-     *     @var string $tokenSymbol
-     *     @var string $execName
-     *     @var string $execer
-     * }
+     * @param  array   $data  {
+     *                        Optional. Data for populating the Message object.
+     * @var string     $to
+     * @var int|string $amount
+     * @var int|string $fee
+     * @var string     $note
+     * @var bool       $isWithdraw
+     * @var bool       $isToken
+     * @var string     $tokenSymbol
+     * @var string     $execName
+     * @var string     $execer
+     *                        }
      */
     public function __construct($data = null)
     {
@@ -85,7 +93,7 @@ class CreateTx extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string to = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setTo($var)
@@ -109,7 +117,7 @@ class CreateTx extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 amount = 2;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setAmount($var)
@@ -133,7 +141,7 @@ class CreateTx extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 fee = 3;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setFee($var)
@@ -157,7 +165,7 @@ class CreateTx extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes note = 4;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setNote($var)
@@ -229,7 +237,7 @@ class CreateTx extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string tokenSymbol = 7;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setTokenSymbol($var)
@@ -253,7 +261,7 @@ class CreateTx extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string execName = 8;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setExecName($var)
@@ -277,7 +285,7 @@ class CreateTx extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string execer = 9;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setExecer($var)

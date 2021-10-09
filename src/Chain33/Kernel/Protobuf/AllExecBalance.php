@@ -5,17 +5,20 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.AllExecBalance</code>.
  */
-class AllExecBalance extends \Google\Protobuf\Internal\Message
+class AllExecBalance extends Message
 {
     /**
      * Generated from protobuf field <code>string addr = 1;</code>.
      */
     protected $addr = '';
+
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ExecAccount ExecAccount = 2;</code>.
      */
@@ -24,12 +27,11 @@ class AllExecBalance extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $addr
-     *     @var \Jason\Chain33\Kernel\Protobuf\ExecAccount[]|\Google\Protobuf\Internal\RepeatedField $ExecAccount
-     * }
+     * @param  array                                                                             $data  {
+     *                                                                                                  Optional. Data for populating the Message object.
+     * @var string                                                                               $addr
+     * @var \Jason\Chain33\Kernel\Protobuf\ExecAccount[]|\Google\Protobuf\Internal\RepeatedField $ExecAccount
+     *                                                                                                  }
      */
     public function __construct($data = null)
     {
@@ -50,7 +52,7 @@ class AllExecBalance extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string addr = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setAddr($var)
@@ -74,12 +76,13 @@ class AllExecBalance extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ExecAccount ExecAccount = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ExecAccount[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\ExecAccount[]|\Google\Protobuf\Internal\RepeatedField  $var
      * @return $this
      */
     public function setExecAccount($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Jason\Chain33\Kernel\Protobuf\ExecAccount::class);
+        $arr               = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+            ExecAccount::class);
         $this->ExecAccount = $arr;
 
         return $this;

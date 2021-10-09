@@ -5,49 +5,53 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Blockchain;
 
 /**
  *区块详细信息
- * 	 block : 区块信息
- *	 receipts :区块上所有交易的收据信息列表.
- *
+ *     block : 区块信息
+ *     receipts :区块上所有交易的收据信息列表.
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.BlockDetail</code>
  */
-class BlockDetail extends \Google\Protobuf\Internal\Message
+class BlockDetail extends Message
 {
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Block block = 1;</code>.
      */
     protected $block = null;
-    /**
-     * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ReceiptData receipts = 2;</code>.
-     */
-    private $receipts;
-    /**
-     * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.KeyValue KV = 3;</code>.
-     */
-    private $KV;
+
     /**
      * Generated from protobuf field <code>bytes prevStatusHash = 4;</code>.
      */
     protected $prevStatusHash = '';
 
     /**
+     * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ReceiptData receipts = 2;</code>.
+     */
+    private $receipts;
+
+    /**
+     * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.KeyValue KV = 3;</code>.
+     */
+    private $KV;
+
+    /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var \Jason\Chain33\Kernel\Protobuf\Block $block
-     *     @var \Jason\Chain33\Kernel\Protobuf\ReceiptData[]|\Google\Protobuf\Internal\RepeatedField $receipts
-     *     @var \Jason\Chain33\Kernel\Protobuf\KeyValue[]|\Google\Protobuf\Internal\RepeatedField $KV
-     *     @var string $prevStatusHash
-     * }
+     * @param  array                                                                             $data  {
+     *                                                                                                  Optional. Data for populating the Message object.
+     * @var \Jason\Chain33\Kernel\Protobuf\Block                                                 $block
+     * @var \Jason\Chain33\Kernel\Protobuf\ReceiptData[]|\Google\Protobuf\Internal\RepeatedField $receipts
+     * @var \Jason\Chain33\Kernel\Protobuf\KeyValue[]|\Google\Protobuf\Internal\RepeatedField    $KV
+     * @var string                                                                               $prevStatusHash
+     *                                                                                                  }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Blockchain::initOnce();
+        Blockchain::initOnce();
         parent::__construct($data);
     }
 
@@ -61,6 +65,20 @@ class BlockDetail extends \Google\Protobuf\Internal\Message
         return isset($this->block) ? $this->block : null;
     }
 
+    /**
+     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Block block = 1;</code>.
+     *
+     * @param  \Jason\Chain33\Kernel\Protobuf\Block  $var
+     * @return $this
+     */
+    public function setBlock($var)
+    {
+        GPBUtil::checkMessage($var, Block::class);
+        $this->block = $var;
+
+        return $this;
+    }
+
     public function hasBlock()
     {
         return isset($this->block);
@@ -69,20 +87,6 @@ class BlockDetail extends \Google\Protobuf\Internal\Message
     public function clearBlock()
     {
         unset($this->block);
-    }
-
-    /**
-     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Block block = 1;</code>.
-     *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Block $var
-     * @return $this
-     */
-    public function setBlock($var)
-    {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\Block::class);
-        $this->block = $var;
-
-        return $this;
     }
 
     /**
@@ -98,12 +102,13 @@ class BlockDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ReceiptData receipts = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ReceiptData[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\ReceiptData[]|\Google\Protobuf\Internal\RepeatedField  $var
      * @return $this
      */
     public function setReceipts($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Jason\Chain33\Kernel\Protobuf\ReceiptData::class);
+        $arr            = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+            ReceiptData::class);
         $this->receipts = $arr;
 
         return $this;
@@ -122,12 +127,13 @@ class BlockDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.KeyValue KV = 3;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\KeyValue[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\KeyValue[]|\Google\Protobuf\Internal\RepeatedField  $var
      * @return $this
      */
     public function setKV($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Jason\Chain33\Kernel\Protobuf\KeyValue::class);
+        $arr      = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+            KeyValue::class);
         $this->KV = $arr;
 
         return $this;
@@ -146,7 +152,7 @@ class BlockDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes prevStatusHash = 4;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setPrevStatusHash($var)

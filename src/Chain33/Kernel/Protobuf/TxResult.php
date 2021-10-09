@@ -6,32 +6,38 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.TxResult</code>.
  */
-class TxResult extends \Google\Protobuf\Internal\Message
+class TxResult extends Message
 {
     /**
      * Generated from protobuf field <code>int64 height = 1;</code>.
      */
     protected $height = 0;
+
     /**
      * Generated from protobuf field <code>int32 index = 2;</code>.
      */
     protected $index = 0;
+
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Transaction tx = 3;</code>.
      */
     protected $tx = null;
+
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ReceiptData receiptdate = 4;</code>.
      */
     protected $receiptdate = null;
+
     /**
      * Generated from protobuf field <code>int64 blocktime = 5;</code>.
      */
     protected $blocktime = 0;
+
     /**
      * Generated from protobuf field <code>string actionName = 6;</code>.
      */
@@ -40,16 +46,15 @@ class TxResult extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var int|string $height
-     *     @var int $index
-     *     @var \Jason\Chain33\Kernel\Protobuf\Transaction $tx
-     *     @var \Jason\Chain33\Kernel\Protobuf\ReceiptData $receiptdate
-     *     @var int|string $blocktime
-     *     @var string $actionName
-     * }
+     * @param  array                                   $data  {
+     *                                                        Optional. Data for populating the Message object.
+     * @var int|string                                 $height
+     * @var int                                        $index
+     * @var \Jason\Chain33\Kernel\Protobuf\Transaction $tx
+     * @var \Jason\Chain33\Kernel\Protobuf\ReceiptData $receiptdate
+     * @var int|string                                 $blocktime
+     * @var string                                     $actionName
+     *                                                        }
      */
     public function __construct($data = null)
     {
@@ -70,7 +75,7 @@ class TxResult extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 height = 1;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setHeight($var)
@@ -94,7 +99,7 @@ class TxResult extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 index = 2;</code>.
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setIndex($var)
@@ -115,6 +120,20 @@ class TxResult extends \Google\Protobuf\Internal\Message
         return isset($this->tx) ? $this->tx : null;
     }
 
+    /**
+     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Transaction tx = 3;</code>.
+     *
+     * @param  \Jason\Chain33\Kernel\Protobuf\Transaction  $var
+     * @return $this
+     */
+    public function setTx($var)
+    {
+        GPBUtil::checkMessage($var, Transaction::class);
+        $this->tx = $var;
+
+        return $this;
+    }
+
     public function hasTx()
     {
         return isset($this->tx);
@@ -123,20 +142,6 @@ class TxResult extends \Google\Protobuf\Internal\Message
     public function clearTx()
     {
         unset($this->tx);
-    }
-
-    /**
-     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Transaction tx = 3;</code>.
-     *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Transaction $var
-     * @return $this
-     */
-    public function setTx($var)
-    {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\Transaction::class);
-        $this->tx = $var;
-
-        return $this;
     }
 
     /**
@@ -149,6 +154,20 @@ class TxResult extends \Google\Protobuf\Internal\Message
         return isset($this->receiptdate) ? $this->receiptdate : null;
     }
 
+    /**
+     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ReceiptData receiptdate = 4;</code>.
+     *
+     * @param  \Jason\Chain33\Kernel\Protobuf\ReceiptData  $var
+     * @return $this
+     */
+    public function setReceiptdate($var)
+    {
+        GPBUtil::checkMessage($var, ReceiptData::class);
+        $this->receiptdate = $var;
+
+        return $this;
+    }
+
     public function hasReceiptdate()
     {
         return isset($this->receiptdate);
@@ -157,20 +176,6 @@ class TxResult extends \Google\Protobuf\Internal\Message
     public function clearReceiptdate()
     {
         unset($this->receiptdate);
-    }
-
-    /**
-     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ReceiptData receiptdate = 4;</code>.
-     *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ReceiptData $var
-     * @return $this
-     */
-    public function setReceiptdate($var)
-    {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\ReceiptData::class);
-        $this->receiptdate = $var;
-
-        return $this;
     }
 
     /**
@@ -186,7 +191,7 @@ class TxResult extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 blocktime = 5;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setBlocktime($var)
@@ -210,7 +215,7 @@ class TxResult extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string actionName = 6;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setActionName($var)

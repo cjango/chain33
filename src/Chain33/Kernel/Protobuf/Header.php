@@ -6,59 +6,69 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Blockchain;
 
 /**
  *区块头信息
- * 	 version : 版本信息
- *	 parentHash :父哈希
- * 	 txHash : 交易根哈希
- *	 stateHash :状态哈希
- * 	 height : 区块高度
- *	 blockTime :区块产生时的时标
- * 	 txCount : 区块上所有交易个数
- *	 difficulty :区块难度系数，
- *	 signature :交易签名.
- *
+ *     version : 版本信息
+ *     parentHash :父哈希
+ *     txHash : 交易根哈希
+ *     stateHash :状态哈希
+ *     height : 区块高度
+ *     blockTime :区块产生时的时标
+ *     txCount : 区块上所有交易个数
+ *     difficulty :区块难度系数，
+ *     signature :交易签名.
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.Header</code>
  */
-class Header extends \Google\Protobuf\Internal\Message
+class Header extends Message
 {
     /**
      * Generated from protobuf field <code>int64 version = 1;</code>.
      */
     protected $version = 0;
+
     /**
      * Generated from protobuf field <code>bytes parentHash = 2;</code>.
      */
     protected $parentHash = '';
+
     /**
      * Generated from protobuf field <code>bytes txHash = 3;</code>.
      */
     protected $txHash = '';
+
     /**
      * Generated from protobuf field <code>bytes stateHash = 4;</code>.
      */
     protected $stateHash = '';
+
     /**
      * Generated from protobuf field <code>int64 height = 5;</code>.
      */
     protected $height = 0;
+
     /**
      * Generated from protobuf field <code>int64 blockTime = 6;</code>.
      */
     protected $blockTime = 0;
+
     /**
      * Generated from protobuf field <code>int64 txCount = 9;</code>.
      */
     protected $txCount = 0;
+
     /**
      * Generated from protobuf field <code>bytes hash = 10;</code>.
      */
     protected $hash = '';
+
     /**
      * Generated from protobuf field <code>uint32 difficulty = 11;</code>.
      */
     protected $difficulty = 0;
+
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Signature signature = 8;</code>.
      */
@@ -67,24 +77,23 @@ class Header extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var int|string $version
-     *     @var string $parentHash
-     *     @var string $txHash
-     *     @var string $stateHash
-     *     @var int|string $height
-     *     @var int|string $blockTime
-     *     @var int|string $txCount
-     *     @var string $hash
-     *     @var int $difficulty
-     *     @var \Jason\Chain33\Kernel\Protobuf\Signature $signature
-     * }
+     * @param  array                                 $data  {
+     *                                                      Optional. Data for populating the Message object.
+     * @var int|string                               $version
+     * @var string                                   $parentHash
+     * @var string                                   $txHash
+     * @var string                                   $stateHash
+     * @var int|string                               $height
+     * @var int|string                               $blockTime
+     * @var int|string                               $txCount
+     * @var string                                   $hash
+     * @var int                                      $difficulty
+     * @var \Jason\Chain33\Kernel\Protobuf\Signature $signature
+     *                                                      }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Blockchain::initOnce();
+        Blockchain::initOnce();
         parent::__construct($data);
     }
 
@@ -101,7 +110,7 @@ class Header extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 version = 1;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setVersion($var)
@@ -125,7 +134,7 @@ class Header extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes parentHash = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setParentHash($var)
@@ -149,7 +158,7 @@ class Header extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes txHash = 3;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setTxHash($var)
@@ -173,7 +182,7 @@ class Header extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes stateHash = 4;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setStateHash($var)
@@ -197,7 +206,7 @@ class Header extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 height = 5;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setHeight($var)
@@ -221,7 +230,7 @@ class Header extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 blockTime = 6;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setBlockTime($var)
@@ -245,7 +254,7 @@ class Header extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 txCount = 9;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setTxCount($var)
@@ -269,7 +278,7 @@ class Header extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes hash = 10;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setHash($var)
@@ -293,7 +302,7 @@ class Header extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>uint32 difficulty = 11;</code>.
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setDifficulty($var)
@@ -314,6 +323,20 @@ class Header extends \Google\Protobuf\Internal\Message
         return isset($this->signature) ? $this->signature : null;
     }
 
+    /**
+     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Signature signature = 8;</code>.
+     *
+     * @param  \Jason\Chain33\Kernel\Protobuf\Signature  $var
+     * @return $this
+     */
+    public function setSignature($var)
+    {
+        GPBUtil::checkMessage($var, Signature::class);
+        $this->signature = $var;
+
+        return $this;
+    }
+
     public function hasSignature()
     {
         return isset($this->signature);
@@ -322,19 +345,5 @@ class Header extends \Google\Protobuf\Internal\Message
     public function clearSignature()
     {
         unset($this->signature);
-    }
-
-    /**
-     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Signature signature = 8;</code>.
-     *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Signature $var
-     * @return $this
-     */
-    public function setSignature($var)
-    {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\Signature::class);
-        $this->signature = $var;
-
-        return $this;
     }
 }

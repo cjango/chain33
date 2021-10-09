@@ -6,48 +6,55 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Wallet;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqSignRawTx</code>.
  */
-class ReqSignRawTx extends \Google\Protobuf\Internal\Message
+class ReqSignRawTx extends Message
 {
     /**
      * Generated from protobuf field <code>string addr = 1;</code>.
      */
     protected $addr = '';
+
     /**
      * Generated from protobuf field <code>string privkey = 2;</code>.
      */
     protected $privkey = '';
+
     /**
      * Generated from protobuf field <code>string txHex = 3;</code>.
      */
     protected $txHex = '';
+
     /**
      * Generated from protobuf field <code>string expire = 4;</code>.
      */
     protected $expire = '';
+
     /**
      * Generated from protobuf field <code>int32 index = 5;</code>.
      */
     protected $index = 0;
+
     /**
      * 签名的模式类型
      * 0：普通交易
      * 1：隐私交易
      * int32  mode  = 6;.
-     *
      * Generated from protobuf field <code>string token = 7;</code>
      */
     protected $token = '';
+
     /**
      * Generated from protobuf field <code>int64 fee = 8;</code>.
      */
     protected $fee = 0;
+
     /**
      * bytes  newExecer = 9;.
-     *
      * Generated from protobuf field <code>string newToAddr = 10;</code>
      */
     protected $newToAddr = '';
@@ -55,27 +62,26 @@ class ReqSignRawTx extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $addr
-     *     @var string $privkey
-     *     @var string $txHex
-     *     @var string $expire
-     *     @var int $index
-     *     @var string $token
-     *           签名的模式类型
-     *           0：普通交易
-     *           1：隐私交易
-     *           int32  mode  = 6;
-     *     @var int|string $fee
-     *     @var string $newToAddr
-     *           bytes  newExecer = 9;
-     * }
+     * @param  array   $data  {
+     *                        Optional. Data for populating the Message object.
+     * @var string     $addr
+     * @var string     $privkey
+     * @var string     $txHex
+     * @var string     $expire
+     * @var int        $index
+     * @var string     $token
+     *                        签名的模式类型
+     *                        0：普通交易
+     *                        1：隐私交易
+     *                        int32  mode  = 6;
+     * @var int|string $fee
+     * @var string     $newToAddr
+     *                        bytes  newExecer = 9;
+     *                        }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Wallet::initOnce();
+        Wallet::initOnce();
         parent::__construct($data);
     }
 
@@ -92,7 +98,7 @@ class ReqSignRawTx extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string addr = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setAddr($var)
@@ -116,7 +122,7 @@ class ReqSignRawTx extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string privkey = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setPrivkey($var)
@@ -140,7 +146,7 @@ class ReqSignRawTx extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string txHex = 3;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setTxHex($var)
@@ -164,7 +170,7 @@ class ReqSignRawTx extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string expire = 4;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setExpire($var)
@@ -188,7 +194,7 @@ class ReqSignRawTx extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 index = 5;</code>.
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setIndex($var)
@@ -204,7 +210,6 @@ class ReqSignRawTx extends \Google\Protobuf\Internal\Message
      * 0：普通交易
      * 1：隐私交易
      * int32  mode  = 6;.
-     *
      * Generated from protobuf field <code>string token = 7;</code>
      *
      * @return string
@@ -219,10 +224,9 @@ class ReqSignRawTx extends \Google\Protobuf\Internal\Message
      * 0：普通交易
      * 1：隐私交易
      * int32  mode  = 6;.
-     *
      * Generated from protobuf field <code>string token = 7;</code>
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setToken($var)
@@ -246,7 +250,7 @@ class ReqSignRawTx extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 fee = 8;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setFee($var)
@@ -259,7 +263,6 @@ class ReqSignRawTx extends \Google\Protobuf\Internal\Message
 
     /**
      * bytes  newExecer = 9;.
-     *
      * Generated from protobuf field <code>string newToAddr = 10;</code>
      *
      * @return string
@@ -271,10 +274,9 @@ class ReqSignRawTx extends \Google\Protobuf\Internal\Message
 
     /**
      * bytes  newExecer = 9;.
-     *
      * Generated from protobuf field <code>string newToAddr = 10;</code>
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setNewToAddr($var)

@@ -6,11 +6,12 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqDecodeRawTransaction</code>.
  */
-class ReqDecodeRawTransaction extends \Google\Protobuf\Internal\Message
+class ReqDecodeRawTransaction extends Message
 {
     /**
      * Generated from protobuf field <code>string txHex = 1;</code>.
@@ -20,11 +21,10 @@ class ReqDecodeRawTransaction extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $txHex
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var string    $txHex
+     *                       }
      */
     public function __construct($data = null)
     {
@@ -45,7 +45,7 @@ class ReqDecodeRawTransaction extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string txHex = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setTxHex($var)

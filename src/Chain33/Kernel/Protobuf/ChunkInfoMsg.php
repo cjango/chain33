@@ -6,22 +6,25 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Blockchain;
 
 /**
  * ChunkInfoMsg 用于消息传递.
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ChunkInfoMsg</code>
  */
-class ChunkInfoMsg extends \Google\Protobuf\Internal\Message
+class ChunkInfoMsg extends Message
 {
     /**
      * Generated from protobuf field <code>bytes chunkHash = 1;</code>.
      */
     protected $chunkHash = '';
+
     /**
      * Generated from protobuf field <code>int64 start = 2;</code>.
      */
     protected $start = 0;
+
     /**
      * Generated from protobuf field <code>int64 end = 3;</code>.
      */
@@ -30,17 +33,16 @@ class ChunkInfoMsg extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $chunkHash
-     *     @var int|string $start
-     *     @var int|string $end
-     * }
+     * @param  array   $data  {
+     *                        Optional. Data for populating the Message object.
+     * @var string     $chunkHash
+     * @var int|string $start
+     * @var int|string $end
+     *                        }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Blockchain::initOnce();
+        Blockchain::initOnce();
         parent::__construct($data);
     }
 
@@ -57,7 +59,7 @@ class ChunkInfoMsg extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes chunkHash = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setChunkHash($var)
@@ -81,7 +83,7 @@ class ChunkInfoMsg extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 start = 2;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setStart($var)
@@ -105,7 +107,7 @@ class ChunkInfoMsg extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 end = 3;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setEnd($var)

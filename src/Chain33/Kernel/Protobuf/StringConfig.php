@@ -6,11 +6,13 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Executor;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.StringConfig</code>.
  */
-class StringConfig extends \Google\Protobuf\Internal\Message
+class StringConfig extends Message
 {
     /**
      * Generated from protobuf field <code>string value = 3;</code>.
@@ -20,15 +22,14 @@ class StringConfig extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $value
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var string    $value
+     *                       }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Executor::initOnce();
+        Executor::initOnce();
         parent::__construct($data);
     }
 
@@ -45,7 +46,7 @@ class StringConfig extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string value = 3;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setValue($var)

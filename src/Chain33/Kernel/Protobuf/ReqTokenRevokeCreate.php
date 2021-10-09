@@ -6,20 +6,24 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Wallet;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqTokenRevokeCreate</code>.
  */
-class ReqTokenRevokeCreate extends \Google\Protobuf\Internal\Message
+class ReqTokenRevokeCreate extends Message
 {
     /**
      * Generated from protobuf field <code>string revoker_addr = 1;</code>.
      */
     protected $revoker_addr = '';
+
     /**
      * Generated from protobuf field <code>string symbol = 2;</code>.
      */
     protected $symbol = '';
+
     /**
      * Generated from protobuf field <code>string owner_addr = 3;</code>.
      */
@@ -28,17 +32,16 @@ class ReqTokenRevokeCreate extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $revoker_addr
-     *     @var string $symbol
-     *     @var string $owner_addr
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var string    $revoker_addr
+     * @var string    $symbol
+     * @var string    $owner_addr
+     *                       }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Wallet::initOnce();
+        Wallet::initOnce();
         parent::__construct($data);
     }
 
@@ -55,7 +58,7 @@ class ReqTokenRevokeCreate extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string revoker_addr = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setRevokerAddr($var)
@@ -79,7 +82,7 @@ class ReqTokenRevokeCreate extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string symbol = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setSymbol($var)
@@ -103,7 +106,7 @@ class ReqTokenRevokeCreate extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string owner_addr = 3;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setOwnerAddr($var)

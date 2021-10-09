@@ -5,7 +5,10 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Blockchain;
 
 /**
  * type:平行链交易所在区块add/del操作，方便平行链回滚
@@ -14,31 +17,35 @@ use Google\Protobuf\Internal\GPBUtil;
  * proofs:对应平行链子roothash的存在证明路径
  * childHash:此平行链交易的子roothash
  * index:对应平行链子roothash在整个区块中的索引.
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ParaTxDetail</code>
  */
-class ParaTxDetail extends \Google\Protobuf\Internal\Message
+class ParaTxDetail extends Message
 {
     /**
      * Generated from protobuf field <code>int64 type = 1;</code>.
      */
     protected $type = 0;
+
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Header header = 2;</code>.
      */
     protected $header = null;
-    /**
-     * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.TxDetail txDetails = 3;</code>.
-     */
-    private $txDetails;
+
     /**
      * Generated from protobuf field <code>bytes childHash = 4;</code>.
      */
     protected $childHash = '';
+
     /**
      * Generated from protobuf field <code>uint32 index = 5;</code>.
      */
     protected $index = 0;
+
+    /**
+     * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.TxDetail txDetails = 3;</code>.
+     */
+    private $txDetails;
+
     /**
      * Generated from protobuf field <code>repeated bytes proofs = 6;</code>.
      */
@@ -47,20 +54,19 @@ class ParaTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var int|string $type
-     *     @var \Jason\Chain33\Kernel\Protobuf\Header $header
-     *     @var \Jason\Chain33\Kernel\Protobuf\TxDetail[]|\Google\Protobuf\Internal\RepeatedField $txDetails
-     *     @var string $childHash
-     *     @var int $index
-     *     @var string[]|\Google\Protobuf\Internal\RepeatedField $proofs
-     * }
+     * @param  array                                                                          $data  {
+     *                                                                                               Optional. Data for populating the Message object.
+     * @var int|string                                                                        $type
+     * @var \Jason\Chain33\Kernel\Protobuf\Header                                             $header
+     * @var \Jason\Chain33\Kernel\Protobuf\TxDetail[]|\Google\Protobuf\Internal\RepeatedField $txDetails
+     * @var string                                                                            $childHash
+     * @var int                                                                               $index
+     * @var string[]|\Google\Protobuf\Internal\RepeatedField                                  $proofs
+     *                                                                                               }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Blockchain::initOnce();
+        Blockchain::initOnce();
         parent::__construct($data);
     }
 
@@ -77,7 +83,7 @@ class ParaTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 type = 1;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setType($var)
@@ -98,6 +104,20 @@ class ParaTxDetail extends \Google\Protobuf\Internal\Message
         return isset($this->header) ? $this->header : null;
     }
 
+    /**
+     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Header header = 2;</code>.
+     *
+     * @param  \Jason\Chain33\Kernel\Protobuf\Header  $var
+     * @return $this
+     */
+    public function setHeader($var)
+    {
+        GPBUtil::checkMessage($var, Header::class);
+        $this->header = $var;
+
+        return $this;
+    }
+
     public function hasHeader()
     {
         return isset($this->header);
@@ -106,20 +126,6 @@ class ParaTxDetail extends \Google\Protobuf\Internal\Message
     public function clearHeader()
     {
         unset($this->header);
-    }
-
-    /**
-     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Header header = 2;</code>.
-     *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Header $var
-     * @return $this
-     */
-    public function setHeader($var)
-    {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\Header::class);
-        $this->header = $var;
-
-        return $this;
     }
 
     /**
@@ -135,12 +141,13 @@ class ParaTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.TxDetail txDetails = 3;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\TxDetail[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\TxDetail[]|\Google\Protobuf\Internal\RepeatedField  $var
      * @return $this
      */
     public function setTxDetails($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Jason\Chain33\Kernel\Protobuf\TxDetail::class);
+        $arr             = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+            TxDetail::class);
         $this->txDetails = $arr;
 
         return $this;
@@ -159,7 +166,7 @@ class ParaTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes childHash = 4;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setChildHash($var)
@@ -183,7 +190,7 @@ class ParaTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>uint32 index = 5;</code>.
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setIndex($var)
@@ -207,12 +214,12 @@ class ParaTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated bytes proofs = 6;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
      * @return $this
      */
     public function setProofs($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::BYTES);
+        $arr          = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
         $this->proofs = $arr;
 
         return $this;

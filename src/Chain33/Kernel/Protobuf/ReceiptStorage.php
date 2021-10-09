@@ -5,18 +5,19 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Google\Protobuf\Internal\Message;
+
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReceiptStorage</code>.
  */
-class ReceiptStorage extends \Google\Protobuf\Internal\Message
+class ReceiptStorage extends Message
 {
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     *                       }
      */
     public function __construct($data = null)
     {

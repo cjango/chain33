@@ -5,37 +5,39 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Blockchain;
 
 /**
  *通过高度列表和title获取平行链交易.
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqParaTxByHeight</code>
  */
-class ReqParaTxByHeight extends \Google\Protobuf\Internal\Message
+class ReqParaTxByHeight extends Message
 {
-    /**
-     * Generated from protobuf field <code>repeated int64 items = 1;</code>.
-     */
-    private $items;
     /**
      * Generated from protobuf field <code>string title = 2;</code>.
      */
     protected $title = '';
 
     /**
+     * Generated from protobuf field <code>repeated int64 items = 1;</code>.
+     */
+    private $items;
+
+    /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var int[]|string[]|\Google\Protobuf\Internal\RepeatedField $items
-     *     @var string $title
-     * }
+     * @param  array                                               $data  {
+     *                                                                    Optional. Data for populating the Message object.
+     * @var int[]|string[]|\Google\Protobuf\Internal\RepeatedField $items
+     * @var string                                                 $title
+     *                                                                    }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Blockchain::initOnce();
+        Blockchain::initOnce();
         parent::__construct($data);
     }
 
@@ -52,12 +54,12 @@ class ReqParaTxByHeight extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated int64 items = 1;</code>.
      *
-     * @param  int[]|string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param  int[]|string[]|\Google\Protobuf\Internal\RepeatedField  $var
      * @return $this
      */
     public function setItems($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::INT64);
+        $arr         = GPBUtil::checkRepeatedField($var, GPBType::INT64);
         $this->items = $arr;
 
         return $this;
@@ -76,7 +78,7 @@ class ReqParaTxByHeight extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string title = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setTitle($var)

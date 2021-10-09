@@ -6,18 +6,20 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Blockchain;
 
 /**
  *  通过block hash记录block的操作类型及add/del：1/2.
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.BlockSequence</code>
  */
-class BlockSequence extends \Google\Protobuf\Internal\Message
+class BlockSequence extends Message
 {
     /**
      * Generated from protobuf field <code>bytes Hash = 1;</code>.
      */
     protected $Hash = '';
+
     /**
      * Generated from protobuf field <code>int64 Type = 2;</code>.
      */
@@ -26,16 +28,15 @@ class BlockSequence extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $Hash
-     *     @var int|string $Type
-     * }
+     * @param  array   $data  {
+     *                        Optional. Data for populating the Message object.
+     * @var string     $Hash
+     * @var int|string $Type
+     *                        }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Blockchain::initOnce();
+        Blockchain::initOnce();
         parent::__construct($data);
     }
 
@@ -52,7 +53,7 @@ class BlockSequence extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes Hash = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setHash($var)
@@ -76,7 +77,7 @@ class BlockSequence extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 Type = 2;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setType($var)

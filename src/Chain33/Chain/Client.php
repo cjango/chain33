@@ -26,9 +26,9 @@ class Client extends BaseClient
      *
      * @Author : <C.Jason>
      * @Date   : 2020/4/30 16:20
-     * @param  int  $start    开始区块高度
-     * @param  int  $end      结束区块高度
-     * @param  bool $isDetail 是否打印区块详细信息
+     * @param  int   $start     开始区块高度
+     * @param  int   $end       结束区块高度
+     * @param  bool  $isDetail  是否打印区块详细信息
      * @return array
      */
     public function blocks(int $start, int $end, bool $isDetail = false): array
@@ -57,9 +57,9 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 16:25
-     * @param  int  $start    开始区块高度
-     * @param  int  $end      结束区块高度
-     * @param  bool $isDetail 是否打印区块详细信息
+     * @param  int   $start     开始区块高度
+     * @param  int   $end       结束区块高度
+     * @param  bool  $isDetail  是否打印区块详细信息
      * @return array
      */
     public function headers(int $start, int $end, bool $isDetail = true): array
@@ -76,7 +76,7 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 16:29
-     * @param  int $height
+     * @param  int  $height
      * @return string
      */
     public function hash(int $height): string
@@ -89,9 +89,23 @@ class Client extends BaseClient
     /**
      * Notes: 获取区块的详细信息.
      *
+     * @alias overview
+     * @Author: <C.Jason>
+     * @Date  : 2020/4/30 16:32
+     * @param  string  $hash  区块哈希值
+     * @return array
+     */
+    public function info(string $hash): array
+    {
+        return $this->overview($hash);
+    }
+
+    /**
+     * Notes: 获取区块的详细信息.
+     *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 16:31
-     * @param  string $hash 区块哈希值
+     * @param  string  $hash  区块哈希值
      * @return array
      */
     public function overview(string $hash): array
@@ -102,26 +116,12 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes: 获取区块的详细信息.
-     *
-     * @alias overview
-     * @Author: <C.Jason>
-     * @Date  : 2020/4/30 16:32
-     * @param  string $hash 区块哈希值
-     * @return array
-     */
-    public function info(string $hash): array
-    {
-        return $this->overview($hash);
-    }
-
-    /**
      * Notes: 通过区块哈希获取区块信息.
      *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 16:34
-     * @param  array $hashs         区块哈希列表
-     * @param  bool  $disableDetail 是否打印区块详细信息
+     * @param  array  $hashs          区块哈希列表
+     * @param  bool   $disableDetail  是否打印区块详细信息
      * @return array
      */
     public function hashes(array $hashs, bool $disableDetail = false): array
@@ -137,9 +137,9 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 16:37
-     * @param  int  $start    开始区块高度
-     * @param  int  $end      结束区块高度
-     * @param  bool $isDetail 是否打印区块详细信息
+     * @param  int   $start     开始区块高度
+     * @param  int   $end       结束区块高度
+     * @param  bool  $isDetail  是否打印区块详细信息
      * @return array
      */
     public function sequences(int $start, int $end, bool $isDetail = false): array
@@ -168,8 +168,8 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 16:51
-     * @param  string $name 回调名称，长度不能超过128,
-     * @param  string $URL  序列号变化通知的URL，长度不能超过1024；当name相同，URL为空时取消通知
+     * @param  string  $name  回调名称，长度不能超过128,
+     * @param  string  $URL   序列号变化通知的URL，长度不能超过1024；当name相同，URL为空时取消通知
      * @return array
      */
     public function addPush(string $name, string $URL): array
@@ -198,7 +198,7 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 16:57
-     * @param  string $name 回调名
+     * @param  string  $name  回调名
      * @return int
      */
     public function lastPush(string $name): int

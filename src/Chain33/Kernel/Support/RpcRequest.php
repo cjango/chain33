@@ -4,19 +4,19 @@ namespace Jason\Chain33\Kernel\Support;
 
 class RpcRequest
 {
-    protected string $jsonrpc = '2.0';
+    protected string  $jsonrpc = '2.0';
 
-    protected int $id;
+    protected int     $id;
 
     protected ?string $method;
 
-    protected array $params = [];
+    protected array   $params  = [];
 
-    protected string $prefix = 'Chain33';
+    protected string  $prefix  = 'Chain33';
 
     public function __construct(int $id = null, string $method = null, array $params = [])
     {
-        $this->id = $id ?: time();
+        $this->id     = $id ?: time();
         $this->method = $method;
         $this->params = $params;
     }

@@ -6,16 +6,19 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Common;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.KeyValue</code>.
  */
-class KeyValue extends \Google\Protobuf\Internal\Message
+class KeyValue extends Message
 {
     /**
      * Generated from protobuf field <code>bytes key = 1;</code>.
      */
     protected $key = '';
+
     /**
      * Generated from protobuf field <code>bytes value = 2;</code>.
      */
@@ -24,16 +27,15 @@ class KeyValue extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $key
-     *     @var string $value
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var string    $key
+     * @var string    $value
+     *                       }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Common::initOnce();
+        Common::initOnce();
         parent::__construct($data);
     }
 
@@ -50,7 +52,7 @@ class KeyValue extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes key = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setKey($var)
@@ -74,7 +76,7 @@ class KeyValue extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes value = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setValue($var)

@@ -6,34 +6,39 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqAddr</code>.
  */
-class ReqAddr extends \Google\Protobuf\Internal\Message
+class ReqAddr extends Message
 {
     /**
      * Generated from protobuf field <code>string addr = 1;</code>.
      */
     protected $addr = '';
+
     /**
      *表示取所有/from/to/其他的hash列表.
-     *
      * Generated from protobuf field <code>int32 flag = 2;</code>
      */
     protected $flag = 0;
+
     /**
      * Generated from protobuf field <code>int32 count = 3;</code>.
      */
     protected $count = 0;
+
     /**
      * Generated from protobuf field <code>int32 direction = 4;</code>.
      */
     protected $direction = 0;
+
     /**
      * Generated from protobuf field <code>int64 height = 5;</code>.
      */
     protected $height = 0;
+
     /**
      * Generated from protobuf field <code>int64 index = 6;</code>.
      */
@@ -42,17 +47,16 @@ class ReqAddr extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $addr
-     *     @var int $flag
-     *          表示取所有/from/to/其他的hash列表
-     *     @var int $count
-     *     @var int $direction
-     *     @var int|string $height
-     *     @var int|string $index
-     * }
+     * @param  array   $data  {
+     *                        Optional. Data for populating the Message object.
+     * @var string     $addr
+     * @var int        $flag
+     *                        表示取所有/from/to/其他的hash列表
+     * @var int        $count
+     * @var int        $direction
+     * @var int|string $height
+     * @var int|string $index
+     *                        }
      */
     public function __construct($data = null)
     {
@@ -73,7 +77,7 @@ class ReqAddr extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string addr = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setAddr($var)
@@ -86,7 +90,6 @@ class ReqAddr extends \Google\Protobuf\Internal\Message
 
     /**
      *表示取所有/from/to/其他的hash列表.
-     *
      * Generated from protobuf field <code>int32 flag = 2;</code>
      *
      * @return int
@@ -98,10 +101,9 @@ class ReqAddr extends \Google\Protobuf\Internal\Message
 
     /**
      *表示取所有/from/to/其他的hash列表.
-     *
      * Generated from protobuf field <code>int32 flag = 2;</code>
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setFlag($var)
@@ -125,7 +127,7 @@ class ReqAddr extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 count = 3;</code>.
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setCount($var)
@@ -149,7 +151,7 @@ class ReqAddr extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 direction = 4;</code>.
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setDirection($var)
@@ -173,7 +175,7 @@ class ReqAddr extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 height = 5;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setHeight($var)
@@ -197,7 +199,7 @@ class ReqAddr extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 index = 6;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setIndex($var)

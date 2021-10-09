@@ -6,11 +6,12 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqTxList</code>.
  */
-class ReqTxList extends \Google\Protobuf\Internal\Message
+class ReqTxList extends Message
 {
     /**
      * Generated from protobuf field <code>int64 count = 1;</code>.
@@ -20,11 +21,10 @@ class ReqTxList extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var int|string $count
-     * }
+     * @param  array   $data  {
+     *                        Optional. Data for populating the Message object.
+     * @var int|string $count
+     *                        }
      */
     public function __construct($data = null)
     {
@@ -45,7 +45,7 @@ class ReqTxList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 count = 1;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setCount($var)

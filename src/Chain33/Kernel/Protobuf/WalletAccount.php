@@ -6,16 +6,19 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Wallet;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.WalletAccount</code>.
  */
-class WalletAccount extends \Google\Protobuf\Internal\Message
+class WalletAccount extends Message
 {
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account acc = 1;</code>.
      */
     protected $acc = null;
+
     /**
      * Generated from protobuf field <code>string label = 2;</code>.
      */
@@ -24,16 +27,15 @@ class WalletAccount extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var \Jason\Chain33\Kernel\Protobuf\Account $acc
-     *     @var string $label
-     * }
+     * @param  array                               $data  {
+     *                                                    Optional. Data for populating the Message object.
+     * @var \Jason\Chain33\Kernel\Protobuf\Account $acc
+     * @var string                                 $label
+     *                                                    }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Wallet::initOnce();
+        Wallet::initOnce();
         parent::__construct($data);
     }
 
@@ -47,6 +49,20 @@ class WalletAccount extends \Google\Protobuf\Internal\Message
         return isset($this->acc) ? $this->acc : null;
     }
 
+    /**
+     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account acc = 1;</code>.
+     *
+     * @param  \Jason\Chain33\Kernel\Protobuf\Account  $var
+     * @return $this
+     */
+    public function setAcc($var)
+    {
+        GPBUtil::checkMessage($var, Account::class);
+        $this->acc = $var;
+
+        return $this;
+    }
+
     public function hasAcc()
     {
         return isset($this->acc);
@@ -55,20 +71,6 @@ class WalletAccount extends \Google\Protobuf\Internal\Message
     public function clearAcc()
     {
         unset($this->acc);
-    }
-
-    /**
-     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account acc = 1;</code>.
-     *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Account $var
-     * @return $this
-     */
-    public function setAcc($var)
-    {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\Account::class);
-        $this->acc = $var;
-
-        return $this;
     }
 
     /**
@@ -84,7 +86,7 @@ class WalletAccount extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string label = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setLabel($var)

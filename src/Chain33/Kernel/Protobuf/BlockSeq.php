@@ -6,20 +6,24 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Blockchain;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.BlockSeq</code>.
  */
-class BlockSeq extends \Google\Protobuf\Internal\Message
+class BlockSeq extends Message
 {
     /**
      * Generated from protobuf field <code>int64 num = 1;</code>.
      */
     protected $num = 0;
+
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.BlockSequence seq = 2;</code>.
      */
     protected $seq = null;
+
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.BlockDetail detail = 3;</code>.
      */
@@ -28,17 +32,16 @@ class BlockSeq extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var int|string $num
-     *     @var \Jason\Chain33\Kernel\Protobuf\BlockSequence $seq
-     *     @var \Jason\Chain33\Kernel\Protobuf\BlockDetail $detail
-     * }
+     * @param  array                                     $data  {
+     *                                                          Optional. Data for populating the Message object.
+     * @var int|string                                   $num
+     * @var \Jason\Chain33\Kernel\Protobuf\BlockSequence $seq
+     * @var \Jason\Chain33\Kernel\Protobuf\BlockDetail   $detail
+     *                                                          }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Blockchain::initOnce();
+        Blockchain::initOnce();
         parent::__construct($data);
     }
 
@@ -55,7 +58,7 @@ class BlockSeq extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 num = 1;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setNum($var)
@@ -76,6 +79,20 @@ class BlockSeq extends \Google\Protobuf\Internal\Message
         return isset($this->seq) ? $this->seq : null;
     }
 
+    /**
+     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.BlockSequence seq = 2;</code>.
+     *
+     * @param  \Jason\Chain33\Kernel\Protobuf\BlockSequence  $var
+     * @return $this
+     */
+    public function setSeq($var)
+    {
+        GPBUtil::checkMessage($var, BlockSequence::class);
+        $this->seq = $var;
+
+        return $this;
+    }
+
     public function hasSeq()
     {
         return isset($this->seq);
@@ -84,20 +101,6 @@ class BlockSeq extends \Google\Protobuf\Internal\Message
     public function clearSeq()
     {
         unset($this->seq);
-    }
-
-    /**
-     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.BlockSequence seq = 2;</code>.
-     *
-     * @param  \Jason\Chain33\Kernel\Protobuf\BlockSequence $var
-     * @return $this
-     */
-    public function setSeq($var)
-    {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\BlockSequence::class);
-        $this->seq = $var;
-
-        return $this;
     }
 
     /**
@@ -110,6 +113,20 @@ class BlockSeq extends \Google\Protobuf\Internal\Message
         return isset($this->detail) ? $this->detail : null;
     }
 
+    /**
+     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.BlockDetail detail = 3;</code>.
+     *
+     * @param  \Jason\Chain33\Kernel\Protobuf\BlockDetail  $var
+     * @return $this
+     */
+    public function setDetail($var)
+    {
+        GPBUtil::checkMessage($var, BlockDetail::class);
+        $this->detail = $var;
+
+        return $this;
+    }
+
     public function hasDetail()
     {
         return isset($this->detail);
@@ -118,19 +135,5 @@ class BlockSeq extends \Google\Protobuf\Internal\Message
     public function clearDetail()
     {
         unset($this->detail);
-    }
-
-    /**
-     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.BlockDetail detail = 3;</code>.
-     *
-     * @param  \Jason\Chain33\Kernel\Protobuf\BlockDetail $var
-     * @return $this
-     */
-    public function setDetail($var)
-    {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\BlockDetail::class);
-        $this->detail = $var;
-
-        return $this;
     }
 }

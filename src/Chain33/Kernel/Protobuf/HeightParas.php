@@ -5,12 +5,15 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Blockchain;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.HeightParas</code>.
  */
-class HeightParas extends \Google\Protobuf\Internal\Message
+class HeightParas extends Message
 {
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.HeightPara items = 1;</code>.
@@ -20,15 +23,14 @@ class HeightParas extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var \Jason\Chain33\Kernel\Protobuf\HeightPara[]|\Google\Protobuf\Internal\RepeatedField $items
-     * }
+     * @param  array                                                                            $data  {
+     *                                                                                                 Optional. Data for populating the Message object.
+     * @var \Jason\Chain33\Kernel\Protobuf\HeightPara[]|\Google\Protobuf\Internal\RepeatedField $items
+     *                                                                                                 }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Blockchain::initOnce();
+        Blockchain::initOnce();
         parent::__construct($data);
     }
 
@@ -45,12 +47,13 @@ class HeightParas extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.HeightPara items = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\HeightPara[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\HeightPara[]|\Google\Protobuf\Internal\RepeatedField  $var
      * @return $this
      */
     public function setItems($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Jason\Chain33\Kernel\Protobuf\HeightPara::class);
+        $arr         = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+            HeightPara::class);
         $this->items = $arr;
 
         return $this;

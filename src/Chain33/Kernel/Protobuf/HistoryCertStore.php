@@ -5,50 +5,56 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Executor;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.HistoryCertStore</code>.
  */
-class HistoryCertStore extends \Google\Protobuf\Internal\Message
+class HistoryCertStore extends Message
 {
-    /**
-     * Generated from protobuf field <code>repeated bytes rootcerts = 1;</code>.
-     */
-    private $rootcerts;
-    /**
-     * Generated from protobuf field <code>repeated bytes intermediateCerts = 2;</code>.
-     */
-    private $intermediateCerts;
-    /**
-     * Generated from protobuf field <code>repeated bytes revocationList = 3;</code>.
-     */
-    private $revocationList;
     /**
      * Generated from protobuf field <code>int64 curHeigth = 4;</code>.
      */
     protected $curHeigth = 0;
+
     /**
      * Generated from protobuf field <code>int64 nxtHeight = 5;</code>.
      */
     protected $nxtHeight = 0;
 
     /**
+     * Generated from protobuf field <code>repeated bytes rootcerts = 1;</code>.
+     */
+    private $rootcerts;
+
+    /**
+     * Generated from protobuf field <code>repeated bytes intermediateCerts = 2;</code>.
+     */
+    private $intermediateCerts;
+
+    /**
+     * Generated from protobuf field <code>repeated bytes revocationList = 3;</code>.
+     */
+    private $revocationList;
+
+    /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string[]|\Google\Protobuf\Internal\RepeatedField $rootcerts
-     *     @var string[]|\Google\Protobuf\Internal\RepeatedField $intermediateCerts
-     *     @var string[]|\Google\Protobuf\Internal\RepeatedField $revocationList
-     *     @var int|string $curHeigth
-     *     @var int|string $nxtHeight
-     * }
+     * @param  array                                         $data  {
+     *                                                              Optional. Data for populating the Message object.
+     * @var string[]|\Google\Protobuf\Internal\RepeatedField $rootcerts
+     * @var string[]|\Google\Protobuf\Internal\RepeatedField $intermediateCerts
+     * @var string[]|\Google\Protobuf\Internal\RepeatedField $revocationList
+     * @var int|string                                       $curHeigth
+     * @var int|string                                       $nxtHeight
+     *                                                              }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Executor::initOnce();
+        Executor::initOnce();
         parent::__construct($data);
     }
 
@@ -65,12 +71,12 @@ class HistoryCertStore extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated bytes rootcerts = 1;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
      * @return $this
      */
     public function setRootcerts($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::BYTES);
+        $arr             = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
         $this->rootcerts = $arr;
 
         return $this;
@@ -89,12 +95,12 @@ class HistoryCertStore extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated bytes intermediateCerts = 2;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
      * @return $this
      */
     public function setIntermediateCerts($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::BYTES);
+        $arr                     = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
         $this->intermediateCerts = $arr;
 
         return $this;
@@ -113,12 +119,12 @@ class HistoryCertStore extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated bytes revocationList = 3;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
      * @return $this
      */
     public function setRevocationList($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::BYTES);
+        $arr                  = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
         $this->revocationList = $arr;
 
         return $this;
@@ -137,7 +143,7 @@ class HistoryCertStore extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 curHeigth = 4;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setCurHeigth($var)
@@ -161,7 +167,7 @@ class HistoryCertStore extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 nxtHeight = 5;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setNxtHeight($var)

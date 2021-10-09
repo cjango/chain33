@@ -5,46 +5,54 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Blockchain;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.PushSubscribeReq</code>.
  */
-class PushSubscribeReq extends \Google\Protobuf\Internal\Message
+class PushSubscribeReq extends Message
 {
     /**
      * Generated from protobuf field <code>string name = 1;</code>.
      */
     protected $name = '';
+
     /**
      * Generated from protobuf field <code>string URL = 2;</code>.
      */
     protected $URL = '';
+
     /**
      * Generated from protobuf field <code>string encode = 3;</code>.
      */
     protected $encode = '';
+
     /**
      * Generated from protobuf field <code>int64 lastSequence = 4;</code>.
      */
     protected $lastSequence = 0;
+
     /**
      * Generated from protobuf field <code>int64 lastHeight = 5;</code>.
      */
     protected $lastHeight = 0;
+
     /**
      * Generated from protobuf field <code>string lastBlockHash = 6;</code>.
      */
     protected $lastBlockHash = '';
+
     /**
      * 0:代表区块；1:代表区块头信息；2：代表交易回执.
-     *
      * Generated from protobuf field <code>int32 type = 7;</code>
      */
     protected $type = 0;
+
     /**
      *允许订阅多个类型的交易回执.
-     *
      * Generated from protobuf field <code>map<string, bool> contract = 8;</code>
      */
     private $contract;
@@ -52,24 +60,23 @@ class PushSubscribeReq extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $name
-     *     @var string $URL
-     *     @var string $encode
-     *     @var int|string $lastSequence
-     *     @var int|string $lastHeight
-     *     @var string $lastBlockHash
-     *     @var int $type
-     *           0:代表区块；1:代表区块头信息；2：代表交易回执
-     *     @var array|\Google\Protobuf\Internal\MapField $contract
-     *          允许订阅多个类型的交易回执
-     * }
+     * @param  array                                 $data  {
+     *                                                      Optional. Data for populating the Message object.
+     * @var string                                   $name
+     * @var string                                   $URL
+     * @var string                                   $encode
+     * @var int|string                               $lastSequence
+     * @var int|string                               $lastHeight
+     * @var string                                   $lastBlockHash
+     * @var int                                      $type
+     *                                                      0:代表区块；1:代表区块头信息；2：代表交易回执
+     * @var array|\Google\Protobuf\Internal\MapField $contract
+     *                                                      允许订阅多个类型的交易回执
+     *                                                      }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Blockchain::initOnce();
+        Blockchain::initOnce();
         parent::__construct($data);
     }
 
@@ -86,7 +93,7 @@ class PushSubscribeReq extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string name = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setName($var)
@@ -110,7 +117,7 @@ class PushSubscribeReq extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string URL = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setURL($var)
@@ -134,7 +141,7 @@ class PushSubscribeReq extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string encode = 3;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setEncode($var)
@@ -158,7 +165,7 @@ class PushSubscribeReq extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 lastSequence = 4;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setLastSequence($var)
@@ -182,7 +189,7 @@ class PushSubscribeReq extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 lastHeight = 5;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setLastHeight($var)
@@ -206,7 +213,7 @@ class PushSubscribeReq extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string lastBlockHash = 6;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setLastBlockHash($var)
@@ -219,7 +226,6 @@ class PushSubscribeReq extends \Google\Protobuf\Internal\Message
 
     /**
      * 0:代表区块；1:代表区块头信息；2：代表交易回执.
-     *
      * Generated from protobuf field <code>int32 type = 7;</code>
      *
      * @return int
@@ -231,10 +237,9 @@ class PushSubscribeReq extends \Google\Protobuf\Internal\Message
 
     /**
      * 0:代表区块；1:代表区块头信息；2：代表交易回执.
-     *
      * Generated from protobuf field <code>int32 type = 7;</code>
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setType($var)
@@ -247,7 +252,6 @@ class PushSubscribeReq extends \Google\Protobuf\Internal\Message
 
     /**
      *允许订阅多个类型的交易回执.
-     *
      * Generated from protobuf field <code>map<string, bool> contract = 8;</code>
      *
      * @return \Google\Protobuf\Internal\MapField
@@ -259,15 +263,15 @@ class PushSubscribeReq extends \Google\Protobuf\Internal\Message
 
     /**
      *允许订阅多个类型的交易回执.
-     *
      * Generated from protobuf field <code>map<string, bool> contract = 8;</code>
      *
-     * @param  array|\Google\Protobuf\Internal\MapField $var
+     * @param  array|\Google\Protobuf\Internal\MapField  $var
      * @return $this
      */
     public function setContract($var)
     {
-        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::BOOL);
+        $arr            = GPBUtil::checkMapField($var, GPBType::STRING,
+            GPBType::BOOL);
         $this->contract = $arr;
 
         return $this;

@@ -5,14 +5,15 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
 
 /**
  * 环签名类型时，签名字段存储的环签名信息.
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.RingSignature</code>
  */
-class RingSignature extends \Google\Protobuf\Internal\Message
+class RingSignature extends Message
 {
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.RingSignatureItem items = 1;</code>.
@@ -22,11 +23,10 @@ class RingSignature extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var \Jason\Chain33\Kernel\Protobuf\RingSignatureItem[]|\Google\Protobuf\Internal\RepeatedField $items
-     * }
+     * @param  array                                                                                   $data  {
+     *                                                                                                        Optional. Data for populating the Message object.
+     * @var \Jason\Chain33\Kernel\Protobuf\RingSignatureItem[]|\Google\Protobuf\Internal\RepeatedField $items
+     *                                                                                                        }
      */
     public function __construct($data = null)
     {
@@ -47,12 +47,13 @@ class RingSignature extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.RingSignatureItem items = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\RingSignatureItem[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\RingSignatureItem[]|\Google\Protobuf\Internal\RepeatedField  $var
      * @return $this
      */
     public function setItems($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Jason\Chain33\Kernel\Protobuf\RingSignatureItem::class);
+        $arr         = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+            RingSignatureItem::class);
         $this->items = $arr;
 
         return $this;

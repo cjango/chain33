@@ -6,16 +6,18 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ExecAccount</code>.
  */
-class ExecAccount extends \Google\Protobuf\Internal\Message
+class ExecAccount extends Message
 {
     /**
      * Generated from protobuf field <code>string execer = 1;</code>.
      */
     protected $execer = '';
+
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account account = 2;</code>.
      */
@@ -24,12 +26,11 @@ class ExecAccount extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $execer
-     *     @var \Jason\Chain33\Kernel\Protobuf\Account $account
-     * }
+     * @param  array                               $data  {
+     *                                                    Optional. Data for populating the Message object.
+     * @var string                                 $execer
+     * @var \Jason\Chain33\Kernel\Protobuf\Account $account
+     *                                                    }
      */
     public function __construct($data = null)
     {
@@ -50,7 +51,7 @@ class ExecAccount extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string execer = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setExecer($var)
@@ -71,6 +72,20 @@ class ExecAccount extends \Google\Protobuf\Internal\Message
         return isset($this->account) ? $this->account : null;
     }
 
+    /**
+     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account account = 2;</code>.
+     *
+     * @param  \Jason\Chain33\Kernel\Protobuf\Account  $var
+     * @return $this
+     */
+    public function setAccount($var)
+    {
+        GPBUtil::checkMessage($var, Account::class);
+        $this->account = $var;
+
+        return $this;
+    }
+
     public function hasAccount()
     {
         return isset($this->account);
@@ -79,19 +94,5 @@ class ExecAccount extends \Google\Protobuf\Internal\Message
     public function clearAccount()
     {
         unset($this->account);
-    }
-
-    /**
-     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account account = 2;</code>.
-     *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Account $var
-     * @return $this
-     */
-    public function setAccount($var)
-    {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\Account::class);
-        $this->account = $var;
-
-        return $this;
     }
 }

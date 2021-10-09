@@ -6,30 +6,35 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Statistic;
 
 /**
  *查询symbol代币总额.
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqGetTotalCoins</code>
  */
-class ReqGetTotalCoins extends \Google\Protobuf\Internal\Message
+class ReqGetTotalCoins extends Message
 {
     /**
      * Generated from protobuf field <code>string symbol = 1;</code>.
      */
     protected $symbol = '';
+
     /**
      * Generated from protobuf field <code>bytes stateHash = 2;</code>.
      */
     protected $stateHash = '';
+
     /**
      * Generated from protobuf field <code>bytes startKey = 3;</code>.
      */
     protected $startKey = '';
+
     /**
      * Generated from protobuf field <code>int64 count = 4;</code>.
      */
     protected $count = 0;
+
     /**
      * Generated from protobuf field <code>string execer = 5;</code>.
      */
@@ -38,19 +43,18 @@ class ReqGetTotalCoins extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $symbol
-     *     @var string $stateHash
-     *     @var string $startKey
-     *     @var int|string $count
-     *     @var string $execer
-     * }
+     * @param  array   $data  {
+     *                        Optional. Data for populating the Message object.
+     * @var string     $symbol
+     * @var string     $stateHash
+     * @var string     $startKey
+     * @var int|string $count
+     * @var string     $execer
+     *                        }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Statistic::initOnce();
+        Statistic::initOnce();
         parent::__construct($data);
     }
 
@@ -67,7 +71,7 @@ class ReqGetTotalCoins extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string symbol = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setSymbol($var)
@@ -91,7 +95,7 @@ class ReqGetTotalCoins extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes stateHash = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setStateHash($var)
@@ -115,7 +119,7 @@ class ReqGetTotalCoins extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes startKey = 3;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setStartKey($var)
@@ -139,7 +143,7 @@ class ReqGetTotalCoins extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 count = 4;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setCount($var)
@@ -163,7 +167,7 @@ class ReqGetTotalCoins extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string execer = 5;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setExecer($var)

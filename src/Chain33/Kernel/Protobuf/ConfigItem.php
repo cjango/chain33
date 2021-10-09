@@ -6,43 +6,47 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Executor;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ConfigItem</code>.
  */
-class ConfigItem extends \Google\Protobuf\Internal\Message
+class ConfigItem extends Message
 {
     /**
      * Generated from protobuf field <code>string key = 1;</code>.
      */
     protected $key = '';
+
     /**
      * Generated from protobuf field <code>string addr = 2;</code>.
      */
     protected $addr = '';
+
     /**
      * Generated from protobuf field <code>int32 Ty = 11;</code>.
      */
     protected $Ty = 0;
+
     protected $value;
 
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $key
-     *     @var string $addr
-     *     @var \Jason\Chain33\Kernel\Protobuf\ArrayConfig $arr
-     *     @var \Jason\Chain33\Kernel\Protobuf\StringConfig $str
-     *     @var \Jason\Chain33\Kernel\Protobuf\Int32Config $int
-     *     @var int $Ty
-     * }
+     * @param  array                                    $data  {
+     *                                                         Optional. Data for populating the Message object.
+     * @var string                                      $key
+     * @var string                                      $addr
+     * @var \Jason\Chain33\Kernel\Protobuf\ArrayConfig  $arr
+     * @var \Jason\Chain33\Kernel\Protobuf\StringConfig $str
+     * @var \Jason\Chain33\Kernel\Protobuf\Int32Config  $int
+     * @var int                                         $Ty
+     *                                                         }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Executor::initOnce();
+        Executor::initOnce();
         parent::__construct($data);
     }
 
@@ -59,7 +63,7 @@ class ConfigItem extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string key = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setKey($var)
@@ -83,7 +87,7 @@ class ConfigItem extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string addr = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setAddr($var)
@@ -112,12 +116,12 @@ class ConfigItem extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ArrayConfig arr = 3;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ArrayConfig $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\ArrayConfig  $var
      * @return $this
      */
     public function setArr($var)
     {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\ArrayConfig::class);
+        GPBUtil::checkMessage($var, ArrayConfig::class);
         $this->writeOneof(3, $var);
 
         return $this;
@@ -141,12 +145,12 @@ class ConfigItem extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.StringConfig str = 4;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\StringConfig $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\StringConfig  $var
      * @return $this
      */
     public function setStr($var)
     {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\StringConfig::class);
+        GPBUtil::checkMessage($var, StringConfig::class);
         $this->writeOneof(4, $var);
 
         return $this;
@@ -170,12 +174,12 @@ class ConfigItem extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Int32Config int = 5;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Int32Config $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\Int32Config  $var
      * @return $this
      */
     public function setInt($var)
     {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\Int32Config::class);
+        GPBUtil::checkMessage($var, Int32Config::class);
         $this->writeOneof(5, $var);
 
         return $this;
@@ -194,7 +198,7 @@ class ConfigItem extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 Ty = 11;</code>.
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setTy($var)

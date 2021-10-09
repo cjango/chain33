@@ -6,20 +6,24 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Wallet;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReportErrEvent</code>.
  */
-class ReportErrEvent extends \Google\Protobuf\Internal\Message
+class ReportErrEvent extends Message
 {
     /**
      * Generated from protobuf field <code>string frommodule = 1;</code>.
      */
     protected $frommodule = '';
+
     /**
      * Generated from protobuf field <code>string tomodule = 2;</code>.
      */
     protected $tomodule = '';
+
     /**
      * Generated from protobuf field <code>string error = 3;</code>.
      */
@@ -28,17 +32,16 @@ class ReportErrEvent extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $frommodule
-     *     @var string $tomodule
-     *     @var string $error
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var string    $frommodule
+     * @var string    $tomodule
+     * @var string    $error
+     *                       }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Wallet::initOnce();
+        Wallet::initOnce();
         parent::__construct($data);
     }
 
@@ -55,7 +58,7 @@ class ReportErrEvent extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string frommodule = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setFrommodule($var)
@@ -79,7 +82,7 @@ class ReportErrEvent extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string tomodule = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setTomodule($var)
@@ -103,7 +106,7 @@ class ReportErrEvent extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string error = 3;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setError($var)

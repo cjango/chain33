@@ -6,20 +6,24 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Common;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.TimeStatus</code>.
  */
-class TimeStatus extends \Google\Protobuf\Internal\Message
+class TimeStatus extends Message
 {
     /**
      * Generated from protobuf field <code>string ntpTime = 1;</code>.
      */
     protected $ntpTime = '';
+
     /**
      * Generated from protobuf field <code>string localTime = 2;</code>.
      */
     protected $localTime = '';
+
     /**
      * Generated from protobuf field <code>int64 diff = 3;</code>.
      */
@@ -28,17 +32,16 @@ class TimeStatus extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $ntpTime
-     *     @var string $localTime
-     *     @var int|string $diff
-     * }
+     * @param  array   $data  {
+     *                        Optional. Data for populating the Message object.
+     * @var string     $ntpTime
+     * @var string     $localTime
+     * @var int|string $diff
+     *                        }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Common::initOnce();
+        Common::initOnce();
         parent::__construct($data);
     }
 
@@ -55,7 +58,7 @@ class TimeStatus extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string ntpTime = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setNtpTime($var)
@@ -79,7 +82,7 @@ class TimeStatus extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string localTime = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setLocalTime($var)
@@ -103,7 +106,7 @@ class TimeStatus extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 diff = 3;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setDiff($var)

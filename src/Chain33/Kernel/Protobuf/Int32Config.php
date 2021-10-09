@@ -6,11 +6,13 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Executor;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.Int32Config</code>.
  */
-class Int32Config extends \Google\Protobuf\Internal\Message
+class Int32Config extends Message
 {
     /**
      * Generated from protobuf field <code>int32 value = 3;</code>.
@@ -20,15 +22,14 @@ class Int32Config extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var int $value
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var int       $value
+     *                       }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Executor::initOnce();
+        Executor::initOnce();
         parent::__construct($data);
     }
 
@@ -45,7 +46,7 @@ class Int32Config extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 value = 3;</code>.
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setValue($var)

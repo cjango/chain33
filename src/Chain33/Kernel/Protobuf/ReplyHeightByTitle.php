@@ -5,17 +5,21 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Blockchain;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReplyHeightByTitle</code>.
  */
-class ReplyHeightByTitle extends \Google\Protobuf\Internal\Message
+class ReplyHeightByTitle extends Message
 {
     /**
      * Generated from protobuf field <code>string title = 1;</code>.
      */
     protected $title = '';
+
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.BlockInfo items = 2;</code>.
      */
@@ -24,16 +28,15 @@ class ReplyHeightByTitle extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $title
-     *     @var \Jason\Chain33\Kernel\Protobuf\BlockInfo[]|\Google\Protobuf\Internal\RepeatedField $items
-     * }
+     * @param  array                                                                           $data  {
+     *                                                                                                Optional. Data for populating the Message object.
+     * @var string                                                                             $title
+     * @var \Jason\Chain33\Kernel\Protobuf\BlockInfo[]|\Google\Protobuf\Internal\RepeatedField $items
+     *                                                                                                }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Blockchain::initOnce();
+        Blockchain::initOnce();
         parent::__construct($data);
     }
 
@@ -50,7 +53,7 @@ class ReplyHeightByTitle extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string title = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setTitle($var)
@@ -74,12 +77,13 @@ class ReplyHeightByTitle extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.BlockInfo items = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\BlockInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\BlockInfo[]|\Google\Protobuf\Internal\RepeatedField  $var
      * @return $this
      */
     public function setItems($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Jason\Chain33\Kernel\Protobuf\BlockInfo::class);
+        $arr         = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+            BlockInfo::class);
         $this->items = $arr;
 
         return $this;

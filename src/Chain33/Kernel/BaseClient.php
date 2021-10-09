@@ -16,7 +16,7 @@ class BaseClient
 
     public function __construct($app)
     {
-        $this->app = $app;
+        $this->app    = $app;
         $this->config = $app->config;
         $this->client = $app->client;
     }
@@ -26,14 +26,12 @@ class BaseClient
      *
      * @Date   : 2021/3/24 9:28 上午
      * @Author : < Jason.C >
-     *
      * @return void
-     *
      * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     protected function walletUnlock(): void
     {
-        if (! $this->config['password']) {
+        if (!$this->config['password']) {
             throw new ConfigException('need wallet passwod');
         }
 
@@ -49,12 +47,11 @@ class BaseClient
      *
      * @Date   : 2021/3/24 9:30 上午
      * @Author : < Jason.C > 只解锁买票功能
-     *
      * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     protected function ticketUnlock(): void
     {
-        if (! $this->config['password']) {
+        if (!$this->config['password']) {
             throw new ConfigException('need wallet passwod');
         }
 
@@ -81,16 +78,14 @@ class BaseClient
      *
      * @Date   : 2021/3/22 2:48 下午
      * @Author : < Jason.C >
-     *
      * @param $execer
      * @return string
-     *
      * @throws \Jason\Chain33\Exceptions\ChainException
      */
     protected function parseExecer($execer): string
     {
         if ($this->config['para_name']) {
-            if (! preg_match('/user\.p\.[a-zA-Z0-9]*\./', $this->config['para_name'])) {
+            if (!preg_match('/user\.p\.[a-zA-Z0-9]*\./', $this->config['para_name'])) {
                 throw new ChainException('平行链名称配置不正确');
             }
 
@@ -105,7 +100,6 @@ class BaseClient
      *
      * @Date   : 2021/3/26 11:05 上午
      * @Author : < Jason.C >
-     *
      * @param $hex
      * @return string
      */

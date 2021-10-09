@@ -20,13 +20,11 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/5/19 3:43 下午
-     *
-     * @param  string $content
-     * @param  string $privateKey
-     * @param  string $key        修改原有的明文存在的时候  要设置这个值
-     * @param  int    $op
+     * @param  string  $content
+     * @param  string  $privateKey
+     * @param  string  $key  修改原有的明文存在的时候  要设置这个值
+     * @param  int     $op
      * @return mixed
-     *
      * @throws \Jason\Chain33\Exceptions\ChainException
      * @throws \Jason\Chain33\Exceptions\ConfigException
      */
@@ -45,73 +43,13 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes: Hash存证
-     *
-     * @Author: <C.Jason>
-     * @Date  : 2020/5/19 3:43 下午
-     *
-     * @param  string $hash
-     * @param  string $privateKey
-     * @return mixed
-     *
-     * @throws \Jason\Chain33\Exceptions\ChainException
-     * @throws \Jason\Chain33\Exceptions\ConfigException
-     */
-    public function hash(string $hash, string $privateKey)
-    {
-        $con = new HashOnlyNotaryStorage();
-        $con->setHash(hash('sha256', $hash));
-        $con->setValue($hash);
-
-        $storage = new StorageAction();
-        $storage->setHashStorage($con);
-        $storage->setTy(2);
-
-        return $this->sendTransaction($storage, $privateKey);
-    }
-
-    /**
-     * Notes: 链接存证
-     *
-     * @Author: <C.Jason>
-     * @Date  : 2020/5/19 3:43 下午
-     *
-     * @param  string $link
-     * @param  string $content
-     * @param  string $privateKey
-     * @return mixed
-     *
-     * @throws \Jason\Chain33\Exceptions\ChainException
-     * @throws \Jason\Chain33\Exceptions\ConfigException
-     */
-    public function link(string $link, string $content, string $privateKey)
-    {
-        $con = new LinkNotaryStorage();
-        $con->setLink($link);
-        $con->setHash(hash('sha256', $content));
-        $con->setValue($content);
-
-        $storage = new StorageAction();
-        $storage->setLinkStorage($con);
-        $storage->setTy(3);
-
-        return $this->sendTransaction($storage, $privateKey);
-    }
-
-    //EncryptNotaryStorage(4),
-    //EncryptShareNotaryStorage (5),
-    //EncryptNotaryAdd(6);
-
-    /**
      * Notes: 发送存证数据，如果是平行链，返回的交易hash是代扣交易的hash，需要调用结果tx的next来查询.
      *
      * @Author: <C.Jason>
      * @Date  : 2020/5/19 3:44 下午
-     *
-     * @param  \Jason\Chain33\Kernel\Protobuf\StorageAction $storage
-     * @param  string                                       $privateKey
+     * @param  \Jason\Chain33\Kernel\Protobuf\StorageAction  $storage
+     * @param  string                                        $privateKey
      * @return mixed
-     *
      * @throws \Jason\Chain33\Exceptions\ChainException
      * @throws \Jason\Chain33\Exceptions\ConfigException
      */
@@ -132,12 +70,65 @@ class Client extends BaseClient
     }
 
     /**
+     * Notes: Hash存证
+     *
+     * @Author: <C.Jason>
+     * @Date  : 2020/5/19 3:43 下午
+     * @param  string  $hash
+     * @param  string  $privateKey
+     * @return mixed
+     * @throws \Jason\Chain33\Exceptions\ChainException
+     * @throws \Jason\Chain33\Exceptions\ConfigException
+     */
+    public function hash(string $hash, string $privateKey)
+    {
+        $con = new HashOnlyNotaryStorage();
+        $con->setHash(hash('sha256', $hash));
+        $con->setValue($hash);
+
+        $storage = new StorageAction();
+        $storage->setHashStorage($con);
+        $storage->setTy(2);
+
+        return $this->sendTransaction($storage, $privateKey);
+    }
+
+    //EncryptNotaryStorage(4),
+    //EncryptShareNotaryStorage (5),
+    //EncryptNotaryAdd(6);
+
+    /**
+     * Notes: 链接存证
+     *
+     * @Author: <C.Jason>
+     * @Date  : 2020/5/19 3:43 下午
+     * @param  string  $link
+     * @param  string  $content
+     * @param  string  $privateKey
+     * @return mixed
+     * @throws \Jason\Chain33\Exceptions\ChainException
+     * @throws \Jason\Chain33\Exceptions\ConfigException
+     */
+    public function link(string $link, string $content, string $privateKey)
+    {
+        $con = new LinkNotaryStorage();
+        $con->setLink($link);
+        $con->setHash(hash('sha256', $content));
+        $con->setValue($content);
+
+        $storage = new StorageAction();
+        $storage->setLinkStorage($con);
+        $storage->setTy(3);
+
+        return $this->sendTransaction($storage, $privateKey);
+    }
+
+    /**
      * Notes: 存证结果查询.
      *
      * @Author: <C.Jason>
      * @Date  : 2020/5/19 3:46 下午
-     *
-     * @param  string                        $hash
+     * @param  string  $hash
      * @return false|false[]|string|string[]
      */
     public function query(string $hash)
@@ -185,7 +176,6 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/5/19 3:45 下午
-     *
      * @param $hex
      * @return false|string
      */

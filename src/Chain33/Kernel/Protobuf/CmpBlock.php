@@ -6,18 +6,20 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Blockchain;
 
 /**
  *用于比较最优区块的消息结构.
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.CmpBlock</code>
  */
-class CmpBlock extends \Google\Protobuf\Internal\Message
+class CmpBlock extends Message
 {
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Block block = 1;</code>.
      */
     protected $block = null;
+
     /**
      * Generated from protobuf field <code>bytes cmpHash = 2;</code>.
      */
@@ -26,16 +28,15 @@ class CmpBlock extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var \Jason\Chain33\Kernel\Protobuf\Block $block
-     *     @var string $cmpHash
-     * }
+     * @param  array                             $data  {
+     *                                                  Optional. Data for populating the Message object.
+     * @var \Jason\Chain33\Kernel\Protobuf\Block $block
+     * @var string                               $cmpHash
+     *                                                  }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Blockchain::initOnce();
+        Blockchain::initOnce();
         parent::__construct($data);
     }
 
@@ -49,6 +50,20 @@ class CmpBlock extends \Google\Protobuf\Internal\Message
         return isset($this->block) ? $this->block : null;
     }
 
+    /**
+     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Block block = 1;</code>.
+     *
+     * @param  \Jason\Chain33\Kernel\Protobuf\Block  $var
+     * @return $this
+     */
+    public function setBlock($var)
+    {
+        GPBUtil::checkMessage($var, Block::class);
+        $this->block = $var;
+
+        return $this;
+    }
+
     public function hasBlock()
     {
         return isset($this->block);
@@ -57,20 +72,6 @@ class CmpBlock extends \Google\Protobuf\Internal\Message
     public function clearBlock()
     {
         unset($this->block);
-    }
-
-    /**
-     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Block block = 1;</code>.
-     *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Block $var
-     * @return $this
-     */
-    public function setBlock($var)
-    {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\Block::class);
-        $this->block = $var;
-
-        return $this;
     }
 
     /**
@@ -86,7 +87,7 @@ class CmpBlock extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes cmpHash = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setCmpHash($var)

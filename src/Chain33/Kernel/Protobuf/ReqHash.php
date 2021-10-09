@@ -6,16 +6,19 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Common;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqHash</code>.
  */
-class ReqHash extends \Google\Protobuf\Internal\Message
+class ReqHash extends Message
 {
     /**
      * Generated from protobuf field <code>bytes hash = 1;</code>.
      */
     protected $hash = '';
+
     /**
      * Generated from protobuf field <code>bool upgrade = 2;</code>.
      */
@@ -24,16 +27,15 @@ class ReqHash extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $hash
-     *     @var bool $upgrade
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var string    $hash
+     * @var bool      $upgrade
+     *                       }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Common::initOnce();
+        Common::initOnce();
         parent::__construct($data);
     }
 
@@ -50,7 +52,7 @@ class ReqHash extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes hash = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setHash($var)

@@ -6,13 +6,14 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Wallet;
 
 /**
  *根据label获取账户地址
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqGetAccount</code>
  */
-class ReqGetAccount extends \Google\Protobuf\Internal\Message
+class ReqGetAccount extends Message
 {
     /**
      * Generated from protobuf field <code>string label = 1;</code>.
@@ -22,15 +23,14 @@ class ReqGetAccount extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $label
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var string    $label
+     *                       }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Wallet::initOnce();
+        Wallet::initOnce();
         parent::__construct($data);
     }
 
@@ -47,7 +47,7 @@ class ReqGetAccount extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string label = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setLabel($var)

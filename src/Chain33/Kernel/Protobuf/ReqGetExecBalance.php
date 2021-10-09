@@ -6,38 +6,45 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Statistic;
 
 /**
  *查询symbol在合约中的代币总额，如果execAddr为空，则为查询symbol在所有合约中的代币总额.
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqGetExecBalance</code>
  */
-class ReqGetExecBalance extends \Google\Protobuf\Internal\Message
+class ReqGetExecBalance extends Message
 {
     /**
      * Generated from protobuf field <code>string symbol = 1;</code>.
      */
     protected $symbol = '';
+
     /**
      * Generated from protobuf field <code>bytes stateHash = 2;</code>.
      */
     protected $stateHash = '';
+
     /**
      * Generated from protobuf field <code>bytes addr = 3;</code>.
      */
     protected $addr = '';
+
     /**
      * Generated from protobuf field <code>bytes execAddr = 4;</code>.
      */
     protected $execAddr = '';
+
     /**
      * Generated from protobuf field <code>string execer = 5;</code>.
      */
     protected $execer = '';
+
     /**
      * Generated from protobuf field <code>int64 count = 6;</code>.
      */
     protected $count = 0;
+
     /**
      * Generated from protobuf field <code>bytes nextKey = 7;</code>.
      */
@@ -46,21 +53,20 @@ class ReqGetExecBalance extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $symbol
-     *     @var string $stateHash
-     *     @var string $addr
-     *     @var string $execAddr
-     *     @var string $execer
-     *     @var int|string $count
-     *     @var string $nextKey
-     * }
+     * @param  array   $data  {
+     *                        Optional. Data for populating the Message object.
+     * @var string     $symbol
+     * @var string     $stateHash
+     * @var string     $addr
+     * @var string     $execAddr
+     * @var string     $execer
+     * @var int|string $count
+     * @var string     $nextKey
+     *                        }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Statistic::initOnce();
+        Statistic::initOnce();
         parent::__construct($data);
     }
 
@@ -77,7 +83,7 @@ class ReqGetExecBalance extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string symbol = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setSymbol($var)
@@ -101,7 +107,7 @@ class ReqGetExecBalance extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes stateHash = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setStateHash($var)
@@ -125,7 +131,7 @@ class ReqGetExecBalance extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes addr = 3;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setAddr($var)
@@ -149,7 +155,7 @@ class ReqGetExecBalance extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes execAddr = 4;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setExecAddr($var)
@@ -173,7 +179,7 @@ class ReqGetExecBalance extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string execer = 5;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setExecer($var)
@@ -197,7 +203,7 @@ class ReqGetExecBalance extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 count = 6;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setCount($var)
@@ -221,7 +227,7 @@ class ReqGetExecBalance extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes nextKey = 7;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setNextKey($var)

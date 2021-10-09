@@ -5,14 +5,16 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Blockchain;
 
 /**
  * 定义para交易结构.
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ParaTxDetails</code>
  */
-class ParaTxDetails extends \Google\Protobuf\Internal\Message
+class ParaTxDetails extends Message
 {
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ParaTxDetail items = 1;</code>.
@@ -22,15 +24,14 @@ class ParaTxDetails extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var \Jason\Chain33\Kernel\Protobuf\ParaTxDetail[]|\Google\Protobuf\Internal\RepeatedField $items
-     * }
+     * @param  array                                                                              $data  {
+     *                                                                                                   Optional. Data for populating the Message object.
+     * @var \Jason\Chain33\Kernel\Protobuf\ParaTxDetail[]|\Google\Protobuf\Internal\RepeatedField $items
+     *                                                                                                   }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Blockchain::initOnce();
+        Blockchain::initOnce();
         parent::__construct($data);
     }
 
@@ -47,12 +48,13 @@ class ParaTxDetails extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ParaTxDetail items = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ParaTxDetail[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\ParaTxDetail[]|\Google\Protobuf\Internal\RepeatedField  $var
      * @return $this
      */
     public function setItems($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Jason\Chain33\Kernel\Protobuf\ParaTxDetail::class);
+        $arr         = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+            ParaTxDetail::class);
         $this->items = $arr;
 
         return $this;

@@ -6,20 +6,24 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Executor;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.CreateTxIn</code>.
  */
-class CreateTxIn extends \Google\Protobuf\Internal\Message
+class CreateTxIn extends Message
 {
     /**
      * Generated from protobuf field <code>bytes execer = 1;</code>.
      */
     protected $execer = '';
+
     /**
      * Generated from protobuf field <code>string actionName = 2;</code>.
      */
     protected $actionName = '';
+
     /**
      * Generated from protobuf field <code>bytes payload = 3;</code>.
      */
@@ -28,17 +32,16 @@ class CreateTxIn extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $execer
-     *     @var string $actionName
-     *     @var string $payload
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var string    $execer
+     * @var string    $actionName
+     * @var string    $payload
+     *                       }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Executor::initOnce();
+        Executor::initOnce();
         parent::__construct($data);
     }
 
@@ -55,7 +58,7 @@ class CreateTxIn extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes execer = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setExecer($var)
@@ -79,7 +82,7 @@ class CreateTxIn extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string actionName = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setActionName($var)
@@ -103,7 +106,7 @@ class CreateTxIn extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes payload = 3;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setPayload($var)

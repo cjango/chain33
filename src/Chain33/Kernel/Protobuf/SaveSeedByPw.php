@@ -6,20 +6,22 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Wallet;
 
 /**
  *存储钱包的种子
  *   seed : 钱包种子
  *   passwd :钱包密码
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.SaveSeedByPw</code>
  */
-class SaveSeedByPw extends \Google\Protobuf\Internal\Message
+class SaveSeedByPw extends Message
 {
     /**
      * Generated from protobuf field <code>string seed = 1;</code>.
      */
     protected $seed = '';
+
     /**
      * Generated from protobuf field <code>string passwd = 2;</code>.
      */
@@ -28,16 +30,15 @@ class SaveSeedByPw extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $seed
-     *     @var string $passwd
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var string    $seed
+     * @var string    $passwd
+     *                       }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Wallet::initOnce();
+        Wallet::initOnce();
         parent::__construct($data);
     }
 
@@ -54,7 +55,7 @@ class SaveSeedByPw extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string seed = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setSeed($var)
@@ -78,7 +79,7 @@ class SaveSeedByPw extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string passwd = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setPasswd($var)

@@ -5,45 +5,56 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Executor;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ExecTxList</code>.
  */
-class ExecTxList extends \Google\Protobuf\Internal\Message
+class ExecTxList extends Message
 {
     /**
      * Generated from protobuf field <code>bytes stateHash = 1;</code>.
      */
     protected $stateHash = '';
+
     /**
      * Generated from protobuf field <code>bytes parentHash = 7;</code>.
      */
     protected $parentHash = '';
+
     /**
      * Generated from protobuf field <code>bytes mainHash = 8;</code>.
      */
     protected $mainHash = '';
+
     /**
      * Generated from protobuf field <code>int64 mainHeight = 9;</code>.
      */
     protected $mainHeight = 0;
+
     /**
      * Generated from protobuf field <code>int64 blockTime = 3;</code>.
      */
     protected $blockTime = 0;
+
     /**
      * Generated from protobuf field <code>int64 height = 4;</code>.
      */
     protected $height = 0;
+
     /**
      * Generated from protobuf field <code>uint64 difficulty = 5;</code>.
      */
     protected $difficulty = 0;
+
     /**
      * Generated from protobuf field <code>bool isMempool = 6;</code>.
      */
     protected $isMempool = false;
+
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Transaction txs = 2;</code>.
      */
@@ -52,23 +63,22 @@ class ExecTxList extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $stateHash
-     *     @var string $parentHash
-     *     @var string $mainHash
-     *     @var int|string $mainHeight
-     *     @var int|string $blockTime
-     *     @var int|string $height
-     *     @var int|string $difficulty
-     *     @var bool $isMempool
-     *     @var \Jason\Chain33\Kernel\Protobuf\Transaction[]|\Google\Protobuf\Internal\RepeatedField $txs
-     * }
+     * @param  array                                                                             $data  {
+     *                                                                                                  Optional. Data for populating the Message object.
+     * @var string                                                                               $stateHash
+     * @var string                                                                               $parentHash
+     * @var string                                                                               $mainHash
+     * @var int|string                                                                           $mainHeight
+     * @var int|string                                                                           $blockTime
+     * @var int|string                                                                           $height
+     * @var int|string                                                                           $difficulty
+     * @var bool                                                                                 $isMempool
+     * @var \Jason\Chain33\Kernel\Protobuf\Transaction[]|\Google\Protobuf\Internal\RepeatedField $txs
+     *                                                                                                  }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Executor::initOnce();
+        Executor::initOnce();
         parent::__construct($data);
     }
 
@@ -85,7 +95,7 @@ class ExecTxList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes stateHash = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setStateHash($var)
@@ -109,7 +119,7 @@ class ExecTxList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes parentHash = 7;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setParentHash($var)
@@ -133,7 +143,7 @@ class ExecTxList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes mainHash = 8;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setMainHash($var)
@@ -157,7 +167,7 @@ class ExecTxList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 mainHeight = 9;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setMainHeight($var)
@@ -181,7 +191,7 @@ class ExecTxList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 blockTime = 3;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setBlockTime($var)
@@ -205,7 +215,7 @@ class ExecTxList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 height = 4;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setHeight($var)
@@ -229,7 +239,7 @@ class ExecTxList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>uint64 difficulty = 5;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setDifficulty($var)
@@ -277,12 +287,13 @@ class ExecTxList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Transaction txs = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Transaction[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\Transaction[]|\Google\Protobuf\Internal\RepeatedField  $var
      * @return $this
      */
     public function setTxs($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Jason\Chain33\Kernel\Protobuf\Transaction::class);
+        $arr       = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+            Transaction::class);
         $this->txs = $arr;
 
         return $this;

@@ -6,11 +6,13 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Common;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqKey</code>.
  */
-class ReqKey extends \Google\Protobuf\Internal\Message
+class ReqKey extends Message
 {
     /**
      * Generated from protobuf field <code>bytes key = 1;</code>.
@@ -20,15 +22,14 @@ class ReqKey extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $key
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var string    $key
+     *                       }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Common::initOnce();
+        Common::initOnce();
         parent::__construct($data);
     }
 
@@ -45,7 +46,7 @@ class ReqKey extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes key = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setKey($var)

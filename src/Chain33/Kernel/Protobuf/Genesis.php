@@ -6,11 +6,13 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Executor;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.Genesis</code>.
  */
-class Genesis extends \Google\Protobuf\Internal\Message
+class Genesis extends Message
 {
     /**
      * Generated from protobuf field <code>bool isrun = 1;</code>.
@@ -20,15 +22,14 @@ class Genesis extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var bool $isrun
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var bool      $isrun
+     *                       }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Executor::initOnce();
+        Executor::initOnce();
         parent::__construct($data);
     }
 

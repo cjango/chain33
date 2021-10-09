@@ -6,11 +6,13 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Wallet;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReplySeed</code>.
  */
-class ReplySeed extends \Google\Protobuf\Internal\Message
+class ReplySeed extends Message
 {
     /**
      * Generated from protobuf field <code>string seed = 1;</code>.
@@ -20,15 +22,14 @@ class ReplySeed extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $seed
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var string    $seed
+     *                       }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Wallet::initOnce();
+        Wallet::initOnce();
         parent::__construct($data);
     }
 
@@ -45,7 +46,7 @@ class ReplySeed extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string seed = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setSeed($var)

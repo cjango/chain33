@@ -6,16 +6,19 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Blockchain;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.HeadersPid</code>.
  */
-class HeadersPid extends \Google\Protobuf\Internal\Message
+class HeadersPid extends Message
 {
     /**
      * Generated from protobuf field <code>string pid = 1;</code>.
      */
     protected $pid = '';
+
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Headers headers = 2;</code>.
      */
@@ -24,16 +27,15 @@ class HeadersPid extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $pid
-     *     @var \Jason\Chain33\Kernel\Protobuf\Headers $headers
-     * }
+     * @param  array                               $data  {
+     *                                                    Optional. Data for populating the Message object.
+     * @var string                                 $pid
+     * @var \Jason\Chain33\Kernel\Protobuf\Headers $headers
+     *                                                    }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Blockchain::initOnce();
+        Blockchain::initOnce();
         parent::__construct($data);
     }
 
@@ -50,7 +52,7 @@ class HeadersPid extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string pid = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setPid($var)
@@ -71,6 +73,20 @@ class HeadersPid extends \Google\Protobuf\Internal\Message
         return isset($this->headers) ? $this->headers : null;
     }
 
+    /**
+     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Headers headers = 2;</code>.
+     *
+     * @param  \Jason\Chain33\Kernel\Protobuf\Headers  $var
+     * @return $this
+     */
+    public function setHeaders($var)
+    {
+        GPBUtil::checkMessage($var, Headers::class);
+        $this->headers = $var;
+
+        return $this;
+    }
+
     public function hasHeaders()
     {
         return isset($this->headers);
@@ -79,19 +95,5 @@ class HeadersPid extends \Google\Protobuf\Internal\Message
     public function clearHeaders()
     {
         unset($this->headers);
-    }
-
-    /**
-     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Headers headers = 2;</code>.
-     *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Headers $var
-     * @return $this
-     */
-    public function setHeaders($var)
-    {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\Headers::class);
-        $this->headers = $var;
-
-        return $this;
     }
 }

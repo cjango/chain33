@@ -6,24 +6,29 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Executor;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ModifyConfig</code>.
  */
-class ModifyConfig extends \Google\Protobuf\Internal\Message
+class ModifyConfig extends Message
 {
     /**
      * Generated from protobuf field <code>string key = 1;</code>.
      */
     protected $key = '';
+
     /**
      * Generated from protobuf field <code>string value = 2;</code>.
      */
     protected $value = '';
+
     /**
      * Generated from protobuf field <code>string op = 3;</code>.
      */
     protected $op = '';
+
     /**
      * Generated from protobuf field <code>string addr = 4;</code>.
      */
@@ -32,18 +37,17 @@ class ModifyConfig extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string $key
-     *     @var string $value
-     *     @var string $op
-     *     @var string $addr
-     * }
+     * @param  array  $data  {
+     *                       Optional. Data for populating the Message object.
+     * @var string    $key
+     * @var string    $value
+     * @var string    $op
+     * @var string    $addr
+     *                       }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Executor::initOnce();
+        Executor::initOnce();
         parent::__construct($data);
     }
 
@@ -60,7 +64,7 @@ class ModifyConfig extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string key = 1;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setKey($var)
@@ -84,7 +88,7 @@ class ModifyConfig extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string value = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setValue($var)
@@ -108,7 +112,7 @@ class ModifyConfig extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string op = 3;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setOp($var)
@@ -132,7 +136,7 @@ class ModifyConfig extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string addr = 4;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setAddr($var)

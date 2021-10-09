@@ -6,22 +6,25 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
+use GPBMetadata\Blockchain;
 
 /**
  *通过seq获取区块的header信息.
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.HeaderSeq</code>
  */
-class HeaderSeq extends \Google\Protobuf\Internal\Message
+class HeaderSeq extends Message
 {
     /**
      * Generated from protobuf field <code>int64 num = 1;</code>.
      */
     protected $num = 0;
+
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.BlockSequence seq = 2;</code>.
      */
     protected $seq = null;
+
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Header header = 3;</code>.
      */
@@ -30,17 +33,16 @@ class HeaderSeq extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var int|string $num
-     *     @var \Jason\Chain33\Kernel\Protobuf\BlockSequence $seq
-     *     @var \Jason\Chain33\Kernel\Protobuf\Header $header
-     * }
+     * @param  array                                     $data  {
+     *                                                          Optional. Data for populating the Message object.
+     * @var int|string                                   $num
+     * @var \Jason\Chain33\Kernel\Protobuf\BlockSequence $seq
+     * @var \Jason\Chain33\Kernel\Protobuf\Header        $header
+     *                                                          }
      */
     public function __construct($data = null)
     {
-        \GPBMetadata\Blockchain::initOnce();
+        Blockchain::initOnce();
         parent::__construct($data);
     }
 
@@ -57,7 +59,7 @@ class HeaderSeq extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 num = 1;</code>.
      *
-     * @param  int|string $var
+     * @param  int|string  $var
      * @return $this
      */
     public function setNum($var)
@@ -78,6 +80,20 @@ class HeaderSeq extends \Google\Protobuf\Internal\Message
         return isset($this->seq) ? $this->seq : null;
     }
 
+    /**
+     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.BlockSequence seq = 2;</code>.
+     *
+     * @param  \Jason\Chain33\Kernel\Protobuf\BlockSequence  $var
+     * @return $this
+     */
+    public function setSeq($var)
+    {
+        GPBUtil::checkMessage($var, BlockSequence::class);
+        $this->seq = $var;
+
+        return $this;
+    }
+
     public function hasSeq()
     {
         return isset($this->seq);
@@ -86,20 +102,6 @@ class HeaderSeq extends \Google\Protobuf\Internal\Message
     public function clearSeq()
     {
         unset($this->seq);
-    }
-
-    /**
-     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.BlockSequence seq = 2;</code>.
-     *
-     * @param  \Jason\Chain33\Kernel\Protobuf\BlockSequence $var
-     * @return $this
-     */
-    public function setSeq($var)
-    {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\BlockSequence::class);
-        $this->seq = $var;
-
-        return $this;
     }
 
     /**
@@ -112,6 +114,20 @@ class HeaderSeq extends \Google\Protobuf\Internal\Message
         return isset($this->header) ? $this->header : null;
     }
 
+    /**
+     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Header header = 3;</code>.
+     *
+     * @param  \Jason\Chain33\Kernel\Protobuf\Header  $var
+     * @return $this
+     */
+    public function setHeader($var)
+    {
+        GPBUtil::checkMessage($var, Header::class);
+        $this->header = $var;
+
+        return $this;
+    }
+
     public function hasHeader()
     {
         return isset($this->header);
@@ -120,19 +136,5 @@ class HeaderSeq extends \Google\Protobuf\Internal\Message
     public function clearHeader()
     {
         unset($this->header);
-    }
-
-    /**
-     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Header header = 3;</code>.
-     *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Header $var
-     * @return $this
-     */
-    public function setHeader($var)
-    {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\Header::class);
-        $this->header = $var;
-
-        return $this;
     }
 }

@@ -6,32 +6,33 @@
 namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.StorageAction</code>.
  */
-class StorageAction extends \Google\Protobuf\Internal\Message
+class StorageAction extends Message
 {
     /**
      * Generated from protobuf field <code>int32 ty = 7;</code>.
      */
     protected $ty = 0;
+
     protected $value;
 
     /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var \Jason\Chain33\Kernel\Protobuf\ContentOnlyNotaryStorage $contentStorage
-     *     @var \Jason\Chain33\Kernel\Protobuf\HashOnlyNotaryStorage $hashStorage
-     *     @var \Jason\Chain33\Kernel\Protobuf\LinkNotaryStorage $linkStorage
-     *     @var \Jason\Chain33\Kernel\Protobuf\EncryptNotaryStorage $encryptStorage
-     *     @var \Jason\Chain33\Kernel\Protobuf\EncryptShareNotaryStorage $encryptShareStorage
-     *     @var \Jason\Chain33\Kernel\Protobuf\EncryptNotaryAdd $encryptAdd
-     *     @var int $ty
-     * }
+     * @param  array                                                 $data  {
+     *                                                                      Optional. Data for populating the Message object.
+     * @var \Jason\Chain33\Kernel\Protobuf\ContentOnlyNotaryStorage  $contentStorage
+     * @var \Jason\Chain33\Kernel\Protobuf\HashOnlyNotaryStorage     $hashStorage
+     * @var \Jason\Chain33\Kernel\Protobuf\LinkNotaryStorage         $linkStorage
+     * @var \Jason\Chain33\Kernel\Protobuf\EncryptNotaryStorage      $encryptStorage
+     * @var \Jason\Chain33\Kernel\Protobuf\EncryptShareNotaryStorage $encryptShareStorage
+     * @var \Jason\Chain33\Kernel\Protobuf\EncryptNotaryAdd          $encryptAdd
+     * @var int                                                      $ty
+     *                                                                      }
      */
     public function __construct($data = null)
     {
@@ -57,12 +58,12 @@ class StorageAction extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ContentOnlyNotaryStorage contentStorage = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ContentOnlyNotaryStorage $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\ContentOnlyNotaryStorage  $var
      * @return $this
      */
     public function setContentStorage($var)
     {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\ContentOnlyNotaryStorage::class);
+        GPBUtil::checkMessage($var, ContentOnlyNotaryStorage::class);
         $this->writeOneof(1, $var);
 
         return $this;
@@ -86,12 +87,12 @@ class StorageAction extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.HashOnlyNotaryStorage hashStorage = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\HashOnlyNotaryStorage $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\HashOnlyNotaryStorage  $var
      * @return $this
      */
     public function setHashStorage($var)
     {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\HashOnlyNotaryStorage::class);
+        GPBUtil::checkMessage($var, HashOnlyNotaryStorage::class);
         $this->writeOneof(2, $var);
 
         return $this;
@@ -115,12 +116,12 @@ class StorageAction extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.LinkNotaryStorage linkStorage = 3;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\LinkNotaryStorage $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\LinkNotaryStorage  $var
      * @return $this
      */
     public function setLinkStorage($var)
     {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\LinkNotaryStorage::class);
+        GPBUtil::checkMessage($var, LinkNotaryStorage::class);
         $this->writeOneof(3, $var);
 
         return $this;
@@ -144,12 +145,12 @@ class StorageAction extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.EncryptNotaryStorage encryptStorage = 4;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\EncryptNotaryStorage $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\EncryptNotaryStorage  $var
      * @return $this
      */
     public function setEncryptStorage($var)
     {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\EncryptNotaryStorage::class);
+        GPBUtil::checkMessage($var, EncryptNotaryStorage::class);
         $this->writeOneof(4, $var);
 
         return $this;
@@ -173,12 +174,12 @@ class StorageAction extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.EncryptShareNotaryStorage encryptShareStorage = 5;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\EncryptShareNotaryStorage $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\EncryptShareNotaryStorage  $var
      * @return $this
      */
     public function setEncryptShareStorage($var)
     {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\EncryptShareNotaryStorage::class);
+        GPBUtil::checkMessage($var, EncryptShareNotaryStorage::class);
         $this->writeOneof(5, $var);
 
         return $this;
@@ -202,12 +203,12 @@ class StorageAction extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.EncryptNotaryAdd encryptAdd = 6;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\EncryptNotaryAdd $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\EncryptNotaryAdd  $var
      * @return $this
      */
     public function setEncryptAdd($var)
     {
-        GPBUtil::checkMessage($var, \Jason\Chain33\Kernel\Protobuf\EncryptNotaryAdd::class);
+        GPBUtil::checkMessage($var, EncryptNotaryAdd::class);
         $this->writeOneof(6, $var);
 
         return $this;
@@ -226,7 +227,7 @@ class StorageAction extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 ty = 7;</code>.
      *
-     * @param  int   $var
+     * @param  int  $var
      * @return $this
      */
     public function setTy($var)

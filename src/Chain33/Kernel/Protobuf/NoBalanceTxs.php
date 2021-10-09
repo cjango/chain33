@@ -5,43 +5,46 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\Message;
 
 /**
  * 支持构造多笔nobalance的交易 payAddr 可以支持 1. 地址 2. 私钥.
- *
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.NoBalanceTxs</code>
  */
-class NoBalanceTxs extends \Google\Protobuf\Internal\Message
+class NoBalanceTxs extends Message
 {
-    /**
-     * Generated from protobuf field <code>repeated string txHexs = 1;</code>.
-     */
-    private $txHexs;
     /**
      * Generated from protobuf field <code>string payAddr = 2;</code>.
      */
     protected $payAddr = '';
+
     /**
      * Generated from protobuf field <code>string privkey = 3;</code>.
      */
     protected $privkey = '';
+
     /**
      * Generated from protobuf field <code>string expire = 4;</code>.
      */
     protected $expire = '';
 
     /**
+     * Generated from protobuf field <code>repeated string txHexs = 1;</code>.
+     */
+    private $txHexs;
+
+    /**
      * Constructor.
      *
-     * @param array $data {
-     *                    Optional. Data for populating the Message object.
-     *
-     *     @var string[]|\Google\Protobuf\Internal\RepeatedField $txHexs
-     *     @var string $payAddr
-     *     @var string $privkey
-     *     @var string $expire
-     * }
+     * @param  array                                         $data  {
+     *                                                              Optional. Data for populating the Message object.
+     * @var string[]|\Google\Protobuf\Internal\RepeatedField $txHexs
+     * @var string                                           $payAddr
+     * @var string                                           $privkey
+     * @var string                                           $expire
+     *                                                              }
      */
     public function __construct($data = null)
     {
@@ -62,12 +65,12 @@ class NoBalanceTxs extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated string txHexs = 1;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
      * @return $this
      */
     public function setTxHexs($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $arr          = GPBUtil::checkRepeatedField($var, GPBType::STRING);
         $this->txHexs = $arr;
 
         return $this;
@@ -86,7 +89,7 @@ class NoBalanceTxs extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string payAddr = 2;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setPayAddr($var)
@@ -110,7 +113,7 @@ class NoBalanceTxs extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string privkey = 3;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setPrivkey($var)
@@ -134,7 +137,7 @@ class NoBalanceTxs extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string expire = 4;</code>.
      *
-     * @param  string $var
+     * @param  string  $var
      * @return $this
      */
     public function setExpire($var)
