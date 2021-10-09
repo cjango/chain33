@@ -74,7 +74,7 @@ class Client extends BaseClient
             'private_key_type' => OPENSSL_KEYTYPE_EC,
             'curve_name'       => 'secp256k1',
         ];
-        $pkey = openssl_pkey_new($config);
+        $pkey   = openssl_pkey_new($config);
         $detail = openssl_pkey_get_details($pkey);
 
         return [
@@ -104,10 +104,10 @@ class Client extends BaseClient
             $pubKey = '03'.$x;
         }
 
-        $ripem160 = hash('ripemd160', hex2bin(hash('sha256', hex2bin($pubKey))));
+        $ripem160    = hash('ripemd160', hex2bin(hash('sha256', hex2bin($pubKey))));
         $with_prefix = '00'.$ripem160;
-        $checksum = hash('sha256', hex2bin(hash('sha256', hex2bin($with_prefix))));
-        $address = $with_prefix.substr($checksum, 0, 8);
+        $checksum    = hash('sha256', hex2bin(hash('sha256', hex2bin($with_prefix))));
+        $address     = $with_prefix.substr($checksum, 0, 8);
 
         return Base58::encode($address);
     }
@@ -155,7 +155,7 @@ class Client extends BaseClient
      * @Date  : 2020/3/18 21:35
      *
      * @param  string  $address  要修改的地址
-     * @param  string  $label  新的标签
+     * @param  string  $label    新的标签
      * @return mixed
      */
     public function setLabel(string $address, string $label)
@@ -172,7 +172,7 @@ class Client extends BaseClient
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 17:21
      *
-     * @param  string  $label  账户标签
+     * @param  string  $label       账户标签
      * @param  string  $privateKey  账户私钥
      * @return string
      *
