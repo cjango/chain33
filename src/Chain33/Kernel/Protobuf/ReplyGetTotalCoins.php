@@ -11,7 +11,7 @@ use GPBMetadata\Statistic;
 
 /**
  *查询symbol代币总额应答.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReplyGetTotalCoins</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReplyGetTotalCoins</code>.
  */
 class ReplyGetTotalCoins extends Message
 {
@@ -39,13 +39,13 @@ class ReplyGetTotalCoins extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                        Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var int|string $count
      * @var int|string $num
      * @var int|string $amount
      * @var string $nextKey
-     *                        }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -67,7 +67,6 @@ class ReplyGetTotalCoins extends Message
      * Generated from protobuf field <code>int64 count = 1;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setCount($var)
@@ -92,7 +91,6 @@ class ReplyGetTotalCoins extends Message
      * Generated from protobuf field <code>int64 num = 2;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setNum($var)
@@ -117,7 +115,6 @@ class ReplyGetTotalCoins extends Message
      * Generated from protobuf field <code>int64 amount = 3;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setAmount($var)
@@ -142,7 +139,6 @@ class ReplyGetTotalCoins extends Message
      * Generated from protobuf field <code>bytes nextKey = 4;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setNextKey($var)

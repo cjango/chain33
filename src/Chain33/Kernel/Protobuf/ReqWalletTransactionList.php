@@ -16,7 +16,7 @@ use GPBMetadata\Wallet;
  *              第一次传参为空，获取最新的交易。)
  *   count :获取交易列表的个数。
  *   direction :查找方式；0，上一页；1，下一页。
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqWalletTransactionList</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqWalletTransactionList</code>.
  */
 class ReqWalletTransactionList extends Message
 {
@@ -44,7 +44,7 @@ class ReqWalletTransactionList extends Message
      * @var string $fromTx
      * @var int $count
      * @var int $direction
-     *                       }
+     *          }
      */
     public function __construct($data = null)
     {
@@ -66,7 +66,6 @@ class ReqWalletTransactionList extends Message
      * Generated from protobuf field <code>bytes fromTx = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setFromTx($var)
@@ -91,7 +90,6 @@ class ReqWalletTransactionList extends Message
      * Generated from protobuf field <code>int32 count = 2;</code>.
      *
      * @param  int  $var
-     *
      * @return $this
      */
     public function setCount($var)
@@ -116,7 +114,6 @@ class ReqWalletTransactionList extends Message
      * Generated from protobuf field <code>int32 direction = 3;</code>.
      *
      * @param  int  $var
-     *
      * @return $this
      */
     public function setDirection($var)

@@ -26,7 +26,7 @@ class StringConfig extends Message
      *                       Optional. Data for populating the Message object.
      *
      * @var string $value
-     *                       }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -48,7 +48,6 @@ class StringConfig extends Message
      * Generated from protobuf field <code>string value = 3;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setValue($var)

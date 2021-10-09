@@ -11,7 +11,7 @@ use GPBMetadata\Blockchain;
 
 /**
  *节点ID以及对应的Block.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.BlockPid</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.BlockPid</code>.
  */
 class BlockPid extends Message
 {
@@ -29,11 +29,11 @@ class BlockPid extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                  Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var string $pid
      * @var Block $block
-     *                                                  }
+     *            }
      */
     public function __construct($data = null)
     {
@@ -55,7 +55,6 @@ class BlockPid extends Message
      * Generated from protobuf field <code>string pid = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setPid($var)
@@ -80,7 +79,6 @@ class BlockPid extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Block block = 2;</code>.
      *
      * @param  Block  $var
-     *
      * @return $this
      */
     public function setBlock($var)

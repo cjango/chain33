@@ -12,7 +12,7 @@ use Google\Protobuf\Internal\RepeatedField;
 
 /**
  * 指定交易哈希，查找是否存在.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqCheckTxsExist</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqCheckTxsExist</code>.
  */
 class ReqCheckTxsExist extends Message
 {
@@ -25,10 +25,10 @@ class ReqCheckTxsExist extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                              Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var string[]|RepeatedField $txHashes
-     *                                                              }
+     *                             }
      */
     public function __construct($data = null)
     {
@@ -50,7 +50,6 @@ class ReqCheckTxsExist extends Message
      * Generated from protobuf field <code>repeated bytes txHashes = 1;</code>.
      *
      * @param  string[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setTxHashes($var)

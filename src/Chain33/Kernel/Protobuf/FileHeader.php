@@ -11,7 +11,7 @@ use GPBMetadata\Blockchain;
 
 /**
  *导出block文件头信息.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.FileHeader</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.FileHeader</code>.
  */
 class FileHeader extends Message
 {
@@ -39,13 +39,13 @@ class FileHeader extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                        Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var int|string $startHeight
      * @var string $driver
      * @var string $title
      * @var bool $testNet
-     *                        }
+     *           }
      */
     public function __construct($data = null)
     {
@@ -67,7 +67,6 @@ class FileHeader extends Message
      * Generated from protobuf field <code>int64 startHeight = 1;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setStartHeight($var)
@@ -92,7 +91,6 @@ class FileHeader extends Message
      * Generated from protobuf field <code>string driver = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setDriver($var)
@@ -117,7 +115,6 @@ class FileHeader extends Message
      * Generated from protobuf field <code>string title = 3;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setTitle($var)
@@ -142,7 +139,6 @@ class FileHeader extends Message
      * Generated from protobuf field <code>bool testNet = 4;</code>.
      *
      * @param  bool  $var
-     *
      * @return $this
      */
     public function setTestNet($var)

@@ -32,7 +32,7 @@ class KeyValue extends Message
      *
      * @var string $key
      * @var string $value
-     *                       }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -54,7 +54,6 @@ class KeyValue extends Message
      * Generated from protobuf field <code>bytes key = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setKey($var)
@@ -79,7 +78,6 @@ class KeyValue extends Message
      * Generated from protobuf field <code>bytes value = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setValue($var)

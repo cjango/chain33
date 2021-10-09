@@ -38,7 +38,7 @@ class ReqTokenRevokeCreate extends Message
      * @var string $revoker_addr
      * @var string $symbol
      * @var string $owner_addr
-     *                       }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -60,7 +60,6 @@ class ReqTokenRevokeCreate extends Message
      * Generated from protobuf field <code>string revoker_addr = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setRevokerAddr($var)
@@ -85,7 +84,6 @@ class ReqTokenRevokeCreate extends Message
      * Generated from protobuf field <code>string symbol = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setSymbol($var)
@@ -110,7 +108,6 @@ class ReqTokenRevokeCreate extends Message
      * Generated from protobuf field <code>string owner_addr = 3;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setOwnerAddr($var)

@@ -10,25 +10,25 @@ use Google\Protobuf\Internal\Message;
 
 /**
  *哈希存证模型，推荐使用sha256哈希，限制256位得摘要值
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.HashOnlyNotaryStorage</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.HashOnlyNotaryStorage</code>.
  */
 class HashOnlyNotaryStorage extends Message
 {
     /**
      *长度固定为32字节
-     * Generated from protobuf field <code>bytes hash = 1;</code>
+     * Generated from protobuf field <code>bytes hash = 1;</code>.
      */
     protected $hash = '';
 
     /**
      *自定义的主键，可以为空，如果没传，则用txhash为key.
-     * Generated from protobuf field <code>string key = 2;</code>
+     * Generated from protobuf field <code>string key = 2;</code>.
      */
     protected $key = '';
 
     /**
      *字符串值
-     * Generated from protobuf field <code>string value = 3;</code>
+     * Generated from protobuf field <code>string value = 3;</code>.
      */
     protected $value = '';
 
@@ -39,12 +39,12 @@ class HashOnlyNotaryStorage extends Message
      *                       Optional. Data for populating the Message object.
      *
      * @var string $hash
-     *                       长度固定为32字节
+     *             长度固定为32字节
      * @var string $key
-     *                       自定义的主键，可以为空，如果没传，则用txhash为key
+     *             自定义的主键，可以为空，如果没传，则用txhash为key
      * @var string $value
-     *                       字符串值
-     *                       }
+     *             字符串值
+     *             }
      */
     public function __construct($data = null)
     {
@@ -54,7 +54,7 @@ class HashOnlyNotaryStorage extends Message
 
     /**
      *长度固定为32字节
-     * Generated from protobuf field <code>bytes hash = 1;</code>
+     * Generated from protobuf field <code>bytes hash = 1;</code>.
      *
      * @return string
      */
@@ -65,10 +65,9 @@ class HashOnlyNotaryStorage extends Message
 
     /**
      *长度固定为32字节
-     * Generated from protobuf field <code>bytes hash = 1;</code>
+     * Generated from protobuf field <code>bytes hash = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setHash($var)
@@ -81,7 +80,7 @@ class HashOnlyNotaryStorage extends Message
 
     /**
      *自定义的主键，可以为空，如果没传，则用txhash为key.
-     * Generated from protobuf field <code>string key = 2;</code>
+     * Generated from protobuf field <code>string key = 2;</code>.
      *
      * @return string
      */
@@ -92,10 +91,9 @@ class HashOnlyNotaryStorage extends Message
 
     /**
      *自定义的主键，可以为空，如果没传，则用txhash为key.
-     * Generated from protobuf field <code>string key = 2;</code>
+     * Generated from protobuf field <code>string key = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setKey($var)
@@ -108,7 +106,7 @@ class HashOnlyNotaryStorage extends Message
 
     /**
      *字符串值
-     * Generated from protobuf field <code>string value = 3;</code>
+     * Generated from protobuf field <code>string value = 3;</code>.
      *
      * @return string
      */
@@ -119,10 +117,9 @@ class HashOnlyNotaryStorage extends Message
 
     /**
      *字符串值
-     * Generated from protobuf field <code>string value = 3;</code>
+     * Generated from protobuf field <code>string value = 3;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setValue($var)

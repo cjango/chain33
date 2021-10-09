@@ -11,7 +11,7 @@ use GPBMetadata\Blockchain;
 
 /**
  *  ntp时钟状态
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.IsNtpClockSync</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.IsNtpClockSync</code>.
  */
 class IsNtpClockSync extends Message
 {
@@ -27,7 +27,7 @@ class IsNtpClockSync extends Message
      *                       Optional. Data for populating the Message object.
      *
      * @var bool $isntpclocksync
-     *                       }
+     *           }
      */
     public function __construct($data = null)
     {
@@ -49,7 +49,6 @@ class IsNtpClockSync extends Message
      * Generated from protobuf field <code>bool isntpclocksync = 1;</code>.
      *
      * @param  bool  $var
-     *
      * @return $this
      */
     public function setIsntpclocksync($var)

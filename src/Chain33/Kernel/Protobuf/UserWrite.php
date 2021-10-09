@@ -31,7 +31,7 @@ class UserWrite extends Message
      *
      * @var string $topic
      * @var string $content
-     *                       }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -53,7 +53,6 @@ class UserWrite extends Message
      * Generated from protobuf field <code>string topic = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setTopic($var)
@@ -78,7 +77,6 @@ class UserWrite extends Message
      * Generated from protobuf field <code>string content = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setContent($var)

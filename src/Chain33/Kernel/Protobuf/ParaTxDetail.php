@@ -18,7 +18,7 @@ use GPBMetadata\Blockchain;
  * proofs:对应平行链子roothash的存在证明路径
  * childHash:此平行链交易的子roothash
  * index:对应平行链子roothash在整个区块中的索引.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ParaTxDetail</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ParaTxDetail</code>.
  */
 class ParaTxDetail extends Message
 {
@@ -56,7 +56,7 @@ class ParaTxDetail extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                                                               Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var int|string $type
      * @var Header $header
@@ -64,7 +64,7 @@ class ParaTxDetail extends Message
      * @var string $childHash
      * @var int $index
      * @var string[]|RepeatedField $proofs
-     *                                                                                               }
+     *                             }
      */
     public function __construct($data = null)
     {
@@ -86,7 +86,6 @@ class ParaTxDetail extends Message
      * Generated from protobuf field <code>int64 type = 1;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setType($var)
@@ -111,7 +110,6 @@ class ParaTxDetail extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Header header = 2;</code>.
      *
      * @param  Header  $var
-     *
      * @return $this
      */
     public function setHeader($var)
@@ -146,7 +144,6 @@ class ParaTxDetail extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.TxDetail txDetails = 3;</code>.
      *
      * @param  TxDetail[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setTxDetails($var)
@@ -172,7 +169,6 @@ class ParaTxDetail extends Message
      * Generated from protobuf field <code>bytes childHash = 4;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setChildHash($var)
@@ -197,7 +193,6 @@ class ParaTxDetail extends Message
      * Generated from protobuf field <code>uint32 index = 5;</code>.
      *
      * @param  int  $var
-     *
      * @return $this
      */
     public function setIndex($var)
@@ -222,7 +217,6 @@ class ParaTxDetail extends Message
      * Generated from protobuf field <code>repeated bytes proofs = 6;</code>.
      *
      * @param  string[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setProofs($var)

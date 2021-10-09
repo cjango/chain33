@@ -25,7 +25,7 @@ class HexTx extends Message
      *                       Optional. Data for populating the Message object.
      *
      * @var string $tx
-     *                       }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -47,7 +47,6 @@ class HexTx extends Message
      * Generated from protobuf field <code>string tx = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setTx($var)

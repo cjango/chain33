@@ -25,10 +25,10 @@ class ReplyStrings extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                              Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var string[]|RepeatedField $datas
-     *                                                              }
+     *                             }
      */
     public function __construct($data = null)
     {
@@ -50,7 +50,6 @@ class ReplyStrings extends Message
      * Generated from protobuf field <code>repeated string datas = 1;</code>.
      *
      * @param  string[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setDatas($var)

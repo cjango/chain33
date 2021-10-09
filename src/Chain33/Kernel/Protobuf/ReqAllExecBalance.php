@@ -15,13 +15,13 @@ class ReqAllExecBalance extends Message
 {
     /**
      *地址列表.
-     * Generated from protobuf field <code>string addr = 1;</code>
+     * Generated from protobuf field <code>string addr = 1;</code>.
      */
     protected $addr = '';
 
     /**
      *执行器名称.
-     * Generated from protobuf field <code>string execer = 2;</code>
+     * Generated from protobuf field <code>string execer = 2;</code>.
      */
     protected $execer = '';
 
@@ -47,13 +47,13 @@ class ReqAllExecBalance extends Message
      *                       Optional. Data for populating the Message object.
      *
      * @var string $addr
-     *                       地址列表
+     *             地址列表
      * @var string $execer
-     *                       执行器名称
+     *             执行器名称
      * @var string $stateHash
      * @var string $asset_exec
      * @var string $asset_symbol
-     *                       }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -63,7 +63,7 @@ class ReqAllExecBalance extends Message
 
     /**
      *地址列表.
-     * Generated from protobuf field <code>string addr = 1;</code>
+     * Generated from protobuf field <code>string addr = 1;</code>.
      *
      * @return string
      */
@@ -74,10 +74,9 @@ class ReqAllExecBalance extends Message
 
     /**
      *地址列表.
-     * Generated from protobuf field <code>string addr = 1;</code>
+     * Generated from protobuf field <code>string addr = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setAddr($var)
@@ -90,7 +89,7 @@ class ReqAllExecBalance extends Message
 
     /**
      *执行器名称.
-     * Generated from protobuf field <code>string execer = 2;</code>
+     * Generated from protobuf field <code>string execer = 2;</code>.
      *
      * @return string
      */
@@ -101,10 +100,9 @@ class ReqAllExecBalance extends Message
 
     /**
      *执行器名称.
-     * Generated from protobuf field <code>string execer = 2;</code>
+     * Generated from protobuf field <code>string execer = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setExecer($var)
@@ -129,7 +127,6 @@ class ReqAllExecBalance extends Message
      * Generated from protobuf field <code>string stateHash = 3;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setStateHash($var)
@@ -154,7 +151,6 @@ class ReqAllExecBalance extends Message
      * Generated from protobuf field <code>string asset_exec = 4;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setAssetExec($var)
@@ -179,7 +175,6 @@ class ReqAllExecBalance extends Message
      * Generated from protobuf field <code>string asset_symbol = 5;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setAssetSymbol($var)

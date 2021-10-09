@@ -13,7 +13,7 @@ use GPBMetadata\Blockchain;
 
 /**
  * resp.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.BlockSequences</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.BlockSequences</code>.
  */
 class BlockSequences extends Message
 {
@@ -26,10 +26,10 @@ class BlockSequences extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                                                                    Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var BlockSequence[]|RepeatedField $items
-     *                                                                                                    }
+     *                                    }
      */
     public function __construct($data = null)
     {
@@ -51,7 +51,6 @@ class BlockSequences extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.BlockSequence items = 1;</code>.
      *
      * @param  BlockSequence[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setItems($var)

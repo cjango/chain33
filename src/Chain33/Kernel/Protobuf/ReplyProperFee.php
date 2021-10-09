@@ -22,10 +22,10 @@ class ReplyProperFee extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                        Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var int|string $properFee
-     *                        }
+     *                 }
      */
     public function __construct($data = null)
     {
@@ -47,7 +47,6 @@ class ReplyProperFee extends Message
      * Generated from protobuf field <code>int64 properFee = 1;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setProperFee($var)

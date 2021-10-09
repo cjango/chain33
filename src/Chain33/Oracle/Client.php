@@ -22,8 +22,7 @@ class Client extends BaseClient
      * @param  string  $content  事件内容，例如可以用json格式表示
      * @param  string  $introduction  事件介绍
      * @param  string  $privateKey  私钥
-     *
-     * @return string            交易结果HASH（事件ID）
+     * @return string 交易结果HASH（事件ID）
      */
     public function create(
         string $type,
@@ -56,7 +55,6 @@ class Client extends BaseClient
      *
      * @param  string  $eventID  发布事件的事件ID
      * @param  string  $privateKey
-     *
      * @return string 交易结果HASH
      */
     public function abort(string $eventID, string $privateKey): string
@@ -82,7 +80,6 @@ class Client extends BaseClient
      * @param  string  $source  发布结果的源，比如XX体育
      * @param  string  $result  发布的事件结果，比如比赛比分
      * @param  string  $privateKey  签名私钥
-     *
      * @return string
      */
     public function preview(string $eventID, string $source, string $result, string $privateKey): string
@@ -108,7 +105,6 @@ class Client extends BaseClient
      *
      * @param  string  $eventID
      * @param  string  $privateKey
-     *
      * @return string
      */
     public function previewAbort(string $eventID, string $privateKey): string
@@ -134,7 +130,6 @@ class Client extends BaseClient
      * @param  string  $source
      * @param  string  $result
      * @param  string  $privateKey
-     *
      * @return string
      */
     public function publish(string $eventID, string $source, string $result, string $privateKey): string
@@ -159,7 +154,6 @@ class Client extends BaseClient
      * @Author : <Jason.C>
      *
      * @param  string  $eventID
-     *
      * @return mixed
      */
     public function query(string $eventID)

@@ -20,8 +20,8 @@ class Client extends BaseClient
      *
      * @param  string  $tx  部署合约交易或者调用合约交易的序列化后的字符串
      * @param  string  $from  合约交易调用者地址
-     *
      * @return int
+     *
      * @throws ChainException
      */
     public function estimateGas(string $tx, string $from): int
@@ -43,16 +43,16 @@ class Client extends BaseClient
      * @Author : <Jason.C>
      *
      * @param  string  $parameter  部署合约的参数 “constructor(zbc, zbc, 3300, ‘${evmcreatorAddr}’)” 原型为 constructor (string
-     *                              memory name, string memory symbol_,uint256 supply, address
-     *                              owner),这里表示部署一个名称和symbol都为 zbc，总金额3300*le8，拥有者为 evm_creatorAddr 的ERC20合约
+     *                             memory name, string memory symbol_,uint256 supply, address
+     *                             owner),这里表示部署一个名称和symbol都为 zbc，总金额3300*le8，拥有者为 evm_creatorAddr 的ERC20合约
      * @param  string  $code  需要部署合约的 bin 内容
      * @param  string  $abi  部署合约的 abi 内容
      * @param  int  $fee  精确的手续费可以通过EstimateGas这个jrpc接口进行估算，同时该交易费需要满足根据部署交易体积大小计算出来的交易费要求
      * @param  string  $alias  合约别名
      * @param  string  $privateKey  部署者的私钥
      * @param  string  $note  合约备注
-     *
      * @return string
+     *
      * @throws ChainException
      */
     public function deploy(
@@ -89,8 +89,8 @@ class Client extends BaseClient
      * @param  int  $fee  精确的手续费可以通过EstimateGas这个jrpc接口进行估算，同时该交易费需要满足根据部署交易体积大小计算出来的交易费要求，一般调用交易的交易费直接设置为通过交易体积大小计算出来的交易费即可
      * @param  string  $privateKey  调用者私钥
      * @param  string  $note  合约备注
-     *
      * @return string
+     *
      * @throws ChainException
      */
     public function invoking(
@@ -137,8 +137,8 @@ class Client extends BaseClient
      * @Author : <Jason.C>
      *
      * @param  string  $addr  被查询的合约地址
-     *
      * @return array
+     *
      * @throws ChainException
      */
     public function checkAddr(string $addr): array
@@ -165,8 +165,8 @@ class Client extends BaseClient
      * @Author : <Jason.C>
      *
      * @param  string  $evmAddr
-     *
      * @return string
+     *
      * @throws Exception
      */
     public function convertToChain(string $evmAddr): string
@@ -193,7 +193,6 @@ class Client extends BaseClient
      * @Author : <Jason.C>
      *
      * @param  string  $chainAddr
-     *
      * @return string
      */
     public function convertToEvm(string $chainAddr): string

@@ -35,7 +35,7 @@ class ConfigItem extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                         Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var string $key
      * @var string $addr
@@ -43,7 +43,7 @@ class ConfigItem extends Message
      * @var StringConfig $str
      * @var Int32Config $int
      * @var int $Ty
-     *                                                         }
+     *          }
      */
     public function __construct($data = null)
     {
@@ -65,7 +65,6 @@ class ConfigItem extends Message
      * Generated from protobuf field <code>string key = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setKey($var)
@@ -90,7 +89,6 @@ class ConfigItem extends Message
      * Generated from protobuf field <code>string addr = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setAddr($var)
@@ -120,7 +118,6 @@ class ConfigItem extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ArrayConfig arr = 3;</code>.
      *
      * @param  ArrayConfig  $var
-     *
      * @return $this
      */
     public function setArr($var)
@@ -150,7 +147,6 @@ class ConfigItem extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.StringConfig str = 4;</code>.
      *
      * @param  StringConfig  $var
-     *
      * @return $this
      */
     public function setStr($var)
@@ -180,7 +176,6 @@ class ConfigItem extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Int32Config int = 5;</code>.
      *
      * @param  Int32Config  $var
-     *
      * @return $this
      */
     public function setInt($var)
@@ -205,7 +200,6 @@ class ConfigItem extends Message
      * Generated from protobuf field <code>int32 Ty = 11;</code>.
      *
      * @param  int  $var
-     *
      * @return $this
      */
     public function setTy($var)

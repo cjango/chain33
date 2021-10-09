@@ -11,7 +11,7 @@ use GPBMetadata\Statistic;
 
 /**
  *手续费.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.TotalFee</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.TotalFee</code>.
  */
 class TotalFee extends Message
 {
@@ -29,11 +29,11 @@ class TotalFee extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                        Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var int|string $fee
      * @var int|string $txCount
-     *                        }
+     *                 }
      */
     public function __construct($data = null)
     {
@@ -55,7 +55,6 @@ class TotalFee extends Message
      * Generated from protobuf field <code>int64 fee = 1;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setFee($var)
@@ -80,7 +79,6 @@ class TotalFee extends Message
      * Generated from protobuf field <code>int64 txCount = 2;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setTxCount($var)

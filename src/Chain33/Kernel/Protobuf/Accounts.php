@@ -12,7 +12,7 @@ use Google\Protobuf\Internal\RepeatedField;
 
 /**
  * Account 的列表.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.Accounts</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.Accounts</code>.
  */
 class Accounts extends Message
 {
@@ -25,10 +25,10 @@ class Accounts extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                                                              Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var Account[]|RepeatedField $acc
-     *                                                                                              }
+     *                              }
      */
     public function __construct($data = null)
     {
@@ -50,7 +50,6 @@ class Accounts extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Account acc = 1;</code>.
      *
      * @param  Account[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setAcc($var)

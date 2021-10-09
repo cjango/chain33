@@ -14,7 +14,7 @@ use GPBMetadata\Blockchain;
 /**
  *  参考Header解释
  * mainHash 平行链上使用的字段，代表这个区块的主链hash.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.Block</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.Block</code>.
  */
 class Block extends Message
 {
@@ -77,7 +77,7 @@ class Block extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                                                                  Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var int|string $version
      * @var string $parentHash
@@ -90,7 +90,7 @@ class Block extends Message
      * @var int|string $mainHeight
      * @var Signature $signature
      * @var Transaction[]|RepeatedField $txs
-     *                                                                                                  }
+     *                                  }
      */
     public function __construct($data = null)
     {
@@ -112,7 +112,6 @@ class Block extends Message
      * Generated from protobuf field <code>int64 version = 1;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setVersion($var)
@@ -137,7 +136,6 @@ class Block extends Message
      * Generated from protobuf field <code>bytes parentHash = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setParentHash($var)
@@ -162,7 +160,6 @@ class Block extends Message
      * Generated from protobuf field <code>bytes txHash = 3;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setTxHash($var)
@@ -187,7 +184,6 @@ class Block extends Message
      * Generated from protobuf field <code>bytes stateHash = 4;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setStateHash($var)
@@ -212,7 +208,6 @@ class Block extends Message
      * Generated from protobuf field <code>int64 height = 5;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setHeight($var)
@@ -237,7 +232,6 @@ class Block extends Message
      * Generated from protobuf field <code>int64 blockTime = 6;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setBlockTime($var)
@@ -262,7 +256,6 @@ class Block extends Message
      * Generated from protobuf field <code>uint32 difficulty = 11;</code>.
      *
      * @param  int  $var
-     *
      * @return $this
      */
     public function setDifficulty($var)
@@ -287,7 +280,6 @@ class Block extends Message
      * Generated from protobuf field <code>bytes mainHash = 12;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setMainHash($var)
@@ -312,7 +304,6 @@ class Block extends Message
      * Generated from protobuf field <code>int64 mainHeight = 13;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setMainHeight($var)
@@ -337,7 +328,6 @@ class Block extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Signature signature = 8;</code>.
      *
      * @param  Signature  $var
-     *
      * @return $this
      */
     public function setSignature($var)
@@ -372,7 +362,6 @@ class Block extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Transaction txs = 7;</code>.
      *
      * @param  Transaction[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setTxs($var)

@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\Message;
 
 /**
  * assert transfer struct.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.AssetsGenesis</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.AssetsGenesis</code>.
  */
 class AssetsGenesis extends Message
 {
@@ -28,11 +28,11 @@ class AssetsGenesis extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                        Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var int|string $amount
      * @var string $returnAddress
-     *                        }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -54,7 +54,6 @@ class AssetsGenesis extends Message
      * Generated from protobuf field <code>int64 amount = 2;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setAmount($var)
@@ -79,7 +78,6 @@ class AssetsGenesis extends Message
      * Generated from protobuf field <code>string returnAddress = 3;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setReturnAddress($var)

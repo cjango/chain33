@@ -11,7 +11,7 @@ use GPBMetadata\Blockchain;
 
 /**
  *  区块追赶主链状态，用于判断本节点区块是否已经同步好.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.IsCaughtUp</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.IsCaughtUp</code>.
  */
 class IsCaughtUp extends Message
 {
@@ -27,7 +27,7 @@ class IsCaughtUp extends Message
      *                       Optional. Data for populating the Message object.
      *
      * @var bool $Iscaughtup
-     *                       }
+     *           }
      */
     public function __construct($data = null)
     {
@@ -49,7 +49,6 @@ class IsCaughtUp extends Message
      * Generated from protobuf field <code>bool Iscaughtup = 1;</code>.
      *
      * @param  bool  $var
-     *
      * @return $this
      */
     public function setIscaughtup($var)

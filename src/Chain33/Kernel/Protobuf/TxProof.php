@@ -12,7 +12,7 @@ use Google\Protobuf\Internal\RepeatedField;
 
 /**
  *使用多层merkle树之后的proof证明结构体.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.TxProof</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.TxProof</code>.
  */
 class TxProof extends Message
 {
@@ -35,12 +35,12 @@ class TxProof extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                              Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var string[]|RepeatedField $proofs
      * @var int $index
      * @var string $rootHash
-     *                                                              }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -62,7 +62,6 @@ class TxProof extends Message
      * Generated from protobuf field <code>repeated bytes proofs = 1;</code>.
      *
      * @param  string[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setProofs($var)
@@ -87,7 +86,6 @@ class TxProof extends Message
      * Generated from protobuf field <code>uint32 index = 2;</code>.
      *
      * @param  int  $var
-     *
      * @return $this
      */
     public function setIndex($var)
@@ -112,7 +110,6 @@ class TxProof extends Message
      * Generated from protobuf field <code>bytes rootHash = 3;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setRootHash($var)

@@ -12,7 +12,7 @@ use GPBMetadata\Common;
 /**
  **
  *当前软件版本信息.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.VersionInfo</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.VersionInfo</code>.
  */
 class VersionInfo extends Message
 {
@@ -52,7 +52,7 @@ class VersionInfo extends Message
      * @var string $chain33
      * @var string $localDb
      * @var int $chainID
-     *                       }
+     *          }
      */
     public function __construct($data = null)
     {
@@ -74,7 +74,6 @@ class VersionInfo extends Message
      * Generated from protobuf field <code>string title = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setTitle($var)
@@ -99,7 +98,6 @@ class VersionInfo extends Message
      * Generated from protobuf field <code>string app = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setApp($var)
@@ -124,7 +122,6 @@ class VersionInfo extends Message
      * Generated from protobuf field <code>string chain33 = 3;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setChain33($var)
@@ -149,7 +146,6 @@ class VersionInfo extends Message
      * Generated from protobuf field <code>string localDb = 4;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setLocalDb($var)
@@ -174,7 +170,6 @@ class VersionInfo extends Message
      * Generated from protobuf field <code>int32 chainID = 5;</code>.
      *
      * @param  int  $var
-     *
      * @return $this
      */
     public function setChainID($var)

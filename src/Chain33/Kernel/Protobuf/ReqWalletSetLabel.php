@@ -32,7 +32,7 @@ class ReqWalletSetLabel extends Message
      *
      * @var string $addr
      * @var string $label
-     *                       }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -54,7 +54,6 @@ class ReqWalletSetLabel extends Message
      * Generated from protobuf field <code>string addr = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setAddr($var)
@@ -79,7 +78,6 @@ class ReqWalletSetLabel extends Message
      * Generated from protobuf field <code>string label = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setLabel($var)

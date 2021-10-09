@@ -24,10 +24,10 @@ class ReplyTxList extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                                                                  Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var Transaction[]|RepeatedField $txs
-     *                                                                                                  }
+     *                                  }
      */
     public function __construct($data = null)
     {
@@ -49,7 +49,6 @@ class ReplyTxList extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Transaction txs = 1;</code>.
      *
      * @param  Transaction[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setTxs($var)

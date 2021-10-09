@@ -15,7 +15,7 @@ use GPBMetadata\Wallet;
  *   isAutoMining :钱包是否开启挖矿功能，true开启挖矿，false关闭挖矿
  *   isHasSeed : 钱包是否有种子，true已有，false没有
  *   isTicketLock :钱包挖矿买票锁状态，true锁定，false解锁，只能用于挖矿转账.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.WalletStatus</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.WalletStatus</code>.
  */
 class WalletStatus extends Message
 {
@@ -49,7 +49,7 @@ class WalletStatus extends Message
      * @var bool $isAutoMining
      * @var bool $isHasSeed
      * @var bool $isTicketLock
-     *                       }
+     *           }
      */
     public function __construct($data = null)
     {
@@ -71,7 +71,6 @@ class WalletStatus extends Message
      * Generated from protobuf field <code>bool isWalletLock = 1;</code>.
      *
      * @param  bool  $var
-     *
      * @return $this
      */
     public function setIsWalletLock($var)
@@ -96,7 +95,6 @@ class WalletStatus extends Message
      * Generated from protobuf field <code>bool isAutoMining = 2;</code>.
      *
      * @param  bool  $var
-     *
      * @return $this
      */
     public function setIsAutoMining($var)
@@ -121,7 +119,6 @@ class WalletStatus extends Message
      * Generated from protobuf field <code>bool isHasSeed = 3;</code>.
      *
      * @param  bool  $var
-     *
      * @return $this
      */
     public function setIsHasSeed($var)
@@ -146,7 +143,6 @@ class WalletStatus extends Message
      * Generated from protobuf field <code>bool isTicketLock = 4;</code>.
      *
      * @param  bool  $var
-     *
      * @return $this
      */
     public function setIsTicketLock($var)

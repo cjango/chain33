@@ -10,19 +10,19 @@ use Google\Protobuf\Internal\Message;
 
 /**
  * 加密存证数据运算.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.EncryptNotaryAdd</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.EncryptNotaryAdd</code>.
  */
 class EncryptNotaryAdd extends Message
 {
     /**
      *源操作数存证索引.
-     * Generated from protobuf field <code>string key = 1;</code>
+     * Generated from protobuf field <code>string key = 1;</code>.
      */
     protected $key = '';
 
     /**
      *待操作数据.
-     * Generated from protobuf field <code>bytes encryptAdd = 2;</code>
+     * Generated from protobuf field <code>bytes encryptAdd = 2;</code>.
      */
     protected $encryptAdd = '';
 
@@ -33,10 +33,10 @@ class EncryptNotaryAdd extends Message
      *                       Optional. Data for populating the Message object.
      *
      * @var string $key
-     *                       源操作数存证索引
+     *             源操作数存证索引
      * @var string $encryptAdd
-     *                       待操作数据
-     *                       }
+     *             待操作数据
+     *             }
      */
     public function __construct($data = null)
     {
@@ -46,7 +46,7 @@ class EncryptNotaryAdd extends Message
 
     /**
      *源操作数存证索引.
-     * Generated from protobuf field <code>string key = 1;</code>
+     * Generated from protobuf field <code>string key = 1;</code>.
      *
      * @return string
      */
@@ -57,10 +57,9 @@ class EncryptNotaryAdd extends Message
 
     /**
      *源操作数存证索引.
-     * Generated from protobuf field <code>string key = 1;</code>
+     * Generated from protobuf field <code>string key = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setKey($var)
@@ -73,7 +72,7 @@ class EncryptNotaryAdd extends Message
 
     /**
      *待操作数据.
-     * Generated from protobuf field <code>bytes encryptAdd = 2;</code>
+     * Generated from protobuf field <code>bytes encryptAdd = 2;</code>.
      *
      * @return string
      */
@@ -84,10 +83,9 @@ class EncryptNotaryAdd extends Message
 
     /**
      *待操作数据.
-     * Generated from protobuf field <code>bytes encryptAdd = 2;</code>
+     * Generated from protobuf field <code>bytes encryptAdd = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setEncryptAdd($var)

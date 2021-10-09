@@ -14,7 +14,7 @@ use GPBMetadata\Blockchain;
  *     blockdetail : 区块详细信息
  *     sequence :区块序列号
  *   isSync:写数据库时是否需要刷盘.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ParaChainBlockDetail</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ParaChainBlockDetail</code>.
  */
 class ParaChainBlockDetail extends Message
 {
@@ -37,12 +37,12 @@ class ParaChainBlockDetail extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                        Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var BlockDetail $blockdetail
      * @var int|string $sequence
      * @var bool $isSync
-     *                                                        }
+     *           }
      */
     public function __construct($data = null)
     {
@@ -64,7 +64,6 @@ class ParaChainBlockDetail extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.BlockDetail blockdetail = 1;</code>.
      *
      * @param  BlockDetail  $var
-     *
      * @return $this
      */
     public function setBlockdetail($var)
@@ -99,7 +98,6 @@ class ParaChainBlockDetail extends Message
      * Generated from protobuf field <code>int64 sequence = 2;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setSequence($var)
@@ -124,7 +122,6 @@ class ParaChainBlockDetail extends Message
      * Generated from protobuf field <code>bool isSync = 3;</code>.
      *
      * @param  bool  $var
-     *
      * @return $this
      */
     public function setIsSync($var)

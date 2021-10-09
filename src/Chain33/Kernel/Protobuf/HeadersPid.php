@@ -28,11 +28,11 @@ class HeadersPid extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                    Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var string $pid
      * @var Headers $headers
-     *                                                    }
+     *              }
      */
     public function __construct($data = null)
     {
@@ -54,7 +54,6 @@ class HeadersPid extends Message
      * Generated from protobuf field <code>string pid = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setPid($var)
@@ -79,7 +78,6 @@ class HeadersPid extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Headers headers = 2;</code>.
      *
      * @param  Headers  $var
-     *
      * @return $this
      */
     public function setHeaders($var)

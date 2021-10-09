@@ -31,7 +31,7 @@ class ReceiptLog extends Message
      *
      * @var int $ty
      * @var string $log
-     *                       }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -53,7 +53,6 @@ class ReceiptLog extends Message
      * Generated from protobuf field <code>int32 ty = 1;</code>.
      *
      * @param  int  $var
-     *
      * @return $this
      */
     public function setTy($var)
@@ -78,7 +77,6 @@ class ReceiptLog extends Message
      * Generated from protobuf field <code>bytes log = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setLog($var)

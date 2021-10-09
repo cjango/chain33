@@ -11,7 +11,7 @@ use GPBMetadata\Blockchain;
 
 /**
  *通过seq区间和title请求平行链的交易.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqParaTxByTitle</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqParaTxByTitle</code>.
  */
 class ReqParaTxByTitle extends Message
 {
@@ -39,13 +39,13 @@ class ReqParaTxByTitle extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                        Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var int|string $start
      * @var int|string $end
      * @var string $title
      * @var bool $isSeq
-     *                        }
+     *           }
      */
     public function __construct($data = null)
     {
@@ -67,7 +67,6 @@ class ReqParaTxByTitle extends Message
      * Generated from protobuf field <code>int64 start = 1;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setStart($var)
@@ -92,7 +91,6 @@ class ReqParaTxByTitle extends Message
      * Generated from protobuf field <code>int64 end = 2;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setEnd($var)
@@ -117,7 +115,6 @@ class ReqParaTxByTitle extends Message
      * Generated from protobuf field <code>string title = 3;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setTitle($var)
@@ -142,7 +139,6 @@ class ReqParaTxByTitle extends Message
      * Generated from protobuf field <code>bool isSeq = 4;</code>.
      *
      * @param  bool  $var
-     *
      * @return $this
      */
     public function setIsSeq($var)

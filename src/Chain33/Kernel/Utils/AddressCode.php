@@ -21,8 +21,8 @@ class AddressCode
      * Input can be compressed or uncompressed DER Encoded Pubkey.
      *
      * @param $derPubKey
-     *
      * @return array
+     *
      * @throws Exception
      */
     public static function Point($derPubKey): array
@@ -45,8 +45,8 @@ class AddressCode
      * Input can be compressed or uncompressed DER Encoded Pubkey.
      *
      * @param $compressedDerPubKey
-     *
      * @return array
+     *
      * @throws Exception
      */
     public static function Decompress($compressedDerPubKey): array
@@ -108,6 +108,7 @@ class AddressCode
      * returns the private key under the Wallet Import Format.
      *
      * @return string Base58
+     *
      * @throws Exception
      */
     public static function WIF($private_key, $prefix = '80', $compressed = true): string

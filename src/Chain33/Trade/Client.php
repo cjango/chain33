@@ -38,7 +38,6 @@ class Client extends BaseClient
      * @param  string  $priceSymbol  标价资产的名字
      * @param  string  $privateKey  发布者私钥
      * @param  int  $fee  手续费
-     *
      * @return string
      */
     public function sell(
@@ -78,7 +77,6 @@ class Client extends BaseClient
      * @param  int  $boardlotCnt  卖出数量，单位手
      * @param  string  $privateKey  卖家私钥
      * @param  int  $fee  交易的手续费
-     *
      * @return string
      */
     public function sellBuy(string $buyID, int $boardlotCnt, string $privateKey, int $fee = 0): string
@@ -101,7 +99,6 @@ class Client extends BaseClient
      * @param  string  $sellID  卖单ID
      * @param  string  $privateKey  私钥
      * @param  int  $fee  手续费
-     *
      * @return string
      */
     public function sellRevoke(string $sellID, string $privateKey, int $fee = 0): string
@@ -125,8 +122,8 @@ class Client extends BaseClient
      * @param  int  $count  最多取的数量
      * @param  int  $direction  查询的方向
      * @param  string  $fromKey  开始查询的主键
-     *
      * @return array
+     *
      * @throws Exception
      */
     public function sellOrders(
@@ -160,8 +157,8 @@ class Client extends BaseClient
      * @param  int  $count  最多取的数量
      * @param  int  $direction  查询的方向
      * @param  string  $fromKey  开始查询的主键
-     *
      * @return array
+     *
      * @throws ChainException
      */
     public function addrSellOrders(
@@ -195,8 +192,8 @@ class Client extends BaseClient
      * @param  int  $count  最多取的数量
      * @param  int  $direction  查询的方向
      * @param  string  $fromKey  开始查询的主键
-     *
      * @return array
+     *
      * @throws ChainException
      */
     public function addrSellOrdersByStatus(
@@ -235,7 +232,6 @@ class Client extends BaseClient
      * @param  string  $priceSymbol  标价资产的名字
      * @param  string  $privateKey  发布者私钥
      * @param  int  $fee
-     *
      * @return string
      */
     public function buy(
@@ -274,7 +270,6 @@ class Client extends BaseClient
      * @param  string  $buyID  买单ID
      * @param  string  $privateKey  私钥
      * @param  int  $fee  手续费
-     *
      * @return string
      */
     public function buyRevoke(string $buyID, string $privateKey, int $fee = 0): string
@@ -297,7 +292,6 @@ class Client extends BaseClient
      * @param  int  $boardlotCnt  买入数量，单位手
      * @param  string  $privateKey  卖家私钥
      * @param  int  $fee  交易的手续费
-     *
      * @return string
      */
     public function buySell(string $sellID, int $boardlotCnt, string $privateKey, int $fee = 0): string
@@ -322,8 +316,8 @@ class Client extends BaseClient
      * @param  int  $count  最多取的数量
      * @param  int  $direction  查询的方向
      * @param  string  $fromKey  开始查询的主键
-     *
      * @return array
+     *
      * @throws Exception
      */
     public function buyOrders(
@@ -357,8 +351,8 @@ class Client extends BaseClient
      * @param  int  $count  最多取的数量
      * @param  int  $direction  查询的方向
      * @param  string  $fromKey  开始查询的主键
-     *
      * @return mixed
+     *
      * @throws ChainException
      */
     public function addrBuyOrder(
@@ -392,8 +386,8 @@ class Client extends BaseClient
      * @param  int  $count  最多取的数量
      * @param  int  $direction  查询的方向
      * @param  string  $fromKey  开始查询的主键
-     *
      * @return array
+     *
      * @throws ChainException
      */
     public function addrBuyOrdersByStatus(
@@ -427,8 +421,8 @@ class Client extends BaseClient
      * @param  int  $count  最多取的数量
      * @param  int  $direction  查询的方向
      * @param  string  $fromKey  开始查询的主键
-     *
      * @return mixed
+     *
      * @throws ChainException
      */
     public function orders(

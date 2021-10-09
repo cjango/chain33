@@ -13,7 +13,7 @@ use GPBMetadata\Blockchain;
 
 /**
  * 定义para交易结构.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ParaTxDetails</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ParaTxDetails</code>.
  */
 class ParaTxDetails extends Message
 {
@@ -26,10 +26,10 @@ class ParaTxDetails extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                                                                   Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var ParaTxDetail[]|RepeatedField $items
-     *                                                                                                   }
+     *                                   }
      */
     public function __construct($data = null)
     {
@@ -51,7 +51,6 @@ class ParaTxDetails extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ParaTxDetail items = 1;</code>.
      *
      * @param  ParaTxDetail[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setItems($var)

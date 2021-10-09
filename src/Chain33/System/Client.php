@@ -14,6 +14,7 @@ class Client extends BaseClient
      *
      * @Date   : 2021/3/25 11:53 上午
      * @Author : <Jason.C>
+     *
      * @return string
      */
     public function type(): string
@@ -22,10 +23,11 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes   : 判断是否平行链
+     * Notes   : 判断是否平行链.
      *
      * @Date   : 2021/10/9 1:47 下午
      * @Author : <Jason.C>
+     *
      * @return bool
      */
     public function isParaChain(): bool
@@ -38,6 +40,7 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 16:05
+     *
      * @return array
      */
     public function peer(): array
@@ -54,6 +57,7 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 16:04
+     *
      * @return array
      */
     public function info(): array
@@ -70,6 +74,7 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 16:01
+     *
      * @return array
      */
     public function timeStatus(): array
@@ -82,6 +87,7 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 17:32
+     *
      * @return bool
      */
     public function isSync(): bool
@@ -94,6 +100,7 @@ class Client extends BaseClient
      *
      * @Date   : 2021/1/27 10:35 下午
      * @Author : <Jason.C>
+     *
      * @return string
      */
     public function coin(): string
@@ -106,6 +113,7 @@ class Client extends BaseClient
      *
      * @Date   : 2021/10/8 5:01 下午
      * @Author : <Jason.C>
+     *
      * @return mixed
      */
     public function cryptos()
@@ -118,6 +126,7 @@ class Client extends BaseClient
      *
      * @Date   : 2021/3/30 9:57 上午
      * @Author : <Jason.C>
+     *
      * @return bool
      */
     public function clockSync(): bool
@@ -130,6 +139,7 @@ class Client extends BaseClient
      *
      * @Date   : 2021/3/30 11:19 上午
      * @Author : <Jason.C>
+     *
      * @return int
      */
     public function failure(): int
@@ -144,7 +154,6 @@ class Client extends BaseClient
      * @Author : <Jason.C>
      *
      * @param  string  $txHex
-     *
      * @return mixed
      */
     public function decode(string $txHex)

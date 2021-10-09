@@ -26,7 +26,7 @@ class ReqKey extends Message
      *                       Optional. Data for populating the Message object.
      *
      * @var string $key
-     *                       }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -48,7 +48,6 @@ class ReqKey extends Message
      * Generated from protobuf field <code>bytes key = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setKey($var)

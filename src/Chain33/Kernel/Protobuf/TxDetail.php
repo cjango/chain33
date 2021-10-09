@@ -17,7 +17,7 @@ use GPBMetadata\Blockchain;
  * tx:本交易内容
  * receipt:本交易在主链的执行回执
  * proofs:本交易hash在block中merkel中的路径.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.TxDetail</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.TxDetail</code>.
  */
 class TxDetail extends Message
 {
@@ -45,13 +45,13 @@ class TxDetail extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                              Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var int $index
      * @var Transaction $tx
      * @var ReceiptData $receipt
      * @var string[]|RepeatedField $proofs
-     *                                                              }
+     *                             }
      */
     public function __construct($data = null)
     {
@@ -73,7 +73,6 @@ class TxDetail extends Message
      * Generated from protobuf field <code>uint32 index = 1;</code>.
      *
      * @param  int  $var
-     *
      * @return $this
      */
     public function setIndex($var)
@@ -98,7 +97,6 @@ class TxDetail extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Transaction tx = 2;</code>.
      *
      * @param  Transaction  $var
-     *
      * @return $this
      */
     public function setTx($var)
@@ -133,7 +131,6 @@ class TxDetail extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ReceiptData receipt = 3;</code>.
      *
      * @param  ReceiptData  $var
-     *
      * @return $this
      */
     public function setReceipt($var)
@@ -168,7 +165,6 @@ class TxDetail extends Message
      * Generated from protobuf field <code>repeated bytes proofs = 4;</code>.
      *
      * @param  string[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setProofs($var)

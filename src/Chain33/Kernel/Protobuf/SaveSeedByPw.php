@@ -13,7 +13,7 @@ use GPBMetadata\Wallet;
  *存储钱包的种子
  *   seed : 钱包种子
  *   passwd :钱包密码
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.SaveSeedByPw</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.SaveSeedByPw</code>.
  */
 class SaveSeedByPw extends Message
 {
@@ -35,7 +35,7 @@ class SaveSeedByPw extends Message
      *
      * @var string $seed
      * @var string $passwd
-     *                       }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -57,7 +57,6 @@ class SaveSeedByPw extends Message
      * Generated from protobuf field <code>string seed = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setSeed($var)
@@ -82,7 +81,6 @@ class SaveSeedByPw extends Message
      * Generated from protobuf field <code>string passwd = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setPasswd($var)

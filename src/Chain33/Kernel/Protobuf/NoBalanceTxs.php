@@ -12,7 +12,7 @@ use Google\Protobuf\Internal\RepeatedField;
 
 /**
  * 支持构造多笔nobalance的交易 payAddr 可以支持 1. 地址 2. 私钥.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.NoBalanceTxs</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.NoBalanceTxs</code>.
  */
 class NoBalanceTxs extends Message
 {
@@ -40,13 +40,13 @@ class NoBalanceTxs extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                              Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var string[]|RepeatedField $txHexs
      * @var string $payAddr
      * @var string $privkey
      * @var string $expire
-     *                                                              }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -68,7 +68,6 @@ class NoBalanceTxs extends Message
      * Generated from protobuf field <code>repeated string txHexs = 1;</code>.
      *
      * @param  string[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setTxHexs($var)
@@ -93,7 +92,6 @@ class NoBalanceTxs extends Message
      * Generated from protobuf field <code>string payAddr = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setPayAddr($var)
@@ -118,7 +116,6 @@ class NoBalanceTxs extends Message
      * Generated from protobuf field <code>string privkey = 3;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setPrivkey($var)
@@ -143,7 +140,6 @@ class NoBalanceTxs extends Message
      * Generated from protobuf field <code>string expire = 4;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setExpire($var)

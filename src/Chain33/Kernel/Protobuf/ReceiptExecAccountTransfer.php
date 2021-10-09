@@ -10,25 +10,25 @@ use Google\Protobuf\Internal\Message;
 
 /**
  *账户余额改变的一个交易回报（合约内）.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReceiptExecAccountTransfer</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReceiptExecAccountTransfer</code>.
  */
 class ReceiptExecAccountTransfer extends Message
 {
     /**
      *合约地址
-     * Generated from protobuf field <code>string execAddr = 1;</code>
+     * Generated from protobuf field <code>string execAddr = 1;</code>.
      */
     protected $execAddr = '';
 
     /**
      *转移前.
-     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account prev = 2;</code>
+     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account prev = 2;</code>.
      */
     protected $prev = null;
 
     /**
      *转移后.
-     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account current = 3;</code>
+     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account current = 3;</code>.
      */
     protected $current = null;
 
@@ -36,15 +36,15 @@ class ReceiptExecAccountTransfer extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                    Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var string $execAddr
-     *                                                    合约地址
+     *             合约地址
      * @var Account $prev
-     *                                                    转移前
+     *              转移前
      * @var Account $current
-     *                                                    转移后
-     *                                                    }
+     *              转移后
+     *              }
      */
     public function __construct($data = null)
     {
@@ -54,7 +54,7 @@ class ReceiptExecAccountTransfer extends Message
 
     /**
      *合约地址
-     * Generated from protobuf field <code>string execAddr = 1;</code>
+     * Generated from protobuf field <code>string execAddr = 1;</code>.
      *
      * @return string
      */
@@ -65,10 +65,9 @@ class ReceiptExecAccountTransfer extends Message
 
     /**
      *合约地址
-     * Generated from protobuf field <code>string execAddr = 1;</code>
+     * Generated from protobuf field <code>string execAddr = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setExecAddr($var)
@@ -81,7 +80,7 @@ class ReceiptExecAccountTransfer extends Message
 
     /**
      *转移前.
-     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account prev = 2;</code>
+     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account prev = 2;</code>.
      *
      * @return Account|null
      */
@@ -92,10 +91,9 @@ class ReceiptExecAccountTransfer extends Message
 
     /**
      *转移前.
-     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account prev = 2;</code>
+     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account prev = 2;</code>.
      *
      * @param  Account  $var
-     *
      * @return $this
      */
     public function setPrev($var)
@@ -118,7 +116,7 @@ class ReceiptExecAccountTransfer extends Message
 
     /**
      *转移后.
-     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account current = 3;</code>
+     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account current = 3;</code>.
      *
      * @return Account|null
      */
@@ -129,10 +127,9 @@ class ReceiptExecAccountTransfer extends Message
 
     /**
      *转移后.
-     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account current = 3;</code>
+     * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account current = 3;</code>.
      *
      * @param  Account  $var
-     *
      * @return $this
      */
     public function setCurrent($var)

@@ -38,7 +38,7 @@ class ReqTokenFinishCreate extends Message
      * @var string $finisher_addr
      * @var string $symbol
      * @var string $owner_addr
-     *                       }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -60,7 +60,6 @@ class ReqTokenFinishCreate extends Message
      * Generated from protobuf field <code>string finisher_addr = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setFinisherAddr($var)
@@ -85,7 +84,6 @@ class ReqTokenFinishCreate extends Message
      * Generated from protobuf field <code>string symbol = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setSymbol($var)
@@ -110,7 +108,6 @@ class ReqTokenFinishCreate extends Message
      * Generated from protobuf field <code>string owner_addr = 3;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setOwnerAddr($var)

@@ -13,7 +13,7 @@ use GPBMetadata\Statistic;
 
 /**
  *查询symbol在合约中的代币总额应答.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReplyGetExecBalance</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReplyGetExecBalance</code>.
  */
 class ReplyGetExecBalance extends Message
 {
@@ -46,14 +46,14 @@ class ReplyGetExecBalance extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                                                                      Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var int|string $amount
      * @var int|string $amountFrozen
      * @var int|string $amountActive
      * @var string $nextKey
      * @var ExecBalanceItem[]|RepeatedField $items
-     *                                                                                                      }
+     *                                      }
      */
     public function __construct($data = null)
     {
@@ -75,7 +75,6 @@ class ReplyGetExecBalance extends Message
      * Generated from protobuf field <code>int64 amount = 1;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setAmount($var)
@@ -100,7 +99,6 @@ class ReplyGetExecBalance extends Message
      * Generated from protobuf field <code>int64 amountFrozen = 2;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setAmountFrozen($var)
@@ -125,7 +123,6 @@ class ReplyGetExecBalance extends Message
      * Generated from protobuf field <code>int64 amountActive = 3;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setAmountActive($var)
@@ -150,7 +147,6 @@ class ReplyGetExecBalance extends Message
      * Generated from protobuf field <code>bytes nextKey = 4;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setNextKey($var)
@@ -175,7 +171,6 @@ class ReplyGetExecBalance extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ExecBalanceItem items = 5;</code>.
      *
      * @param  ExecBalanceItem[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setItems($var)

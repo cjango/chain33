@@ -13,7 +13,7 @@ use GPBMetadata\Blockchain;
 
 /**
  *通过高度列表和title获取平行链交易.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqParaTxByHeight</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqParaTxByHeight</code>.
  */
 class ReqParaTxByHeight extends Message
 {
@@ -31,11 +31,11 @@ class ReqParaTxByHeight extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                                    Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var int[]|string[]|RepeatedField $items
      * @var string $title
-     *                                                                    }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -57,7 +57,6 @@ class ReqParaTxByHeight extends Message
      * Generated from protobuf field <code>repeated int64 items = 1;</code>.
      *
      * @param  int[]|string[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setItems($var)
@@ -82,7 +81,6 @@ class ReqParaTxByHeight extends Message
      * Generated from protobuf field <code>string title = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setTitle($var)

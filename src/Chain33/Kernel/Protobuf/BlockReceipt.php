@@ -16,7 +16,7 @@ use GPBMetadata\Blockchain;
  *     receipts :区块上所有交易的收据信息列表
  *     hash : 本链区块hash
  *     height :本链区块高度.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.BlockReceipt</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.BlockReceipt</code>.
  */
 class BlockReceipt extends Message
 {
@@ -39,12 +39,12 @@ class BlockReceipt extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                                                                  Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var ReceiptData[]|RepeatedField $receipts
      * @var string $hash
      * @var int|string $height
-     *                                                                                                  }
+     *                 }
      */
     public function __construct($data = null)
     {
@@ -66,7 +66,6 @@ class BlockReceipt extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ReceiptData receipts = 1;</code>.
      *
      * @param  ReceiptData[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setReceipts($var)
@@ -92,7 +91,6 @@ class BlockReceipt extends Message
      * Generated from protobuf field <code>bytes hash = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setHash($var)
@@ -117,7 +115,6 @@ class BlockReceipt extends Message
      * Generated from protobuf field <code>int64 height = 3;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setHeight($var)

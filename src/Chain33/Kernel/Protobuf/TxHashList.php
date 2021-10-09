@@ -34,12 +34,12 @@ class TxHashList extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                                    Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var string[]|RepeatedField $hashes
      * @var int|string $count
      * @var int[]|string[]|RepeatedField $expire
-     *                                                                    }
+     *                                   }
      */
     public function __construct($data = null)
     {
@@ -61,7 +61,6 @@ class TxHashList extends Message
      * Generated from protobuf field <code>repeated bytes hashes = 1;</code>.
      *
      * @param  string[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setHashes($var)
@@ -86,7 +85,6 @@ class TxHashList extends Message
      * Generated from protobuf field <code>int64 count = 2;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setCount($var)
@@ -111,7 +109,6 @@ class TxHashList extends Message
      * Generated from protobuf field <code>repeated int64 expire = 3;</code>.
      *
      * @param  int[]|string[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setExpire($var)

@@ -20,7 +20,7 @@ class ReqAddr extends Message
 
     /**
      *表示取所有/from/to/其他的hash列表.
-     * Generated from protobuf field <code>int32 flag = 2;</code>
+     * Generated from protobuf field <code>int32 flag = 2;</code>.
      */
     protected $flag = 0;
 
@@ -48,16 +48,16 @@ class ReqAddr extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                        Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var string $addr
      * @var int $flag
-     *                        表示取所有/from/to/其他的hash列表
+     *          表示取所有/from/to/其他的hash列表
      * @var int $count
      * @var int $direction
      * @var int|string $height
      * @var int|string $index
-     *                        }
+     *                 }
      */
     public function __construct($data = null)
     {
@@ -79,7 +79,6 @@ class ReqAddr extends Message
      * Generated from protobuf field <code>string addr = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setAddr($var)
@@ -92,7 +91,7 @@ class ReqAddr extends Message
 
     /**
      *表示取所有/from/to/其他的hash列表.
-     * Generated from protobuf field <code>int32 flag = 2;</code>
+     * Generated from protobuf field <code>int32 flag = 2;</code>.
      *
      * @return int
      */
@@ -103,10 +102,9 @@ class ReqAddr extends Message
 
     /**
      *表示取所有/from/to/其他的hash列表.
-     * Generated from protobuf field <code>int32 flag = 2;</code>
+     * Generated from protobuf field <code>int32 flag = 2;</code>.
      *
      * @param  int  $var
-     *
      * @return $this
      */
     public function setFlag($var)
@@ -131,7 +129,6 @@ class ReqAddr extends Message
      * Generated from protobuf field <code>int32 count = 3;</code>.
      *
      * @param  int  $var
-     *
      * @return $this
      */
     public function setCount($var)
@@ -156,7 +153,6 @@ class ReqAddr extends Message
      * Generated from protobuf field <code>int32 direction = 4;</code>.
      *
      * @param  int  $var
-     *
      * @return $this
      */
     public function setDirection($var)
@@ -181,7 +177,6 @@ class ReqAddr extends Message
      * Generated from protobuf field <code>int64 height = 5;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setHeight($var)
@@ -206,7 +201,6 @@ class ReqAddr extends Message
      * Generated from protobuf field <code>int64 index = 6;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setIndex($var)

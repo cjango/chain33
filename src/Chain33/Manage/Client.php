@@ -21,8 +21,8 @@ class Client extends BaseClient
      *
      * @param  string  $addr
      * @param  string  $op  add / delete
-     *
      * @return string
+     *
      * @throws ConfigException
      */
     public function finisher(string $addr, string $op = self::OP_ADD): string
@@ -50,8 +50,8 @@ class Client extends BaseClient
      *
      * @param  string  $symbol
      * @param  string  $op
-     *
      * @return string
+     *
      * @throws ConfigException
      */
     public function blacklist(string $symbol, string $op = self::OP_ADD): string
@@ -79,8 +79,8 @@ class Client extends BaseClient
      *
      * @param  string  $addr
      * @param  string  $op
-     *
      * @return string
+     *
      * @throws ConfigException
      */
     public function tendermint(string $addr, string $op = self::OP_ADD): string
@@ -108,7 +108,6 @@ class Client extends BaseClient
      *
      * @param  string  $pubkey  新节点的公钥
      * @param  int  $power  投票权，范围从【1~~全网总power/3】，如果设置为 0 则代表剔除节点
-     *
      * @return string
      */
     public function addConsensusNode(string $pubkey, int $power = 10): string
@@ -132,7 +131,6 @@ class Client extends BaseClient
      * @Date  : 2020/5/2 21:43
      *
      * @param  string  $type  操作标识符
-     *
      * @return array
      */
     public function get(string $type = 'finisher'): array

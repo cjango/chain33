@@ -28,11 +28,11 @@ class ReceiptConfig extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                       Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var ConfigItem $prev
      * @var ConfigItem $current
-     *                                                       }
+     *                 }
      */
     public function __construct($data = null)
     {
@@ -54,7 +54,6 @@ class ReceiptConfig extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ConfigItem prev = 1;</code>.
      *
      * @param  ConfigItem  $var
-     *
      * @return $this
      */
     public function setPrev($var)
@@ -89,7 +88,6 @@ class ReceiptConfig extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ConfigItem current = 2;</code>.
      *
      * @param  ConfigItem  $var
-     *
      * @return $this
      */
     public function setCurrent($var)

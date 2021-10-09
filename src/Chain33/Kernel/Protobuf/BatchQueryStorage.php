@@ -12,7 +12,7 @@ use Google\Protobuf\Internal\RepeatedField;
 
 /**
  *批量查询有可能导致数据库崩溃.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.BatchQueryStorage</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.BatchQueryStorage</code>.
  */
 class BatchQueryStorage extends Message
 {
@@ -25,10 +25,10 @@ class BatchQueryStorage extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                              Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var string[]|RepeatedField $txHashs
-     *                                                              }
+     *                             }
      */
     public function __construct($data = null)
     {
@@ -50,7 +50,6 @@ class BatchQueryStorage extends Message
      * Generated from protobuf field <code>repeated string txHashs = 1;</code>.
      *
      * @param  string[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setTxHashs($var)

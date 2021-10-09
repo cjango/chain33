@@ -11,7 +11,7 @@ use GPBMetadata\Statistic;
 
 /**
  *查询symbol代币总额.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqGetTotalCoins</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqGetTotalCoins</code>.
  */
 class ReqGetTotalCoins extends Message
 {
@@ -44,14 +44,14 @@ class ReqGetTotalCoins extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                        Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var string $symbol
      * @var string $stateHash
      * @var string $startKey
      * @var int|string $count
      * @var string $execer
-     *                        }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -73,7 +73,6 @@ class ReqGetTotalCoins extends Message
      * Generated from protobuf field <code>string symbol = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setSymbol($var)
@@ -98,7 +97,6 @@ class ReqGetTotalCoins extends Message
      * Generated from protobuf field <code>bytes stateHash = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setStateHash($var)
@@ -123,7 +121,6 @@ class ReqGetTotalCoins extends Message
      * Generated from protobuf field <code>bytes startKey = 3;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setStartKey($var)
@@ -148,7 +145,6 @@ class ReqGetTotalCoins extends Message
      * Generated from protobuf field <code>int64 count = 4;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setCount($var)
@@ -173,7 +169,6 @@ class ReqGetTotalCoins extends Message
      * Generated from protobuf field <code>string execer = 5;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setExecer($var)
