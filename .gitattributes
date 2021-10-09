@@ -1,3 +1,3 @@
-GPBMetadata/Executor.php -text
-GPBMetadata/Storage.php  -text
+GPBMetadata/Executor.php export-ignore
+GPBMetadata/Storage.php  export-ignore
 *.php    eol=lf
