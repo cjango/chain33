@@ -12,6 +12,7 @@ enabled:
 
 disabled:
   - "unalign_equals"
+  - "laravel_phpdoc_separation"
 
 finder:
   exclude:
