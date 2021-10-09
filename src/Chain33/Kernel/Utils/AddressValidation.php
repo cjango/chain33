@@ -4,7 +4,6 @@ namespace Jason\Chain33\Kernel\Utils;
 
 class AddressValidation
 {
-
     /***
      * Tests if the address is valid or not.
      * @param  String Base58 $address
@@ -17,10 +16,10 @@ class AddressValidation
         if (strlen($address) != 25) {
             return false;
         }
-        $checksum   = substr($address, 21, 4);
+        $checksum = substr($address, 21, 4);
         $rawAddress = substr($address, 0, 21);
-        $sha256     = hash('sha256', $rawAddress);
-        $sha256     = hash('sha256', hex2bin($sha256));
+        $sha256 = hash('sha256', $rawAddress);
+        $sha256 = hash('sha256', hex2bin($sha256));
 
         if (substr(hex2bin($sha256), 0, 4) == $checksum) {
             return true;
@@ -36,9 +35,9 @@ class AddressValidation
      */
     public static function validateWifKey($wif): bool
     {
-        $key          = Base58::decode($wif, false);
-        $length       = strlen($key);
-        $firstSha256  = hash('sha256', hex2bin(substr($key, 0, $length - 8)));
+        $key = Base58::decode($wif, false);
+        $length = strlen($key);
+        $firstSha256 = hash('sha256', hex2bin(substr($key, 0, $length - 8)));
         $secondSha256 = hash('sha256', hex2bin($firstSha256));
         if (substr($secondSha256, 0, 8) == substr($key, $length - 8, 8)) {
             return true;
@@ -46,5 +45,4 @@ class AddressValidation
             return false;
         }
     }
-
 }

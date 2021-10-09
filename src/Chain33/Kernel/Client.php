@@ -9,7 +9,6 @@ use Jason\Chain33\Kernel\Support\RpcRequest;
 
 class Client
 {
-
     protected $app;
 
     protected $config;
@@ -18,11 +17,11 @@ class Client
 
     public function __construct($app)
     {
-        $this->app    = $app;
+        $this->app = $app;
         $this->config = $app->config;
 
         $this->client = new Guzzle([
-            'base_uri' => $this->config['base_uri'] . ':' . $this->config['base_port'],
+            'base_uri' => $this->config['base_uri'].':'.$this->config['base_port'],
         ]);
     }
 
@@ -41,7 +40,7 @@ class Client
 
         $rpcRequest->setMethod($method);
 
-        if (!empty($params)) {
+        if (! empty($params)) {
             $rpcRequest->setParams($params);
         }
 
@@ -56,7 +55,7 @@ class Client
             $resJson = json_decode($response->getBody()->getContents(), true);
 
             if ($body->getId() != $resJson['id']) {
-                throw new ChainException("No the same id");
+                throw new ChainException('No the same id');
             }
 
             if ($resJson['error']) {
@@ -68,5 +67,4 @@ class Client
             throw new ChainException($exception->getMessage());
         }
     }
-
 }
