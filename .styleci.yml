@@ -10,7 +10,6 @@ use-tabs: false
 
 enabled:
   - "phpdoc_align"
-  - "no_whitespace_in_blank_line"
 
 disabled:
   - "unalign_equals"
