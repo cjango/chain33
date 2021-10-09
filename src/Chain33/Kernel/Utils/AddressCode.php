@@ -21,6 +21,7 @@ class AddressCode
      * Input can be compressed or uncompressed DER Encoded Pubkey.
      *
      * @param $derPubKey
+     *
      * @return array
      * @throws Exception
      */
@@ -44,6 +45,7 @@ class AddressCode
      * Input can be compressed or uncompressed DER Encoded Pubkey.
      *
      * @param $compressedDerPubKey
+     *
      * @return array
      * @throws Exception
      */
@@ -91,6 +93,7 @@ class AddressCode
      * .
      *
      * @param  string  $derPubKey
+     *
      * @return String Hash160
      * @throws Exception
      */
@@ -121,6 +124,7 @@ class AddressCode
      * .
      *
      * @param  string  $hex
+     *
      * @return String Base58
      * @throws Exception
      */

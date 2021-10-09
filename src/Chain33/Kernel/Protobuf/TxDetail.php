@@ -46,6 +46,7 @@ class TxDetail extends Message
      *
      * @param  array  $data  {
      *                                                              Optional. Data for populating the Message object.
+     *
      * @var int $index
      * @var Transaction $tx
      * @var ReceiptData $receipt
@@ -72,6 +73,7 @@ class TxDetail extends Message
      * Generated from protobuf field <code>uint32 index = 1;</code>.
      *
      * @param  int  $var
+     *
      * @return $this
      */
     public function setIndex($var)
@@ -96,6 +98,7 @@ class TxDetail extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Transaction tx = 2;</code>.
      *
      * @param  Transaction  $var
+     *
      * @return $this
      */
     public function setTx($var)
@@ -130,6 +133,7 @@ class TxDetail extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ReceiptData receipt = 3;</code>.
      *
      * @param  ReceiptData  $var
+     *
      * @return $this
      */
     public function setReceipt($var)
@@ -164,6 +168,7 @@ class TxDetail extends Message
      * Generated from protobuf field <code>repeated bytes proofs = 4;</code>.
      *
      * @param  string[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setProofs($var)

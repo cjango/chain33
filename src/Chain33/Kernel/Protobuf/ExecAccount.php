@@ -28,6 +28,7 @@ class ExecAccount extends Message
      *
      * @param  array  $data  {
      *                                                    Optional. Data for populating the Message object.
+     *
      * @var string $execer
      * @var Account $account
      *                                                    }
@@ -52,6 +53,7 @@ class ExecAccount extends Message
      * Generated from protobuf field <code>string execer = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setExecer($var)
@@ -76,6 +78,7 @@ class ExecAccount extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account account = 2;</code>.
      *
      * @param  Account  $var
+     *
      * @return $this
      */
     public function setAccount($var)

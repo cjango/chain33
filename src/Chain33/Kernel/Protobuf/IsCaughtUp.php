@@ -25,6 +25,7 @@ class IsCaughtUp extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var bool $Iscaughtup
      *                       }
      */
@@ -48,6 +49,7 @@ class IsCaughtUp extends Message
      * Generated from protobuf field <code>bool Iscaughtup = 1;</code>.
      *
      * @param  bool  $var
+     *
      * @return $this
      */
     public function setIscaughtup($var)

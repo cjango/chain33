@@ -57,6 +57,7 @@ class ParaTxDetail extends Message
      *
      * @param  array  $data  {
      *                                                                                               Optional. Data for populating the Message object.
+     *
      * @var int|string $type
      * @var Header $header
      * @var TxDetail[]|RepeatedField $txDetails
@@ -85,6 +86,7 @@ class ParaTxDetail extends Message
      * Generated from protobuf field <code>int64 type = 1;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setType($var)
@@ -109,6 +111,7 @@ class ParaTxDetail extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Header header = 2;</code>.
      *
      * @param  Header  $var
+     *
      * @return $this
      */
     public function setHeader($var)
@@ -143,6 +146,7 @@ class ParaTxDetail extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.TxDetail txDetails = 3;</code>.
      *
      * @param  TxDetail[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setTxDetails($var)
@@ -168,6 +172,7 @@ class ParaTxDetail extends Message
      * Generated from protobuf field <code>bytes childHash = 4;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setChildHash($var)
@@ -192,6 +197,7 @@ class ParaTxDetail extends Message
      * Generated from protobuf field <code>uint32 index = 5;</code>.
      *
      * @param  int  $var
+     *
      * @return $this
      */
     public function setIndex($var)
@@ -216,6 +222,7 @@ class ParaTxDetail extends Message
      * Generated from protobuf field <code>repeated bytes proofs = 6;</code>.
      *
      * @param  string[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setProofs($var)

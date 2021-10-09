@@ -30,6 +30,7 @@ class BlockSequence extends Message
      *
      * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
+     *
      * @var string $Hash
      * @var int|string $Type
      *                        }
@@ -54,6 +55,7 @@ class BlockSequence extends Message
      * Generated from protobuf field <code>bytes Hash = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setHash($var)
@@ -78,6 +80,7 @@ class BlockSequence extends Message
      * Generated from protobuf field <code>int64 Type = 2;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setType($var)

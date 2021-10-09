@@ -29,6 +29,7 @@ class Reply extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var bool $isOk
      * @var string $msg
      *                       }
@@ -53,6 +54,7 @@ class Reply extends Message
      * Generated from protobuf field <code>bool isOk = 1;</code>.
      *
      * @param  bool  $var
+     *
      * @return $this
      */
     public function setIsOk($var)
@@ -77,6 +79,7 @@ class Reply extends Message
      * Generated from protobuf field <code>bytes msg = 2;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setMsg($var)

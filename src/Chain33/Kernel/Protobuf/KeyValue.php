@@ -29,6 +29,7 @@ class KeyValue extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var string $key
      * @var string $value
      *                       }
@@ -53,6 +54,7 @@ class KeyValue extends Message
      * Generated from protobuf field <code>bytes key = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setKey($var)
@@ -77,6 +79,7 @@ class KeyValue extends Message
      * Generated from protobuf field <code>bytes value = 2;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setValue($var)

@@ -12,6 +12,7 @@ class PointMathGMP
      * @param  String Hex $k
      * @param  Array  $pG  (GMP, GMP)
      * @param         $base  (INT)
+     *
      * @return Array Point (GMP, GMP)
      * @throws Exception
      */
@@ -46,6 +47,7 @@ class PointMathGMP
      * Computes the result of a point addition and returns the resulting point as an Array.
      *
      * @param  Array  $pt
+     *
      * @return Array Point
      * @throws Exception
      */
@@ -118,6 +120,7 @@ class PointMathGMP
      *
      * @param  Array  $pt1
      * @param  Array  $pt2
+     *
      * @return Array Point
      * @throws Exception
      */
@@ -187,6 +190,7 @@ class PointMathGMP
      *
      * @param $x
      * @param $y
+     *
      * @return bool
      */
     public static function validatePoint($x, $y, $a, $b, $p)
@@ -216,6 +220,7 @@ class PointMathGMP
      *
      * @param        $x
      * @param  null  $derEvenOrOddCode
+     *
      * @return array|null|String
      */
     public static function calculateYWithX($x, $a, $b, $p, $derEvenOrOddCode = null)
@@ -283,6 +288,7 @@ class PointMathGMP
      * Calculates the square root of $a mod p and returns the 2 solutions as an array.
      *
      * @param $a
+     *
      * @return array|null
      * @throws Exception
      */
@@ -317,6 +323,7 @@ class PointMathGMP
      * Returns Negated Point (Y).
      *
      * @param $point Array(GMP, GMP)
+     *
      * @return Array(GMP, GMP)
      */
     public static function negatePoint($point)

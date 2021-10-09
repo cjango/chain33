@@ -24,6 +24,7 @@ class ReqWalletMergeBalance extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var string $to
      *                       }
      */
@@ -47,6 +48,7 @@ class ReqWalletMergeBalance extends Message
      * Generated from protobuf field <code>string to = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setTo($var)

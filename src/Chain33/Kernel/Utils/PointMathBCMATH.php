@@ -13,6 +13,7 @@ class PointMathBCMATH
      * @param  array  $pt2
      * @param         $a
      * @param         $p
+     *
      * @return array Point
      * @throws Exception
      */
@@ -75,6 +76,7 @@ class PointMathBCMATH
      * @param  array  $pt
      * @param         $a
      * @param         $p
+     *
      * @return array Point
      */
     public static function doublePoint(array $pt, $a, $p): array
@@ -111,6 +113,7 @@ class PointMathBCMATH
      *
      * @param $a
      * @param $m
+     *
      * @return bbc math number
      */
     private static function inverse_mod($a, $m)
@@ -159,6 +162,7 @@ class PointMathBCMATH
      * Returns Negated Point (Y).
      *
      * @param $point Array(BC, BC)
+     *
      * @return Array(BC, BC)
      */
     public static function negatePoint($point)
@@ -180,6 +184,7 @@ class PointMathBCMATH
      *
      * @param $pt1 Array(BC, BC)
      * @param $pt2 Array(BC, BC)
+     *
      * @return int(BC, BC)
      */
 

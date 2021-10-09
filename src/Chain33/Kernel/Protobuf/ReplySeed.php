@@ -24,6 +24,7 @@ class ReplySeed extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var string $seed
      *                       }
      */
@@ -47,6 +48,7 @@ class ReplySeed extends Message
      * Generated from protobuf field <code>string seed = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setSeed($var)

@@ -30,6 +30,7 @@ class AllExecBalance extends Message
      *
      * @param  array  $data  {
      *                                                                                                  Optional. Data for populating the Message object.
+     *
      * @var string $addr
      * @var ExecAccount[]|RepeatedField $ExecAccount
      *                                                                                                  }
@@ -54,6 +55,7 @@ class AllExecBalance extends Message
      * Generated from protobuf field <code>string addr = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setAddr($var)
@@ -78,6 +80,7 @@ class AllExecBalance extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ExecAccount ExecAccount = 2;</code>.
      *
      * @param  ExecAccount[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setExecAccount($var)

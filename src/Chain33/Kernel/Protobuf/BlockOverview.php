@@ -40,6 +40,7 @@ class BlockOverview extends Message
      *
      * @param  array  $data  {
      *                                                              Optional. Data for populating the Message object.
+     *
      * @var Header $head
      * @var int|string $txCount
      * @var string[]|RepeatedField $txHashes
@@ -65,6 +66,7 @@ class BlockOverview extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Header head = 1;</code>.
      *
      * @param  Header  $var
+     *
      * @return $this
      */
     public function setHead($var)
@@ -99,6 +101,7 @@ class BlockOverview extends Message
      * Generated from protobuf field <code>int64 txCount = 2;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setTxCount($var)
@@ -123,6 +126,7 @@ class BlockOverview extends Message
      * Generated from protobuf field <code>repeated bytes txHashes = 3;</code>.
      *
      * @param  string[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setTxHashes($var)

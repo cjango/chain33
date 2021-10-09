@@ -43,6 +43,7 @@ class LinkNotaryStorage extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var string $link
      *                       存证内容的链接，可以写入URL,或者其他可用于定位源文件得线索.
      * @var string $hash
@@ -75,6 +76,7 @@ class LinkNotaryStorage extends Message
      * Generated from protobuf field <code>bytes link = 1;</code>
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setLink($var)
@@ -101,6 +103,7 @@ class LinkNotaryStorage extends Message
      * Generated from protobuf field <code>bytes hash = 2;</code>
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setHash($var)
@@ -127,6 +130,7 @@ class LinkNotaryStorage extends Message
      * Generated from protobuf field <code>string key = 3;</code>
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setKey($var)
@@ -153,6 +157,7 @@ class LinkNotaryStorage extends Message
      * Generated from protobuf field <code>string value = 4;</code>
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setValue($var)

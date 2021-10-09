@@ -34,6 +34,7 @@ class ReportErrEvent extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var string $frommodule
      * @var string $tomodule
      * @var string $error
@@ -59,6 +60,7 @@ class ReportErrEvent extends Message
      * Generated from protobuf field <code>string frommodule = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setFrommodule($var)
@@ -83,6 +85,7 @@ class ReportErrEvent extends Message
      * Generated from protobuf field <code>string tomodule = 2;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setTomodule($var)
@@ -107,6 +110,7 @@ class ReportErrEvent extends Message
      * Generated from protobuf field <code>string error = 3;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setError($var)

@@ -8,6 +8,7 @@ class AddressValidation
      * Tests if the address is valid or not.
      *
      * @param  String Base58 $address
+     *
      * @return bool
      */
     public static function validateAddress($address): bool
@@ -33,6 +34,7 @@ class AddressValidation
      * Tests if the Wif key (Wallet Import Format) is valid or not.
      *
      * @param  String Base58 $wif
+     *
      * @return bool
      */
     public static function validateWifKey($wif): bool

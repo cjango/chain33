@@ -38,6 +38,7 @@ class WalletUnLock extends Message
      *
      * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
+     *
      * @var string $passwd
      * @var int|string $timeout
      * @var bool $walletOrTicket
@@ -63,6 +64,7 @@ class WalletUnLock extends Message
      * Generated from protobuf field <code>string passwd = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setPasswd($var)
@@ -87,6 +89,7 @@ class WalletUnLock extends Message
      * Generated from protobuf field <code>int64 timeout = 2;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setTimeout($var)
@@ -111,6 +114,7 @@ class WalletUnLock extends Message
      * Generated from protobuf field <code>bool walletOrTicket = 3;</code>.
      *
      * @param  bool  $var
+     *
      * @return $this
      */
     public function setWalletOrTicket($var)

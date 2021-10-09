@@ -25,6 +25,7 @@ class ReqGetAccount extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var string $label
      *                       }
      */
@@ -48,6 +49,7 @@ class ReqGetAccount extends Message
      * Generated from protobuf field <code>string label = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setLabel($var)

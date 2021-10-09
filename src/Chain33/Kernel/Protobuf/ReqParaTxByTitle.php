@@ -40,6 +40,7 @@ class ReqParaTxByTitle extends Message
      *
      * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
+     *
      * @var int|string $start
      * @var int|string $end
      * @var string $title
@@ -66,6 +67,7 @@ class ReqParaTxByTitle extends Message
      * Generated from protobuf field <code>int64 start = 1;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setStart($var)
@@ -90,6 +92,7 @@ class ReqParaTxByTitle extends Message
      * Generated from protobuf field <code>int64 end = 2;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setEnd($var)
@@ -114,6 +117,7 @@ class ReqParaTxByTitle extends Message
      * Generated from protobuf field <code>string title = 3;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setTitle($var)
@@ -138,6 +142,7 @@ class ReqParaTxByTitle extends Message
      * Generated from protobuf field <code>bool isSeq = 4;</code>.
      *
      * @param  bool  $var
+     *
      * @return $this
      */
     public function setIsSeq($var)

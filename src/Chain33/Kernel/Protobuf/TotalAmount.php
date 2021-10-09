@@ -25,6 +25,7 @@ class TotalAmount extends Message
      *
      * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
+     *
      * @var int|string $total
      *                        统计的总数
      *                        }
@@ -51,6 +52,7 @@ class TotalAmount extends Message
      * Generated from protobuf field <code>int64 total = 1;</code>
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setTotal($var)

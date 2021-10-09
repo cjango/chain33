@@ -27,6 +27,7 @@ class Headers extends Message
      *
      * @param  array  $data  {
      *                                                                                             Optional. Data for populating the Message object.
+     *
      * @var Header[]|RepeatedField $items
      *                                                                                             }
      */
@@ -50,6 +51,7 @@ class Headers extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Header items = 1;</code>.
      *
      * @param  Header[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setItems($var)

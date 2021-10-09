@@ -32,6 +32,7 @@ class WalletPwHash extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var string $pwHash
      * @var string $randstr
      *                       }
@@ -56,6 +57,7 @@ class WalletPwHash extends Message
      * Generated from protobuf field <code>bytes pwHash = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setPwHash($var)
@@ -80,6 +82,7 @@ class WalletPwHash extends Message
      * Generated from protobuf field <code>string randstr = 2;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setRandstr($var)

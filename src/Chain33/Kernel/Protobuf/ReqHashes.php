@@ -26,6 +26,7 @@ class ReqHashes extends Message
      *
      * @param  array  $data  {
      *                                                              Optional. Data for populating the Message object.
+     *
      * @var string[]|RepeatedField $hashes
      *                                                              }
      */
@@ -49,6 +50,7 @@ class ReqHashes extends Message
      * Generated from protobuf field <code>repeated bytes hashes = 1;</code>.
      *
      * @param  string[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setHashes($var)

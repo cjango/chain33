@@ -27,6 +27,7 @@ class ParaTxDetails extends Message
      *
      * @param  array  $data  {
      *                                                                                                   Optional. Data for populating the Message object.
+     *
      * @var ParaTxDetail[]|RepeatedField $items
      *                                                                                                   }
      */
@@ -50,6 +51,7 @@ class ParaTxDetails extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ParaTxDetail items = 1;</code>.
      *
      * @param  ParaTxDetail[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setItems($var)

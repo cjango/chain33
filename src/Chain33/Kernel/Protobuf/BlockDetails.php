@@ -27,6 +27,7 @@ class BlockDetails extends Message
      *
      * @param  array  $data  {
      *                                                                                                  Optional. Data for populating the Message object.
+     *
      * @var BlockDetail[]|RepeatedField $items
      *                                                                                                  }
      */
@@ -50,6 +51,7 @@ class BlockDetails extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.BlockDetail items = 1;</code>.
      *
      * @param  BlockDetail[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setItems($var)

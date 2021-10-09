@@ -25,6 +25,7 @@ class ReplyTxInfos extends Message
      *
      * @param  array  $data  {
      *                                                                                                  Optional. Data for populating the Message object.
+     *
      * @var ReplyTxInfo[]|RepeatedField $txInfos
      *                                                                                                  }
      */
@@ -48,6 +49,7 @@ class ReplyTxInfos extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ReplyTxInfo txInfos = 1;</code>.
      *
      * @param  ReplyTxInfo[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setTxInfos($var)

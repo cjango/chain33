@@ -44,6 +44,7 @@ class BlockDetail extends Message
      *
      * @param  array  $data  {
      *                                                                                                  Optional. Data for populating the Message object.
+     *
      * @var Block $block
      * @var ReceiptData[]|RepeatedField $receipts
      * @var KeyValue[]|RepeatedField $KV
@@ -70,6 +71,7 @@ class BlockDetail extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Block block = 1;</code>.
      *
      * @param  Block  $var
+     *
      * @return $this
      */
     public function setBlock($var)
@@ -104,6 +106,7 @@ class BlockDetail extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ReceiptData receipts = 2;</code>.
      *
      * @param  ReceiptData[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setReceipts($var)
@@ -129,6 +132,7 @@ class BlockDetail extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.KeyValue KV = 3;</code>.
      *
      * @param  KeyValue[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setKV($var)
@@ -154,6 +158,7 @@ class BlockDetail extends Message
      * Generated from protobuf field <code>bytes prevStatusHash = 4;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setPrevStatusHash($var)

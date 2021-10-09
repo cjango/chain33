@@ -48,6 +48,7 @@ class ReqBalance extends Message
      *
      * @param  array  $data  {
      *                                                              Optional. Data for populating the Message object.
+     *
      * @var string[]|RepeatedField $addresses
      *                                                              地址列表
      * @var string $execer
@@ -79,6 +80,7 @@ class ReqBalance extends Message
      * Generated from protobuf field <code>repeated string addresses = 1;</code>
      *
      * @param  string[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setAddresses($var)
@@ -105,6 +107,7 @@ class ReqBalance extends Message
      * Generated from protobuf field <code>string execer = 2;</code>
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setExecer($var)
@@ -129,6 +132,7 @@ class ReqBalance extends Message
      * Generated from protobuf field <code>string stateHash = 3;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setStateHash($var)
@@ -153,6 +157,7 @@ class ReqBalance extends Message
      * Generated from protobuf field <code>string asset_exec = 4;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setAssetExec($var)
@@ -177,6 +182,7 @@ class ReqBalance extends Message
      * Generated from protobuf field <code>string asset_symbol = 5;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setAssetSymbol($var)

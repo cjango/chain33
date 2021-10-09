@@ -24,6 +24,7 @@ class ReqAccountList extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var bool $withoutBalance
      *                       }
      */
@@ -47,6 +48,7 @@ class ReqAccountList extends Message
      * Generated from protobuf field <code>bool withoutBalance = 1;</code>.
      *
      * @param  bool  $var
+     *
      * @return $this
      */
     public function setWithoutBalance($var)

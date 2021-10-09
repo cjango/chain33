@@ -34,6 +34,7 @@ class CreateTxIn extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var string $execer
      * @var string $actionName
      * @var string $payload
@@ -59,6 +60,7 @@ class CreateTxIn extends Message
      * Generated from protobuf field <code>bytes execer = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setExecer($var)
@@ -83,6 +85,7 @@ class CreateTxIn extends Message
      * Generated from protobuf field <code>string actionName = 2;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setActionName($var)
@@ -107,6 +110,7 @@ class CreateTxIn extends Message
      * Generated from protobuf field <code>bytes payload = 3;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setPayload($var)

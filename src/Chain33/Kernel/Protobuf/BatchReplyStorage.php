@@ -25,6 +25,7 @@ class BatchReplyStorage extends Message
      *
      * @param  array  $data  {
      *                                                                                              Optional. Data for populating the Message object.
+     *
      * @var Storage[]|RepeatedField $storages
      *                                                                                              }
      */
@@ -48,6 +49,7 @@ class BatchReplyStorage extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Storage storages = 1;</code>.
      *
      * @param  Storage[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setStorages($var)

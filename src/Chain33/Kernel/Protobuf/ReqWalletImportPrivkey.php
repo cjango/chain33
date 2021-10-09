@@ -30,6 +30,7 @@ class ReqWalletImportPrivkey extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var string $privkey
      *                       bitcoin 的私钥格式
      * @var string $label
@@ -57,6 +58,7 @@ class ReqWalletImportPrivkey extends Message
      * Generated from protobuf field <code>string privkey = 1;</code>
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setPrivkey($var)
@@ -81,6 +83,7 @@ class ReqWalletImportPrivkey extends Message
      * Generated from protobuf field <code>string label = 2;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setLabel($var)

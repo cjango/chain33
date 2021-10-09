@@ -24,6 +24,7 @@ class ReplyBlockHeight extends Message
      *
      * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
+     *
      * @var int|string $height
      *                        }
      */
@@ -47,6 +48,7 @@ class ReplyBlockHeight extends Message
      * Generated from protobuf field <code>int64 height = 1;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setHeight($var)

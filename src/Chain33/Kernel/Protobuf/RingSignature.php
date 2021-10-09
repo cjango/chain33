@@ -26,6 +26,7 @@ class RingSignature extends Message
      *
      * @param  array  $data  {
      *                                                                                                        Optional. Data for populating the Message object.
+     *
      * @var RingSignatureItem[]|RepeatedField $items
      *                                                                                                        }
      */
@@ -49,6 +50,7 @@ class RingSignature extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.RingSignatureItem items = 1;</code>.
      *
      * @param  RingSignatureItem[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setItems($var)

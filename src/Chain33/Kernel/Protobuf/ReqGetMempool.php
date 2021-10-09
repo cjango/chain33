@@ -23,6 +23,7 @@ class ReqGetMempool extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var bool $isAll
      *                       }
      */
@@ -46,6 +47,7 @@ class ReqGetMempool extends Message
      * Generated from protobuf field <code>bool isAll = 1;</code>.
      *
      * @param  bool  $var
+     *
      * @return $this
      */
     public function setIsAll($var)

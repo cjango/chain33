@@ -35,6 +35,7 @@ class ChunkInfoMsg extends Message
      *
      * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
+     *
      * @var string $chunkHash
      * @var int|string $start
      * @var int|string $end
@@ -60,6 +61,7 @@ class ChunkInfoMsg extends Message
      * Generated from protobuf field <code>bytes chunkHash = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setChunkHash($var)
@@ -84,6 +86,7 @@ class ChunkInfoMsg extends Message
      * Generated from protobuf field <code>int64 start = 2;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setStart($var)
@@ -108,6 +111,7 @@ class ChunkInfoMsg extends Message
      * Generated from protobuf field <code>int64 end = 3;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setEnd($var)

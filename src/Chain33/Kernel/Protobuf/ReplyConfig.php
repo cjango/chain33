@@ -29,6 +29,7 @@ class ReplyConfig extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var string $key
      * @var string $value
      *                       }
@@ -53,6 +54,7 @@ class ReplyConfig extends Message
      * Generated from protobuf field <code>string key = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setKey($var)
@@ -77,6 +79,7 @@ class ReplyConfig extends Message
      * Generated from protobuf field <code>string value = 2;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setValue($var)

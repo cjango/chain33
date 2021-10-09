@@ -40,6 +40,7 @@ class ReqHeightByTitle extends Message
      *
      * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
+     *
      * @var int|string $height
      * @var string $title
      * @var int $count
@@ -66,6 +67,7 @@ class ReqHeightByTitle extends Message
      * Generated from protobuf field <code>int64 height = 1;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setHeight($var)
@@ -90,6 +92,7 @@ class ReqHeightByTitle extends Message
      * Generated from protobuf field <code>string title = 2;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setTitle($var)
@@ -114,6 +117,7 @@ class ReqHeightByTitle extends Message
      * Generated from protobuf field <code>int32 count = 3;</code>.
      *
      * @param  int  $var
+     *
      * @return $this
      */
     public function setCount($var)
@@ -138,6 +142,7 @@ class ReqHeightByTitle extends Message
      * Generated from protobuf field <code>int32 direction = 4;</code>.
      *
      * @param  int  $var
+     *
      * @return $this
      */
     public function setDirection($var)

@@ -64,6 +64,7 @@ class ReqSignRawTx extends Message
      *
      * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
+     *
      * @var string $addr
      * @var string $privkey
      * @var string $txHex
@@ -99,6 +100,7 @@ class ReqSignRawTx extends Message
      * Generated from protobuf field <code>string addr = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setAddr($var)
@@ -123,6 +125,7 @@ class ReqSignRawTx extends Message
      * Generated from protobuf field <code>string privkey = 2;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setPrivkey($var)
@@ -147,6 +150,7 @@ class ReqSignRawTx extends Message
      * Generated from protobuf field <code>string txHex = 3;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setTxHex($var)
@@ -171,6 +175,7 @@ class ReqSignRawTx extends Message
      * Generated from protobuf field <code>string expire = 4;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setExpire($var)
@@ -195,6 +200,7 @@ class ReqSignRawTx extends Message
      * Generated from protobuf field <code>int32 index = 5;</code>.
      *
      * @param  int  $var
+     *
      * @return $this
      */
     public function setIndex($var)
@@ -227,6 +233,7 @@ class ReqSignRawTx extends Message
      * Generated from protobuf field <code>string token = 7;</code>
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setToken($var)
@@ -251,6 +258,7 @@ class ReqSignRawTx extends Message
      * Generated from protobuf field <code>int64 fee = 8;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setFee($var)
@@ -277,6 +285,7 @@ class ReqSignRawTx extends Message
      * Generated from protobuf field <code>string newToAddr = 10;</code>
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setNewToAddr($var)

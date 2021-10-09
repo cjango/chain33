@@ -55,6 +55,7 @@ class ReqGetExecBalance extends Message
      *
      * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
+     *
      * @var string $symbol
      * @var string $stateHash
      * @var string $addr
@@ -84,6 +85,7 @@ class ReqGetExecBalance extends Message
      * Generated from protobuf field <code>string symbol = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setSymbol($var)
@@ -108,6 +110,7 @@ class ReqGetExecBalance extends Message
      * Generated from protobuf field <code>bytes stateHash = 2;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setStateHash($var)
@@ -132,6 +135,7 @@ class ReqGetExecBalance extends Message
      * Generated from protobuf field <code>bytes addr = 3;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setAddr($var)
@@ -156,6 +160,7 @@ class ReqGetExecBalance extends Message
      * Generated from protobuf field <code>bytes execAddr = 4;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setExecAddr($var)
@@ -180,6 +185,7 @@ class ReqGetExecBalance extends Message
      * Generated from protobuf field <code>string execer = 5;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setExecer($var)
@@ -204,6 +210,7 @@ class ReqGetExecBalance extends Message
      * Generated from protobuf field <code>int64 count = 6;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setCount($var)
@@ -228,6 +235,7 @@ class ReqGetExecBalance extends Message
      * Generated from protobuf field <code>bytes nextKey = 7;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setNextKey($var)

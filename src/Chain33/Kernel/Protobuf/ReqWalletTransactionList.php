@@ -40,6 +40,7 @@ class ReqWalletTransactionList extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var string $fromTx
      * @var int $count
      * @var int $direction
@@ -65,6 +66,7 @@ class ReqWalletTransactionList extends Message
      * Generated from protobuf field <code>bytes fromTx = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setFromTx($var)
@@ -89,6 +91,7 @@ class ReqWalletTransactionList extends Message
      * Generated from protobuf field <code>int32 count = 2;</code>.
      *
      * @param  int  $var
+     *
      * @return $this
      */
     public function setCount($var)
@@ -113,6 +116,7 @@ class ReqWalletTransactionList extends Message
      * Generated from protobuf field <code>int32 direction = 3;</code>.
      *
      * @param  int  $var
+     *
      * @return $this
      */
     public function setDirection($var)

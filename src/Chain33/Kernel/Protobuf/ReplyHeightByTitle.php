@@ -31,6 +31,7 @@ class ReplyHeightByTitle extends Message
      *
      * @param  array  $data  {
      *                                                                                                Optional. Data for populating the Message object.
+     *
      * @var string $title
      * @var BlockInfo[]|RepeatedField $items
      *                                                                                                }
@@ -55,6 +56,7 @@ class ReplyHeightByTitle extends Message
      * Generated from protobuf field <code>string title = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setTitle($var)
@@ -79,6 +81,7 @@ class ReplyHeightByTitle extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.BlockInfo items = 2;</code>.
      *
      * @param  BlockInfo[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setItems($var)

@@ -27,6 +27,7 @@ class BlockSequences extends Message
      *
      * @param  array  $data  {
      *                                                                                                    Optional. Data for populating the Message object.
+     *
      * @var BlockSequence[]|RepeatedField $items
      *                                                                                                    }
      */
@@ -50,6 +51,7 @@ class BlockSequences extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.BlockSequence items = 1;</code>.
      *
      * @param  BlockSequence[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setItems($var)

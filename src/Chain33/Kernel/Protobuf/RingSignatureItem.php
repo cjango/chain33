@@ -31,6 +31,7 @@ class RingSignatureItem extends Message
      *
      * @param  array  $data  {
      *                                                              Optional. Data for populating the Message object.
+     *
      * @var string[]|RepeatedField $pubkey
      * @var string[]|RepeatedField $signature
      *                                                              }
@@ -55,6 +56,7 @@ class RingSignatureItem extends Message
      * Generated from protobuf field <code>repeated bytes pubkey = 1;</code>.
      *
      * @param  string[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setPubkey($var)
@@ -79,6 +81,7 @@ class RingSignatureItem extends Message
      * Generated from protobuf field <code>repeated bytes signature = 2;</code>.
      *
      * @param  string[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setSignature($var)

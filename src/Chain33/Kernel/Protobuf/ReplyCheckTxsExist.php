@@ -32,6 +32,7 @@ class ReplyCheckTxsExist extends Message
      *
      * @param  array  $data  {
      *                                                            Optional. Data for populating the Message object.
+     *
      * @var bool[]|RepeatedField $existFlags
      *                                                            对应请求序列存在标识数组，存在则true，否则false
      * @var int $existCount
@@ -60,6 +61,7 @@ class ReplyCheckTxsExist extends Message
      * Generated from protobuf field <code>repeated bool existFlags = 1;</code>
      *
      * @param  bool[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setExistFlags($var)
@@ -86,6 +88,7 @@ class ReplyCheckTxsExist extends Message
      * Generated from protobuf field <code>uint32 existCount = 2;</code>
      *
      * @param  int  $var
+     *
      * @return $this
      */
     public function setExistCount($var)

@@ -44,6 +44,7 @@ class Signature extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var int $ty
      * @var string $pubkey
      * @var string $signature
@@ -70,6 +71,7 @@ class Signature extends Message
      * Generated from protobuf field <code>int32 ty = 1;</code>.
      *
      * @param  int  $var
+     *
      * @return $this
      */
     public function setTy($var)
@@ -94,6 +96,7 @@ class Signature extends Message
      * Generated from protobuf field <code>bytes pubkey = 2;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setPubkey($var)
@@ -120,6 +123,7 @@ class Signature extends Message
      * Generated from protobuf field <code>bytes signature = 3;</code>
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setSignature($var)

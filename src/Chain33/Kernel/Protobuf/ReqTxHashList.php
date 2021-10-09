@@ -31,6 +31,7 @@ class ReqTxHashList extends Message
      *
      * @param  array  $data  {
      *                                                              Optional. Data for populating the Message object.
+     *
      * @var string[]|RepeatedField $hashes
      * @var bool $isShortHash
      *                                                              }
@@ -55,6 +56,7 @@ class ReqTxHashList extends Message
      * Generated from protobuf field <code>repeated string hashes = 1;</code>.
      *
      * @param  string[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setHashes($var)
@@ -79,6 +81,7 @@ class ReqTxHashList extends Message
      * Generated from protobuf field <code>bool isShortHash = 2;</code>.
      *
      * @param  bool  $var
+     *
      * @return $this
      */
     public function setIsShortHash($var)

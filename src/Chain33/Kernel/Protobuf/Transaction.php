@@ -75,6 +75,7 @@ class Transaction extends Message
      *
      * @param  array  $data  {
      *                                                      Optional. Data for populating the Message object.
+     *
      * @var string $execer
      * @var string $payload
      * @var Signature $signature
@@ -110,6 +111,7 @@ class Transaction extends Message
      * Generated from protobuf field <code>bytes execer = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setExecer($var)
@@ -134,6 +136,7 @@ class Transaction extends Message
      * Generated from protobuf field <code>bytes payload = 2;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setPayload($var)
@@ -158,6 +161,7 @@ class Transaction extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Signature signature = 3;</code>.
      *
      * @param  Signature  $var
+     *
      * @return $this
      */
     public function setSignature($var)
@@ -192,6 +196,7 @@ class Transaction extends Message
      * Generated from protobuf field <code>int64 fee = 4;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setFee($var)
@@ -216,6 +221,7 @@ class Transaction extends Message
      * Generated from protobuf field <code>int64 expire = 5;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setExpire($var)
@@ -242,6 +248,7 @@ class Transaction extends Message
      * Generated from protobuf field <code>int64 nonce = 6;</code>
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setNonce($var)
@@ -268,6 +275,7 @@ class Transaction extends Message
      * Generated from protobuf field <code>string to = 7;</code>
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setTo($var)
@@ -292,6 +300,7 @@ class Transaction extends Message
      * Generated from protobuf field <code>int32 groupCount = 8;</code>.
      *
      * @param  int  $var
+     *
      * @return $this
      */
     public function setGroupCount($var)
@@ -316,6 +325,7 @@ class Transaction extends Message
      * Generated from protobuf field <code>bytes header = 9;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setHeader($var)
@@ -340,6 +350,7 @@ class Transaction extends Message
      * Generated from protobuf field <code>bytes next = 10;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setNext($var)
@@ -364,6 +375,7 @@ class Transaction extends Message
      * Generated from protobuf field <code>int32 chainID = 11;</code>.
      *
      * @param  int  $var
+     *
      * @return $this
      */
     public function setChainID($var)

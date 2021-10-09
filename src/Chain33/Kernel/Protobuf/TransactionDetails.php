@@ -25,6 +25,7 @@ class TransactionDetails extends Message
      *
      * @param  array  $data  {
      *                                                                                                        Optional. Data for populating the Message object.
+     *
      * @var TransactionDetail[]|RepeatedField $txs
      *                                                                                                        }
      */
@@ -48,6 +49,7 @@ class TransactionDetails extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.TransactionDetail txs = 1;</code>.
      *
      * @param  TransactionDetail[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setTxs($var)

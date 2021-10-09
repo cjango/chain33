@@ -25,6 +25,7 @@ class IsNtpClockSync extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var bool $isntpclocksync
      *                       }
      */
@@ -48,6 +49,7 @@ class IsNtpClockSync extends Message
      * Generated from protobuf field <code>bool isntpclocksync = 1;</code>.
      *
      * @param  bool  $var
+     *
      * @return $this
      */
     public function setIsntpclocksync($var)

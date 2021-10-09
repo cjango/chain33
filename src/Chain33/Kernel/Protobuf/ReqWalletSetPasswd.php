@@ -29,6 +29,7 @@ class ReqWalletSetPasswd extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var string $oldPass
      * @var string $newPass
      *                       }
@@ -53,6 +54,7 @@ class ReqWalletSetPasswd extends Message
      * Generated from protobuf field <code>string oldPass = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setOldPass($var)
@@ -77,6 +79,7 @@ class ReqWalletSetPasswd extends Message
      * Generated from protobuf field <code>string newPass = 2;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setNewPass($var)

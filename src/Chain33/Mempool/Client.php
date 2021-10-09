@@ -14,7 +14,9 @@ class Client extends BaseClient
      *
      * @Date   : 2021/1/27 11:00 下午
      * @Author : <Jason.C>
+     *
      * @param  false  $isAll  是否获取全部交易信息
+     *
      * @return array
      */
     public function get(bool $isAll = false): array

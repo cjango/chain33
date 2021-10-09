@@ -27,6 +27,7 @@ class HeaderSeqs extends Message
      *
      * @param  array  $data  {
      *                                                                                                Optional. Data for populating the Message object.
+     *
      * @var HeaderSeq[]|RepeatedField $seqs
      *                                                                                                }
      */
@@ -50,6 +51,7 @@ class HeaderSeqs extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.HeaderSeq seqs = 1;</code>.
      *
      * @param  HeaderSeq[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setSeqs($var)

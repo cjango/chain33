@@ -24,6 +24,7 @@ class Int32Config extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var int $value
      *                       }
      */
@@ -47,6 +48,7 @@ class Int32Config extends Message
      * Generated from protobuf field <code>int32 value = 3;</code>.
      *
      * @param  int  $var
+     *
      * @return $this
      */
     public function setValue($var)

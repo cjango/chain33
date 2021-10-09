@@ -25,6 +25,7 @@ class Client extends BaseClient
      * @param  int  $period  解冻周期，单位 秒
      * @param  int  $parameter  解冻数值
      * @param  string  $privateKey  发起人签名私钥
+     *
      * @return string
      * @throws ChainException
      * @throws ConfigException
@@ -66,9 +67,11 @@ class Client extends BaseClient
      *
      * @Date   : 2021/3/26 1:17 下午
      * @Author : <Jason.C>
+     *
      * @param $means
      * @param $period
      * @param $parameter
+     *
      * @return array
      */
     private function parseMeans($means, $period, $parameter): array
@@ -101,7 +104,9 @@ class Client extends BaseClient
      *
      * @Date   : 2021/3/26 11:25 上午
      * @Author : <Jason.C>
+     *
      * @param  string  $unfreezeID  合约的ID，
+     *
      * @return array
      * @throws ChainException
      */
@@ -121,7 +126,9 @@ class Client extends BaseClient
      *
      * @Date   : 2021/3/26 10:41 上午
      * @Author : <Jason.C>
+     *
      * @param  string  $unfreezeID  合约的ID，可以查询创建冻结合约时得到，同创建冻结合约的交易ID的十六进制，是对应的unfreezeID去掉前缀 “mavl-unfreeze-“。
+     *
      * @return int
      * @throws ChainException
      */
@@ -147,8 +154,10 @@ class Client extends BaseClient
      *
      * @Date   : 2021/3/26 11:24 上午
      * @Author : <Jason.C>
+     *
      * @param  string  $unfreezeID  冻结合约的ID 可以查询创建冻结合约时，得到， 同创建冻结合约的交易ID的十六进制
      * @param  string  $privateKey  受益人私钥
+     *
      * @return string
      */
     public function withdraw(string $unfreezeID, string $privateKey): string
@@ -165,8 +174,10 @@ class Client extends BaseClient
      *
      * @Date   : 2021/3/26 11:23 上午
      * @Author : <Jason.C>
+     *
      * @param  string  $unfreezeID  冻结合约的ID
      * @param  string  $privateKey  创建者的私钥
+     *
      * @return mixed
      */
     public function terminate(string $unfreezeID, string $privateKey): string
@@ -183,10 +194,12 @@ class Client extends BaseClient
      *
      * @Date   : 2021/3/26 11:22 上午
      * @Author : <Jason.C>
+     *
      * @param  string  $creator  创建合约的地址
      * @param  string  $beneficiary  受益人地址
      * @param  int  $count  查询的数量
      * @param  int  $direction  查询的方向
+     *
      * @return array
      * @throws ChainException
      */
@@ -210,10 +223,12 @@ class Client extends BaseClient
      *
      * @Date   : 2021/3/26 11:18 上午
      * @Author : <Jason.C>
+     *
      * @param  string  $beneficiary  受益人地址
      * @param  string  $creator  创建者地址
      * @param  int  $count  查询的数量
      * @param  int  $direction  查询的方向
+     *
      * @return array
      * @throws ChainException
      */

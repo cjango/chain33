@@ -33,6 +33,7 @@ class UpgradeMeta extends Message
      *
      * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
+     *
      * @var bool $starting
      * @var string $version
      * @var int|string $height
@@ -58,6 +59,7 @@ class UpgradeMeta extends Message
      * Generated from protobuf field <code>bool starting = 1;</code>.
      *
      * @param  bool  $var
+     *
      * @return $this
      */
     public function setStarting($var)
@@ -82,6 +84,7 @@ class UpgradeMeta extends Message
      * Generated from protobuf field <code>string version = 2;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setVersion($var)
@@ -106,6 +109,7 @@ class UpgradeMeta extends Message
      * Generated from protobuf field <code>int64 height = 3;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setHeight($var)

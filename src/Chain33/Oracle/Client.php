@@ -15,12 +15,14 @@ class Client extends BaseClient
      *
      * @Date   : 2021/1/27 10:45 下午
      * @Author : <Jason.C>
+     *
      * @param  string  $type  事件类型
      * @param  string  $subType  事件子类型
      * @param  DateTimeInterface  $time  事件结果预计公布时间，UTC时间（时间戳）
      * @param  string  $content  事件内容，例如可以用json格式表示
      * @param  string  $introduction  事件介绍
      * @param  string  $privateKey  私钥
+     *
      * @return string            交易结果HASH（事件ID）
      */
     public function create(
@@ -51,8 +53,10 @@ class Client extends BaseClient
      *
      * @Date   : 2021/1/27 10:53 下午
      * @Author : <Jason.C>
+     *
      * @param  string  $eventID  发布事件的事件ID
      * @param  string  $privateKey
+     *
      * @return string 交易结果HASH
      */
     public function abort(string $eventID, string $privateKey): string
@@ -73,10 +77,12 @@ class Client extends BaseClient
      *
      * @Date   : 2021/3/30 3:27 下午
      * @Author : <Jason.C>
+     *
      * @param  string  $eventID  发布事件的事件ID
      * @param  string  $source  发布结果的源，比如XX体育
      * @param  string  $result  发布的事件结果，比如比赛比分
      * @param  string  $privateKey  签名私钥
+     *
      * @return string
      */
     public function preview(string $eventID, string $source, string $result, string $privateKey): string
@@ -99,8 +105,10 @@ class Client extends BaseClient
      *
      * @Date   : 2021/3/30 3:29 下午
      * @Author : <Jason.C>
+     *
      * @param  string  $eventID
      * @param  string  $privateKey
+     *
      * @return string
      */
     public function previewAbort(string $eventID, string $privateKey): string
@@ -121,10 +129,12 @@ class Client extends BaseClient
      *
      * @Date   : 2021/3/30 3:30 下午
      * @Author : <Jason.C>
+     *
      * @param  string  $eventID
      * @param  string  $source
      * @param  string  $result
      * @param  string  $privateKey
+     *
      * @return string
      */
     public function publish(string $eventID, string $source, string $result, string $privateKey): string
@@ -147,7 +157,9 @@ class Client extends BaseClient
      *
      * @Date   : 2021/3/30 3:31 下午
      * @Author : <Jason.C>
+     *
      * @param  string  $eventID
+     *
      * @return mixed
      */
     public function query(string $eventID)

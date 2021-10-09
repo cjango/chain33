@@ -28,6 +28,7 @@ class ReqProperFee extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var int $txCount
      * @var int $txSize
      *                       }
@@ -52,6 +53,7 @@ class ReqProperFee extends Message
      * Generated from protobuf field <code>int32 txCount = 1;</code>.
      *
      * @param  int  $var
+     *
      * @return $this
      */
     public function setTxCount($var)
@@ -76,6 +78,7 @@ class ReqProperFee extends Message
      * Generated from protobuf field <code>int32 txSize = 2;</code>.
      *
      * @param  int  $var
+     *
      * @return $this
      */
     public function setTxSize($var)

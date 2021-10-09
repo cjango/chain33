@@ -49,6 +49,7 @@ class EncryptShareNotaryStorage extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var string $contentHash
      *                       存证明文内容的hash值，推荐使用sha256哈希，限制256位得摘要值
      * @var string $encryptContent
@@ -83,6 +84,7 @@ class EncryptShareNotaryStorage extends Message
      * Generated from protobuf field <code>bytes contentHash = 1;</code>
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setContentHash($var)
@@ -109,6 +111,7 @@ class EncryptShareNotaryStorage extends Message
      * Generated from protobuf field <code>bytes encryptContent = 2;</code>
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setEncryptContent($var)
@@ -135,6 +138,7 @@ class EncryptShareNotaryStorage extends Message
      * Generated from protobuf field <code>bytes pubKey = 3;</code>
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setPubKey($var)
@@ -161,6 +165,7 @@ class EncryptShareNotaryStorage extends Message
      * Generated from protobuf field <code>string key = 4;</code>
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setKey($var)
@@ -187,6 +192,7 @@ class EncryptShareNotaryStorage extends Message
      * Generated from protobuf field <code>string value = 5;</code>
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setValue($var)

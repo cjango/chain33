@@ -29,6 +29,7 @@ class ReqHash extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var string $hash
      * @var bool $upgrade
      *                       }
@@ -53,6 +54,7 @@ class ReqHash extends Message
      * Generated from protobuf field <code>bytes hash = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setHash($var)
@@ -77,6 +79,7 @@ class ReqHash extends Message
      * Generated from protobuf field <code>bool upgrade = 2;</code>.
      *
      * @param  bool  $var
+     *
      * @return $this
      */
     public function setUpgrade($var)

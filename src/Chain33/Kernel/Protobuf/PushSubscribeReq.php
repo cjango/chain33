@@ -63,6 +63,7 @@ class PushSubscribeReq extends Message
      *
      * @param  array  $data  {
      *                                                      Optional. Data for populating the Message object.
+     *
      * @var string $name
      * @var string $URL
      * @var string $encode
@@ -95,6 +96,7 @@ class PushSubscribeReq extends Message
      * Generated from protobuf field <code>string name = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setName($var)
@@ -119,6 +121,7 @@ class PushSubscribeReq extends Message
      * Generated from protobuf field <code>string URL = 2;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setURL($var)
@@ -143,6 +146,7 @@ class PushSubscribeReq extends Message
      * Generated from protobuf field <code>string encode = 3;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setEncode($var)
@@ -167,6 +171,7 @@ class PushSubscribeReq extends Message
      * Generated from protobuf field <code>int64 lastSequence = 4;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setLastSequence($var)
@@ -191,6 +196,7 @@ class PushSubscribeReq extends Message
      * Generated from protobuf field <code>int64 lastHeight = 5;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setLastHeight($var)
@@ -215,6 +221,7 @@ class PushSubscribeReq extends Message
      * Generated from protobuf field <code>string lastBlockHash = 6;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setLastBlockHash($var)
@@ -241,6 +248,7 @@ class PushSubscribeReq extends Message
      * Generated from protobuf field <code>int32 type = 7;</code>
      *
      * @param  int  $var
+     *
      * @return $this
      */
     public function setType($var)
@@ -267,6 +275,7 @@ class PushSubscribeReq extends Message
      * Generated from protobuf field <code>map<string, bool> contract = 8;</code>
      *
      * @param  array|MapField  $var
+     *
      * @return $this
      */
     public function setContract($var)

@@ -29,6 +29,7 @@ class WalletAccount extends Message
      *
      * @param  array  $data  {
      *                                                    Optional. Data for populating the Message object.
+     *
      * @var Account $acc
      * @var string $label
      *                                                    }
@@ -53,6 +54,7 @@ class WalletAccount extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account acc = 1;</code>.
      *
      * @param  Account  $var
+     *
      * @return $this
      */
     public function setAcc($var)
@@ -87,6 +89,7 @@ class WalletAccount extends Message
      * Generated from protobuf field <code>string label = 2;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setLabel($var)

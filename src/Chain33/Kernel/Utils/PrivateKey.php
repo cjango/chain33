@@ -22,6 +22,7 @@ class PrivateKey
      * The extra parameter can be some random data typed down by the user or mouse movements to add randomness.
      *
      * @param  string  $extra
+     *
      * @throws Exception
      */
     public function generateRandomPrivateKey($extra = 'FSQF5356dsdsqdfEFEQ3fq4q6dq4s5d')
@@ -46,6 +47,7 @@ class PrivateKey
      * set a private key.
      *
      * @param  String Hex $k
+     *
      * @throws Exception
      */
     public function setPrivateKey($k)

@@ -26,6 +26,7 @@ class ReceiptCheckTxList extends Message
      *
      * @param  array  $data  {
      *                                                              Optional. Data for populating the Message object.
+     *
      * @var string[]|RepeatedField $errs
      *                                                              }
      */
@@ -49,6 +50,7 @@ class ReceiptCheckTxList extends Message
      * Generated from protobuf field <code>repeated string errs = 1;</code>.
      *
      * @param  string[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setErrs($var)

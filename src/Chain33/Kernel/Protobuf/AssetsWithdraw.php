@@ -43,6 +43,7 @@ class AssetsWithdraw extends Message
      *
      * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
+     *
      * @var string $cointoken
      * @var int|string $amount
      * @var string $note
@@ -70,6 +71,7 @@ class AssetsWithdraw extends Message
      * Generated from protobuf field <code>string cointoken = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setCointoken($var)
@@ -94,6 +96,7 @@ class AssetsWithdraw extends Message
      * Generated from protobuf field <code>int64 amount = 2;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setAmount($var)
@@ -118,6 +121,7 @@ class AssetsWithdraw extends Message
      * Generated from protobuf field <code>bytes note = 3;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setNote($var)
@@ -142,6 +146,7 @@ class AssetsWithdraw extends Message
      * Generated from protobuf field <code>string execName = 4;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setExecName($var)
@@ -166,6 +171,7 @@ class AssetsWithdraw extends Message
      * Generated from protobuf field <code>string to = 5;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setTo($var)

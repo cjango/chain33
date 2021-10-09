@@ -32,6 +32,7 @@ class SaveSeedByPw extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var string $seed
      * @var string $passwd
      *                       }
@@ -56,6 +57,7 @@ class SaveSeedByPw extends Message
      * Generated from protobuf field <code>string seed = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setSeed($var)
@@ -80,6 +82,7 @@ class SaveSeedByPw extends Message
      * Generated from protobuf field <code>string passwd = 2;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setPasswd($var)

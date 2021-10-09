@@ -36,6 +36,7 @@ class TxProof extends Message
      *
      * @param  array  $data  {
      *                                                              Optional. Data for populating the Message object.
+     *
      * @var string[]|RepeatedField $proofs
      * @var int $index
      * @var string $rootHash
@@ -61,6 +62,7 @@ class TxProof extends Message
      * Generated from protobuf field <code>repeated bytes proofs = 1;</code>.
      *
      * @param  string[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setProofs($var)
@@ -85,6 +87,7 @@ class TxProof extends Message
      * Generated from protobuf field <code>uint32 index = 2;</code>.
      *
      * @param  int  $var
+     *
      * @return $this
      */
     public function setIndex($var)
@@ -109,6 +112,7 @@ class TxProof extends Message
      * Generated from protobuf field <code>bytes rootHash = 3;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setRootHash($var)

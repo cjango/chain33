@@ -40,6 +40,7 @@ class ReplyGetTotalCoins extends Message
      *
      * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
+     *
      * @var int|string $count
      * @var int|string $num
      * @var int|string $amount
@@ -66,6 +67,7 @@ class ReplyGetTotalCoins extends Message
      * Generated from protobuf field <code>int64 count = 1;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setCount($var)
@@ -90,6 +92,7 @@ class ReplyGetTotalCoins extends Message
      * Generated from protobuf field <code>int64 num = 2;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setNum($var)
@@ -114,6 +117,7 @@ class ReplyGetTotalCoins extends Message
      * Generated from protobuf field <code>int64 amount = 3;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setAmount($var)
@@ -138,6 +142,7 @@ class ReplyGetTotalCoins extends Message
      * Generated from protobuf field <code>bytes nextKey = 4;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setNextKey($var)

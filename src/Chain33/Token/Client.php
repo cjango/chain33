@@ -17,6 +17,7 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/5/25 3:59 下午
+     *
      * @param  string  $name  token 名称
      * @param  string  $symbol  token标记符，最大长度是16个字符，且必须为大写字符和数字
      * @param  string  $introduction  token 简介
@@ -24,6 +25,7 @@ class Client extends BaseClient
      * @param  string  $owner  token拥有者地址
      * @param  int  $category  token属性类别， 0 为普通token， 1 可增发和燃烧
      * @param  int  $price  发行该token愿意承担的费用
+     *
      * @return string
      * @throws ConfigException
      */
@@ -56,8 +58,10 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/5/14 6:17 下午
+     *
      * @param  string  $symbol  token标记符，最大长度是16个字符，且必须为大写字符和数字
      * @param  string  $owner  token拥有者地址
+     *
      * @return string
      * @throws ConfigException
      */
@@ -78,7 +82,9 @@ class Client extends BaseClient
      *
      * @Date   : 2021/3/31 12:03 下午
      * @Author : <C.Jason>
+     *
      * @param  int  $status
+     *
      * @return array
      */
     public function get(int $status = 0): array
@@ -103,7 +109,9 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/5/14 6:19 下午
+     *
      * @param  string  $symbol  token的Symbol
+     *
      * @return array
      */
     public function info(string $symbol): array
@@ -122,8 +130,10 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/5/20 3:24 下午
+     *
      * @param  string  $symbol  token的Symbol
      * @param  string  $owner  拥有者地址
+     *
      * @return string
      */
     public function revoke(string $symbol, string $owner): string
@@ -141,7 +151,9 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/5/20 3:34 下午
+     *
      * @param  string  $address  要查询的地址
+     *
      * @return array
      */
     public function assets(string $address): array
@@ -161,6 +173,7 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/5/25 11:07 上午
+     *
      * @param  string  $symbol  token标记符
      * @param  string  $addr  地址
      * @param  int  $count  count: 交易的数量
@@ -168,6 +181,7 @@ class Client extends BaseClient
      * @param  int  $direction  分页相关参数
      * @param  int  $height  分页相关参数
      * @param  int  $index  分页相关参数
+     *
      * @return array
      * @throws ChainException
      */
@@ -200,9 +214,11 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/5/20 3:44 下午
+     *
      * @param  string  $symbol  token的标记符
      * @param  int  $amount  增发token的数量
      * @param  string  $privateKey  token 拥有者的私钥
+     *
      * @return string
      */
     public function mint(string $symbol, int $amount, string $privateKey): string
@@ -220,9 +236,11 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/5/20 3:44 下午
+     *
      * @param  string  $symbol  token的标记符
      * @param  int  $amount  燃烧token的数量
      * @param  string  $privateKey  token 拥有者的私钥
+     *
      * @return string
      */
     public function burn(string $symbol, int $amount, string $privateKey): string
@@ -240,7 +258,9 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/5/20 3:47 下午
+     *
      * @param  string  $symbol  token标记符
+     *
      * @return array  actionType: 8 是token创建， 12 是增发， 13 是燃烧
      * @throws ChainException
      */
@@ -260,11 +280,13 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 17:41
+     *
      * @param  string  $to  发送到地址
      * @param  string  $symbol  token的symbol
      * @param  int  $amount  发送金额
      * @param  string  $privateKey
      * @param  string  $note  备注
+     *
      * @return string
      * @throws ChainException
      * @throws ConfigException

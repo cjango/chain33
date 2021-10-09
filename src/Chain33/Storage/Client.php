@@ -22,10 +22,12 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/5/19 3:43 下午
+     *
      * @param  string  $content
      * @param  string  $privateKey
      * @param  string  $key  修改原有的明文存在的时候  要设置这个值
      * @param  int  $op
+     *
      * @return mixed
      * @throws ChainException
      * @throws ConfigException
@@ -49,8 +51,10 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/5/19 3:44 下午
+     *
      * @param  StorageAction  $storage
      * @param  string  $privateKey
+     *
      * @return mixed
      * @throws ChainException
      * @throws ConfigException
@@ -76,8 +80,10 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/5/19 3:43 下午
+     *
      * @param  string  $hash
      * @param  string  $privateKey
+     *
      * @return mixed
      * @throws ChainException
      * @throws ConfigException
@@ -104,9 +110,11 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/5/19 3:43 下午
+     *
      * @param  string  $link
      * @param  string  $content
      * @param  string  $privateKey
+     *
      * @return mixed
      * @throws ChainException
      * @throws ConfigException
@@ -130,7 +138,9 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/5/19 3:46 下午
+     *
      * @param  string  $hash
+     *
      * @return false|false[]|string|string[]
      */
     public function query(string $hash)
@@ -178,7 +188,9 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/5/19 3:45 下午
+     *
      * @param $hex
+     *
      * @return false|string
      */
     private function hexToStr($hex)

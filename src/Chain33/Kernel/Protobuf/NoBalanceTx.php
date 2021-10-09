@@ -39,6 +39,7 @@ class NoBalanceTx extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var string $txHex
      * @var string $payAddr
      * @var string $privkey
@@ -65,6 +66,7 @@ class NoBalanceTx extends Message
      * Generated from protobuf field <code>string txHex = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setTxHex($var)
@@ -89,6 +91,7 @@ class NoBalanceTx extends Message
      * Generated from protobuf field <code>string payAddr = 2;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setPayAddr($var)
@@ -113,6 +116,7 @@ class NoBalanceTx extends Message
      * Generated from protobuf field <code>string privkey = 3;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setPrivkey($var)
@@ -137,6 +141,7 @@ class NoBalanceTx extends Message
      * Generated from protobuf field <code>string expire = 4;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setExpire($var)

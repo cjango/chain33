@@ -23,6 +23,7 @@ class HexTx extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var string $tx
      *                       }
      */
@@ -46,6 +47,7 @@ class HexTx extends Message
      * Generated from protobuf field <code>string tx = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setTx($var)

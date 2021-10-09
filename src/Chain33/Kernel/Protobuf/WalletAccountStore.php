@@ -44,6 +44,7 @@ class WalletAccountStore extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var string $privkey
      * @var string $label
      * @var string $addr
@@ -70,6 +71,7 @@ class WalletAccountStore extends Message
      * Generated from protobuf field <code>string privkey = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setPrivkey($var)
@@ -94,6 +96,7 @@ class WalletAccountStore extends Message
      * Generated from protobuf field <code>string label = 2;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setLabel($var)
@@ -118,6 +121,7 @@ class WalletAccountStore extends Message
      * Generated from protobuf field <code>string addr = 3;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setAddr($var)
@@ -142,6 +146,7 @@ class WalletAccountStore extends Message
      * Generated from protobuf field <code>string timeStamp = 4;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setTimeStamp($var)

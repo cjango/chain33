@@ -48,6 +48,7 @@ class TxResult extends Message
      *
      * @param  array  $data  {
      *                                                        Optional. Data for populating the Message object.
+     *
      * @var int|string $height
      * @var int $index
      * @var Transaction $tx
@@ -76,6 +77,7 @@ class TxResult extends Message
      * Generated from protobuf field <code>int64 height = 1;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setHeight($var)
@@ -100,6 +102,7 @@ class TxResult extends Message
      * Generated from protobuf field <code>int32 index = 2;</code>.
      *
      * @param  int  $var
+     *
      * @return $this
      */
     public function setIndex($var)
@@ -124,6 +127,7 @@ class TxResult extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Transaction tx = 3;</code>.
      *
      * @param  Transaction  $var
+     *
      * @return $this
      */
     public function setTx($var)
@@ -158,6 +162,7 @@ class TxResult extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ReceiptData receiptdate = 4;</code>.
      *
      * @param  ReceiptData  $var
+     *
      * @return $this
      */
     public function setReceiptdate($var)
@@ -192,6 +197,7 @@ class TxResult extends Message
      * Generated from protobuf field <code>int64 blocktime = 5;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setBlocktime($var)
@@ -216,6 +222,7 @@ class TxResult extends Message
      * Generated from protobuf field <code>string actionName = 6;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setActionName($var)

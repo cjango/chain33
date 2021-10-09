@@ -24,6 +24,7 @@ class Genesis extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var bool $isrun
      *                       }
      */
@@ -47,6 +48,7 @@ class Genesis extends Message
      * Generated from protobuf field <code>bool isrun = 1;</code>.
      *
      * @param  bool  $var
+     *
      * @return $this
      */
     public function setIsrun($var)

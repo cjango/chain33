@@ -44,6 +44,7 @@ class ChildChain extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var string $title
      * @var int $startIndex
      * @var string $childHash
@@ -70,6 +71,7 @@ class ChildChain extends Message
      * Generated from protobuf field <code>string title = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setTitle($var)
@@ -94,6 +96,7 @@ class ChildChain extends Message
      * Generated from protobuf field <code>int32 startIndex = 2;</code>.
      *
      * @param  int  $var
+     *
      * @return $this
      */
     public function setStartIndex($var)
@@ -118,6 +121,7 @@ class ChildChain extends Message
      * Generated from protobuf field <code>bytes childHash = 3;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setChildHash($var)
@@ -142,6 +146,7 @@ class ChildChain extends Message
      * Generated from protobuf field <code>int32 txCount = 4;</code>.
      *
      * @param  int  $var
+     *
      * @return $this
      */
     public function setTxCount($var)

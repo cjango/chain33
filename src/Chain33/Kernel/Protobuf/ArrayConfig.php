@@ -27,6 +27,7 @@ class ArrayConfig extends Message
      *
      * @param  array  $data  {
      *                                                              Optional. Data for populating the Message object.
+     *
      * @var string[]|RepeatedField $value
      *                                                              }
      */
@@ -50,6 +51,7 @@ class ArrayConfig extends Message
      * Generated from protobuf field <code>repeated string value = 3;</code>.
      *
      * @param  string[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setValue($var)

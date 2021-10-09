@@ -46,6 +46,7 @@ class ReqBlocks extends Message
      *
      * @param  array  $data  {
      *                                                              Optional. Data for populating the Message object.
+     *
      * @var int|string $start
      * @var int|string $end
      * @var bool $isDetail
@@ -72,6 +73,7 @@ class ReqBlocks extends Message
      * Generated from protobuf field <code>int64 start = 1;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setStart($var)
@@ -96,6 +98,7 @@ class ReqBlocks extends Message
      * Generated from protobuf field <code>int64 end = 2;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setEnd($var)
@@ -120,6 +123,7 @@ class ReqBlocks extends Message
      * Generated from protobuf field <code>bool isDetail = 3;</code>.
      *
      * @param  bool  $var
+     *
      * @return $this
      */
     public function setIsDetail($var)
@@ -144,6 +148,7 @@ class ReqBlocks extends Message
      * Generated from protobuf field <code>repeated string pid = 4;</code>.
      *
      * @param  string[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setPid($var)

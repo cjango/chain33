@@ -26,6 +26,7 @@ class ReqCheckTxsExist extends Message
      *
      * @param  array  $data  {
      *                                                              Optional. Data for populating the Message object.
+     *
      * @var string[]|RepeatedField $txHashes
      *                                                              }
      */
@@ -49,6 +50,7 @@ class ReqCheckTxsExist extends Message
      * Generated from protobuf field <code>repeated bytes txHashes = 1;</code>.
      *
      * @param  string[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setTxHashes($var)

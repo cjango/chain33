@@ -38,6 +38,7 @@ class ChainStatus extends Message
      *
      * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
+     *
      * @var int|string $currentHeight
      * @var int|string $mempoolSize
      * @var int|string $msgQueueSize
@@ -63,6 +64,7 @@ class ChainStatus extends Message
      * Generated from protobuf field <code>int64 currentHeight = 1;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setCurrentHeight($var)
@@ -87,6 +89,7 @@ class ChainStatus extends Message
      * Generated from protobuf field <code>int64 mempoolSize = 2;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setMempoolSize($var)
@@ -111,6 +114,7 @@ class ChainStatus extends Message
      * Generated from protobuf field <code>int64 msgQueueSize = 3;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setMsgQueueSize($var)

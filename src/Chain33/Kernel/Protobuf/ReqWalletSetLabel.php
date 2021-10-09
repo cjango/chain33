@@ -29,6 +29,7 @@ class ReqWalletSetLabel extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var string $addr
      * @var string $label
      *                       }
@@ -53,6 +54,7 @@ class ReqWalletSetLabel extends Message
      * Generated from protobuf field <code>string addr = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setAddr($var)
@@ -77,6 +79,7 @@ class ReqWalletSetLabel extends Message
      * Generated from protobuf field <code>string label = 2;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setLabel($var)

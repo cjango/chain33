@@ -35,6 +35,7 @@ class HeaderSeq extends Message
      *
      * @param  array  $data  {
      *                                                          Optional. Data for populating the Message object.
+     *
      * @var int|string $num
      * @var BlockSequence $seq
      * @var Header $header
@@ -60,6 +61,7 @@ class HeaderSeq extends Message
      * Generated from protobuf field <code>int64 num = 1;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setNum($var)
@@ -84,6 +86,7 @@ class HeaderSeq extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.BlockSequence seq = 2;</code>.
      *
      * @param  BlockSequence  $var
+     *
      * @return $this
      */
     public function setSeq($var)
@@ -118,6 +121,7 @@ class HeaderSeq extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Header header = 3;</code>.
      *
      * @param  Header  $var
+     *
      * @return $this
      */
     public function setHeader($var)

@@ -38,6 +38,7 @@ class Receipt extends Message
      *
      * @param  array  $data  {
      *                                                                                                 Optional. Data for populating the Message object.
+     *
      * @var int $ty
      * @var KeyValue[]|RepeatedField $KV
      * @var ReceiptLog[]|RepeatedField $logs
@@ -63,6 +64,7 @@ class Receipt extends Message
      * Generated from protobuf field <code>int32 ty = 1;</code>.
      *
      * @param  int  $var
+     *
      * @return $this
      */
     public function setTy($var)
@@ -87,6 +89,7 @@ class Receipt extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.KeyValue KV = 2;</code>.
      *
      * @param  KeyValue[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setKV($var)
@@ -112,6 +115,7 @@ class Receipt extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ReceiptLog logs = 3;</code>.
      *
      * @param  ReceiptLog[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setLogs($var)

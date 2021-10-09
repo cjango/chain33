@@ -24,6 +24,7 @@ class Int64 extends Message
      *
      * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
+     *
      * @var int|string $data
      *                        }
      */
@@ -47,6 +48,7 @@ class Int64 extends Message
      * Generated from protobuf field <code>int64 data = 1;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setData($var)

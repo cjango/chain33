@@ -24,6 +24,7 @@ class MempoolSize extends Message
      *
      * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
+     *
      * @var int|string $size
      *                        }
      */
@@ -47,6 +48,7 @@ class MempoolSize extends Message
      * Generated from protobuf field <code>int64 size = 1;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setSize($var)

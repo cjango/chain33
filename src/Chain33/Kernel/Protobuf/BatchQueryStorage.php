@@ -26,6 +26,7 @@ class BatchQueryStorage extends Message
      *
      * @param  array  $data  {
      *                                                              Optional. Data for populating the Message object.
+     *
      * @var string[]|RepeatedField $txHashs
      *                                                              }
      */
@@ -49,6 +50,7 @@ class BatchQueryStorage extends Message
      * Generated from protobuf field <code>repeated string txHashs = 1;</code>.
      *
      * @param  string[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setTxHashs($var)

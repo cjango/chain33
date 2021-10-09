@@ -46,6 +46,7 @@ class HistoryCertStore extends Message
      *
      * @param  array  $data  {
      *                                                              Optional. Data for populating the Message object.
+     *
      * @var string[]|RepeatedField $rootcerts
      * @var string[]|RepeatedField $intermediateCerts
      * @var string[]|RepeatedField $revocationList
@@ -73,6 +74,7 @@ class HistoryCertStore extends Message
      * Generated from protobuf field <code>repeated bytes rootcerts = 1;</code>.
      *
      * @param  string[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setRootcerts($var)
@@ -97,6 +99,7 @@ class HistoryCertStore extends Message
      * Generated from protobuf field <code>repeated bytes intermediateCerts = 2;</code>.
      *
      * @param  string[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setIntermediateCerts($var)
@@ -121,6 +124,7 @@ class HistoryCertStore extends Message
      * Generated from protobuf field <code>repeated bytes revocationList = 3;</code>.
      *
      * @param  string[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setRevocationList($var)
@@ -145,6 +149,7 @@ class HistoryCertStore extends Message
      * Generated from protobuf field <code>int64 curHeigth = 4;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setCurHeigth($var)
@@ -169,6 +174,7 @@ class HistoryCertStore extends Message
      * Generated from protobuf field <code>int64 nxtHeight = 5;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setNxtHeight($var)

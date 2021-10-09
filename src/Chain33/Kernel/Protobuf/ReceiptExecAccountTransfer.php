@@ -37,6 +37,7 @@ class ReceiptExecAccountTransfer extends Message
      *
      * @param  array  $data  {
      *                                                    Optional. Data for populating the Message object.
+     *
      * @var string $execAddr
      *                                                    合约地址
      * @var Account $prev
@@ -67,6 +68,7 @@ class ReceiptExecAccountTransfer extends Message
      * Generated from protobuf field <code>string execAddr = 1;</code>
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setExecAddr($var)
@@ -93,6 +95,7 @@ class ReceiptExecAccountTransfer extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account prev = 2;</code>
      *
      * @param  Account  $var
+     *
      * @return $this
      */
     public function setPrev($var)
@@ -129,6 +132,7 @@ class ReceiptExecAccountTransfer extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account current = 3;</code>
      *
      * @param  Account  $var
+     *
      * @return $this
      */
     public function setCurrent($var)

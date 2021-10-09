@@ -78,7 +78,9 @@ class BaseClient
      *
      * @Date   : 2021/3/22 2:48 下午
      * @Author : < Jason.C >
+     *
      * @param $execer
+     *
      * @return string
      * @throws ChainException
      */
@@ -100,7 +102,9 @@ class BaseClient
      *
      * @Date   : 2021/3/26 11:05 上午
      * @Author : < Jason.C >
+     *
      * @param $hex
+     *
      * @return string
      */
     protected function parseHexString($hex): string

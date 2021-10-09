@@ -31,6 +31,7 @@ class ReceiptAccountMint extends Message
      *
      * @param  array  $data  {
      *                                                    Optional. Data for populating the Message object.
+     *
      * @var Account $prev
      *                                                    铸币前
      * @var Account $current
@@ -59,6 +60,7 @@ class ReceiptAccountMint extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account prev = 1;</code>
      *
      * @param  Account  $var
+     *
      * @return $this
      */
     public function setPrev($var)
@@ -95,6 +97,7 @@ class ReceiptAccountMint extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account current = 2;</code>
      *
      * @param  Account  $var
+     *
      * @return $this
      */
     public function setCurrent($var)

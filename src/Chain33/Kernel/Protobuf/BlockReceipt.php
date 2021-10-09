@@ -40,6 +40,7 @@ class BlockReceipt extends Message
      *
      * @param  array  $data  {
      *                                                                                                  Optional. Data for populating the Message object.
+     *
      * @var ReceiptData[]|RepeatedField $receipts
      * @var string $hash
      * @var int|string $height
@@ -65,6 +66,7 @@ class BlockReceipt extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ReceiptData receipts = 1;</code>.
      *
      * @param  ReceiptData[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setReceipts($var)
@@ -90,6 +92,7 @@ class BlockReceipt extends Message
      * Generated from protobuf field <code>bytes hash = 2;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setHash($var)
@@ -114,6 +117,7 @@ class BlockReceipt extends Message
      * Generated from protobuf field <code>int64 height = 3;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setHeight($var)

@@ -44,6 +44,7 @@ class WalletStatus extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var bool $isWalletLock
      * @var bool $isAutoMining
      * @var bool $isHasSeed
@@ -70,6 +71,7 @@ class WalletStatus extends Message
      * Generated from protobuf field <code>bool isWalletLock = 1;</code>.
      *
      * @param  bool  $var
+     *
      * @return $this
      */
     public function setIsWalletLock($var)
@@ -94,6 +96,7 @@ class WalletStatus extends Message
      * Generated from protobuf field <code>bool isAutoMining = 2;</code>.
      *
      * @param  bool  $var
+     *
      * @return $this
      */
     public function setIsAutoMining($var)
@@ -118,6 +121,7 @@ class WalletStatus extends Message
      * Generated from protobuf field <code>bool isHasSeed = 3;</code>.
      *
      * @param  bool  $var
+     *
      * @return $this
      */
     public function setIsHasSeed($var)
@@ -142,6 +146,7 @@ class WalletStatus extends Message
      * Generated from protobuf field <code>bool isTicketLock = 4;</code>.
      *
      * @param  bool  $var
+     *
      * @return $this
      */
     public function setIsTicketLock($var)

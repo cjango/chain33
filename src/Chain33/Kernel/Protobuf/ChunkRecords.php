@@ -27,6 +27,7 @@ class ChunkRecords extends Message
      *
      * @param  array  $data  {
      *                                                                                                Optional. Data for populating the Message object.
+     *
      * @var ChunkInfo[]|RepeatedField $infos
      *                                                                                                }
      */
@@ -50,6 +51,7 @@ class ChunkRecords extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ChunkInfo infos = 1;</code>.
      *
      * @param  ChunkInfo[]|RepeatedField  $var
+     *
      * @return $this
      */
     public function setInfos($var)

@@ -34,6 +34,7 @@ class ExecBalanceItem extends Message
      *
      * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
+     *
      * @var string $execAddr
      * @var int|string $frozen
      * @var int|string $active
@@ -59,6 +60,7 @@ class ExecBalanceItem extends Message
      * Generated from protobuf field <code>bytes execAddr = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setExecAddr($var)
@@ -83,6 +85,7 @@ class ExecBalanceItem extends Message
      * Generated from protobuf field <code>int64 frozen = 2;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setFrozen($var)
@@ -107,6 +110,7 @@ class ExecBalanceItem extends Message
      * Generated from protobuf field <code>int64 active = 3;</code>.
      *
      * @param  int|string  $var
+     *
      * @return $this
      */
     public function setActive($var)

@@ -11,6 +11,7 @@ class Base58
      *
      * @param  String Hex $data
      * @param  bool  $littleEndian
+     *
      * @return String Base58
      * @throws Exception
      */
@@ -50,6 +51,7 @@ class Base58
      *
      * @param        $char
      * @param  bool  $reverse
+     *
      * @return null
      */
     private static function permutation_lookup($char, bool $reverse = false): ?string
@@ -82,6 +84,7 @@ class Base58
      *
      * @param        $encodedData
      * @param  bool  $littleEndian
+     *
      * @return String Hex
      */
     public static function decode($encodedData, bool $littleEndian = true): string

@@ -24,6 +24,7 @@ class GenSeedLang extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var int $lang
      *                       }
      */
@@ -47,6 +48,7 @@ class GenSeedLang extends Message
      * Generated from protobuf field <code>int32 lang = 1;</code>.
      *
      * @param  int  $var
+     *
      * @return $this
      */
     public function setLang($var)

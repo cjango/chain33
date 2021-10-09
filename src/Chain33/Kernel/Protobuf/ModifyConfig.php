@@ -39,6 +39,7 @@ class ModifyConfig extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var string $key
      * @var string $value
      * @var string $op
@@ -65,6 +66,7 @@ class ModifyConfig extends Message
      * Generated from protobuf field <code>string key = 1;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setKey($var)
@@ -89,6 +91,7 @@ class ModifyConfig extends Message
      * Generated from protobuf field <code>string value = 2;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setValue($var)
@@ -113,6 +116,7 @@ class ModifyConfig extends Message
      * Generated from protobuf field <code>string op = 3;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setOp($var)
@@ -137,6 +141,7 @@ class ModifyConfig extends Message
      * Generated from protobuf field <code>string addr = 4;</code>.
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setAddr($var)

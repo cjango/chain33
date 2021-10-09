@@ -37,6 +37,7 @@ class HashOnlyNotaryStorage extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
+     *
      * @var string $hash
      *                       长度固定为32字节
      * @var string $key
@@ -67,6 +68,7 @@ class HashOnlyNotaryStorage extends Message
      * Generated from protobuf field <code>bytes hash = 1;</code>
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setHash($var)
@@ -93,6 +95,7 @@ class HashOnlyNotaryStorage extends Message
      * Generated from protobuf field <code>string key = 2;</code>
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setKey($var)
@@ -119,6 +122,7 @@ class HashOnlyNotaryStorage extends Message
      * Generated from protobuf field <code>string value = 3;</code>
      *
      * @param  string  $var
+     *
      * @return $this
      */
     public function setValue($var)
