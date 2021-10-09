@@ -26,8 +26,8 @@ class BlockPid extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $pid
      *     @var \Jason\Chain33\Kernel\Protobuf\Block $block
@@ -52,7 +52,7 @@ class BlockPid extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string pid = 1;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setPid($var)
@@ -86,7 +86,7 @@ class BlockPid extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Block block = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Block  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\Block $var
      * @return $this
      */
     public function setBlock($var)

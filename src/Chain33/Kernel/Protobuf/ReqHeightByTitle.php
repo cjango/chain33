@@ -34,8 +34,8 @@ class ReqHeightByTitle extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var int|string $height
      *     @var string $title
@@ -62,7 +62,7 @@ class ReqHeightByTitle extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 height = 1;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setHeight($var)
@@ -86,7 +86,7 @@ class ReqHeightByTitle extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string title = 2;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setTitle($var)
@@ -110,7 +110,7 @@ class ReqHeightByTitle extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 count = 3;</code>.
      *
-     * @param  int  $var
+     * @param  int   $var
      * @return $this
      */
     public function setCount($var)
@@ -134,7 +134,7 @@ class ReqHeightByTitle extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 direction = 4;</code>.
      *
-     * @param  int  $var
+     * @param  int   $var
      * @return $this
      */
     public function setDirection($var)

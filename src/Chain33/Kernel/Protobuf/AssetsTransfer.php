@@ -32,8 +32,8 @@ class AssetsTransfer extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $cointoken
      *     @var int|string $amount
@@ -60,7 +60,7 @@ class AssetsTransfer extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string cointoken = 1;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setCointoken($var)
@@ -84,7 +84,7 @@ class AssetsTransfer extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 amount = 2;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setAmount($var)
@@ -108,7 +108,7 @@ class AssetsTransfer extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes note = 3;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setNote($var)
@@ -132,7 +132,7 @@ class AssetsTransfer extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string to = 4;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setTo($var)

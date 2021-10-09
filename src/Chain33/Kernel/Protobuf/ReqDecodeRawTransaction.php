@@ -20,8 +20,8 @@ class ReqDecodeRawTransaction extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $txHex
      * }
@@ -45,7 +45,7 @@ class ReqDecodeRawTransaction extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string txHex = 1;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setTxHex($var)

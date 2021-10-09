@@ -20,8 +20,8 @@ class ReplyString extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $data
      * }
@@ -45,7 +45,7 @@ class ReplyString extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string data = 1;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setData($var)

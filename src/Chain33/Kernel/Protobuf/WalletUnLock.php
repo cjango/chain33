@@ -33,8 +33,8 @@ class WalletUnLock extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $passwd
      *     @var int|string $timeout
@@ -60,7 +60,7 @@ class WalletUnLock extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string passwd = 1;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setPasswd($var)
@@ -84,7 +84,7 @@ class WalletUnLock extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 timeout = 2;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setTimeout($var)

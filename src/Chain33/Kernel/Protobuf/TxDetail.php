@@ -38,8 +38,8 @@ class TxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var int $index
      *     @var \Jason\Chain33\Kernel\Protobuf\Transaction $tx
@@ -66,7 +66,7 @@ class TxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>uint32 index = 1;</code>.
      *
-     * @param  int  $var
+     * @param  int   $var
      * @return $this
      */
     public function setIndex($var)
@@ -100,7 +100,7 @@ class TxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Transaction tx = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Transaction  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\Transaction $var
      * @return $this
      */
     public function setTx($var)
@@ -134,7 +134,7 @@ class TxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ReceiptData receipt = 3;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ReceiptData  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\ReceiptData $var
      * @return $this
      */
     public function setReceipt($var)
@@ -158,7 +158,7 @@ class TxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated bytes proofs = 4;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setProofs($var)

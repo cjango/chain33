@@ -38,8 +38,8 @@ class ReqBlocks extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var int|string $start
      *     @var int|string $end
@@ -66,7 +66,7 @@ class ReqBlocks extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 start = 1;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setStart($var)
@@ -90,7 +90,7 @@ class ReqBlocks extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 end = 2;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setEnd($var)
@@ -138,7 +138,7 @@ class ReqBlocks extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated string pid = 4;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPid($var)

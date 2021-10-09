@@ -28,8 +28,8 @@ class TxHashList extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string[]|\Google\Protobuf\Internal\RepeatedField $hashes
      *     @var int|string $count
@@ -55,7 +55,7 @@ class TxHashList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated bytes hashes = 1;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setHashes($var)
@@ -79,7 +79,7 @@ class TxHashList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 count = 2;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setCount($var)
@@ -103,7 +103,7 @@ class TxHashList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated int64 expire = 3;</code>.
      *
-     * @param  int[]|string[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  int[]|string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExpire($var)

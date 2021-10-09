@@ -24,8 +24,8 @@ class ReqPrivkeysFile extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $fileName
      *     @var string $passwd
@@ -50,7 +50,7 @@ class ReqPrivkeysFile extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string fileName = 1;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setFileName($var)
@@ -74,7 +74,7 @@ class ReqPrivkeysFile extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string passwd = 2;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setPasswd($var)

@@ -35,8 +35,8 @@ class ReqWalletTransactionList extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $fromTx
      *     @var int $count
@@ -62,7 +62,7 @@ class ReqWalletTransactionList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes fromTx = 1;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setFromTx($var)
@@ -86,7 +86,7 @@ class ReqWalletTransactionList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 count = 2;</code>.
      *
-     * @param  int  $var
+     * @param  int   $var
      * @return $this
      */
     public function setCount($var)
@@ -110,7 +110,7 @@ class ReqWalletTransactionList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 direction = 3;</code>.
      *
-     * @param  int  $var
+     * @param  int   $var
      * @return $this
      */
     public function setDirection($var)

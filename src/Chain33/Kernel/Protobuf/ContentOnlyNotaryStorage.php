@@ -42,8 +42,8 @@ class ContentOnlyNotaryStorage extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $content
      *          长度需要小于512k
@@ -78,7 +78,7 @@ class ContentOnlyNotaryStorage extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bytes content = 1;</code>
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setContent($var)
@@ -106,7 +106,7 @@ class ContentOnlyNotaryStorage extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string key = 2;</code>
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setKey($var)
@@ -134,7 +134,7 @@ class ContentOnlyNotaryStorage extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int32 op = 3;</code>
      *
-     * @param  int  $var
+     * @param  int   $var
      * @return $this
      */
     public function setOp($var)
@@ -162,7 +162,7 @@ class ContentOnlyNotaryStorage extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string value = 4;</code>
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setValue($var)

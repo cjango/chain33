@@ -20,8 +20,8 @@ class Int32Config extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var int $value
      * }
@@ -45,7 +45,7 @@ class Int32Config extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 value = 3;</code>.
      *
-     * @param  int  $var
+     * @param  int   $var
      * @return $this
      */
     public function setValue($var)

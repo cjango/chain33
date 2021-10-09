@@ -83,7 +83,7 @@ class Client extends BaseClient
      *
      * @Author : <C.Jason>
      * @Date   : 2020/4/30 15:00
-     * @param  array  $detail
+     * @param  array      $detail
      * @return string
      * @throws \Exception
      */
@@ -110,8 +110,8 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/3/18 21:34
-     * @param  string  $label  账户标签
-     * @return string 账户地址
+     * @param  string                                    $label 账户标签
+     * @return string                                    账户地址
      * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     public function create(string $label): string
@@ -128,7 +128,7 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/3/18 21:34
-     * @param  bool  $withoutBalance  返回 label 和 addr 信息
+     * @param  bool  $withoutBalance 返回 label 和 addr 信息
      * @return array
      */
     public function get(bool $withoutBalance = false): array
@@ -143,8 +143,8 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/3/18 21:35
-     * @param  string  $address  要修改的地址
-     * @param  string  $label    新的标签
+     * @param  string $address 要修改的地址
+     * @param  string $label   新的标签
      * @return mixed
      */
     public function setLabel(string $address, string $label)
@@ -160,8 +160,8 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 17:21
-     * @param  string  $label       账户标签
-     * @param  string  $privateKey  账户私钥
+     * @param  string                                    $label      账户标签
+     * @param  string                                    $privateKey 账户私钥
      * @return string
      * @throws \Jason\Chain33\Exceptions\ConfigException
      */
@@ -180,7 +180,7 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/3/18 21:36
-     * @param  string  $addr  待导出私钥的账户地址
+     * @param  string                                    $addr 待导出私钥的账户地址
      * @return string
      * @throws \Jason\Chain33\Exceptions\ConfigException
      */

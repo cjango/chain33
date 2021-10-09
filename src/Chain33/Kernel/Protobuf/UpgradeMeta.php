@@ -28,8 +28,8 @@ class UpgradeMeta extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var bool $starting
      *     @var string $version
@@ -79,7 +79,7 @@ class UpgradeMeta extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string version = 2;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setVersion($var)
@@ -103,7 +103,7 @@ class UpgradeMeta extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 height = 3;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setHeight($var)

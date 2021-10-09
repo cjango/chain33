@@ -38,8 +38,8 @@ class WalletStatus extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var bool $isWalletLock
      *     @var bool $isAutoMining

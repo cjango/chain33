@@ -24,8 +24,8 @@ class HeadersPid extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $pid
      *     @var \Jason\Chain33\Kernel\Protobuf\Headers $headers
@@ -50,7 +50,7 @@ class HeadersPid extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string pid = 1;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setPid($var)
@@ -84,7 +84,7 @@ class HeadersPid extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Headers headers = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Headers  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\Headers $var
      * @return $this
      */
     public function setHeaders($var)

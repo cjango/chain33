@@ -24,8 +24,8 @@ class ReceiptLog extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var int $ty
      *     @var string $log
@@ -50,7 +50,7 @@ class ReceiptLog extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 ty = 1;</code>.
      *
-     * @param  int  $var
+     * @param  int   $var
      * @return $this
      */
     public function setTy($var)
@@ -74,7 +74,7 @@ class ReceiptLog extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes log = 2;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setLog($var)

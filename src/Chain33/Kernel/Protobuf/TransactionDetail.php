@@ -64,8 +64,8 @@ class TransactionDetail extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var \Jason\Chain33\Kernel\Protobuf\Transaction $tx
      *     @var \Jason\Chain33\Kernel\Protobuf\ReceiptData $receipt
@@ -110,7 +110,7 @@ class TransactionDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Transaction tx = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Transaction  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\Transaction $var
      * @return $this
      */
     public function setTx($var)
@@ -144,7 +144,7 @@ class TransactionDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ReceiptData receipt = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ReceiptData  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\ReceiptData $var
      * @return $this
      */
     public function setReceipt($var)
@@ -168,7 +168,7 @@ class TransactionDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated bytes proofs = 3;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setProofs($var)
@@ -192,7 +192,7 @@ class TransactionDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 height = 4;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setHeight($var)
@@ -216,7 +216,7 @@ class TransactionDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 index = 5;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setIndex($var)
@@ -240,7 +240,7 @@ class TransactionDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 blocktime = 6;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setBlocktime($var)
@@ -264,7 +264,7 @@ class TransactionDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 amount = 7;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setAmount($var)
@@ -288,7 +288,7 @@ class TransactionDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string fromaddr = 8;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setFromaddr($var)
@@ -312,7 +312,7 @@ class TransactionDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string actionName = 9;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setActionName($var)
@@ -336,7 +336,7 @@ class TransactionDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Asset assets = 10;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Asset[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\Asset[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAssets($var)
@@ -360,7 +360,7 @@ class TransactionDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.TxProof txProofs = 11;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\TxProof[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\TxProof[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTxProofs($var)
@@ -384,7 +384,7 @@ class TransactionDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes fullHash = 12;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setFullHash($var)

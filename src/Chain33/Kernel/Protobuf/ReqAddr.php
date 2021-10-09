@@ -42,8 +42,8 @@ class ReqAddr extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $addr
      *     @var int $flag
@@ -73,7 +73,7 @@ class ReqAddr extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string addr = 1;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setAddr($var)
@@ -101,7 +101,7 @@ class ReqAddr extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int32 flag = 2;</code>
      *
-     * @param  int  $var
+     * @param  int   $var
      * @return $this
      */
     public function setFlag($var)
@@ -125,7 +125,7 @@ class ReqAddr extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 count = 3;</code>.
      *
-     * @param  int  $var
+     * @param  int   $var
      * @return $this
      */
     public function setCount($var)
@@ -149,7 +149,7 @@ class ReqAddr extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 direction = 4;</code>.
      *
-     * @param  int  $var
+     * @param  int   $var
      * @return $this
      */
     public function setDirection($var)
@@ -173,7 +173,7 @@ class ReqAddr extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 height = 5;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setHeight($var)
@@ -197,7 +197,7 @@ class ReqAddr extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 index = 6;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setIndex($var)

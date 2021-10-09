@@ -20,8 +20,8 @@ class HexTx extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $tx
      * }
@@ -45,7 +45,7 @@ class HexTx extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string tx = 1;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setTx($var)

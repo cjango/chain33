@@ -48,8 +48,8 @@ class BlockBody extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var \Jason\Chain33\Kernel\Protobuf\Transaction[]|\Google\Protobuf\Internal\RepeatedField $txs
      *     @var \Jason\Chain33\Kernel\Protobuf\ReceiptData[]|\Google\Protobuf\Internal\RepeatedField $receipts
@@ -78,7 +78,7 @@ class BlockBody extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Transaction txs = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Transaction[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\Transaction[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTxs($var)
@@ -102,7 +102,7 @@ class BlockBody extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ReceiptData receipts = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ReceiptData[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\ReceiptData[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setReceipts($var)
@@ -126,7 +126,7 @@ class BlockBody extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes mainHash = 3;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setMainHash($var)
@@ -150,7 +150,7 @@ class BlockBody extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 mainHeight = 4;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setMainHeight($var)
@@ -174,7 +174,7 @@ class BlockBody extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes hash = 5;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setHash($var)
@@ -198,7 +198,7 @@ class BlockBody extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 height = 6;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setHeight($var)

@@ -20,8 +20,8 @@ class GenSeedLang extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var int $lang
      * }
@@ -45,7 +45,7 @@ class GenSeedLang extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 lang = 1;</code>.
      *
-     * @param  int  $var
+     * @param  int   $var
      * @return $this
      */
     public function setLang($var)

@@ -38,8 +38,8 @@ class ReqGetTotalCoins extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $symbol
      *     @var string $stateHash
@@ -67,7 +67,7 @@ class ReqGetTotalCoins extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string symbol = 1;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setSymbol($var)
@@ -91,7 +91,7 @@ class ReqGetTotalCoins extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes stateHash = 2;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setStateHash($var)
@@ -115,7 +115,7 @@ class ReqGetTotalCoins extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes startKey = 3;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setStartKey($var)
@@ -139,7 +139,7 @@ class ReqGetTotalCoins extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 count = 4;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setCount($var)
@@ -163,7 +163,7 @@ class ReqGetTotalCoins extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string execer = 5;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setExecer($var)

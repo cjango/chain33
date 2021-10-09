@@ -34,8 +34,8 @@ class NoBalanceTxs extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string[]|\Google\Protobuf\Internal\RepeatedField $txHexs
      *     @var string $payAddr
@@ -62,7 +62,7 @@ class NoBalanceTxs extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated string txHexs = 1;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTxHexs($var)
@@ -86,7 +86,7 @@ class NoBalanceTxs extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string payAddr = 2;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setPayAddr($var)
@@ -110,7 +110,7 @@ class NoBalanceTxs extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string privkey = 3;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setPrivkey($var)
@@ -134,7 +134,7 @@ class NoBalanceTxs extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string expire = 4;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setExpire($var)

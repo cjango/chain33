@@ -36,8 +36,8 @@ class BlockDetail extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var \Jason\Chain33\Kernel\Protobuf\Block $block
      *     @var \Jason\Chain33\Kernel\Protobuf\ReceiptData[]|\Google\Protobuf\Internal\RepeatedField $receipts
@@ -74,7 +74,7 @@ class BlockDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Block block = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Block  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\Block $var
      * @return $this
      */
     public function setBlock($var)
@@ -98,7 +98,7 @@ class BlockDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ReceiptData receipts = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ReceiptData[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\ReceiptData[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setReceipts($var)
@@ -122,7 +122,7 @@ class BlockDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.KeyValue KV = 3;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\KeyValue[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\KeyValue[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setKV($var)
@@ -146,7 +146,7 @@ class BlockDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes prevStatusHash = 4;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setPrevStatusHash($var)

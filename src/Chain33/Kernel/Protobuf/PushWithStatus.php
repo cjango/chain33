@@ -24,8 +24,8 @@ class PushWithStatus extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var \Jason\Chain33\Kernel\Protobuf\PushSubscribeReq $push
      *     @var int $status
@@ -60,7 +60,7 @@ class PushWithStatus extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.PushSubscribeReq push = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\PushSubscribeReq  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\PushSubscribeReq $var
      * @return $this
      */
     public function setPush($var)
@@ -84,7 +84,7 @@ class PushWithStatus extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 status = 2;</code>.
      *
-     * @param  int  $var
+     * @param  int   $var
      * @return $this
      */
     public function setStatus($var)

@@ -24,8 +24,8 @@ class ReceiptConfig extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var \Jason\Chain33\Kernel\Protobuf\ConfigItem $prev
      *     @var \Jason\Chain33\Kernel\Protobuf\ConfigItem $current
@@ -60,7 +60,7 @@ class ReceiptConfig extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ConfigItem prev = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ConfigItem  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\ConfigItem $var
      * @return $this
      */
     public function setPrev($var)
@@ -94,7 +94,7 @@ class ReceiptConfig extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ConfigItem current = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ConfigItem  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\ConfigItem $var
      * @return $this
      */
     public function setCurrent($var)

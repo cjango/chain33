@@ -24,8 +24,8 @@ class WalletAccount extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var \Jason\Chain33\Kernel\Protobuf\Account $acc
      *     @var string $label
@@ -60,7 +60,7 @@ class WalletAccount extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account acc = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Account  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\Account $var
      * @return $this
      */
     public function setAcc($var)
@@ -84,7 +84,7 @@ class WalletAccount extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string label = 2;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setLabel($var)

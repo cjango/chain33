@@ -32,8 +32,8 @@ class ReplyTxInfo extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $hash
      *     @var int|string $height
@@ -60,7 +60,7 @@ class ReplyTxInfo extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes hash = 1;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setHash($var)
@@ -84,7 +84,7 @@ class ReplyTxInfo extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 height = 2;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setHeight($var)
@@ -108,7 +108,7 @@ class ReplyTxInfo extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 index = 3;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setIndex($var)
@@ -132,7 +132,7 @@ class ReplyTxInfo extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Asset assets = 4;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Asset[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\Asset[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAssets($var)

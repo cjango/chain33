@@ -38,8 +38,8 @@ class ReplyGetExecBalance extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var int|string $amount
      *     @var int|string $amountFrozen
@@ -67,7 +67,7 @@ class ReplyGetExecBalance extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 amount = 1;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setAmount($var)
@@ -91,7 +91,7 @@ class ReplyGetExecBalance extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 amountFrozen = 2;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setAmountFrozen($var)
@@ -115,7 +115,7 @@ class ReplyGetExecBalance extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 amountActive = 3;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setAmountActive($var)
@@ -139,7 +139,7 @@ class ReplyGetExecBalance extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes nextKey = 4;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setNextKey($var)
@@ -163,7 +163,7 @@ class ReplyGetExecBalance extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ExecBalanceItem items = 5;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ExecBalanceItem[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\ExecBalanceItem[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)

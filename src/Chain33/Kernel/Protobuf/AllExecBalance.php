@@ -24,8 +24,8 @@ class AllExecBalance extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $addr
      *     @var \Jason\Chain33\Kernel\Protobuf\ExecAccount[]|\Google\Protobuf\Internal\RepeatedField $ExecAccount
@@ -50,7 +50,7 @@ class AllExecBalance extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string addr = 1;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setAddr($var)
@@ -74,7 +74,7 @@ class AllExecBalance extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ExecAccount ExecAccount = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ExecAccount[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\ExecAccount[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExecAccount($var)

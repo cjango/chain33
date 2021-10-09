@@ -22,8 +22,8 @@ class Accounts extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var \Jason\Chain33\Kernel\Protobuf\Account[]|\Google\Protobuf\Internal\RepeatedField $acc
      * }
@@ -47,7 +47,7 @@ class Accounts extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Account acc = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Account[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\Account[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAcc($var)

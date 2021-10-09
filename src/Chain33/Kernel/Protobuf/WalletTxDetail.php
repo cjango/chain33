@@ -68,8 +68,8 @@ class WalletTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var \Jason\Chain33\Kernel\Protobuf\Transaction $tx
      *     @var \Jason\Chain33\Kernel\Protobuf\ReceiptData $receipt
@@ -112,7 +112,7 @@ class WalletTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Transaction tx = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Transaction  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\Transaction $var
      * @return $this
      */
     public function setTx($var)
@@ -146,7 +146,7 @@ class WalletTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ReceiptData receipt = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ReceiptData  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\ReceiptData $var
      * @return $this
      */
     public function setReceipt($var)
@@ -170,7 +170,7 @@ class WalletTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 height = 3;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setHeight($var)
@@ -194,7 +194,7 @@ class WalletTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 index = 4;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setIndex($var)
@@ -218,7 +218,7 @@ class WalletTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 blocktime = 5;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setBlocktime($var)
@@ -242,7 +242,7 @@ class WalletTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 amount = 6;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setAmount($var)
@@ -266,7 +266,7 @@ class WalletTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string fromaddr = 7;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setFromaddr($var)
@@ -290,7 +290,7 @@ class WalletTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes txhash = 8;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setTxhash($var)
@@ -314,7 +314,7 @@ class WalletTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string actionName = 9;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setActionName($var)
@@ -338,7 +338,7 @@ class WalletTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes payload = 10;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setPayload($var)

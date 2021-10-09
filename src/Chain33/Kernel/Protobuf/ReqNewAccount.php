@@ -20,8 +20,8 @@ class ReqNewAccount extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $label
      * }
@@ -45,7 +45,7 @@ class ReqNewAccount extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string label = 1;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setLabel($var)
