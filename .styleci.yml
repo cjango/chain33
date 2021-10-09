@@ -10,11 +10,14 @@ use-tabs: false
 
 enabled:
   - "phpdoc_align"
+  - "no_whitespace_in_blank_line"
 
 disabled:
   - "unalign_equals"
   - "laravel_phpdoc_separation"
   - "laravel_phpdoc_alignment"
+  - "no_blank_lines_after_class_opening"
+  - "no_blank_lines_after_phpdoc"
 
 finder:
   exclude:

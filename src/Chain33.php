@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Facade;
 
 /**
  * Class Chain33.
- *
  * @method static Chain33\Account\Client Account
  * @method static Chain33\Balance\Client Balance
  * @method static Chain33\Chain\Client Chain
@@ -29,8 +28,10 @@ use Illuminate\Support\Facades\Facade;
  */
 class Chain33 extends Facade
 {
+
     protected static function getFacadeAccessor(): string
     {
         return Chain33\Application::class;
     }
+
 }
