@@ -45,11 +45,11 @@ class ChainExecutor extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var string    $driver
-     * @var string    $funcName
-     * @var string    $stateHash
-     * @var string    $param
-     * @var string    $extra
+     * @var string $driver
+     * @var string $funcName
+     * @var string $stateHash
+     * @var string $param
+     * @var string $extra
      *                       扩展字段，用于额外的用途
      *                       }
      */

@@ -29,11 +29,11 @@ class ReceiptAccountMint extends Message
     /**
      * Constructor.
      *
-     * @param  array                               $data  {
+     * @param  array  $data  {
      *                                                    Optional. Data for populating the Message object.
-     * @var \Jason\Chain33\Kernel\Protobuf\Account $prev
+     * @var Account $prev
      *                                                    铸币前
-     * @var \Jason\Chain33\Kernel\Protobuf\Account $current
+     * @var Account $current
      *                                                    铸币后
      *                                                    }
      */
@@ -47,7 +47,7 @@ class ReceiptAccountMint extends Message
      *铸币前.
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account prev = 1;</code>
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\Account|null
+     * @return Account|null
      */
     public function getPrev()
     {
@@ -58,7 +58,7 @@ class ReceiptAccountMint extends Message
      *铸币前.
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account prev = 1;</code>
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Account  $var
+     * @param  Account  $var
      * @return $this
      */
     public function setPrev($var)
@@ -83,7 +83,7 @@ class ReceiptAccountMint extends Message
      *铸币后.
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account current = 2;</code>
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\Account|null
+     * @return Account|null
      */
     public function getCurrent()
     {
@@ -94,7 +94,7 @@ class ReceiptAccountMint extends Message
      *铸币后.
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account current = 2;</code>
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Account  $var
+     * @param  Account  $var
      * @return $this
      */
     public function setCurrent($var)

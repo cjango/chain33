@@ -28,10 +28,10 @@ class BlockPid extends Message
     /**
      * Constructor.
      *
-     * @param  array                             $data  {
+     * @param  array  $data  {
      *                                                  Optional. Data for populating the Message object.
-     * @var string                               $pid
-     * @var \Jason\Chain33\Kernel\Protobuf\Block $block
+     * @var string $pid
+     * @var Block $block
      *                                                  }
      */
     public function __construct($data = null)
@@ -67,7 +67,7 @@ class BlockPid extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Block block = 2;</code>.
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\Block|null
+     * @return Block|null
      */
     public function getBlock()
     {
@@ -77,7 +77,7 @@ class BlockPid extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Block block = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Block  $var
+     * @param  Block  $var
      * @return $this
      */
     public function setBlock($var)

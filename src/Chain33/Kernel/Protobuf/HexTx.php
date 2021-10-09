@@ -23,7 +23,7 @@ class HexTx extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var string    $tx
+     * @var string $tx
      *                       }
      */
     public function __construct($data = null)

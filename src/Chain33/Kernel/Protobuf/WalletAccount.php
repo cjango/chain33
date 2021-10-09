@@ -27,10 +27,10 @@ class WalletAccount extends Message
     /**
      * Constructor.
      *
-     * @param  array                               $data  {
+     * @param  array  $data  {
      *                                                    Optional. Data for populating the Message object.
-     * @var \Jason\Chain33\Kernel\Protobuf\Account $acc
-     * @var string                                 $label
+     * @var Account $acc
+     * @var string $label
      *                                                    }
      */
     public function __construct($data = null)
@@ -42,7 +42,7 @@ class WalletAccount extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account acc = 1;</code>.
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\Account|null
+     * @return Account|null
      */
     public function getAcc()
     {
@@ -52,7 +52,7 @@ class WalletAccount extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account acc = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Account  $var
+     * @param  Account  $var
      * @return $this
      */
     public function setAcc($var)

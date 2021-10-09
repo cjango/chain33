@@ -24,7 +24,7 @@ class ReplySignRawTx extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var string    $txHex
+     * @var string $txHex
      *                       }
      */
     public function __construct($data = null)

@@ -8,6 +8,7 @@ namespace Jason\Chain33\Kernel\Protobuf;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\RepeatedField;
 use GPBMetadata\Blockchain;
 
 /**
@@ -55,14 +56,14 @@ class BlockBody extends Message
     /**
      * Constructor.
      *
-     * @param  array                                                                             $data  {
+     * @param  array  $data  {
      *                                                                                                  Optional. Data for populating the Message object.
-     * @var \Jason\Chain33\Kernel\Protobuf\Transaction[]|\Google\Protobuf\Internal\RepeatedField $txs
-     * @var \Jason\Chain33\Kernel\Protobuf\ReceiptData[]|\Google\Protobuf\Internal\RepeatedField $receipts
-     * @var string                                                                               $mainHash
-     * @var int|string                                                                           $mainHeight
-     * @var string                                                                               $hash
-     * @var int|string                                                                           $height
+     * @var Transaction[]|RepeatedField $txs
+     * @var ReceiptData[]|RepeatedField $receipts
+     * @var string $mainHash
+     * @var int|string $mainHeight
+     * @var string $hash
+     * @var int|string $height
      *                                                                                                  }
      */
     public function __construct($data = null)
@@ -74,7 +75,7 @@ class BlockBody extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Transaction txs = 1;</code>.
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getTxs()
     {
@@ -84,12 +85,12 @@ class BlockBody extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Transaction txs = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Transaction[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  Transaction[]|RepeatedField  $var
      * @return $this
      */
     public function setTxs($var)
     {
-        $arr       = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             Transaction::class);
         $this->txs = $arr;
 
@@ -99,7 +100,7 @@ class BlockBody extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ReceiptData receipts = 2;</code>.
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getReceipts()
     {
@@ -109,12 +110,12 @@ class BlockBody extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ReceiptData receipts = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ReceiptData[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  ReceiptData[]|RepeatedField  $var
      * @return $this
      */
     public function setReceipts($var)
     {
-        $arr            = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             ReceiptData::class);
         $this->receipts = $arr;
 

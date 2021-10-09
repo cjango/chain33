@@ -32,11 +32,11 @@ class BlockSeq extends Message
     /**
      * Constructor.
      *
-     * @param  array                                     $data  {
+     * @param  array  $data  {
      *                                                          Optional. Data for populating the Message object.
-     * @var int|string                                   $num
-     * @var \Jason\Chain33\Kernel\Protobuf\BlockSequence $seq
-     * @var \Jason\Chain33\Kernel\Protobuf\BlockDetail   $detail
+     * @var int|string $num
+     * @var BlockSequence $seq
+     * @var BlockDetail $detail
      *                                                          }
      */
     public function __construct($data = null)
@@ -72,7 +72,7 @@ class BlockSeq extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.BlockSequence seq = 2;</code>.
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\BlockSequence|null
+     * @return BlockSequence|null
      */
     public function getSeq()
     {
@@ -82,7 +82,7 @@ class BlockSeq extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.BlockSequence seq = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\BlockSequence  $var
+     * @param  BlockSequence  $var
      * @return $this
      */
     public function setSeq($var)
@@ -106,7 +106,7 @@ class BlockSeq extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.BlockDetail detail = 3;</code>.
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\BlockDetail|null
+     * @return BlockDetail|null
      */
     public function getDetail()
     {
@@ -116,7 +116,7 @@ class BlockSeq extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.BlockDetail detail = 3;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\BlockDetail  $var
+     * @param  BlockDetail  $var
      * @return $this
      */
     public function setDetail($var)

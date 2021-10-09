@@ -36,11 +36,11 @@ class ParaChainBlockDetail extends Message
     /**
      * Constructor.
      *
-     * @param  array                                   $data  {
+     * @param  array  $data  {
      *                                                        Optional. Data for populating the Message object.
-     * @var \Jason\Chain33\Kernel\Protobuf\BlockDetail $blockdetail
-     * @var int|string                                 $sequence
-     * @var bool                                       $isSync
+     * @var BlockDetail $blockdetail
+     * @var int|string $sequence
+     * @var bool $isSync
      *                                                        }
      */
     public function __construct($data = null)
@@ -52,7 +52,7 @@ class ParaChainBlockDetail extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.BlockDetail blockdetail = 1;</code>.
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\BlockDetail|null
+     * @return BlockDetail|null
      */
     public function getBlockdetail()
     {
@@ -62,7 +62,7 @@ class ParaChainBlockDetail extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.BlockDetail blockdetail = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\BlockDetail  $var
+     * @param  BlockDetail  $var
      * @return $this
      */
     public function setBlockdetail($var)

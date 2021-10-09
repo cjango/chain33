@@ -8,6 +8,7 @@ namespace Jason\Chain33\Kernel\Protobuf;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\RepeatedField;
 
 /**
  * 环签名中的一组签名数据.
@@ -28,10 +29,10 @@ class RingSignatureItem extends Message
     /**
      * Constructor.
      *
-     * @param  array                                         $data  {
+     * @param  array  $data  {
      *                                                              Optional. Data for populating the Message object.
-     * @var string[]|\Google\Protobuf\Internal\RepeatedField $pubkey
-     * @var string[]|\Google\Protobuf\Internal\RepeatedField $signature
+     * @var string[]|RepeatedField $pubkey
+     * @var string[]|RepeatedField $signature
      *                                                              }
      */
     public function __construct($data = null)
@@ -43,7 +44,7 @@ class RingSignatureItem extends Message
     /**
      * Generated from protobuf field <code>repeated bytes pubkey = 1;</code>.
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getPubkey()
     {
@@ -53,12 +54,12 @@ class RingSignatureItem extends Message
     /**
      * Generated from protobuf field <code>repeated bytes pubkey = 1;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  string[]|RepeatedField  $var
      * @return $this
      */
     public function setPubkey($var)
     {
-        $arr          = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
         $this->pubkey = $arr;
 
         return $this;
@@ -67,7 +68,7 @@ class RingSignatureItem extends Message
     /**
      * Generated from protobuf field <code>repeated bytes signature = 2;</code>.
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getSignature()
     {
@@ -77,12 +78,12 @@ class RingSignatureItem extends Message
     /**
      * Generated from protobuf field <code>repeated bytes signature = 2;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  string[]|RepeatedField  $var
      * @return $this
      */
     public function setSignature($var)
     {
-        $arr             = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
         $this->signature = $arr;
 
         return $this;

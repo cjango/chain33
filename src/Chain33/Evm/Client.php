@@ -2,6 +2,8 @@
 
 namespace Jason\Chain33\Evm;
 
+use Exception;
+use Jason\Chain33\Exceptions\ChainException;
 use Jason\Chain33\Kernel\BaseClient;
 use Jason\Chain33\Kernel\Utils\Base58;
 
@@ -15,18 +17,18 @@ class Client extends BaseClient
      *
      * @Date   : 2021/10/8 4:39 下午
      * @Author : <Jason.C>
-     * @param  string  $tx    部署合约交易或者调用合约交易的序列化后的字符串
+     * @param  string  $tx  部署合约交易或者调用合约交易的序列化后的字符串
      * @param  string  $from  合约交易调用者地址
      * @return int
-     * @throws \Jason\Chain33\Exceptions\ChainException
+     * @throws ChainException
      */
     public function estimateGas(string $tx, string $from): int
     {
         return $this->client->Query([
-            'execer'   => $this->parseExecer('evm'),
+            'execer' => $this->parseExecer('evm'),
             'funcName' => 'EstimateGas',
-            'payload'  => [
-                'tx'   => $tx,
+            'payload' => [
+                'tx' => $tx,
                 'from' => $from,
             ],
         ])['gas'];
@@ -37,17 +39,17 @@ class Client extends BaseClient
      *
      * @Date   : 2021/10/8 4:49 下午
      * @Author : <Jason.C>
-     * @param  string  $parameter   部署合约的参数 “constructor(zbc, zbc, 3300, ‘${evmcreatorAddr}’)” 原型为 constructor (string
+     * @param  string  $parameter  部署合约的参数 “constructor(zbc, zbc, 3300, ‘${evmcreatorAddr}’)” 原型为 constructor (string
      *                              memory name, string memory symbol_,uint256 supply, address
      *                              owner),这里表示部署一个名称和symbol都为 zbc，总金额3300*le8，拥有者为 evm_creatorAddr 的ERC20合约
-     * @param  string  $code        需要部署合约的 bin 内容
-     * @param  string  $abi         部署合约的 abi 内容
-     * @param  int     $fee         精确的手续费可以通过EstimateGas这个jrpc接口进行估算，同时该交易费需要满足根据部署交易体积大小计算出来的交易费要求
-     * @param  string  $alias       合约别名
+     * @param  string  $code  需要部署合约的 bin 内容
+     * @param  string  $abi  部署合约的 abi 内容
+     * @param  int  $fee  精确的手续费可以通过EstimateGas这个jrpc接口进行估算，同时该交易费需要满足根据部署交易体积大小计算出来的交易费要求
+     * @param  string  $alias  合约别名
      * @param  string  $privateKey  部署者的私钥
-     * @param  string  $note        合约备注
+     * @param  string  $note  合约备注
      * @return string
-     * @throws \Jason\Chain33\Exceptions\ChainException
+     * @throws ChainException
      */
     public function deploy(
         string $parameter,
@@ -59,13 +61,13 @@ class Client extends BaseClient
         string $note = ''
     ): string {
         $txHex = $this->client->CreateDeployTx([
-            'code'      => $code,
-            'abi'       => $abi,
-            'fee'       => $fee,
-            'note'      => $note,
-            'alias'     => $alias,
+            'code' => $code,
+            'abi' => $abi,
+            'fee' => $fee,
+            'note' => $note,
+            'alias' => $alias,
             'parameter' => $parameter,
-            'paraName'  => $this->parseExecer(''),
+            'paraName' => $this->parseExecer(''),
         ], 'evm');
 
         return $this->app->transaction->finalSend($txHex, $privateKey);
@@ -76,14 +78,14 @@ class Client extends BaseClient
      *
      * @Date   : 2021/10/8 5:19 下午
      * @Author : <Jason.C>
-     * @param  string  $parameter     操作合约的参数，例如转账交易 “transfer(‘${evm_transferAddr}’, 20)”
-     * @param  string  $abi           部署合约的 abi 内容
+     * @param  string  $parameter  操作合约的参数，例如转账交易 “transfer(‘${evm_transferAddr}’, 20)”
+     * @param  string  $abi  部署合约的 abi 内容
      * @param  string  $contractAddr  合约地址
-     * @param  int     $fee           精确的手续费可以通过EstimateGas这个jrpc接口进行估算，同时该交易费需要满足根据部署交易体积大小计算出来的交易费要求，一般调用交易的交易费直接设置为通过交易体积大小计算出来的交易费即可
-     * @param  string  $privateKey    调用者私钥
-     * @param  string  $note          合约备注
+     * @param  int  $fee  精确的手续费可以通过EstimateGas这个jrpc接口进行估算，同时该交易费需要满足根据部署交易体积大小计算出来的交易费要求，一般调用交易的交易费直接设置为通过交易体积大小计算出来的交易费即可
+     * @param  string  $privateKey  调用者私钥
+     * @param  string  $note  合约备注
      * @return string
-     * @throws \Jason\Chain33\Exceptions\ChainException
+     * @throws ChainException
      */
     public function invoking(
         string $parameter,
@@ -94,12 +96,12 @@ class Client extends BaseClient
         string $note = ''
     ): string {
         $txHex = $this->client->CreateCallTx([
-            'abi'          => $abi,
-            'fee'          => $fee,
-            'note'         => $note,
-            'parameter'    => $parameter,
+            'abi' => $abi,
+            'fee' => $fee,
+            'note' => $note,
+            'parameter' => $parameter,
             'contractAddr' => $contractAddr,
-            'paraName'     => $this->parseExecer(''),
+            'paraName' => $this->parseExecer(''),
         ], 'evm');
 
         return $this->app->transaction->finalSend($txHex, $privateKey);
@@ -128,14 +130,14 @@ class Client extends BaseClient
      * @Author : <Jason.C>
      * @param  string  $addr  被查询的合约地址
      * @return array
-     * @throws \Jason\Chain33\Exceptions\ChainException
+     * @throws ChainException
      */
     public function checkAddr(string $addr): array
     {
         $result = $this->client->Query([
-            'execer'   => $this->parseExecer('evm'),
+            'execer' => $this->parseExecer('evm'),
             'funcName' => 'CheckAddrExists',
-            'payload'  => [
+            'payload' => [
                 'addr' => $addr,
             ],
         ]);
@@ -154,7 +156,7 @@ class Client extends BaseClient
      * @Author : <Jason.C>
      * @param  string  $evmAddr
      * @return string
-     * @throws \Exception
+     * @throws Exception
      */
     public function convertToChain(string $evmAddr): string
     {

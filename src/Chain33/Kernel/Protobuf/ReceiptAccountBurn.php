@@ -26,10 +26,10 @@ class ReceiptAccountBurn extends Message
     /**
      * Constructor.
      *
-     * @param  array                               $data  {
+     * @param  array  $data  {
      *                                                    Optional. Data for populating the Message object.
-     * @var \Jason\Chain33\Kernel\Protobuf\Account $prev
-     * @var \Jason\Chain33\Kernel\Protobuf\Account $current
+     * @var Account $prev
+     * @var Account $current
      *                                                    }
      */
     public function __construct($data = null)
@@ -41,7 +41,7 @@ class ReceiptAccountBurn extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account prev = 1;</code>.
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\Account|null
+     * @return Account|null
      */
     public function getPrev()
     {
@@ -51,7 +51,7 @@ class ReceiptAccountBurn extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account prev = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Account  $var
+     * @param  Account  $var
      * @return $this
      */
     public function setPrev($var)
@@ -75,7 +75,7 @@ class ReceiptAccountBurn extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account current = 2;</code>.
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\Account|null
+     * @return Account|null
      */
     public function getCurrent()
     {
@@ -85,7 +85,7 @@ class ReceiptAccountBurn extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account current = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Account  $var
+     * @param  Account  $var
      * @return $this
      */
     public function setCurrent($var)

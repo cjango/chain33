@@ -32,10 +32,10 @@ class TimeStatus extends Message
     /**
      * Constructor.
      *
-     * @param  array   $data  {
+     * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
-     * @var string     $ntpTime
-     * @var string     $localTime
+     * @var string $ntpTime
+     * @var string $localTime
      * @var int|string $diff
      *                        }
      */

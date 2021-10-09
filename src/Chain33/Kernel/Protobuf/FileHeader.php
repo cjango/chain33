@@ -38,12 +38,12 @@ class FileHeader extends Message
     /**
      * Constructor.
      *
-     * @param  array   $data  {
+     * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
      * @var int|string $startHeight
-     * @var string     $driver
-     * @var string     $title
-     * @var bool       $testNet
+     * @var string $driver
+     * @var string $title
+     * @var bool $testNet
      *                        }
      */
     public function __construct($data = null)

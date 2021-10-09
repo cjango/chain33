@@ -34,9 +34,9 @@ class ReportErrEvent extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var string    $frommodule
-     * @var string    $tomodule
-     * @var string    $error
+     * @var string $frommodule
+     * @var string $tomodule
+     * @var string $error
      *                       }
      */
     public function __construct($data = null)

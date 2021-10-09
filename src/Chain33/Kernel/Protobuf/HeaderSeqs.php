@@ -8,6 +8,7 @@ namespace Jason\Chain33\Kernel\Protobuf;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\RepeatedField;
 use GPBMetadata\Blockchain;
 
 /**
@@ -24,9 +25,9 @@ class HeaderSeqs extends Message
     /**
      * Constructor.
      *
-     * @param  array                                                                           $data  {
+     * @param  array  $data  {
      *                                                                                                Optional. Data for populating the Message object.
-     * @var \Jason\Chain33\Kernel\Protobuf\HeaderSeq[]|\Google\Protobuf\Internal\RepeatedField $seqs
+     * @var HeaderSeq[]|RepeatedField $seqs
      *                                                                                                }
      */
     public function __construct($data = null)
@@ -38,7 +39,7 @@ class HeaderSeqs extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.HeaderSeq seqs = 1;</code>.
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getSeqs()
     {
@@ -48,12 +49,12 @@ class HeaderSeqs extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.HeaderSeq seqs = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\HeaderSeq[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  HeaderSeq[]|RepeatedField  $var
      * @return $this
      */
     public function setSeqs($var)
     {
-        $arr        = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             HeaderSeq::class);
         $this->seqs = $arr;
 

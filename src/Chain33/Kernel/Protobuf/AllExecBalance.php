@@ -8,6 +8,7 @@ namespace Jason\Chain33\Kernel\Protobuf;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\RepeatedField;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.AllExecBalance</code>.
@@ -27,10 +28,10 @@ class AllExecBalance extends Message
     /**
      * Constructor.
      *
-     * @param  array                                                                             $data  {
+     * @param  array  $data  {
      *                                                                                                  Optional. Data for populating the Message object.
-     * @var string                                                                               $addr
-     * @var \Jason\Chain33\Kernel\Protobuf\ExecAccount[]|\Google\Protobuf\Internal\RepeatedField $ExecAccount
+     * @var string $addr
+     * @var ExecAccount[]|RepeatedField $ExecAccount
      *                                                                                                  }
      */
     public function __construct($data = null)
@@ -66,7 +67,7 @@ class AllExecBalance extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ExecAccount ExecAccount = 2;</code>.
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getExecAccount()
     {
@@ -76,12 +77,12 @@ class AllExecBalance extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ExecAccount ExecAccount = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ExecAccount[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  ExecAccount[]|RepeatedField  $var
      * @return $this
      */
     public function setExecAccount($var)
     {
-        $arr               = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             ExecAccount::class);
         $this->ExecAccount = $arr;
 

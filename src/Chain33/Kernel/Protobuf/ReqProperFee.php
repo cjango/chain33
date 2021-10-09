@@ -28,8 +28,8 @@ class ReqProperFee extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var int       $txCount
-     * @var int       $txSize
+     * @var int $txCount
+     * @var int $txSize
      *                       }
      */
     public function __construct($data = null)

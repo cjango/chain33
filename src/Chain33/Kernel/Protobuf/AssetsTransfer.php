@@ -36,12 +36,12 @@ class AssetsTransfer extends Message
     /**
      * Constructor.
      *
-     * @param  array   $data  {
+     * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
-     * @var string     $cointoken
+     * @var string $cointoken
      * @var int|string $amount
-     * @var string     $note
-     * @var string     $to
+     * @var string $note
+     * @var string $to
      *                        }
      */
     public function __construct($data = null)

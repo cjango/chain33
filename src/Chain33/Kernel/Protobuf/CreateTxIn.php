@@ -34,9 +34,9 @@ class CreateTxIn extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var string    $execer
-     * @var string    $actionName
-     * @var string    $payload
+     * @var string $execer
+     * @var string $actionName
+     * @var string $payload
      *                       }
      */
     public function __construct($data = null)

@@ -10,10 +10,10 @@ class PointMathGMP
      * Computes the result of a point multiplication and returns the resulting point as an Array.
      *
      * @param  String Hex $k
-     * @param  Array  $pG    (GMP, GMP)
+     * @param  Array  $pG  (GMP, GMP)
      * @param         $base  (INT)
      * @return Array Point (GMP, GMP)
-     * @throws \Exception
+     * @throws Exception
      */
     public static function mulPoint($k, array $pG, $a, $b, $p, $base = null)
     {
@@ -29,7 +29,7 @@ class PointMathGMP
         $lastPoint = $pG;
         for ($i = 1; $i < strlen($kBin); $i++) {
             if (substr($kBin, $i, 1) == 1) {
-                $dPt       = self::doublePoint($lastPoint, $a, $p);
+                $dPt = self::doublePoint($lastPoint, $a, $p);
                 $lastPoint = self::addPoints($dPt, $pG, $a, $p);
             } else {
                 $lastPoint = self::doublePoint($lastPoint, $a, $p);
@@ -47,7 +47,7 @@ class PointMathGMP
      *
      * @param  Array  $pt
      * @return Array Point
-     * @throws \Exception
+     * @throws Exception
      */
     public static function doublePoint(array $pt, $a, $p)
     {
@@ -83,7 +83,7 @@ class PointMathGMP
 
         // nPtX = slope^2 - 2 * ptX
         // Equals slope^2 - ptX - ptX
-        $nPt      = [];
+        $nPt = [];
         $nPt['x'] = gmp_mod(
             gmp_sub(
                 gmp_sub(
@@ -119,7 +119,7 @@ class PointMathGMP
      * @param  Array  $pt1
      * @param  Array  $pt2
      * @return Array Point
-     * @throws \Exception
+     * @throws Exception
      */
     public static function addPoints(array $pt1, array $pt2, $a, $p)
     {
@@ -152,7 +152,7 @@ class PointMathGMP
         );
 
         // nPtX = slope^2 - ptX1 - ptX2
-        $nPt      = [];
+        $nPt = [];
         $nPt['x'] = gmp_mod(
             gmp_sub(
                 gmp_sub(
@@ -191,7 +191,7 @@ class PointMathGMP
      */
     public static function validatePoint($x, $y, $a, $b, $p)
     {
-        $x  = gmp_init($x, 16);
+        $x = gmp_init($x, 16);
         $y2 = gmp_mod(
             gmp_add(
                 gmp_add(
@@ -202,7 +202,7 @@ class PointMathGMP
             ),
             $p
         );
-        $y  = gmp_mod(gmp_pow(gmp_init($y, 16), 2), $p);
+        $y = gmp_mod(gmp_pow(gmp_init($y, 16), 2), $p);
 
         if (gmp_cmp($y2, $y) == 0) {
             return true;
@@ -220,7 +220,7 @@ class PointMathGMP
      */
     public static function calculateYWithX($x, $a, $b, $p, $derEvenOrOddCode = null)
     {
-        $x  = gmp_init($x, 16);
+        $x = gmp_init($x, 16);
         $y2 = gmp_mod(
             gmp_add(
                 gmp_add(
@@ -284,7 +284,7 @@ class PointMathGMP
      *
      * @param $a
      * @return array|null
-     * @throws \Exception
+     * @throws Exception
      */
     public static function sqrt($a, $p)
     {

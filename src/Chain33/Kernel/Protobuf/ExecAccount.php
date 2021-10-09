@@ -26,10 +26,10 @@ class ExecAccount extends Message
     /**
      * Constructor.
      *
-     * @param  array                               $data  {
+     * @param  array  $data  {
      *                                                    Optional. Data for populating the Message object.
-     * @var string                                 $execer
-     * @var \Jason\Chain33\Kernel\Protobuf\Account $account
+     * @var string $execer
+     * @var Account $account
      *                                                    }
      */
     public function __construct($data = null)
@@ -65,7 +65,7 @@ class ExecAccount extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account account = 2;</code>.
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\Account|null
+     * @return Account|null
      */
     public function getAccount()
     {
@@ -75,7 +75,7 @@ class ExecAccount extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account account = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Account  $var
+     * @param  Account  $var
      * @return $this
      */
     public function setAccount($var)

@@ -24,15 +24,15 @@ class Storage extends Message
     /**
      * Constructor.
      *
-     * @param  array                                                 $data  {
+     * @param  array  $data  {
      *                                                                      Optional. Data for populating the Message object.
-     * @var \Jason\Chain33\Kernel\Protobuf\ContentOnlyNotaryStorage  $contentStorage
-     * @var \Jason\Chain33\Kernel\Protobuf\HashOnlyNotaryStorage     $hashStorage
-     * @var \Jason\Chain33\Kernel\Protobuf\LinkNotaryStorage         $linkStorage
-     * @var \Jason\Chain33\Kernel\Protobuf\EncryptNotaryStorage      $encryptStorage
-     * @var \Jason\Chain33\Kernel\Protobuf\EncryptShareNotaryStorage $encryptShareStorage
-     * @var \Jason\Chain33\Kernel\Protobuf\EncryptNotaryAdd          $encryptAdd
-     * @var int                                                      $ty
+     * @var ContentOnlyNotaryStorage $contentStorage
+     * @var HashOnlyNotaryStorage $hashStorage
+     * @var LinkNotaryStorage $linkStorage
+     * @var EncryptNotaryStorage $encryptStorage
+     * @var EncryptShareNotaryStorage $encryptShareStorage
+     * @var EncryptNotaryAdd $encryptAdd
+     * @var int $ty
      *                                                                      }
      */
     public function __construct($data = null)
@@ -44,7 +44,7 @@ class Storage extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ContentOnlyNotaryStorage contentStorage = 1;</code>.
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\ContentOnlyNotaryStorage|null
+     * @return ContentOnlyNotaryStorage|null
      */
     public function getContentStorage()
     {
@@ -59,7 +59,7 @@ class Storage extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ContentOnlyNotaryStorage contentStorage = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ContentOnlyNotaryStorage  $var
+     * @param  ContentOnlyNotaryStorage  $var
      * @return $this
      */
     public function setContentStorage($var)
@@ -73,7 +73,7 @@ class Storage extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.HashOnlyNotaryStorage hashStorage = 2;</code>.
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\HashOnlyNotaryStorage|null
+     * @return HashOnlyNotaryStorage|null
      */
     public function getHashStorage()
     {
@@ -88,7 +88,7 @@ class Storage extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.HashOnlyNotaryStorage hashStorage = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\HashOnlyNotaryStorage  $var
+     * @param  HashOnlyNotaryStorage  $var
      * @return $this
      */
     public function setHashStorage($var)
@@ -102,7 +102,7 @@ class Storage extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.LinkNotaryStorage linkStorage = 3;</code>.
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\LinkNotaryStorage|null
+     * @return LinkNotaryStorage|null
      */
     public function getLinkStorage()
     {
@@ -117,7 +117,7 @@ class Storage extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.LinkNotaryStorage linkStorage = 3;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\LinkNotaryStorage  $var
+     * @param  LinkNotaryStorage  $var
      * @return $this
      */
     public function setLinkStorage($var)
@@ -131,7 +131,7 @@ class Storage extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.EncryptNotaryStorage encryptStorage = 4;</code>.
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\EncryptNotaryStorage|null
+     * @return EncryptNotaryStorage|null
      */
     public function getEncryptStorage()
     {
@@ -146,7 +146,7 @@ class Storage extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.EncryptNotaryStorage encryptStorage = 4;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\EncryptNotaryStorage  $var
+     * @param  EncryptNotaryStorage  $var
      * @return $this
      */
     public function setEncryptStorage($var)
@@ -160,7 +160,7 @@ class Storage extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.EncryptShareNotaryStorage encryptShareStorage = 5;</code>.
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\EncryptShareNotaryStorage|null
+     * @return EncryptShareNotaryStorage|null
      */
     public function getEncryptShareStorage()
     {
@@ -175,7 +175,7 @@ class Storage extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.EncryptShareNotaryStorage encryptShareStorage = 5;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\EncryptShareNotaryStorage  $var
+     * @param  EncryptShareNotaryStorage  $var
      * @return $this
      */
     public function setEncryptShareStorage($var)
@@ -189,7 +189,7 @@ class Storage extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.EncryptNotaryAdd encryptAdd = 6;</code>.
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\EncryptNotaryAdd|null
+     * @return EncryptNotaryAdd|null
      */
     public function getEncryptAdd()
     {
@@ -204,7 +204,7 @@ class Storage extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.EncryptNotaryAdd encryptAdd = 6;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\EncryptNotaryAdd  $var
+     * @param  EncryptNotaryAdd  $var
      * @return $this
      */
     public function setEncryptAdd($var)

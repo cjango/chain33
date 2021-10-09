@@ -39,10 +39,10 @@ class ReqModifyConfig extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var string    $key
-     * @var string    $op
-     * @var string    $value
-     * @var string    $modifier
+     * @var string $key
+     * @var string $op
+     * @var string $value
+     * @var string $modifier
      *                       }
      */
     public function __construct($data = null)

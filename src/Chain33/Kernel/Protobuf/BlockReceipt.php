@@ -8,6 +8,7 @@ namespace Jason\Chain33\Kernel\Protobuf;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\RepeatedField;
 use GPBMetadata\Blockchain;
 
 /**
@@ -37,11 +38,11 @@ class BlockReceipt extends Message
     /**
      * Constructor.
      *
-     * @param  array                                                                             $data  {
+     * @param  array  $data  {
      *                                                                                                  Optional. Data for populating the Message object.
-     * @var \Jason\Chain33\Kernel\Protobuf\ReceiptData[]|\Google\Protobuf\Internal\RepeatedField $receipts
-     * @var string                                                                               $hash
-     * @var int|string                                                                           $height
+     * @var ReceiptData[]|RepeatedField $receipts
+     * @var string $hash
+     * @var int|string $height
      *                                                                                                  }
      */
     public function __construct($data = null)
@@ -53,7 +54,7 @@ class BlockReceipt extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ReceiptData receipts = 1;</code>.
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getReceipts()
     {
@@ -63,12 +64,12 @@ class BlockReceipt extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ReceiptData receipts = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ReceiptData[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  ReceiptData[]|RepeatedField  $var
      * @return $this
      */
     public function setReceipts($var)
     {
-        $arr            = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             ReceiptData::class);
         $this->receipts = $arr;
 

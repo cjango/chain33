@@ -73,21 +73,21 @@ class Transaction extends Message
     /**
      * Constructor.
      *
-     * @param  array                                 $data  {
+     * @param  array  $data  {
      *                                                      Optional. Data for populating the Message object.
-     * @var string                                   $execer
-     * @var string                                   $payload
-     * @var \Jason\Chain33\Kernel\Protobuf\Signature $signature
-     * @var int|string                               $fee
-     * @var int|string                               $expire
-     * @var int|string                               $nonce
+     * @var string $execer
+     * @var string $payload
+     * @var Signature $signature
+     * @var int|string $fee
+     * @var int|string $expire
+     * @var int|string $nonce
      *                                                      随机ID，可以防止payload 相同的时候，交易重复
-     * @var string                                   $to
+     * @var string $to
      *                                                      对方地址，如果没有对方地址，可以为空
-     * @var int                                      $groupCount
-     * @var string                                   $header
-     * @var string                                   $next
-     * @var int                                      $chainID
+     * @var int $groupCount
+     * @var string $header
+     * @var string $next
+     * @var int $chainID
      *                                                      }
      */
     public function __construct($data = null)
@@ -147,7 +147,7 @@ class Transaction extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Signature signature = 3;</code>.
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\Signature|null
+     * @return Signature|null
      */
     public function getSignature()
     {
@@ -157,7 +157,7 @@ class Transaction extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Signature signature = 3;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Signature  $var
+     * @param  Signature  $var
      * @return $this
      */
     public function setSignature($var)

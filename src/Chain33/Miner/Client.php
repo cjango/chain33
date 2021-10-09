@@ -29,18 +29,18 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 22:24
-     * @param  string  $bindAddr      挖矿绑定地址
-     * @param  string  $originAddr    原始地址
-     * @param  int     $amount        用于购买ticket的bty数量
-     * @param  bool    $checkBalance  是否进行额度检查
+     * @param  string  $bindAddr  挖矿绑定地址
+     * @param  string  $originAddr  原始地址
+     * @param  int  $amount  用于购买ticket的bty数量
+     * @param  bool  $checkBalance  是否进行额度检查
      * @return string
      */
     public function bind(string $bindAddr, string $originAddr, int $amount = 0, bool $checkBalance = true): string
     {
         return $this->client->CreateBindMiner([
-            'bindAddr'     => $bindAddr,
-            'originAddr'   => $originAddr,
-            'amount'       => $amount,
+            'bindAddr' => $bindAddr,
+            'originAddr' => $originAddr,
+            'amount' => $amount,
             'checkBalance' => $checkBalance,
         ], 'ticket')['txhex'];
     }
@@ -78,15 +78,15 @@ class Client extends BaseClient
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 22:32
      * @param  string  $execer  执行器名称
-     * @param  string  $addr    冷钱包地址
+     * @param  string  $addr  冷钱包地址
      * @return int
      */
     public function addr(string $execer, string $addr): int
     {
         return $this->client->Query([
-            'execer'   => $execer,
+            'execer' => $execer,
             'funcName' => 'MinerAddress',
-            'payload'  => [
+            'payload' => [
                 'data' => $addr,
             ],
         ])['data'];
@@ -98,15 +98,15 @@ class Client extends BaseClient
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 22:35
      * @param  string  $execer  执行器名称
-     * @param  string  $addr    矿工地址
+     * @param  string  $addr  矿工地址
      * @return array
      */
     public function source(string $execer, string $addr): array
     {
         return $this->client->Query([
-            'execer'   => $execer,
+            'execer' => $execer,
             'funcName' => 'MinerSourceList',
-            'payload'  => [
+            'payload' => [
                 'data' => $addr,
             ],
         ])['datas'];
@@ -133,11 +133,11 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 22:42
-     * @param  string  $minerAddress   挖矿地址
+     * @param  string  $minerAddress  挖矿地址
      * @param  string  $returnAddress  收益地址，(非委托挖矿时，和挖矿地址一致)
-     * @param  int     $count          买票数量
-     * @param  int     $randSeed       随机数种子
-     * @param  array   $pubHashes
+     * @param  int  $count  买票数量
+     * @param  int  $randSeed  随机数种子
+     * @param  array  $pubHashes
      * @return string
      */
     public function trans(
@@ -148,14 +148,14 @@ class Client extends BaseClient
         array $pubHashes
     ): string {
         return $this->client->CreateTransaction([
-            'execer'     => 'ticket',
+            'execer' => 'ticket',
             'actionName' => 'Topen',
-            'payload'    => [
-                'minerAddress'  => $minerAddress,
+            'payload' => [
+                'minerAddress' => $minerAddress,
                 'returnAddress' => $returnAddress,
-                'count'         => $count,
-                'randSeed'      => $randSeed,
-                'pubHashes'     => $pubHashes,
+                'count' => $count,
+                'randSeed' => $randSeed,
+                'pubHashes' => $pubHashes,
             ],
         ]);
     }

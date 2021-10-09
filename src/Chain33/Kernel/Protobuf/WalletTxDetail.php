@@ -78,18 +78,18 @@ class WalletTxDetail extends Message
     /**
      * Constructor.
      *
-     * @param  array                                   $data  {
+     * @param  array  $data  {
      *                                                        Optional. Data for populating the Message object.
-     * @var \Jason\Chain33\Kernel\Protobuf\Transaction $tx
-     * @var \Jason\Chain33\Kernel\Protobuf\ReceiptData $receipt
-     * @var int|string                                 $height
-     * @var int|string                                 $index
-     * @var int|string                                 $blocktime
-     * @var int|string                                 $amount
-     * @var string                                     $fromaddr
-     * @var string                                     $txhash
-     * @var string                                     $actionName
-     * @var string                                     $payload
+     * @var Transaction $tx
+     * @var ReceiptData $receipt
+     * @var int|string $height
+     * @var int|string $index
+     * @var int|string $blocktime
+     * @var int|string $amount
+     * @var string $fromaddr
+     * @var string $txhash
+     * @var string $actionName
+     * @var string $payload
      *                                                        }
      */
     public function __construct($data = null)
@@ -101,7 +101,7 @@ class WalletTxDetail extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Transaction tx = 1;</code>.
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\Transaction|null
+     * @return Transaction|null
      */
     public function getTx()
     {
@@ -111,7 +111,7 @@ class WalletTxDetail extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Transaction tx = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Transaction  $var
+     * @param  Transaction  $var
      * @return $this
      */
     public function setTx($var)
@@ -135,7 +135,7 @@ class WalletTxDetail extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ReceiptData receipt = 2;</code>.
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\ReceiptData|null
+     * @return ReceiptData|null
      */
     public function getReceipt()
     {
@@ -145,7 +145,7 @@ class WalletTxDetail extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ReceiptData receipt = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ReceiptData  $var
+     * @param  ReceiptData  $var
      * @return $this
      */
     public function setReceipt($var)

@@ -8,6 +8,7 @@ namespace Jason\Chain33\Kernel\Protobuf;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\RepeatedField;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReplyTxInfo</code>.
@@ -37,12 +38,12 @@ class ReplyTxInfo extends Message
     /**
      * Constructor.
      *
-     * @param  array                                                                       $data  {
+     * @param  array  $data  {
      *                                                                                            Optional. Data for populating the Message object.
-     * @var string                                                                         $hash
-     * @var int|string                                                                     $height
-     * @var int|string                                                                     $index
-     * @var \Jason\Chain33\Kernel\Protobuf\Asset[]|\Google\Protobuf\Internal\RepeatedField $assets
+     * @var string $hash
+     * @var int|string $height
+     * @var int|string $index
+     * @var Asset[]|RepeatedField $assets
      *                                                                                            }
      */
     public function __construct($data = null)
@@ -126,7 +127,7 @@ class ReplyTxInfo extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Asset assets = 4;</code>.
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getAssets()
     {
@@ -136,12 +137,12 @@ class ReplyTxInfo extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Asset assets = 4;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Asset[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  Asset[]|RepeatedField  $var
      * @return $this
      */
     public function setAssets($var)
     {
-        $arr          = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             Asset::class);
         $this->assets = $arr;
 

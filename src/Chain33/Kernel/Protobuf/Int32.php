@@ -24,7 +24,7 @@ class Int32 extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var int       $data
+     * @var int $data
      *                       }
      */
     public function __construct($data = null)

@@ -7,6 +7,7 @@ namespace Jason\Chain33\Kernel\Protobuf;
 
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\Internal\MapField;
 use Google\Protobuf\Internal\Message;
 use GPBMetadata\Blockchain;
 
@@ -60,17 +61,17 @@ class PushSubscribeReq extends Message
     /**
      * Constructor.
      *
-     * @param  array                                 $data  {
+     * @param  array  $data  {
      *                                                      Optional. Data for populating the Message object.
-     * @var string                                   $name
-     * @var string                                   $URL
-     * @var string                                   $encode
-     * @var int|string                               $lastSequence
-     * @var int|string                               $lastHeight
-     * @var string                                   $lastBlockHash
-     * @var int                                      $type
+     * @var string $name
+     * @var string $URL
+     * @var string $encode
+     * @var int|string $lastSequence
+     * @var int|string $lastHeight
+     * @var string $lastBlockHash
+     * @var int $type
      *                                                      0:代表区块；1:代表区块头信息；2：代表交易回执
-     * @var array|\Google\Protobuf\Internal\MapField $contract
+     * @var array|MapField $contract
      *                                                      允许订阅多个类型的交易回执
      *                                                      }
      */
@@ -254,7 +255,7 @@ class PushSubscribeReq extends Message
      *允许订阅多个类型的交易回执.
      * Generated from protobuf field <code>map<string, bool> contract = 8;</code>
      *
-     * @return \Google\Protobuf\Internal\MapField
+     * @return MapField
      */
     public function getContract()
     {
@@ -265,12 +266,12 @@ class PushSubscribeReq extends Message
      *允许订阅多个类型的交易回执.
      * Generated from protobuf field <code>map<string, bool> contract = 8;</code>
      *
-     * @param  array|\Google\Protobuf\Internal\MapField  $var
+     * @param  array|MapField  $var
      * @return $this
      */
     public function setContract($var)
     {
-        $arr            = GPBUtil::checkMapField($var, GPBType::STRING,
+        $arr = GPBUtil::checkMapField($var, GPBType::STRING,
             GPBType::BOOL);
         $this->contract = $arr;
 

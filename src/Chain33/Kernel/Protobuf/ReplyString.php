@@ -24,7 +24,7 @@ class ReplyString extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var string    $data
+     * @var string $data
      *                       }
      */
     public function __construct($data = null)

@@ -16,7 +16,7 @@ class BaseClient
 
     public function __construct($app)
     {
-        $this->app    = $app;
+        $this->app = $app;
         $this->config = $app->config;
         $this->client = $app->client;
     }
@@ -27,7 +27,7 @@ class BaseClient
      * @Date   : 2021/3/24 9:28 上午
      * @Author : < Jason.C >
      * @return void
-     * @throws \Jason\Chain33\Exceptions\ConfigException
+     * @throws ConfigException
      */
     protected function walletUnlock(): void
     {
@@ -36,9 +36,9 @@ class BaseClient
         }
 
         $res = $this->client->UnLock([
-            'passwd'         => $this->config['password'],
+            'passwd' => $this->config['password'],
             'walletOrTicket' => false,
-            'timeout'        => 0,
+            'timeout' => 0,
         ]);
     }
 
@@ -47,7 +47,7 @@ class BaseClient
      *
      * @Date   : 2021/3/24 9:30 上午
      * @Author : < Jason.C > 只解锁买票功能
-     * @throws \Jason\Chain33\Exceptions\ConfigException
+     * @throws ConfigException
      */
     protected function ticketUnlock(): void
     {
@@ -56,9 +56,9 @@ class BaseClient
         }
 
         $res = $this->client->UnLock([
-            'passwd'         => $this->config['password'],
+            'passwd' => $this->config['password'],
             'walletOrTicket' => true,
-            'timeout'        => 0,
+            'timeout' => 0,
         ]);
     }
 
@@ -80,7 +80,7 @@ class BaseClient
      * @Author : < Jason.C >
      * @param $execer
      * @return string
-     * @throws \Jason\Chain33\Exceptions\ChainException
+     * @throws ChainException
      */
     protected function parseExecer($execer): string
     {

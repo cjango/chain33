@@ -38,12 +38,12 @@ class ReplyGetTotalCoins extends Message
     /**
      * Constructor.
      *
-     * @param  array   $data  {
+     * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
      * @var int|string $count
      * @var int|string $num
      * @var int|string $amount
-     * @var string     $nextKey
+     * @var string $nextKey
      *                        }
      */
     public function __construct($data = null)

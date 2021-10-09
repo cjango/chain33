@@ -38,11 +38,11 @@ class IterateRangeByStateHash extends Message
     /**
      * Constructor.
      *
-     * @param  array   $data  {
+     * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
-     * @var string     $stateHash
-     * @var string     $start
-     * @var string     $end
+     * @var string $stateHash
+     * @var string $start
+     * @var string $end
      * @var int|string $count
      *                        }
      */

@@ -28,8 +28,8 @@ class UserWrite extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var string    $topic
-     * @var string    $content
+     * @var string $topic
+     * @var string $content
      *                       }
      */
     public function __construct($data = null)

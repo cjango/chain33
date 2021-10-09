@@ -8,6 +8,7 @@ namespace Jason\Chain33\Kernel\Protobuf;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\RepeatedField;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReplyCheckTxsExist</code>.
@@ -29,11 +30,11 @@ class ReplyCheckTxsExist extends Message
     /**
      * Constructor.
      *
-     * @param  array                                       $data  {
+     * @param  array  $data  {
      *                                                            Optional. Data for populating the Message object.
-     * @var bool[]|\Google\Protobuf\Internal\RepeatedField $existFlags
+     * @var bool[]|RepeatedField $existFlags
      *                                                            对应请求序列存在标识数组，存在则true，否则false
-     * @var int                                            $existCount
+     * @var int $existCount
      *                                                            存在情况的总个数
      *                                                            }
      */
@@ -47,7 +48,7 @@ class ReplyCheckTxsExist extends Message
      *对应请求序列存在标识数组，存在则true，否则false.
      * Generated from protobuf field <code>repeated bool existFlags = 1;</code>
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getExistFlags()
     {
@@ -58,12 +59,12 @@ class ReplyCheckTxsExist extends Message
      *对应请求序列存在标识数组，存在则true，否则false.
      * Generated from protobuf field <code>repeated bool existFlags = 1;</code>
      *
-     * @param  bool[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  bool[]|RepeatedField  $var
      * @return $this
      */
     public function setExistFlags($var)
     {
-        $arr              = GPBUtil::checkRepeatedField($var, GPBType::BOOL);
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::BOOL);
         $this->existFlags = $arr;
 
         return $this;

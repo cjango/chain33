@@ -31,10 +31,10 @@ class Asset extends Message
     /**
      * Constructor.
      *
-     * @param  array   $data  {
+     * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
-     * @var string     $exec
-     * @var string     $symbol
+     * @var string $exec
+     * @var string $symbol
      * @var int|string $amount
      *                        }
      */

@@ -53,15 +53,15 @@ class ReqGetExecBalance extends Message
     /**
      * Constructor.
      *
-     * @param  array   $data  {
+     * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
-     * @var string     $symbol
-     * @var string     $stateHash
-     * @var string     $addr
-     * @var string     $execAddr
-     * @var string     $execer
+     * @var string $symbol
+     * @var string $stateHash
+     * @var string $addr
+     * @var string $execAddr
+     * @var string $execer
      * @var int|string $count
-     * @var string     $nextKey
+     * @var string $nextKey
      *                        }
      */
     public function __construct($data = null)

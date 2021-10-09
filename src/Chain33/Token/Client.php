@@ -3,6 +3,8 @@
 namespace Jason\Chain33\Token;
 
 use Exception;
+use Jason\Chain33\Exceptions\ChainException;
+use Jason\Chain33\Exceptions\ConfigException;
 use Jason\Chain33\Kernel\BaseClient;
 
 /**
@@ -15,15 +17,15 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/5/25 3:59 下午
-     * @param  string  $name          token 名称
-     * @param  string  $symbol        token标记符，最大长度是16个字符，且必须为大写字符和数字
+     * @param  string  $name  token 名称
+     * @param  string  $symbol  token标记符，最大长度是16个字符，且必须为大写字符和数字
      * @param  string  $introduction  token 简介
-     * @param  int     $total         发行总量
-     * @param  string  $owner         token拥有者地址
-     * @param  int     $category      token属性类别， 0 为普通token， 1 可增发和燃烧
-     * @param  int     $price         发行该token愿意承担的费用
+     * @param  int  $total  发行总量
+     * @param  string  $owner  token拥有者地址
+     * @param  int  $category  token属性类别， 0 为普通token， 1 可增发和燃烧
+     * @param  int  $price  发行该token愿意承担的费用
      * @return string
-     * @throws \Jason\Chain33\Exceptions\ConfigException
+     * @throws ConfigException
      */
     public function publish(
         string $name,
@@ -37,13 +39,13 @@ class Client extends BaseClient
         $this->walletUnlock();
 
         $txHex = $this->client->CreateRawTokenPreCreateTx([
-            'name'         => $name,
-            'symbol'       => strtoupper($symbol),
+            'name' => $name,
+            'symbol' => strtoupper($symbol),
             'introduction' => $introduction,
-            'total'        => $total,
-            'price'        => $price,
-            'category'     => $category,
-            'owner'        => $owner,
+            'total' => $total,
+            'price' => $price,
+            'category' => $category,
+            'owner' => $owner,
         ], 'token');
 
         return $this->app->transaction->finalSend($txHex, $this->config['superManager']['privateKey']);
@@ -55,9 +57,9 @@ class Client extends BaseClient
      * @Author: <C.Jason>
      * @Date  : 2020/5/14 6:17 下午
      * @param  string  $symbol  token标记符，最大长度是16个字符，且必须为大写字符和数字
-     * @param  string  $owner   token拥有者地址
+     * @param  string  $owner  token拥有者地址
      * @return string
-     * @throws \Jason\Chain33\Exceptions\ConfigException
+     * @throws ConfigException
      */
     public function finish(string $symbol, string $owner): string
     {
@@ -65,7 +67,7 @@ class Client extends BaseClient
 
         $txHex = $this->client->CreateRawTokenFinishTx([
             'symbol' => strtoupper($symbol),
-            'owner'  => $owner,
+            'owner' => $owner,
         ], 'token');
 
         return $this->app->transaction->finalSend($txHex, $this->config['superManager']['privateKey']);
@@ -83,11 +85,11 @@ class Client extends BaseClient
     {
         try {
             return $this->client->Query([
-                'execer'   => 'token',
+                'execer' => 'token',
                 'funcName' => 'GetTokens',
-                'payload'  => [
-                    'status'     => $status,
-                    'queryAll'   => true,
+                'payload' => [
+                    'status' => $status,
+                    'queryAll' => true,
                     'symbolOnly' => false,
                 ],
             ])['tokens'];
@@ -107,9 +109,9 @@ class Client extends BaseClient
     public function info(string $symbol): array
     {
         return $this->client->Query([
-            'execer'   => 'token',
+            'execer' => 'token',
             'funcName' => 'GetTokenInfo',
-            'payload'  => [
+            'payload' => [
                 'data' => $symbol,
             ],
         ]);
@@ -121,14 +123,14 @@ class Client extends BaseClient
      * @Author: <C.Jason>
      * @Date  : 2020/5/20 3:24 下午
      * @param  string  $symbol  token的Symbol
-     * @param  string  $owner   拥有者地址
+     * @param  string  $owner  拥有者地址
      * @return string
      */
     public function revoke(string $symbol, string $owner): string
     {
         $txHex = $this->client->CreateRawTokenRevokeTx([
             'symbol' => $symbol,
-            'owner'  => $owner,
+            'owner' => $owner,
         ], 'token');
 
         return $this->app->transaction->finalSend($txHex, $this->config['superManager']['privateKey']);
@@ -145,11 +147,11 @@ class Client extends BaseClient
     public function assets(string $address): array
     {
         return $this->client->Query([
-            'execer'   => 'token',
+            'execer' => 'token',
             'funcName' => 'GetAccountTokenAssets',
-            'payload'  => [
+            'payload' => [
                 'address' => $address,
-                'execer'  => 'token',
+                'execer' => 'token',
             ],
         ])['tokenAssets'];
     }
@@ -159,15 +161,15 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/5/25 11:07 上午
-     * @param  string  $symbol     token标记符
-     * @param  string  $addr       地址
-     * @param  int     $count      count: 交易的数量
-     * @param  int     $flag       分页相关参数
-     * @param  int     $direction  分页相关参数
-     * @param  int     $height     分页相关参数
-     * @param  int     $index      分页相关参数
+     * @param  string  $symbol  token标记符
+     * @param  string  $addr  地址
+     * @param  int  $count  count: 交易的数量
+     * @param  int  $flag  分页相关参数
+     * @param  int  $direction  分页相关参数
+     * @param  int  $height  分页相关参数
+     * @param  int  $index  分页相关参数
      * @return array
-     * @throws \Jason\Chain33\Exceptions\ChainException
+     * @throws ChainException
      */
     public function tx(
         string $symbol,
@@ -179,15 +181,15 @@ class Client extends BaseClient
         int $index = 0
     ): array {
         return $this->client->Query([
-            'execer'   => $this->parseExecer('token'),
+            'execer' => $this->parseExecer('token'),
             'funcName' => 'GetTxByToken',
-            'payload'  => [
-                'symbol'    => $symbol,
-                'addr'      => $addr,
-                'count'     => $count,
-                'flag'      => $flag,
-                'height'    => $height,
-                'index'     => $index,
+            'payload' => [
+                'symbol' => $symbol,
+                'addr' => $addr,
+                'count' => $count,
+                'flag' => $flag,
+                'height' => $height,
+                'index' => $index,
                 'direction' => $direction,
             ],
         ])['txInfos'];
@@ -198,8 +200,8 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/5/20 3:44 下午
-     * @param  string  $symbol      token的标记符
-     * @param  int     $amount      增发token的数量
+     * @param  string  $symbol  token的标记符
+     * @param  int  $amount  增发token的数量
      * @param  string  $privateKey  token 拥有者的私钥
      * @return string
      */
@@ -218,8 +220,8 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/5/20 3:44 下午
-     * @param  string  $symbol      token的标记符
-     * @param  int     $amount      燃烧token的数量
+     * @param  string  $symbol  token的标记符
+     * @param  int  $amount  燃烧token的数量
      * @param  string  $privateKey  token 拥有者的私钥
      * @return string
      */
@@ -240,14 +242,14 @@ class Client extends BaseClient
      * @Date  : 2020/5/20 3:47 下午
      * @param  string  $symbol  token标记符
      * @return array  actionType: 8 是token创建， 12 是增发， 13 是燃烧
-     * @throws \Jason\Chain33\Exceptions\ChainException
+     * @throws ChainException
      */
     public function history(string $symbol): array
     {
         return $this->client->Query([
-            'execer'   => $this->parseExecer('token'),
+            'execer' => $this->parseExecer('token'),
             'funcName' => 'GetTokenHistory',
-            'payload'  => [
+            'payload' => [
                 'data' => $symbol,
             ],
         ])['logs'];
@@ -258,28 +260,28 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 17:41
-     * @param  string  $to      发送到地址
+     * @param  string  $to  发送到地址
      * @param  string  $symbol  token的symbol
-     * @param  int     $amount  发送金额
+     * @param  int  $amount  发送金额
      * @param  string  $privateKey
-     * @param  string  $note    备注
+     * @param  string  $note  备注
      * @return string
-     * @throws \Jason\Chain33\Exceptions\ChainException
-     * @throws \Jason\Chain33\Exceptions\ConfigException
+     * @throws ChainException
+     * @throws ConfigException
      */
     public function transfer(string $to, string $symbol, int $amount, string $privateKey, string $note = ''): string
     {
         $this->walletUnlock();
 
         $txHex = $this->client->CreateRawTransaction([
-            'to'          => $to,
-            'amount'      => $amount,
-            'fee'         => 0,
-            'note'        => $note,
-            'isWithdraw'  => false,
-            'isToken'     => true,
+            'to' => $to,
+            'amount' => $amount,
+            'fee' => 0,
+            'note' => $note,
+            'isWithdraw' => false,
+            'isToken' => true,
             'tokenSymbol' => $symbol,
-            'execer'      => $this->parseExecer('token'),
+            'execer' => $this->parseExecer('token'),
         ]);
 
         return $this->app->transaction->finalSend($txHex, $privateKey);

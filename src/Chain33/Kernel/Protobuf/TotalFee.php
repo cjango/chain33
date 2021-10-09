@@ -28,7 +28,7 @@ class TotalFee extends Message
     /**
      * Constructor.
      *
-     * @param  array   $data  {
+     * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
      * @var int|string $fee
      * @var int|string $txCount

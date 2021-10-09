@@ -47,13 +47,13 @@ class ReqAddr extends Message
     /**
      * Constructor.
      *
-     * @param  array   $data  {
+     * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
-     * @var string     $addr
-     * @var int        $flag
+     * @var string $addr
+     * @var int $flag
      *                        表示取所有/from/to/其他的hash列表
-     * @var int        $count
-     * @var int        $direction
+     * @var int $count
+     * @var int $direction
      * @var int|string $height
      * @var int|string $index
      *                        }

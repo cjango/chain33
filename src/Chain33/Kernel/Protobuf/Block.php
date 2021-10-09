@@ -8,6 +8,7 @@ namespace Jason\Chain33\Kernel\Protobuf;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\RepeatedField;
 use GPBMetadata\Blockchain;
 
 /**
@@ -75,19 +76,19 @@ class Block extends Message
     /**
      * Constructor.
      *
-     * @param  array                                                                             $data  {
+     * @param  array  $data  {
      *                                                                                                  Optional. Data for populating the Message object.
-     * @var int|string                                                                           $version
-     * @var string                                                                               $parentHash
-     * @var string                                                                               $txHash
-     * @var string                                                                               $stateHash
-     * @var int|string                                                                           $height
-     * @var int|string                                                                           $blockTime
-     * @var int                                                                                  $difficulty
-     * @var string                                                                               $mainHash
-     * @var int|string                                                                           $mainHeight
-     * @var \Jason\Chain33\Kernel\Protobuf\Signature                                             $signature
-     * @var \Jason\Chain33\Kernel\Protobuf\Transaction[]|\Google\Protobuf\Internal\RepeatedField $txs
+     * @var int|string $version
+     * @var string $parentHash
+     * @var string $txHash
+     * @var string $stateHash
+     * @var int|string $height
+     * @var int|string $blockTime
+     * @var int $difficulty
+     * @var string $mainHash
+     * @var int|string $mainHeight
+     * @var Signature $signature
+     * @var Transaction[]|RepeatedField $txs
      *                                                                                                  }
      */
     public function __construct($data = null)
@@ -315,7 +316,7 @@ class Block extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Signature signature = 8;</code>.
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\Signature|null
+     * @return Signature|null
      */
     public function getSignature()
     {
@@ -325,7 +326,7 @@ class Block extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Signature signature = 8;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Signature  $var
+     * @param  Signature  $var
      * @return $this
      */
     public function setSignature($var)
@@ -349,7 +350,7 @@ class Block extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Transaction txs = 7;</code>.
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getTxs()
     {
@@ -359,12 +360,12 @@ class Block extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Transaction txs = 7;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Transaction[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  Transaction[]|RepeatedField  $var
      * @return $this
      */
     public function setTxs($var)
     {
-        $arr       = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             Transaction::class);
         $this->txs = $arr;
 

@@ -23,7 +23,7 @@ class TotalAmount extends Message
     /**
      * Constructor.
      *
-     * @param  array   $data  {
+     * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
      * @var int|string $total
      *                        统计的总数

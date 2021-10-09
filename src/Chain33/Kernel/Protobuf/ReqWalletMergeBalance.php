@@ -24,7 +24,7 @@ class ReqWalletMergeBalance extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var string    $to
+     * @var string $to
      *                       }
      */
     public function __construct($data = null)

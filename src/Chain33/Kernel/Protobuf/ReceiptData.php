@@ -8,6 +8,7 @@ namespace Jason\Chain33\Kernel\Protobuf;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\RepeatedField;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReceiptData</code>.
@@ -27,10 +28,10 @@ class ReceiptData extends Message
     /**
      * Constructor.
      *
-     * @param  array                                                                            $data  {
+     * @param  array  $data  {
      *                                                                                                 Optional. Data for populating the Message object.
-     * @var int                                                                                 $ty
-     * @var \Jason\Chain33\Kernel\Protobuf\ReceiptLog[]|\Google\Protobuf\Internal\RepeatedField $logs
+     * @var int $ty
+     * @var ReceiptLog[]|RepeatedField $logs
      *                                                                                                 }
      */
     public function __construct($data = null)
@@ -66,7 +67,7 @@ class ReceiptData extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ReceiptLog logs = 3;</code>.
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getLogs()
     {
@@ -76,12 +77,12 @@ class ReceiptData extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ReceiptLog logs = 3;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ReceiptLog[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  ReceiptLog[]|RepeatedField  $var
      * @return $this
      */
     public function setLogs($var)
     {
-        $arr        = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             ReceiptLog::class);
         $this->logs = $arr;
 

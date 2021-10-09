@@ -28,10 +28,10 @@ class CmpBlock extends Message
     /**
      * Constructor.
      *
-     * @param  array                             $data  {
+     * @param  array  $data  {
      *                                                  Optional. Data for populating the Message object.
-     * @var \Jason\Chain33\Kernel\Protobuf\Block $block
-     * @var string                               $cmpHash
+     * @var Block $block
+     * @var string $cmpHash
      *                                                  }
      */
     public function __construct($data = null)
@@ -43,7 +43,7 @@ class CmpBlock extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Block block = 1;</code>.
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\Block|null
+     * @return Block|null
      */
     public function getBlock()
     {
@@ -53,7 +53,7 @@ class CmpBlock extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Block block = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Block  $var
+     * @param  Block  $var
      * @return $this
      */
     public function setBlock($var)

@@ -46,14 +46,14 @@ class TxResult extends Message
     /**
      * Constructor.
      *
-     * @param  array                                   $data  {
+     * @param  array  $data  {
      *                                                        Optional. Data for populating the Message object.
-     * @var int|string                                 $height
-     * @var int                                        $index
-     * @var \Jason\Chain33\Kernel\Protobuf\Transaction $tx
-     * @var \Jason\Chain33\Kernel\Protobuf\ReceiptData $receiptdate
-     * @var int|string                                 $blocktime
-     * @var string                                     $actionName
+     * @var int|string $height
+     * @var int $index
+     * @var Transaction $tx
+     * @var ReceiptData $receiptdate
+     * @var int|string $blocktime
+     * @var string $actionName
      *                                                        }
      */
     public function __construct($data = null)
@@ -113,7 +113,7 @@ class TxResult extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Transaction tx = 3;</code>.
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\Transaction|null
+     * @return Transaction|null
      */
     public function getTx()
     {
@@ -123,7 +123,7 @@ class TxResult extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Transaction tx = 3;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Transaction  $var
+     * @param  Transaction  $var
      * @return $this
      */
     public function setTx($var)
@@ -147,7 +147,7 @@ class TxResult extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ReceiptData receiptdate = 4;</code>.
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\ReceiptData|null
+     * @return ReceiptData|null
      */
     public function getReceiptdate()
     {
@@ -157,7 +157,7 @@ class TxResult extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ReceiptData receiptdate = 4;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ReceiptData  $var
+     * @param  ReceiptData  $var
      * @return $this
      */
     public function setReceiptdate($var)

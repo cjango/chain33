@@ -8,6 +8,7 @@ namespace Jason\Chain33\Kernel\Protobuf;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\RepeatedField;
 use GPBMetadata\Blockchain;
 
 /**
@@ -23,9 +24,9 @@ class Blocks extends Message
     /**
      * Constructor.
      *
-     * @param  array                                                                       $data  {
+     * @param  array  $data  {
      *                                                                                            Optional. Data for populating the Message object.
-     * @var \Jason\Chain33\Kernel\Protobuf\Block[]|\Google\Protobuf\Internal\RepeatedField $items
+     * @var Block[]|RepeatedField $items
      *                                                                                            }
      */
     public function __construct($data = null)
@@ -37,7 +38,7 @@ class Blocks extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Block items = 1;</code>.
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getItems()
     {
@@ -47,12 +48,12 @@ class Blocks extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Block items = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Block[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  Block[]|RepeatedField  $var
      * @return $this
      */
     public function setItems($var)
     {
-        $arr         = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             Block::class);
         $this->items = $arr;
 

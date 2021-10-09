@@ -44,10 +44,10 @@ class WalletAccountStore extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var string    $privkey
-     * @var string    $label
-     * @var string    $addr
-     * @var string    $timeStamp
+     * @var string $privkey
+     * @var string $label
+     * @var string $addr
+     * @var string $timeStamp
      *                       }
      */
     public function __construct($data = null)

@@ -49,15 +49,15 @@ class EncryptNotaryStorage extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var string    $contentHash
+     * @var string $contentHash
      *                       存证明文内容的hash值，推荐使用sha256哈希，限制256位得摘要值
-     * @var string    $encryptContent
+     * @var string $encryptContent
      *                       源文件得密文，由加密key及nonce对明文加密得到该值。
-     * @var string    $nonce
+     * @var string $nonce
      *                       加密iv，通过AES进行加密时制定随机生成的iv,解密时需要使用该值
-     * @var string    $key
+     * @var string $key
      *                       自定义的主键，可以为空，如果没传，则用txhash为key
-     * @var string    $value
+     * @var string $value
      *                       字符串值
      *                       }
      */

@@ -8,6 +8,7 @@ namespace Jason\Chain33\Kernel\Protobuf;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\RepeatedField;
 
 /**
  * ty = 0 -> error Receipt
@@ -35,11 +36,11 @@ class Receipt extends Message
     /**
      * Constructor.
      *
-     * @param  array                                                                            $data  {
+     * @param  array  $data  {
      *                                                                                                 Optional. Data for populating the Message object.
-     * @var int                                                                                 $ty
-     * @var \Jason\Chain33\Kernel\Protobuf\KeyValue[]|\Google\Protobuf\Internal\RepeatedField   $KV
-     * @var \Jason\Chain33\Kernel\Protobuf\ReceiptLog[]|\Google\Protobuf\Internal\RepeatedField $logs
+     * @var int $ty
+     * @var KeyValue[]|RepeatedField $KV
+     * @var ReceiptLog[]|RepeatedField $logs
      *                                                                                                 }
      */
     public function __construct($data = null)
@@ -75,7 +76,7 @@ class Receipt extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.KeyValue KV = 2;</code>.
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getKV()
     {
@@ -85,12 +86,12 @@ class Receipt extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.KeyValue KV = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\KeyValue[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  KeyValue[]|RepeatedField  $var
      * @return $this
      */
     public function setKV($var)
     {
-        $arr      = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             KeyValue::class);
         $this->KV = $arr;
 
@@ -100,7 +101,7 @@ class Receipt extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ReceiptLog logs = 3;</code>.
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getLogs()
     {
@@ -110,12 +111,12 @@ class Receipt extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ReceiptLog logs = 3;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ReceiptLog[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  ReceiptLog[]|RepeatedField  $var
      * @return $this
      */
     public function setLogs($var)
     {
-        $arr        = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             ReceiptLog::class);
         $this->logs = $arr;
 

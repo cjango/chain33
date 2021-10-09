@@ -39,10 +39,10 @@ class NoBalanceTx extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var string    $txHex
-     * @var string    $payAddr
-     * @var string    $privkey
-     * @var string    $expire
+     * @var string $txHex
+     * @var string $payAddr
+     * @var string $privkey
+     * @var string $expire
      *                       }
      */
     public function __construct($data = null)

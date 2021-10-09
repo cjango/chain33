@@ -77,18 +77,18 @@ class Header extends Message
     /**
      * Constructor.
      *
-     * @param  array                                 $data  {
+     * @param  array  $data  {
      *                                                      Optional. Data for populating the Message object.
-     * @var int|string                               $version
-     * @var string                                   $parentHash
-     * @var string                                   $txHash
-     * @var string                                   $stateHash
-     * @var int|string                               $height
-     * @var int|string                               $blockTime
-     * @var int|string                               $txCount
-     * @var string                                   $hash
-     * @var int                                      $difficulty
-     * @var \Jason\Chain33\Kernel\Protobuf\Signature $signature
+     * @var int|string $version
+     * @var string $parentHash
+     * @var string $txHash
+     * @var string $stateHash
+     * @var int|string $height
+     * @var int|string $blockTime
+     * @var int|string $txCount
+     * @var string $hash
+     * @var int $difficulty
+     * @var Signature $signature
      *                                                      }
      */
     public function __construct($data = null)
@@ -316,7 +316,7 @@ class Header extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Signature signature = 8;</code>.
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\Signature|null
+     * @return Signature|null
      */
     public function getSignature()
     {
@@ -326,7 +326,7 @@ class Header extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Signature signature = 8;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Signature  $var
+     * @param  Signature  $var
      * @return $this
      */
     public function setSignature($var)

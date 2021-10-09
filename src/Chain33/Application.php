@@ -33,7 +33,7 @@ class Application extends Container
      *
      * @var array
      */
-    protected $providers = [
+    protected array $providers = [
         Account\ServiceProvider::class,
         Balance\ServiceProvider::class,
         Chain\ServiceProvider::class,

@@ -44,9 +44,9 @@ class Signature extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var int       $ty
-     * @var string    $pubkey
-     * @var string    $signature
+     * @var int $ty
+     * @var string $pubkey
+     * @var string $signature
      *                       当ty为5时，格式应该用RingSignature去解析
      *                       }
      */

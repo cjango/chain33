@@ -61,17 +61,17 @@ class CreateTx extends Message
     /**
      * Constructor.
      *
-     * @param  array   $data  {
+     * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
-     * @var string     $to
+     * @var string $to
      * @var int|string $amount
      * @var int|string $fee
-     * @var string     $note
-     * @var bool       $isWithdraw
-     * @var bool       $isToken
-     * @var string     $tokenSymbol
-     * @var string     $execName
-     * @var string     $execer
+     * @var string $note
+     * @var bool $isWithdraw
+     * @var bool $isToken
+     * @var string $tokenSymbol
+     * @var string $execName
+     * @var string $execer
      *                        }
      */
     public function __construct($data = null)

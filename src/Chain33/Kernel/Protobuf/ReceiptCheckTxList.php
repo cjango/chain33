@@ -8,6 +8,7 @@ namespace Jason\Chain33\Kernel\Protobuf;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\RepeatedField;
 use GPBMetadata\Blockchain;
 
 /**
@@ -23,9 +24,9 @@ class ReceiptCheckTxList extends Message
     /**
      * Constructor.
      *
-     * @param  array                                         $data  {
+     * @param  array  $data  {
      *                                                              Optional. Data for populating the Message object.
-     * @var string[]|\Google\Protobuf\Internal\RepeatedField $errs
+     * @var string[]|RepeatedField $errs
      *                                                              }
      */
     public function __construct($data = null)
@@ -37,7 +38,7 @@ class ReceiptCheckTxList extends Message
     /**
      * Generated from protobuf field <code>repeated string errs = 1;</code>.
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getErrs()
     {
@@ -47,12 +48,12 @@ class ReceiptCheckTxList extends Message
     /**
      * Generated from protobuf field <code>repeated string errs = 1;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  string[]|RepeatedField  $var
      * @return $this
      */
     public function setErrs($var)
     {
-        $arr        = GPBUtil::checkRepeatedField($var, GPBType::STRING);
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::STRING);
         $this->errs = $arr;
 
         return $this;

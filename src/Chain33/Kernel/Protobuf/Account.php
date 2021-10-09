@@ -41,15 +41,15 @@ class Account extends Message
     /**
      * Constructor.
      *
-     * @param  array   $data  {
+     * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
-     * @var int        $currency
+     * @var int $currency
      *                        coins标识，目前只有0 一个值
      * @var int|string $balance
      *                        账户可用余额
      * @var int|string $frozen
      *                        账户冻结余额
-     * @var string     $addr
+     * @var string $addr
      *                        账户的地址
      *                        }
      */

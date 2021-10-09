@@ -27,10 +27,10 @@ class AssetsGenesis extends Message
     /**
      * Constructor.
      *
-     * @param  array   $data  {
+     * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
      * @var int|string $amount
-     * @var string     $returnAddress
+     * @var string $returnAddress
      *                        }
      */
     public function __construct($data = null)

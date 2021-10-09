@@ -8,6 +8,7 @@ namespace Jason\Chain33\Kernel\Protobuf;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\RepeatedField;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqAddrs</code>.
@@ -22,9 +23,9 @@ class ReqAddrs extends Message
     /**
      * Constructor.
      *
-     * @param  array                                         $data  {
+     * @param  array  $data  {
      *                                                              Optional. Data for populating the Message object.
-     * @var string[]|\Google\Protobuf\Internal\RepeatedField $addrs
+     * @var string[]|RepeatedField $addrs
      *                                                              }
      */
     public function __construct($data = null)
@@ -36,7 +37,7 @@ class ReqAddrs extends Message
     /**
      * Generated from protobuf field <code>repeated string addrs = 1;</code>.
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getAddrs()
     {
@@ -46,12 +47,12 @@ class ReqAddrs extends Message
     /**
      * Generated from protobuf field <code>repeated string addrs = 1;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  string[]|RepeatedField  $var
      * @return $this
      */
     public function setAddrs($var)
     {
-        $arr         = GPBUtil::checkRepeatedField($var, GPBType::STRING);
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::STRING);
         $this->addrs = $arr;
 
         return $this;

@@ -49,15 +49,15 @@ class EncryptShareNotaryStorage extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var string    $contentHash
+     * @var string $contentHash
      *                       存证明文内容的hash值，推荐使用sha256哈希，限制256位得摘要值
-     * @var string    $encryptContent
+     * @var string $encryptContent
      *                       源文件得密文。,用公钥地址加密
-     * @var string    $pubKey
+     * @var string $pubKey
      *                       公钥
-     * @var string    $key
+     * @var string $key
      *                       自定义的主键，可以为空，如果没传，则用txhash为key
-     * @var string    $value
+     * @var string $value
      *                       字符串值
      *                       }
      */

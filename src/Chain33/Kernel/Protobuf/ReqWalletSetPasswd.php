@@ -29,8 +29,8 @@ class ReqWalletSetPasswd extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var string    $oldPass
-     * @var string    $newPass
+     * @var string $oldPass
+     * @var string $newPass
      *                       }
      */
     public function __construct($data = null)

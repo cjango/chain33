@@ -43,13 +43,13 @@ class LinkNotaryStorage extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var string    $link
+     * @var string $link
      *                       存证内容的链接，可以写入URL,或者其他可用于定位源文件得线索.
-     * @var string    $hash
+     * @var string $hash
      *                       源文件得hash值，推荐使用sha256哈希，限制256位得摘要值
-     * @var string    $key
+     * @var string $key
      *                       自定义的主键，可以为空，如果没传，则用txhash为key
-     * @var string    $value
+     * @var string $value
      *                       字符串值
      *                       }
      */

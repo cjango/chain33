@@ -52,14 +52,14 @@ class ReqWalletSendToAddress extends Message
     /**
      * Constructor.
      *
-     * @param  array   $data  {
+     * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
-     * @var string     $from
-     * @var string     $to
+     * @var string $from
+     * @var string $to
      * @var int|string $amount
-     * @var string     $note
-     * @var bool       $isToken
-     * @var string     $tokenSymbol
+     * @var string $note
+     * @var bool $isToken
+     * @var string $tokenSymbol
      *                        }
      */
     public function __construct($data = null)

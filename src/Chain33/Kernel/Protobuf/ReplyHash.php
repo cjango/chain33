@@ -24,7 +24,7 @@ class ReplyHash extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var string    $hash
+     * @var string $hash
      *                       }
      */
     public function __construct($data = null)

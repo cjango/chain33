@@ -23,7 +23,7 @@ class ReqGetMempool extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var bool      $isAll
+     * @var bool $isAll
      *                       }
      */
     public function __construct($data = null)

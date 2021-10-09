@@ -8,6 +8,7 @@ namespace Jason\Chain33\Kernel\Protobuf;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\RepeatedField;
 
 /**
  * 指定交易哈希，查找是否存在.
@@ -23,9 +24,9 @@ class ReqCheckTxsExist extends Message
     /**
      * Constructor.
      *
-     * @param  array                                         $data  {
+     * @param  array  $data  {
      *                                                              Optional. Data for populating the Message object.
-     * @var string[]|\Google\Protobuf\Internal\RepeatedField $txHashes
+     * @var string[]|RepeatedField $txHashes
      *                                                              }
      */
     public function __construct($data = null)
@@ -37,7 +38,7 @@ class ReqCheckTxsExist extends Message
     /**
      * Generated from protobuf field <code>repeated bytes txHashes = 1;</code>.
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getTxHashes()
     {
@@ -47,12 +48,12 @@ class ReqCheckTxsExist extends Message
     /**
      * Generated from protobuf field <code>repeated bytes txHashes = 1;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  string[]|RepeatedField  $var
      * @return $this
      */
     public function setTxHashes($var)
     {
-        $arr            = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
         $this->txHashes = $arr;
 
         return $this;

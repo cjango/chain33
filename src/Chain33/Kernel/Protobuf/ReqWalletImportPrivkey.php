@@ -30,9 +30,9 @@ class ReqWalletImportPrivkey extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var string    $privkey
+     * @var string $privkey
      *                       bitcoin 的私钥格式
-     * @var string    $label
+     * @var string $label
      *                       }
      */
     public function __construct($data = null)

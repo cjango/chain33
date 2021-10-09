@@ -35,13 +35,13 @@ class ReceiptExecAccountTransfer extends Message
     /**
      * Constructor.
      *
-     * @param  array                               $data  {
+     * @param  array  $data  {
      *                                                    Optional. Data for populating the Message object.
-     * @var string                                 $execAddr
+     * @var string $execAddr
      *                                                    合约地址
-     * @var \Jason\Chain33\Kernel\Protobuf\Account $prev
+     * @var Account $prev
      *                                                    转移前
-     * @var \Jason\Chain33\Kernel\Protobuf\Account $current
+     * @var Account $current
      *                                                    转移后
      *                                                    }
      */
@@ -81,7 +81,7 @@ class ReceiptExecAccountTransfer extends Message
      *转移前.
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account prev = 2;</code>
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\Account|null
+     * @return Account|null
      */
     public function getPrev()
     {
@@ -92,7 +92,7 @@ class ReceiptExecAccountTransfer extends Message
      *转移前.
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account prev = 2;</code>
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Account  $var
+     * @param  Account  $var
      * @return $this
      */
     public function setPrev($var)
@@ -117,7 +117,7 @@ class ReceiptExecAccountTransfer extends Message
      *转移后.
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account current = 3;</code>
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\Account|null
+     * @return Account|null
      */
     public function getCurrent()
     {
@@ -128,7 +128,7 @@ class ReceiptExecAccountTransfer extends Message
      *转移后.
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account current = 3;</code>
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Account  $var
+     * @param  Account  $var
      * @return $this
      */
     public function setCurrent($var)

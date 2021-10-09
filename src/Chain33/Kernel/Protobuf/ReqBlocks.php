@@ -8,6 +8,7 @@ namespace Jason\Chain33\Kernel\Protobuf;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\RepeatedField;
 use GPBMetadata\Blockchain;
 
 /**
@@ -43,12 +44,12 @@ class ReqBlocks extends Message
     /**
      * Constructor.
      *
-     * @param  array                                         $data  {
+     * @param  array  $data  {
      *                                                              Optional. Data for populating the Message object.
-     * @var int|string                                       $start
-     * @var int|string                                       $end
-     * @var bool                                             $isDetail
-     * @var string[]|\Google\Protobuf\Internal\RepeatedField $pid
+     * @var int|string $start
+     * @var int|string $end
+     * @var bool $isDetail
+     * @var string[]|RepeatedField $pid
      *                                                              }
      */
     public function __construct($data = null)
@@ -132,7 +133,7 @@ class ReqBlocks extends Message
     /**
      * Generated from protobuf field <code>repeated string pid = 4;</code>.
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getPid()
     {
@@ -142,12 +143,12 @@ class ReqBlocks extends Message
     /**
      * Generated from protobuf field <code>repeated string pid = 4;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  string[]|RepeatedField  $var
      * @return $this
      */
     public function setPid($var)
     {
-        $arr       = GPBUtil::checkRepeatedField($var, GPBType::STRING);
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::STRING);
         $this->pid = $arr;
 
         return $this;

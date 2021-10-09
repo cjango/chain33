@@ -38,12 +38,12 @@ class ReqParaTxByTitle extends Message
     /**
      * Constructor.
      *
-     * @param  array   $data  {
+     * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
      * @var int|string $start
      * @var int|string $end
-     * @var string     $title
-     * @var bool       $isSeq
+     * @var string $title
+     * @var bool $isSeq
      *                        }
      */
     public function __construct($data = null)

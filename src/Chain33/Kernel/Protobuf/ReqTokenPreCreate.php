@@ -52,13 +52,13 @@ class ReqTokenPreCreate extends Message
     /**
      * Constructor.
      *
-     * @param  array   $data  {
+     * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
-     * @var string     $creator_addr
-     * @var string     $name
-     * @var string     $symbol
-     * @var string     $introduction
-     * @var string     $owner_addr
+     * @var string $creator_addr
+     * @var string $name
+     * @var string $symbol
+     * @var string $introduction
+     * @var string $owner_addr
      * @var int|string $total
      * @var int|string $price
      *                        }

@@ -27,10 +27,10 @@ class ReceiptConfig extends Message
     /**
      * Constructor.
      *
-     * @param  array                                  $data  {
+     * @param  array  $data  {
      *                                                       Optional. Data for populating the Message object.
-     * @var \Jason\Chain33\Kernel\Protobuf\ConfigItem $prev
-     * @var \Jason\Chain33\Kernel\Protobuf\ConfigItem $current
+     * @var ConfigItem $prev
+     * @var ConfigItem $current
      *                                                       }
      */
     public function __construct($data = null)
@@ -42,7 +42,7 @@ class ReceiptConfig extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ConfigItem prev = 1;</code>.
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\ConfigItem|null
+     * @return ConfigItem|null
      */
     public function getPrev()
     {
@@ -52,7 +52,7 @@ class ReceiptConfig extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ConfigItem prev = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ConfigItem  $var
+     * @param  ConfigItem  $var
      * @return $this
      */
     public function setPrev($var)
@@ -76,7 +76,7 @@ class ReceiptConfig extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ConfigItem current = 2;</code>.
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\ConfigItem|null
+     * @return ConfigItem|null
      */
     public function getCurrent()
     {
@@ -86,7 +86,7 @@ class ReceiptConfig extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ConfigItem current = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ConfigItem  $var
+     * @param  ConfigItem  $var
      * @return $this
      */
     public function setCurrent($var)

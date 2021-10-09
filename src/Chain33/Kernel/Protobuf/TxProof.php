@@ -8,6 +8,7 @@ namespace Jason\Chain33\Kernel\Protobuf;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\RepeatedField;
 
 /**
  *使用多层merkle树之后的proof证明结构体.
@@ -33,11 +34,11 @@ class TxProof extends Message
     /**
      * Constructor.
      *
-     * @param  array                                         $data  {
+     * @param  array  $data  {
      *                                                              Optional. Data for populating the Message object.
-     * @var string[]|\Google\Protobuf\Internal\RepeatedField $proofs
-     * @var int                                              $index
-     * @var string                                           $rootHash
+     * @var string[]|RepeatedField $proofs
+     * @var int $index
+     * @var string $rootHash
      *                                                              }
      */
     public function __construct($data = null)
@@ -49,7 +50,7 @@ class TxProof extends Message
     /**
      * Generated from protobuf field <code>repeated bytes proofs = 1;</code>.
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getProofs()
     {
@@ -59,12 +60,12 @@ class TxProof extends Message
     /**
      * Generated from protobuf field <code>repeated bytes proofs = 1;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  string[]|RepeatedField  $var
      * @return $this
      */
     public function setProofs($var)
     {
-        $arr          = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
         $this->proofs = $arr;
 
         return $this;

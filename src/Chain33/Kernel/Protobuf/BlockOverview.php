@@ -8,6 +8,7 @@ namespace Jason\Chain33\Kernel\Protobuf;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\RepeatedField;
 use GPBMetadata\Blockchain;
 
 /**
@@ -37,11 +38,11 @@ class BlockOverview extends Message
     /**
      * Constructor.
      *
-     * @param  array                                         $data  {
+     * @param  array  $data  {
      *                                                              Optional. Data for populating the Message object.
-     * @var \Jason\Chain33\Kernel\Protobuf\Header            $head
-     * @var int|string                                       $txCount
-     * @var string[]|\Google\Protobuf\Internal\RepeatedField $txHashes
+     * @var Header $head
+     * @var int|string $txCount
+     * @var string[]|RepeatedField $txHashes
      *                                                              }
      */
     public function __construct($data = null)
@@ -53,7 +54,7 @@ class BlockOverview extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Header head = 1;</code>.
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\Header|null
+     * @return Header|null
      */
     public function getHead()
     {
@@ -63,7 +64,7 @@ class BlockOverview extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Header head = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Header  $var
+     * @param  Header  $var
      * @return $this
      */
     public function setHead($var)
@@ -111,7 +112,7 @@ class BlockOverview extends Message
     /**
      * Generated from protobuf field <code>repeated bytes txHashes = 3;</code>.
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getTxHashes()
     {
@@ -121,12 +122,12 @@ class BlockOverview extends Message
     /**
      * Generated from protobuf field <code>repeated bytes txHashes = 3;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  string[]|RepeatedField  $var
      * @return $this
      */
     public function setTxHashes($var)
     {
-        $arr            = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::BYTES);
         $this->txHashes = $arr;
 
         return $this;

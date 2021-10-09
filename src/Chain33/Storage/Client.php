@@ -3,6 +3,8 @@
 namespace Jason\Chain33\Storage;
 
 use Illuminate\Support\Str;
+use Jason\Chain33\Exceptions\ChainException;
+use Jason\Chain33\Exceptions\ConfigException;
 use Jason\Chain33\Kernel\BaseClient;
 use Jason\Chain33\Kernel\Protobuf\ContentOnlyNotaryStorage;
 use Jason\Chain33\Kernel\Protobuf\HashOnlyNotaryStorage;
@@ -23,10 +25,10 @@ class Client extends BaseClient
      * @param  string  $content
      * @param  string  $privateKey
      * @param  string  $key  修改原有的明文存在的时候  要设置这个值
-     * @param  int     $op
+     * @param  int  $op
      * @return mixed
-     * @throws \Jason\Chain33\Exceptions\ChainException
-     * @throws \Jason\Chain33\Exceptions\ConfigException
+     * @throws ChainException
+     * @throws ConfigException
      */
     public function content(string $content, string $privateKey, string $key = '', int $op = 0)
     {
@@ -47,11 +49,11 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/5/19 3:44 下午
-     * @param  \Jason\Chain33\Kernel\Protobuf\StorageAction  $storage
-     * @param  string                                        $privateKey
+     * @param  StorageAction  $storage
+     * @param  string  $privateKey
      * @return mixed
-     * @throws \Jason\Chain33\Exceptions\ChainException
-     * @throws \Jason\Chain33\Exceptions\ConfigException
+     * @throws ChainException
+     * @throws ConfigException
      */
     private function sendTransaction(StorageAction $storage, string $privateKey)
     {
@@ -77,8 +79,8 @@ class Client extends BaseClient
      * @param  string  $hash
      * @param  string  $privateKey
      * @return mixed
-     * @throws \Jason\Chain33\Exceptions\ChainException
-     * @throws \Jason\Chain33\Exceptions\ConfigException
+     * @throws ChainException
+     * @throws ConfigException
      */
     public function hash(string $hash, string $privateKey)
     {
@@ -106,8 +108,8 @@ class Client extends BaseClient
      * @param  string  $content
      * @param  string  $privateKey
      * @return mixed
-     * @throws \Jason\Chain33\Exceptions\ChainException
-     * @throws \Jason\Chain33\Exceptions\ConfigException
+     * @throws ChainException
+     * @throws ConfigException
      */
     public function link(string $link, string $content, string $privateKey)
     {
@@ -134,36 +136,36 @@ class Client extends BaseClient
     public function query(string $hash)
     {
         $content = $this->client->Query([
-            'execer'   => 'storage',
+            'execer' => 'storage',
             'funcName' => 'QueryStorage',
-            'payload'  => [
+            'payload' => [
                 'txHash' => $hash,
             ],
         ]);
 
         if (array_key_exists('contentStorage', $content)) {
             return [
-                'type'    => 'content',
+                'type' => 'content',
                 'content' => $this->hexToStr($content['contentStorage']['content']),
-                'key'     => $content['contentStorage']['value'],
-                'op'      => $content['contentStorage']['op'],
-                'value'   => $content['contentStorage']['value'],
+                'key' => $content['contentStorage']['value'],
+                'op' => $content['contentStorage']['op'],
+                'value' => $content['contentStorage']['value'],
             ];
         }
         if (array_key_exists('hashStorage', $content)) {
             return [
-                'type'  => 'hash',
-                'hash'  => $this->hexToStr($content['hashStorage']['hash']),
-                'key'   => $content['hashStorage']['key'],
+                'type' => 'hash',
+                'hash' => $this->hexToStr($content['hashStorage']['hash']),
+                'key' => $content['hashStorage']['key'],
                 'value' => $content['hashStorage']['value'],
             ];
         }
         if (array_key_exists('linkStorage', $content)) {
             return [
-                'type'  => 'link',
-                'link'  => $this->hexToStr($content['linkStorage']['link']),
-                'hash'  => $this->hexToStr($content['linkStorage']['hash']),
-                'key'   => $content['linkStorage']['key'],
+                'type' => 'link',
+                'link' => $this->hexToStr($content['linkStorage']['link']),
+                'hash' => $this->hexToStr($content['linkStorage']['hash']),
+                'key' => $content['linkStorage']['key'],
                 'value' => $content['linkStorage']['value'],
             ];
         }

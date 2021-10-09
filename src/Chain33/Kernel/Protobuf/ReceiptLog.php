@@ -28,8 +28,8 @@ class ReceiptLog extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var int       $ty
-     * @var string    $log
+     * @var int $ty
+     * @var string $log
      *                       }
      */
     public function __construct($data = null)

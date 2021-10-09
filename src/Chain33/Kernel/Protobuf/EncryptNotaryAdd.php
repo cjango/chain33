@@ -31,9 +31,9 @@ class EncryptNotaryAdd extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var string    $key
+     * @var string $key
      *                       源操作数存证索引
-     * @var string    $encryptAdd
+     * @var string $encryptAdd
      *                       待操作数据
      *                       }
      */

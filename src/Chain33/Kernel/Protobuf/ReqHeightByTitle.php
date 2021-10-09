@@ -38,12 +38,12 @@ class ReqHeightByTitle extends Message
     /**
      * Constructor.
      *
-     * @param  array   $data  {
+     * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
      * @var int|string $height
-     * @var string     $title
-     * @var int        $count
-     * @var int        $direction
+     * @var string $title
+     * @var int $count
+     * @var int $direction
      *                        }
      */
     public function __construct($data = null)

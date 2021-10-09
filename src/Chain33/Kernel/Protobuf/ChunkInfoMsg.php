@@ -33,9 +33,9 @@ class ChunkInfoMsg extends Message
     /**
      * Constructor.
      *
-     * @param  array   $data  {
+     * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
-     * @var string     $chunkHash
+     * @var string $chunkHash
      * @var int|string $start
      * @var int|string $end
      *                        }

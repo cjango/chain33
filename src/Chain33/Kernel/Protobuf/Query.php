@@ -34,9 +34,9 @@ class Query extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var string    $execer
-     * @var string    $funcName
-     * @var string    $payload
+     * @var string $execer
+     * @var string $funcName
+     * @var string $payload
      *                       }
      */
     public function __construct($data = null)

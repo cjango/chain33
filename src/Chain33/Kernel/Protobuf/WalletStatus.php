@@ -44,10 +44,10 @@ class WalletStatus extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var bool      $isWalletLock
-     * @var bool      $isAutoMining
-     * @var bool      $isHasSeed
-     * @var bool      $isTicketLock
+     * @var bool $isWalletLock
+     * @var bool $isAutoMining
+     * @var bool $isHasSeed
+     * @var bool $isTicketLock
      *                       }
      */
     public function __construct($data = null)

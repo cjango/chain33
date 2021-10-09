@@ -32,9 +32,9 @@ class ExecBalanceItem extends Message
     /**
      * Constructor.
      *
-     * @param  array   $data  {
+     * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
-     * @var string     $execAddr
+     * @var string $execAddr
      * @var int|string $frozen
      * @var int|string $active
      *                        }

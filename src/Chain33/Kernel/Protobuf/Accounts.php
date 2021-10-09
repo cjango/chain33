@@ -8,6 +8,7 @@ namespace Jason\Chain33\Kernel\Protobuf;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\RepeatedField;
 
 /**
  * Account 的列表.
@@ -23,9 +24,9 @@ class Accounts extends Message
     /**
      * Constructor.
      *
-     * @param  array                                                                         $data  {
+     * @param  array  $data  {
      *                                                                                              Optional. Data for populating the Message object.
-     * @var \Jason\Chain33\Kernel\Protobuf\Account[]|\Google\Protobuf\Internal\RepeatedField $acc
+     * @var Account[]|RepeatedField $acc
      *                                                                                              }
      */
     public function __construct($data = null)
@@ -37,7 +38,7 @@ class Accounts extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Account acc = 1;</code>.
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getAcc()
     {
@@ -47,12 +48,12 @@ class Accounts extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Account acc = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Account[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  Account[]|RepeatedField  $var
      * @return $this
      */
     public function setAcc($var)
     {
-        $arr       = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             Account::class);
         $this->acc = $arr;
 

@@ -45,13 +45,13 @@ class ReqAllExecBalance extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var string    $addr
+     * @var string $addr
      *                       地址列表
-     * @var string    $execer
+     * @var string $execer
      *                       执行器名称
-     * @var string    $stateHash
-     * @var string    $asset_exec
-     * @var string    $asset_symbol
+     * @var string $stateHash
+     * @var string $asset_exec
+     * @var string $asset_symbol
      *                       }
      */
     public function __construct($data = null)

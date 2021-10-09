@@ -40,9 +40,9 @@ class ReqWalletTransactionList extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var string    $fromTx
-     * @var int       $count
-     * @var int       $direction
+     * @var string $fromTx
+     * @var int $count
+     * @var int $direction
      *                       }
      */
     public function __construct($data = null)

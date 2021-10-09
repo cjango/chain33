@@ -43,13 +43,13 @@ class ContentOnlyNotaryStorage extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var string    $content
+     * @var string $content
      *                       长度需要小于512k
-     * @var string    $key
+     * @var string $key
      *                       自定义的主键，可以为空，如果没传，则用txhash为key
-     * @var int       $op
+     * @var int $op
      *                       Op 0表示创建 1表示追加add
-     * @var string    $value
+     * @var string $value
      *                       字符串值
      *                       }
      */

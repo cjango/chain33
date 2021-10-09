@@ -34,14 +34,14 @@ class ConfigItem extends Message
     /**
      * Constructor.
      *
-     * @param  array                                    $data  {
+     * @param  array  $data  {
      *                                                         Optional. Data for populating the Message object.
-     * @var string                                      $key
-     * @var string                                      $addr
-     * @var \Jason\Chain33\Kernel\Protobuf\ArrayConfig  $arr
-     * @var \Jason\Chain33\Kernel\Protobuf\StringConfig $str
-     * @var \Jason\Chain33\Kernel\Protobuf\Int32Config  $int
-     * @var int                                         $Ty
+     * @var string $key
+     * @var string $addr
+     * @var ArrayConfig $arr
+     * @var StringConfig $str
+     * @var Int32Config $int
+     * @var int $Ty
      *                                                         }
      */
     public function __construct($data = null)
@@ -101,7 +101,7 @@ class ConfigItem extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ArrayConfig arr = 3;</code>.
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\ArrayConfig|null
+     * @return ArrayConfig|null
      */
     public function getArr()
     {
@@ -116,7 +116,7 @@ class ConfigItem extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ArrayConfig arr = 3;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ArrayConfig  $var
+     * @param  ArrayConfig  $var
      * @return $this
      */
     public function setArr($var)
@@ -130,7 +130,7 @@ class ConfigItem extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.StringConfig str = 4;</code>.
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\StringConfig|null
+     * @return StringConfig|null
      */
     public function getStr()
     {
@@ -145,7 +145,7 @@ class ConfigItem extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.StringConfig str = 4;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\StringConfig  $var
+     * @param  StringConfig  $var
      * @return $this
      */
     public function setStr($var)
@@ -159,7 +159,7 @@ class ConfigItem extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Int32Config int = 5;</code>.
      *
-     * @return \Jason\Chain33\Kernel\Protobuf\Int32Config|null
+     * @return Int32Config|null
      */
     public function getInt()
     {
@@ -174,7 +174,7 @@ class ConfigItem extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Int32Config int = 5;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Int32Config  $var
+     * @param  Int32Config  $var
      * @return $this
      */
     public function setInt($var)

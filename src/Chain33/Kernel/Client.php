@@ -17,7 +17,7 @@ class Client
 
     public function __construct($app)
     {
-        $this->app    = $app;
+        $this->app = $app;
         $this->config = $app->config;
 
         $this->client = new Guzzle([

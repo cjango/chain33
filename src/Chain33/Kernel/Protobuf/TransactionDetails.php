@@ -8,6 +8,7 @@ namespace Jason\Chain33\Kernel\Protobuf;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\RepeatedField;
 
 /**
  * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.TransactionDetails</code>.
@@ -22,9 +23,9 @@ class TransactionDetails extends Message
     /**
      * Constructor.
      *
-     * @param  array                                                                                   $data  {
+     * @param  array  $data  {
      *                                                                                                        Optional. Data for populating the Message object.
-     * @var \Jason\Chain33\Kernel\Protobuf\TransactionDetail[]|\Google\Protobuf\Internal\RepeatedField $txs
+     * @var TransactionDetail[]|RepeatedField $txs
      *                                                                                                        }
      */
     public function __construct($data = null)
@@ -36,7 +37,7 @@ class TransactionDetails extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.TransactionDetail txs = 1;</code>.
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getTxs()
     {
@@ -46,12 +47,12 @@ class TransactionDetails extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.TransactionDetail txs = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\TransactionDetail[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  TransactionDetail[]|RepeatedField  $var
      * @return $this
      */
     public function setTxs($var)
     {
-        $arr       = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             TransactionDetail::class);
         $this->txs = $arr;
 

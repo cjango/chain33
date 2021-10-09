@@ -57,15 +57,15 @@ class HeightPara extends Message
     /**
      * Constructor.
      *
-     * @param  array   $data  {
+     * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
      * @var int|string $height
-     * @var string     $title
-     * @var string     $hash
-     * @var string     $childHash
-     * @var int        $startIndex
-     * @var int        $childHashIndex
-     * @var int        $txCount
+     * @var string $title
+     * @var string $hash
+     * @var string $childHash
+     * @var int $startIndex
+     * @var int $childHashIndex
+     * @var int $txCount
      *                        }
      */
     public function __construct($data = null)

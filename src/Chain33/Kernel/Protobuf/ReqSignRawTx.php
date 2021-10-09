@@ -62,20 +62,20 @@ class ReqSignRawTx extends Message
     /**
      * Constructor.
      *
-     * @param  array   $data  {
+     * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
-     * @var string     $addr
-     * @var string     $privkey
-     * @var string     $txHex
-     * @var string     $expire
-     * @var int        $index
-     * @var string     $token
+     * @var string $addr
+     * @var string $privkey
+     * @var string $txHex
+     * @var string $expire
+     * @var int $index
+     * @var string $token
      *                        签名的模式类型
      *                        0：普通交易
      *                        1：隐私交易
      *                        int32  mode  = 6;
      * @var int|string $fee
-     * @var string     $newToAddr
+     * @var string $newToAddr
      *                        bytes  newExecer = 9;
      *                        }
      */

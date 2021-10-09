@@ -37,11 +37,11 @@ class HashOnlyNotaryStorage extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var string    $hash
+     * @var string $hash
      *                       长度固定为32字节
-     * @var string    $key
+     * @var string $key
      *                       自定义的主键，可以为空，如果没传，则用txhash为key
-     * @var string    $value
+     * @var string $value
      *                       字符串值
      *                       }
      */

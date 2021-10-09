@@ -8,6 +8,7 @@ namespace Jason\Chain33\Kernel\Protobuf;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\RepeatedField;
 use GPBMetadata\Blockchain;
 
 /**
@@ -29,10 +30,10 @@ class ReqParaTxByHeight extends Message
     /**
      * Constructor.
      *
-     * @param  array                                               $data  {
+     * @param  array  $data  {
      *                                                                    Optional. Data for populating the Message object.
-     * @var int[]|string[]|\Google\Protobuf\Internal\RepeatedField $items
-     * @var string                                                 $title
+     * @var int[]|string[]|RepeatedField $items
+     * @var string $title
      *                                                                    }
      */
     public function __construct($data = null)
@@ -44,7 +45,7 @@ class ReqParaTxByHeight extends Message
     /**
      * Generated from protobuf field <code>repeated int64 items = 1;</code>.
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getItems()
     {
@@ -54,12 +55,12 @@ class ReqParaTxByHeight extends Message
     /**
      * Generated from protobuf field <code>repeated int64 items = 1;</code>.
      *
-     * @param  int[]|string[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  int[]|string[]|RepeatedField  $var
      * @return $this
      */
     public function setItems($var)
     {
-        $arr         = GPBUtil::checkRepeatedField($var, GPBType::INT64);
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::INT64);
         $this->items = $arr;
 
         return $this;

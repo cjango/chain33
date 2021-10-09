@@ -7,16 +7,15 @@ preset: laravel
 tab-width: 4
 
 use-tabs: false
-
-enabled:
-  - "align_comments"
-
-disabled:
-  - "align_phpdoc"
-  - "unalign_equals"
-  - "laravel_phpdoc_separation"
-  - "no_blank_lines_after_class_opening"
-  - "no_blank_lines_after_phpdoc"
+#
+#enabled:
+#  - "align_phpdoc"
+#
+#disabled:
+#  - "unalign_equals"
+#  - "laravel_phpdoc_separation"
+#  - "no_blank_lines_after_class_opening"
+#  - "no_blank_lines_after_phpdoc"
 
 finder:
   exclude:

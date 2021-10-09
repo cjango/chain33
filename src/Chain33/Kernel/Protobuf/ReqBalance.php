@@ -8,6 +8,7 @@ namespace Jason\Chain33\Kernel\Protobuf;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\RepeatedField;
 
 /**
  *查询一个地址列表在某个执行器中余额.
@@ -45,15 +46,15 @@ class ReqBalance extends Message
     /**
      * Constructor.
      *
-     * @param  array                                         $data  {
+     * @param  array  $data  {
      *                                                              Optional. Data for populating the Message object.
-     * @var string[]|\Google\Protobuf\Internal\RepeatedField $addresses
+     * @var string[]|RepeatedField $addresses
      *                                                              地址列表
-     * @var string                                           $execer
+     * @var string $execer
      *                                                              执行器名称
-     * @var string                                           $stateHash
-     * @var string                                           $asset_exec
-     * @var string                                           $asset_symbol
+     * @var string $stateHash
+     * @var string $asset_exec
+     * @var string $asset_symbol
      *                                                              }
      */
     public function __construct($data = null)
@@ -66,7 +67,7 @@ class ReqBalance extends Message
      *地址列表.
      * Generated from protobuf field <code>repeated string addresses = 1;</code>
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getAddresses()
     {
@@ -77,12 +78,12 @@ class ReqBalance extends Message
      *地址列表.
      * Generated from protobuf field <code>repeated string addresses = 1;</code>
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  string[]|RepeatedField  $var
      * @return $this
      */
     public function setAddresses($var)
     {
-        $arr             = GPBUtil::checkRepeatedField($var, GPBType::STRING);
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::STRING);
         $this->addresses = $arr;
 
         return $this;

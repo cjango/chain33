@@ -37,12 +37,12 @@ class ReqRandHash extends Message
     /**
      * Constructor.
      *
-     * @param  array   $data  {
+     * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
-     * @var string     $execName
+     * @var string $execName
      * @var int|string $height
      * @var int|string $blockNum
-     * @var string     $hash
+     * @var string $hash
      *                        }
      */
     public function __construct($data = null)

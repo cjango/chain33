@@ -32,8 +32,8 @@ class WalletPwHash extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var string    $pwHash
-     * @var string    $randstr
+     * @var string $pwHash
+     * @var string $randstr
      *                       }
      */
     public function __construct($data = null)

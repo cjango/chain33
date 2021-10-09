@@ -8,6 +8,7 @@ namespace Jason\Chain33\Kernel\Protobuf;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\RepeatedField;
 use GPBMetadata\Blockchain;
 
 /**
@@ -23,9 +24,9 @@ class PushSubscribes extends Message
     /**
      * Constructor.
      *
-     * @param  array                                                                                  $data  {
+     * @param  array  $data  {
      *                                                                                                       Optional. Data for populating the Message object.
-     * @var \Jason\Chain33\Kernel\Protobuf\PushSubscribeReq[]|\Google\Protobuf\Internal\RepeatedField $pushes
+     * @var PushSubscribeReq[]|RepeatedField $pushes
      *                                                                                                       }
      */
     public function __construct($data = null)
@@ -37,7 +38,7 @@ class PushSubscribes extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.PushSubscribeReq pushes = 1;</code>.
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getPushes()
     {
@@ -47,12 +48,12 @@ class PushSubscribes extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.PushSubscribeReq pushes = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\PushSubscribeReq[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  PushSubscribeReq[]|RepeatedField  $var
      * @return $this
      */
     public function setPushes($var)
     {
-        $arr          = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             PushSubscribeReq::class);
         $this->pushes = $arr;
 

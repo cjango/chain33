@@ -8,6 +8,7 @@ namespace Jason\Chain33\Kernel\Protobuf;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\RepeatedField;
 
 /**
  *通过交易hash获取交易列表，需要区分是短hash还是全hash值
@@ -28,10 +29,10 @@ class ReqTxHashList extends Message
     /**
      * Constructor.
      *
-     * @param  array                                         $data  {
+     * @param  array  $data  {
      *                                                              Optional. Data for populating the Message object.
-     * @var string[]|\Google\Protobuf\Internal\RepeatedField $hashes
-     * @var bool                                             $isShortHash
+     * @var string[]|RepeatedField $hashes
+     * @var bool $isShortHash
      *                                                              }
      */
     public function __construct($data = null)
@@ -43,7 +44,7 @@ class ReqTxHashList extends Message
     /**
      * Generated from protobuf field <code>repeated string hashes = 1;</code>.
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getHashes()
     {
@@ -53,12 +54,12 @@ class ReqTxHashList extends Message
     /**
      * Generated from protobuf field <code>repeated string hashes = 1;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  string[]|RepeatedField  $var
      * @return $this
      */
     public function setHashes($var)
     {
-        $arr          = GPBUtil::checkRepeatedField($var, GPBType::STRING);
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::STRING);
         $this->hashes = $arr;
 
         return $this;

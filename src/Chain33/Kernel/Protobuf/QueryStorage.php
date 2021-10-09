@@ -24,7 +24,7 @@ class QueryStorage extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var string    $txHash
+     * @var string $txHash
      *                       }
      */
     public function __construct($data = null)

@@ -2,6 +2,7 @@
 
 namespace Jason\Chain33\Manage;
 
+use Jason\Chain33\Exceptions\ConfigException;
 use Jason\Chain33\Kernel\BaseClient;
 
 /**
@@ -9,7 +10,7 @@ use Jason\Chain33\Kernel\BaseClient;
  */
 class Client extends BaseClient
 {
-    const OP_ADD    = 'add';
+    const OP_ADD = 'add';
     const OP_DELETE = 'delete';
 
     /**
@@ -20,19 +21,19 @@ class Client extends BaseClient
      * @param  string  $addr
      * @param  string  $op  add / delete
      * @return string
-     * @throws \Jason\Chain33\Exceptions\ConfigException
+     * @throws ConfigException
      */
     public function finisher(string $addr, string $op = self::OP_ADD): string
     {
         $this->walletUnlock();
 
         $txHex = $this->client->CreateTransaction([
-            'execer'     => 'manage',
+            'execer' => 'manage',
             'actionName' => 'Modify',
-            'payload'    => [
-                'key'   => 'token-finisher',
+            'payload' => [
+                'key' => 'token-finisher',
                 'value' => $addr,
-                'op'    => $op,
+                'op' => $op,
             ],
         ]);
 
@@ -47,19 +48,19 @@ class Client extends BaseClient
      * @param  string  $symbol
      * @param  string  $op
      * @return string
-     * @throws \Jason\Chain33\Exceptions\ConfigException
+     * @throws ConfigException
      */
     public function blacklist(string $symbol, string $op = self::OP_ADD): string
     {
         $this->walletUnlock();
 
         $txHex = $this->client->CreateTransaction([
-            'execer'     => 'manage',
+            'execer' => 'manage',
             'actionName' => 'Modify',
-            'payload'    => [
-                'key'   => 'token-blacklist',
+            'payload' => [
+                'key' => 'token-blacklist',
                 'value' => $symbol,
-                'op'    => $op,
+                'op' => $op,
             ],
         ]);
 
@@ -74,19 +75,19 @@ class Client extends BaseClient
      * @param  string  $addr
      * @param  string  $op
      * @return string
-     * @throws \Jason\Chain33\Exceptions\ConfigException
+     * @throws ConfigException
      */
     public function tendermint(string $addr, string $op = self::OP_ADD): string
     {
         $this->walletUnlock();
 
         $txHex = $this->client->CreateTransaction([
-            'execer'     => 'manage',
+            'execer' => 'manage',
             'actionName' => 'Modify',
-            'payload'    => [
-                'key'   => 'tendermint-manager',
+            'payload' => [
+                'key' => 'tendermint-manager',
                 'value' => $addr,
-                'op'    => $op,
+                'op' => $op,
             ],
         ]);
 
@@ -99,17 +100,17 @@ class Client extends BaseClient
      * @Date   : 2021/4/2 11:11 上午
      * @Author : <Jason.C>
      * @param  string  $pubkey  新节点的公钥
-     * @param  int     $power   投票权，范围从【1~~全网总power/3】，如果设置为 0 则代表剔除节点
+     * @param  int  $power  投票权，范围从【1~~全网总power/3】，如果设置为 0 则代表剔除节点
      * @return string
      */
     public function addConsensusNode(string $pubkey, int $power = 10): string
     {
         $txHex = $this->client->CreateTransaction([
-            'execer'     => 'valnode',
+            'execer' => 'valnode',
             'actionName' => 'NodeUpdate',
-            'payload'    => [
+            'payload' => [
                 'pubKey' => $pubkey,
-                'power'  => $power,
+                'power' => $power,
             ],
         ]);
 
@@ -127,9 +128,9 @@ class Client extends BaseClient
     public function get(string $type = 'finisher'): array
     {
         $value = $this->client->Query([
-            'execer'   => 'manage',
+            'execer' => 'manage',
             'funcName' => 'GetConfigItem',
-            'payload'  => [
+            'payload' => [
                 'data' => 'token-'.$type,
             ],
         ])['value'];

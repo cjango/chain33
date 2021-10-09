@@ -8,6 +8,7 @@ namespace Jason\Chain33\Kernel\Protobuf;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\RepeatedField;
 use GPBMetadata\Executor;
 
 /**
@@ -63,17 +64,17 @@ class ExecTxList extends Message
     /**
      * Constructor.
      *
-     * @param  array                                                                             $data  {
+     * @param  array  $data  {
      *                                                                                                  Optional. Data for populating the Message object.
-     * @var string                                                                               $stateHash
-     * @var string                                                                               $parentHash
-     * @var string                                                                               $mainHash
-     * @var int|string                                                                           $mainHeight
-     * @var int|string                                                                           $blockTime
-     * @var int|string                                                                           $height
-     * @var int|string                                                                           $difficulty
-     * @var bool                                                                                 $isMempool
-     * @var \Jason\Chain33\Kernel\Protobuf\Transaction[]|\Google\Protobuf\Internal\RepeatedField $txs
+     * @var string $stateHash
+     * @var string $parentHash
+     * @var string $mainHash
+     * @var int|string $mainHeight
+     * @var int|string $blockTime
+     * @var int|string $height
+     * @var int|string $difficulty
+     * @var bool $isMempool
+     * @var Transaction[]|RepeatedField $txs
      *                                                                                                  }
      */
     public function __construct($data = null)
@@ -277,7 +278,7 @@ class ExecTxList extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Transaction txs = 2;</code>.
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getTxs()
     {
@@ -287,12 +288,12 @@ class ExecTxList extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Transaction txs = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Transaction[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  Transaction[]|RepeatedField  $var
      * @return $this
      */
     public function setTxs($var)
     {
-        $arr       = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             Transaction::class);
         $this->txs = $arr;
 

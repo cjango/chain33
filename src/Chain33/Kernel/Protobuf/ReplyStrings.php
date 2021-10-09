@@ -8,6 +8,7 @@ namespace Jason\Chain33\Kernel\Protobuf;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\RepeatedField;
 use GPBMetadata\Common;
 
 /**
@@ -23,9 +24,9 @@ class ReplyStrings extends Message
     /**
      * Constructor.
      *
-     * @param  array                                         $data  {
+     * @param  array  $data  {
      *                                                              Optional. Data for populating the Message object.
-     * @var string[]|\Google\Protobuf\Internal\RepeatedField $datas
+     * @var string[]|RepeatedField $datas
      *                                                              }
      */
     public function __construct($data = null)
@@ -37,7 +38,7 @@ class ReplyStrings extends Message
     /**
      * Generated from protobuf field <code>repeated string datas = 1;</code>.
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getDatas()
     {
@@ -47,12 +48,12 @@ class ReplyStrings extends Message
     /**
      * Generated from protobuf field <code>repeated string datas = 1;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  string[]|RepeatedField  $var
      * @return $this
      */
     public function setDatas($var)
     {
-        $arr         = GPBUtil::checkRepeatedField($var, GPBType::STRING);
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::STRING);
         $this->datas = $arr;
 
         return $this;

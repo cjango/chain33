@@ -39,10 +39,10 @@ class ModifyConfig extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var string    $key
-     * @var string    $value
-     * @var string    $op
-     * @var string    $addr
+     * @var string $key
+     * @var string $value
+     * @var string $op
+     * @var string $addr
      *                       }
      */
     public function __construct($data = null)

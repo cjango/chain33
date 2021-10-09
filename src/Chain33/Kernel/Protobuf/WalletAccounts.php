@@ -8,6 +8,7 @@ namespace Jason\Chain33\Kernel\Protobuf;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\RepeatedField;
 use GPBMetadata\Wallet;
 
 /**
@@ -23,9 +24,9 @@ class WalletAccounts extends Message
     /**
      * Constructor.
      *
-     * @param  array                                                                               $data  {
+     * @param  array  $data  {
      *                                                                                                    Optional. Data for populating the Message object.
-     * @var \Jason\Chain33\Kernel\Protobuf\WalletAccount[]|\Google\Protobuf\Internal\RepeatedField $wallets
+     * @var WalletAccount[]|RepeatedField $wallets
      *                                                                                                    }
      */
     public function __construct($data = null)
@@ -37,7 +38,7 @@ class WalletAccounts extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.WalletAccount wallets = 1;</code>.
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getWallets()
     {
@@ -47,12 +48,12 @@ class WalletAccounts extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.WalletAccount wallets = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\WalletAccount[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  WalletAccount[]|RepeatedField  $var
      * @return $this
      */
     public function setWallets($var)
     {
-        $arr           = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             WalletAccount::class);
         $this->wallets = $arr;
 

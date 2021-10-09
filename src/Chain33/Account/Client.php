@@ -2,7 +2,9 @@
 
 namespace Jason\Chain33\Account;
 
+use Exception;
 use Jason\Chain33\Exceptions\ChainException;
+use Jason\Chain33\Exceptions\ConfigException;
 use Jason\Chain33\Kernel\BaseClient;
 use Jason\Chain33\Kernel\Utils\AddressCode;
 use Jason\Chain33\Kernel\Utils\AddressValidation;
@@ -21,7 +23,7 @@ class Client extends BaseClient
      * @Author : <Jason.C>
      * @param  string  $privateKey  用户私钥
      * @return string
-     * @throws \Jason\Chain33\Exceptions\ChainException
+     * @throws ChainException
      */
     public function getPublicKey(string $privateKey): string
     {
@@ -61,20 +63,20 @@ class Client extends BaseClient
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 15:01
      * @return array
-     * @throws \Exception
+     * @throws Exception
      */
     public function local(): array
     {
         $config = [
             'private_key_type' => OPENSSL_KEYTYPE_EC,
-            'curve_name'       => 'secp256k1',
+            'curve_name' => 'secp256k1',
         ];
-        $pkey   = openssl_pkey_new($config);
+        $pkey = openssl_pkey_new($config);
         $detail = openssl_pkey_get_details($pkey);
 
         return [
             'privateKey' => '0x'.bin2hex($detail['ec']['d']),
-            'address'    => $this->getAddress($detail),
+            'address' => $this->getAddress($detail),
         ];
     }
 
@@ -85,7 +87,7 @@ class Client extends BaseClient
      * @Date   : 2020/4/30 15:00
      * @param  array  $detail  secp256k1 的坐标
      * @return string
-     * @throws \Exception
+     * @throws Exception
      */
     protected function getAddress(array $detail): string
     {
@@ -97,10 +99,10 @@ class Client extends BaseClient
             $pubKey = '03'.$x;
         }
 
-        $ripem160    = hash('ripemd160', hex2bin(hash('sha256', hex2bin($pubKey))));
+        $ripem160 = hash('ripemd160', hex2bin(hash('sha256', hex2bin($pubKey))));
         $with_prefix = '00'.$ripem160;
-        $checksum    = hash('sha256', hex2bin(hash('sha256', hex2bin($with_prefix))));
-        $address     = $with_prefix.substr($checksum, 0, 8);
+        $checksum = hash('sha256', hex2bin(hash('sha256', hex2bin($with_prefix))));
+        $address = $with_prefix.substr($checksum, 0, 8);
 
         return Base58::encode($address);
     }
@@ -112,7 +114,7 @@ class Client extends BaseClient
      * @Date  : 2020/3/18 21:34
      * @param  string  $label  账户标签
      * @return string  账户地址
-     * @throws \Jason\Chain33\Exceptions\ConfigException
+     * @throws ConfigException
      */
     public function create(string $label): string
     {
@@ -144,13 +146,13 @@ class Client extends BaseClient
      * @Author: <C.Jason>
      * @Date  : 2020/3/18 21:35
      * @param  string  $address  要修改的地址
-     * @param  string  $label    新的标签
+     * @param  string  $label  新的标签
      * @return mixed
      */
     public function setLabel(string $address, string $label)
     {
         return $this->client->SetLabl([
-            'addr'  => $address,
+            'addr' => $address,
             'label' => $label,
         ]);
     }
@@ -160,10 +162,10 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 17:21
-     * @param  string  $label       账户标签
+     * @param  string  $label  账户标签
      * @param  string  $privateKey  账户私钥
      * @return string
-     * @throws \Jason\Chain33\Exceptions\ConfigException
+     * @throws ConfigException
      */
     public function import(string $label, string $privateKey): string
     {
@@ -171,7 +173,7 @@ class Client extends BaseClient
 
         return $this->client->ImportPrivkey([
             'privkey' => $privateKey,
-            'label'   => $label,
+            'label' => $label,
         ])['acc']['addr'];
     }
 
@@ -182,7 +184,7 @@ class Client extends BaseClient
      * @Date  : 2020/3/18 21:36
      * @param  string  $addr  待导出私钥的账户地址
      * @return string
-     * @throws \Jason\Chain33\Exceptions\ConfigException
+     * @throws ConfigException
      */
     public function dump(string $addr): string
     {

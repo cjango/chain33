@@ -34,9 +34,9 @@ class ReqTokenFinishCreate extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var string    $finisher_addr
-     * @var string    $symbol
-     * @var string    $owner_addr
+     * @var string $finisher_addr
+     * @var string $symbol
+     * @var string $owner_addr
      *                       }
      */
     public function __construct($data = null)

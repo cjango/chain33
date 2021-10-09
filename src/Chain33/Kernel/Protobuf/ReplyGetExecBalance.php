@@ -8,6 +8,7 @@ namespace Jason\Chain33\Kernel\Protobuf;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\RepeatedField;
 use GPBMetadata\Statistic;
 
 /**
@@ -44,13 +45,13 @@ class ReplyGetExecBalance extends Message
     /**
      * Constructor.
      *
-     * @param  array                                                                                 $data  {
+     * @param  array  $data  {
      *                                                                                                      Optional. Data for populating the Message object.
-     * @var int|string                                                                               $amount
-     * @var int|string                                                                               $amountFrozen
-     * @var int|string                                                                               $amountActive
-     * @var string                                                                                   $nextKey
-     * @var \Jason\Chain33\Kernel\Protobuf\ExecBalanceItem[]|\Google\Protobuf\Internal\RepeatedField $items
+     * @var int|string $amount
+     * @var int|string $amountFrozen
+     * @var int|string $amountActive
+     * @var string $nextKey
+     * @var ExecBalanceItem[]|RepeatedField $items
      *                                                                                                      }
      */
     public function __construct($data = null)
@@ -158,7 +159,7 @@ class ReplyGetExecBalance extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ExecBalanceItem items = 5;</code>.
      *
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField
      */
     public function getItems()
     {
@@ -168,12 +169,12 @@ class ReplyGetExecBalance extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ExecBalanceItem items = 5;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ExecBalanceItem[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  ExecBalanceItem[]|RepeatedField  $var
      * @return $this
      */
     public function setItems($var)
     {
-        $arr         = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
+        $arr = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             ExecBalanceItem::class);
         $this->items = $arr;
 

@@ -24,7 +24,7 @@ class GenSeedLang extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var int       $lang
+     * @var int $lang
      *                       }
      */
     public function __construct($data = null)

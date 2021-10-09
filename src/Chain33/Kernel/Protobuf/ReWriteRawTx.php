@@ -42,14 +42,14 @@ class ReWriteRawTx extends Message
     /**
      * Constructor.
      *
-     * @param  array   $data  {
+     * @param  array  $data  {
      *                        Optional. Data for populating the Message object.
-     * @var string     $tx
-     * @var string     $to
+     * @var string $tx
+     * @var string $to
      *                        bytes  execer = 2;
-     * @var string     $expire
+     * @var string $expire
      * @var int|string $fee
-     * @var int        $index
+     * @var int $index
      *                        }
      */
     public function __construct($data = null)

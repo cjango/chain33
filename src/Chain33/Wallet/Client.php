@@ -3,7 +3,10 @@
 namespace Jason\Chain33\Wallet;
 
 use Jason\Bip39\Bip39;
+use Jason\Bip39\Exception\MnemonicException;
+use Jason\Bip39\Exception\WordListException;
 use Jason\Bip39\Mnemonic;
+use Jason\Chain33\Exceptions\ConfigException;
 use Jason\Chain33\Kernel\BaseClient;
 
 /**
@@ -16,11 +19,11 @@ class Client extends BaseClient
      *
      * @Date   : 2021/7/19 3:28 下午
      * @Author : <Jason.C>
-     * @param  int     $len       助记词位数
+     * @param  int  $len  助记词位数
      * @param  string  $language  助记词语言
-     * @return \Jason\Bip39\Mnemonic
-     * @throws \Jason\Bip39\Exception\MnemonicException
-     * @throws \Jason\Bip39\Exception\WordListException
+     * @return Mnemonic
+     * @throws MnemonicException
+     * @throws WordListException
      */
     public function localSeed(int $len = 15, string $language = 'english'): Mnemonic
     {
@@ -40,7 +43,7 @@ class Client extends BaseClient
         $seed = $this->genSeed();
 
         return $this->client->SaveSeed([
-            'seed'   => $seed,
+            'seed' => $seed,
             'passwd' => $password,
         ])['isOK'];
     }
@@ -66,7 +69,7 @@ class Client extends BaseClient
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 17:34
      * @return string
-     * @throws \Jason\Chain33\Exceptions\ConfigException
+     * @throws ConfigException
      */
     public function getSeed(): string
     {
@@ -113,7 +116,7 @@ class Client extends BaseClient
      * @Date  : 2020/3/18 21:38
      * @param  int  $amount
      * @return bool
-     * @throws \Jason\Chain33\Exceptions\ConfigException
+     * @throws ConfigException
      */
     public function setFee(int $amount): bool
     {
@@ -129,20 +132,20 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 17:44
-     * @param  string  $fromTx     Sprintf(“%018d”, height*100000 + index)，表示从高度 height 中的 index
+     * @param  string  $fromTx  Sprintf(“%018d”, height*100000 + index)，表示从高度 height 中的 index
      *                             开始获取交易列表；第一次传参为空，获取最新的交易
-     * @param  int     $count      获取交易列表的个数
-     * @param  int     $mode       获取交易列表的个数
-     * @param  int     $direction  查找方式；0，获取最新的交易数据，倒叙排序，在交易列表中时间高度是递减的；1，正序排序，按照时间，区块高度增加的方向获取交易列表
+     * @param  int  $count  获取交易列表的个数
+     * @param  int  $mode  获取交易列表的个数
+     * @param  int  $direction  查找方式；0，获取最新的交易数据，倒叙排序，在交易列表中时间高度是递减的；1，正序排序，按照时间，区块高度增加的方向获取交易列表
      * @return array
      */
     public function txList(string $fromTx, int $count, int $mode, int $direction = 0): array
     {
         return $this->client->WalletTxList([
-            'fromTx'    => $fromTx,
-            'count'     => $count,
+            'fromTx' => $fromTx,
+            'count' => $count,
             'direction' => $direction,
-            'mode'      => $mode,
+            'mode' => $mode,
         ])['txDetails'];
     }
 
@@ -171,7 +174,7 @@ class Client extends BaseClient
      * @Date  : 2020/5/14 1:31 下午
      * @param  string  $to  合并钱包上的所有余额到一个账户地址
      * @return mixed
-     * @throws \Jason\Chain33\Exceptions\ConfigException
+     * @throws ConfigException
      */
     public function merge(string $to): ?array
     {

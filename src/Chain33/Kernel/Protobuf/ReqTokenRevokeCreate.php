@@ -34,9 +34,9 @@ class ReqTokenRevokeCreate extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var string    $revoker_addr
-     * @var string    $symbol
-     * @var string    $owner_addr
+     * @var string $revoker_addr
+     * @var string $symbol
+     * @var string $owner_addr
      *                       }
      */
     public function __construct($data = null)

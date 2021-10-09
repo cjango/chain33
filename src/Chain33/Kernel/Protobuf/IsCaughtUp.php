@@ -25,7 +25,7 @@ class IsCaughtUp extends Message
      *
      * @param  array  $data  {
      *                       Optional. Data for populating the Message object.
-     * @var bool      $Iscaughtup
+     * @var bool $Iscaughtup
      *                       }
      */
     public function __construct($data = null)
