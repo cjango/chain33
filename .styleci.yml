@@ -12,6 +12,7 @@ enabled:
   - "align_comments"
 
 disabled:
+  - "align_phpdoc"
   - "unalign_equals"
   - "laravel_phpdoc_separation"
   - "no_blank_lines_after_class_opening"
