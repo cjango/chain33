@@ -8,6 +8,11 @@ tab-width: 4
 
 use-tabs: false
 
+enabled:
+
+disabled:
+  - "unalign_equals"
+
 finder:
   exclude:
     - "GPBMetadata"

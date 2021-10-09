@@ -19,10 +19,8 @@ class Client extends BaseClient
      *
      * @Date   : 2021/3/23 2:14 下午
      * @Author : <Jason.C>
-     *
      * @param $privateKey
      * @return string
-     *
      * @throws \Jason\Chain33\Exceptions\ChainException
      */
     public function getPublicKey($privateKey): string
@@ -49,7 +47,6 @@ class Client extends BaseClient
      *
      * @Date   : 2021/3/22 5:35 下午
      * @Author : <Jason.C>
-     *
      * @param $address
      * @return bool
      */
@@ -63,9 +60,7 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 15:01
-     *
      * @return array
-     *
      * @throws \Exception
      */
     public function local(): array
@@ -88,10 +83,8 @@ class Client extends BaseClient
      *
      * @Author : <C.Jason>
      * @Date   : 2020/4/30 15:00
-     *
      * @param  array  $detail
      * @return string
-     *
      * @throws \Exception
      */
     protected function getAddress(array $detail): string
@@ -117,10 +110,8 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/3/18 21:34
-     *
      * @param  string  $label  账户标签
      * @return string 账户地址
-     *
      * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     public function create(string $label): string
@@ -137,7 +128,6 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/3/18 21:34
-     *
      * @param  bool  $withoutBalance  返回 label 和 addr 信息
      * @return array
      */
@@ -153,7 +143,6 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/3/18 21:35
-     *
      * @param  string  $address  要修改的地址
      * @param  string  $label    新的标签
      * @return mixed
@@ -171,11 +160,9 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 17:21
-     *
      * @param  string  $label       账户标签
      * @param  string  $privateKey  账户私钥
      * @return string
-     *
      * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     public function import(string $label, string $privateKey): string
@@ -193,10 +180,8 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/3/18 21:36
-     *
      * @param  string  $addr  待导出私钥的账户地址
      * @return string
-     *
      * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     public function dump(string $addr): string
