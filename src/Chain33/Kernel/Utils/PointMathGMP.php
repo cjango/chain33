@@ -36,7 +36,7 @@ class PointMathGMP
                 $lastPoint = self::doublePoint($lastPoint, $a, $p);
             }
         }
-        if (!self::validatePoint(gmp_strval($lastPoint['x'], 16), gmp_strval($lastPoint['y'], 16), $a, $b, $p)) {
+        if (! self::validatePoint(gmp_strval($lastPoint['x'], 16), gmp_strval($lastPoint['y'], 16), $a, $b, $p)) {
             throw new Exception('The resulting point is not on the curve.');
         }
 
@@ -239,11 +239,11 @@ class PointMathGMP
 
         $y = self::sqrt($y2, $p);
 
-        if (!$y) { //if there is no result
+        if (! $y) { //if there is no result
             return null;
         }
 
-        if (!$derEvenOrOddCode) {
+        if (! $derEvenOrOddCode) {
             return $y;
         } else {
             if ($derEvenOrOddCode == '02') { // even

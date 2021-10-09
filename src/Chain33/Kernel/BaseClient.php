@@ -33,7 +33,7 @@ class BaseClient
      */
     protected function walletUnlock(): void
     {
-        if (!$this->config['password']) {
+        if (! $this->config['password']) {
             throw new ConfigException('need wallet passwod');
         }
 
@@ -54,7 +54,7 @@ class BaseClient
      */
     protected function ticketUnlock(): void
     {
-        if (!$this->config['password']) {
+        if (! $this->config['password']) {
             throw new ConfigException('need wallet passwod');
         }
 
@@ -90,7 +90,7 @@ class BaseClient
     protected function parseExecer($execer): string
     {
         if ($this->config['para_name']) {
-            if (!preg_match('/user\.p\.[a-zA-Z0-9]*\./', $this->config['para_name'])) {
+            if (! preg_match('/user\.p\.[a-zA-Z0-9]*\./', $this->config['para_name'])) {
                 throw new ChainException('平行链名称配置不正确');
             }
 

@@ -325,7 +325,7 @@ class Client extends BaseClient
     ): string {
         $this->walletUnlock();
 
-        $isToken = !empty($symbol);
+        $isToken = ! empty($symbol);
 
         return $this->client->CreateRawTransaction([
             'to'          => $to,

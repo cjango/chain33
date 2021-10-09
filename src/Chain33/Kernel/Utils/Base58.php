@@ -23,7 +23,7 @@ class Base58
             $qr         = gmp_div_qr($dataIntVal, gmp_init(58, 10));
             $dataIntVal = $qr[0];
             $reminder   = gmp_strval($qr[1]);
-            if (!self::permutation_lookup($reminder)) {
+            if (! self::permutation_lookup($reminder)) {
                 throw new Exception('Something went wrong during base58 encoding');
             }
             $res .= self::permutation_lookup($reminder);

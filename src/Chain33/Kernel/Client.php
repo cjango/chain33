@@ -40,7 +40,7 @@ class Client
 
         $rpcRequest->setMethod($method);
 
-        if (!empty($params)) {
+        if (! empty($params)) {
             $rpcRequest->setParams($params);
         }
 

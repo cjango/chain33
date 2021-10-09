@@ -43,7 +43,7 @@ class Client extends BaseClient
     ): string {
         $this->walletUnlock();
 
-        if (!in_array($algo, ['FixAmount', 'LeftProportion'])) {
+        if (! in_array($algo, ['FixAmount', 'LeftProportion'])) {
             throw new ChainException('不支持的解冻算法');
         }
 
