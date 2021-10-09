@@ -33,8 +33,8 @@ class BlockOverview extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var \Jason\Chain33\Kernel\Protobuf\Header $head
      *     @var int|string $txCount
@@ -70,7 +70,7 @@ class BlockOverview extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Header head = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Header  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\Header $var
      * @return $this
      */
     public function setHead($var)
@@ -94,7 +94,7 @@ class BlockOverview extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 txCount = 2;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setTxCount($var)
@@ -118,7 +118,7 @@ class BlockOverview extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated bytes txHashes = 3;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTxHashes($var)

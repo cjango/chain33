@@ -21,10 +21,10 @@ class Client extends BaseClient
      * @Author: <C.Jason>
      * @Date  : 2020/5/19 3:43 下午
      *
-     * @param  string  $content
-     * @param  string  $privateKey
-     * @param  string  $key  修改原有的明文存在的时候  要设置这个值
-     * @param  int  $op
+     * @param  string $content
+     * @param  string $privateKey
+     * @param  string $key        修改原有的明文存在的时候  要设置这个值
+     * @param  int    $op
      * @return mixed
      *
      * @throws \Jason\Chain33\Exceptions\ChainException
@@ -50,8 +50,8 @@ class Client extends BaseClient
      * @Author: <C.Jason>
      * @Date  : 2020/5/19 3:43 下午
      *
-     * @param  string  $hash
-     * @param  string  $privateKey
+     * @param  string $hash
+     * @param  string $privateKey
      * @return mixed
      *
      * @throws \Jason\Chain33\Exceptions\ChainException
@@ -76,9 +76,9 @@ class Client extends BaseClient
      * @Author: <C.Jason>
      * @Date  : 2020/5/19 3:43 下午
      *
-     * @param  string  $link
-     * @param  string  $content
-     * @param  string  $privateKey
+     * @param  string $link
+     * @param  string $content
+     * @param  string $privateKey
      * @return mixed
      *
      * @throws \Jason\Chain33\Exceptions\ChainException
@@ -108,8 +108,8 @@ class Client extends BaseClient
      * @Author: <C.Jason>
      * @Date  : 2020/5/19 3:44 下午
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\StorageAction  $storage
-     * @param  string  $privateKey
+     * @param  \Jason\Chain33\Kernel\Protobuf\StorageAction $storage
+     * @param  string                                       $privateKey
      * @return mixed
      *
      * @throws \Jason\Chain33\Exceptions\ChainException
@@ -137,7 +137,7 @@ class Client extends BaseClient
      * @Author: <C.Jason>
      * @Date  : 2020/5/19 3:46 下午
      *
-     * @param  string  $hash
+     * @param  string                        $hash
      * @return false|false[]|string|string[]
      */
     public function query(string $hash)

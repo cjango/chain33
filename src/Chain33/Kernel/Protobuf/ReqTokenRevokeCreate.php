@@ -28,8 +28,8 @@ class ReqTokenRevokeCreate extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $revoker_addr
      *     @var string $symbol
@@ -55,7 +55,7 @@ class ReqTokenRevokeCreate extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string revoker_addr = 1;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setRevokerAddr($var)
@@ -79,7 +79,7 @@ class ReqTokenRevokeCreate extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string symbol = 2;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setSymbol($var)
@@ -103,7 +103,7 @@ class ReqTokenRevokeCreate extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string owner_addr = 3;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setOwnerAddr($var)

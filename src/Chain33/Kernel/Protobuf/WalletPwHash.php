@@ -28,8 +28,8 @@ class WalletPwHash extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $pwHash
      *     @var string $randstr
@@ -54,7 +54,7 @@ class WalletPwHash extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes pwHash = 1;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setPwHash($var)
@@ -78,7 +78,7 @@ class WalletPwHash extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string randstr = 2;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setRandstr($var)

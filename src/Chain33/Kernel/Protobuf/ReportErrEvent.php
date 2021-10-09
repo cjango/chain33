@@ -28,8 +28,8 @@ class ReportErrEvent extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $frommodule
      *     @var string $tomodule
@@ -55,7 +55,7 @@ class ReportErrEvent extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string frommodule = 1;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setFrommodule($var)
@@ -79,7 +79,7 @@ class ReportErrEvent extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string tomodule = 2;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setTomodule($var)
@@ -103,7 +103,7 @@ class ReportErrEvent extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string error = 3;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setError($var)

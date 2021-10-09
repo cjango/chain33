@@ -20,8 +20,8 @@ class BlockSeqs extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var \Jason\Chain33\Kernel\Protobuf\BlockSeq[]|\Google\Protobuf\Internal\RepeatedField $seqs
      * }
@@ -45,7 +45,7 @@ class BlockSeqs extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.BlockSeq seqs = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\BlockSeq[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\BlockSeq[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSeqs($var)

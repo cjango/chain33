@@ -38,8 +38,8 @@ class ChildChain extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $title
      *     @var int $startIndex
@@ -66,7 +66,7 @@ class ChildChain extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string title = 1;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setTitle($var)
@@ -90,7 +90,7 @@ class ChildChain extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 startIndex = 2;</code>.
      *
-     * @param  int  $var
+     * @param  int   $var
      * @return $this
      */
     public function setStartIndex($var)
@@ -114,7 +114,7 @@ class ChildChain extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes childHash = 3;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setChildHash($var)
@@ -138,7 +138,7 @@ class ChildChain extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 txCount = 4;</code>.
      *
-     * @param  int  $var
+     * @param  int   $var
      * @return $this
      */
     public function setTxCount($var)

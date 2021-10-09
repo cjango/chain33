@@ -28,8 +28,8 @@ class ExecBalanceItem extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $execAddr
      *     @var int|string $frozen
@@ -55,7 +55,7 @@ class ExecBalanceItem extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes execAddr = 1;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setExecAddr($var)
@@ -79,7 +79,7 @@ class ExecBalanceItem extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 frozen = 2;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setFrozen($var)
@@ -103,7 +103,7 @@ class ExecBalanceItem extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 active = 3;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setActive($var)

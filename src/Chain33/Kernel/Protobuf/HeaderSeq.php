@@ -30,8 +30,8 @@ class HeaderSeq extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var int|string $num
      *     @var \Jason\Chain33\Kernel\Protobuf\BlockSequence $seq
@@ -57,7 +57,7 @@ class HeaderSeq extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 num = 1;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setNum($var)
@@ -91,7 +91,7 @@ class HeaderSeq extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.BlockSequence seq = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\BlockSequence  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\BlockSequence $var
      * @return $this
      */
     public function setSeq($var)
@@ -125,7 +125,7 @@ class HeaderSeq extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Header header = 3;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Header  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\Header $var
      * @return $this
      */
     public function setHeader($var)

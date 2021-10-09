@@ -26,8 +26,8 @@ class RingSignatureItem extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string[]|\Google\Protobuf\Internal\RepeatedField $pubkey
      *     @var string[]|\Google\Protobuf\Internal\RepeatedField $signature
@@ -52,7 +52,7 @@ class RingSignatureItem extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated bytes pubkey = 1;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPubkey($var)
@@ -76,7 +76,7 @@ class RingSignatureItem extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated bytes signature = 2;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSignature($var)

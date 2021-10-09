@@ -33,8 +33,8 @@ class ParaChainBlockDetail extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var \Jason\Chain33\Kernel\Protobuf\BlockDetail $blockdetail
      *     @var int|string $sequence
@@ -70,7 +70,7 @@ class ParaChainBlockDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.BlockDetail blockdetail = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\BlockDetail  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\BlockDetail $var
      * @return $this
      */
     public function setBlockdetail($var)
@@ -94,7 +94,7 @@ class ParaChainBlockDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 sequence = 2;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setSequence($var)

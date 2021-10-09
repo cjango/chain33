@@ -20,8 +20,8 @@ class ReplyHashes extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string[]|\Google\Protobuf\Internal\RepeatedField $hashes
      * }
@@ -45,7 +45,7 @@ class ReplyHashes extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated bytes hashes = 1;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setHashes($var)

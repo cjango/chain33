@@ -38,8 +38,8 @@ class ChainExecutor extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $driver
      *     @var string $funcName
@@ -68,7 +68,7 @@ class ChainExecutor extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string driver = 1;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setDriver($var)
@@ -92,7 +92,7 @@ class ChainExecutor extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string funcName = 2;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setFuncName($var)
@@ -116,7 +116,7 @@ class ChainExecutor extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes stateHash = 3;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setStateHash($var)
@@ -140,7 +140,7 @@ class ChainExecutor extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes param = 4;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setParam($var)
@@ -168,7 +168,7 @@ class ChainExecutor extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bytes extra = 5;</code>
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setExtra($var)

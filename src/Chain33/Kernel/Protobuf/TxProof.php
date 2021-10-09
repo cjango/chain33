@@ -30,8 +30,8 @@ class TxProof extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string[]|\Google\Protobuf\Internal\RepeatedField $proofs
      *     @var int $index
@@ -57,7 +57,7 @@ class TxProof extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated bytes proofs = 1;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setProofs($var)
@@ -81,7 +81,7 @@ class TxProof extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>uint32 index = 2;</code>.
      *
-     * @param  int  $var
+     * @param  int   $var
      * @return $this
      */
     public function setIndex($var)
@@ -105,7 +105,7 @@ class TxProof extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes rootHash = 3;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setRootHash($var)

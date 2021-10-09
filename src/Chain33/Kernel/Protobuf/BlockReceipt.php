@@ -33,8 +33,8 @@ class BlockReceipt extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var \Jason\Chain33\Kernel\Protobuf\ReceiptData[]|\Google\Protobuf\Internal\RepeatedField $receipts
      *     @var string $hash
@@ -60,7 +60,7 @@ class BlockReceipt extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ReceiptData receipts = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\ReceiptData[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\ReceiptData[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setReceipts($var)
@@ -84,7 +84,7 @@ class BlockReceipt extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes hash = 2;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setHash($var)
@@ -108,7 +108,7 @@ class BlockReceipt extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 height = 3;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setHeight($var)

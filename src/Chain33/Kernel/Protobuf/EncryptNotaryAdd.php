@@ -30,8 +30,8 @@ class EncryptNotaryAdd extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $key
      *          源操作数存证索引
@@ -62,7 +62,7 @@ class EncryptNotaryAdd extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string key = 1;</code>
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setKey($var)
@@ -90,7 +90,7 @@ class EncryptNotaryAdd extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bytes encryptAdd = 2;</code>
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setEncryptAdd($var)

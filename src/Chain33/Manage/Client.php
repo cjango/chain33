@@ -18,8 +18,8 @@ class Client extends BaseClient
      * @Date   : 2021/3/24 2:02 下午
      * @Author : <Jason.C>
      *
-     * @param  string  $addr
-     * @param  string  $op  add / delete
+     * @param  string $addr
+     * @param  string $op   add / delete
      * @return string
      *
      * @throws \Jason\Chain33\Exceptions\ConfigException
@@ -47,8 +47,8 @@ class Client extends BaseClient
      * @Date   : 2021/3/24 2:02 下午
      * @Author : <Jason.C>
      *
-     * @param  string  $symbol
-     * @param  string  $op
+     * @param  string $symbol
+     * @param  string $op
      * @return string
      *
      * @throws \Jason\Chain33\Exceptions\ConfigException
@@ -76,8 +76,8 @@ class Client extends BaseClient
      * @Date   : 2021/4/2 11:01 上午
      * @Author : <Jason.C>
      *
-     * @param  string  $addr
-     * @param  string  $op
+     * @param  string $addr
+     * @param  string $op
      * @return string
      *
      * @throws \Jason\Chain33\Exceptions\ConfigException
@@ -105,8 +105,8 @@ class Client extends BaseClient
      * @Date   : 2021/4/2 11:11 上午
      * @Author : <Jason.C>
      *
-     * @param  string  $pubkey  新节点的公钥
-     * @param  int  $power  投票权，范围从【1~~全网总power/3】，如果设置为 0 则代表剔除节点
+     * @param  string $pubkey 新节点的公钥
+     * @param  int    $power  投票权，范围从【1~~全网总power/3】，如果设置为 0 则代表剔除节点
      * @return string
      */
     public function addConsensusNode(string $pubkey, int $power = 10): string
@@ -129,7 +129,7 @@ class Client extends BaseClient
      * @Author: <C.Jason>
      * @Date  : 2020/5/2 21:43
      *
-     * @param  string  $type  操作标识符
+     * @param  string $type 操作标识符
      * @return array
      */
     public function get(string $type = 'finisher'): array

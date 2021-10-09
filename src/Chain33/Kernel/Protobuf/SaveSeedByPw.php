@@ -28,8 +28,8 @@ class SaveSeedByPw extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $seed
      *     @var string $passwd
@@ -54,7 +54,7 @@ class SaveSeedByPw extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string seed = 1;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setSeed($var)
@@ -78,7 +78,7 @@ class SaveSeedByPw extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string passwd = 2;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setPasswd($var)

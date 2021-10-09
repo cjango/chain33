@@ -52,8 +52,8 @@ class ExecTxList extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $stateHash
      *     @var string $parentHash
@@ -85,7 +85,7 @@ class ExecTxList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes stateHash = 1;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setStateHash($var)
@@ -109,7 +109,7 @@ class ExecTxList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes parentHash = 7;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setParentHash($var)
@@ -133,7 +133,7 @@ class ExecTxList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes mainHash = 8;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setMainHash($var)
@@ -157,7 +157,7 @@ class ExecTxList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 mainHeight = 9;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setMainHeight($var)
@@ -181,7 +181,7 @@ class ExecTxList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 blockTime = 3;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setBlockTime($var)
@@ -205,7 +205,7 @@ class ExecTxList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 height = 4;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setHeight($var)
@@ -229,7 +229,7 @@ class ExecTxList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>uint64 difficulty = 5;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setDifficulty($var)
@@ -277,7 +277,7 @@ class ExecTxList extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Transaction txs = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Transaction[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\Transaction[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTxs($var)

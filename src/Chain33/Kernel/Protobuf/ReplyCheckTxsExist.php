@@ -28,8 +28,8 @@ class ReplyCheckTxsExist extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var bool[]|\Google\Protobuf\Internal\RepeatedField $existFlags
      *          对应请求序列存在标识数组，存在则true，否则false
@@ -60,7 +60,7 @@ class ReplyCheckTxsExist extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>repeated bool existFlags = 1;</code>
      *
-     * @param  bool[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  bool[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExistFlags($var)
@@ -88,7 +88,7 @@ class ReplyCheckTxsExist extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>uint32 existCount = 2;</code>
      *
-     * @param  int  $var
+     * @param  int   $var
      * @return $this
      */
     public function setExistCount($var)

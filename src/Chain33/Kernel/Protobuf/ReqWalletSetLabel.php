@@ -24,8 +24,8 @@ class ReqWalletSetLabel extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $addr
      *     @var string $label
@@ -50,7 +50,7 @@ class ReqWalletSetLabel extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string addr = 1;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setAddr($var)
@@ -74,7 +74,7 @@ class ReqWalletSetLabel extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string label = 2;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setLabel($var)

@@ -42,8 +42,8 @@ class Account extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var int $currency
      *           coins标识，目前只有0 一个值
@@ -78,7 +78,7 @@ class Account extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int32 currency = 1;</code>
      *
-     * @param  int  $var
+     * @param  int   $var
      * @return $this
      */
     public function setCurrency($var)
@@ -106,7 +106,7 @@ class Account extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int64 balance = 2;</code>
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setBalance($var)
@@ -134,7 +134,7 @@ class Account extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int64 frozen = 3;</code>
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setFrozen($var)
@@ -162,7 +162,7 @@ class Account extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string addr = 4;</code>
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setAddr($var)

@@ -22,8 +22,8 @@ class ArrayConfig extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string[]|\Google\Protobuf\Internal\RepeatedField $value
      * }
@@ -47,7 +47,7 @@ class ArrayConfig extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated string value = 3;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setValue($var)

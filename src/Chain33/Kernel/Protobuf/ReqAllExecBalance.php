@@ -40,8 +40,8 @@ class ReqAllExecBalance extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $addr
      *          地址列表
@@ -75,7 +75,7 @@ class ReqAllExecBalance extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string addr = 1;</code>
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setAddr($var)
@@ -103,7 +103,7 @@ class ReqAllExecBalance extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string execer = 2;</code>
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setExecer($var)
@@ -127,7 +127,7 @@ class ReqAllExecBalance extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string stateHash = 3;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setStateHash($var)
@@ -151,7 +151,7 @@ class ReqAllExecBalance extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string asset_exec = 4;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setAssetExec($var)
@@ -175,7 +175,7 @@ class ReqAllExecBalance extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string asset_symbol = 5;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setAssetSymbol($var)

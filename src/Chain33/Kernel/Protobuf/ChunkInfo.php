@@ -34,8 +34,8 @@ class ChunkInfo extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var int|string $chunkNum
      *     @var string $chunkHash
@@ -62,7 +62,7 @@ class ChunkInfo extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 chunkNum = 1;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setChunkNum($var)
@@ -86,7 +86,7 @@ class ChunkInfo extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes chunkHash = 2;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setChunkHash($var)
@@ -110,7 +110,7 @@ class ChunkInfo extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 start = 3;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setStart($var)
@@ -134,7 +134,7 @@ class ChunkInfo extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 end = 4;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setEnd($var)

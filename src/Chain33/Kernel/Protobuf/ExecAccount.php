@@ -24,8 +24,8 @@ class ExecAccount extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $execer
      *     @var \Jason\Chain33\Kernel\Protobuf\Account $account
@@ -50,7 +50,7 @@ class ExecAccount extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string execer = 1;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setExecer($var)
@@ -84,7 +84,7 @@ class ExecAccount extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account account = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Account  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\Account $var
      * @return $this
      */
     public function setAccount($var)

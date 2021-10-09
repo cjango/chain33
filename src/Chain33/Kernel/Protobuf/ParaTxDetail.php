@@ -47,8 +47,8 @@ class ParaTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var int|string $type
      *     @var \Jason\Chain33\Kernel\Protobuf\Header $header
@@ -77,7 +77,7 @@ class ParaTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 type = 1;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setType($var)
@@ -111,7 +111,7 @@ class ParaTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Header header = 2;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Header  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\Header $var
      * @return $this
      */
     public function setHeader($var)
@@ -135,7 +135,7 @@ class ParaTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.TxDetail txDetails = 3;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\TxDetail[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\TxDetail[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTxDetails($var)
@@ -159,7 +159,7 @@ class ParaTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes childHash = 4;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setChildHash($var)
@@ -183,7 +183,7 @@ class ParaTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>uint32 index = 5;</code>.
      *
-     * @param  int  $var
+     * @param  int   $var
      * @return $this
      */
     public function setIndex($var)
@@ -207,7 +207,7 @@ class ParaTxDetail extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated bytes proofs = 6;</code>.
      *
-     * @param  string[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setProofs($var)

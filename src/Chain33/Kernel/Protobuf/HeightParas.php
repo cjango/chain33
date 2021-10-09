@@ -20,8 +20,8 @@ class HeightParas extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var \Jason\Chain33\Kernel\Protobuf\HeightPara[]|\Google\Protobuf\Internal\RepeatedField $items
      * }
@@ -45,7 +45,7 @@ class HeightParas extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.HeightPara items = 1;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\HeightPara[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\HeightPara[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)

@@ -28,8 +28,8 @@ class ReqTokenFinishCreate extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $finisher_addr
      *     @var string $symbol
@@ -55,7 +55,7 @@ class ReqTokenFinishCreate extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string finisher_addr = 1;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setFinisherAddr($var)
@@ -79,7 +79,7 @@ class ReqTokenFinishCreate extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string symbol = 2;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setSymbol($var)
@@ -103,7 +103,7 @@ class ReqTokenFinishCreate extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string owner_addr = 3;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setOwnerAddr($var)

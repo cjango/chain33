@@ -34,8 +34,8 @@ class ReplyGetTotalCoins extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var int|string $count
      *     @var int|string $num
@@ -62,7 +62,7 @@ class ReplyGetTotalCoins extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 count = 1;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setCount($var)
@@ -86,7 +86,7 @@ class ReplyGetTotalCoins extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 num = 2;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setNum($var)
@@ -110,7 +110,7 @@ class ReplyGetTotalCoins extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 amount = 3;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setAmount($var)
@@ -134,7 +134,7 @@ class ReplyGetTotalCoins extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes nextKey = 4;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setNextKey($var)

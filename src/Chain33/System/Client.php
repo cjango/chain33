@@ -140,7 +140,7 @@ class Client extends BaseClient
      * @Date   : 2021/3/30 11:20 上午
      * @Author : <Jason.C>
      *
-     * @param  string  $txHex
+     * @param  string $txHex
      * @return mixed
      */
     public function decode(string $txHex)

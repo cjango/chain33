@@ -30,8 +30,8 @@ class ReceiptAccountTransfer extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var \Jason\Chain33\Kernel\Protobuf\Account $prev
      *          转移前
@@ -72,7 +72,7 @@ class ReceiptAccountTransfer extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account prev = 1;</code>
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Account  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\Account $var
      * @return $this
      */
     public function setPrev($var)
@@ -110,7 +110,7 @@ class ReceiptAccountTransfer extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account current = 2;</code>
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Account  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\Account $var
      * @return $this
      */
     public function setCurrent($var)

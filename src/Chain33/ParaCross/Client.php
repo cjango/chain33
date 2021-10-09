@@ -15,11 +15,11 @@ class Client extends BaseClient
      * @Date   : 2021/3/23 3:50 下午
      * @Author : <Jason.C>
      *
-     * @param  string  $assetExec  资产原生合约，比如coins,token
-     * @param  string  $assetSymbol  资产符号，比如bty, ccny
-     * @param  int  $amount  转移资产数量，精确到10^8
-     * @param  string  $to  可选，目标地址，缺省为交易签名地址
-     * @param  string  $note  可选，转移备注
+     * @param  string $assetExec   资产原生合约，比如coins,token
+     * @param  string $assetSymbol 资产符号，比如bty, ccny
+     * @param  int    $amount      转移资产数量，精确到10^8
+     * @param  string $to          可选，目标地址，缺省为交易签名地址
+     * @param  string $note        可选，转移备注
      * @return mixed
      *
      * @throws \Jason\Chain33\Exceptions\ChainException
@@ -71,8 +71,8 @@ class Client extends BaseClient
      * @Date   : 2021/3/23 3:47 下午
      * @Author : <Jason.C>
      *
-     * @param  int  $amount  转移数量
-     * @param  string  $token  转移资产符号,默认原生合约就是paracross，所以只填符号即可
+     * @param  int    $amount 转移数量
+     * @param  string $token  转移资产符号,默认原生合约就是paracross，所以只填符号即可
      * @return array
      *
      * @throws \Jason\Chain33\Exceptions\ChainException
@@ -97,7 +97,7 @@ class Client extends BaseClient
      * @Date   : 2021/3/23 3:42 下午
      * @Author : <Jason.C>
      *
-     * @param  string  $paraName
+     * @param  string $paraName
      * @return array
      */
     public function title(string $paraName = ''): array
@@ -117,8 +117,8 @@ class Client extends BaseClient
      * @Date   : 2021/3/23 3:40 下午
      * @Author : <Jason.C>
      *
-     * @param  string  $paraName
-     * @param  int  $height
+     * @param  string $paraName
+     * @param  int    $height
      * @return array
      */
     public function titleHeight(int $height, string $paraName = ''): array
@@ -139,7 +139,7 @@ class Client extends BaseClient
      * @Date   : 2021/3/23 3:38 下午
      * @Author : <Jason.C>
      *
-     * @param  string  $paraName
+     * @param  string $paraName
      * @return array
      */
     public function height(string $paraName = ''): array
@@ -159,8 +159,8 @@ class Client extends BaseClient
      * @Date   : 2021/3/23 3:38 下午
      * @Author : <Jason.C>
      *
-     * @param  int  $start
-     * @param  int  $end
+     * @param  int   $start
+     * @param  int   $end
      * @return mixed
      */
     public function main(int $start, int $end)

@@ -39,8 +39,8 @@ class VersionInfo extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var string $title
      *     @var string $app
@@ -68,7 +68,7 @@ class VersionInfo extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string title = 1;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setTitle($var)
@@ -92,7 +92,7 @@ class VersionInfo extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string app = 2;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setApp($var)
@@ -116,7 +116,7 @@ class VersionInfo extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string chain33 = 3;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setChain33($var)
@@ -140,7 +140,7 @@ class VersionInfo extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string localDb = 4;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setLocalDb($var)
@@ -164,7 +164,7 @@ class VersionInfo extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int32 chainID = 5;</code>.
      *
-     * @param  int  $var
+     * @param  int   $var
      * @return $this
      */
     public function setChainID($var)

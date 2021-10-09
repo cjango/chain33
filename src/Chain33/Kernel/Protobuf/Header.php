@@ -67,8 +67,8 @@ class Header extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var int|string $version
      *     @var string $parentHash
@@ -101,7 +101,7 @@ class Header extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 version = 1;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setVersion($var)
@@ -125,7 +125,7 @@ class Header extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes parentHash = 2;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setParentHash($var)
@@ -149,7 +149,7 @@ class Header extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes txHash = 3;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setTxHash($var)
@@ -173,7 +173,7 @@ class Header extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes stateHash = 4;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setStateHash($var)
@@ -197,7 +197,7 @@ class Header extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 height = 5;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setHeight($var)
@@ -221,7 +221,7 @@ class Header extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 blockTime = 6;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setBlockTime($var)
@@ -245,7 +245,7 @@ class Header extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 txCount = 9;</code>.
      *
-     * @param  int|string  $var
+     * @param  int|string $var
      * @return $this
      */
     public function setTxCount($var)
@@ -269,7 +269,7 @@ class Header extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes hash = 10;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setHash($var)
@@ -293,7 +293,7 @@ class Header extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>uint32 difficulty = 11;</code>.
      *
-     * @param  int  $var
+     * @param  int   $var
      * @return $this
      */
     public function setDifficulty($var)
@@ -327,7 +327,7 @@ class Header extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Signature signature = 8;</code>.
      *
-     * @param  \Jason\Chain33\Kernel\Protobuf\Signature  $var
+     * @param  \Jason\Chain33\Kernel\Protobuf\Signature $var
      * @return $this
      */
     public function setSignature($var)

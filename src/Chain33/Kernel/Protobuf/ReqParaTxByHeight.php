@@ -26,8 +26,8 @@ class ReqParaTxByHeight extends \Google\Protobuf\Internal\Message
     /**
      * Constructor.
      *
-     * @param  array  $data  {
-     *                       Optional. Data for populating the Message object.
+     * @param array $data {
+     *                    Optional. Data for populating the Message object.
      *
      *     @var int[]|string[]|\Google\Protobuf\Internal\RepeatedField $items
      *     @var string $title
@@ -52,7 +52,7 @@ class ReqParaTxByHeight extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated int64 items = 1;</code>.
      *
-     * @param  int[]|string[]|\Google\Protobuf\Internal\RepeatedField  $var
+     * @param  int[]|string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)
@@ -76,7 +76,7 @@ class ReqParaTxByHeight extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string title = 2;</code>.
      *
-     * @param  string  $var
+     * @param  string $var
      * @return $this
      */
     public function setTitle($var)
