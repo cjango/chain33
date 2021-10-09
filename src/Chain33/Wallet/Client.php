@@ -22,8 +22,8 @@ class Client extends BaseClient
      *
      * @param  int  $len  助记词位数
      * @param  string  $language  助记词语言
-     *
      * @return Mnemonic
+     *
      * @throws MnemonicException
      * @throws WordListException
      */
@@ -39,7 +39,6 @@ class Client extends BaseClient
      * @Date  : 2020/4/30 17:33
      *
      * @param  string  $password  钱包密码
-     *
      * @return bool
      */
     public function create(string $password): bool
@@ -59,7 +58,6 @@ class Client extends BaseClient
      * @Author : <Jason.C>
      *
      * @param  int  $lang  0 english 1 中文
-     *
      * @return string
      */
     public function genSeed(int $lang = 0): string
@@ -74,7 +72,9 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 17:34
+     *
      * @return string
+     *
      * @throws ConfigException
      */
     public function getSeed(): string
@@ -94,7 +94,6 @@ class Client extends BaseClient
      *
      * @param  string  $old  旧密码
      * @param  string  $new  新密码
-     *
      * @return bool
      */
     public function password(string $old, string $new): bool
@@ -110,6 +109,7 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/3/18 21:38
+     *
      * @return array
      */
     public function status(): array
@@ -124,8 +124,8 @@ class Client extends BaseClient
      * @Date  : 2020/3/18 21:38
      *
      * @param  int  $amount
-     *
      * @return bool
+     *
      * @throws ConfigException
      */
     public function setFee(int $amount): bool
@@ -144,11 +144,10 @@ class Client extends BaseClient
      * @Date  : 2020/4/30 17:44
      *
      * @param  string  $fromTx  Sprintf(“%018d”, height*100000 + index)，表示从高度 height 中的 index
-     *                             开始获取交易列表；第一次传参为空，获取最新的交易
+     *                          开始获取交易列表；第一次传参为空，获取最新的交易
      * @param  int  $count  获取交易列表的个数
      * @param  int  $mode  获取交易列表的个数
      * @param  int  $direction  查找方式；0，获取最新的交易数据，倒叙排序，在交易列表中时间高度是递减的；1，正序排序，按照时间，区块高度增加的方向获取交易列表
-     *
      * @return array
      */
     public function txList(string $fromTx, int $count, int $mode, int $direction = 0): array
@@ -166,6 +165,7 @@ class Client extends BaseClient
      *
      * @Date   : 2021/3/29 5:36 下午
      * @Author : <Jason.C>
+     *
      * @return array
      */
     public function totalFee(): array
@@ -186,8 +186,8 @@ class Client extends BaseClient
      * @Date  : 2020/5/14 1:31 下午
      *
      * @param  string  $to  合并钱包上的所有余额到一个账户地址
-     *
      * @return mixed
+     *
      * @throws ConfigException
      */
     public function merge(string $to): ?array

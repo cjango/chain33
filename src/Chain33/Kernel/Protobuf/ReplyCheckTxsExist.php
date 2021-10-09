@@ -17,13 +17,13 @@ class ReplyCheckTxsExist extends Message
 {
     /**
      *存在情况的总个数.
-     * Generated from protobuf field <code>uint32 existCount = 2;</code>
+     * Generated from protobuf field <code>uint32 existCount = 2;</code>.
      */
     protected $existCount = 0;
 
     /**
      *对应请求序列存在标识数组，存在则true，否则false.
-     * Generated from protobuf field <code>repeated bool existFlags = 1;</code>
+     * Generated from protobuf field <code>repeated bool existFlags = 1;</code>.
      */
     private $existFlags;
 
@@ -31,13 +31,13 @@ class ReplyCheckTxsExist extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                            Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var bool[]|RepeatedField $existFlags
-     *                                                            对应请求序列存在标识数组，存在则true，否则false
+     *                           对应请求序列存在标识数组，存在则true，否则false
      * @var int $existCount
-     *                                                            存在情况的总个数
-     *                                                            }
+     *          存在情况的总个数
+     *          }
      */
     public function __construct($data = null)
     {
@@ -47,7 +47,7 @@ class ReplyCheckTxsExist extends Message
 
     /**
      *对应请求序列存在标识数组，存在则true，否则false.
-     * Generated from protobuf field <code>repeated bool existFlags = 1;</code>
+     * Generated from protobuf field <code>repeated bool existFlags = 1;</code>.
      *
      * @return RepeatedField
      */
@@ -58,10 +58,9 @@ class ReplyCheckTxsExist extends Message
 
     /**
      *对应请求序列存在标识数组，存在则true，否则false.
-     * Generated from protobuf field <code>repeated bool existFlags = 1;</code>
+     * Generated from protobuf field <code>repeated bool existFlags = 1;</code>.
      *
      * @param  bool[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setExistFlags($var)
@@ -74,7 +73,7 @@ class ReplyCheckTxsExist extends Message
 
     /**
      *存在情况的总个数.
-     * Generated from protobuf field <code>uint32 existCount = 2;</code>
+     * Generated from protobuf field <code>uint32 existCount = 2;</code>.
      *
      * @return int
      */
@@ -85,10 +84,9 @@ class ReplyCheckTxsExist extends Message
 
     /**
      *存在情况的总个数.
-     * Generated from protobuf field <code>uint32 existCount = 2;</code>
+     * Generated from protobuf field <code>uint32 existCount = 2;</code>.
      *
      * @param  int  $var
-     *
      * @return $this
      */
     public function setExistCount($var)

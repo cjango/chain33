@@ -25,7 +25,7 @@ class ReqDecodeRawTransaction extends Message
      *                       Optional. Data for populating the Message object.
      *
      * @var string $txHex
-     *                       }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -47,7 +47,6 @@ class ReqDecodeRawTransaction extends Message
      * Generated from protobuf field <code>string txHex = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setTxHex($var)

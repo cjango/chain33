@@ -25,10 +25,10 @@ class BlockSeqs extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                                                               Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var BlockSeq[]|RepeatedField $seqs
-     *                                                                                               }
+     *                               }
      */
     public function __construct($data = null)
     {
@@ -50,7 +50,6 @@ class BlockSeqs extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.BlockSeq seqs = 1;</code>.
      *
      * @param  BlockSeq[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setSeqs($var)

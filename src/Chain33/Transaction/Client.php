@@ -70,7 +70,6 @@ class Client extends BaseClient
      * @param  string  $txHex  交易数据
      * @param  string  $privateKey  签名私钥
      * @param  int  $fee  手续费
-     *
      * @return string
      */
     public function finalSend(string $txHex, string $privateKey, int $fee = 0): string
@@ -89,7 +88,6 @@ class Client extends BaseClient
      * @param  string  $txHex  原始交易数据
      * @param  string  $privateKey
      * @param  int  $fee  费用
-     *
      * @return string 交易签名后的十六进制字符串
      */
     public function sign(string $txHex, string $privateKey, int $fee = 0): string
@@ -114,7 +112,6 @@ class Client extends BaseClient
      * @Author : <Jason.C>
      *
      * @param  string  $txHex  未签名的原始交易数据
-     *
      * @return string 未签名的原始交易数据
      */
     public function paraTransaction(string $txHex): string
@@ -138,7 +135,6 @@ class Client extends BaseClient
      * @Date  : 2020/5/2 21:33
      *
      * @param  string  $data  签名后的交易数据
-     *
      * @return string 交易发送后，生成的交易哈希（后面可以使用此哈希查询交易状态和历史）
      */
     public function send(string $data): string
@@ -160,8 +156,8 @@ class Client extends BaseClient
      * @param  string  $privateKey  私钥
      * @param  int  $fee  手续费
      * @param  string  $note  备注
-     *
      * @return string
+     *
      * @throws ChainException
      * @throws ConfigException
      */
@@ -201,8 +197,8 @@ class Client extends BaseClient
      * @param  string  $execName  转到的合约名称，平行链不需要前缀
      * @param  string  $privateKey  转账者私钥
      * @param  string  $note
-     *
      * @return string
+     *
      * @throws ChainException|ConfigException
      */
     public function toExec(string $symbol, int $amount, string $execName, string $privateKey, string $note = ''): string
@@ -239,7 +235,6 @@ class Client extends BaseClient
      * @Author : <Jason.C>
      *
      * @param  string  $execname  执行器名称，如果需要往执行器中转币这样的操作，需要调用些接口将执行器名转成实际地址
-     *
      * @return string 转换生成的地址字符串
      */
     public function convertExectoAddr(string $execname): string
@@ -260,8 +255,8 @@ class Client extends BaseClient
      * @param  string  $execName  合约名称，平行链不需要填前缀
      * @param  string  $privateKey  提币私钥
      * @param  string  $note
-     *
      * @return string
+     *
      * @throws ChainException
      * @throws ConfigException
      */
@@ -309,12 +304,12 @@ class Client extends BaseClient
      * @param  string  $symbol  token 的 symbol （非token转账这个不用填）
      * @param  bool  $isWithdraw  是否为取款交易
      * @param  string  $execName  TransferToExec（转到合约） 或 Withdraw（从合约中提款），
-     *                              如果要构造平行链上的转账或普通转账，此参数置空,
-     *                              这里好多时候，直接写的是合约名称 -- by Jason
+     *                            如果要构造平行链上的转账或普通转账，此参数置空,
+     *                            这里好多时候，直接写的是合约名称 -- by Jason
      * @param  string  $execer
      * @param  string  $note  备注
-     *
      * @return string 交易对象的十六进制字符串编码
+     *
      * @throws ChainException
      * @throws ConfigException
      */
@@ -330,7 +325,7 @@ class Client extends BaseClient
     ): string {
         $this->walletUnlock();
 
-        $isToken = !empty($symbol);
+        $isToken = ! empty($symbol);
 
         return $this->client->CreateRawTransaction([
             'to' => $to,
@@ -352,7 +347,6 @@ class Client extends BaseClient
      * @Author : <Jason.C>
      *
      * @param  array  $txHexs  未签名的原始交易数据
-     *
      * @return string 未签名的原始交易数据
      */
     public function paraTransactions(array $txHexs): string
@@ -376,7 +370,6 @@ class Client extends BaseClient
      * @Date  : 2020/5/2 21:34
      *
      * @param  string  $hash  交易哈希
-     *
      * @return array
      */
     public function query(string $hash): array
@@ -435,7 +428,6 @@ class Client extends BaseClient
      * @Date  : 2020/5/14 2:57 下午
      *
      * @param  string  $addr  要查询的地址信息
-     *
      * @return array
      */
     public function overview(string $addr): array
@@ -453,7 +445,6 @@ class Client extends BaseClient
      *
      * @param  array  $hashes  交易组
      * @param  bool  $disableDetail  是否隐藏交易详情
-     *
      * @return array 交易详情信息
      */
     public function getTxByHashes(array $hashes, bool $disableDetail = false): array
@@ -471,7 +462,6 @@ class Client extends BaseClient
      * @Author : <Jason.C>
      *
      * @param  string  $hash  交易哈希
-     *
      * @return string 交易对象的十六进制编码数据
      */
     public function getHexTxByHash(string $hash): string
@@ -488,7 +478,6 @@ class Client extends BaseClient
      * @Author : <Jason.C>
      *
      * @param  array  $txs  十六进制格式交易数组
-     *
      * @return string 交易组对象的十六进制字符串
      */
     public function createRawTxGroup(array $txs): string
@@ -506,7 +495,6 @@ class Client extends BaseClient
      *
      * @param  int  $txCount  预发送的交易个数,单个交易发送默认空即可
      * @param  int  $txSize  预发送交易的大小, 单位Byte, 字节
-     *
      * @return int 单元交易费, 单位1/108的BTY
      */
     public function getProperFee(int $txCount, int $txSize): int

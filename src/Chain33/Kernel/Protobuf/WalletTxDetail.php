@@ -21,7 +21,7 @@ use GPBMetadata\Wallet;
  *   txhash : 交易对应的哈希值
  *   actionName  :交易对应的函数调用
  *   payload: 保存额外的一些信息，主要是给插件使用.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.WalletTxDetail</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.WalletTxDetail</code>.
  */
 class WalletTxDetail extends Message
 {
@@ -79,7 +79,7 @@ class WalletTxDetail extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                        Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var Transaction $tx
      * @var ReceiptData $receipt
@@ -91,7 +91,7 @@ class WalletTxDetail extends Message
      * @var string $txhash
      * @var string $actionName
      * @var string $payload
-     *                                                        }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -113,7 +113,6 @@ class WalletTxDetail extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Transaction tx = 1;</code>.
      *
      * @param  Transaction  $var
-     *
      * @return $this
      */
     public function setTx($var)
@@ -148,7 +147,6 @@ class WalletTxDetail extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ReceiptData receipt = 2;</code>.
      *
      * @param  ReceiptData  $var
-     *
      * @return $this
      */
     public function setReceipt($var)
@@ -183,7 +181,6 @@ class WalletTxDetail extends Message
      * Generated from protobuf field <code>int64 height = 3;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setHeight($var)
@@ -208,7 +205,6 @@ class WalletTxDetail extends Message
      * Generated from protobuf field <code>int64 index = 4;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setIndex($var)
@@ -233,7 +229,6 @@ class WalletTxDetail extends Message
      * Generated from protobuf field <code>int64 blocktime = 5;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setBlocktime($var)
@@ -258,7 +253,6 @@ class WalletTxDetail extends Message
      * Generated from protobuf field <code>int64 amount = 6;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setAmount($var)
@@ -283,7 +277,6 @@ class WalletTxDetail extends Message
      * Generated from protobuf field <code>string fromaddr = 7;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setFromaddr($var)
@@ -308,7 +301,6 @@ class WalletTxDetail extends Message
      * Generated from protobuf field <code>bytes txhash = 8;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setTxhash($var)
@@ -333,7 +325,6 @@ class WalletTxDetail extends Message
      * Generated from protobuf field <code>string actionName = 9;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setActionName($var)
@@ -358,7 +349,6 @@ class WalletTxDetail extends Message
      * Generated from protobuf field <code>bytes payload = 10;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setPayload($var)

@@ -12,7 +12,7 @@ use Google\Protobuf\Internal\RepeatedField;
 
 /**
  * 环签名中的一组签名数据.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.RingSignatureItem</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.RingSignatureItem</code>.
  */
 class RingSignatureItem extends Message
 {
@@ -30,11 +30,11 @@ class RingSignatureItem extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                              Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var string[]|RepeatedField $pubkey
      * @var string[]|RepeatedField $signature
-     *                                                              }
+     *                             }
      */
     public function __construct($data = null)
     {
@@ -56,7 +56,6 @@ class RingSignatureItem extends Message
      * Generated from protobuf field <code>repeated bytes pubkey = 1;</code>.
      *
      * @param  string[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setPubkey($var)
@@ -81,7 +80,6 @@ class RingSignatureItem extends Message
      * Generated from protobuf field <code>repeated bytes signature = 2;</code>.
      *
      * @param  string[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setSignature($var)

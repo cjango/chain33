@@ -33,12 +33,12 @@ class TimeStatus extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                        Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var string $ntpTime
      * @var string $localTime
      * @var int|string $diff
-     *                        }
+     *                 }
      */
     public function __construct($data = null)
     {
@@ -60,7 +60,6 @@ class TimeStatus extends Message
      * Generated from protobuf field <code>string ntpTime = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setNtpTime($var)
@@ -85,7 +84,6 @@ class TimeStatus extends Message
      * Generated from protobuf field <code>string localTime = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setLocalTime($var)
@@ -110,7 +108,6 @@ class TimeStatus extends Message
      * Generated from protobuf field <code>int64 diff = 3;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setDiff($var)

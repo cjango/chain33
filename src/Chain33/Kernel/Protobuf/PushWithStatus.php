@@ -28,11 +28,11 @@ class PushWithStatus extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                             Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var PushSubscribeReq $push
      * @var int $status
-     *                                                             }
+     *          }
      */
     public function __construct($data = null)
     {
@@ -54,7 +54,6 @@ class PushWithStatus extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.PushSubscribeReq push = 1;</code>.
      *
      * @param  PushSubscribeReq  $var
-     *
      * @return $this
      */
     public function setPush($var)
@@ -89,7 +88,6 @@ class PushWithStatus extends Message
      * Generated from protobuf field <code>int32 status = 2;</code>.
      *
      * @param  int  $var
-     *
      * @return $this
      */
     public function setStatus($var)

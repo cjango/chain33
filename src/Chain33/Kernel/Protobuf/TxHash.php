@@ -26,7 +26,7 @@ class TxHash extends Message
      *                       Optional. Data for populating the Message object.
      *
      * @var string $hash
-     *                       }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -48,7 +48,6 @@ class TxHash extends Message
      * Generated from protobuf field <code>string hash = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setHash($var)

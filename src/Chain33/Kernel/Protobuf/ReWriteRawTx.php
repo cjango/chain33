@@ -20,7 +20,7 @@ class ReWriteRawTx extends Message
 
     /**
      * bytes  execer = 2;.
-     * Generated from protobuf field <code>string to = 3;</code>
+     * Generated from protobuf field <code>string to = 3;</code>.
      */
     protected $to = '';
 
@@ -43,15 +43,15 @@ class ReWriteRawTx extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                        Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var string $tx
      * @var string $to
-     *                        bytes  execer = 2;
+     *             bytes  execer = 2;
      * @var string $expire
      * @var int|string $fee
      * @var int $index
-     *                        }
+     *          }
      */
     public function __construct($data = null)
     {
@@ -73,7 +73,6 @@ class ReWriteRawTx extends Message
      * Generated from protobuf field <code>string tx = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setTx($var)
@@ -86,7 +85,7 @@ class ReWriteRawTx extends Message
 
     /**
      * bytes  execer = 2;.
-     * Generated from protobuf field <code>string to = 3;</code>
+     * Generated from protobuf field <code>string to = 3;</code>.
      *
      * @return string
      */
@@ -97,10 +96,9 @@ class ReWriteRawTx extends Message
 
     /**
      * bytes  execer = 2;.
-     * Generated from protobuf field <code>string to = 3;</code>
+     * Generated from protobuf field <code>string to = 3;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setTo($var)
@@ -125,7 +123,6 @@ class ReWriteRawTx extends Message
      * Generated from protobuf field <code>string expire = 4;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setExpire($var)
@@ -150,7 +147,6 @@ class ReWriteRawTx extends Message
      * Generated from protobuf field <code>int64 fee = 5;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setFee($var)
@@ -175,7 +171,6 @@ class ReWriteRawTx extends Message
      * Generated from protobuf field <code>int32 index = 6;</code>.
      *
      * @param  int  $var
-     *
      * @return $this
      */
     public function setIndex($var)

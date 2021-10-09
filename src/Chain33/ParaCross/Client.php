@@ -21,8 +21,8 @@ class Client extends BaseClient
      * @param  int  $amount  转移资产数量，精确到10^8
      * @param  string  $to  可选，目标地址，缺省为交易签名地址
      * @param  string  $note  可选，转移备注
-     *
      * @return mixed
+     *
      * @throws ChainException
      */
     public function crossAssetTransfer(
@@ -53,7 +53,6 @@ class Client extends BaseClient
      * @Author : <Jason.C>
      *
      * @param $txHash
-     *
      * @return array
      */
     public function result($txHash): array
@@ -75,8 +74,8 @@ class Client extends BaseClient
      *
      * @param  int  $amount  转移数量
      * @param  string  $token  转移资产符号,默认原生合约就是paracross，所以只填符号即可
-     *
      * @return array
+     *
      * @throws ChainException
      */
     public function transferToExec(int $amount, string $token): array
@@ -100,7 +99,6 @@ class Client extends BaseClient
      * @Author : <Jason.C>
      *
      * @param  string  $paraName
-     *
      * @return array
      */
     public function title(string $paraName = ''): array
@@ -122,7 +120,6 @@ class Client extends BaseClient
      *
      * @param  string  $paraName
      * @param  int  $height
-     *
      * @return array
      */
     public function titleHeight(int $height, string $paraName = ''): array
@@ -144,7 +141,6 @@ class Client extends BaseClient
      * @Author : <Jason.C>
      *
      * @param  string  $paraName
-     *
      * @return array
      */
     public function height(string $paraName = ''): array
@@ -166,7 +162,6 @@ class Client extends BaseClient
      *
      * @param  int  $start
      * @param  int  $end
-     *
      * @return mixed
      */
     public function main(int $start, int $end)

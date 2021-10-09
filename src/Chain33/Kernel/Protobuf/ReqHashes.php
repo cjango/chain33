@@ -25,10 +25,10 @@ class ReqHashes extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                              Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var string[]|RepeatedField $hashes
-     *                                                              }
+     *                             }
      */
     public function __construct($data = null)
     {
@@ -50,7 +50,6 @@ class ReqHashes extends Message
      * Generated from protobuf field <code>repeated bytes hashes = 1;</code>.
      *
      * @param  string[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setHashes($var)

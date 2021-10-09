@@ -25,10 +25,10 @@ class Blocks extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                                                            Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var Block[]|RepeatedField $items
-     *                                                                                            }
+     *                            }
      */
     public function __construct($data = null)
     {
@@ -50,7 +50,6 @@ class Blocks extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Block items = 1;</code>.
      *
      * @param  Block[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setItems($var)

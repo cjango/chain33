@@ -14,7 +14,7 @@ use GPBMetadata\Blockchain;
  *     currentHeight : 区块最新高度
  *     mempoolSize :内存池大小
  *     msgQueueSize : 消息队列大小.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ChainStatus</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ChainStatus</code>.
  */
 class ChainStatus extends Message
 {
@@ -37,12 +37,12 @@ class ChainStatus extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                        Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var int|string $currentHeight
      * @var int|string $mempoolSize
      * @var int|string $msgQueueSize
-     *                        }
+     *                 }
      */
     public function __construct($data = null)
     {
@@ -64,7 +64,6 @@ class ChainStatus extends Message
      * Generated from protobuf field <code>int64 currentHeight = 1;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setCurrentHeight($var)
@@ -89,7 +88,6 @@ class ChainStatus extends Message
      * Generated from protobuf field <code>int64 mempoolSize = 2;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setMempoolSize($var)
@@ -114,7 +112,6 @@ class ChainStatus extends Message
      * Generated from protobuf field <code>int64 msgQueueSize = 3;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setMsgQueueSize($var)

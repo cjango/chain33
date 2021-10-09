@@ -13,7 +13,7 @@ use GPBMetadata\Wallet;
  *钱包模块通过一个随机值对钱包密码加密
  *   pwHash : 对钱包密码和一个随机值组合进行哈希计算
  *   randstr :对钱包密码加密的一个随机值
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.WalletPwHash</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.WalletPwHash</code>.
  */
 class WalletPwHash extends Message
 {
@@ -35,7 +35,7 @@ class WalletPwHash extends Message
      *
      * @var string $pwHash
      * @var string $randstr
-     *                       }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -57,7 +57,6 @@ class WalletPwHash extends Message
      * Generated from protobuf field <code>bytes pwHash = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setPwHash($var)
@@ -82,7 +81,6 @@ class WalletPwHash extends Message
      * Generated from protobuf field <code>string randstr = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setRandstr($var)

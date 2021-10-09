@@ -25,8 +25,8 @@ class Client extends BaseClient
      * @param  int  $period  解冻周期，单位 秒
      * @param  int  $parameter  解冻数值
      * @param  string  $privateKey  发起人签名私钥
-     *
      * @return string
+     *
      * @throws ChainException
      * @throws ConfigException
      */
@@ -43,7 +43,7 @@ class Client extends BaseClient
     ): string {
         $this->walletUnlock();
 
-        if (!in_array($algo, ['FixAmount', 'LeftProportion'])) {
+        if (! in_array($algo, ['FixAmount', 'LeftProportion'])) {
             throw new ChainException('不支持的解冻算法');
         }
 
@@ -71,7 +71,6 @@ class Client extends BaseClient
      * @param $means
      * @param $period
      * @param $parameter
-     *
      * @return array
      */
     private function parseMeans($means, $period, $parameter): array
@@ -106,8 +105,8 @@ class Client extends BaseClient
      * @Author : <Jason.C>
      *
      * @param  string  $unfreezeID  合约的ID，
-     *
      * @return array
+     *
      * @throws ChainException
      */
     public function status(string $unfreezeID): array
@@ -128,8 +127,8 @@ class Client extends BaseClient
      * @Author : <Jason.C>
      *
      * @param  string  $unfreezeID  合约的ID，可以查询创建冻结合约时得到，同创建冻结合约的交易ID的十六进制，是对应的unfreezeID去掉前缀 “mavl-unfreeze-“。
-     *
      * @return int
+     *
      * @throws ChainException
      */
     public function balance(string $unfreezeID): int
@@ -157,7 +156,6 @@ class Client extends BaseClient
      *
      * @param  string  $unfreezeID  冻结合约的ID 可以查询创建冻结合约时，得到， 同创建冻结合约的交易ID的十六进制
      * @param  string  $privateKey  受益人私钥
-     *
      * @return string
      */
     public function withdraw(string $unfreezeID, string $privateKey): string
@@ -177,7 +175,6 @@ class Client extends BaseClient
      *
      * @param  string  $unfreezeID  冻结合约的ID
      * @param  string  $privateKey  创建者的私钥
-     *
      * @return mixed
      */
     public function terminate(string $unfreezeID, string $privateKey): string
@@ -199,8 +196,8 @@ class Client extends BaseClient
      * @param  string  $beneficiary  受益人地址
      * @param  int  $count  查询的数量
      * @param  int  $direction  查询的方向
-     *
      * @return array
+     *
      * @throws ChainException
      */
     public function creator(string $creator = '', string $beneficiary = '', int $count = 100, int $direction = 0): array
@@ -228,8 +225,8 @@ class Client extends BaseClient
      * @param  string  $creator  创建者地址
      * @param  int  $count  查询的数量
      * @param  int  $direction  查询的方向
-     *
      * @return array
+     *
      * @throws ChainException
      */
     public function beneficiary(

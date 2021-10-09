@@ -16,7 +16,7 @@ class TotalAmount extends Message
 {
     /**
      * 统计的总数.
-     * Generated from protobuf field <code>int64 total = 1;</code>
+     * Generated from protobuf field <code>int64 total = 1;</code>.
      */
     protected $total = 0;
 
@@ -24,11 +24,11 @@ class TotalAmount extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                        Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var int|string $total
-     *                        统计的总数
-     *                        }
+     *                 统计的总数
+     *                 }
      */
     public function __construct($data = null)
     {
@@ -38,7 +38,7 @@ class TotalAmount extends Message
 
     /**
      * 统计的总数.
-     * Generated from protobuf field <code>int64 total = 1;</code>
+     * Generated from protobuf field <code>int64 total = 1;</code>.
      *
      * @return int|string
      */
@@ -49,10 +49,9 @@ class TotalAmount extends Message
 
     /**
      * 统计的总数.
-     * Generated from protobuf field <code>int64 total = 1;</code>
+     * Generated from protobuf field <code>int64 total = 1;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setTotal($var)

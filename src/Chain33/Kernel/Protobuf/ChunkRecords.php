@@ -13,7 +13,7 @@ use GPBMetadata\Blockchain;
 
 /**
  * ChunkRecords.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ChunkRecords</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ChunkRecords</code>.
  */
 class ChunkRecords extends Message
 {
@@ -26,10 +26,10 @@ class ChunkRecords extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                                                                Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var ChunkInfo[]|RepeatedField $infos
-     *                                                                                                }
+     *                                }
      */
     public function __construct($data = null)
     {
@@ -51,7 +51,6 @@ class ChunkRecords extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ChunkInfo infos = 1;</code>.
      *
      * @param  ChunkInfo[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setInfos($var)

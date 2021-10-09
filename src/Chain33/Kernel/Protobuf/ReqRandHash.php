@@ -38,13 +38,13 @@ class ReqRandHash extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                        Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var string $execName
      * @var int|string $height
      * @var int|string $blockNum
      * @var string $hash
-     *                        }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -66,7 +66,6 @@ class ReqRandHash extends Message
      * Generated from protobuf field <code>string execName = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setExecName($var)
@@ -91,7 +90,6 @@ class ReqRandHash extends Message
      * Generated from protobuf field <code>int64 height = 2;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setHeight($var)
@@ -116,7 +114,6 @@ class ReqRandHash extends Message
      * Generated from protobuf field <code>int64 blockNum = 3;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setBlockNum($var)
@@ -141,7 +138,6 @@ class ReqRandHash extends Message
      * Generated from protobuf field <code>bytes hash = 4;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setHash($var)

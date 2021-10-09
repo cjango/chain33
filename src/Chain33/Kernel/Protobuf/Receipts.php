@@ -25,10 +25,10 @@ class Receipts extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                                                              Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var Receipt[]|RepeatedField $receipts
-     *                                                                                              }
+     *                              }
      */
     public function __construct($data = null)
     {
@@ -50,7 +50,6 @@ class Receipts extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Receipt receipts = 1;</code>.
      *
      * @param  Receipt[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setReceipts($var)

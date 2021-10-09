@@ -16,7 +16,6 @@ class Client extends BaseClient
      * @Author : <Jason.C>
      *
      * @param  string  $privateKey
-     *
      * @return string
      */
     public function create(string $privateKey): string
@@ -52,7 +51,6 @@ class Client extends BaseClient
      * @param  string  $multiSigAccAddr
      * @param  int  $newWeight
      * @param  string  $privateKey
-     *
      * @return string
      */
     public function operateRequiredWeight(string $multiSigAccAddr, int $newWeight, string $privateKey): string
@@ -75,7 +73,6 @@ class Client extends BaseClient
      * @param  string  $multiSigAccAddr
      * @param  array  $dailyLimit
      * @param  string  $privateKey
-     *
      * @return string
      */
     public function operateDailyLimit(string $multiSigAccAddr, array $dailyLimit, string $privateKey): string
@@ -98,6 +95,7 @@ class Client extends BaseClient
      *
      * @Date   : 2021/3/30 1:25 下午
      * @Author : <Jason.C>
+     *
      * @return int
      */
     public function count(): int
@@ -116,7 +114,6 @@ class Client extends BaseClient
      *
      * @param  int  $start  多重签名账户index索引，从0开始
      * @param  int  $end  多重签名账户index索引，end>=start && end< MultiSigAccCount获取的值
-     *
      * @return array
      */
     public function accounts(int $start, int $end): array
@@ -138,7 +135,6 @@ class Client extends BaseClient
      * @Author : <Jason.C>
      *
      * @param  string  $multiSigAccAddr
-     *
      * @return array
      */
     public function info(string $multiSigAccAddr): array
@@ -162,7 +158,6 @@ class Client extends BaseClient
      * @param  bool  $isAll  是否所有资产
      * @param  string  $execer  资产信息
      * @param  string  $symbol  资产信息
-     *
      * @return array
      */
     public function unSpentToday(
@@ -190,6 +185,7 @@ class Client extends BaseClient
      *
      * @Date   : 2021/3/30 1:30 下午
      * @Author : <Jason.C>
+     *
      * @return mixed
      */
     public function assets(string $multiSigAddr)
@@ -215,7 +211,6 @@ class Client extends BaseClient
      * @Author : <Jason.C>
      *
      * @param  string  $creator
-     *
      * @return array
      */
     public function address(string $creator): array
@@ -236,7 +231,6 @@ class Client extends BaseClient
      * @Author : <Jason.C>
      *
      * @param  string  $owner
-     *
      * @return array
      */
     public function owner(string $owner): array
@@ -256,7 +250,6 @@ class Client extends BaseClient
      * @param  string  $newOwner
      * @param  int  $newWeight
      * @param  string  $privateKey
-     *
      * @return string
      */
     public function addOwner(string $multiSigAccAddr, string $newOwner, int $newWeight, string $privateKey): string
@@ -280,7 +273,6 @@ class Client extends BaseClient
      * @param  string  $multiSigAccAddr
      * @param  string  $oldOwner
      * @param  string  $privateKey
-     *
      * @return string
      */
     public function deleteOwner(string $multiSigAccAddr, string $oldOwner, string $privateKey): string
@@ -304,7 +296,6 @@ class Client extends BaseClient
      * @param  string  $oldOwner
      * @param  int  $newWeight
      * @param  string  $privateKey
-     *
      * @return string
      */
     public function modifyOwner(string $multiSigAccAddr, string $oldOwner, int $newWeight, string $privateKey): string
@@ -329,7 +320,6 @@ class Client extends BaseClient
      * @param  string  $oldOwner
      * @param  string  $newOwner
      * @param  string  $privateKey
-     *
      * @return string
      */
     public function replaceOwner(
@@ -360,7 +350,6 @@ class Client extends BaseClient
      * @param  string  $to  收账地址，必须是多重签名地址
      * @param  int  $amount  转入的资产额度
      * @param  string  $privateKey
-     *
      * @return string
      */
     public function rechage(
@@ -395,7 +384,6 @@ class Client extends BaseClient
      * @param  string  $from  出账地址，必须是多重签名地址
      * @param  int  $amount  转入的资产额度
      * @param  string  $privateKey
-     *
      * @return string
      */
     public function withdraw(
@@ -429,7 +417,6 @@ class Client extends BaseClient
      * @param  int  $txId  需要确认或者撤销的交易index，从0开始
      * @param  bool  $confirm  确认/撤销交易。true：确认交易
      * @param  string  $privateKey
-     *
      * @return string
      */
     public function confirm(string $multiSigAccAddr, int $txId, string $privateKey, bool $confirm = true): string
@@ -450,7 +437,6 @@ class Client extends BaseClient
      * @Author : <Jason.C>
      *
      * @param  string  $multiSigAccAddr  多重签名账户地址
-     *
      * @return int
      */
     public function txCount(string $multiSigAccAddr): int
@@ -475,7 +461,6 @@ class Client extends BaseClient
      * @param  int  $toTxId  多重签名账户交易索引,toTxId< MultiSigAccTxCount 获取的交易数
      * @param  bool  $pending  未执行的交易
      * @param  bool  $executed  已执行的交易
-     *
      * @return array
      */
     public function txIds(string $multiSigAddr, int $fromTxId, int $toTxId, bool $pending, bool $executed): array
@@ -501,7 +486,6 @@ class Client extends BaseClient
      *
      * @param  string  $multiSigAddr  多重签名账户地址
      * @param  int  $txId  多重签名账户交易索引值，fromTxId>=0
-     *
      * @return mixed
      */
     public function txInfo(string $multiSigAddr, int $txId)
@@ -524,7 +508,6 @@ class Client extends BaseClient
      *
      * @param  string  $multiSigAddr  多重签名账户地址
      * @param  int  $txId  多重签名账户交易索引值，0 <= fromTxId < MultiSigAccTxCount 获取的交易数
-     *
      * @return int
      */
     public function txWeight(string $multiSigAddr, int $txId): int

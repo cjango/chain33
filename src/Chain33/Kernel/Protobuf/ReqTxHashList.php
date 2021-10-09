@@ -12,7 +12,7 @@ use Google\Protobuf\Internal\RepeatedField;
 
 /**
  *通过交易hash获取交易列表，需要区分是短hash还是全hash值
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqTxHashList</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqTxHashList</code>.
  */
 class ReqTxHashList extends Message
 {
@@ -30,11 +30,11 @@ class ReqTxHashList extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                              Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var string[]|RepeatedField $hashes
      * @var bool $isShortHash
-     *                                                              }
+     *           }
      */
     public function __construct($data = null)
     {
@@ -56,7 +56,6 @@ class ReqTxHashList extends Message
      * Generated from protobuf field <code>repeated string hashes = 1;</code>.
      *
      * @param  string[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setHashes($var)
@@ -81,7 +80,6 @@ class ReqTxHashList extends Message
      * Generated from protobuf field <code>bool isShortHash = 2;</code>.
      *
      * @param  bool  $var
-     *
      * @return $this
      */
     public function setIsShortHash($var)

@@ -6,6 +6,7 @@ use Pimple\Container;
 
 /**
  * Class Application.
+ *
  * @method static Account\Client Account
  * @method static Balance\Client Balance
  * @method static Chain\Client Chain
@@ -85,7 +86,6 @@ class Application extends Container
      * @Date  : 2020/3/17 20:44 下午
      *
      * @param  string  $name  服务名称
-     *
      * @return mixed
      */
     public function __get(string $name)
@@ -100,8 +100,7 @@ class Application extends Container
      * @Date  : 2020/3/17 20:44 下午
      *
      * @param  string  $name  服务名称
-     * @param          $arguments
-     *
+     * @param  $arguments
      * @return mixed
      */
     public function __call(string $name, $arguments)

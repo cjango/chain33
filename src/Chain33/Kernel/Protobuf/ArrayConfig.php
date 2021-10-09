@@ -13,7 +13,7 @@ use GPBMetadata\Executor;
 
 /**
  * 配置修改部分.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ArrayConfig</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ArrayConfig</code>.
  */
 class ArrayConfig extends Message
 {
@@ -26,10 +26,10 @@ class ArrayConfig extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                              Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var string[]|RepeatedField $value
-     *                                                              }
+     *                             }
      */
     public function __construct($data = null)
     {
@@ -51,7 +51,6 @@ class ArrayConfig extends Message
      * Generated from protobuf field <code>repeated string value = 3;</code>.
      *
      * @param  string[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setValue($var)

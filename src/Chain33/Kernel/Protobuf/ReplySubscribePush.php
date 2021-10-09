@@ -32,7 +32,7 @@ class ReplySubscribePush extends Message
      *
      * @var bool $isOk
      * @var string $msg
-     *                       }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -54,7 +54,6 @@ class ReplySubscribePush extends Message
      * Generated from protobuf field <code>bool isOk = 1;</code>.
      *
      * @param  bool  $var
-     *
      * @return $this
      */
     public function setIsOk($var)
@@ -79,7 +78,6 @@ class ReplySubscribePush extends Message
      * Generated from protobuf field <code>string msg = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setMsg($var)

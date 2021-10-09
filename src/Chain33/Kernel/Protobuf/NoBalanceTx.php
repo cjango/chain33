@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\Message;
 
 /**
  * payAddr 可以支持 1. 地址 2. 私钥.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.NoBalanceTx</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.NoBalanceTx</code>.
  */
 class NoBalanceTx extends Message
 {
@@ -44,7 +44,7 @@ class NoBalanceTx extends Message
      * @var string $payAddr
      * @var string $privkey
      * @var string $expire
-     *                       }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -66,7 +66,6 @@ class NoBalanceTx extends Message
      * Generated from protobuf field <code>string txHex = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setTxHex($var)
@@ -91,7 +90,6 @@ class NoBalanceTx extends Message
      * Generated from protobuf field <code>string payAddr = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setPayAddr($var)
@@ -116,7 +114,6 @@ class NoBalanceTx extends Message
      * Generated from protobuf field <code>string privkey = 3;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setPrivkey($var)
@@ -141,7 +138,6 @@ class NoBalanceTx extends Message
      * Generated from protobuf field <code>string expire = 4;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setExpire($var)

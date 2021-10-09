@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\Message;
 
 /**
  *根据txhash去状态数据库中查询存储内容.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.QueryStorage</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.QueryStorage</code>.
  */
 class QueryStorage extends Message
 {
@@ -26,7 +26,7 @@ class QueryStorage extends Message
      *                       Optional. Data for populating the Message object.
      *
      * @var string $txHash
-     *                       }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -48,7 +48,6 @@ class QueryStorage extends Message
      * Generated from protobuf field <code>string txHash = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setTxHash($var)

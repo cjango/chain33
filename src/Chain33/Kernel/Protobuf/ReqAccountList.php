@@ -26,7 +26,7 @@ class ReqAccountList extends Message
      *                       Optional. Data for populating the Message object.
      *
      * @var bool $withoutBalance
-     *                       }
+     *           }
      */
     public function __construct($data = null)
     {
@@ -48,7 +48,6 @@ class ReqAccountList extends Message
      * Generated from protobuf field <code>bool withoutBalance = 1;</code>.
      *
      * @param  bool  $var
-     *
      * @return $this
      */
     public function setWithoutBalance($var)

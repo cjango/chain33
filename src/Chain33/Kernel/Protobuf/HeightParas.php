@@ -25,10 +25,10 @@ class HeightParas extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                                                                 Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var HeightPara[]|RepeatedField $items
-     *                                                                                                 }
+     *                                 }
      */
     public function __construct($data = null)
     {
@@ -50,7 +50,6 @@ class HeightParas extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.HeightPara items = 1;</code>.
      *
      * @param  HeightPara[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setItems($var)

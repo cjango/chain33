@@ -14,7 +14,7 @@ use GPBMetadata\Wallet;
  *   passwd : 钱包密码
  *   timeout :钱包解锁时间，0，一直解锁，非0值，超时之后继续锁定
  *   walletOrTicket :解锁整个钱包还是只解锁挖矿买票功能，1只解锁挖矿买票，0解锁整个钱包.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.WalletUnLock</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.WalletUnLock</code>.
  */
 class WalletUnLock extends Message
 {
@@ -37,12 +37,12 @@ class WalletUnLock extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                        Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var string $passwd
      * @var int|string $timeout
      * @var bool $walletOrTicket
-     *                        }
+     *           }
      */
     public function __construct($data = null)
     {
@@ -64,7 +64,6 @@ class WalletUnLock extends Message
      * Generated from protobuf field <code>string passwd = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setPasswd($var)
@@ -89,7 +88,6 @@ class WalletUnLock extends Message
      * Generated from protobuf field <code>int64 timeout = 2;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setTimeout($var)
@@ -114,7 +112,6 @@ class WalletUnLock extends Message
      * Generated from protobuf field <code>bool walletOrTicket = 3;</code>.
      *
      * @param  bool  $var
-     *
      * @return $this
      */
     public function setWalletOrTicket($var)

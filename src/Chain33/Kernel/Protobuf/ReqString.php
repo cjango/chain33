@@ -26,7 +26,7 @@ class ReqString extends Message
      *                       Optional. Data for populating the Message object.
      *
      * @var string $data
-     *                       }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -48,7 +48,6 @@ class ReqString extends Message
      * Generated from protobuf field <code>string data = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setData($var)

@@ -36,7 +36,7 @@ class ChainExecutor extends Message
 
     /**
      *扩展字段，用于额外的用途.
-     * Generated from protobuf field <code>bytes extra = 5;</code>
+     * Generated from protobuf field <code>bytes extra = 5;</code>.
      */
     protected $extra = '';
 
@@ -51,8 +51,8 @@ class ChainExecutor extends Message
      * @var string $stateHash
      * @var string $param
      * @var string $extra
-     *                       扩展字段，用于额外的用途
-     *                       }
+     *             扩展字段，用于额外的用途
+     *             }
      */
     public function __construct($data = null)
     {
@@ -74,7 +74,6 @@ class ChainExecutor extends Message
      * Generated from protobuf field <code>string driver = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setDriver($var)
@@ -99,7 +98,6 @@ class ChainExecutor extends Message
      * Generated from protobuf field <code>string funcName = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setFuncName($var)
@@ -124,7 +122,6 @@ class ChainExecutor extends Message
      * Generated from protobuf field <code>bytes stateHash = 3;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setStateHash($var)
@@ -149,7 +146,6 @@ class ChainExecutor extends Message
      * Generated from protobuf field <code>bytes param = 4;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setParam($var)
@@ -162,7 +158,7 @@ class ChainExecutor extends Message
 
     /**
      *扩展字段，用于额外的用途.
-     * Generated from protobuf field <code>bytes extra = 5;</code>
+     * Generated from protobuf field <code>bytes extra = 5;</code>.
      *
      * @return string
      */
@@ -173,10 +169,9 @@ class ChainExecutor extends Message
 
     /**
      *扩展字段，用于额外的用途.
-     * Generated from protobuf field <code>bytes extra = 5;</code>
+     * Generated from protobuf field <code>bytes extra = 5;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setExtra($var)

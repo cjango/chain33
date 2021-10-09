@@ -32,7 +32,7 @@ class ReqPrivkeysFile extends Message
      *
      * @var string $fileName
      * @var string $passwd
-     *                       }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -54,7 +54,6 @@ class ReqPrivkeysFile extends Message
      * Generated from protobuf field <code>string fileName = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setFileName($var)
@@ -79,7 +78,6 @@ class ReqPrivkeysFile extends Message
      * Generated from protobuf field <code>string passwd = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setPasswd($var)

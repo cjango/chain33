@@ -15,7 +15,7 @@ use GPBMetadata\Blockchain;
  * startIndex:子链第一笔交易的索引
  * childHash:子链的根hash
  * txCount:子链交易的数量.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ChildChain</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ChildChain</code>.
  */
 class ChildChain extends Message
 {
@@ -49,7 +49,7 @@ class ChildChain extends Message
      * @var int $startIndex
      * @var string $childHash
      * @var int $txCount
-     *                       }
+     *          }
      */
     public function __construct($data = null)
     {
@@ -71,7 +71,6 @@ class ChildChain extends Message
      * Generated from protobuf field <code>string title = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setTitle($var)
@@ -96,7 +95,6 @@ class ChildChain extends Message
      * Generated from protobuf field <code>int32 startIndex = 2;</code>.
      *
      * @param  int  $var
-     *
      * @return $this
      */
     public function setStartIndex($var)
@@ -121,7 +119,6 @@ class ChildChain extends Message
      * Generated from protobuf field <code>bytes childHash = 3;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setChildHash($var)
@@ -146,7 +143,6 @@ class ChildChain extends Message
      * Generated from protobuf field <code>int32 txCount = 4;</code>.
      *
      * @param  int  $var
-     *
      * @return $this
      */
     public function setTxCount($var)

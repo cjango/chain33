@@ -11,7 +11,7 @@ use GPBMetadata\Blockchain;
 
 /**
  *通过seq获取区块的header信息.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.HeaderSeq</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.HeaderSeq</code>.
  */
 class HeaderSeq extends Message
 {
@@ -34,12 +34,12 @@ class HeaderSeq extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                          Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var int|string $num
      * @var BlockSequence $seq
      * @var Header $header
-     *                                                          }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -61,7 +61,6 @@ class HeaderSeq extends Message
      * Generated from protobuf field <code>int64 num = 1;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setNum($var)
@@ -86,7 +85,6 @@ class HeaderSeq extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.BlockSequence seq = 2;</code>.
      *
      * @param  BlockSequence  $var
-     *
      * @return $this
      */
     public function setSeq($var)
@@ -121,7 +119,6 @@ class HeaderSeq extends Message
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Header header = 3;</code>.
      *
      * @param  Header  $var
-     *
      * @return $this
      */
     public function setHeader($var)

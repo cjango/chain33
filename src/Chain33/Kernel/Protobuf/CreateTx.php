@@ -62,7 +62,7 @@ class CreateTx extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                        Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var string $to
      * @var int|string $amount
@@ -73,7 +73,7 @@ class CreateTx extends Message
      * @var string $tokenSymbol
      * @var string $execName
      * @var string $execer
-     *                        }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -95,7 +95,6 @@ class CreateTx extends Message
      * Generated from protobuf field <code>string to = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setTo($var)
@@ -120,7 +119,6 @@ class CreateTx extends Message
      * Generated from protobuf field <code>int64 amount = 2;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setAmount($var)
@@ -145,7 +143,6 @@ class CreateTx extends Message
      * Generated from protobuf field <code>int64 fee = 3;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setFee($var)
@@ -170,7 +167,6 @@ class CreateTx extends Message
      * Generated from protobuf field <code>bytes note = 4;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setNote($var)
@@ -195,7 +191,6 @@ class CreateTx extends Message
      * Generated from protobuf field <code>bool isWithdraw = 5;</code>.
      *
      * @param  bool  $var
-     *
      * @return $this
      */
     public function setIsWithdraw($var)
@@ -220,7 +215,6 @@ class CreateTx extends Message
      * Generated from protobuf field <code>bool isToken = 6;</code>.
      *
      * @param  bool  $var
-     *
      * @return $this
      */
     public function setIsToken($var)
@@ -245,7 +239,6 @@ class CreateTx extends Message
      * Generated from protobuf field <code>string tokenSymbol = 7;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setTokenSymbol($var)
@@ -270,7 +263,6 @@ class CreateTx extends Message
      * Generated from protobuf field <code>string execName = 8;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setExecName($var)
@@ -295,7 +287,6 @@ class CreateTx extends Message
      * Generated from protobuf field <code>string execer = 9;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setExecer($var)

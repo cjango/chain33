@@ -19,7 +19,7 @@ use Google\Protobuf\Internal\Message;
  * ty = 3 -> sm2
  * ty = 4 -> OnetimeED25519
  * ty = 5 -> RingBaseonED25519.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.Signature</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.Signature</code>.
  */
 class Signature extends Message
 {
@@ -35,7 +35,7 @@ class Signature extends Message
 
     /**
      *当ty为5时，格式应该用RingSignature去解析.
-     * Generated from protobuf field <code>bytes signature = 3;</code>
+     * Generated from protobuf field <code>bytes signature = 3;</code>.
      */
     protected $signature = '';
 
@@ -48,8 +48,8 @@ class Signature extends Message
      * @var int $ty
      * @var string $pubkey
      * @var string $signature
-     *                       当ty为5时，格式应该用RingSignature去解析
-     *                       }
+     *             当ty为5时，格式应该用RingSignature去解析
+     *             }
      */
     public function __construct($data = null)
     {
@@ -71,7 +71,6 @@ class Signature extends Message
      * Generated from protobuf field <code>int32 ty = 1;</code>.
      *
      * @param  int  $var
-     *
      * @return $this
      */
     public function setTy($var)
@@ -96,7 +95,6 @@ class Signature extends Message
      * Generated from protobuf field <code>bytes pubkey = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setPubkey($var)
@@ -109,7 +107,7 @@ class Signature extends Message
 
     /**
      *当ty为5时，格式应该用RingSignature去解析.
-     * Generated from protobuf field <code>bytes signature = 3;</code>
+     * Generated from protobuf field <code>bytes signature = 3;</code>.
      *
      * @return string
      */
@@ -120,10 +118,9 @@ class Signature extends Message
 
     /**
      *当ty为5时，格式应该用RingSignature去解析.
-     * Generated from protobuf field <code>bytes signature = 3;</code>
+     * Generated from protobuf field <code>bytes signature = 3;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setSignature($var)

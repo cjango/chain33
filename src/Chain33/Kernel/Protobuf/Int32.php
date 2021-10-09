@@ -26,7 +26,7 @@ class Int32 extends Message
      *                       Optional. Data for populating the Message object.
      *
      * @var int $data
-     *                       }
+     *          }
      */
     public function __construct($data = null)
     {
@@ -48,7 +48,6 @@ class Int32 extends Message
      * Generated from protobuf field <code>int32 data = 1;</code>.
      *
      * @param  int  $var
-     *
      * @return $this
      */
     public function setData($var)

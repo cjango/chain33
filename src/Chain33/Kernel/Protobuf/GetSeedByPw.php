@@ -26,7 +26,7 @@ class GetSeedByPw extends Message
      *                       Optional. Data for populating the Message object.
      *
      * @var string $passwd
-     *                       }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -48,7 +48,6 @@ class GetSeedByPw extends Message
      * Generated from protobuf field <code>string passwd = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setPasswd($var)

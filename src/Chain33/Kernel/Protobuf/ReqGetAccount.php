@@ -11,7 +11,7 @@ use GPBMetadata\Wallet;
 
 /**
  *根据label获取账户地址
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqGetAccount</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.ReqGetAccount</code>.
  */
 class ReqGetAccount extends Message
 {
@@ -27,7 +27,7 @@ class ReqGetAccount extends Message
      *                       Optional. Data for populating the Message object.
      *
      * @var string $label
-     *                       }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -49,7 +49,6 @@ class ReqGetAccount extends Message
      * Generated from protobuf field <code>string label = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setLabel($var)

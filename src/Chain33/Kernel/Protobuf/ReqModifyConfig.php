@@ -44,7 +44,7 @@ class ReqModifyConfig extends Message
      * @var string $op
      * @var string $value
      * @var string $modifier
-     *                       }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -66,7 +66,6 @@ class ReqModifyConfig extends Message
      * Generated from protobuf field <code>string key = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setKey($var)
@@ -91,7 +90,6 @@ class ReqModifyConfig extends Message
      * Generated from protobuf field <code>string op = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setOp($var)
@@ -116,7 +114,6 @@ class ReqModifyConfig extends Message
      * Generated from protobuf field <code>string value = 3;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setValue($var)
@@ -141,7 +138,6 @@ class ReqModifyConfig extends Message
      * Generated from protobuf field <code>string modifier = 4;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setModifier($var)

@@ -15,7 +15,7 @@ use GPBMetadata\Wallet;
  *   label :账户地址对应的标签
  *   addr :账户地址
  *   timeStamp :创建账户时的时标.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.WalletAccountStore</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.WalletAccountStore</code>.
  */
 class WalletAccountStore extends Message
 {
@@ -49,7 +49,7 @@ class WalletAccountStore extends Message
      * @var string $label
      * @var string $addr
      * @var string $timeStamp
-     *                       }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -71,7 +71,6 @@ class WalletAccountStore extends Message
      * Generated from protobuf field <code>string privkey = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setPrivkey($var)
@@ -96,7 +95,6 @@ class WalletAccountStore extends Message
      * Generated from protobuf field <code>string label = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setLabel($var)
@@ -121,7 +119,6 @@ class WalletAccountStore extends Message
      * Generated from protobuf field <code>string addr = 3;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setAddr($var)
@@ -146,7 +143,6 @@ class WalletAccountStore extends Message
      * Generated from protobuf field <code>string timeStamp = 4;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setTimeStamp($var)

@@ -53,7 +53,7 @@ class ReqTokenPreCreate extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                        Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var string $creator_addr
      * @var string $name
@@ -62,7 +62,7 @@ class ReqTokenPreCreate extends Message
      * @var string $owner_addr
      * @var int|string $total
      * @var int|string $price
-     *                        }
+     *                 }
      */
     public function __construct($data = null)
     {
@@ -84,7 +84,6 @@ class ReqTokenPreCreate extends Message
      * Generated from protobuf field <code>string creator_addr = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setCreatorAddr($var)
@@ -109,7 +108,6 @@ class ReqTokenPreCreate extends Message
      * Generated from protobuf field <code>string name = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setName($var)
@@ -134,7 +132,6 @@ class ReqTokenPreCreate extends Message
      * Generated from protobuf field <code>string symbol = 3;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setSymbol($var)
@@ -159,7 +156,6 @@ class ReqTokenPreCreate extends Message
      * Generated from protobuf field <code>string introduction = 4;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setIntroduction($var)
@@ -184,7 +180,6 @@ class ReqTokenPreCreate extends Message
      * Generated from protobuf field <code>string owner_addr = 5;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setOwnerAddr($var)
@@ -209,7 +204,6 @@ class ReqTokenPreCreate extends Message
      * Generated from protobuf field <code>int64 total = 6;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setTotal($var)
@@ -234,7 +228,6 @@ class ReqTokenPreCreate extends Message
      * Generated from protobuf field <code>int64 price = 7;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setPrice($var)

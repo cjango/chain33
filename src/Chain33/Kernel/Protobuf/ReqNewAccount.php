@@ -26,7 +26,7 @@ class ReqNewAccount extends Message
      *                       Optional. Data for populating the Message object.
      *
      * @var string $label
-     *                       }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -48,7 +48,6 @@ class ReqNewAccount extends Message
      * Generated from protobuf field <code>string label = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setLabel($var)

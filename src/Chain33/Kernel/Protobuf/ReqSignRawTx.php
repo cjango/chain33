@@ -44,7 +44,7 @@ class ReqSignRawTx extends Message
      * 0：普通交易
      * 1：隐私交易
      * int32  mode  = 6;.
-     * Generated from protobuf field <code>string token = 7;</code>
+     * Generated from protobuf field <code>string token = 7;</code>.
      */
     protected $token = '';
 
@@ -55,7 +55,7 @@ class ReqSignRawTx extends Message
 
     /**
      * bytes  newExecer = 9;.
-     * Generated from protobuf field <code>string newToAddr = 10;</code>
+     * Generated from protobuf field <code>string newToAddr = 10;</code>.
      */
     protected $newToAddr = '';
 
@@ -63,7 +63,7 @@ class ReqSignRawTx extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                        Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var string $addr
      * @var string $privkey
@@ -71,14 +71,14 @@ class ReqSignRawTx extends Message
      * @var string $expire
      * @var int $index
      * @var string $token
-     *                        签名的模式类型
-     *                        0：普通交易
-     *                        1：隐私交易
-     *                        int32  mode  = 6;
+     *             签名的模式类型
+     *             0：普通交易
+     *             1：隐私交易
+     *             int32  mode  = 6;
      * @var int|string $fee
      * @var string $newToAddr
-     *                        bytes  newExecer = 9;
-     *                        }
+     *             bytes  newExecer = 9;
+     *             }
      */
     public function __construct($data = null)
     {
@@ -100,7 +100,6 @@ class ReqSignRawTx extends Message
      * Generated from protobuf field <code>string addr = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setAddr($var)
@@ -125,7 +124,6 @@ class ReqSignRawTx extends Message
      * Generated from protobuf field <code>string privkey = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setPrivkey($var)
@@ -150,7 +148,6 @@ class ReqSignRawTx extends Message
      * Generated from protobuf field <code>string txHex = 3;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setTxHex($var)
@@ -175,7 +172,6 @@ class ReqSignRawTx extends Message
      * Generated from protobuf field <code>string expire = 4;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setExpire($var)
@@ -200,7 +196,6 @@ class ReqSignRawTx extends Message
      * Generated from protobuf field <code>int32 index = 5;</code>.
      *
      * @param  int  $var
-     *
      * @return $this
      */
     public function setIndex($var)
@@ -216,7 +211,7 @@ class ReqSignRawTx extends Message
      * 0：普通交易
      * 1：隐私交易
      * int32  mode  = 6;.
-     * Generated from protobuf field <code>string token = 7;</code>
+     * Generated from protobuf field <code>string token = 7;</code>.
      *
      * @return string
      */
@@ -230,10 +225,9 @@ class ReqSignRawTx extends Message
      * 0：普通交易
      * 1：隐私交易
      * int32  mode  = 6;.
-     * Generated from protobuf field <code>string token = 7;</code>
+     * Generated from protobuf field <code>string token = 7;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setToken($var)
@@ -258,7 +252,6 @@ class ReqSignRawTx extends Message
      * Generated from protobuf field <code>int64 fee = 8;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setFee($var)
@@ -271,7 +264,7 @@ class ReqSignRawTx extends Message
 
     /**
      * bytes  newExecer = 9;.
-     * Generated from protobuf field <code>string newToAddr = 10;</code>
+     * Generated from protobuf field <code>string newToAddr = 10;</code>.
      *
      * @return string
      */
@@ -282,10 +275,9 @@ class ReqSignRawTx extends Message
 
     /**
      * bytes  newExecer = 9;.
-     * Generated from protobuf field <code>string newToAddr = 10;</code>
+     * Generated from protobuf field <code>string newToAddr = 10;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setNewToAddr($var)

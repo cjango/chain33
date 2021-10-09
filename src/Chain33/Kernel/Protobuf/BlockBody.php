@@ -19,7 +19,7 @@ use GPBMetadata\Blockchain;
  *     mainHeight :主链区块高度，平行链使用
  *     hash : 本链区块hash
  *     height :本链区块高度.
- * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.BlockBody</code>
+ * Generated from protobuf message <code>Jason.Chain33.Kernel.Protobuf.BlockBody</code>.
  */
 class BlockBody extends Message
 {
@@ -57,7 +57,7 @@ class BlockBody extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                                                                  Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var Transaction[]|RepeatedField $txs
      * @var ReceiptData[]|RepeatedField $receipts
@@ -65,7 +65,7 @@ class BlockBody extends Message
      * @var int|string $mainHeight
      * @var string $hash
      * @var int|string $height
-     *                                                                                                  }
+     *                 }
      */
     public function __construct($data = null)
     {
@@ -87,7 +87,6 @@ class BlockBody extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Transaction txs = 1;</code>.
      *
      * @param  Transaction[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setTxs($var)
@@ -113,7 +112,6 @@ class BlockBody extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ReceiptData receipts = 2;</code>.
      *
      * @param  ReceiptData[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setReceipts($var)
@@ -139,7 +137,6 @@ class BlockBody extends Message
      * Generated from protobuf field <code>bytes mainHash = 3;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setMainHash($var)
@@ -164,7 +161,6 @@ class BlockBody extends Message
      * Generated from protobuf field <code>int64 mainHeight = 4;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setMainHeight($var)
@@ -189,7 +185,6 @@ class BlockBody extends Message
      * Generated from protobuf field <code>bytes hash = 5;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setHash($var)
@@ -214,7 +209,6 @@ class BlockBody extends Message
      * Generated from protobuf field <code>int64 height = 6;</code>.
      *
      * @param  int|string  $var
-     *
      * @return $this
      */
     public function setHeight($var)

@@ -25,10 +25,10 @@ class WalletAccounts extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                                                                    Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var WalletAccount[]|RepeatedField $wallets
-     *                                                                                                    }
+     *                                    }
      */
     public function __construct($data = null)
     {
@@ -50,7 +50,6 @@ class WalletAccounts extends Message
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.WalletAccount wallets = 1;</code>.
      *
      * @param  WalletAccount[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setWallets($var)

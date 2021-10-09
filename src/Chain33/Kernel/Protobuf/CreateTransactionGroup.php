@@ -24,10 +24,10 @@ class CreateTransactionGroup extends Message
      * Constructor.
      *
      * @param  array  $data  {
-     *                                                              Optional. Data for populating the Message object.
+     *                       Optional. Data for populating the Message object.
      *
      * @var string[]|RepeatedField $txs
-     *                                                              }
+     *                             }
      */
     public function __construct($data = null)
     {
@@ -49,7 +49,6 @@ class CreateTransactionGroup extends Message
      * Generated from protobuf field <code>repeated string txs = 1;</code>.
      *
      * @param  string[]|RepeatedField  $var
-     *
      * @return $this
      */
     public function setTxs($var)

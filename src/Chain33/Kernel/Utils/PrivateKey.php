@@ -37,7 +37,7 @@ class PrivateKey
             $random = $hex.microtime(true).rand(100000000000, 1000000000000).$extra;
             $this->k = hash('sha256', $random);
 
-            if (!$cStrong) {
+            if (! $cStrong) {
                 throw new Exception('Your system is not able to generate strong enough random numbers');
             }
         } while (gmp_cmp(gmp_init($this->k, 16), gmp_sub($n, gmp_init(1, 10))) == 1);
@@ -87,7 +87,7 @@ class PrivateKey
         $p = $secp256k1->p;
         $k = $this->k;
 
-        if (!isset($this->k)) {
+        if (! isset($this->k)) {
             throw new Exception('No Private Key was defined');
         }
 

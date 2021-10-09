@@ -38,7 +38,7 @@ class Query extends Message
      * @var string $execer
      * @var string $funcName
      * @var string $payload
-     *                       }
+     *             }
      */
     public function __construct($data = null)
     {
@@ -60,7 +60,6 @@ class Query extends Message
      * Generated from protobuf field <code>bytes execer = 1;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setExecer($var)
@@ -85,7 +84,6 @@ class Query extends Message
      * Generated from protobuf field <code>string funcName = 2;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setFuncName($var)
@@ -110,7 +108,6 @@ class Query extends Message
      * Generated from protobuf field <code>bytes payload = 3;</code>.
      *
      * @param  string  $var
-     *
      * @return $this
      */
     public function setPayload($var)
