@@ -9,12 +9,10 @@ tab-width: 4
 use-tabs: false
 
 enabled:
-  - "phpdoc_align"
 
 disabled:
   - "unalign_equals"
   - "laravel_phpdoc_separation"
-  - "laravel_phpdoc_alignment"
   - "no_blank_lines_after_class_opening"
   - "no_blank_lines_after_phpdoc"
 
