@@ -40,8 +40,8 @@ class Client extends BaseClient
      * @param  string  $privateKey  转出账户的私钥
      * @param  int  $fee  转账手续费
      * @param  string  $note  转账备注
-     *
      * @return string
+     *
      * @throws ChainException
      * @throws ConfigException
      */
@@ -408,7 +408,6 @@ class Client extends BaseClient
      * @param  int  $direction  查询的方向；0：正向查询，区块高度从低到高；-1：反向查询；
      * @param  int  $height  交易所在的block高度，-1：表示从最新的开始向后取；大于等于0的值，从具体的高度+具体index开始取
      * @param  int  $index  交易所在block中的索引，取值0—100000
-     *
      * @return array
      */
     public function getTxByAddr(
