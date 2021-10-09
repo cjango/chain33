@@ -16,11 +16,9 @@ class Client extends BaseClient
      *
      * @Date   : 2021/7/19 3:28 下午
      * @Author : <Jason.C>
-     *
-     * @param  int                   $len      助记词位数
-     * @param  string                $language 助记词语言
+     * @param  int    $len      助记词位数
+     * @param  string $language 助记词语言
      * @return \Jason\Bip39\Mnemonic
-     *
      * @throws \Jason\Bip39\Exception\MnemonicException
      * @throws \Jason\Bip39\Exception\WordListException
      */
@@ -34,8 +32,7 @@ class Client extends BaseClient
      *
      * @Date   : 2021/3/21 12:10 下午
      * @Author : <Jason.C>
-     *
-     * @param  int    $lang 0 english 1 中文
+     * @param  int $lang 0 english 1 中文
      * @return string
      */
     public function genSeed(int $lang = 0): string
@@ -50,7 +47,6 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 17:33
-     *
      * @param  string $password 钱包密码
      * @return bool
      */
@@ -69,9 +65,7 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 17:34
-     *
      * @return string
-     *
      * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     public function getSeed(): string
@@ -88,7 +82,6 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 17:36
-     *
      * @param  string $old 旧密码
      * @param  string $new 新密码
      * @return bool
@@ -106,7 +99,6 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/3/18 21:38
-     *
      * @return array
      */
     public function status(): array
@@ -119,10 +111,8 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/3/18 21:38
-     *
-     * @param  int  $amount
+     * @param  int $amount
      * @return bool
-     *
      * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     public function setFee(int $amount): bool
@@ -139,7 +129,6 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 17:44
-     *
      * @param  string $fromTx    Sprintf(“%018d”, height*100000 + index)，表示从高度 height 中的 index
      *                           开始获取交易列表；第一次传参为空，获取最新的交易
      * @param  int    $count     获取交易列表的个数
@@ -162,7 +151,6 @@ class Client extends BaseClient
      *
      * @Date   : 2021/3/29 5:36 下午
      * @Author : <Jason.C>
-     *
      * @return array
      */
     public function totalFee(): array
@@ -181,10 +169,8 @@ class Client extends BaseClient
      *
      * @Author: <C.Jason>
      * @Date  : 2020/5/14 1:31 下午
-     *
      * @param  string $to 合并钱包上的所有余额到一个账户地址
      * @return mixed
-     *
      * @throws \Jason\Chain33\Exceptions\ConfigException
      */
     public function merge(string $to): ?array

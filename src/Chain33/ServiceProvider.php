@@ -10,7 +10,7 @@ class ServiceProvider extends LaravelServiceProvider
      * Notes: 部署.
      *
      * @Author: <C.Jason>
-     * @Date: 2020/1/14 5:21 下午
+     * @Date  : 2020/1/14 5:21 下午
      */
     public function boot(): void
     {
@@ -23,7 +23,7 @@ class ServiceProvider extends LaravelServiceProvider
      * Notes: 注册功能.
      *
      * @Author: <C.Jason>
-     * @Date: 2020/1/14 5:21 下午
+     * @Date  : 2020/1/14 5:21 下午
      */
     public function register(): void
     {
