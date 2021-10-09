@@ -7,25 +7,25 @@ use Jason\Chain33\Exceptions\ChainException;
 use Jason\Chain33\Kernel\BaseClient;
 
 /**
- * Class Client
- * @package Jason\Chain33\Manage
+ * Class Client.
  */
 class Client extends BaseClient
 {
-
     /**
      * Notes: 创建定期解冻合约
-     * 1. 开始之前，先将token合部打入冻结合约
-     * @param  string              $beneficiary  受益人
-     * @param  string              $symbol       要冻结的资产名称
-     * @param  string              $exec         要冻结的资产执行器
-     * @param  int                 $total        冻结的资产数量
-     * @param  \DateTimeInterface  $startTime    开始解冻时间
-     * @param  string              $algo         解冻算法，支持 'fix' 固定金额, 'LeftProportion' 剩余比例
-     * @param  int                 $period       解冻周期，单位 秒
-     * @param  int                 $parameter    解冻数值
-     * @param  string              $privateKey   发起人签名私钥
+     * 1. 开始之前，先将token合部打入冻结合约.
+     *
+     * @param  string  $beneficiary  受益人
+     * @param  string  $symbol  要冻结的资产名称
+     * @param  string  $exec  要冻结的资产执行器
+     * @param  int  $total  冻结的资产数量
+     * @param  \DateTimeInterface  $startTime  开始解冻时间
+     * @param  string  $algo  解冻算法，支持 'fix' 固定金额, 'LeftProportion' 剩余比例
+     * @param  int  $period  解冻周期，单位 秒
+     * @param  int  $parameter  解冻数值
+     * @param  string  $privateKey  发起人签名私钥
      * @return string
+     *
      * @throws \Jason\Chain33\Exceptions\ChainException
      * @throws \Jason\Chain33\Exceptions\ConfigException
      */
@@ -42,7 +42,7 @@ class Client extends BaseClient
     ): string {
         $this->walletUnlock();
 
-        if (!in_array($algo, ['FixAmount', 'LeftProportion'])) {
+        if (! in_array($algo, ['FixAmount', 'LeftProportion'])) {
             throw new ChainException('不支持的解冻算法');
         }
 
@@ -62,9 +62,11 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes   : 解冻算法规则
+     * Notes   : 解冻算法规则.
+     *
      * @Date   : 2021/3/26 1:17 下午
      * @Author : <Jason.C>
+     *
      * @param $means
      * @param $period
      * @param $parameter
@@ -97,10 +99,13 @@ class Client extends BaseClient
 
     /**
      * Notes   : 查询合约状态
+     *
      * @Date   : 2021/3/26 11:25 上午
      * @Author : <Jason.C>
+     *
      * @param  string  $unfreezeID  合约的ID，
      * @return array
+     *
      * @throws \Jason\Chain33\Exceptions\ChainException
      */
     public function status(string $unfreezeID): array
@@ -115,11 +120,14 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes   : 查询合约可提币量
+     * Notes   : 查询合约可提币量.
+     *
      * @Date   : 2021/3/26 10:41 上午
      * @Author : <Jason.C>
+     *
      * @param  string  $unfreezeID  合约的ID，可以查询创建冻结合约时得到，同创建冻结合约的交易ID的十六进制，是对应的unfreezeID去掉前缀 “mavl-unfreeze-“。
      * @return int
+     *
      * @throws \Jason\Chain33\Exceptions\ChainException
      */
     public function balance(string $unfreezeID): int
@@ -140,9 +148,11 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes   : 受益人提取
+     * Notes   : 受益人提取.
+     *
      * @Date   : 2021/3/26 11:24 上午
      * @Author : <Jason.C>
+     *
      * @param  string  $unfreezeID  冻结合约的ID 可以查询创建冻结合约时，得到， 同创建冻结合约的交易ID的十六进制
      * @param  string  $privateKey  受益人私钥
      * @return string
@@ -157,9 +167,11 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes   : 终止冻结合约
+     * Notes   : 终止冻结合约.
+     *
      * @Date   : 2021/3/26 11:23 上午
      * @Author : <Jason.C>
+     *
      * @param  string  $unfreezeID  冻结合约的ID
      * @param  string  $privateKey  创建者的私钥
      * @return mixed
@@ -174,14 +186,17 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes   : 用创建地址查询合约列表
+     * Notes   : 用创建地址查询合约列表.
+     *
      * @Date   : 2021/3/26 11:22 上午
      * @Author : <Jason.C>
-     * @param  string  $creator      创建合约的地址
+     *
+     * @param  string  $creator  创建合约的地址
      * @param  string  $beneficiary  受益人地址
-     * @param  int     $count        查询的数量
-     * @param  int     $direction    查询的方向
+     * @param  int  $count  查询的数量
+     * @param  int  $direction  查询的方向
      * @return array
+     *
      * @throws \Jason\Chain33\Exceptions\ChainException
      */
     public function creator(string $creator = '', string $beneficiary = '', int $count = 100, int $direction = 0): array
@@ -200,14 +215,17 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes   : 用受益地址查询合约列表 ListUnfreezeByBeneficiary
+     * Notes   : 用受益地址查询合约列表 ListUnfreezeByBeneficiary.
+     *
      * @Date   : 2021/3/26 11:18 上午
      * @Author : <Jason.C>
+     *
      * @param  string  $beneficiary  受益人地址
-     * @param  string  $creator      创建者地址
-     * @param  int     $count        查询的数量
-     * @param  int     $direction    查询的方向
+     * @param  string  $creator  创建者地址
+     * @param  int  $count  查询的数量
+     * @param  int  $direction  查询的方向
      * @return array
+     *
      * @throws \Jason\Chain33\Exceptions\ChainException
      */
     public function beneficiary(
@@ -228,5 +246,4 @@ class Client extends BaseClient
             ],
         ])['unfreeze'];
     }
-
 }

@@ -4,7 +4,6 @@ namespace Jason\Chain33\Kernel\Utils;
 
 class SECp256k1
 {
-
     public $a;
 
     public $b;
@@ -27,5 +26,4 @@ class SECp256k1
             'y' => gmp_init('32670510020758816978083085130507043184471273380659243275938904335757337482424'),
         ];
     }
-
 }

@@ -4,7 +4,6 @@ namespace Jason\Chain33\Kernel\Utils;
 
 class PointMathBCMATH
 {
-
     /***
      * Computes the result of a point addition and returns the resulting point as an Array.
      * @param  array  $pt
@@ -52,7 +51,6 @@ class PointMathBCMATH
      */
     public static function addPoints(array $pt1, array $pt2, $a, $p): array
     {
-
         $nPt = [];
 
         $gcd = self::bcgcd(bcsub($pt1['x'], $pt2['x']), $p);
@@ -98,23 +96,23 @@ class PointMathBCMATH
         while (bccomp($m, $a) == -1) {
             $a = bcmod($a, $m);
         }
-        $c  = $a;
-        $d  = $m;
+        $c = $a;
+        $d = $m;
         $uc = 1;
         $vc = 0;
         $ud = 0;
         $vd = 1;
         while (bccomp($c, 0) != 0) {
             $temp1 = $c;
-            $q     = bcdiv($d, $c, 0);
-            $c     = bcmod($d, $c);
-            $d     = $temp1;
+            $q = bcdiv($d, $c, 0);
+            $c = bcmod($d, $c);
+            $d = $temp1;
             $temp2 = $uc;
             $temp3 = $vc;
-            $uc    = bcsub($ud, bcmul($q, $uc));
-            $vc    = bcsub($vd, bcmul($q, $vc));
-            $ud    = $temp2;
-            $vd    = $temp3;
+            $uc = bcsub($ud, bcmul($q, $uc));
+            $vc = bcsub($vd, bcmul($q, $vc));
+            $ud = $temp2;
+            $vd = $temp3;
         }
         $result = '';
         if (bccomp($d, 1) == 0) {
@@ -149,10 +147,8 @@ class PointMathBCMATH
     // The Greatest Common Denominator of two large numbers, using BCMath functions.
     private static function bcgcd($value1, $value2)
     {
-
-        if ($value1 < $value2) // Swap $value1 and $value2
-        {
-            $temp   = $value1;
+        if ($value1 < $value2) { // Swap $value1 and $value2
+            $temp = $value1;
             $value1 = $value2;
             $value2 = $temp;
         }
@@ -161,13 +157,12 @@ class PointMathBCMATH
         // for finding the Greatest Common Denominator (GCD)
         $mod = 1;
         while ($mod != 0) {
-            $mod    = bcmod($value1, $value2);
+            $mod = bcmod($value1, $value2);
             $value1 = $value2;
             $value2 = $mod;
         }
 
         return $value1;
-
     }
 
     /***
@@ -187,5 +182,4 @@ class PointMathBCMATH
     {
         return (((int) $number[strlen($number) - 1]) & 1) == 0;
     }
-
 }

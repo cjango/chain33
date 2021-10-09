@@ -4,7 +4,6 @@ namespace Jason\Chain33\Kernel\Utils;
 
 class Base58
 {
-
     /***
      * Permutation table used for Base58 encoding and decoding.
      * @param        $char
@@ -45,13 +44,13 @@ class Base58
      */
     public static function encode($data, bool $littleEndian = true): string
     {
-        $res        = '';
+        $res = '';
         $dataIntVal = gmp_init($data, 16);
         while (gmp_cmp($dataIntVal, gmp_init(0, 10)) > 0) {
-            $qr         = gmp_div_qr($dataIntVal, gmp_init(58, 10));
+            $qr = gmp_div_qr($dataIntVal, gmp_init(58, 10));
             $dataIntVal = $qr[0];
-            $reminder   = gmp_strval($qr[1]);
-            if (!self::permutation_lookup($reminder)) {
+            $reminder = gmp_strval($qr[1]);
+            if (! self::permutation_lookup($reminder)) {
                 throw new \Exception('Something went wrong during base58 encoding');
             }
             $res .= self::permutation_lookup($reminder);
@@ -59,7 +58,7 @@ class Base58
 
         //get number of leading zeros
         $leading = '';
-        $i       = 0;
+        $i = 0;
         while (substr($data, $i, 1) == '0') {
             if ($i != 0 && $i % 2) {
                 $leading .= '1';
@@ -68,9 +67,9 @@ class Base58
         }
 
         if ($littleEndian) {
-            return strrev($res . $leading);
+            return strrev($res.$leading);
         } else {
-            return $res . $leading;
+            return $res.$leading;
         }
     }
 
@@ -82,7 +81,7 @@ class Base58
      */
     public static function decode($encodedData, bool $littleEndian = true): string
     {
-        $res    = gmp_init(0, 10);
+        $res = gmp_init(0, 10);
         $length = strlen($encodedData);
         if ($littleEndian) {
             $encodedData = strrev($encodedData);
@@ -99,17 +98,16 @@ class Base58
         }
 
         $res = gmp_strval($res, 16);
-        $i   = $length - 1;
+        $i = $length - 1;
         while (substr($encodedData, $i, 1) == '1') {
-            $res = '00' . $res;
+            $res = '00'.$res;
             $i--;
         }
 
         if (strlen($res) % 2 != 0) {
-            $res = '0' . $res;
+            $res = '0'.$res;
         }
 
         return $res;
     }
-
 }
