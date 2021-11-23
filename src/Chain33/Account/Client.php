@@ -2,8 +2,12 @@
 
 namespace Jason\Chain33\Account;
 
+use BitWasp\Bitcoin\Address\PayToPubKeyHashAddress;
+use BitWasp\Bitcoin\Crypto\Random\Random;
 use BitWasp\Bitcoin\Key\Factory\HierarchicalKeyFactory;
+use BitWasp\Bitcoin\Mnemonic\Bip39\Bip39Mnemonic;
 use BitWasp\Bitcoin\Mnemonic\Bip39\Bip39SeedGenerator;
+use BitWasp\Bitcoin\Mnemonic\MnemonicFactory;
 use Exception;
 use Jason\Chain33\Exceptions\ChainException;
 use Jason\Chain33\Exceptions\ConfigException;
@@ -18,6 +22,41 @@ use Jason\Chain33\Kernel\Utils\PrivateKey;
  */
 class Client extends BaseClient
 {
+
+    /**
+     * Notes   : 获取助记词，地址，私钥对
+     *
+     * @Date   : 2021/11/23 3:00 下午
+     * @Author : <Jason.C>
+     * @return array
+     * @throws Exception
+     */
+    public function getPairs(): array
+    {
+        $random   = new Random();
+        $entropy  = $random->bytes(Bip39Mnemonic::MIN_ENTROPY_BYTE_LEN);
+        $bip39    = MnemonicFactory::bip39();
+        $mnemonic = $bip39->entropyToMnemonic($entropy);
+
+        $seedGenerator = new Bip39SeedGenerator();
+        $seed          = $seedGenerator->getSeed($mnemonic);
+        $hdFactory     = new HierarchicalKeyFactory();
+        $master        = $hdFactory->fromEntropy($seed);
+        $hardened      = $master->derivePath("44'/13107'/0'/0/0");
+        $address       = new PayToPubKeyHashAddress($hardened->getPublicKey()->getPubKeyHash());
+        $address       = $address->getAddress();
+
+        if (! AddressValidation::validateAddress($address)) {
+            throw new Exception('地址不合法');
+        }
+
+        return [
+            'mnemonic'   => $mnemonic,
+            'address'    => $address,
+            'privateKey' => $hardened->getPrivateKey()->getHex()
+        ];
+    }
+
     /**
      * Notes   : 通过私钥，获取地址
      *
