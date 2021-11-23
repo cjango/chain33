@@ -2,6 +2,8 @@
 
 namespace Jason\Chain33\Account;
 
+use BitWasp\Bitcoin\Key\Factory\HierarchicalKeyFactory;
+use BitWasp\Bitcoin\Mnemonic\Bip39\Bip39SeedGenerator;
 use Exception;
 use Jason\Chain33\Exceptions\ChainException;
 use Jason\Chain33\Exceptions\ConfigException;
@@ -44,6 +46,28 @@ class Client extends BaseClient
         } else {
             throw new ChainException('the address is not valid.');
         }
+    }
+
+    /**
+     * Notes   : 从助记词获取私钥
+     *
+     * @Date   : 2021/11/23 2:11 下午
+     * @Author : <Jason.C>
+     *
+     * @param  string  $mnemonic
+     * @return string
+     *
+     * @throws Exception
+     */
+    public function getPrivateKeyFromSeed(string $mnemonic): string
+    {
+        $seedGenerator = new Bip39SeedGenerator();
+        $seed          = $seedGenerator->getSeed($mnemonic);
+        $hdFactory     = new HierarchicalKeyFactory();
+        $master        = $hdFactory->fromEntropy($seed);
+        $hardened      = $master->derivePath("44'/13107'/0'/0/0");
+
+        return $hardened->getPrivateKey()->getHex();
     }
 
     /**

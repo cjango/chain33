@@ -27,7 +27,7 @@ class Client extends BaseClient
      * @throws MnemonicException
      * @throws WordListException
      */
-    public function localSeed(int $len = 15, string $language = 'english'): Mnemonic
+    public function localSeed(int $len = 12, string $language = 'english'): Mnemonic
     {
         return Bip39::Generate($len, $language);
     }

@@ -25,7 +25,7 @@ class BaseClient
      * Notes   : 解锁钱包.
      *
      * @Date   : 2021/3/24 9:28 上午
-     * @Author : < Jason.C >
+     * @Author : <Jason.c>
      *
      * @return void
      *
@@ -48,7 +48,7 @@ class BaseClient
      * Notes   : 解锁买票功能.
      *
      * @Date   : 2021/3/24 9:30 上午
-     * @Author : < Jason.C > 只解锁买票功能
+     * @Author : <Jason.c> 只解锁买票功能
      *
      * @throws ConfigException
      */
@@ -69,7 +69,7 @@ class BaseClient
      * Notes   : 是否是平行链.
      *
      * @Date   : 2021/3/22 4:18 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.c>
      */
     protected function isParaChain(): bool
     {
@@ -80,7 +80,7 @@ class BaseClient
      * Notes   : 解析平行链的执行器地址
      *
      * @Date   : 2021/3/22 2:48 下午
-     * @Author : < Jason.C >
+     * @Author : <Jason.c>
      *
      * @param $execer
      * @return string
@@ -104,7 +104,7 @@ class BaseClient
      * Notes   : 格式化16进制字符串.
      *
      * @Date   : 2021/3/26 11:05 上午
-     * @Author : < Jason.C >
+     * @Author : <Jason.c>
      *
      * @param $hex
      * @return string

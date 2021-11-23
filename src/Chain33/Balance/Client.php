@@ -118,7 +118,7 @@ class Client extends BaseClient
      * Notes   :  查询合约地址余额，待完善.
      *
      * @Date   : 2021/8/11 10:39 上午
-     * @Author : < Jason.C >
+     * @Author : <Jason.c>
      *
      * @param  string  $execer  合约地址
      * @param  array|string  $address  账户地址
