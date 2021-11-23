@@ -69,11 +69,7 @@ class Base58
                 $reversedTable[$element] = $key;
             }
 
-            if (isset($reversedTable[$char])) {
-                return $reversedTable[$char];
-            } else {
-                return null;
-            }
+            return $reversedTable[$char] ?? null;
         }
 
         return $table[$char] ?? null;

@@ -3,20 +3,21 @@
 namespace Jason\Chain33\Kernel\Utils;
 
 use Exception;
+use GMP;
 
 class PointMathGMP
 {
     /***
-     * Computes the result of a point multiplication and returns the resulting point as an Array.
+     * Computes the result of a point multiplication and returns the resulting point as an array.
      *
      * @param  String Hex $k
-     * @param  Array  $pG  (GMP, GMP)
+     * @param  array  $pG  (GMP, GMP)
      * @param         $base  (INT)
      *
-     * @return Array Point (GMP, GMP)
+     * @return array Point (GMP, GMP)
      * @throws Exception
      */
-    public static function mulPoint($k, array $pG, $a, $b, $p, $base = null)
+    public static function mulPoint($k, array $pG, $a, $b, $p, $base = null): array
     {
         //in order to calculate k*G
         if ($base == 16 || $base == null || is_resource($base)) {
@@ -44,14 +45,15 @@ class PointMathGMP
     }
 
     /***
-     * Computes the result of a point addition and returns the resulting point as an Array.
+     * Computes the result of a point addition and returns the resulting point as an array.
      *
-     * @param  Array  $pt
-     *
-     * @return Array Point
+     * @param  array  $pt
+     * @param $a
+     * @param $p
+     * @return array Point
      * @throws Exception
      */
-    public static function doublePoint(array $pt, $a, $p)
+    public static function doublePoint(array $pt, $a, $p): array
     {
         $gcd = gmp_strval(gmp_gcd(gmp_mod(gmp_mul(gmp_init(2, 10), $pt['y']), $p), $p));
         if ($gcd != '1') {
@@ -116,15 +118,16 @@ class PointMathGMP
     }
 
     /***
-     * Computes the result of a point addition and returns the resulting point as an Array.
+     * Computes the result of a point addition and returns the resulting point as an array.
      *
-     * @param  Array  $pt1
-     * @param  Array  $pt2
-     *
-     * @return Array Point
+     * @param  array  $pt1
+     * @param  array  $pt2
+     * @param $a
+     * @param $p
+     * @return array Point
      * @throws Exception
      */
-    public static function addPoints(array $pt1, array $pt2, $a, $p)
+    public static function addPoints(array $pt1, array $pt2, $a, $p): array
     {
         if (gmp_cmp($pt1['x'], $pt2['x']) == 0 && gmp_cmp($pt1['y'], $pt2['y']) == 0) { //if identical
             return self::doublePoint($pt1, $a, $p);
@@ -185,15 +188,17 @@ class PointMathGMP
         return $nPt;
     }
 
-    /***
+    /**
      * Returns true if the point is on the curve and false if it isn't.
      *
      * @param $x
      * @param $y
-     *
+     * @param $a
+     * @param $b
+     * @param $p
      * @return bool
      */
-    public static function validatePoint($x, $y, $a, $b, $p)
+    public static function validatePoint($x, $y, $a, $b, $p): bool
     {
         $x  = gmp_init($x, 16);
         $y2 = gmp_mod(
@@ -219,9 +224,13 @@ class PointMathGMP
      * Calculate the Y coordinates for a given X coordinate.
      *
      * @param        $x
+     * @param $a
+     * @param $b
+     * @param $p
      * @param  null  $derEvenOrOddCode
      *
      * @return array|null|String
+     * @throws Exception
      */
     public static function calculateYWithX($x, $a, $b, $p, $derEvenOrOddCode = null)
     {
@@ -248,10 +257,10 @@ class PointMathGMP
         } else {
             if ($derEvenOrOddCode == '02') { // even
                 $resY = null;
-                if (false == gmp_strval(gmp_mod($y[0], gmp_init(2, 10)), 10)) {
+                if (false == gmp_strval(gmp_mod($y[0], gmp_init(2, 10)))) {
                     $resY = gmp_strval($y[0], 16);
                 }
-                if (false == gmp_strval(gmp_mod($y[1], gmp_init(2, 10)), 10)) {
+                if (false == gmp_strval(gmp_mod($y[1], gmp_init(2, 10)))) {
                     $resY = gmp_strval($y[1], 16);
                 }
                 if ($resY) {
@@ -264,10 +273,10 @@ class PointMathGMP
             } else {
                 if ($derEvenOrOddCode == '03') { // odd
                     $resY = null;
-                    if (true == gmp_strval(gmp_mod($y[0], gmp_init(2, 10)), 10)) {
+                    if (true == gmp_strval(gmp_mod($y[0], gmp_init(2, 10)))) {
                         $resY = gmp_strval($y[0], 16);
                     }
-                    if (true == gmp_strval(gmp_mod($y[1], gmp_init(2, 10)), 10)) {
+                    if (true == gmp_strval(gmp_mod($y[1], gmp_init(2, 10)))) {
                         $resY = gmp_strval($y[1], 16);
                     }
                     if ($resY) {
@@ -288,18 +297,18 @@ class PointMathGMP
      * Calculates the square root of $a mod p and returns the 2 solutions as an array.
      *
      * @param $a
-     *
+     * @param $p
      * @return array|null
      * @throws Exception
      */
-    public static function sqrt($a, $p)
+    public static function sqrt($a, $p): ?array
     {
         if (gmp_legendre($a, $p) != 1) {
             //no result
             return null;
         }
 
-        if (gmp_strval(gmp_mod($p, gmp_init(4, 10)), 10) == 3) {
+        if (gmp_strval(gmp_mod($p, gmp_init(4, 10))) == 3) {
             $sqrt1 = gmp_powm(
                 $a,
                 gmp_div_q(
@@ -322,11 +331,11 @@ class PointMathGMP
     /***
      * Returns Negated Point (Y).
      *
-     * @param $point Array(GMP, GMP)
+     * @param $point array(GMP, GMP)
      *
-     * @return Array(GMP, GMP)
+     * @return array(GMP, GMP)
      */
-    public static function negatePoint($point)
+    public static function negatePoint(array $point): array
     {
         return ['x' => $point['x'], 'y' => gmp_neg($point['y'])];
     }
@@ -334,13 +343,13 @@ class PointMathGMP
     // These 2 function don't really belong here.
 
     // Checks is the given number (DEC String) is even
-    public static function isEvenNumber($number)
+    public static function isEvenNumber($number): bool
     {
         return (((int) $number[strlen($number) - 1]) & 1) == 0;
     }
 
     // Converts BIN to GMP
-    public static function bin2gmp($binStr)
+    public static function bin2gmp($binStr): GMP
     {
         $v = gmp_init('0');
 

@@ -125,11 +125,11 @@ class AddressCode
      * .
      *
      * @param  string  $hex
-     *
+     * @param  string  $prefix
      * @return String Base58
      * @throws Exception
      */
-    public static function Encode($hex, $prefix = '00'): string
+    public static function Encode(string $hex, string $prefix = '00'): string
     {
         // The magical prefix
         $hex_with_prefix = $prefix.$hex;
@@ -158,8 +158,8 @@ class AddressCode
     public static function Decode($address)
     {
         $hex_with_prefix_and_check = Base58::decode($address);
-        $prefix                    = substr($hex_with_prefix_and_check, 0, 2);
-        $checksum                  = substr($hex_with_prefix_and_check, -8);
+//        $prefix                    = substr($hex_with_prefix_and_check, 0, 2);
+//        $checksum                  = substr($hex_with_prefix_and_check, -8);
 
         return substr($hex_with_prefix_and_check, 2, -8);
     }

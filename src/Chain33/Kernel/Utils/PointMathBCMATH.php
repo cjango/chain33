@@ -2,6 +2,7 @@
 
 namespace Jason\Chain33\Kernel\Utils;
 
+use ErrorException;
 use Exception;
 
 class PointMathBCMATH
@@ -78,6 +79,7 @@ class PointMathBCMATH
      * @param         $p
      *
      * @return array Point
+     * @throws ErrorException
      */
     public static function doublePoint(array $pt, $a, $p): array
     {
@@ -114,7 +116,8 @@ class PointMathBCMATH
      * @param $a
      * @param $m
      *
-     * @return bbc math number
+     * @return int|string math number
+     * @throws ErrorException
      */
     private static function inverse_mod($a, $m)
     {
@@ -132,7 +135,7 @@ class PointMathBCMATH
         $vd = 1;
         while (bccomp($c, 0) != 0) {
             $temp1 = $c;
-            $q     = bcdiv($d, $c, 0);
+            $q     = bcdiv($d, $c);
             $c     = bcmod($d, $c);
             $d     = $temp1;
             $temp2 = $uc;
@@ -142,7 +145,7 @@ class PointMathBCMATH
             $ud    = $temp2;
             $vd    = $temp3;
         }
-        $result = '';
+
         if (bccomp($d, 1) == 0) {
             if (bccomp($ud, 0) == 1) {
                 $result = $ud;
@@ -161,16 +164,16 @@ class PointMathBCMATH
     /***
      * Returns Negated Point (Y).
      *
-     * @param $point Array(BC, BC)
+     * @param $point array(BC, BC)
      *
-     * @return Array(BC, BC)
+     * @return array(BC, BC)
      */
-    public static function negatePoint($point)
+    public static function negatePoint(array $point): array
     {
         return ['x' => $point['x'], 'y' => bcsub(0, $point['y'])];
     }
 
-    public static function isEvenNumber($number)
+    public static function isEvenNumber($number): bool
     {
         return (((int) $number[strlen($number) - 1]) & 1) == 0;
     }
@@ -182,13 +185,13 @@ class PointMathBCMATH
     /***
      * Compares Points if Identical.
      *
-     * @param $pt1 Array(BC, BC)
-     * @param $pt2 Array(BC, BC)
+     * @param $pt1 array(BC, BC)
+     * @param $pt2 array(BC, BC)
      *
      * @return int(BC, BC)
      */
 
-    private static function comparePoint($pt1, $pt2): int
+    private static function comparePoint(array $pt1, array $pt2): int
     {
         if (bccomp($pt1['x'], $pt2['x']) == 0 && bccomp($pt1['y'], $pt2['y']) == 0) {
             return 0;

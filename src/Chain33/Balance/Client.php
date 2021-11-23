@@ -78,12 +78,11 @@ class Client extends BaseClient
      * @Author : <Jason.C>
      *
      * @param  string  $address  要查询的地址
-     * @param  string  $symbol  资产名称，如 bty， token的各种 symbol ， 跨链的bty 名称为 coins.bty, 跨链的token 为 token.symbol
      * @param  string  $exec  资产原始合约名称，如bty 在 coins 合约中产生，各种token 在 token 合约中产生， 跨链的资产在 paracross 合约中
      * @param  string  $execer  执行器名称，coins 查询可用的主代币 ，ticket 查询正在挖矿的主代币
      * @return mixed
      */
-    public function all(string $address, string $symbol = '', string $exec = 'coins', string $execer = 'coins')
+    public function all(string $address, string $exec = 'coins', string $execer = 'coins')
     {
         return $this->client->GetAllExecBalance([
             'addr'         => $address,

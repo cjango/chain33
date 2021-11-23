@@ -37,7 +37,7 @@ class BaseClient
             throw new ConfigException('need wallet passwod');
         }
 
-        $res = $this->client->UnLock([
+        $this->client->UnLock([
             'passwd'         => $this->config['password'],
             'walletOrTicket' => false,
             'timeout'        => 0,
@@ -58,7 +58,7 @@ class BaseClient
             throw new ConfigException('need wallet passwod');
         }
 
-        $res = $this->client->UnLock([
+        $this->client->UnLock([
             'passwd'         => $this->config['password'],
             'walletOrTicket' => true,
             'timeout'        => 0,

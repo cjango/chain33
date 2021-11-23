@@ -2,17 +2,19 @@
 
 namespace Jason\Chain33\Kernel\Utils;
 
+use GMP;
+
 class SECp256k1
 {
-    public $a;
+    public GMP $a;
 
-    public $b;
+    public GMP $b;
 
-    public $p;
+    public GMP $p;
 
-    public $n;
+    public GMP $n;
 
-    public $G;
+    public array $G;
 
     public function __construct()
     {

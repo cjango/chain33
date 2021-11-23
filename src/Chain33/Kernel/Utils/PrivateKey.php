@@ -6,7 +6,7 @@ use Exception;
 
 class PrivateKey
 {
-    public $k;
+    public string $k;
 
     public function __construct($private_key = null)
     {
@@ -25,7 +25,7 @@ class PrivateKey
      *
      * @throws Exception
      */
-    public function generateRandomPrivateKey($extra = 'FSQF5356dsdsqdfEFEQ3fq4q6dq4s5d')
+    public function generateRandomPrivateKey(string $extra = 'FSQF5356dsdsqdfEFEQ3fq4q6dq4s5d')
     {
         $secp256k1 = new SECp256k1();
         $n         = $secp256k1->n;
@@ -67,7 +67,7 @@ class PrivateKey
      *
      * @return String Hex
      */
-    public function getPrivateKey()
+    public function getPrivateKey(): string
     {
         return $this->k;
     }
@@ -75,10 +75,10 @@ class PrivateKey
     /***
      * returns the X and Y point coordinates of the public key.
      *
-     * @return Array Point
+     * @return array Point
      * @throws Exception
      */
-    public function getPubKeyPoints()
+    public function getPubKeyPoints(): array
     {
         $secp256k1 = new SECp256k1();
         $G         = $secp256k1->G;
