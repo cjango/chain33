@@ -5,8 +5,8 @@ namespace Jason\Chain33;
 use Pimple\Container;
 
 /**
- * Class Application
- * @package Jason\Chain33
+ * Class Application.
+ *
  * @method static Account\Client Account
  * @method static Balance\Client Balance
  * @method static Chain\Client Chain
@@ -29,12 +29,12 @@ use Pimple\Container;
  */
 class Application extends Container
 {
-
     /**
-     * 要注册的服务类
+     * 要注册的服务类.
+     *
      * @var array
      */
-    protected $providers = [
+    protected array $providers = [
         Account\ServiceProvider::class,
         Balance\ServiceProvider::class,
         Chain\ServiceProvider::class,
@@ -80,9 +80,11 @@ class Application extends Container
     }
 
     /**
-     * 获取服务 $this->account->do()
+     * 获取服务 $this->account->do().
+     *
      * @Author: <C.Jason>
      * @Date  : 2020/3/17 20:44 下午
+     *
      * @param  string  $name  服务名称
      * @return mixed
      */
@@ -92,16 +94,17 @@ class Application extends Container
     }
 
     /**
-     * Notes: 获取服务 $this->account($args)->do()
+     * Notes: 获取服务 $this->account($args)->do().
+     *
      * @Author: <C.Jason>
      * @Date  : 2020/3/17 20:44 下午
+     *
      * @param  string  $name  服务名称
-     * @param          $arguments
+     * @param  $arguments
      * @return mixed
      */
     public function __call(string $name, $arguments)
     {
         return $this->offsetGet(strtolower($name));
     }
-
 }

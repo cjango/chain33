@@ -3,49 +3,41 @@
 namespace Jason\Chain33\Wallet;
 
 use Jason\Bip39\Bip39;
+use Jason\Bip39\Exception\MnemonicException;
+use Jason\Bip39\Exception\WordListException;
 use Jason\Bip39\Mnemonic;
+use Jason\Chain33\Exceptions\ConfigException;
 use Jason\Chain33\Kernel\BaseClient;
 
 /**
- * Class Client
- * @package Jason\Chain33\BaseClient
+ * Class Client.
  */
 class Client extends BaseClient
 {
-
     /**
-     * Notes   : 本地生成一个 bip39 标准的助记词
+     * Notes   : 本地生成 bip39 标准的助记词.
+     *
      * @Date   : 2021/7/19 3:28 下午
      * @Author : <Jason.C>
-     * @param  int     $len       助记词位数
+     *
+     * @param  int  $len  助记词位数
      * @param  string  $language  助记词语言
-     * @return \Jason\Bip39\Mnemonic
-     * @throws \Jason\Bip39\Exception\MnemonicException
-     * @throws \Jason\Bip39\Exception\WordListException
+     * @return Mnemonic
+     *
+     * @throws MnemonicException
+     * @throws WordListException
      */
-    public function localSeed(int $len = 15, string $language = 'english'): Mnemonic
+    public function localSeed(int $len = 12, string $language = 'english'): Mnemonic
     {
         return Bip39::Generate($len, $language);
     }
 
     /**
-     * Notes   : 生成SEED
-     * @Date   : 2021/3/21 12:10 下午
-     * @Author : <Jason.C>
-     * @param  int  $lang  0 english 1 中文
-     * @return string
-     */
-    public function genSeed(int $lang = 0): string
-    {
-        return $this->client->GenSeed([
-            'lang' => $lang,
-        ])['seed'];
-    }
-
-    /**
-     * Notes: 创建一个钱包
+     * Notes: 创建钱包.
+     *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 17:33
+     *
      * @param  string  $password  钱包密码
      * @return bool
      */
@@ -60,11 +52,30 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes: 获取钱包助记词
+     * Notes   : 通过chain33生成助记词.
+     *
+     * @Date   : 2021/3/21 12:10 下午
+     * @Author : <Jason.C>
+     *
+     * @param  int  $lang  0 english 1 中文
+     * @return string
+     */
+    public function genSeed(int $lang = 0): string
+    {
+        return $this->client->GenSeed([
+            'lang' => $lang,
+        ])['seed'];
+    }
+
+    /**
+     * Notes: 获取钱包助记词.
+     *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 17:34
+     *
      * @return string
-     * @throws \Jason\Chain33\Exceptions\ConfigException
+     *
+     * @throws ConfigException
      */
     public function getSeed(): string
     {
@@ -77,8 +88,10 @@ class Client extends BaseClient
 
     /**
      * Notes: 修改密码
+     *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 17:36
+     *
      * @param  string  $old  旧密码
      * @param  string  $new  新密码
      * @return bool
@@ -93,8 +106,10 @@ class Client extends BaseClient
 
     /**
      * Notes: 钱包状态
+     *
      * @Author: <C.Jason>
      * @Date  : 2020/3/18 21:38
+     *
      * @return array
      */
     public function status(): array
@@ -103,12 +118,15 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes: 设置交易费用
+     * Notes: 设置交易费用.
+     *
      * @Author: <C.Jason>
      * @Date  : 2020/3/18 21:38
+     *
      * @param  int  $amount
      * @return bool
-     * @throws \Jason\Chain33\Exceptions\ConfigException
+     *
+     * @throws ConfigException
      */
     public function setFee(int $amount): bool
     {
@@ -120,14 +138,16 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes: 获取钱包交易列表
+     * Notes: 获取钱包交易列表.
+     *
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 17:44
-     * @param  string  $fromTx     Sprintf(“%018d”, height*100000 + index)，表示从高度 height 中的 index
-     *                             开始获取交易列表；第一次传参为空，获取最新的交易
-     * @param  int     $count      获取交易列表的个数
-     * @param  int     $mode       获取交易列表的个数
-     * @param  int     $direction  查找方式；0，获取最新的交易数据，倒叙排序，在交易列表中时间高度是递减的；1，正序排序，按照时间，区块高度增加的方向获取交易列表
+     *
+     * @param  string  $fromTx  Sprintf(“%018d”, height*100000 + index)，表示从高度 height 中的 index
+     *                          开始获取交易列表；第一次传参为空，获取最新的交易
+     * @param  int  $count  获取交易列表的个数
+     * @param  int  $mode  获取交易列表的个数
+     * @param  int  $direction  查找方式；0，获取最新的交易数据，倒叙排序，在交易列表中时间高度是递减的；1，正序排序，按照时间，区块高度增加的方向获取交易列表
      * @return array
      */
     public function txList(string $fromTx, int $count, int $mode, int $direction = 0): array
@@ -141,9 +161,11 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes   : 查询手续费，以及交易数量
+     * Notes   : 查询手续费，以及交易数量.
+     *
      * @Date   : 2021/3/29 5:36 下午
      * @Author : <Jason.C>
+     *
      * @return array
      */
     public function totalFee(): array
@@ -152,18 +174,21 @@ class Client extends BaseClient
 
         return $this->client->QueryTotalFee([
             'keys' => [
-                base64_encode('TotalFeeKey:' . hex2bin($this->parseHexString($lastHash))),
+                base64_encode('TotalFeeKey:'.hex2bin($this->parseHexString($lastHash))),
             ],
         ]);
     }
 
     /**
-     * Notes: 合并账户余额
+     * Notes: 合并账户余额.
+     *
      * @Author: <C.Jason>
      * @Date  : 2020/5/14 1:31 下午
+     *
      * @param  string  $to  合并钱包上的所有余额到一个账户地址
      * @return mixed
-     * @throws \Jason\Chain33\Exceptions\ConfigException
+     *
+     * @throws ConfigException
      */
     public function merge(string $to): ?array
     {
@@ -173,5 +198,4 @@ class Client extends BaseClient
             'to' => $to,
         ])['hashes'];
     }
-
 }

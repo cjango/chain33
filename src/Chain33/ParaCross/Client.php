@@ -2,26 +2,28 @@
 
 namespace Jason\Chain33\ParaCross;
 
+use Jason\Chain33\Exceptions\ChainException;
 use Jason\Chain33\Kernel\BaseClient;
 
 /**
- * Class Client
- * @package Jason\Chain33\ParaCross
+ * Class Client.
  */
 class Client extends BaseClient
 {
-
     /**
-     * Notes   : 跨链资产转移接口
+     * Notes   : 跨链资产转移接口.
+     *
      * @Date   : 2021/3/23 3:50 下午
      * @Author : <Jason.C>
-     * @param  string  $assetExec    资产原生合约，比如coins,token
+     *
+     * @param  string  $assetExec  资产原生合约，比如coins,token
      * @param  string  $assetSymbol  资产符号，比如bty, ccny
-     * @param  int     $amount       转移资产数量，精确到10^8
-     * @param  string  $to           可选，目标地址，缺省为交易签名地址
-     * @param  string  $note         可选，转移备注
+     * @param  int  $amount  转移资产数量，精确到10^8
+     * @param  string  $to  可选，目标地址，缺省为交易签名地址
+     * @param  string  $note  可选，转移备注
      * @return mixed
-     * @throws \Jason\Chain33\Exceptions\ChainException
+     *
+     * @throws ChainException
      */
     public function crossAssetTransfer(
         string $assetExec,
@@ -45,9 +47,11 @@ class Client extends BaseClient
 
     /**
      * Notes   : 查询资产转移是否成功接口
-     *           只能在主链上查询
+     *           只能在主链上查询.
+     *
      * @Date   : 2021/3/23 3:52 下午
      * @Author : <Jason.C>
+     *
      * @param $txHash
      * @return array
      */
@@ -63,13 +67,16 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes   : 平行链跨资产转到合约接口
+     * Notes   : 平行链跨资产转到合约接口.
+     *
      * @Date   : 2021/3/23 3:47 下午
      * @Author : <Jason.C>
-     * @param  int     $amount  转移数量
-     * @param  string  $token   转移资产符号,默认原生合约就是paracross，所以只填符号即可
+     *
+     * @param  int  $amount  转移数量
+     * @param  string  $token  转移资产符号,默认原生合约就是paracross，所以只填符号即可
      * @return array
-     * @throws \Jason\Chain33\Exceptions\ChainException
+     *
+     * @throws ChainException
      */
     public function transferToExec(int $amount, string $token): array
     {
@@ -80,15 +87,17 @@ class Client extends BaseClient
                 'execName'  => $this->parseExecer('trade'),
                 'to'        => $this->app->miner->execer($this->parseExecer('trade')),
                 'amount'    => $amount,
-                'cointoken' => 'coins.' . $token,
+                'cointoken' => 'coins.'.$token,
             ],
         ]);
     }
 
     /**
-     * Notes   : 查询平行链共识高度
+     * Notes   : 查询平行链共识高度.
+     *
      * @Date   : 2021/3/23 3:42 下午
      * @Author : <Jason.C>
+     *
      * @param  string  $paraName
      * @return array
      */
@@ -104,11 +113,13 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes   : 查询平行链某高度共识情况
+     * Notes   : 查询平行链某高度共识情况.
+     *
      * @Date   : 2021/3/23 3:40 下午
      * @Author : <Jason.C>
+     *
      * @param  string  $paraName
-     * @param  int     $height
+     * @param  int  $height
      * @return array
      */
     public function titleHeight(int $height, string $paraName = ''): array
@@ -124,9 +135,11 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes   : 查询平行链高度和共识高度
+     * Notes   : 查询平行链高度和共识高度.
+     *
      * @Date   : 2021/3/23 3:38 下午
      * @Author : <Jason.C>
+     *
      * @param  string  $paraName
      * @return array
      */
@@ -142,9 +155,11 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes   : 查询平行链高度和主链匹配高度
+     * Notes   : 查询平行链高度和主链匹配高度.
+     *
      * @Date   : 2021/3/23 3:38 下午
      * @Author : <Jason.C>
+     *
      * @param  int  $start
      * @param  int  $end
      * @return mixed
@@ -161,5 +176,4 @@ class Client extends BaseClient
             ],
         ]);
     }
-
 }

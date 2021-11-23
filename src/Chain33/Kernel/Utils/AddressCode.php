@@ -2,24 +2,28 @@
 
 namespace Jason\Chain33\Kernel\Utils;
 
+use Exception;
+
 class AddressCode
 {
-
     /***
      * returns the Uncompressed DER encoded public key.
+     *
      * @return String Hex
      */
     public static function Hex(array $point): string
     {
-        return '04' . $point['x'] . $point['y'];
+        return '04'.$point['x'].$point['y'];
     }
 
     /**
      * returns the public key coordinates as an array.
-     * Input can be compressed or uncompressed DER Encoded Pubkey
+     * Input can be compressed or uncompressed DER Encoded Pubkey.
+     *
      * @param $derPubKey
      * @return array
-     * @throws \Exception
+     *
+     * @throws Exception
      */
     public static function Point($derPubKey): array
     {
@@ -32,16 +36,18 @@ class AddressCode
         } elseif ((substr($derPubKey, 0, 2) == '02' || substr($derPubKey, 0, 2) == '03') && strlen($derPubKey) == 66) {
             return self::Decompress($derPubKey);
         } else {
-            throw new \Exception('Invalid derPubKey format :  $compressedDerPubKey');
+            throw new Exception('Invalid derPubKey format :  $compressedDerPubKey');
         }
     }
 
     /**
      * returns the public key coordinates as an array.
-     * Input can be compressed or uncompressed DER Encoded Pubkey
+     * Input can be compressed or uncompressed DER Encoded Pubkey.
+     *
      * @param $compressedDerPubKey
      * @return array
-     * @throws \Exception
+     *
+     * @throws Exception
      */
     public static function Decompress($compressedDerPubKey): array
     {
@@ -61,21 +67,22 @@ class AddressCode
         } elseif (substr($compressedDerPubKey, 0, 2) == '04' && strlen($compressedDerPubKey) == 130) {
             return self::Point($compressedDerPubKey);
         } else {
-            throw new \Exception('Invalid compressedDerPubKey format : ' . $compressedDerPubKey);
+            throw new Exception('Invalid compressedDerPubKey format : '.$compressedDerPubKey);
         }
     }
 
     /***
      * returns the compressed DER encoded public key.
+     *
      * @return String Hex
      */
     public static function Compress($pubKey): string
     {
         if (gmp_strval(gmp_mod(gmp_init($pubKey['y'], 16), gmp_init(2, 10))) == 0) {
-            $compressedDerPubKey = '02' . $pubKey['x'];
+            $compressedDerPubKey = '02'.$pubKey['x'];
         }    //if $pubKey['y'] is even
         else {
-            $compressedDerPubKey = '03' . $pubKey['x'];
+            $compressedDerPubKey = '03'.$pubKey['x'];
         }    //if $pubKey['y'] is odd
 
         return $compressedDerPubKey;
@@ -84,9 +91,11 @@ class AddressCode
     /***
      * returns the HASH160 version of the Publick Key
      * .
+     *
      * @param  string  $derPubKey
+     *
      * @return String Hash160
-     * @throws \Exception
+     * @throws Exception
      */
     public static function Hash(string $derPubKey): string
     {
@@ -95,49 +104,44 @@ class AddressCode
         return hash('ripemd160', hex2bin($sha256));
     }
 
+    /**
+     * returns the private key under the Wallet Import Format.
+     *
+     * @return string Base58
+     *
+     * @throws Exception
+     */
+    public static function WIF($private_key, $prefix = '80', $compressed = true): string
+    {
+        if ($compressed) {
+            $private_key = $private_key.'01';
+        }
+
+        return strrev(self::Encode($private_key, $prefix));
+    }
+
     /***
      * returns the Bitcoin address version of the Publick Key
      * .
+     *
      * @param  string  $hex
+     *
      * @return String Base58
-     * @throws \Exception
+     * @throws Exception
      */
-    public static function Encode($hex, $prefix = "00"): string
+    public static function Encode($hex, $prefix = '00'): string
     {
         // The magical prefix
-        $hex_with_prefix = $prefix . $hex;
+        $hex_with_prefix = $prefix.$hex;
 
         //checksum
         $sha256   = hash('sha256', hex2bin($hex_with_prefix));
         $checksum = hash('sha256', hex2bin($sha256));
 
         // Encode
-        $address = $hex_with_prefix . substr($checksum, 0, 8);
+        $address = $hex_with_prefix.substr($checksum, 0, 8);
 
-        return Base58::Encode($address);
-    }
-
-    public static function Decode($address)
-    {
-        $hex_with_prefix_and_check = Base58::Decode($address);
-        $prefix                    = substr($hex_with_prefix_and_check, 0, 2);
-        $checksum                  = substr($hex_with_prefix_and_check, -8);
-
-        return substr($hex_with_prefix_and_check, 2, -8);
-    }
-
-    /**
-     * returns the private key under the Wallet Import Format
-     * @return String Base58
-     * @throws \Exception
-     */
-    public static function WIF($private_key, $prefix = '80', $compressed = true): string
-    {
-        if ($compressed) {
-            $private_key = $private_key . '01';
-        }
-
-        return strrev(self::Encode($private_key, $prefix));
+        return Base58::encode($address);
     }
 
     public static function DeWIF($wif, $compressed = true)
@@ -151,4 +155,12 @@ class AddressCode
         return $hex;
     }
 
+    public static function Decode($address)
+    {
+        $hex_with_prefix_and_check = Base58::decode($address);
+        $prefix                    = substr($hex_with_prefix_and_check, 0, 2);
+        $checksum                  = substr($hex_with_prefix_and_check, -8);
+
+        return substr($hex_with_prefix_and_check, 2, -8);
+    }
 }

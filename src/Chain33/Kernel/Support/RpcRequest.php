@@ -4,7 +4,6 @@ namespace Jason\Chain33\Kernel\Support;
 
 class RpcRequest
 {
-
     protected string $jsonrpc = '2.0';
 
     protected int $id;
@@ -34,7 +33,7 @@ class RpcRequest
 
     public function setMethod(string $method): RpcRequest
     {
-        $this->method = $this->prefix . '.' . $method;
+        $this->method = $this->prefix.'.'.$method;
 
         return $this;
     }
@@ -59,6 +58,7 @@ class RpcRequest
             'method'  => $this->method,
             'params'  => $this->params,
         ];
+
         return json_encode($data);
     }
 }

@@ -2,20 +2,60 @@
 
 namespace Jason\Chain33\Kernel\Utils;
 
+use Exception;
+
 class PointMathGMP
 {
+    /***
+     * Computes the result of a point multiplication and returns the resulting point as an Array.
+     *
+     * @param  String Hex $k
+     * @param  Array  $pG  (GMP, GMP)
+     * @param         $base  (INT)
+     *
+     * @return Array Point (GMP, GMP)
+     * @throws Exception
+     */
+    public static function mulPoint($k, array $pG, $a, $b, $p, $base = null)
+    {
+        //in order to calculate k*G
+        if ($base == 16 || $base == null || is_resource($base)) {
+            $k = gmp_init($k, 16);
+        }
+        if ($base == 10) {
+            $k = gmp_init($k, 10);
+        }
+        $kBin = gmp_strval($k, 2);
+
+        $lastPoint = $pG;
+        for ($i = 1; $i < strlen($kBin); $i++) {
+            if (substr($kBin, $i, 1) == 1) {
+                $dPt       = self::doublePoint($lastPoint, $a, $p);
+                $lastPoint = self::addPoints($dPt, $pG, $a, $p);
+            } else {
+                $lastPoint = self::doublePoint($lastPoint, $a, $p);
+            }
+        }
+        if (! self::validatePoint(gmp_strval($lastPoint['x'], 16), gmp_strval($lastPoint['y'], 16), $a, $b, $p)) {
+            throw new Exception('The resulting point is not on the curve.');
+        }
+
+        return $lastPoint;
+    }
 
     /***
      * Computes the result of a point addition and returns the resulting point as an Array.
+     *
      * @param  Array  $pt
+     *
      * @return Array Point
-     * @throws \Exception
+     * @throws Exception
      */
     public static function doublePoint(array $pt, $a, $p)
     {
         $gcd = gmp_strval(gmp_gcd(gmp_mod(gmp_mul(gmp_init(2, 10), $pt['y']), $p), $p));
         if ($gcd != '1') {
-            throw new \Exception('This library doesn\'t yet supports point at infinity. See https://github.com/BitcoinPHP/BitcoinECDSA.php/issues/9');
+            throw new Exception('This library doesn\'t yet supports point at infinity. See https://github.com/BitcoinPHP/BitcoinECDSA.php/issues/9');
         }
 
         // SLOPE = (3 * ptX^2 + a )/( 2*ptY )
@@ -77,21 +117,22 @@ class PointMathGMP
 
     /***
      * Computes the result of a point addition and returns the resulting point as an Array.
+     *
      * @param  Array  $pt1
      * @param  Array  $pt2
+     *
      * @return Array Point
-     * @throws \Exception
+     * @throws Exception
      */
     public static function addPoints(array $pt1, array $pt2, $a, $p)
     {
-        if (gmp_cmp($pt1['x'], $pt2['x']) == 0 && gmp_cmp($pt1['y'], $pt2['y']) == 0) //if identical
-        {
+        if (gmp_cmp($pt1['x'], $pt2['x']) == 0 && gmp_cmp($pt1['y'], $pt2['y']) == 0) { //if identical
             return self::doublePoint($pt1, $a, $p);
         }
 
         $gcd = gmp_strval(gmp_gcd(gmp_sub($pt1['x'], $pt2['x']), $p));
         if ($gcd != '1') {
-            throw new \Exception('This library doesn\'t yet supports point at infinity. See https://github.com/BitcoinPHP/BitcoinECDSA.php/issues/9');
+            throw new Exception('This library doesn\'t yet supports point at infinity. See https://github.com/BitcoinPHP/BitcoinECDSA.php/issues/9');
         }
 
         // SLOPE = (pt1Y - pt2Y)/( pt1X - pt2X )
@@ -145,147 +186,11 @@ class PointMathGMP
     }
 
     /***
-     * Computes the result of a point multiplication and returns the resulting point as an Array.
-     * @param  String Hex $k
-     * @param  Array  $pG    (GMP, GMP)
-     * @param         $base  (INT)
-     * @return Array Point (GMP, GMP)
-     * @throws \Exception
-     */
-    public static function mulPoint($k, array $pG, $a, $b, $p, $base = null)
-    {
-        //in order to calculate k*G
-        if ($base == 16 || $base == null || is_resource($base)) {
-            $k = gmp_init($k, 16);
-        }
-        if ($base == 10) {
-            $k = gmp_init($k, 10);
-        }
-        $kBin = gmp_strval($k, 2);
-
-        $lastPoint = $pG;
-        for ($i = 1; $i < strlen($kBin); $i++) {
-            if (substr($kBin, $i, 1) == 1) {
-                $dPt       = self::doublePoint($lastPoint, $a, $p);
-                $lastPoint = self::addPoints($dPt, $pG, $a, $p);
-            } else {
-                $lastPoint = self::doublePoint($lastPoint, $a, $p);
-            }
-        }
-        if (!self::validatePoint(gmp_strval($lastPoint['x'], 16), gmp_strval($lastPoint['y'], 16), $a, $b, $p)) {
-            throw new \Exception('The resulting point is not on the curve.');
-        }
-
-        return $lastPoint;
-    }
-
-    /***
-     * Calculates the square root of $a mod p and returns the 2 solutions as an array.
-     * @param $a
-     * @return array|null
-     * @throws \Exception
-     */
-    public static function sqrt($a, $p)
-    {
-        if (gmp_legendre($a, $p) != 1) {
-            //no result
-            return null;
-        }
-
-        if (gmp_strval(gmp_mod($p, gmp_init(4, 10)), 10) == 3) {
-            $sqrt1 = gmp_powm(
-                $a,
-                gmp_div_q(
-                    gmp_add($p, gmp_init(1, 10)),
-                    gmp_init(4, 10)
-                ),
-                $p
-            );
-            // there are always 2 results for a square root
-            // In an infinite number field you have -2^2 = 2^2 = 4
-            // In a finite number field you have a^2 = (p-a)^2
-            $sqrt2 = gmp_mod(gmp_sub($p, $sqrt1), $p);
-
-            return [$sqrt1, $sqrt2];
-        } else {
-            throw new \Exception('P % 4 != 3 , this isn\'t supported yet.');
-        }
-    }
-
-    /***
-     * Calculate the Y coordinates for a given X coordinate.
-     * @param        $x
-     * @param  null  $derEvenOrOddCode
-     * @return array|null|String
-     */
-    public static function calculateYWithX($x, $a, $b, $p, $derEvenOrOddCode = null)
-    {
-        $x  = gmp_init($x, 16);
-        $y2 = gmp_mod(
-            gmp_add(
-                gmp_add(
-                    gmp_powm($x, gmp_init(3, 10), $p),
-                    gmp_mul($a, $x)
-                ),
-                $b
-            ),
-            $p
-        );
-
-        $y = self::sqrt($y2, $p);
-
-        if (!$y) //if there is no result
-        {
-            return null;
-        }
-
-        if (!$derEvenOrOddCode) {
-            return $y;
-        } else {
-            if ($derEvenOrOddCode == '02') // even
-            {
-                $resY = null;
-                if (false == gmp_strval(gmp_mod($y[0], gmp_init(2, 10)), 10)) {
-                    $resY = gmp_strval($y[0], 16);
-                }
-                if (false == gmp_strval(gmp_mod($y[1], gmp_init(2, 10)), 10)) {
-                    $resY = gmp_strval($y[1], 16);
-                }
-                if ($resY) {
-                    while (strlen($resY) < 64) {
-                        $resY = '0' . $resY;
-                    }
-                }
-
-                return $resY;
-            } else {
-                if ($derEvenOrOddCode == '03') // odd
-                {
-                    $resY = null;
-                    if (true == gmp_strval(gmp_mod($y[0], gmp_init(2, 10)), 10)) {
-                        $resY = gmp_strval($y[0], 16);
-                    }
-                    if (true == gmp_strval(gmp_mod($y[1], gmp_init(2, 10)), 10)) {
-                        $resY = gmp_strval($y[1], 16);
-                    }
-                    if ($resY) {
-                        while (strlen($resY) < 64) {
-                            $resY = '0' . $resY;
-                        }
-                    }
-
-                    return $resY;
-                }
-            }
-        }
-
-        return null;
-    }
-
-    /***
      * Returns true if the point is on the curve and false if it isn't.
+     *
      * @param $x
      * @param $y
+     *
      * @return bool
      */
     public static function validatePoint($x, $y, $a, $b, $p)
@@ -311,8 +216,114 @@ class PointMathGMP
     }
 
     /***
+     * Calculate the Y coordinates for a given X coordinate.
+     *
+     * @param        $x
+     * @param  null  $derEvenOrOddCode
+     *
+     * @return array|null|String
+     */
+    public static function calculateYWithX($x, $a, $b, $p, $derEvenOrOddCode = null)
+    {
+        $x  = gmp_init($x, 16);
+        $y2 = gmp_mod(
+            gmp_add(
+                gmp_add(
+                    gmp_powm($x, gmp_init(3, 10), $p),
+                    gmp_mul($a, $x)
+                ),
+                $b
+            ),
+            $p
+        );
+
+        $y = self::sqrt($y2, $p);
+
+        if (! $y) { //if there is no result
+            return null;
+        }
+
+        if (! $derEvenOrOddCode) {
+            return $y;
+        } else {
+            if ($derEvenOrOddCode == '02') { // even
+                $resY = null;
+                if (false == gmp_strval(gmp_mod($y[0], gmp_init(2, 10)), 10)) {
+                    $resY = gmp_strval($y[0], 16);
+                }
+                if (false == gmp_strval(gmp_mod($y[1], gmp_init(2, 10)), 10)) {
+                    $resY = gmp_strval($y[1], 16);
+                }
+                if ($resY) {
+                    while (strlen($resY) < 64) {
+                        $resY = '0'.$resY;
+                    }
+                }
+
+                return $resY;
+            } else {
+                if ($derEvenOrOddCode == '03') { // odd
+                    $resY = null;
+                    if (true == gmp_strval(gmp_mod($y[0], gmp_init(2, 10)), 10)) {
+                        $resY = gmp_strval($y[0], 16);
+                    }
+                    if (true == gmp_strval(gmp_mod($y[1], gmp_init(2, 10)), 10)) {
+                        $resY = gmp_strval($y[1], 16);
+                    }
+                    if ($resY) {
+                        while (strlen($resY) < 64) {
+                            $resY = '0'.$resY;
+                        }
+                    }
+
+                    return $resY;
+                }
+            }
+        }
+
+        return null;
+    }
+
+    /***
+     * Calculates the square root of $a mod p and returns the 2 solutions as an array.
+     *
+     * @param $a
+     *
+     * @return array|null
+     * @throws Exception
+     */
+    public static function sqrt($a, $p)
+    {
+        if (gmp_legendre($a, $p) != 1) {
+            //no result
+            return null;
+        }
+
+        if (gmp_strval(gmp_mod($p, gmp_init(4, 10)), 10) == 3) {
+            $sqrt1 = gmp_powm(
+                $a,
+                gmp_div_q(
+                    gmp_add($p, gmp_init(1, 10)),
+                    gmp_init(4, 10)
+                ),
+                $p
+            );
+            // there are always 2 results for a square root
+            // In an infinite number field you have -2^2 = 2^2 = 4
+            // In a finite number field you have a^2 = (p-a)^2
+            $sqrt2 = gmp_mod(gmp_sub($p, $sqrt1), $p);
+
+            return [$sqrt1, $sqrt2];
+        } else {
+            throw new Exception('P % 4 != 3 , this isn\'t supported yet.');
+        }
+    }
+
+    /***
      * Returns Negated Point (Y).
+     *
      * @param $point Array(GMP, GMP)
+     *
      * @return Array(GMP, GMP)
      */
     public static function negatePoint($point)
@@ -339,5 +350,4 @@ class PointMathGMP
 
         return $v;
     }
-
 }
