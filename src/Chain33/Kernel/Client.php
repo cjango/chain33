@@ -13,7 +13,7 @@ class Client
 
     protected $config;
 
-    protected $client;
+    protected Guzzle $client;
 
     public function __construct($app)
     {

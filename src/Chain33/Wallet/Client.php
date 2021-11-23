@@ -2,10 +2,6 @@
 
 namespace Jason\Chain33\Wallet;
 
-use Jason\Bip39\Bip39;
-use Jason\Bip39\Exception\MnemonicException;
-use Jason\Bip39\Exception\WordListException;
-use Jason\Bip39\Mnemonic;
 use Jason\Chain33\Exceptions\ConfigException;
 use Jason\Chain33\Kernel\BaseClient;
 
@@ -14,24 +10,6 @@ use Jason\Chain33\Kernel\BaseClient;
  */
 class Client extends BaseClient
 {
-    /**
-     * Notes   : 本地生成 bip39 标准的助记词.
-     *
-     * @Date   : 2021/7/19 3:28 下午
-     * @Author : <Jason.C>
-     *
-     * @param  int  $len  助记词位数
-     * @param  string  $language  助记词语言
-     * @return Mnemonic
-     *
-     * @throws MnemonicException
-     * @throws WordListException
-     */
-    public function localSeed(int $len = 12, string $language = 'english'): Mnemonic
-    {
-        return Bip39::Generate($len, $language);
-    }
-
     /**
      * Notes: 创建钱包.
      *
