@@ -2,10 +2,10 @@
 
 namespace Jason\Chain33\Wallet;
 
-use Jason\Bip39\Bip39;
-use Jason\Bip39\Exception\MnemonicException;
-use Jason\Bip39\Exception\WordListException;
-use Jason\Bip39\Mnemonic;
+use BitWasp\Bitcoin\Crypto\Random\Random;
+use BitWasp\Bitcoin\Exceptions\RandomBytesFailure;
+use BitWasp\Bitcoin\Mnemonic\Bip39\Bip39Mnemonic;
+use BitWasp\Bitcoin\Mnemonic\MnemonicFactory;
 use Jason\Chain33\Exceptions\ConfigException;
 use Jason\Chain33\Kernel\BaseClient;
 
@@ -15,21 +15,19 @@ use Jason\Chain33\Kernel\BaseClient;
 class Client extends BaseClient
 {
     /**
-     * Notes   : 本地生成 bip39 标准的助记词.
+     * Notes   :  本地生成 bip39 标准的助记词.
      *
-     * @Date   : 2021/7/19 3:28 下午
+     * @Date   : 2021/12/17 5:35 PM
      * @Author : <Jason.C>
-     *
-     * @param  int  $len  助记词位数
-     * @param  string  $language  助记词语言
-     * @return Mnemonic
-     *
-     * @throws MnemonicException
-     * @throws WordListException
+     * @return string
+     * @throws RandomBytesFailure
      */
-    public function localSeed(int $len = 12, string $language = 'english'): Mnemonic
+    public function localSeed(): string
     {
-        return Bip39::Generate($len, $language);
+        $random  = new Random();
+        $entropy = $random->bytes(Bip39Mnemonic::MIN_ENTROPY_BYTE_LEN);
+        $bip39   = MnemonicFactory::bip39();
+        return $bip39->entropyToMnemonic($entropy);
     }
 
     /**
