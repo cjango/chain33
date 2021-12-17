@@ -5,6 +5,7 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Exception;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
 use GPBMetadata\Wallet;
@@ -21,17 +22,17 @@ class WalletUnLock extends Message
     /**
      * Generated from protobuf field <code>string passwd = 1;</code>.
      */
-    protected $passwd = '';
+    protected string $passwd = '';
 
     /**
      * Generated from protobuf field <code>int64 timeout = 2;</code>.
      */
-    protected $timeout = 0;
+    protected int $timeout = 0;
 
     /**
      * Generated from protobuf field <code>bool walletOrTicket = 3;</code>.
      */
-    protected $walletOrTicket = false;
+    protected bool $walletOrTicket = false;
 
     /**
      * Constructor.
@@ -55,7 +56,7 @@ class WalletUnLock extends Message
      *
      * @return string
      */
-    public function getPasswd()
+    public function getPasswd(): string
     {
         return $this->passwd;
     }
@@ -65,8 +66,9 @@ class WalletUnLock extends Message
      *
      * @param  string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setPasswd($var)
+    public function setPasswd(string $var): WalletUnLock
     {
         GPBUtil::checkString($var, true);
         $this->passwd = $var;
@@ -77,9 +79,9 @@ class WalletUnLock extends Message
     /**
      * Generated from protobuf field <code>int64 timeout = 2;</code>.
      *
-     * @return int|string
+     * @return int
      */
-    public function getTimeout()
+    public function getTimeout(): int
     {
         return $this->timeout;
     }
@@ -89,8 +91,9 @@ class WalletUnLock extends Message
      *
      * @param  int|string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setTimeout($var)
+    public function setTimeout($var): WalletUnLock
     {
         GPBUtil::checkInt64($var);
         $this->timeout = $var;
@@ -103,7 +106,7 @@ class WalletUnLock extends Message
      *
      * @return bool
      */
-    public function getWalletOrTicket()
+    public function getWalletOrTicket(): bool
     {
         return $this->walletOrTicket;
     }
@@ -113,8 +116,9 @@ class WalletUnLock extends Message
      *
      * @param  bool  $var
      * @return $this
+     * @throws Exception
      */
-    public function setWalletOrTicket($var)
+    public function setWalletOrTicket(bool $var): WalletUnLock
     {
         GPBUtil::checkBool($var);
         $this->walletOrTicket = $var;

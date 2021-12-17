@@ -5,6 +5,7 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Exception;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
 
@@ -17,12 +18,12 @@ class AssetsGenesis extends Message
     /**
      * Generated from protobuf field <code>int64 amount = 2;</code>.
      */
-    protected $amount = 0;
+    protected int $amount = 0;
 
     /**
      * Generated from protobuf field <code>string returnAddress = 3;</code>.
      */
-    protected $returnAddress = '';
+    protected string $returnAddress = '';
 
     /**
      * Constructor.
@@ -43,9 +44,9 @@ class AssetsGenesis extends Message
     /**
      * Generated from protobuf field <code>int64 amount = 2;</code>.
      *
-     * @return int|string
+     * @return int
      */
-    public function getAmount()
+    public function getAmount(): int
     {
         return $this->amount;
     }
@@ -55,8 +56,9 @@ class AssetsGenesis extends Message
      *
      * @param  int|string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setAmount($var)
+    public function setAmount($var): AssetsGenesis
     {
         GPBUtil::checkInt64($var);
         $this->amount = $var;
@@ -69,7 +71,7 @@ class AssetsGenesis extends Message
      *
      * @return string
      */
-    public function getReturnAddress()
+    public function getReturnAddress(): string
     {
         return $this->returnAddress;
     }
@@ -79,8 +81,9 @@ class AssetsGenesis extends Message
      *
      * @param  string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setReturnAddress($var)
+    public function setReturnAddress(string $var): AssetsGenesis
     {
         GPBUtil::checkString($var, true);
         $this->returnAddress = $var;

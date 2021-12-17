@@ -5,6 +5,7 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Exception;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
@@ -26,32 +27,32 @@ class BlockBody extends Message
     /**
      * Generated from protobuf field <code>bytes mainHash = 3;</code>.
      */
-    protected $mainHash = '';
+    protected string $mainHash = '';
 
     /**
      * Generated from protobuf field <code>int64 mainHeight = 4;</code>.
      */
-    protected $mainHeight = 0;
+    protected int $mainHeight = 0;
 
     /**
      * Generated from protobuf field <code>bytes hash = 5;</code>.
      */
-    protected $hash = '';
+    protected string $hash = '';
 
     /**
      * Generated from protobuf field <code>int64 height = 6;</code>.
      */
-    protected $height = 0;
+    protected int $height = 0;
 
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Transaction txs = 1;</code>.
      */
-    private $txs;
+    private RepeatedField $txs;
 
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ReceiptData receipts = 2;</code>.
      */
-    private $receipts;
+    private RepeatedField $receipts;
 
     /**
      * Constructor.
@@ -78,7 +79,7 @@ class BlockBody extends Message
      *
      * @return RepeatedField
      */
-    public function getTxs()
+    public function getTxs(): RepeatedField
     {
         return $this->txs;
     }
@@ -88,8 +89,9 @@ class BlockBody extends Message
      *
      * @param  Transaction[]|RepeatedField  $var
      * @return $this
+     * @throws Exception
      */
-    public function setTxs($var)
+    public function setTxs($var): BlockBody
     {
         $arr       = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             Transaction::class);
@@ -103,7 +105,7 @@ class BlockBody extends Message
      *
      * @return RepeatedField
      */
-    public function getReceipts()
+    public function getReceipts(): RepeatedField
     {
         return $this->receipts;
     }
@@ -113,8 +115,9 @@ class BlockBody extends Message
      *
      * @param  ReceiptData[]|RepeatedField  $var
      * @return $this
+     * @throws Exception
      */
-    public function setReceipts($var)
+    public function setReceipts($var): BlockBody
     {
         $arr            = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             ReceiptData::class);
@@ -128,7 +131,7 @@ class BlockBody extends Message
      *
      * @return string
      */
-    public function getMainHash()
+    public function getMainHash(): string
     {
         return $this->mainHash;
     }
@@ -138,8 +141,9 @@ class BlockBody extends Message
      *
      * @param  string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setMainHash($var)
+    public function setMainHash(string $var): BlockBody
     {
         GPBUtil::checkString($var, false);
         $this->mainHash = $var;
@@ -150,9 +154,9 @@ class BlockBody extends Message
     /**
      * Generated from protobuf field <code>int64 mainHeight = 4;</code>.
      *
-     * @return int|string
+     * @return int
      */
-    public function getMainHeight()
+    public function getMainHeight(): int
     {
         return $this->mainHeight;
     }
@@ -162,8 +166,9 @@ class BlockBody extends Message
      *
      * @param  int|string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setMainHeight($var)
+    public function setMainHeight($var): BlockBody
     {
         GPBUtil::checkInt64($var);
         $this->mainHeight = $var;
@@ -176,7 +181,7 @@ class BlockBody extends Message
      *
      * @return string
      */
-    public function getHash()
+    public function getHash(): string
     {
         return $this->hash;
     }
@@ -186,8 +191,9 @@ class BlockBody extends Message
      *
      * @param  string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setHash($var)
+    public function setHash(string $var): BlockBody
     {
         GPBUtil::checkString($var, false);
         $this->hash = $var;
@@ -198,9 +204,9 @@ class BlockBody extends Message
     /**
      * Generated from protobuf field <code>int64 height = 6;</code>.
      *
-     * @return int|string
+     * @return int
      */
-    public function getHeight()
+    public function getHeight(): int
     {
         return $this->height;
     }
@@ -210,8 +216,9 @@ class BlockBody extends Message
      *
      * @param  int|string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setHeight($var)
+    public function setHeight($var): BlockBody
     {
         GPBUtil::checkInt64($var);
         $this->height = $var;

@@ -5,6 +5,7 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Exception;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
 
@@ -17,7 +18,7 @@ class QueryStorage extends Message
     /**
      * Generated from protobuf field <code>string txHash = 1;</code>.
      */
-    protected $txHash = '';
+    protected string $txHash = '';
 
     /**
      * Constructor.
@@ -39,7 +40,7 @@ class QueryStorage extends Message
      *
      * @return string
      */
-    public function getTxHash()
+    public function getTxHash(): string
     {
         return $this->txHash;
     }
@@ -49,8 +50,9 @@ class QueryStorage extends Message
      *
      * @param  string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setTxHash($var)
+    public function setTxHash(string $var): QueryStorage
     {
         GPBUtil::checkString($var, true);
         $this->txHash = $var;

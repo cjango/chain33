@@ -5,6 +5,7 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Exception;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
 use GPBMetadata\Wallet;
@@ -22,22 +23,22 @@ class WalletStatus extends Message
     /**
      * Generated from protobuf field <code>bool isWalletLock = 1;</code>.
      */
-    protected $isWalletLock = false;
+    protected bool $isWalletLock = false;
 
     /**
      * Generated from protobuf field <code>bool isAutoMining = 2;</code>.
      */
-    protected $isAutoMining = false;
+    protected bool $isAutoMining = false;
 
     /**
      * Generated from protobuf field <code>bool isHasSeed = 3;</code>.
      */
-    protected $isHasSeed = false;
+    protected bool $isHasSeed = false;
 
     /**
      * Generated from protobuf field <code>bool isTicketLock = 4;</code>.
      */
-    protected $isTicketLock = false;
+    protected bool $isTicketLock = false;
 
     /**
      * Constructor.
@@ -62,7 +63,7 @@ class WalletStatus extends Message
      *
      * @return bool
      */
-    public function getIsWalletLock()
+    public function getIsWalletLock(): bool
     {
         return $this->isWalletLock;
     }
@@ -72,8 +73,9 @@ class WalletStatus extends Message
      *
      * @param  bool  $var
      * @return $this
+     * @throws Exception
      */
-    public function setIsWalletLock($var)
+    public function setIsWalletLock(bool $var): WalletStatus
     {
         GPBUtil::checkBool($var);
         $this->isWalletLock = $var;
@@ -86,7 +88,7 @@ class WalletStatus extends Message
      *
      * @return bool
      */
-    public function getIsAutoMining()
+    public function getIsAutoMining(): bool
     {
         return $this->isAutoMining;
     }
@@ -96,8 +98,9 @@ class WalletStatus extends Message
      *
      * @param  bool  $var
      * @return $this
+     * @throws Exception
      */
-    public function setIsAutoMining($var)
+    public function setIsAutoMining(bool $var): WalletStatus
     {
         GPBUtil::checkBool($var);
         $this->isAutoMining = $var;
@@ -110,7 +113,7 @@ class WalletStatus extends Message
      *
      * @return bool
      */
-    public function getIsHasSeed()
+    public function getIsHasSeed(): bool
     {
         return $this->isHasSeed;
     }
@@ -120,8 +123,9 @@ class WalletStatus extends Message
      *
      * @param  bool  $var
      * @return $this
+     * @throws Exception
      */
-    public function setIsHasSeed($var)
+    public function setIsHasSeed(bool $var): WalletStatus
     {
         GPBUtil::checkBool($var);
         $this->isHasSeed = $var;
@@ -134,7 +138,7 @@ class WalletStatus extends Message
      *
      * @return bool
      */
-    public function getIsTicketLock()
+    public function getIsTicketLock(): bool
     {
         return $this->isTicketLock;
     }
@@ -144,8 +148,9 @@ class WalletStatus extends Message
      *
      * @param  bool  $var
      * @return $this
+     * @throws Exception
      */
-    public function setIsTicketLock($var)
+    public function setIsTicketLock(bool $var): WalletStatus
     {
         GPBUtil::checkBool($var);
         $this->isTicketLock = $var;

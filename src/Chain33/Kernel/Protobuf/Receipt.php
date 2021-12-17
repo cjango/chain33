@@ -5,6 +5,7 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Exception;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
@@ -21,17 +22,17 @@ class Receipt extends Message
     /**
      * Generated from protobuf field <code>int32 ty = 1;</code>.
      */
-    protected $ty = 0;
+    protected int $ty = 0;
 
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.KeyValue KV = 2;</code>.
      */
-    private $KV;
+    private RepeatedField $KV;
 
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ReceiptLog logs = 3;</code>.
      */
-    private $logs;
+    private RepeatedField $logs;
 
     /**
      * Constructor.
@@ -55,7 +56,7 @@ class Receipt extends Message
      *
      * @return int
      */
-    public function getTy()
+    public function getTy(): int
     {
         return $this->ty;
     }
@@ -65,8 +66,9 @@ class Receipt extends Message
      *
      * @param  int  $var
      * @return $this
+     * @throws Exception
      */
-    public function setTy($var)
+    public function setTy(int $var): Receipt
     {
         GPBUtil::checkInt32($var);
         $this->ty = $var;
@@ -79,7 +81,7 @@ class Receipt extends Message
      *
      * @return RepeatedField
      */
-    public function getKV()
+    public function getKV(): RepeatedField
     {
         return $this->KV;
     }
@@ -89,8 +91,9 @@ class Receipt extends Message
      *
      * @param  KeyValue[]|RepeatedField  $var
      * @return $this
+     * @throws Exception
      */
-    public function setKV($var)
+    public function setKV($var): Receipt
     {
         $arr      = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             KeyValue::class);
@@ -104,7 +107,7 @@ class Receipt extends Message
      *
      * @return RepeatedField
      */
-    public function getLogs()
+    public function getLogs(): RepeatedField
     {
         return $this->logs;
     }
@@ -114,8 +117,9 @@ class Receipt extends Message
      *
      * @param  ReceiptLog[]|RepeatedField  $var
      * @return $this
+     * @throws Exception
      */
-    public function setLogs($var)
+    public function setLogs($var): Receipt
     {
         $arr        = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             ReceiptLog::class);

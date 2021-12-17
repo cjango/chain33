@@ -5,6 +5,7 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Exception;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
@@ -21,57 +22,57 @@ class Block extends Message
     /**
      * Generated from protobuf field <code>int64 version = 1;</code>.
      */
-    protected $version = 0;
+    protected int $version = 0;
 
     /**
      * Generated from protobuf field <code>bytes parentHash = 2;</code>.
      */
-    protected $parentHash = '';
+    protected string $parentHash = '';
 
     /**
      * Generated from protobuf field <code>bytes txHash = 3;</code>.
      */
-    protected $txHash = '';
+    protected string $txHash = '';
 
     /**
      * Generated from protobuf field <code>bytes stateHash = 4;</code>.
      */
-    protected $stateHash = '';
+    protected string $stateHash = '';
 
     /**
      * Generated from protobuf field <code>int64 height = 5;</code>.
      */
-    protected $height = 0;
+    protected int $height = 0;
 
     /**
      * Generated from protobuf field <code>int64 blockTime = 6;</code>.
      */
-    protected $blockTime = 0;
+    protected int $blockTime = 0;
 
     /**
      * Generated from protobuf field <code>uint32 difficulty = 11;</code>.
      */
-    protected $difficulty = 0;
+    protected int $difficulty = 0;
 
     /**
      * Generated from protobuf field <code>bytes mainHash = 12;</code>.
      */
-    protected $mainHash = '';
+    protected string $mainHash = '';
 
     /**
      * Generated from protobuf field <code>int64 mainHeight = 13;</code>.
      */
-    protected $mainHeight = 0;
+    protected int $mainHeight = 0;
 
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Signature signature = 8;</code>.
      */
-    protected $signature = null;
+    protected ?Signature $signature = null;
 
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Transaction txs = 7;</code>.
      */
-    private $txs;
+    private RepeatedField $txs;
 
     /**
      * Constructor.
@@ -101,9 +102,9 @@ class Block extends Message
     /**
      * Generated from protobuf field <code>int64 version = 1;</code>.
      *
-     * @return int|string
+     * @return int
      */
-    public function getVersion()
+    public function getVersion(): int
     {
         return $this->version;
     }
@@ -113,8 +114,9 @@ class Block extends Message
      *
      * @param  int|string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setVersion($var)
+    public function setVersion($var): Block
     {
         GPBUtil::checkInt64($var);
         $this->version = $var;
@@ -127,7 +129,7 @@ class Block extends Message
      *
      * @return string
      */
-    public function getParentHash()
+    public function getParentHash(): string
     {
         return $this->parentHash;
     }
@@ -137,9 +139,11 @@ class Block extends Message
      *
      * @param  string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setParentHash($var)
-    {
+    public function setParentHash(
+        string $var
+    ): Block {
         GPBUtil::checkString($var, false);
         $this->parentHash = $var;
 
@@ -151,7 +155,7 @@ class Block extends Message
      *
      * @return string
      */
-    public function getTxHash()
+    public function getTxHash(): string
     {
         return $this->txHash;
     }
@@ -161,8 +165,9 @@ class Block extends Message
      *
      * @param  string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setTxHash($var)
+    public function setTxHash(string $var): Block
     {
         GPBUtil::checkString($var, false);
         $this->txHash = $var;
@@ -175,7 +180,7 @@ class Block extends Message
      *
      * @return string
      */
-    public function getStateHash()
+    public function getStateHash(): string
     {
         return $this->stateHash;
     }
@@ -185,8 +190,9 @@ class Block extends Message
      *
      * @param  string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setStateHash($var)
+    public function setStateHash(string $var): Block
     {
         GPBUtil::checkString($var, false);
         $this->stateHash = $var;
@@ -197,9 +203,9 @@ class Block extends Message
     /**
      * Generated from protobuf field <code>int64 height = 5;</code>.
      *
-     * @return int|string
+     * @return int
      */
-    public function getHeight()
+    public function getHeight(): int
     {
         return $this->height;
     }
@@ -209,8 +215,9 @@ class Block extends Message
      *
      * @param  int|string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setHeight($var)
+    public function setHeight($var): Block
     {
         GPBUtil::checkInt64($var);
         $this->height = $var;
@@ -221,9 +228,9 @@ class Block extends Message
     /**
      * Generated from protobuf field <code>int64 blockTime = 6;</code>.
      *
-     * @return int|string
+     * @return int
      */
-    public function getBlockTime()
+    public function getBlockTime(): int
     {
         return $this->blockTime;
     }
@@ -233,8 +240,9 @@ class Block extends Message
      *
      * @param  int|string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setBlockTime($var)
+    public function setBlockTime($var): Block
     {
         GPBUtil::checkInt64($var);
         $this->blockTime = $var;
@@ -247,7 +255,7 @@ class Block extends Message
      *
      * @return int
      */
-    public function getDifficulty()
+    public function getDifficulty(): int
     {
         return $this->difficulty;
     }
@@ -257,8 +265,9 @@ class Block extends Message
      *
      * @param  int  $var
      * @return $this
+     * @throws Exception
      */
-    public function setDifficulty($var)
+    public function setDifficulty(int $var): Block
     {
         GPBUtil::checkUint32($var);
         $this->difficulty = $var;
@@ -271,7 +280,7 @@ class Block extends Message
      *
      * @return string
      */
-    public function getMainHash()
+    public function getMainHash(): string
     {
         return $this->mainHash;
     }
@@ -281,8 +290,9 @@ class Block extends Message
      *
      * @param  string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setMainHash($var)
+    public function setMainHash(string $var): Block
     {
         GPBUtil::checkString($var, false);
         $this->mainHash = $var;
@@ -293,9 +303,9 @@ class Block extends Message
     /**
      * Generated from protobuf field <code>int64 mainHeight = 13;</code>.
      *
-     * @return int|string
+     * @return int
      */
-    public function getMainHeight()
+    public function getMainHeight(): int
     {
         return $this->mainHeight;
     }
@@ -305,8 +315,9 @@ class Block extends Message
      *
      * @param  int|string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setMainHeight($var)
+    public function setMainHeight($var): Block
     {
         GPBUtil::checkInt64($var);
         $this->mainHeight = $var;
@@ -319,9 +330,9 @@ class Block extends Message
      *
      * @return Signature|null
      */
-    public function getSignature()
+    public function getSignature(): ?Signature
     {
-        return isset($this->signature) ? $this->signature : null;
+        return null;
     }
 
     /**
@@ -329,8 +340,9 @@ class Block extends Message
      *
      * @param  Signature  $var
      * @return $this
+     * @throws Exception
      */
-    public function setSignature($var)
+    public function setSignature(Signature $var): Block
     {
         GPBUtil::checkMessage($var, Signature::class);
         $this->signature = $var;
@@ -338,7 +350,7 @@ class Block extends Message
         return $this;
     }
 
-    public function hasSignature()
+    public function hasSignature(): bool
     {
         return isset($this->signature);
     }
@@ -353,7 +365,7 @@ class Block extends Message
      *
      * @return RepeatedField
      */
-    public function getTxs()
+    public function getTxs(): RepeatedField
     {
         return $this->txs;
     }
@@ -363,8 +375,9 @@ class Block extends Message
      *
      * @param  Transaction[]|RepeatedField  $var
      * @return $this
+     * @throws Exception
      */
-    public function setTxs($var)
+    public function setTxs($var): Block
     {
         $arr       = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             Transaction::class);

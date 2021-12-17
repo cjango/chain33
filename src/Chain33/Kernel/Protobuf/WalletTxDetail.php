@@ -5,6 +5,7 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Exception;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
 use GPBMetadata\Wallet;
@@ -28,52 +29,52 @@ class WalletTxDetail extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Transaction tx = 1;</code>.
      */
-    protected $tx = null;
+    protected ?Transaction $tx = null;
 
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.ReceiptData receipt = 2;</code>.
      */
-    protected $receipt = null;
+    protected ?ReceiptData $receipt = null;
 
     /**
      * Generated from protobuf field <code>int64 height = 3;</code>.
      */
-    protected $height = 0;
+    protected int $height = 0;
 
     /**
      * Generated from protobuf field <code>int64 index = 4;</code>.
      */
-    protected $index = 0;
+    protected int $index = 0;
 
     /**
      * Generated from protobuf field <code>int64 blocktime = 5;</code>.
      */
-    protected $blocktime = 0;
+    protected int $blocktime = 0;
 
     /**
      * Generated from protobuf field <code>int64 amount = 6;</code>.
      */
-    protected $amount = 0;
+    protected int $amount = 0;
 
     /**
      * Generated from protobuf field <code>string fromaddr = 7;</code>.
      */
-    protected $fromaddr = '';
+    protected string $fromaddr = '';
 
     /**
      * Generated from protobuf field <code>bytes txhash = 8;</code>.
      */
-    protected $txhash = '';
+    protected string $txhash = '';
 
     /**
      * Generated from protobuf field <code>string actionName = 9;</code>.
      */
-    protected $actionName = '';
+    protected string $actionName = '';
 
     /**
      * Generated from protobuf field <code>bytes payload = 10;</code>.
      */
-    protected $payload = '';
+    protected string $payload = '';
 
     /**
      * Constructor.
@@ -104,9 +105,9 @@ class WalletTxDetail extends Message
      *
      * @return Transaction|null
      */
-    public function getTx()
+    public function getTx(): ?Transaction
     {
-        return isset($this->tx) ? $this->tx : null;
+        return $this->tx ?? null;
     }
 
     /**
@@ -114,8 +115,9 @@ class WalletTxDetail extends Message
      *
      * @param  Transaction  $var
      * @return $this
+     * @throws Exception
      */
-    public function setTx($var)
+    public function setTx(Transaction $var): WalletTxDetail
     {
         GPBUtil::checkMessage($var, Transaction::class);
         $this->tx = $var;
@@ -123,7 +125,7 @@ class WalletTxDetail extends Message
         return $this;
     }
 
-    public function hasTx()
+    public function hasTx(): bool
     {
         return isset($this->tx);
     }
@@ -138,9 +140,9 @@ class WalletTxDetail extends Message
      *
      * @return ReceiptData|null
      */
-    public function getReceipt()
+    public function getReceipt(): ?ReceiptData
     {
-        return isset($this->receipt) ? $this->receipt : null;
+        return $this->receipt ?? null;
     }
 
     /**
@@ -148,8 +150,9 @@ class WalletTxDetail extends Message
      *
      * @param  ReceiptData  $var
      * @return $this
+     * @throws Exception
      */
-    public function setReceipt($var)
+    public function setReceipt(ReceiptData $var): WalletTxDetail
     {
         GPBUtil::checkMessage($var, ReceiptData::class);
         $this->receipt = $var;
@@ -157,7 +160,7 @@ class WalletTxDetail extends Message
         return $this;
     }
 
-    public function hasReceipt()
+    public function hasReceipt(): bool
     {
         return isset($this->receipt);
     }
@@ -170,9 +173,9 @@ class WalletTxDetail extends Message
     /**
      * Generated from protobuf field <code>int64 height = 3;</code>.
      *
-     * @return int|string
+     * @return int
      */
-    public function getHeight()
+    public function getHeight(): int
     {
         return $this->height;
     }
@@ -182,8 +185,9 @@ class WalletTxDetail extends Message
      *
      * @param  int|string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setHeight($var)
+    public function setHeight($var): WalletTxDetail
     {
         GPBUtil::checkInt64($var);
         $this->height = $var;
@@ -194,9 +198,9 @@ class WalletTxDetail extends Message
     /**
      * Generated from protobuf field <code>int64 index = 4;</code>.
      *
-     * @return int|string
+     * @return int
      */
-    public function getIndex()
+    public function getIndex(): int
     {
         return $this->index;
     }
@@ -206,8 +210,9 @@ class WalletTxDetail extends Message
      *
      * @param  int|string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setIndex($var)
+    public function setIndex($var): WalletTxDetail
     {
         GPBUtil::checkInt64($var);
         $this->index = $var;
@@ -218,9 +223,9 @@ class WalletTxDetail extends Message
     /**
      * Generated from protobuf field <code>int64 blocktime = 5;</code>.
      *
-     * @return int|string
+     * @return int
      */
-    public function getBlocktime()
+    public function getBlocktime(): int
     {
         return $this->blocktime;
     }
@@ -230,8 +235,9 @@ class WalletTxDetail extends Message
      *
      * @param  int|string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setBlocktime($var)
+    public function setBlocktime($var): WalletTxDetail
     {
         GPBUtil::checkInt64($var);
         $this->blocktime = $var;
@@ -242,9 +248,9 @@ class WalletTxDetail extends Message
     /**
      * Generated from protobuf field <code>int64 amount = 6;</code>.
      *
-     * @return int|string
+     * @return int
      */
-    public function getAmount()
+    public function getAmount(): int
     {
         return $this->amount;
     }
@@ -254,8 +260,9 @@ class WalletTxDetail extends Message
      *
      * @param  int|string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setAmount($var)
+    public function setAmount($var): WalletTxDetail
     {
         GPBUtil::checkInt64($var);
         $this->amount = $var;
@@ -268,7 +275,7 @@ class WalletTxDetail extends Message
      *
      * @return string
      */
-    public function getFromaddr()
+    public function getFromaddr(): string
     {
         return $this->fromaddr;
     }
@@ -278,8 +285,9 @@ class WalletTxDetail extends Message
      *
      * @param  string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setFromaddr($var)
+    public function setFromaddr(string $var): WalletTxDetail
     {
         GPBUtil::checkString($var, true);
         $this->fromaddr = $var;
@@ -292,7 +300,7 @@ class WalletTxDetail extends Message
      *
      * @return string
      */
-    public function getTxhash()
+    public function getTxhash(): string
     {
         return $this->txhash;
     }
@@ -302,8 +310,9 @@ class WalletTxDetail extends Message
      *
      * @param  string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setTxhash($var)
+    public function setTxhash(string $var): WalletTxDetail
     {
         GPBUtil::checkString($var, false);
         $this->txhash = $var;
@@ -316,7 +325,7 @@ class WalletTxDetail extends Message
      *
      * @return string
      */
-    public function getActionName()
+    public function getActionName(): string
     {
         return $this->actionName;
     }
@@ -326,8 +335,9 @@ class WalletTxDetail extends Message
      *
      * @param  string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setActionName($var)
+    public function setActionName(string $var): WalletTxDetail
     {
         GPBUtil::checkString($var, true);
         $this->actionName = $var;
@@ -340,7 +350,7 @@ class WalletTxDetail extends Message
      *
      * @return string
      */
-    public function getPayload()
+    public function getPayload(): string
     {
         return $this->payload;
     }
@@ -350,8 +360,9 @@ class WalletTxDetail extends Message
      *
      * @param  string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setPayload($var)
+    public function setPayload(string $var): WalletTxDetail
     {
         GPBUtil::checkString($var, false);
         $this->payload = $var;

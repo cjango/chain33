@@ -5,6 +5,7 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Exception;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
 
@@ -16,27 +17,27 @@ class AssetsTransferToExec extends Message
     /**
      * Generated from protobuf field <code>string cointoken = 1;</code>.
      */
-    protected $cointoken = '';
+    protected string $cointoken = '';
 
     /**
      * Generated from protobuf field <code>int64 amount = 2;</code>.
      */
-    protected $amount = 0;
+    protected int $amount = 0;
 
     /**
      * Generated from protobuf field <code>bytes note = 3;</code>.
      */
-    protected $note = '';
+    protected string $note = '';
 
     /**
      * Generated from protobuf field <code>string execName = 4;</code>.
      */
-    protected $execName = '';
+    protected string $execName = '';
 
     /**
      * Generated from protobuf field <code>string to = 5;</code>.
      */
-    protected $to = '';
+    protected string $to = '';
 
     /**
      * Constructor.
@@ -62,7 +63,7 @@ class AssetsTransferToExec extends Message
      *
      * @return string
      */
-    public function getCointoken()
+    public function getCointoken(): string
     {
         return $this->cointoken;
     }
@@ -72,8 +73,9 @@ class AssetsTransferToExec extends Message
      *
      * @param  string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setCointoken($var)
+    public function setCointoken(string $var): AssetsTransferToExec
     {
         GPBUtil::checkString($var, true);
         $this->cointoken = $var;
@@ -84,9 +86,9 @@ class AssetsTransferToExec extends Message
     /**
      * Generated from protobuf field <code>int64 amount = 2;</code>.
      *
-     * @return int|string
+     * @return int
      */
-    public function getAmount()
+    public function getAmount(): int
     {
         return $this->amount;
     }
@@ -96,8 +98,9 @@ class AssetsTransferToExec extends Message
      *
      * @param  int|string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setAmount($var)
+    public function setAmount($var): AssetsTransferToExec
     {
         GPBUtil::checkInt64($var);
         $this->amount = $var;
@@ -110,7 +113,7 @@ class AssetsTransferToExec extends Message
      *
      * @return string
      */
-    public function getNote()
+    public function getNote(): string
     {
         return $this->note;
     }
@@ -120,8 +123,9 @@ class AssetsTransferToExec extends Message
      *
      * @param  string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setNote($var)
+    public function setNote(string $var): AssetsTransferToExec
     {
         GPBUtil::checkString($var, false);
         $this->note = $var;
@@ -134,7 +138,7 @@ class AssetsTransferToExec extends Message
      *
      * @return string
      */
-    public function getExecName()
+    public function getExecName(): string
     {
         return $this->execName;
     }
@@ -144,8 +148,9 @@ class AssetsTransferToExec extends Message
      *
      * @param  string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setExecName($var)
+    public function setExecName(string $var): AssetsTransferToExec
     {
         GPBUtil::checkString($var, true);
         $this->execName = $var;
@@ -158,7 +163,7 @@ class AssetsTransferToExec extends Message
      *
      * @return string
      */
-    public function getTo()
+    public function getTo(): string
     {
         return $this->to;
     }
@@ -168,8 +173,9 @@ class AssetsTransferToExec extends Message
      *
      * @param  string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setTo($var)
+    public function setTo(string $var): AssetsTransferToExec
     {
         GPBUtil::checkString($var, true);
         $this->to = $var;

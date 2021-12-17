@@ -5,6 +5,7 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Exception;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
@@ -19,7 +20,7 @@ class WalletTxDetails extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.WalletTxDetail txDetails = 1;</code>.
      */
-    private $txDetails;
+    private RepeatedField $txDetails;
 
     /**
      * Constructor.
@@ -41,7 +42,7 @@ class WalletTxDetails extends Message
      *
      * @return RepeatedField
      */
-    public function getTxDetails()
+    public function getTxDetails(): RepeatedField
     {
         return $this->txDetails;
     }
@@ -51,8 +52,9 @@ class WalletTxDetails extends Message
      *
      * @param  WalletTxDetail[]|RepeatedField  $var
      * @return $this
+     * @throws Exception
      */
-    public function setTxDetails($var)
+    public function setTxDetails($var): WalletTxDetails
     {
         $arr             = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             WalletTxDetail::class);

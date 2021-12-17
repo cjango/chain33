@@ -5,6 +5,7 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Exception;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
@@ -18,12 +19,12 @@ class AllExecBalance extends Message
     /**
      * Generated from protobuf field <code>string addr = 1;</code>.
      */
-    protected $addr = '';
+    protected string $addr = '';
 
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.ExecAccount ExecAccount = 2;</code>.
      */
-    private $ExecAccount;
+    private RepeatedField $ExecAccount;
 
     /**
      * Constructor.
@@ -46,7 +47,7 @@ class AllExecBalance extends Message
      *
      * @return string
      */
-    public function getAddr()
+    public function getAddr(): string
     {
         return $this->addr;
     }
@@ -56,8 +57,9 @@ class AllExecBalance extends Message
      *
      * @param  string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setAddr($var)
+    public function setAddr(string $var): AllExecBalance
     {
         GPBUtil::checkString($var, true);
         $this->addr = $var;
@@ -70,7 +72,7 @@ class AllExecBalance extends Message
      *
      * @return RepeatedField
      */
-    public function getExecAccount()
+    public function getExecAccount(): RepeatedField
     {
         return $this->ExecAccount;
     }
@@ -80,8 +82,9 @@ class AllExecBalance extends Message
      *
      * @param  ExecAccount[]|RepeatedField  $var
      * @return $this
+     * @throws Exception
      */
-    public function setExecAccount($var)
+    public function setExecAccount($var): AllExecBalance
     {
         $arr               = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             ExecAccount::class);

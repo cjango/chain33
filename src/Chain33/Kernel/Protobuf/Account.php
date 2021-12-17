@@ -5,6 +5,7 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Exception;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
 
@@ -18,25 +19,25 @@ class Account extends Message
      * coins标识，目前只有0 一个值
      * Generated from protobuf field <code>int32 currency = 1;</code>.
      */
-    protected $currency = 0;
+    protected int $currency = 0;
 
     /**
      *账户可用余额.
      * Generated from protobuf field <code>int64 balance = 2;</code>.
      */
-    protected $balance = 0;
+    protected int $balance = 0;
 
     /**
      *账户冻结余额.
      * Generated from protobuf field <code>int64 frozen = 3;</code>.
      */
-    protected $frozen = 0;
+    protected int $frozen = 0;
 
     /**
      *账户的地址
      * Generated from protobuf field <code>string addr = 4;</code>.
      */
-    protected $addr = '';
+    protected string $addr = '';
 
     /**
      * Constructor.
@@ -66,7 +67,7 @@ class Account extends Message
      *
      * @return int
      */
-    public function getCurrency()
+    public function getCurrency(): int
     {
         return $this->currency;
     }
@@ -77,8 +78,9 @@ class Account extends Message
      *
      * @param  int  $var
      * @return $this
+     * @throws Exception
      */
-    public function setCurrency($var)
+    public function setCurrency(int $var): Account
     {
         GPBUtil::checkInt32($var);
         $this->currency = $var;
@@ -90,9 +92,9 @@ class Account extends Message
      *账户可用余额.
      * Generated from protobuf field <code>int64 balance = 2;</code>.
      *
-     * @return int|string
+     * @return int
      */
-    public function getBalance()
+    public function getBalance(): int
     {
         return $this->balance;
     }
@@ -103,8 +105,9 @@ class Account extends Message
      *
      * @param  int|string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setBalance($var)
+    public function setBalance($var): Account
     {
         GPBUtil::checkInt64($var);
         $this->balance = $var;
@@ -116,9 +119,9 @@ class Account extends Message
      *账户冻结余额.
      * Generated from protobuf field <code>int64 frozen = 3;</code>.
      *
-     * @return int|string
+     * @return int
      */
-    public function getFrozen()
+    public function getFrozen(): int
     {
         return $this->frozen;
     }
@@ -129,8 +132,9 @@ class Account extends Message
      *
      * @param  int|string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setFrozen($var)
+    public function setFrozen($var): Account
     {
         GPBUtil::checkInt64($var);
         $this->frozen = $var;
@@ -144,7 +148,7 @@ class Account extends Message
      *
      * @return string
      */
-    public function getAddr()
+    public function getAddr(): string
     {
         return $this->addr;
     }
@@ -155,8 +159,9 @@ class Account extends Message
      *
      * @param  string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setAddr($var)
+    public function setAddr(string $var): Account
     {
         GPBUtil::checkString($var, true);
         $this->addr = $var;

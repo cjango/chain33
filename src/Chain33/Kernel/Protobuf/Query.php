@@ -5,6 +5,7 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Exception;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
 use GPBMetadata\Executor;
@@ -17,17 +18,17 @@ class Query extends Message
     /**
      * Generated from protobuf field <code>bytes execer = 1;</code>.
      */
-    protected $execer = '';
+    protected string $execer = '';
 
     /**
      * Generated from protobuf field <code>string funcName = 2;</code>.
      */
-    protected $funcName = '';
+    protected string $funcName = '';
 
     /**
      * Generated from protobuf field <code>bytes payload = 3;</code>.
      */
-    protected $payload = '';
+    protected string $payload = '';
 
     /**
      * Constructor.
@@ -51,7 +52,7 @@ class Query extends Message
      *
      * @return string
      */
-    public function getExecer()
+    public function getExecer(): string
     {
         return $this->execer;
     }
@@ -61,8 +62,9 @@ class Query extends Message
      *
      * @param  string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setExecer($var)
+    public function setExecer(string $var): Query
     {
         GPBUtil::checkString($var, false);
         $this->execer = $var;
@@ -75,7 +77,7 @@ class Query extends Message
      *
      * @return string
      */
-    public function getFuncName()
+    public function getFuncName(): string
     {
         return $this->funcName;
     }
@@ -85,8 +87,9 @@ class Query extends Message
      *
      * @param  string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setFuncName($var)
+    public function setFuncName(string $var): Query
     {
         GPBUtil::checkString($var, true);
         $this->funcName = $var;
@@ -99,7 +102,7 @@ class Query extends Message
      *
      * @return string
      */
-    public function getPayload()
+    public function getPayload(): string
     {
         return $this->payload;
     }
@@ -109,8 +112,9 @@ class Query extends Message
      *
      * @param  string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setPayload($var)
+    public function setPayload(string $var): Query
     {
         GPBUtil::checkString($var, false);
         $this->payload = $var;

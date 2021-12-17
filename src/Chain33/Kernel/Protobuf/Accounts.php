@@ -5,6 +5,7 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Exception;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
@@ -19,7 +20,7 @@ class Accounts extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Account acc = 1;</code>.
      */
-    private $acc;
+    private RepeatedField $acc;
 
     /**
      * Constructor.
@@ -41,7 +42,7 @@ class Accounts extends Message
      *
      * @return RepeatedField
      */
-    public function getAcc()
+    public function getAcc(): RepeatedField
     {
         return $this->acc;
     }
@@ -51,8 +52,9 @@ class Accounts extends Message
      *
      * @param  Account[]|RepeatedField  $var
      * @return $this
+     * @throws Exception
      */
-    public function setAcc($var)
+    public function setAcc($var): Accounts
     {
         $arr       = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             Account::class);

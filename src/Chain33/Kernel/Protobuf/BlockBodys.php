@@ -5,6 +5,7 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Exception;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
@@ -20,7 +21,7 @@ class BlockBodys extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.BlockBody items = 1;</code>.
      */
-    private $items;
+    private RepeatedField $items;
 
     /**
      * Constructor.
@@ -42,7 +43,7 @@ class BlockBodys extends Message
      *
      * @return RepeatedField
      */
-    public function getItems()
+    public function getItems(): RepeatedField
     {
         return $this->items;
     }
@@ -52,8 +53,9 @@ class BlockBodys extends Message
      *
      * @param  BlockBody[]|RepeatedField  $var
      * @return $this
+     * @throws Exception
      */
-    public function setItems($var)
+    public function setItems($var): BlockBodys
     {
         $arr         = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             BlockBody::class);

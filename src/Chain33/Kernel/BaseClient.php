@@ -2,17 +2,19 @@
 
 namespace Jason\Chain33\Kernel;
 
+use GuzzleHttp\Client as Guzzle;
 use Illuminate\Support\Str;
 use Jason\Chain33\Exceptions\ChainException;
 use Jason\Chain33\Exceptions\ConfigException;
+use Pimple\Container;
 
 class BaseClient
 {
-    protected $app;
+    protected Container $app;
 
-    protected $config;
+    protected array $config;
 
-    protected $client;
+    protected Guzzle $client;
 
     public function __construct($app)
     {

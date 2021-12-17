@@ -5,6 +5,7 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Exception;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
@@ -19,7 +20,7 @@ class BatchQueryStorage extends Message
     /**
      * Generated from protobuf field <code>repeated string txHashs = 1;</code>.
      */
-    private $txHashs;
+    private RepeatedField $txHashs;
 
     /**
      * Constructor.
@@ -41,7 +42,7 @@ class BatchQueryStorage extends Message
      *
      * @return RepeatedField
      */
-    public function getTxHashs()
+    public function getTxHashs(): RepeatedField
     {
         return $this->txHashs;
     }
@@ -51,8 +52,9 @@ class BatchQueryStorage extends Message
      *
      * @param  string[]|RepeatedField  $var
      * @return $this
+     * @throws Exception
      */
-    public function setTxHashs($var)
+    public function setTxHashs($var): BatchQueryStorage
     {
         $arr           = GPBUtil::checkRepeatedField($var, GPBType::STRING);
         $this->txHashs = $arr;

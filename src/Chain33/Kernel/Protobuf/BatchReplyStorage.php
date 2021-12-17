@@ -5,6 +5,7 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Exception;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
@@ -18,7 +19,7 @@ class BatchReplyStorage extends Message
     /**
      * Generated from protobuf field <code>repeated .Jason.Chain33.Kernel.Protobuf.Storage storages = 1;</code>.
      */
-    private $storages;
+    private RepeatedField $storages;
 
     /**
      * Constructor.
@@ -40,7 +41,7 @@ class BatchReplyStorage extends Message
      *
      * @return RepeatedField
      */
-    public function getStorages()
+    public function getStorages(): RepeatedField
     {
         return $this->storages;
     }
@@ -50,8 +51,9 @@ class BatchReplyStorage extends Message
      *
      * @param  Storage[]|RepeatedField  $var
      * @return $this
+     * @throws Exception
      */
-    public function setStorages($var)
+    public function setStorages($var): BatchReplyStorage
     {
         $arr            = GPBUtil::checkRepeatedField($var, GPBType::MESSAGE,
             Storage::class);

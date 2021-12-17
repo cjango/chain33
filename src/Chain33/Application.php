@@ -2,6 +2,7 @@
 
 namespace Jason\Chain33;
 
+use Illuminate\Support\Facades\Config;
 use Pimple\Container;
 
 /**
@@ -64,7 +65,7 @@ class Application extends Container
         parent::__construct();
 
         $this['config'] = static function () {
-            return config('chain33');
+            return Config::get('chain33');
         };
         $this->registerProviders();
     }

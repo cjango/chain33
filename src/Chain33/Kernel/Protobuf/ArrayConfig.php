@@ -5,6 +5,7 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Exception;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
@@ -20,7 +21,7 @@ class ArrayConfig extends Message
     /**
      * Generated from protobuf field <code>repeated string value = 3;</code>.
      */
-    private $value;
+    private RepeatedField $value;
 
     /**
      * Constructor.
@@ -42,7 +43,7 @@ class ArrayConfig extends Message
      *
      * @return RepeatedField
      */
-    public function getValue()
+    public function getValue(): RepeatedField
     {
         return $this->value;
     }
@@ -52,8 +53,9 @@ class ArrayConfig extends Message
      *
      * @param  string[]|RepeatedField  $var
      * @return $this
+     * @throws Exception
      */
-    public function setValue($var)
+    public function setValue($var): ArrayConfig
     {
         $arr         = GPBUtil::checkRepeatedField($var, GPBType::STRING);
         $this->value = $arr;

@@ -5,6 +5,7 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Exception;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
 
@@ -16,17 +17,17 @@ class Asset extends Message
     /**
      * Generated from protobuf field <code>string exec = 1;</code>.
      */
-    protected $exec = '';
+    protected string $exec = '';
 
     /**
      * Generated from protobuf field <code>string symbol = 2;</code>.
      */
-    protected $symbol = '';
+    protected string $symbol = '';
 
     /**
      * Generated from protobuf field <code>int64 amount = 3;</code>.
      */
-    protected $amount = 0;
+    protected int $amount = 0;
 
     /**
      * Constructor.
@@ -50,7 +51,7 @@ class Asset extends Message
      *
      * @return string
      */
-    public function getExec()
+    public function getExec(): string
     {
         return $this->exec;
     }
@@ -60,8 +61,9 @@ class Asset extends Message
      *
      * @param  string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setExec($var)
+    public function setExec(string $var): Asset
     {
         GPBUtil::checkString($var, true);
         $this->exec = $var;
@@ -74,7 +76,7 @@ class Asset extends Message
      *
      * @return string
      */
-    public function getSymbol()
+    public function getSymbol(): string
     {
         return $this->symbol;
     }
@@ -84,8 +86,9 @@ class Asset extends Message
      *
      * @param  string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setSymbol($var)
+    public function setSymbol(string $var): Asset
     {
         GPBUtil::checkString($var, true);
         $this->symbol = $var;
@@ -96,9 +99,9 @@ class Asset extends Message
     /**
      * Generated from protobuf field <code>int64 amount = 3;</code>.
      *
-     * @return int|string
+     * @return int
      */
-    public function getAmount()
+    public function getAmount(): int
     {
         return $this->amount;
     }
@@ -108,8 +111,9 @@ class Asset extends Message
      *
      * @param  int|string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setAmount($var)
+    public function setAmount($var): Asset
     {
         GPBUtil::checkInt64($var);
         $this->amount = $var;

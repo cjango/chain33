@@ -5,6 +5,7 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Exception;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
 
@@ -16,17 +17,17 @@ class AddrOverview extends Message
     /**
      * Generated from protobuf field <code>int64 reciver = 1;</code>.
      */
-    protected $reciver = 0;
+    protected int $reciver = 0;
 
     /**
      * Generated from protobuf field <code>int64 balance = 2;</code>.
      */
-    protected $balance = 0;
+    protected int $balance = 0;
 
     /**
      * Generated from protobuf field <code>int64 txCount = 3;</code>.
      */
-    protected $txCount = 0;
+    protected int $txCount = 0;
 
     /**
      * Constructor.
@@ -48,9 +49,9 @@ class AddrOverview extends Message
     /**
      * Generated from protobuf field <code>int64 reciver = 1;</code>.
      *
-     * @return int|string
+     * @return int
      */
-    public function getReciver()
+    public function getReciver(): int
     {
         return $this->reciver;
     }
@@ -60,8 +61,9 @@ class AddrOverview extends Message
      *
      * @param  int|string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setReciver($var)
+    public function setReciver($var): AddrOverview
     {
         GPBUtil::checkInt64($var);
         $this->reciver = $var;
@@ -72,9 +74,9 @@ class AddrOverview extends Message
     /**
      * Generated from protobuf field <code>int64 balance = 2;</code>.
      *
-     * @return int|string
+     * @return int
      */
-    public function getBalance()
+    public function getBalance(): int
     {
         return $this->balance;
     }
@@ -84,8 +86,9 @@ class AddrOverview extends Message
      *
      * @param  int|string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setBalance($var)
+    public function setBalance($var): AddrOverview
     {
         GPBUtil::checkInt64($var);
         $this->balance = $var;
@@ -96,9 +99,9 @@ class AddrOverview extends Message
     /**
      * Generated from protobuf field <code>int64 txCount = 3;</code>.
      *
-     * @return int|string
+     * @return int
      */
-    public function getTxCount()
+    public function getTxCount(): int
     {
         return $this->txCount;
     }
@@ -108,8 +111,9 @@ class AddrOverview extends Message
      *
      * @param  int|string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setTxCount($var)
+    public function setTxCount($var): AddrOverview
     {
         GPBUtil::checkInt64($var);
         $this->txCount = $var;

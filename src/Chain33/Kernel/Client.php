@@ -6,12 +6,13 @@ use Exception;
 use GuzzleHttp\Client as Guzzle;
 use Jason\Chain33\Exceptions\ChainException;
 use Jason\Chain33\Kernel\Support\RpcRequest;
+use Pimple\Container;
 
 class Client
 {
-    protected $app;
+    protected Container $app;
 
-    protected $config;
+    protected array $config;
 
     protected Guzzle $client;
 

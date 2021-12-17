@@ -5,6 +5,7 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Exception;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
 
@@ -16,12 +17,12 @@ class ReceiptAccountBurn extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account prev = 1;</code>.
      */
-    protected $prev = null;
+    protected ?Account $prev = null;
 
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account current = 2;</code>.
      */
-    protected $current = null;
+    protected ?Account $current = null;
 
     /**
      * Constructor.
@@ -44,9 +45,9 @@ class ReceiptAccountBurn extends Message
      *
      * @return Account|null
      */
-    public function getPrev()
+    public function getPrev(): ?Account
     {
-        return isset($this->prev) ? $this->prev : null;
+        return null;
     }
 
     /**
@@ -54,8 +55,9 @@ class ReceiptAccountBurn extends Message
      *
      * @param  Account  $var
      * @return $this
+     * @throws Exception
      */
-    public function setPrev($var)
+    public function setPrev(Account $var): ReceiptAccountBurn
     {
         GPBUtil::checkMessage($var, Account::class);
         $this->prev = $var;
@@ -63,7 +65,7 @@ class ReceiptAccountBurn extends Message
         return $this;
     }
 
-    public function hasPrev()
+    public function hasPrev(): bool
     {
         return isset($this->prev);
     }
@@ -78,9 +80,9 @@ class ReceiptAccountBurn extends Message
      *
      * @return Account|null
      */
-    public function getCurrent()
+    public function getCurrent(): ?Account
     {
-        return isset($this->current) ? $this->current : null;
+        return null;
     }
 
     /**
@@ -88,8 +90,9 @@ class ReceiptAccountBurn extends Message
      *
      * @param  Account  $var
      * @return $this
+     * @throws Exception
      */
-    public function setCurrent($var)
+    public function setCurrent(Account $var): ReceiptAccountBurn
     {
         GPBUtil::checkMessage($var, Account::class);
         $this->current = $var;
@@ -97,7 +100,7 @@ class ReceiptAccountBurn extends Message
         return $this;
     }
 
-    public function hasCurrent()
+    public function hasCurrent(): bool
     {
         return isset($this->current);
     }

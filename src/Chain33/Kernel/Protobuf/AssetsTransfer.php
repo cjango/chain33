@@ -5,6 +5,7 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Exception;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
 
@@ -16,22 +17,22 @@ class AssetsTransfer extends Message
     /**
      * Generated from protobuf field <code>string cointoken = 1;</code>.
      */
-    protected $cointoken = '';
+    protected string $cointoken = '';
 
     /**
      * Generated from protobuf field <code>int64 amount = 2;</code>.
      */
-    protected $amount = 0;
+    protected int $amount = 0;
 
     /**
      * Generated from protobuf field <code>bytes note = 3;</code>.
      */
-    protected $note = '';
+    protected string $note = '';
 
     /**
      * Generated from protobuf field <code>string to = 4;</code>.
      */
-    protected $to = '';
+    protected string $to = '';
 
     /**
      * Constructor.
@@ -56,7 +57,7 @@ class AssetsTransfer extends Message
      *
      * @return string
      */
-    public function getCointoken()
+    public function getCointoken(): string
     {
         return $this->cointoken;
     }
@@ -66,8 +67,9 @@ class AssetsTransfer extends Message
      *
      * @param  string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setCointoken($var)
+    public function setCointoken(string $var): AssetsTransfer
     {
         GPBUtil::checkString($var, true);
         $this->cointoken = $var;
@@ -78,9 +80,9 @@ class AssetsTransfer extends Message
     /**
      * Generated from protobuf field <code>int64 amount = 2;</code>.
      *
-     * @return int|string
+     * @return int
      */
-    public function getAmount()
+    public function getAmount(): int
     {
         return $this->amount;
     }
@@ -90,8 +92,9 @@ class AssetsTransfer extends Message
      *
      * @param  int|string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setAmount($var)
+    public function setAmount($var): AssetsTransfer
     {
         GPBUtil::checkInt64($var);
         $this->amount = $var;
@@ -104,7 +107,7 @@ class AssetsTransfer extends Message
      *
      * @return string
      */
-    public function getNote()
+    public function getNote(): string
     {
         return $this->note;
     }
@@ -114,8 +117,9 @@ class AssetsTransfer extends Message
      *
      * @param  string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setNote($var)
+    public function setNote(string $var): AssetsTransfer
     {
         GPBUtil::checkString($var, false);
         $this->note = $var;
@@ -128,7 +132,7 @@ class AssetsTransfer extends Message
      *
      * @return string
      */
-    public function getTo()
+    public function getTo(): string
     {
         return $this->to;
     }
@@ -138,8 +142,9 @@ class AssetsTransfer extends Message
      *
      * @param  string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setTo($var)
+    public function setTo(string $var): AssetsTransfer
     {
         GPBUtil::checkString($var, true);
         $this->to = $var;

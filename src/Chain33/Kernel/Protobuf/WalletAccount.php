@@ -5,6 +5,7 @@
 
 namespace Jason\Chain33\Kernel\Protobuf;
 
+use Exception;
 use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\Internal\Message;
 use GPBMetadata\Wallet;
@@ -17,12 +18,12 @@ class WalletAccount extends Message
     /**
      * Generated from protobuf field <code>.Jason.Chain33.Kernel.Protobuf.Account acc = 1;</code>.
      */
-    protected $acc = null;
+    protected ?Account $acc = null;
 
     /**
      * Generated from protobuf field <code>string label = 2;</code>.
      */
-    protected $label = '';
+    protected string $label = '';
 
     /**
      * Constructor.
@@ -45,9 +46,9 @@ class WalletAccount extends Message
      *
      * @return Account|null
      */
-    public function getAcc()
+    public function getAcc(): ?Account
     {
-        return isset($this->acc) ? $this->acc : null;
+        return $this->acc ?? null;
     }
 
     /**
@@ -55,8 +56,9 @@ class WalletAccount extends Message
      *
      * @param  Account  $var
      * @return $this
+     * @throws Exception
      */
-    public function setAcc($var)
+    public function setAcc(Account $var): WalletAccount
     {
         GPBUtil::checkMessage($var, Account::class);
         $this->acc = $var;
@@ -64,7 +66,7 @@ class WalletAccount extends Message
         return $this;
     }
 
-    public function hasAcc()
+    public function hasAcc(): bool
     {
         return isset($this->acc);
     }
@@ -79,7 +81,7 @@ class WalletAccount extends Message
      *
      * @return string
      */
-    public function getLabel()
+    public function getLabel(): string
     {
         return $this->label;
     }
@@ -89,8 +91,9 @@ class WalletAccount extends Message
      *
      * @param  string  $var
      * @return $this
+     * @throws Exception
      */
-    public function setLabel($var)
+    public function setLabel(string $var): WalletAccount
     {
         GPBUtil::checkString($var, true);
         $this->label = $var;
