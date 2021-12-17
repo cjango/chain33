@@ -12,25 +12,31 @@ use Jason\Chain33\Kernel\Utils\Base58;
  */
 class Client extends BaseClient
 {
+
+    /**
+     * @var int 最大GAS消耗
+     */
+    private int $gas = 3000000;
+
     /**
      * Notes   : 估算合约调用Gas消耗.
      *
      * @Date   : 2021/10/8 4:39 下午
      * @Author : <Jason.C>
      *
-     * @param  string  $tx  部署合约交易或者调用合约交易的序列化后的字符串
+     * @param  string  $txHex  部署合约交易或者调用合约交易的序列化后的字符串
      * @param  string  $from  合约交易调用者地址
      * @return int
      *
      * @throws ChainException
      */
-    public function estimateGas(string $tx, string $from): int
+    private function estimateGas(string $txHex, string $from): int
     {
         return $this->client->Query([
             'execer'   => $this->parseExecer('evm'),
             'funcName' => 'EstimateGas',
             'payload'  => [
-                'tx'   => $tx,
+                'tx'   => $txHex,
                 'from' => $from,
             ],
         ])['gas'];
@@ -47,7 +53,6 @@ class Client extends BaseClient
      *                             owner),这里表示部署一个名称和symbol都为 zbc，总金额3300*le8，拥有者为 evm_creatorAddr 的ERC20合约
      * @param  string  $code  需要部署合约的 bin 内容
      * @param  string  $abi  部署合约的 abi 内容
-     * @param  int  $fee  精确的手续费可以通过EstimateGas这个jrpc接口进行估算，同时该交易费需要满足根据部署交易体积大小计算出来的交易费要求
      * @param  string  $alias  合约别名
      * @param  string  $privateKey  部署者的私钥
      * @param  string  $note  合约备注
@@ -59,22 +64,24 @@ class Client extends BaseClient
         string $parameter,
         string $code,
         string $abi,
-        int $fee,
         string $alias,
         string $privateKey,
         string $note = ''
     ): string {
+        $abi   = preg_replace('/\s?/', '', $abi);
         $txHex = $this->client->CreateDeployTx([
             'code'      => $code,
             'abi'       => $abi,
-            'fee'       => $fee,
+            'fee'       => $this->gas,
             'note'      => $note,
             'alias'     => $alias,
             'parameter' => $parameter,
             'paraName'  => $this->parseExecer(''),
         ], 'evm');
 
-        return $this->app->transaction->finalSend($txHex, $privateKey);
+        $gas = $this->estimateGas($txHex, $this->config['superManager']['address']);
+
+        return $this->app->transaction->finalSend($txHex, $privateKey, $gas);
     }
 
     /**
@@ -86,7 +93,6 @@ class Client extends BaseClient
      * @param  string  $parameter  操作合约的参数，例如转账交易 “transfer(‘${evm_transferAddr}’, 20)”
      * @param  string  $abi  部署合约的 abi 内容
      * @param  string  $contractAddr  合约地址
-     * @param  int  $fee  精确的手续费可以通过EstimateGas这个jrpc接口进行估算，同时该交易费需要满足根据部署交易体积大小计算出来的交易费要求，一般调用交易的交易费直接设置为通过交易体积大小计算出来的交易费即可
      * @param  string  $privateKey  调用者私钥
      * @param  string  $note  合约备注
      * @return string
@@ -96,21 +102,23 @@ class Client extends BaseClient
     public function invoking(
         string $parameter,
         string $abi,
-        int $fee,
         string $contractAddr,
         string $privateKey,
         string $note = ''
     ): string {
+        $abi   = preg_replace('/\s?/', '', $abi);
         $txHex = $this->client->CreateCallTx([
             'abi'          => $abi,
-            'fee'          => $fee,
+            'fee'          => $this->gas,
             'note'         => $note,
             'parameter'    => $parameter,
             'contractAddr' => $contractAddr,
             'paraName'     => $this->parseExecer(''),
         ], 'evm');
 
-        return $this->app->transaction->finalSend($txHex, $privateKey);
+        $gas = $this->estimateGas($txHex, $this->config['superManager']['address']);
+
+        return $this->app->transaction->finalSend($txHex, $privateKey, $gas);
     }
 
     /**
@@ -126,7 +134,7 @@ class Client extends BaseClient
     {
         return $this->client->CalcNewContractAddr([
             'caller' => $caller,
-            'txhash' => $txhash,
+            'txhash' => $this->parseHexString($txhash),
         ], 'evm');
     }
 
@@ -151,15 +159,85 @@ class Client extends BaseClient
             ],
         ]);
 
-        if ($result['contract']) {
-            return $result;
-        } else {
-            return [];
+        if (! $result['contract']) {
+            throw new ChainException('合约地址不存在');
         }
+
+        return $result;
     }
 
     /**
-     * Notes   : evm的地址转换为chain33地址
+     * Notes   : 查询ABI接口方法 pack 后的数据
+     *
+     * @Date   : 2021/12/17 4:35 PM
+     * @Author : <Jason.C>
+     * @param  string  $abi
+     * @param  string  $parameter
+     * @return string
+     * @throws ChainException
+     */
+    public function getPackData(string $abi, string $parameter): string
+    {
+        return $this->client->Query([
+            'execer'   => $this->parseExecer('evm'),
+            'funcName' => 'GetPackData',
+            'payload'  => [
+                'abi'       => $abi,
+                'parameter' => $parameter
+            ],
+        ])['packData'];
+    }
+
+    /**
+     * Notes   : 查询什么，
+     *
+     * @Date   : 2021/12/17 4:39 PM
+     * @Author : <Jason.C>
+     * @param  string  $address  合约地址
+     * @param  string  $input  需要查询的信息 pack 后的数据
+     * @param  string  $caller  合约部署者地址
+     * @return mixed
+     * @throws ChainException
+     */
+    public function query(string $address, string $input, string $caller)
+    {
+        return $this->client->Query([
+            'execer'   => $this->parseExecer('evm'),
+            'funcName' => 'Query',
+            'payload'  => [
+                'address' => $address,
+                'input'   => $input,
+                'caller'  => $caller
+            ],
+        ]);
+    }
+
+    /**
+     * Notes   : 解码数据
+     *
+     * @Date   : 2021/12/17 4:48 PM
+     * @Author : <Jason.C>
+     * @param  string  $abi
+     * @param  string  $parameter
+     * @param  string  $data
+     * @return array
+     * @throws ChainException
+     */
+    public function getUnPackData(string $abi, string $parameter, string $data): array
+    {
+        return $this->client->Query([
+            'execer'   => $this->parseExecer('evm'),
+            'funcName' => 'GetUnpackData',
+            'payload'  => [
+                'abi'       => $abi,
+                'parameter' => $parameter,
+                'data'      => $data,
+            ],
+        ])['unpackData'];
+    }
+
+    /**
+     * Notes   : evm的地址转换为chain33地址(相当于ETH地址和BTY地址转换)
      *
      * @Date   : 2021/10/8 4:21 下午
      * @Author : <Jason.C>
