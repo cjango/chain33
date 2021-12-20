@@ -16,7 +16,7 @@ class Client extends BaseClient
     /**
      * @var int 最大GAS消耗
      */
-    private int $gas = 3000000;
+    private int $gas = 300000;
 
     /**
      * Notes   : 估算合约调用Gas消耗.
@@ -81,6 +81,16 @@ class Client extends BaseClient
 
         $gas = $this->estimateGas($txHex, $this->config['superManager']['address']);
 
+        $txHex = $this->client->CreateDeployTx([
+            'code'      => $code,
+            'abi'       => $abi,
+            'fee'       => $gas,
+            'note'      => $note,
+            'alias'     => $alias,
+            'parameter' => $parameter,
+            'paraName'  => $this->parseExecer(''),
+        ], 'evm');
+
         return $this->app->transaction->finalSend($txHex, $privateKey, $gas);
     }
 
@@ -118,11 +128,20 @@ class Client extends BaseClient
 
         $gas = $this->estimateGas($txHex, $this->config['superManager']['address']);
 
+        $txHex = $this->client->CreateCallTx([
+            'abi'          => $abi,
+            'fee'          => $gas,
+            'note'         => $note,
+            'parameter'    => $parameter,
+            'contractAddr' => $contractAddr,
+            'paraName'     => $this->parseExecer(''),
+        ], 'evm');
+
         return $this->app->transaction->finalSend($txHex, $privateKey, $gas);
     }
 
     /**
-     * Notes   : 获取合约地址
+     * Notes   : 获取合约地址.
      *
      * @Date   : 2021/10/8 5:21 下午
      * @Author : <Jason.C>
@@ -167,7 +186,7 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes   : 查询ABI接口方法 pack 后的数据
+     * Notes   : 查询ABI接口方法 pack 后的数据.
      *
      * @Date   : 2021/12/17 4:35 PM
      * @Author : <Jason.C>
@@ -213,7 +232,7 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes   : 解码数据
+     * Notes   : 解码数据.
      *
      * @Date   : 2021/12/17 4:48 PM
      * @Author : <Jason.C>
@@ -237,7 +256,7 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes   : evm的地址转换为chain33地址(相当于ETH地址和BTY地址转换)
+     * Notes   : evm的地址转换为chain33地址(相当于ETH地址和BTY地址转换).
      *
      * @Date   : 2021/10/8 4:21 下午
      * @Author : <Jason.C>
@@ -265,7 +284,7 @@ class Client extends BaseClient
     }
 
     /**
-     * Notes   : chain33的地址转换为evm地址
+     * Notes   : chain33的地址转换为evm地址.
      *
      * @Date   : 2021/10/8 4:21 下午
      * @Author : <Jason.C>
