@@ -116,12 +116,12 @@ class Client extends BaseClient
      */
     public function paraTransaction(string $txHex): string
     {
-        if ($this->isParaChain() && $this->config['para_pay_privkey']) {
+        if ($this->isParaChain() && $this->config['para_pay_addr']) {
             $this->signIndex = 2;
 
             return $this->client->CreateNoBalanceTransaction([
                 'txHex'   => $txHex,
-                'privkey' => $this->config['para_pay_privkey'],
+                'payAddr' => $this->config['para_pay_addr'],
             ]);
         } else {
             return $txHex;
@@ -351,12 +351,12 @@ class Client extends BaseClient
      */
     public function paraTransactions(array $txHexs): string
     {
-        if ($this->isParaChain() && $this->config['para_pay_privkey']) {
+        if ($this->isParaChain() && $this->config['para_pay_addr']) {
             $this->signIndex = 0;
 
             return $this->client->CreateNoBlanaceTxs([
                 'txHexs'  => $txHexs,
-                'privkey' => $this->config['para_pay_privkey'],
+                'payAddr' => $this->config['para_pay_addr'],
             ]);
         }
 
