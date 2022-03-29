@@ -89,7 +89,7 @@ class Client extends BaseClient
             'execer'       => $execer,
             'asset_exec'   => $exec,
             'asset_symbol' => '',
-        ])['ExecAccount'];
+        ])['execAccount'];
     }
 
     /**
