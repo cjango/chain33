@@ -43,6 +43,52 @@ class Client extends BaseClient
     }
 
     /**
+     * Notes   : 调用合约.
+     *
+     * @Date   : 2021/10/8 5:19 下午
+     * @Author : <Jason.C>
+     *
+     * @param  string  $contractAddr  合约地址
+     * @param  string  $abi  部署合约的 abi 内容
+     * @param  string  $parameter  操作合约的参数，例如转账交易 “transfer(‘${evm_transferAddr}’, 20)”
+     * @param  string  $privateKey  调用者私钥
+     * @param  string  $note  合约备注
+     * @return string
+     *
+     * @throws ChainException
+     */
+    public function invoking(
+        string $contractAddr,
+        string $abi,
+        string $parameter,
+        string $privateKey,
+        string $note = ''
+    ): string {
+        $abi   = preg_replace('/\s?/', '', $abi);
+        $txHex = $this->client->CreateCallTx([
+            'abi'          => $abi,
+            'fee'          => $this->gas,
+            'note'         => $note,
+            'parameter'    => $parameter,
+            'contractAddr' => $contractAddr,
+            'paraName'     => $this->parseExecer(''),
+        ], 'evm');
+
+        $gas = $this->estimateGas($txHex, $this->config['superManager']['address']);
+
+        $txHex = $this->client->CreateCallTx([
+            'abi'          => $abi,
+            'fee'          => $gas,
+            'note'         => $note,
+            'parameter'    => $parameter,
+            'contractAddr' => $contractAddr,
+            'paraName'     => $this->parseExecer(''),
+        ], 'evm');
+
+        return $this->app->transaction->finalSend($txHex, $privateKey, $gas);
+    }
+
+    /**
      * Notes   : 部署合约.
      *
      * @Date   : 2021/10/8 4:49 下午
@@ -89,52 +135,6 @@ class Client extends BaseClient
             'alias'     => $alias,
             'parameter' => $parameter,
             'paraName'  => $this->parseExecer(''),
-        ], 'evm');
-
-        return $this->app->transaction->finalSend($txHex, $privateKey, $gas);
-    }
-
-    /**
-     * Notes   : 调用合约.
-     *
-     * @Date   : 2021/10/8 5:19 下午
-     * @Author : <Jason.C>
-     *
-     * @param  string  $parameter  操作合约的参数，例如转账交易 “transfer(‘${evm_transferAddr}’, 20)”
-     * @param  string  $abi  部署合约的 abi 内容
-     * @param  string  $contractAddr  合约地址
-     * @param  string  $privateKey  调用者私钥
-     * @param  string  $note  合约备注
-     * @return string
-     *
-     * @throws ChainException
-     */
-    public function invoking(
-        string $parameter,
-        string $abi,
-        string $contractAddr,
-        string $privateKey,
-        string $note = ''
-    ): string {
-        $abi   = preg_replace('/\s?/', '', $abi);
-        $txHex = $this->client->CreateCallTx([
-            'abi'          => $abi,
-            'fee'          => $this->gas,
-            'note'         => $note,
-            'parameter'    => $parameter,
-            'contractAddr' => $contractAddr,
-            'paraName'     => $this->parseExecer(''),
-        ], 'evm');
-
-        $gas = $this->estimateGas($txHex, $this->config['superManager']['address']);
-
-        $txHex = $this->client->CreateCallTx([
-            'abi'          => $abi,
-            'fee'          => $gas,
-            'note'         => $note,
-            'parameter'    => $parameter,
-            'contractAddr' => $contractAddr,
-            'paraName'     => $this->parseExecer(''),
         ], 'evm');
 
         return $this->app->transaction->finalSend($txHex, $privateKey, $gas);
@@ -213,22 +213,25 @@ class Client extends BaseClient
      * @Date   : 2021/12/17 4:39 PM
      * @Author : <Jason.C>
      * @param  string  $address  合约地址
+     * @param  string  $abi  合约的ABI代码
      * @param  string  $input  需要查询的信息 pack 后的数据
      * @param  string  $caller  合约部署者地址
      * @return mixed
      * @throws ChainException
      */
-    public function query(string $address, string $input, string $caller)
+    public function query(string $address, string $abi, string $input, string $caller = ''): string
     {
-        return $this->client->Query([
+        $query = $this->client->Query([
             'execer'   => $this->parseExecer('evm'),
             'funcName' => 'Query',
             'payload'  => [
                 'address' => $address,
-                'input'   => $input,
+                'input'   => $this->getPackData($abi, $input),
                 'caller'  => $caller
             ],
         ]);
+
+        return $this->getUnPackData($abi, $input, $query['rawData'])[0];
     }
 
     /**
