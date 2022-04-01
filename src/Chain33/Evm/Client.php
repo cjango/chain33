@@ -170,19 +170,13 @@ class Client extends BaseClient
      */
     public function checkAddr(string $addr): array
     {
-        $result = $this->client->Query([
+        return $this->client->Query([
             'execer'   => $this->parseExecer('evm'),
             'funcName' => 'CheckAddrExists',
             'payload'  => [
                 'addr' => $addr,
             ],
         ]);
-
-        if (! $result['contract']) {
-            throw new ChainException('合约地址不存在');
-        }
-
-        return $result;
     }
 
     /**
