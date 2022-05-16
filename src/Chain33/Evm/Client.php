@@ -170,13 +170,15 @@ class Client extends BaseClient
      */
     public function checkAddr(string $addr): array
     {
-        return $this->client->Query([
+        $result = $this->client->Query([
             'execer'   => $this->parseExecer('evm'),
             'funcName' => 'CheckAddrExists',
             'payload'  => [
                 'addr' => $addr,
             ],
         ]);
+
+        return $result;
     }
 
     /**
@@ -265,17 +267,10 @@ class Client extends BaseClient
      */
     public function convertToChain(string $evmAddr): string
     {
-        $transAddr = '';
-        if (substr($evmAddr, 0, 2) === '0x') {
-            $transAddr = substr($evmAddr, 24);
-        } else {
-            foreach (explode(',', $evmAddr) as $s) {
-                $transAddr .= chr($s);
-            }
-            $transAddr = '00'.bin2hex($transAddr);
-        }
-
-        $checksum = hash('sha256', hex2bin(hash('sha256', hex2bin($transAddr))));
+        $evmAddr   = $this->parseHexString($evmAddr);
+        $transAddr = hex2bin($evmAddr);
+        $transAddr = '00'.bin2hex($transAddr);
+        $checksum  = hash('sha256', hex2bin(hash('sha256', hex2bin($transAddr))));
 
         return Base58::encode($transAddr.substr($checksum, 0, 8));
     }
@@ -291,6 +286,6 @@ class Client extends BaseClient
      */
     public function convertToEvm(string $chainAddr): string
     {
-        return substr((Base58::decode($chainAddr)), 0, 42);
+        return '0x'.substr((Base58::decode($chainAddr)), 2, 40);
     }
 }
