@@ -179,16 +179,25 @@ class Client extends BaseClient
      * @Author: <C.Jason>
      * @Date  : 2020/4/30 16:51
      *
-     * @param  string  $name  回调名称，长度不能超过128,
-     * @param  string  $URL  序列号变化通知的URL，长度不能超过1024；当name相同，URL为空时取消通知
+     * @param  string  $name  注册名称，长度不能超过 128；一旦通过 name 完成注册，其他订阅用户就不能使用相同的名字进行注册。
+     * @param  string  $URL  接受推送的 URL，长度不能超过 1024；
+     *                       当 name 相同，URL 不同，提示该 name 已经被注册，注册失败；
+     *                       当 name 相同，URL 相同 如果推送已经停止，则重新开始推送，如果推送正常，则继续推送。
+     * @param  int  $type  推送的数据类型；0:代表区块；1:代表区块头信息；2：代表交易回执
+     * @param  string  $contract  map[string]bool 订阅的合约名称，当type=2的时候起效，比如“coins=true”
      * @return array
      */
-    public function addPush(string $name, string $URL): array
+    public function addPush(string $name, string $URL, int $type, string $contract): array
     {
         return $this->client->AddPushSubscribe([
-            'name'   => $name,
-            'URL'    => $URL,
-            'encode' => 'json',
+            'name'          => $name,
+            'URL'           => $URL,
+            'encode'        => 'json',
+            'lastSequence'  => 0,
+            'lastHeight'    => 0,
+            'lastBlockHash' => '',
+            'type'          => $type,
+            'contract'      => $contract
         ]);
     }
 
