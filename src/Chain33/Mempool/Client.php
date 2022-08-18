@@ -45,4 +45,8 @@ class Client extends BaseClient
 
         return $this->client->GetLastMemPool()['txs'];
     }
+
+    public function first() {}
+
+    public function create() {}
 }
